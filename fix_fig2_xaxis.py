@@ -52,8 +52,6 @@ ax.set_ylim(0.0, 1.05)
 ax.set_xticks(range(0, 11))
 ax.set_xlabel("Heads ablated (ranked by switch rate)", labelpad=6)
 ax.set_ylabel("Language Accuracy")
-ax.set_title("Language Accuracy Degrades\nwith Progressive Head Ablation",
-             fontweight="bold", pad=5)
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x:.1f}"))
 ax.legend(loc="upper right", framealpha=0.85, handlelength=1.4)
 ax.grid(axis="y", alpha=0.25, linewidth=0.6)
