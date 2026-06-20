@@ -22,11 +22,9 @@ the ablated head, suggesting a feedforward cascade rather than global
 diffusion. To probe how training regime shapes these circuits, we apply
 LIHA to a controlled pair—Qwen2.5-1.5B-Base and
 Qwen2.5-1.5B-Instruct—identical in architecture and size, differing
-only in training. The base model is nearly flat (max SR$=$0.016,
-200/336 heads at SR$=$0.0); the instruct model concentrates causal
-influence sharply at layer 0, led by L0H5 (SR$=$0.224,
-8.93$\sigma$ above mean), with all other layers near zero. This
-controlled comparison provides direct causal evidence that instruction
+only in training. The base model is nearly flat (max `SR = 0.016`, 200/336 heads at `SR = 0.0`); 
+the instruct model concentrates causal influence sharply at layer 0, led by **L0H5** (`SR = 0.224`, `8.93σ` above mean),
+with all other layers near zero. This controlled comparison provides direct causal evidence that instruction
 tuning reorganizes language identity circuits toward early-layer
 localization. Extended experiments with Chinese and Russian confirm
 that first-token broadcasting is script-specific in GPT-2, with
