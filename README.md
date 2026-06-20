@@ -12,11 +12,11 @@ Identity Head Ablation (LIHA)**, a causal intervention that zeros each
 attention head individually and measures the resulting language switch
 rate across a parallel dataset of 2,700 prompt-language pairs spanning
 seven languages. Applied to GPT-2, LIHA identifies a small set of
-*first-token broadcaster* heads—led by L6H1 (switch rate 0.32,
-3.23$\sigma$ above the population mean)—that attend persistently to
+*first-token broadcaster* heads—led by L6H1 (`switch rate 0.32`,
+`3.23σ` above the population mean)—that attend persistently to
 the first prompt token, propagating its language signal throughout
 generation. Compensatory redistribution when heads are ablated is
-statistically significant ($p < 10^{-5}$) and follows a directional,
+statistically significant (`$p < 10^{-5}$)` and follows a directional,
 hierarchical pattern: compensation always recruits heads in layers above
 the ablated head, suggesting a feedforward cascade rather than global
 diffusion. To probe how training regime shapes these circuits, we apply
