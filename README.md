@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains the experiment code and data visualization for the paper "First-Token Broadcasters: Mechanistic Origins of Language
-Identity and Distributed Robustness in Transformers" published at BlackboxNLP 2026 Workshop
+Identity and Distributed Robustness in Transformers" published ____.
 
 ## Abstract
 Why do multilingual language models sometimes generate in the wrong
