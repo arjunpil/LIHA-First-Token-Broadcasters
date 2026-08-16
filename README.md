@@ -35,9 +35,25 @@ Code and data will be released upon publication.
 ## Experiment & Set-up
 For reproducibility, we recommend using Conda for Jupyter Notebook. Our experiments were run on __3060 RTX 12 GB__ using __Python 3.12__
 
-```
-bash
+STEP 1:
+```bash
 conda create -n myenv python=3.12
 conda activate myenv
 pip install -r requirements.txt
 ```
+
+STEP 2:
+```bash
+git clone https://github.com/arjunpil/LIHA-First-Token-Broadcasters.git
+cd src
+python3 -m venv venv
+source venv/bin/activate
+```
+
+STEP 3:
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+STEP 4:
