@@ -1,4 +1,4 @@
-# [LIHA-First-Token-Broadcasters] 
+# First-Token Broadcasters: Mechanistic Origins of Language Identity and Distributed Robustness in Transformers
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
