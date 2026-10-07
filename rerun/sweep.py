@@ -14,8 +14,12 @@ MODELS = {
     "gpt2": ("gpt2", "float32"),
     "qwen-base": ("Qwen/Qwen2.5-1.5B", "float16"),
     "qwen-instruct": ("Qwen/Qwen2.5-1.5B-Instruct", "float16"),
-    "bloom": ("bigscience/bloom-1b7", "float16"),
+    "bloom": ("bigscience/bloom-1b7", "float32"),
 }
+# bloom in fp16 gives NaN logits on some left-padded rows, so it runs in fp32 here.
+# bloom_experiment.py assumed head dim 64 (hidden 1024); the model has 2048 / 16 = 128.
+# The paper hook keeps the original 64-wide slice so it reproduces what was run.
+PAPER_HEAD_DIM = {"bloom": 64}
 
 
 def blocks(model, key):
@@ -29,6 +33,8 @@ def blocks(model, key):
 @contextmanager
 def ablated(model, key, mode, layer, head, dh):
     attn, proj = blocks(model, key)[layer]
+    if mode == "paper":
+        dh = PAPER_HEAD_DIM.get(key, dh)
     s = slice(head * dh, (head + 1) * dh)
 
     def zero(x):
@@ -86,6 +92,7 @@ def main():
     p.add_argument("--bs", type=int, default=250)
     p.add_argument("--max-new-tokens", type=int, default=40)
     p.add_argument("--n-loss", type=int, default=100)
+    p.add_argument("--dtype", default=None, help="default per model, see MODELS")
     p.add_argument("--out", default=None)
     a = p.parse_args()
     out = Path(a.out or f"out/{a.model}")
@@ -102,6 +109,7 @@ def main():
         w.writerows(rows)
 
     name, dtype = MODELS[a.model]
+    dtype = a.dtype or dtype
     tok = AutoTokenizer.from_pretrained(name)
     tok.pad_token = tok.pad_token or tok.eos_token
     kwargs = {"attn_implementation": "eager"} if a.model == "gpt2" else {}
