@@ -95,6 +95,9 @@ so it's fairer to compare L6H10 with the other heads than with 0.435. It's still
 The paper has L6H1 alone at 39.2% and the top 10 at 32.4% with monotonic degradation. Under true ablation the curve
 is not monotonic, and one head gets as low as the 10-head set does.
 
+The multi-head run also recomputes base and the k=1 condition of every order (L6H10, L0H7, L0H10, L8H2, L2H10, L1H2)
+in a separate process. The detected labels match results/gpt2 on all 2,500 prompts for each, and dNLL is within 0.001.
+
 figures/ has fig1_ablation_heatmap (SR per head, same layout as the paper's fig 1a), fig1_c2w_heatmap (correct->wrong,
 x marks dNLL > 0.1) and fig3_accuracy_curve (fig 1b, accuracy and dNLL). File names match the paper's figures/.
 
