@@ -129,8 +129,7 @@ appear in the prompt goes down (0.31 at baseline, 0.14 at x5), though they're so
 0.60), as GPT-2's non-English text already is. The paper's heads (L6H1, and the top-SR heads like L0H10) don't help,
 and the zero-ablation candidates that failed mean ablation (L2H5, L2H3) hurt at x5 with a large dNLL.
 
-So the paper's "amplifying individual heads by 2-5x produces no observed accuracy improvement" reverses for L6H10:
-removing it sends non-English outputs to English and scaling it keeps them in the prompt language.
+This is the opposite of the paper's "no observed accuracy improvement" for 2-5x amplification.
 
 # Setting checks, 2026-10-07
 
@@ -143,9 +142,8 @@ Sampling (GPT-2, temperature 0.7, three seeds, each condition compared with the 
 
 Truncated prompts (GPT-2, FLORES sentences cut to their first half, at least four words): the model now continues a
 sentence instead of starting a new one, and baseline non-English accuracy is 0.716 instead of 0.296. L6H10 only takes
-it to 0.644 (c->w 0.095), close to the control heads (0.02-0.08). So L6H10 matters when GPT-2 starts a new sentence
-after a complete one, which is the paper's FLORES setup, and much less mid-sentence, where the preceding words already
-fix the language.
+it to 0.644 (c->w 0.095), close to the control heads (0.02-0.08). L6H10 seems to matter mostly when GPT-2 starts a
+new sentence after a complete one, as in the FLORES setup. Mid-sentence, the preceding words already fix the language.
 
 Qwen prompt format (125 prompts): instruct without the chat template and base with it.
 
@@ -156,7 +154,7 @@ Qwen prompt format (125 prompts): instruct without the chat template and base wi
 
 With the same input format base and instruct are close; the instruct model leans on L22H6 much more only in the chat
 format it was tuned on. L17H7 follows the same pattern (0.264 for instruct with the template, 0.016-0.064 otherwise).
-So "tuning strengthens L22H6" should be stated for chat-formatted input.
+The tuning effect on these heads only shows up with chat-formatted input.
 
 # Detector and prompt-split checks (GPT-2), 2026-10-07
 
