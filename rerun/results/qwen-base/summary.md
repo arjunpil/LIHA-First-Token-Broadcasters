@@ -1,4 +1,4 @@
-baseline accuracy: 0.984 on 125 prompts 0.960 on the 25 original prompts
+baseline accuracy: 0.984 on 125 prompts, 0.960 on the 25 original prompts
 
 paper-style hook vs the paper's reported switch rates (full prompt set):
   L0H0: 0.016 (paper 0.016)

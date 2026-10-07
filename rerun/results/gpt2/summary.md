@@ -1,4 +1,4 @@
-baseline accuracy: 0.435 on 2500 prompts 0.840 on the 25 original prompts
+baseline accuracy: 0.435 on 2500 prompts, 0.840 on the 25 original prompts
 
 paper-style hook on the 25 original prompts vs paper Table 1:
   L6H1: 0.28 (paper 0.32)
