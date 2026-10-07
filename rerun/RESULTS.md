@@ -71,4 +71,76 @@ is the same in both and its effect grows from 0.17 to 0.48 with instruction tuni
 (L17H7, L17H8, L7H7, L10H5) join it with almost no change in LM loss. L22H6 and L17H7 are also in the Qwen EN-ES
 circuit found by activation patching in the circuit paper (16:9, 17:7, 22:6, 25:10, 27:6).
 
-Not rerun yet: BLOOM, the zh/ru GPT-2 table, multi-head ablation (Fig 1b), redistribution with a matched null.
+
+# GPT-2 multi-head ablation (fig 1b), 2026-10-07
+
+2,500 European prompts, true head ablation, heads added one at a time. Orders: by SR, by correct->wrong, by
+correct->wrong skipping heads with dNLL > 0.1 (this drops L0H7, L0H10 and the other layer-0 heads that raise LM loss
+a lot), and 3 random orders. Every step is in results/gpt2-multi*/summary.md. Baseline accuracy 0.435.
+
+| order | k=1 | k=3 | k=5 | k=10 | dNLL at k=10 |
+|---|---|---|---|---|---|
+| c->w, dNLL <= 0.1 | 0.229 (L6H10) | 0.226 | 0.274 | 0.308 | +0.49 |
+| c->w | 0.233 (L0H7) | 0.474 | 0.384 | 0.365 | +1.21 |
+| SR | 0.510 (L0H10) | 0.460 | 0.780 | 0.516 | +1.96 |
+| random, 3 orders | 0.30-0.35 | 0.29-0.55 | 0.30-0.54 | 0.35-0.45 | +0.16 to +1.36 |
+
+L6H10 alone takes accuracy from 0.435 to 0.229 with dNLL +0.016. That is the lowest of all 144 single-head ablations
+(mean 0.419). By language: es 0.47 -> 0.02, de 0.45 -> 0.07, it 0.20 -> 0.03, fr 0.07 -> 0.03, en 0.99 -> 0.99, and
+the flipped outputs are English. Adding more heads doesn't push accuracy lower: it stays at 0.23-0.31 up to k=10
+while dNLL climbs to +0.49. Ranking by SR raises accuracy (0.78 at k=5) since those heads mostly flip wrong to
+correct, with dNLL above +1. Single heads vary a lot (the first head of each random order already gives 0.30-0.35),
+so it's fairer to compare L6H10 with the other heads than with 0.435. It's still the lowest of the 144.
+
+The paper has L6H1 alone at 39.2% and the top 10 at 32.4% with monotonic degradation. Under true ablation the curve
+is not monotonic, and one head gets as low as the 10-head set does.
+
+The multi-head run also recomputes base and the k=1 condition of every order (L6H10, L0H7, L0H10, L8H2, L2H10, L1H2)
+in a separate process. The detected labels match results/gpt2 on all 2,500 prompts for each, and dNLL is within 0.001.
+
+figures/ has fig1_ablation_heatmap (SR per head, same layout as the paper's fig 1a), fig1_c2w_heatmap (correct->wrong,
+x marks dNLL > 0.1) and fig3_accuracy_curve (fig 1b, accuracy and dNLL). File names match the paper's figures/.
+
+# GPT-2 zh/ru, 2026-10-07
+
+100 prompts per language: the 5 hand-written ones plus 95 FLORES devtest sentences that pass the same 3-way vote as
+expand_dataset.py (none were dropped), prompts_extended.csv. Generation and detection as above. LM loss is still
+measured on the European dev sentences, so dNLL is the same as in the European table.
+
+Baseline accuracy: zh 0.16 (GPT-2 mostly continues Chinese prompts in English), ru 0.87; 0.80 on the 10
+hand-written prompts.
+
+Paper hook on the 10 hand-written prompts: L0H0 0.40 (paper 0.40), L4H5 0.30 (0.30), L4H2 0.20 (0.30),
+L0H1 / L0H7 / L1H10 0.20 (0.20), L6H1 / L0H4 / L3H1 / L9H9 0.0 (0.0). 9 of 10 match.
+
+True head ablation on 200 prompts: mean SR 0.146 (sd 0.095).
+- The European heads from the paper are not at zero: L6H1 0.090, L0H4 0.220, L3H1 0.130, L9H9 0.050. The paper's
+  zh/ru heads: L0H0 0.300 (rank 12), L4H5 0.065 (rank 124), L1H10 0.200 (rank 33).
+- The highest SR is at layer 0 (L0H10 0.545, L0H9 0.480, L0H5 0.475), almost all wrong to correct on zh. With these
+  heads ablated GPT-2 repeats Chinese characters from the prompt (e.g. 阶阶阶...) and langdetect calls it zh.
+  L0H10 also has dNLL +1.30.
+- Correct to wrong comes mostly from ru: L11H0 (ru c->w 0.47, dNLL +0.041), L9H8 (0.41, +0.072), L0H7 (0.35,
+  +0.78). The new outputs are mostly English.
+- The heads overlap with the European ones: Spearman over the 144 heads is 0.79 for SR and 0.64 for c->w, and 4 of
+  the top 10 c->w heads are shared (L0H7, L6H10, L4H8, L9H8). L11H0, L11H2 and L1H5 rank higher on zh/ru.
+
+So "the European heads have no effect on zh/ru and other heads in layers 0-4 take over" doesn't hold with the
+fixed hook.
+
+# BLOOM-1b7 (running)
+
+The first attempt had two problems.
+- fp16 with left padding gives NaN logits on some rows, and 2,257 of the 2,500 baseline generations came out empty.
+  Single-prompt fp16 and batched fp32 both give normal text, so BLOOM now runs in fp32. The Qwen runs don't have
+  this: the few empty Qwen base outputs are a real end-of-text on one prompt.
+- bloom_experiment.py (and section 3 of the paper) uses hidden 1024 / head dim 64, but bloom-1b7 has hidden 2048
+  with 16 heads of 128. So the original hook zeroed 64 dims of the self_attention output, which includes the
+  residual, at h*64, and its 16 "heads" only covered the first half of the hidden size. Paper mode keeps the 64-wide
+  slice to reproduce what was run; head mode uses 128.
+
+Paper hook, 25 hand-written prompts, every third layer, fp32 batched: baseline accuracy 0.88, mean SR 0.060
+(sd 0.039), max 0.24 at L15H5 (4.6 sd), 12 heads above 0.1. The paper has max 0.16, 2.60 sd, 4 heads above 0.1.
+This doesn't match yet; the fp16 single-prompt run, as in bloom_experiment.py, is queued after the 2,500-prompt
+head-mode run.
+
+Not rerun yet: redistribution with a matched null, mean vs zero ablation.

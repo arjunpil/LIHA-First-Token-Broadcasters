@@ -1,12 +1,12 @@
 baseline accuracy: 0.435 on 2500 prompts, 0.840 on the 25 original prompts
 
-paper-style hook on the 25 original prompts vs paper Table 1:
-  L6H1: 0.28 (paper 0.32)
-  L0H4: 0.24 (paper 0.28)
-  L3H1: 0.24 (paper 0.28)
-  L9H9: 0.24 (paper 0.28)
-  L7H3: 0.24 (paper 0.24)
-  population mean 0.128 (paper 0.163)
+paper-style hook vs the paper's reported switch rates (orig prompt set):
+  L6H1: 0.280 (paper 0.320)
+  L0H4: 0.240 (paper 0.280)
+  L3H1: 0.240 (paper 0.280)
+  L9H9: 0.240 (paper 0.280)
+  L7H3: 0.240 (paper 0.240)
+  population mean 0.128
 
 head hook, 2500 prompts: mean SR 0.111 (sd 0.082)
 | head | SR [95% CI] | correct→wrong | wrong→correct | acc | ΔNLL | ΔNLL same-layer mean |

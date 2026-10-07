@@ -9,13 +9,21 @@ slice at the input of the output projection instead (`c_proj`, `o_proj`, `dense`
 
 ## Run
 ```
-pip install torch transformers datasets langdetect
+pip install torch transformers datasets langdetect matplotlib
+pip install langid fasttext-wheel        # only for prompts.py --set extended
 python prompts.py                      # 2,500 European prompts, same rules as expand_dataset.py
 python sweep.py --model gpt2 --bs 500  # head and paper modes, all 144 heads
 python detect.py gpt2
 python analyze.py gpt2                 # out/gpt2/summary.md
 python sweep.py --model qwen-instruct --per-lang 25 --bs 125
 python sweep.py --model qwen-base --per-lang 25 --bs 125
+
+python prompts.py --set extended       # zh/ru, 100 each, prompts_extended.csv
+python sweep.py --model gpt2 --prompts prompts_extended.csv --per-lang 100 --bs 200 --out out/gpt2-zhru
+python multi.py run                    # fig 1b: cumulative ablation by SR, c->w and 3 random orders
+python multi.py run --orders c2w-lowloss --out out/gpt2-multi-lowloss/gens.jsonl
+python multi.py report                 # after detect.py gpt2-multi
+python figures.py                      # fig 1a / 1b from results/
 ```
 `--per-lang 25` matches the 125 prompts of qwen_experiment.py. `--layers` limits the sweep, e.g. `--layers 0,3,6,9,12,15,18,21`
 for the BLOOM layers sampled in bloom_experiment.py. `first_token_attn.py` computes each GPT-2 head's attention to the
@@ -28,7 +36,11 @@ next to the mean of the other heads in the same layer.
 
 Results so far are in RESULTS.md.
 
+BLOOM runs in fp32: in fp16, left padding gives NaN logits on some rows. Its paper mode keeps the 64-wide slice
+from bloom_experiment.py, which assumed hidden 1024; the model's head dim is 128.
+
 `results/<model>/` holds the outputs behind RESULTS.md: `summary.json` (per head and mode: switch rate with CI,
 correct to wrong, wrong to correct, accuracy on the full set and on the 25 hand-written prompts, LM loss change) and
 `labels.json` (the detected language of every generation, in the order of `prompts_european.csv`; Qwen uses its first
-25 prompts per language). Modes are `head` for the fixed hook and `paper` for the original one.
+25 prompts per language). Modes are `head` for the fixed hook and `paper` for the original one. `gpt2-zhru` follows
+`prompts_extended.csv`, and `gpt2-multi*` has one label list per order and step (`sr:k3` etc.).
