@@ -1,4 +1,4 @@
-﻿import argparse
+import argparse
 import csv
 import json
 import time
@@ -526,11 +526,17 @@ def main():
                     f"{elapsed:.1f}s elapsed"
                 )
 
+    prompt_path = Path(args.prompts).resolve()
+    try:
+        prompt_metadata = str(
+            prompt_path.relative_to(HERE.parent.resolve())
+        )
+    except ValueError:
+        prompt_metadata = prompt_path.name
+
     metadata = {
         "model": "gpt2",
-        "prompt_file": str(
-            Path(args.prompts).resolve()
-        ),
+        "prompt_file": prompt_metadata,
         "per_lang": args.per_lang,
         "n_prompts": len(prompts),
         "heads": [
