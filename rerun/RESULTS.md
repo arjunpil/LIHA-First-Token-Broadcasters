@@ -131,6 +131,23 @@ and the zero-ablation candidates that failed mean ablation (L2H5, L2H3) hurt at 
 
 This is the opposite of the paper's "no observed accuracy improvement" for 2-5x amplification.
 
+# L6H10 versions of the section 5 / appendix numbers, 2026-10-07
+
+attention.py, 500 prompts (100 per language), greedy, 40 steps. results/gpt2-attention has the attention and entropy
+figures (same file names as the paper's) and summary.md with a Table 6 replacement.
+- During generation L6H10 puts 0.73 of its attention on the first token, with entropy 1.39. That sits between the
+  paper's heads (L6H1 0.75 / 0.95, L9H9 0.78 / 0.94) and random heads (entropy 1.64-2.31). The other c->w heads go
+  from sink-like (L4H8, L8H6, about 0.61) to hardly looking at the first token (L2H5, L2H3, about 0.07), so
+  first-token attention doesn't pick them out. The old entropy figure used L2H5 and L4H8 as its random heads.
+- On non-English prompts L6H10 attends to the first token less when the output stays in the prompt language (0.60,
+  122 prompts) than when it goes to English (0.76, 278 prompts), the same direction as the paper's L6H1 numbers
+  (0.847 vs 0.923).
+- On the prompt itself its attention to the first token is 0.44-0.96 across query positions (5th-95th percentile);
+  the paper has 0.62-1.00 for L6H1.
+- Probing on all 2,500 prompts from the last prompt token: 0.37 from the embeddings, then 0.96-0.98 after every layer
+  from layer 0 on. The prompt language is linearly readable everywhere past the first layer, so probing can't point
+  to particular layers and the paper's 85% vs 58% comparison doesn't carry over.
+
 # L6H10 language identity pilot, 2026-10-07
 
 identity.py. L6H10's mean output per language over 200 FLORES dev sentences each. set:X replaces the head's output

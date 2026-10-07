@@ -28,6 +28,7 @@ python tables.py                       # TABLES.md, the paper tables from result
 python amplify.py run                  # scale single heads by 2/3/5 at the c_proj input
 python checks.py run gpt2-sampling     # also gpt2-truncated, qwen-format; then detect.py and checks.py report
 python identity.py run                 # L6H10 output replaced or shifted by language means
+python attention.py                    # L6H10 attention / entropy figures, table 6, probing
 python robustness.py --lid lid.176.bin  # other detectors and split halves on out/gpt2
 ```
 `--per-lang 25` matches the 125 prompts of qwen_experiment.py. `--layers` limits the sweep, e.g. `--layers 0,3,6,9,12,15,18,21`
