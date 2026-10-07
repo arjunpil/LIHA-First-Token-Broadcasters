@@ -1,0 +1,72 @@
+{
+  "primary_target": "L6H10",
+  "n_prompts": 2500,
+  "top_k": 5,
+  "n_permutations": 100000,
+  "primary_matched_null_tests": {
+    "last": {
+      "observed": 0.07469452917575836,
+      "p": 9.99990000099999e-06,
+      "null_mean": 0.0018167317867279053,
+      "null_p95": 0.0037266977597028017,
+      "null_p99": 0.004873164929449558,
+      "null_p999": 0.006231163162738085,
+      "exceedances": 0,
+      "p_bonferroni_2": 1.999980000199998e-05
+    },
+    "all": {
+      "observed": 0.013304625637829304,
+      "p": 9.99990000099999e-06,
+      "null_mean": 0.0004796368113160133,
+      "null_p95": 0.001239023171365261,
+      "null_p99": 0.0017252174438908696,
+      "null_p999": 0.002314196899533272,
+      "exceedances": 0,
+      "p_bonferroni_2": 1.999980000199998e-05
+    }
+  },
+  "causal_effect_correlations": {
+    "zero c2w vs LAST redistribution": {
+      "rho": 0.7005264683383462,
+      "permutation_p": 0.014439855601443986
+    },
+    "mean c2w vs LAST redistribution": {
+      "rho": 0.8091080709307898,
+      "permutation_p": 0.0024299757002429977
+    },
+    "zero c2w vs ALL redistribution": {
+      "rho": 0.2626974256268798,
+      "permutation_p": 0.4058459415405846
+    },
+    "mean c2w vs ALL redistribution": {
+      "rho": 0.5113843218869928,
+      "permutation_p": 0.09193908060919391
+    }
+  },
+  "matched_null_base_seed": 42,
+  "matched_null_metric_seeds": {
+    "last": 42,
+    "all": 43
+  },
+  "correlation_base_seed": 1000,
+  "correlation_seeds": {
+    "zero c2w vs LAST redistribution": 1000,
+    "mean c2w vs LAST redistribution": 1001,
+    "zero c2w vs ALL redistribution": 1002,
+    "mean c2w vs ALL redistribution": 1003
+  },
+  "layer_matched_comparison": {
+    "last": {
+      "rank": 1,
+      "n_heads": 12,
+      "empirical_p": 0.08333333333333333,
+      "target_value": 0.07469450682401657
+    },
+    "all": {
+      "rank": 4,
+      "n_heads": 12,
+      "empirical_p": 0.3333333333333333,
+      "target_value": 0.013304630294442177
+    }
+  }
+}
