@@ -24,6 +24,7 @@ python multi.py run                    # fig 1b: cumulative ablation by SR, c->w
 python multi.py run --orders c2w-lowloss --out out/gpt2-multi-lowloss/gens.jsonl
 python multi.py report                 # after detect.py gpt2-multi
 python figures.py                      # fig 1a / 1b from results/
+python tables.py                       # TABLES.md, the paper tables from results/
 ```
 `--per-lang 25` matches the 125 prompts of qwen_experiment.py. `--layers` limits the sweep, e.g. `--layers 0,3,6,9,12,15,18,21`
 for the BLOOM layers sampled in bloom_experiment.py. `first_token_attn.py` computes each GPT-2 head's attention to the

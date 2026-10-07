@@ -50,7 +50,8 @@ for instruct, langdetect seed 0. Batched generation matches single-prompt genera
 
 ## Reproduction with the paper's hook (o_proj output slice)
 Instruct: L0H5 0.224 (paper 0.224), L0H11 0.160 (0.144), L1H9 0.152 (0.136), L0H7 0.128 (0.120), L1H7 0.120 (0.112).
-Base: max SR 0.016 at L0H0 (paper 0.016 at L0H0). So the paper's Qwen numbers come from the o_proj-output hook.
+Base: L0H0 0.016 (paper 0.016, its max). Our max is L1H9 at 0.024, one prompt more; two of its three flips involve
+an empty output (prompt 83, a real end-of-text). So the paper's Qwen numbers come from the o_proj-output hook.
 
 ## True head ablation (o_proj input)
 Instruct, top heads by SR (all flips are correct to wrong):
@@ -143,4 +144,5 @@ Paper hook, 25 hand-written prompts, every third layer, fp32 batched: baseline a
 This doesn't match yet; the fp16 single-prompt run, as in bloom_experiment.py, is queued after the 2,500-prompt
 head-mode run.
 
-Not rerun yet: redistribution with a matched null, mean vs zero ablation.
+Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
+results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
