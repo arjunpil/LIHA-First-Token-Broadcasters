@@ -102,6 +102,14 @@ in a separate process. The detected labels match results/gpt2 on all 2,500 promp
 figures/ has fig1_ablation_heatmap (SR per head, same layout as the paper's fig 1a), fig1_c2w_heatmap (correct->wrong,
 x marks dNLL > 0.1) and fig3_accuracy_curve (fig 1b, accuracy and dNLL). File names match the paper's figures/.
 
+# Detector and prompt-split checks (GPT-2), 2026-10-07
+
+The head-hook generations relabeled with langid, fastText (lid.176) and a 2-of-3 vote give the same picture: c->w over
+the 144 heads correlates with the langdetect version at Spearman 0.994 or higher, L6H10 is the top c->w head among the
+dNLL <= 0.1 heads under every detector, and the top five are the same heads. Across 200 random half splits of the
+prompts (stratified by language), c->w per head correlates at 0.976 between halves (5th percentile 0.969) and L6H10 is
+first in both halves every time. results/gpt2/robustness.md, from robustness.py.
+
 # GPT-2 zh/ru, 2026-10-07
 
 100 prompts per language: the 5 hand-written ones plus 95 FLORES devtest sentences that pass the same 3-way vote as
