@@ -30,7 +30,8 @@ def rates(lab, head, exp, langs=None):
     b, a = lab["base"]["labels"], lab["head:" + head]["labels"]
     idx = [i for i, e in enumerate(exp) if langs is None or e in langs]
     return {"sr": mean(int(a[i] != b[i]) for i in idx),
-            "c2w": mean(int(same(b[i], exp[i]) and not same(a[i], exp[i])) for i in idx)}
+            "c2w": mean(int(same(b[i], exp[i]) and not same(a[i], exp[i])) for i in idx),
+            "c2other": mean(int(same(b[i], exp[i]) and not same(a[i], exp[i]) and a[i] != "unknown") for i in idx)}
 
 
 def ranked(t, key, max_dnll=float("inf")):
@@ -85,7 +86,7 @@ def table1(t):
 
 def table2():
     cols, rows, en_note = [], {k: [] for k in ("swept", "prompts", "max", "sigma", "n01", "n2sd", "layers", "c2w",
-                                               "c2w_low", "en")}, ""
+                                               "c2w_low", "c2other", "en")}, ""
     for key, name, per_lang in MODELS:
         t, lab = load(key)
         cols.append(name)
@@ -100,7 +101,8 @@ def table2():
         big = [h for h in sr if sr[h] > mu + 2 * sd]
         layers = sorted({int(h[1:].split("H")[0]) for h in big})
         c, cl = ranked(t, "c2w")[0], ranked(t, "c2w", 0.1)[0]
-        en = sorted(((rates(lab, h, exp, ["en"])["c2w"], h) for h in t), reverse=True)
+        en = sorted(((rates(lab, h, exp, ["en"])["c2other"], h) for h in t), reverse=True)
+        other = max((rates(lab, h, exp)["c2other"], h) for h in t)
         rows["swept"].append(str(len(t)))
         rows["prompts"].append(f"{len(exp):,}")
         rows["max"].append(f"{sr[top]:.3f} ({top})")
@@ -110,6 +112,7 @@ def table2():
         rows["layers"].append(", ".join(map(str, layers)) or "none")
         rows["c2w"].append(f"{c} {t[c]['full']['c2w']:.3f} / {t[c]['dnll']:+.3f}")
         rows["c2w_low"].append(f"{cl} {t[cl]['full']['c2w']:.3f} / {t[cl]['dnll']:+.3f}")
+        rows["c2other"].append(f"{other[1]} {other[0]:.3f} / {t[other[1]]['dnll']:+.3f}")
         rows["en"].append("none" if en[0][0] == 0 else f"{en[0][0]:.3f} ({en[0][1]})")
         n_en = exp.count("en")
         if key == "gpt2":
@@ -120,10 +123,13 @@ def table2():
     labels = {"swept": "Heads swept", "prompts": "Prompts", "max": "Max SR (head)", "sigma": "Top head σ",
               "n01": "# heads SR > 0.1", "n2sd": "# heads SR > mean + 2 sd", "layers": "Layers of those heads",
               "c2w": "Top c→w head (c→w / ΔNLL)", "c2w_low": "Top c→w head, ΔNLL ≤ 0.1",
-              "en": "English c→w, max over heads"}
+              "c2other": "Top head switching to another language",
+              "en": "English → another language, max over heads"}
     note = ("σ is (max − mean) / sd over heads, as in the paper. GPT-2 and BLOOM use the 2,500 prompts, Qwen the "
             "paper's 125, so SR > 0.1 counts aren't comparable across columns (GPT-2's mean SR is already about "
-            "0.11). The mean + 2 sd rows and the c→w rows are suggested replacements." + en_note)
+            "0.11). The mean + 2 sd rows and the c→w rows are suggested replacements. \"Switching to another language\" "
+            "counts c→w only when the new output is detected as some language, not empty or unknown; BLOOM's top c→w "
+            "head makes the model stop right away instead of switching." + en_note)
     return block("Table 2: cross-model comparison", note, ["Property"] + cols,
                  [[labels[k]] + v for k, v in rows.items()])
 

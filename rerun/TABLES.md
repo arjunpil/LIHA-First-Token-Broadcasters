@@ -29,50 +29,52 @@ Suggested replacement: heads that move correct outputs to the wrong language wit
 
 | Head | SR | 95% CI | c→w | w→c | ΔNLL | c→w, mean abl. |
 |---|---|---|---|---|---|---|
-| L6H10 | 0.250 | [0.234, 0.268] | 0.210 | 0.004 | +0.016 | 0.177 |
-| L2H5 | 0.298 | [0.281, 0.316] | 0.196 | 0.024 | +0.033 | 0.057 |
-| L4H8 | 0.235 | [0.219, 0.252] | 0.189 | 0.010 | +0.027 | 0.057 |
-| L2H3 | 0.282 | [0.265, 0.300] | 0.173 | 0.036 | +0.023 | 0.010 |
-| L8H6 | 0.212 | [0.198, 0.230] | 0.173 | 0.008 | +0.048 | 0.083 |
-| L6H1 | 0.038 | [0.031, 0.046] | 0.010 | 0.013 | +0.002 | 0.006 |
+| L6H10 | 0.250 | [0.234, 0.268] | 0.210 | 0.004 | +0.016 | – |
+| L2H5 | 0.298 | [0.281, 0.316] | 0.196 | 0.024 | +0.033 | – |
+| L4H8 | 0.235 | [0.219, 0.252] | 0.189 | 0.010 | +0.027 | – |
+| L2H3 | 0.282 | [0.265, 0.300] | 0.173 | 0.036 | +0.023 | – |
+| L8H6 | 0.212 | [0.198, 0.230] | 0.173 | 0.008 | +0.048 | – |
+| L6H1 | 0.038 | [0.031, 0.046] | 0.010 | 0.013 | +0.002 | – |
 
 ```latex
-L6H10 & 0.250 & {[0.234, 0.268]} & 0.210 & 0.004 & $+$0.016 & 0.177 \\
-L2H5 & 0.298 & {[0.281, 0.316]} & 0.196 & 0.024 & $+$0.033 & 0.057 \\
-L4H8 & 0.235 & {[0.219, 0.252]} & 0.189 & 0.010 & $+$0.027 & 0.057 \\
-L2H3 & 0.282 & {[0.265, 0.300]} & 0.173 & 0.036 & $+$0.023 & 0.010 \\
-L8H6 & 0.212 & {[0.198, 0.230]} & 0.173 & 0.008 & $+$0.048 & 0.083 \\
-L6H1 & 0.038 & {[0.031, 0.046]} & 0.010 & 0.013 & $+$0.002 & 0.006 \\
+L6H10 & 0.250 & {[0.234, 0.268]} & 0.210 & 0.004 & $+$0.016 & – \\
+L2H5 & 0.298 & {[0.281, 0.316]} & 0.196 & 0.024 & $+$0.033 & – \\
+L4H8 & 0.235 & {[0.219, 0.252]} & 0.189 & 0.010 & $+$0.027 & – \\
+L2H3 & 0.282 & {[0.265, 0.300]} & 0.173 & 0.036 & $+$0.023 & – \\
+L8H6 & 0.212 & {[0.198, 0.230]} & 0.173 & 0.008 & $+$0.048 & – \\
+L6H1 & 0.038 & {[0.031, 0.046]} & 0.010 & 0.013 & $+$0.002 & – \\
 ```
 
 ## Table 2: cross-model comparison
 
-σ is (max − mean) / sd over heads, as in the paper. GPT-2 and BLOOM use the 2,500 prompts, Qwen the paper's 125, so SR > 0.1 counts aren't comparable across columns (GPT-2's mean SR is already about 0.11). The mean + 2 sd rows and the c→w rows are suggested replacements. In GPT-2 only L0H10 flips English prompts, and its outputs degenerate (ΔNLL +1.30); the next head is at 0.010. In Qwen-1.5B Instruct that is 1 of 25 English prompts.
+σ is (max − mean) / sd over heads, as in the paper. GPT-2 and BLOOM use the 2,500 prompts, Qwen the paper's 125, so SR > 0.1 counts aren't comparable across columns (GPT-2's mean SR is already about 0.11). The mean + 2 sd rows and the c→w rows are suggested replacements. "Switching to another language" counts c→w only when the new output is detected as some language, not empty or unknown; BLOOM's top c→w head makes the model stop right away instead of switching. In GPT-2 only L0H10 flips English prompts, and its outputs degenerate (ΔNLL +1.30); the next head is at 0.010. In BLOOM-1b7 that is 1 of 500 English prompts. In Qwen-1.5B Instruct that is 1 of 25 English prompts.
 
 | Property | GPT-2 | BLOOM-1b7 | Qwen-1.5B Base | Qwen-1.5B Instruct |
 |---|---|---|---|---|
-| Heads swept | 144 | pending | 336 | 336 |
-| Prompts | 2,500 | pending | 125 | 125 |
-| Max SR (head) | 0.568 (L0H10) | pending | 0.168 (L22H6) | 0.480 (L22H6) |
-| Top head σ | 5.52 | pending | 14.92 | 10.56 |
-| # heads SR > 0.1 | 60 | pending | 1 | 16 |
-| # heads SR > mean + 2 sd | 7 | pending | 5 | 11 |
-| Layers of those heads | 0, 2, 5 | pending | 0, 15, 22 | 0, 1, 2, 7, 10, 17, 22 |
-| Top c→w head (c→w / ΔNLL) | L0H7 0.222 / +0.775 | pending | L22H6 0.160 / +0.216 | L22H6 0.480 / +0.228 |
-| Top c→w head, ΔNLL ≤ 0.1 | L6H10 0.210 / +0.016 | pending | L15H7 0.024 / +0.012 | L17H7 0.264 / +0.002 |
-| English c→w, max over heads | 0.170 (L0H10) | pending | none | 0.040 (L15H7) |
+| Heads swept | 144 | 384 | 336 | 336 |
+| Prompts | 2,500 | 2,500 | 125 | 125 |
+| Max SR (head) | 0.568 (L0H10) | 0.095 (L23H12) | 0.168 (L22H6) | 0.480 (L22H6) |
+| Top head σ | 5.52 | 9.66 | 14.92 | 10.56 |
+| # heads SR > 0.1 | 60 | 0 | 1 | 16 |
+| # heads SR > mean + 2 sd | 7 | 11 | 5 | 11 |
+| Layers of those heads | 0, 2, 5 | 8, 11, 14, 15, 17, 18, 19, 20, 21, 23 | 0, 15, 22 | 0, 1, 2, 7, 10, 17, 22 |
+| Top c→w head (c→w / ΔNLL) | L0H7 0.222 / +0.775 | L23H12 0.090 / +0.000 | L22H6 0.160 / +0.216 | L22H6 0.480 / +0.228 |
+| Top c→w head, ΔNLL ≤ 0.1 | L6H10 0.210 / +0.016 | L23H12 0.090 / +0.000 | L15H7 0.024 / +0.012 | L17H7 0.264 / +0.002 |
+| Top head switching to another language | L0H7 0.221 / +0.775 | L21H15 0.046 / +0.015 | L22H6 0.152 / +0.216 | L22H6 0.480 / +0.228 |
+| English → another language, max over heads | 0.124 (L0H10) | 0.002 (L16H6) | none | 0.040 (L15H7) |
 
 ```latex
-Heads swept & 144 & pending & 336 & 336 \\
-Prompts & 2,500 & pending & 125 & 125 \\
-Max SR (head) & 0.568 (L0H10) & pending & 0.168 (L22H6) & 0.480 (L22H6) \\
-Top head $\sigma$ & 5.52 & pending & 14.92 & 10.56 \\
-\# heads SR $>$ 0.1 & 60 & pending & 1 & 16 \\
-\# heads SR $>$ mean + 2 sd & 7 & pending & 5 & 11 \\
-Layers of those heads & 0, 2, 5 & pending & 0, 15, 22 & 0, 1, 2, 7, 10, 17, 22 \\
-Top c$\to$w head (c$\to$w / $\Delta$NLL) & L0H7 0.222 / +0.775 & pending & L22H6 0.160 / +0.216 & L22H6 0.480 / +0.228 \\
-Top c$\to$w head, $\Delta$NLL $\le$ 0.1 & L6H10 0.210 / +0.016 & pending & L15H7 0.024 / +0.012 & L17H7 0.264 / +0.002 \\
-English c$\to$w, max over heads & 0.170 (L0H10) & pending & none & 0.040 (L15H7) \\
+Heads swept & 144 & 384 & 336 & 336 \\
+Prompts & 2,500 & 2,500 & 125 & 125 \\
+Max SR (head) & 0.568 (L0H10) & 0.095 (L23H12) & 0.168 (L22H6) & 0.480 (L22H6) \\
+Top head $\sigma$ & 5.52 & 9.66 & 14.92 & 10.56 \\
+\# heads SR $>$ 0.1 & 60 & 0 & 1 & 16 \\
+\# heads SR $>$ mean + 2 sd & 7 & 11 & 5 & 11 \\
+Layers of those heads & 0, 2, 5 & 8, 11, 14, 15, 17, 18, 19, 20, 21, 23 & 0, 15, 22 & 0, 1, 2, 7, 10, 17, 22 \\
+Top c$\to$w head (c$\to$w / $\Delta$NLL) & L0H7 0.222 / +0.775 & L23H12 0.090 / +0.000 & L22H6 0.160 / +0.216 & L22H6 0.480 / +0.228 \\
+Top c$\to$w head, $\Delta$NLL $\le$ 0.1 & L6H10 0.210 / +0.016 & L23H12 0.090 / +0.000 & L15H7 0.024 / +0.012 & L17H7 0.264 / +0.002 \\
+Top head switching to another language & L0H7 0.221 / +0.775 & L21H15 0.046 / +0.015 & L22H6 0.152 / +0.216 & L22H6 0.480 / +0.228 \\
+English $\to$ another language, max over heads & 0.124 (L0H10) & 0.002 (L16H6) & none & 0.040 (L15H7) \\
 ```
 
 ## Table 3: all GPT-2 heads with switch rate > 0.15

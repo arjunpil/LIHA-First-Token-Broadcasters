@@ -108,6 +108,56 @@ in a separate process. The detected labels match results/gpt2 on all 2,500 promp
 figures/ has fig1_ablation_heatmap (SR per head, same layout as the paper's fig 1a), fig1_c2w_heatmap (correct->wrong,
 x marks dNLL > 0.1) and fig3_accuracy_curve (fig 1b, accuracy and dNLL). File names match the paper's figures/.
 
+# GPT-2 amplification, 2026-10-07
+
+Each head's slice at the c_proj input scaled by 2, 3 or 5 (amplify.py), one head at a time, 2,500 prompts. Heads: the
+top five by c->w with dNLL <= 0.1, the top five by SR (the paper's selection rule), and L6H1. Full table in
+results/gpt2-amp/summary.md.
+
+| head | x2 | x3 | x5 | dNLL at x5 |
+|---|---|---|---|---|
+| L6H10 | 0.660 | 0.775 | 0.870 | +0.041 |
+| L8H6 | 0.601 | 0.703 | 0.747 | +0.125 |
+| L2H5 | 0.502 | 0.385 | 0.226 | +0.686 |
+| L0H10 | 0.358 | 0.120 | 0.007 | +3.728 |
+| L6H1 | 0.426 | 0.421 | 0.413 | +0.016 |
+
+Baseline accuracy 0.435. Scaling L6H10 by 3 raises it to 0.775 with dNLL +0.006, and by 5 to 0.870: French goes from
+0.07 to 0.81, German 0.45 to 0.91, Spanish 0.47 to 0.89, Italian 0.20 to 0.74, English stays at 1.00. Each output
+follows its own prompt's language. The new correct outputs aren't prompt copies: the share of their 4-grams that
+appear in the prompt goes down (0.31 at baseline, 0.14 at x5), though they're somewhat more repetitive (0.48 to
+0.60), as GPT-2's non-English text already is. The paper's heads (L6H1, and the top-SR heads like L0H10) don't help,
+and the zero-ablation candidates that failed mean ablation (L2H5, L2H3) hurt at x5 with a large dNLL.
+
+So the paper's "amplifying individual heads by 2-5x produces no observed accuracy improvement" reverses for L6H10:
+removing it sends non-English outputs to English and scaling it keeps them in the prompt language.
+
+# Setting checks, 2026-10-07
+
+checks.py, each with the main heads plus three control heads drawn at random from the dNLL <= 0.1 heads outside the
+top ten by c->w. Tables in results/gpt2-sampling, results/gpt2-truncated and results/qwen-format.
+
+Sampling (GPT-2, temperature 0.7, three seeds, each condition compared with the same-seed baseline): L6H10's c->w is
+0.256-0.272 across seeds, higher than with greedy decoding (0.210); L4H8 0.17-0.19, L2H5 0.14-0.15, the controls
+0.01-0.09, L6H1 about 0.02.
+
+Truncated prompts (GPT-2, FLORES sentences cut to their first half, at least four words): the model now continues a
+sentence instead of starting a new one, and baseline non-English accuracy is 0.716 instead of 0.296. L6H10 only takes
+it to 0.644 (c->w 0.095), close to the control heads (0.02-0.08). So L6H10 matters when GPT-2 starts a new sentence
+after a complete one, which is the paper's FLORES setup, and much less mid-sentence, where the preceding words already
+fix the language.
+
+Qwen prompt format (125 prompts): instruct without the chat template and base with it.
+
+| L22H6 c->w | raw text | chat template |
+|---|---|---|
+| base | 0.160 | 0.144 |
+| instruct | 0.168 | 0.480 |
+
+With the same input format base and instruct are close; the instruct model leans on L22H6 much more only in the chat
+format it was tuned on. L17H7 follows the same pattern (0.264 for instruct with the template, 0.016-0.064 otherwise).
+So "tuning strengthens L22H6" should be stated for chat-formatted input.
+
 # Detector and prompt-split checks (GPT-2), 2026-10-07
 
 The head-hook generations relabeled with langid, fastText (lid.176) and a 2-of-3 vote give the same picture: c->w over
@@ -146,7 +196,7 @@ True head ablation on 200 prompts: mean SR 0.146 (sd 0.095).
 So "the European heads have no effect on zh/ru and other heads in layers 0-4 take over" doesn't hold with the
 fixed hook.
 
-# BLOOM-1b7 (running)
+# BLOOM-1b7, 2026-10-07
 
 The first attempt had two problems.
 - fp16 with left padding gives NaN logits on some rows, and 2,257 of the 2,500 baseline generations came out empty.
@@ -157,10 +207,23 @@ The first attempt had two problems.
   residual, at h*64, and its 16 "heads" only covered the first half of the hidden size. Paper mode keeps the 64-wide
   slice to reproduce what was run; head mode uses 128.
 
-Paper hook, 25 hand-written prompts, every third layer, fp32 batched: baseline accuracy 0.88, mean SR 0.060
-(sd 0.039), max 0.24 at L15H5 (4.6 sd), 12 heads above 0.1. The paper has max 0.16, 2.60 sd, 4 heads above 0.1.
-This doesn't match yet; the fp16 single-prompt run, as in bloom_experiment.py, is queued after the 2,500-prompt
-head-mode run.
+Paper hook on the 25 hand-written prompts, every third layer, run exactly as bloom_experiment.py does (fp16, one
+prompt at a time, 64-wide slice): baseline accuracy 0.88, max SR 0.20 at L9H14 (3.77 sd), 12 heads above 0.1. fp32
+batched gives max 0.24. The paper has max 0.16, 2.60 sd and 4 heads above 0.1, so unlike GPT-2 and Qwen the submitted
+BLOOM numbers don't reproduce even with the original settings.
+
+True head ablation, all 384 heads, 2,500 prompts, fp32: baseline accuracy 0.772 (en 0.87, fr 0.76, de 0.83, es 0.52,
+it 0.88). 482 of the 2,500 baseline outputs are empty, because BLOOM often ends the document right after a complete
+FLORES sentence, and those count as wrong. Mean SR 0.011 (sd 0.009), a tenth of GPT-2's.
+- The top c->w head, L23H12 (0.090, dNLL +0.000), doesn't switch language. With it removed BLOOM stops right away on
+  218 more prompts.
+- The heads that do switch language sit in layers 18-21 and act on single languages. L21H15 takes German from 0.834 to
+  0.634, mostly to English; L18H14 and L19H15 do the same on a smaller scale. Their LM loss change is on German
+  (+0.015 to +0.032) and Italian (+0.04 to +0.08) and near zero on the other languages. Italian outputs go to French
+  or Spanish more often than to English.
+- There is nothing like GPT-2's L6H10. The largest real switch rate from one head is 0.046 (L21H15).
+
+results/bloom and results/bloom-paper25-fp16.
 
 Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
