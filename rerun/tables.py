@@ -66,15 +66,20 @@ def head_rows(t, heads):
 
 def table1(t):
     header = ["Head", "SR", "95% CI", "c→w", "w→c", "ΔNLL"]
+    mean_path = R / "gpt2-mean-ablation" / "summary.json"
+    mean_t = json.load(open(mean_path))["table"] if mean_path.exists() else {}
     mu = mean(v["full"]["sr"] for v in t.values())
     out = block("Table 1a: top five GPT-2 heads by switch rate",
                 f"Same selection rule as the paper, 2,500 prompts. Population mean SR {mu:.3f}. Only L2H5 mostly flips "
                 "correct→wrong; the rest flip wrong→correct about as often or more, and L0H10 / L0H0 raise LM loss by "
                 "more than 1 nat.", header, head_rows(t, ranked(t, "sr")[:5]))
+    heads = ranked(t, "c2w", 0.1)[:5] + ["L6H1"]
+    rows = [r + [f3(mean_t[h]["c2w"]) if h in mean_t else "–"] for r, h in zip(head_rows(t, heads), heads)]
     out += block("Table 1b: top five GPT-2 heads by correct→wrong, ΔNLL ≤ 0.1",
                  "Suggested replacement: heads that move correct outputs to the wrong language without much LM loss "
-                 "change. L6H1, the paper's top head, for comparison.",
-                 header, head_rows(t, ranked(t, "c2w", 0.1)[:5] + ["L6H1"]))
+                 "change. L6H1, the paper's top head, for comparison. The last column is c→w under mean ablation "
+                 "(Chaewon, results/gpt2-mean-ablation): only L6H10 keeps most of its effect.",
+                 header + ["c→w, mean abl."], rows)
     return out
 
 

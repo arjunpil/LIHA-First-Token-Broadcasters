@@ -96,6 +96,12 @@ so it's fairer to compare L6H10 with the other heads than with 0.435. It's still
 The paper has L6H1 alone at 39.2% and the top 10 at 32.4% with monotonic degradation. Under true ablation the curve
 is not monotonic, and one head gets as low as the 10-head set does.
 
+Overall accuracy has a floor near 0.20, though: English prompts are a fifth of the set and stay English under every
+ablation here (0.99), so the paper's chance line at 0.20 is really that floor. On the non-English prompts alone,
+L6H10 takes accuracy from 0.296 to 0.038, i.e. it already removes almost every correct non-English continuation and
+there's little left for the other heads to remove. The rise after k=4 (0.09-0.14) is GPT-2 copying the prompt back,
+which langdetect counts as the right language. fig3_accuracy_curve plots the non-English accuracy.
+
 The multi-head run also recomputes base and the k=1 condition of every order (L6H10, L0H7, L0H10, L8H2, L2H10, L1H2)
 in a separate process. The detected labels match results/gpt2 on all 2,500 prompts for each, and dNLL is within 0.001.
 
@@ -109,6 +115,10 @@ the 144 heads correlates with the langdetect version at Spearman 0.994 or higher
 dNLL <= 0.1 heads under every detector, and the top five are the same heads. Across 200 random half splits of the
 prompts (stratified by language), c->w per head correlates at 0.976 between halves (5th percentile 0.969) and L6H10 is
 first in both halves every time. results/gpt2/robustness.md, from robustness.py.
+
+Of the five top c->w heads, only L6H10 holds up under Chaewon's mean ablation (PR #6): c->w 0.210 with zero ablation
+and 0.177 with mean ablation, while L2H5 and L4H8 drop to 0.057, L8H6 to 0.083 and L2H3 to 0.010. L6H10's LM loss
+change is also specific to non-English text: +0.001 on English and +0.011 to +0.029 on fr/de/es/it.
 
 # GPT-2 zh/ru, 2026-10-07
 
