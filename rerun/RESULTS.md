@@ -147,8 +147,10 @@ results/gpt2-identity/summary.md.
   -0.76 to -0.93), which point roughly together (0.33 to 0.71). French's offset is small (0.12) and leans toward
   English, in line with GPT-2 continuing French prompts in English 90% of the time.
 
-In this pilot L6H10 carries an English-versus-prompt-language signal, not which language the prompt is in. It uses
-language means; swapping outputs position by position between aligned sentences isn't done.
+At the level of its average output, L6H10 separates English from German, Spanish and Italian but doesn't steer
+between those three. That supports describing it as keeping the prompt language instead of falling back to English.
+It doesn't rule out language identity in the input-specific part of the output (the own-language mean already fails,
+so that part is what matters); swapping outputs position by position between aligned sentences would test that.
 
 # Setting checks, 2026-10-07
 
