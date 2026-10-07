@@ -131,6 +131,25 @@ and the zero-ablation candidates that failed mean ablation (L2H5, L2H3) hurt at 
 
 This is the opposite of the paper's "no observed accuracy improvement" for 2-5x amplification.
 
+# L6H10 language identity pilot, 2026-10-07
+
+identity.py. L6H10's mean output per language over 200 FLORES dev sentences each. set:X replaces the head's output
+with language X's mean at every position; add:X adds 3 x (X's mean minus the mean over the five languages). Table in
+results/gpt2-identity/summary.md.
+
+- Replacing with any language's mean acts like ablation: non-English outputs go to English (0.78-0.96), even with the
+  prompt's own language (German prompts with the German mean: 0.17 German, 0.80 English). The patched-in language
+  almost never shows up (0.01 or less).
+- Adding the English direction sends everything to English (0.93-0.97). Adding the German, Spanish or Italian
+  direction makes non-English prompts keep their own language more (German prompts 0.45 to 0.55-0.71, Spanish 0.47 to
+  0.55-0.65), but never switches them to the added language. The French direction does nothing.
+- The means line up the same way. The English offset (norm 0.68) points against German, Spanish and Italian (cosine
+  -0.76 to -0.93), which point roughly together (0.33 to 0.71). French's offset is small (0.12) and leans toward
+  English, in line with GPT-2 continuing French prompts in English 90% of the time.
+
+In this pilot L6H10 carries an English-versus-prompt-language signal, not which language the prompt is in. It uses
+language means; swapping outputs position by position between aligned sentences isn't done.
+
 # Setting checks, 2026-10-07
 
 checks.py, each with the main heads plus three control heads drawn at random from the dNLL <= 0.1 heads outside the
