@@ -14,12 +14,9 @@ MODELS = {
     "gpt2": ("gpt2", "float32"),
     "qwen-base": ("Qwen/Qwen2.5-1.5B", "float16"),
     "qwen-instruct": ("Qwen/Qwen2.5-1.5B-Instruct", "float16"),
-    "bloom": ("bigscience/bloom-1b7", "float32"),
+    "bloom": ("bigscience/bloom-1b7", "float32"),  # fp16 gives NaN on left-padded rows
 }
-# bloom in fp16 gives NaN logits on some left-padded rows, so it runs in fp32 here.
-# bloom_experiment.py assumed head dim 64 (hidden 1024); the model has 2048 / 16 = 128.
-# The paper hook keeps the original 64-wide slice so it reproduces what was run.
-PAPER_HEAD_DIM = {"bloom": 64}
+PAPER_HEAD_DIM = {"bloom": 64}  # bloom_experiment.py assumed hidden 1024
 
 
 def blocks(model, key):

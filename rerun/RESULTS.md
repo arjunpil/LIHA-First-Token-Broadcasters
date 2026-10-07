@@ -89,9 +89,8 @@ L6H10 alone takes accuracy from 0.435 to 0.229 with dNLL +0.016. That is the low
 (mean 0.419). By language: es 0.47 -> 0.02, de 0.45 -> 0.07, it 0.20 -> 0.03, fr 0.07 -> 0.03, en 0.99 -> 0.99, and
 the flipped outputs are English. Adding more heads doesn't push accuracy lower: it stays at 0.23-0.31 up to k=10
 while dNLL climbs to +0.49. Ranking by SR raises accuracy (0.78 at k=5) since those heads mostly flip wrong to
-correct, with dNLL above +1. Single heads vary a lot (the first head of each random order gives 0.30-0.35, and the
-mean over all 144 is 0.419), so L6H10 is better described by its place in that distribution than by the drop from
-0.435.
+correct, with dNLL above +1. Single heads vary a lot (the first head of each random order already gives 0.30-0.35),
+so it's fairer to compare L6H10 with the other heads than with 0.435. It's still the lowest of the 144.
 
 The paper has L6H1 alone at 39.2% and the top 10 at 32.4% with monotonic degradation. Under true ablation the curve
 is not monotonic, and one head gets as low as the 10-head set does.
