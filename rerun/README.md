@@ -27,3 +27,8 @@ rate with a bootstrap CI, switches split into correct to wrong and wrong to corr
 next to the mean of the other heads in the same layer.
 
 Results so far are in RESULTS.md.
+
+`results/<model>/` holds the outputs behind RESULTS.md: `summary.json` (per head and mode: switch rate with CI,
+correct to wrong, wrong to correct, accuracy on the full set and on the 25 hand-written prompts, LM loss change) and
+`labels.json` (the detected language of every generation, in the order of `prompts_european.csv`; Qwen uses its first
+25 prompts per language). Modes are `head` for the fixed hook and `paper` for the original one.
