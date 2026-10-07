@@ -1,5 +1,6 @@
 import argparse
 import csv
+import hashlib
 import json
 import time
 from contextlib import contextmanager
@@ -294,8 +295,96 @@ def main():
         args.per_lang,
     )
 
+    prompts_path = out_dir / "prompts.csv"
+    means_path = out_dir / "mean_activations.pt"
+    output_path = out_dir / "gens.jsonl"
+    signature_path = out_dir / "run_signature.json"
+
+    prompt_payload = json.dumps(
+        rows,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+
+    prompt_sha256 = hashlib.sha256(
+        prompt_payload
+    ).hexdigest()
+
+    run_signature = {
+        "model": "gpt2",
+        "prompt_sha256": prompt_sha256,
+        "per_lang": args.per_lang,
+        "n_prompts": len(rows),
+        "batch_size": args.bs,
+        "mean_batch_size": args.mean_bs,
+        "max_new_tokens": args.max_new_tokens,
+        "n_loss": args.n_loss,
+        "mean_definition": (
+            "clean global dataset mean at GPT-2 c_proj "
+            "input over valid prompt tokens"
+        ),
+    }
+
+    if args.resume:
+        cached_artifacts = [
+            candidate.name
+            for candidate in (
+                means_path,
+                output_path,
+            )
+            if candidate.exists()
+        ]
+
+        if (
+            cached_artifacts
+            and not signature_path.exists()
+        ):
+            raise RuntimeError(
+                "Refusing to resume cached outputs without "
+                "run_signature.json. Use a new --out directory."
+            )
+
+        if signature_path.exists():
+            previous = json.loads(
+                signature_path.read_text(
+                    encoding="utf-8"
+                )
+            )
+
+            mismatches = {
+                key: (
+                    previous.get(key),
+                    value,
+                )
+                for key, value
+                in run_signature.items()
+                if previous.get(key) != value
+            }
+
+            if mismatches:
+                details = "; ".join(
+                    f"{key}: cached={old!r}, "
+                    f"requested={new!r}"
+                    for key, (old, new)
+                    in mismatches.items()
+                )
+
+                raise RuntimeError(
+                    "Refusing to resume an incompatible run: "
+                    + details
+                )
+
+    signature_path.write_text(
+        json.dumps(
+            run_signature,
+            indent=2,
+        ) + "\n",
+        encoding="utf-8",
+    )
+
     with open(
-        out_dir / "prompts.csv",
+        prompts_path,
         "w",
         newline="",
         encoding="utf-8",
@@ -353,8 +442,6 @@ def main():
 
     prefix = tokenizer.bos_token or ""
 
-    means_path = out_dir / "mean_activations.pt"
-
     if "mean" in modes:
         if means_path.exists() and args.resume:
             payload = torch.load(
@@ -401,8 +488,6 @@ def main():
     else:
         means = None
         mean_token_count = None
-
-    output_path = out_dir / "gens.jsonl"
 
     completed = (
         existing_conditions(output_path)
@@ -537,6 +622,8 @@ def main():
     metadata = {
         "model": "gpt2",
         "prompt_file": prompt_metadata,
+        "prompt_sha256": prompt_sha256,
+        "run_signature_file": signature_path.name,
         "per_lang": args.per_lang,
         "n_prompts": len(prompts),
         "heads": [

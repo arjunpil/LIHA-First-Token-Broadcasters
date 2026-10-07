@@ -12,7 +12,7 @@ None of 100,000 matched permutations reached the observed value, giving the
 finite-permutation p-value 1/(100000+1) = 9.9999e-06
 (Bonferroni-corrected p = 1.99998e-05 across the two attention summaries).
 
-Matched-null permutations use seed 42; correlation permutations use seed 1000.
+Matched-null permutations use seeds 42 and 43 for the final-position and all-position tests, respectively. The four correlation permutation tests use seeds 1000--1003.
 
 Across the 12 layer-6 heads, final-prompt-position redistribution correlated
 with independently measured correct-to-wrong effects under corrected zero

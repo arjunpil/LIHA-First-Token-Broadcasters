@@ -43,6 +43,30 @@
       "permutation_p": 0.09193908060919391
     }
   },
-  "matched_null_seed": 42,
-  "correlation_seed": 1000
+  "matched_null_base_seed": 42,
+  "matched_null_metric_seeds": {
+    "last": 42,
+    "all": 43
+  },
+  "correlation_base_seed": 1000,
+  "correlation_seeds": {
+    "zero c2w vs LAST redistribution": 1000,
+    "mean c2w vs LAST redistribution": 1001,
+    "zero c2w vs ALL redistribution": 1002,
+    "mean c2w vs ALL redistribution": 1003
+  },
+  "layer_matched_comparison": {
+    "last": {
+      "rank": 1,
+      "n_heads": 12,
+      "empirical_p": 0.08333333333333333,
+      "target_value": 0.07469450682401657
+    },
+    "all": {
+      "rank": 4,
+      "n_heads": 12,
+      "empirical_p": 0.3333333333333333,
+      "target_value": 0.013304630294442177
+    }
+  }
 }

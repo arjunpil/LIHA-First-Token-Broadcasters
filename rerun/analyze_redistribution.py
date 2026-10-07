@@ -378,8 +378,16 @@ def main():
         "n_prompts": int(summary["n_prompts"]),
         "top_k": args.top_k,
         "n_permutations": args.n_perm,
-        "matched_null_seed": args.seed,
-        "correlation_seed": args.correlation_seed,
+        "matched_null_base_seed": args.seed,
+        "matched_null_metric_seeds": {
+            "last": args.seed,
+            "all": args.seed + 1,
+        },
+        "correlation_base_seed": args.correlation_seed,
+        "correlation_seeds": {
+            name: args.correlation_seed + index
+            for index, (name, _, _) in enumerate(relationships)
+        },
         "primary_matched_null_tests": primary_tests,
         "layer_matched_comparison": layer_matched,
         "causal_effect_correlations": correlation_results,
