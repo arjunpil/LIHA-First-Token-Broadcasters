@@ -140,8 +140,7 @@ probing \citep{alain2016, tenney2019} provides convergent evidence
 \citep{zou2023, li2023} motivates our amplification experiments
 (\S\ref{sec:multi}).
 
-\section{Experimental Setup}
-\label{sec:setup}
+\section{Experimental Setup}\label{sec:setup}
 
 \paragraph{Models and implementation.} GPT-2 small \citep{radford2019}
 has 12 layers, 12 heads, and 144 total heads. Qwen2.5-1.5B
@@ -161,8 +160,8 @@ decoding.
 
 
 \paragraph{Dataset.} We construct a multilingual evaluation set drawn from
-FLORES-200 \cite{nllbteam2022noLanguageLeftBehind}, spanning five European
-languages (English, French, German, Spanish, Italian; 500 sentences each for GPT-2 and 25 sentences per language for Qwen. Chinese
+FLORES-200~\cite{nllbteam2022noLanguageLeftBehind}, spanning five European
+languages (English, French, German, Spanish, Italian; 500 sentences each for GPT-2 and 25 sentences per language for Qwen). Chinese
 and Russian use 100 sentences each in the extended experiments. The 125 Qwen prompts are a subset
 of the 2,500 European-language prompts rather than additional prompts.
 Prompts are filtered for quality and verified via 3-way majority vote
@@ -178,8 +177,7 @@ $\mathcal{X}=\{x_1,\ldots,x_n\}$ is:
 \begin{equation}
     S(h_{l,i}) = \frac{1}{n} \sum_{j=1}^{n}
     \mathbf{1}\!\left[\mathcal{L}(\mathcal{M}^{-h_{l,i}}(x_j)) \neq
-    \mathcal{L}(\mathcal{M}(x_j))\right]
-    \label{eq:switch_rate}
+    \mathcal{L}(\mathcal{M}(x_j))\right]\label{eq:switch_rate}
 \end{equation}
 A head with high $S(h_{l,i})$ has greater causal influence on detected
 output-language changes under this intervention. This measure does not imply
@@ -208,8 +206,7 @@ set \texttt{DetectorFactory.seed=0} to make \texttt{langdetect} deterministic.
 The accompanying repository provides the code, dependency specification, and
 experiment scripts required to reproduce the reported results.
 
-\section{Results: Single-Head Ablation and Distributed Robustness (GPT-2)}
-\label{sec:ablation}
+\section{Results: Single-Head Ablation and Distributed Robustness (GPT-2)}\label{sec:ablation}
 
 Figure~\ref{fig:gpt2_ablation} shows the
 language switch rate across all 144 GPT-2 heads, sparse with elevated
@@ -226,8 +223,7 @@ Appendix~\ref{app:perlang}).
 
 \begin{table}[t]
 \caption{\textbf{Top five GPT-2 heads by switch rate} with 95\%
-bootstrap CIs (500 prompts per language).}
-\label{tab:top_heads}
+bootstrap CIs (500 prompts per language).}\label{tab:top_heads}
 \centering\small
 \begin{tabular}{lcc}
 \toprule
@@ -263,11 +259,8 @@ Population mean & 0.163 & -- \\
     multi-head ablation (2,500-prompt evaluation, 95\% bootstrap CIs).
     Monotonic gradual degradation---without reaching chance in the tested
     sequence---is consistent with redundant or distributed encoding. Dotted line:
-    chance (0.20).}
-    \label{fig:gpt2_ablation}
-\end{figure*}
-
-\label{sec:multi}
+    chance (0.20).}\label{fig:gpt2_ablation}
+\end{figure*}\label{sec:multi}
 Figure~\ref{fig:gpt2_ablation}(b) shows
 accuracy under progressive multi-head ablation on the full 2,500-prompt
 European set. Baseline accuracy is 43.5\%~[0.416, 0.454]. Ablating L6H1
@@ -292,8 +285,7 @@ experiment; this result is motivated by prior inference-time representation
 interventions, but does not directly test the intervention proposed in
 \citet{li2023}.
 
-\section{Results: First-Token Broadcasting and Probing}
-\label{sec:attention}
+\section{Results: First-Token Broadcasting and Probing}\label{sec:attention}
 
 Figure~\ref{fig:attn_comparison} (Appendix~\ref{app:attention_patterns}) shows
 L6H1's attention on correct and confused prompts: every query position
@@ -305,9 +297,7 @@ prompts show \emph{higher} first-token attention in L6H1 (0.923 vs.\
 0.847 on correct prompts): confusion does not simply coincide with loss of first-token access,
 suggesting that downstream processing may determine the effective use of this
 information. A descriptive taxonomy of heads (broadcaster vs.\ distributed) is given in
-Appendix~\ref{app:taxonomy}.
-
-\label{sec:probing}
+Appendix~\ref{app:taxonomy}.\label{sec:probing}
 In GPT-2, probing accuracy rises from 36\% at the embedding layer to
 96\% at layers~10--11; in BLOOM, it reaches 100\% at layers~18--24.
 Layers containing top causal heads show substantially higher probing
@@ -316,8 +306,7 @@ layers all above 92\%), providing convergent evidence that language information 
 layers containing larger causal effects, although probing alone does not
 establish that the probed feature is causally responsible.
 
-\section{Results: Training Regime and Language-Family Specificity}
-\label{sec:qwen}
+\section{Results: Training Regime and Language-Family Specificity}\label{sec:qwen}
 
 We apply LIHA to Qwen2.5-1.5B-Base and Qwen2.5-1.5B-Instruct---matched
 in architecture and parameter count, with the same GQA configuration but
@@ -345,8 +334,7 @@ establish instruction tuning as the causal ingredient.
 
 \begin{table*}[t]
 \caption{\textbf{Cross-model comparison of language identity
-organization.}}
-\label{tab:crossmodel}
+organization.}}\label{tab:crossmodel}
 \centering\small
 \begin{tabular}{lcccc}
 \toprule
@@ -363,9 +351,7 @@ English switch events & none & none & none & none \\
 \smallskip
 
 {\footnotesize $^{\dagger}$Every 3rd layer sampled; 128 of 384 heads.}
-\end{table*}
-
-\label{sec:extended}
+\end{table*}\label{sec:extended}
 Extending to Chinese (zh) and Russian (ru), the top European heads
 (L6H1, L0H4, L3H1, L9H9; switch rates 0.28--0.32) produce SR$=$0.0 on
 both---the European-language broadcaster heads show no observed switch effects on
@@ -378,8 +364,7 @@ head, retains a non-trivial switch rate on both Chinese and Russian
 suggesting that some distributed heads may have broader cross-lingual effects
 than the localized heads in this experiment.
 
-\section{Discussion}
-\label{sec:discussion}
+\section{Discussion}\label{sec:discussion}
 
 \paragraph{A training-regime hypothesis.} Pretrained-only GPT-2 distributes
 the language signal across 10+ middle-layer heads, while BLOOM shows similarly
@@ -425,8 +410,7 @@ These observations are consistent with language-related computation being
 implemented by partially distributed, model-dependent circuits rather than a
 single universal head-level mechanism.
 
-\section{Limitations}
-\label{sec:limitations}
+\section{Limitations}\label{sec:limitations}
 
 GPT-2 switch rates use 500 prompts per European language; Qwen uses
 125, useful for the base-vs.-instruct comparison but with a minimum
@@ -476,15 +460,12 @@ Omitted for anonymous review.
 
 \appendix
 
-\section{GPT-2 Ablation, Redundancy, and Compensation}
-\label{app:gpt2}
+\section{GPT-2 Ablation, Redundancy, and Compensation}\label{app:gpt2}
 
-\subsection{Full GPT-2 Ablation Sweep}
-\label{app:full_sweep}
+\subsection{Full GPT-2 Ablation Sweep}\label{app:full_sweep}
 
 \begin{table}[H]
-\caption{All GPT-2 heads with switch rate $> 0.15$.}
-\label{tab:full_sweep}
+\caption{All GPT-2 heads with switch rate $> 0.15$.}\label{tab:full_sweep}
 \centering\small
 \begin{tabular}{lcc}
 \toprule
@@ -509,16 +490,14 @@ L4H11  & 0.20 & $+$0.00 \\
 \end{tabular}
 \end{table}
 
-\subsection{Attention Redistribution Following Ablation}
-\label{app:compensation}
+\subsection{Attention Redistribution Following Ablation}\label{app:compensation}
 
 \begin{table}[H]
 \caption{\textbf{Heads with the largest increases in first-token attention
 when L6H1 is ablated.} These heads show positive attention deltas; the set
 clusters in layers 7--9, above the ablated layer~6 ($p{=}0.002$). Because many
 heads are tested and the displayed heads are selected by effect size, we do
-not interpret the uncorrected per-head $p$-values as confirmatory evidence.}
-\label{tab:compensatory}
+not interpret the uncorrected per-head $p$-values as confirmatory evidence.}\label{tab:compensatory}
 \centering\small
 \begin{tabular}{lrrrr}
 \toprule
@@ -533,17 +512,15 @@ L7H6  & 0.702 & 0.705 & $+$0.003 & $2.10^{*}$  \\
 \end{tabular}
 \smallskip
 
-{\footnotesize $^{**}p{<}0.01$;\enspace$^{*}p{<}0.05$;\enspace permutation test, $n{=}100{,}000$.}
+{\footnotesize $^{**}p{<}0.01$;\enspace$^{*}p{<}0.05$;\enspace{}permutation test, $n{=}100{,}000$.}
 \end{table}
 
-\subsection{Per-Language Switch Rates}
-\label{app:perlang}
+\subsection{Per-Language Switch Rates}\label{app:perlang}
 
 \begin{table}[H]
 \caption{Per-language switch rates for the top five GPT-2 heads from
 Table~\ref{tab:top_heads}, computed on the 5 hand-written
-sentence-starter prompts per language (\S\ref{sec:setup}).}
-\label{tab:per_language_app}
+sentence-starter prompts per language (\S\ref{sec:setup}).}\label{tab:per_language_app}
 \centering\small
 \begin{tabular}{lccccc}
 \toprule
@@ -564,39 +541,32 @@ switch rates over the full 500-prompt set reported in
 Table~\ref{tab:top_heads}.}
 \end{table}
 
-\section{First-Token Broadcasting Diagnostics}
-\label{app:broadcasting}
+\section{First-Token Broadcasting Diagnostics}\label{app:broadcasting}
 
-\subsection{Attention Patterns on Correct and Confused Prompts}
-\label{app:attention_patterns}
+\subsection{Attention Patterns on Correct and Confused Prompts}\label{app:attention_patterns}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.55\columnwidth]{figures/fig_attention_comparison.pdf}
     \caption{\textbf{L6H1 attention on a correct French prompt (left)
     and confused Italian prompt (right).} First-token focus is consistent
-    in both cases; confusion arises downstream.}
-    \label{fig:attn_comparison}
+    in both cases; confusion arises downstream.}\label{fig:attn_comparison}
 \end{figure}
 
-\subsection{Entropy Over Generation Time}
-\label{app:entropy}
+\subsection{Entropy Over Generation Time}\label{app:entropy}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{figures/fig_entropy_over_time.pdf}
     \caption{\textbf{Attention entropy over generation steps.}
     Broadcaster heads (solid) maintain lower entropy (mean 1.11) than
-    random heads (dashed, mean 1.34) across all 40 steps.}
-    \label{fig:entropy}
+    random heads (dashed, mean 1.34) across all 40 steps.}\label{fig:entropy}
 \end{figure}
 
-\subsection{Functional Taxonomy of Language-Critical Heads}
-\label{app:taxonomy}
+\subsection{Functional Taxonomy of Language-Critical Heads}\label{app:taxonomy}
 
 \begin{table}[H]
-\caption{\textbf{Descriptive taxonomy of top language-critical heads.}}
-\label{tab:taxonomy}
+\caption{\textbf{Descriptive taxonomy of top language-critical heads.}}\label{tab:taxonomy}
 \centering\small
 \begin{tabular}{llcc}
 \toprule
@@ -610,16 +580,13 @@ L1H10 & Distributed & 0.112 & 2.013 \\
 \end{tabular}
 \end{table}
 
-\section{Training-Regime and Language-Family Specificity}
-\label{app:language_family}
+\section{Training-Regime and Language-Family Specificity}\label{app:language_family}
 
-\subsection{Top Qwen2.5-1.5B-Instruct Heads}
-\label{app:qwen_top}
+\subsection{Top Qwen2.5-1.5B-Instruct Heads}\label{app:qwen_top}
 
 \begin{table}[H]
 \caption{\textbf{Top five Qwen2.5-1.5B-Instruct heads} by switch rate
-(125 prompts, 95\% bootstrap CIs). No language-switch events were observed for English under the tested single-head ablations.}
-\label{tab:qwen_top}
+(125 prompts, 95\% bootstrap CIs). No language-switch events were observed for English under the tested single-head ablations.}\label{tab:qwen_top}
 \centering\small
 \begin{tabular}{lccc}
 \toprule
@@ -636,16 +603,14 @@ Population mean & 0.026 & -- & -- \\
 \end{tabular}
 \end{table}
 
-\subsection{European vs. Chinese/Russian Head Specificity}
-\label{app:extended_table}
+\subsection{European vs. Chinese/Russian Head Specificity}\label{app:extended_table}
 
 \begin{table}[H]
 \caption{\textbf{European-language versus Chinese/Russian head effects.}
 Left: top European-language heads show no observed switch events on the tested
 Chinese/Russian prompts. Right: other heads show nonzero switch rates,
 concentrated in layers 0--4. These small-sample results are descriptive and
-do not isolate script from typology or tokenization.}
-\label{tab:extended}
+do not isolate script from typology or tokenization.}\label{tab:extended}
 \centering\tiny
 \begin{tabular}{lccc|lccc}
 \toprule
@@ -665,14 +630,12 @@ L1H10 & 0.24 & 0.20 & 0.20 & L0H7 & 0.20 & 0.20 & 0.20 \\
 across the Chinese and Russian prompt sets combined.}
 \end{table}
 
-\subsection{Extended Language Prompts}
-\label{app:prompts}
+\subsection{Extended Language Prompts}\label{app:prompts}
 
 \begin{table}[H]
 \caption{Chinese and Russian prompts used in the extended language
 experiments. Russian is shown in transliteration; Cyrillic originals
-are in \texttt{data/prompts\_ru.csv}.}
-\label{tab:extended_prompts}
+are in \texttt{data/prompts\_ru.csv}.}\label{tab:extended_prompts}
 \centering\small
 \begin{tabular}{lp{5.5cm}}
 \toprule
@@ -693,8 +656,7 @@ ru & \textit{Odnazhdy zhil-byl} \\
 \end{tabular}
 \end{table}
 
-\section{Statistical Test Details}
-\label{app:bootstrap}
+\section{Statistical Test Details}\label{app:bootstrap}
 
 Switch rate CIs use 10,000 bootstrap samples (resampling with
 replacement, 2.5th/97.5th percentiles). Attention redistribution following ablation
@@ -704,8 +666,7 @@ random draws of size 5 from the full 143-head delta population.
 Layer-clustering tests compare observed layer entropy of the five largest
 attention-increase heads against the entropy from 100,000 random 5-head draws.
 
-\section{Mean-Ablation Methodological Check}
-\label{app:limitations}
+\section{Mean-Ablation Methodological Check}\label{app:limitations}
 
 We additionally attempted mean ablation---replacing each head's output
 with its mean activation across the dataset---as a methodological
