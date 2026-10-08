@@ -13,16 +13,16 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--redistribution-dir",
-        default="rerun/out/gpt2_redistribution",
+        default="out/gpt2_redistribution",
         help="Directory produced by redistribution_validation.py.",
     )
     parser.add_argument(
         "--zero-summary",
-        default="rerun/results/gpt2/summary.json",
+        default="results/gpt2/summary.json",
     )
     parser.add_argument(
         "--mean-summary",
-        default="rerun/results/gpt2-mean-ablation/summary.json",
+        default="results/gpt2-mean-ablation/summary.json",
     )
     parser.add_argument("--target", default="L6H10")
     parser.add_argument("--top-k", type=int, default=5)
@@ -41,7 +41,7 @@ def parse_args():
     )
     parser.add_argument(
         "--out",
-        default="rerun/results/gpt2-redistribution/matched_null_statistics.json",
+        default="results/gpt2-redistribution/matched_null_statistics.json",
     )
     return parser.parse_args()
 

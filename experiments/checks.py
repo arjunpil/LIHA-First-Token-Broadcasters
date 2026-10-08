@@ -90,7 +90,7 @@ def write_prompts(out, rows):
 def run(a):
     out = Path(a.out or f"out/{a.check}")
     if a.check in ("gpt2-sampling", "gpt2-truncated"):
-        rows = rows_for("prompts_european.csv", a.per_lang)
+        rows = rows_for("prompts/prompts_european.csv", a.per_lang)
         if a.check == "gpt2-truncated":
             rows = truncate(rows)
         write_prompts(out, rows)
@@ -113,7 +113,7 @@ def run(a):
                         f.flush()
                         print(seed, cond, flush=True)
     else:
-        rows = rows_for("prompts_european.csv", a.per_lang or 25)
+        rows = rows_for("prompts/prompts_european.csv", a.per_lang or 25)
         write_prompts(out, rows)
         heads = QWEN_HEADS + controls("results/qwen-instruct/summary.json", QWEN_HEADS)
         template = AutoTokenizer.from_pretrained(MODELS["qwen-instruct"][0])

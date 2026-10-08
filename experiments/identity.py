@@ -10,8 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from analyze import same
 from multi import parse
-from prompts import flores
-from sweep import MODELS, blocks, generate
+from sweep import MODELS, blocks, flores, generate
 
 LANGS = ["en", "fr", "de", "es", "it"]
 
@@ -116,7 +115,7 @@ def report(a):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("step", choices=["run", "report"])
-    p.add_argument("--prompts", default="prompts_european.csv")
+    p.add_argument("--prompts", default="prompts/prompts_european.csv")
     p.add_argument("--head", default="L6H10")
     p.add_argument("--n-mean", type=int, default=200)
     p.add_argument("--scale", type=float, default=3.0)

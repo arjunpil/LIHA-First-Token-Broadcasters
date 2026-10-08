@@ -1,6 +1,7 @@
 import argparse
 import csv
 import os
+from pathlib import Path
 from collections import Counter
 from urllib.request import urlretrieve
 
@@ -82,7 +83,7 @@ def main():
         if lang == "ru":
             extra = [x for x in extra if majority(x, ft) == "ru"]
         rows += [(x, lang, "flores200") for x in extra]
-    with open(a.out or f"prompts_{a.set}.csv", "w", newline="", encoding="utf-8") as f:
+    with open(a.out or Path(__file__).parent / f"prompts_{a.set}.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["prompt", "language", "source"])
         w.writerows(rows)

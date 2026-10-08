@@ -10,8 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from analyze import ci, same, stats
 from multi import parse, ranked
-from prompts import flores
-from sweep import MODELS, blocks, generate, nll
+from sweep import MODELS, blocks, flores, generate, nll
 
 
 @contextmanager
@@ -86,7 +85,7 @@ def report(a):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("step", choices=["run", "report"])
-    p.add_argument("--prompts", default="prompts_european.csv")
+    p.add_argument("--prompts", default="prompts/prompts_european.csv")
     p.add_argument("--summary", default="results/gpt2/summary.json")
     p.add_argument("--top", type=int, default=5, help="top heads by c2w (dNLL <= 0.1) and by SR")
     p.add_argument("--extra", default="L6H1")

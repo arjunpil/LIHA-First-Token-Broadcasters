@@ -15,17 +15,17 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--mean-dir",
-        default="rerun/out/gpt2_mean_zero",
+        default="out/gpt2_mean_zero",
         help="Directory containing gens.jsonl and prompts.csv from mean_vs_zero.py.",
     )
     parser.add_argument(
         "--zero-summary",
-        default="rerun/results/gpt2/summary.json",
-        help="Corrected zero-ablation summary produced by rerun/analyze.py.",
+        default="results/gpt2/summary.json",
+        help="Corrected zero-ablation summary produced by experiments/analyze.py.",
     )
     parser.add_argument(
         "--out-dir",
-        default="rerun/results/gpt2-mean-ablation",
+        default="results/gpt2-mean-ablation",
     )
     return parser.parse_args()
 

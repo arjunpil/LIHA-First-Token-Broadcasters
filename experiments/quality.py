@@ -30,7 +30,7 @@ def kind(prompt, text):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("runs", nargs="+", help="name,gens.jsonl,labels.json,head")
-    p.add_argument("--prompts", default="prompts_european.csv")
+    p.add_argument("--prompts", default="prompts/prompts_european.csv")
     p.add_argument("--out", default="results/quality.md")
     a = p.parse_args()
     rows = list(csv.DictReader(open(a.prompts, encoding="utf-8")))

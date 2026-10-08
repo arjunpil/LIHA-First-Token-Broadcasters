@@ -9,8 +9,7 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from prompts import flores
-from sweep import ablated, blocks, generate, nll
+from sweep import ablated, blocks, flores, generate, nll
 
 
 LANGS = ("en", "fr", "de", "es", "it")
@@ -210,7 +209,7 @@ def main():
 
     parser.add_argument(
         "--prompts",
-        default=str(HERE / "prompts_european.csv"),
+        default=str(HERE.parent / "prompts" / "prompts_european.csv"),
     )
 
     parser.add_argument(
@@ -260,7 +259,7 @@ def main():
 
     parser.add_argument(
         "--out",
-        default=str(HERE / "out" / "gpt2_mean_zero"),
+        default=str(HERE.parent / "out" / "gpt2_mean_zero"),
     )
 
     parser.add_argument(

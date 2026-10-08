@@ -43,7 +43,7 @@ def main():
     p.add_argument("--gens", default="out/gpt2/gens.jsonl")
     p.add_argument("--labels", default="results/gpt2/labels.json")
     p.add_argument("--summary", default="results/gpt2/summary.json")
-    p.add_argument("--prompts", default="prompts_european.csv")
+    p.add_argument("--prompts", default="prompts/prompts_european.csv")
     p.add_argument("--head", default="L6H10")
     p.add_argument("--encoder", default="Qwen/Qwen3-Embedding-0.6B")
     p.add_argument("--out", default=None)

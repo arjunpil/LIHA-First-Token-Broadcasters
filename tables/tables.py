@@ -1,9 +1,11 @@
 import csv
 import json
+import sys
 from pathlib import Path
 from statistics import mean, stdev
 
-from analyze import same
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments"))
+from analyze import same  # noqa: E402
 
 R = Path("results")
 EU = ["en", "fr", "de", "es", "it"]
@@ -95,7 +97,7 @@ def table2():
             for k in rows:
                 rows[k].append("pending")
             continue
-        exp = languages("prompts_european.csv", per_lang)
+        exp = languages("prompts/prompts_european.csv", per_lang)
         sr = {h: v["full"]["sr"] for h, v in t.items()}
         mu, sd = mean(sr.values()), stdev(sr.values())
         top = max(sr, key=sr.get)
@@ -138,7 +140,7 @@ def table2():
 
 
 def table3(t, lab):
-    exp = languages("prompts_european.csv")
+    exp = languages("prompts/prompts_european.csv")
     base_acc = mean(int(same(b, e)) for b, e in zip(lab["base"]["labels"], exp))
     heads = [h for h in ranked(t, "sr") if t[h]["full"]["sr"] > 0.15]
     rows = [[h, f3(t[h]["full"]["sr"]), signed(t[h]["full"]["acc"] - base_acc), f3(t[h]["full"]["c2w"]),
@@ -149,7 +151,7 @@ def table3(t, lab):
 
 
 def table5(t, lab):
-    exp = languages("prompts_european.csv")
+    exp = languages("prompts/prompts_european.csv")
     heads = ranked(t, "c2w", 0.1)[:5] + ["L6H1"]
     rows = [[h] + [f"{rates(lab, h, exp, [l])['sr']:.2f}" for l in EU] for h in heads]
     base = lab["base"]["labels"]
@@ -177,7 +179,7 @@ def table7():
 
 def table8(t_eu):
     t, lab = load("gpt2-zhru")
-    exp = languages("prompts_extended.csv")
+    exp = languages("prompts/prompts_extended.csv")
     left = ["L6H1", "L0H4", "L3H1", "L9H9", "L1H10"]
     rows = [[h, f"{t_eu[h]['full']['sr']:.2f}", f"{rates(lab, h, exp, ['zh'])['sr']:.2f}",
              f"{rates(lab, h, exp, ['ru'])['sr']:.2f}"] for h in left]
@@ -202,7 +204,7 @@ def main():
              "c→w and w→c are correct→wrong and wrong→correct switch rates; ΔNLL is the LM loss change on FLORES dev.",
              ""]
     lines += table1(t) + table2() + table3(t, lab) + table5(t, lab) + table7() + table8(t)
-    Path("TABLES.md").write_text("\n".join(lines))
+    Path("tables/README.md").write_text("\n".join(lines))
     print("\n".join(lines))
 
 
