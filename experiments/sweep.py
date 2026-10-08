@@ -1,6 +1,7 @@
 import argparse
 import csv
 import json
+import sys
 import time
 from contextlib import contextmanager
 from pathlib import Path
@@ -8,7 +9,8 @@ from pathlib import Path
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from prompts import flores
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "prompts"))
+from prompts import flores  # noqa: E402
 
 MODELS = {
     "gpt2": ("gpt2", "float32"),
@@ -88,7 +90,7 @@ def nll(model, tok, sents, prefix, bs=64):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--model", required=True, choices=list(MODELS))
-    p.add_argument("--prompts", default="prompts_european.csv")
+    p.add_argument("--prompts", default="prompts/prompts_european.csv")
     p.add_argument("--per-lang", type=int, default=500)
     p.add_argument("--modes", default="head,paper")
     p.add_argument("--layers", default=None, help="comma separated, default all")

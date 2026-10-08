@@ -125,7 +125,7 @@ def main():
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
 
-    rows = list(csv.DictReader(open("prompts_european.csv", encoding="utf-8")))
+    rows = list(csv.DictReader(open("prompts/prompts_european.csv", encoding="utf-8")))
     base = json.load(open("results/gpt2/labels.json"))["base"]["labels"]
     table = json.load(open("results/gpt2/summary.json"))["modes"]["head"]["table"]
     seen, idx = {}, []

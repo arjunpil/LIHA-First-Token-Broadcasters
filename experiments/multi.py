@@ -9,8 +9,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from analyze import ci, same
-from prompts import flores
-from sweep import MODELS, ablated, generate, nll
+from sweep import MODELS, ablated, flores, generate, nll
 
 
 def ranked(summary, key, max_dnll=float("inf")):
@@ -74,7 +73,7 @@ def report(a):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("step", choices=["run", "report"])
-    p.add_argument("--prompts", default="prompts_european.csv")
+    p.add_argument("--prompts", default="prompts/prompts_european.csv")
     p.add_argument("--summary", default="results/gpt2/summary.json")
     p.add_argument("--orders", default="sr,c2w,random")
     p.add_argument("--max-dnll", type=float, default=0.1, help="for c2w-lowloss")

@@ -10,8 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from analyze import same
 from multi import parse
-from prompts import flores
-from sweep import MODELS, NO_EOS, blocks, generate, nll
+from sweep import MODELS, NO_EOS, blocks, flores, generate, nll
 
 LANGS = ["en", "fr", "de", "es", "it"]
 

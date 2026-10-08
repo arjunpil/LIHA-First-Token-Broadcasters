@@ -42,7 +42,7 @@ def heatmap(table, key, label, vmax, name, max_dnll=None):
 
 
 def curves(name):
-    expected = [r["language"] for r in csv.DictReader(open("prompts_european.csv", encoding="utf-8"))]
+    expected = [r["language"] for r in csv.DictReader(open("prompts/prompts_european.csv", encoding="utf-8"))]
     lab = {**json.load(open("results/gpt2-multi/labels.json")),
            **json.load(open("results/gpt2-multi-lowloss/labels.json"))}
     base_nll = mean(lab["base"]["nll"].values())

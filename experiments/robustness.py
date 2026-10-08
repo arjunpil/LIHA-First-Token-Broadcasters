@@ -54,7 +54,7 @@ def main():
     p.add_argument("--head", default="L6H10")
     a = p.parse_args()
 
-    expected = [r["language"] for r in csv.DictReader(open("prompts_european.csv", encoding="utf-8"))]
+    expected = [r["language"] for r in csv.DictReader(open("prompts/prompts_european.csv", encoding="utf-8"))]
     table = json.load(open(a.summary))["modes"]["head"]["table"]
     heads = sorted(table)
     keep = {h for h in heads if table[h]["dnll"] <= 0.1}

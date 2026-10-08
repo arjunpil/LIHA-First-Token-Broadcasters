@@ -37,7 +37,7 @@ def parse_args():
     )
     parser.add_argument(
         "--prompts",
-        default="rerun/prompts_european.csv",
+        default="prompts/prompts_european.csv",
         help="CSV with prompt and language columns.",
     )
     parser.add_argument(
@@ -72,7 +72,7 @@ def parse_args():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
         "--out",
-        default="rerun/out/gpt2_redistribution",
+        default="out/gpt2_redistribution",
     )
     return parser.parse_args()
 
