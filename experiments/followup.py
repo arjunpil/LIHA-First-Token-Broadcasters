@@ -63,7 +63,7 @@ def run(a):
     prompts = as_prompts(tok, a.model, rows)
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **load_kwargs(a.model))
     model = model.cuda().eval()
-    cfg = model.config
+    cfg = model.config.get_text_config()
     dh = getattr(cfg, "head_dim", None) or cfg.hidden_size // cfg.num_attention_heads
     order = sorted(range(len(prompts)), key=lambda i: len(tok(prompts[i]).input_ids))
     min_new = 40 if a.model in NO_EOS else 0

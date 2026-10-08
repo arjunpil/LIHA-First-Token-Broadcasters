@@ -382,6 +382,9 @@ instruct and 0.003 in base. Baseline non-English retention is 0.902 in instruct 
 Prompt format on 2,500 prompts (results/qwen-format-2500): L22H6 correct->wrong is 0.176 for instruct on raw text
 and 0.089 for base with the chat template.
 
+figures/fig1_qwen_c2w.png (python experiments/figures.py) shows correct->wrong for every head of both models on one
+scale, with the top head boxed.
+
 # System prompt check, 2026-10-08
 
 results/qwen-system-2500, checks.py qwen-system. Qwen2.5's chat template adds an English system prompt ("You are
@@ -426,21 +429,78 @@ Every head is screened on 125 prompts (25 per language, results/<model>-screen).
 least 10% of the correct prompts, the layers of the top heads are rerun on all 2,500 and the top heads get the
 follow-up. Instruct models use their chat template (one BOS, thinking off, a fixed date). Models after Qwen2.5 run
 in fp32.
-| model | baseline non-English retention | top instruct head (c->w) | dNLL (layer mean) | mean ablation | same head in base |
-|---|---|---|---|---|---|
-| Qwen2.5-1.5B | 0.902 | L22H6 0.500 | +0.228 (+0.004) | 0.450 | 0.150 |
-| Gemma-3-1B | 0.997 | L11H3 0.413 | +0.720 (-0.012) | 0.089 | 0.000 (screen) |
-| OLMo-2-1B | 0.997 | L12H8 0.080 | +0.136 (+0.022) | 0.056 | 0.007 |
-| Llama-3.2-1B | 1.000 (screen) | none, strongest 0.048 (screen) | | | |
-| Llama-3.2-3B | 0.990 (screen) | none, strongest 0.008 (screen) | | | |
-| Qwen3-1.7B | 0.990 (screen) | L18H12 0.384 (screen) | +0.128 | | |
+| model | heads per layer | baseline non-English retention | top instruct head (c->w) | dNLL (layer mean) | mean ablation | same head in base |
+|---|---|---|---|---|---|---|
+| Qwen2.5-1.5B | 12 | 0.902 | L22H6 0.500 | +0.228 (+0.004) | 0.450 | 0.150 |
+| Qwen2.5-3B | 16 | 0.992 | L27H13 0.515 | +0.234 (+0.006) | 0.338 | 0.202 |
+| Qwen3-1.7B | 16 | 0.994 | L18H12 0.324 | +0.128 (+0.003) | 0.028 | 0.067 |
+| Gemma-3-1B | 4 | 0.997 | L11H3 0.413 | +0.720 (-0.012) | 0.089 | 0.000 (screen) |
+| OLMo-2-1B | 16 | 0.997 | L12H8 0.080 | +0.136 (+0.022) | 0.056 | 0.007 |
+| Llama-3.2-1B | 32 | 1.000 (screen) | none, strongest 0.048 (screen) | | | |
+| Llama-3.2-3B | 24 | 0.990 (screen) | none, strongest 0.008 (screen) | | | |
 
 Gemma-3's L11H3 sends 1,032 non-English replies elsewhere, 873 of them to English; 1,031 are fluent (not
 repetition or prompt copy). Its base model has no head above 0.088 on the screen, and under mean ablation the head
 keeps only German down (0.60). OLMo-2's L12H8 is small but holds under mean ablation, mostly on German and Italian.
-Neither Llama has such a head at 1B or 3B, so Llama looks like a family difference rather than size. Qwen3's screen
-also has L0H3 at 0.528 but with dNLL +1.42, which breaks the model; L18H12 is the candidate, and its 2,500-prompt
-run is queued along with Qwen2.5-3B, SmolLM3 and OLMo-3.
+Neither Llama has such a head on FLORES at 1B or 3B, but Llama-3.2-1B has one on LCB (next sections). Qwen2.5-3B
+and Qwen3-1.7B are in the next section.
 
 Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
+
+# Qwen2.5-3B and Qwen3-1.7B on 2,500 prompts, 2026-10-09
+
+results/<model>, results/<model>-followup, screens in results/<model>-screen. fp32, Qwen3 with thinking off.
+| model | head | c->w | dNLL (layer mean) | mean ablation c->w | x2 c->w | same head in base (mean ablation) |
+|---|---|---|---|---|---|---|
+| Qwen2.5-3B-Instruct | L27H13 | 0.515 | +0.234 (+0.006) | 0.338 | 0.006 | 0.202 (0.114) |
+| Qwen3-1.7B | L18H12 | 0.324 | +0.128 (+0.003) | 0.028 | 0.001 | 0.067 (0.022) |
+
+Qwen2.5-3B repeats the 1.5B picture: one head in a late layer (27 of 36, against 22 of 28 at 1.5B), the next head
+at 0.020, the same head weaker in base (0.202, against 0.150 at 1.5B), and most of the effect holds under mean
+ablation, where Italian (0.06) and German (0.45) drop most. Qwen3-1.7B's L18H12 holds much less under mean ablation
+on FLORES. Qwen3 also has L0H3 (0.466 instruct, 0.434 base) and in base L1H5 (0.196), but those raise dNLL by more
+than 1 and break the model, so the follow-up skips them.
+
+# LCB across models, 2026-10-09
+
+Same setup as the Qwen2.5-1.5B LCB section, for each model's top FLORES head. The Llamas have no FLORES head, so
+they get the top two heads of their screen. Controls are random heads from the same layer, zero-ablated (three per
+layer, one for the Llamas). results/<model>-lcb, samples.jsonl.gz has every reply.
+| model | head | mono LPR | Δ mono, zero | Δ mono, mean | cross LPR | Δ cross, zero | Δ cross, mean | same-layer controls, Δ mono / Δ cross |
+|---|---|---|---|---|---|---|---|---|
+| Qwen2.5-1.5B | L22H6 | 0.982 | -0.273 [-0.305, -0.240] | -0.246 | 0.704 | -0.276 [-0.303, -0.250] | -0.247 | -0.004 to +0.005 / -0.022 to +0.000 (L17 and L22) |
+| Qwen2.5-3B | L27H13 | 0.982 | -0.537 [-0.575, -0.503] | -0.409 | 0.888 | -0.449 [-0.478, -0.421] | -0.331 | +0.000 to +0.003 / -0.025 to +0.004 |
+| Qwen3-1.7B | L18H12 | 0.985 | -0.149 [-0.174, -0.123] | -0.067 | 0.823 | -0.508 [-0.535, -0.478] | -0.230 | -0.004 to -0.003 / +0.000 to +0.021 |
+| Gemma-3-1B | L11H3 | 0.984 | -0.628 [-0.662, -0.593] | -0.244 | 0.118 | -0.091 [-0.110, -0.073] | -0.092 | -0.005 to +0.003 / -0.023 to +0.038 |
+| OLMo-2-1B | L12H8 | 0.986 | -0.272 [-0.302, -0.239] | -0.128 | 0.931 | -0.335 [-0.362, -0.308] | -0.143 | +0.000 to +0.004 / -0.003 to +0.004 |
+| Llama-3.2-1B | L8H25 | 0.997 | -0.016 [-0.026, -0.008] | -0.015 | 0.874 | -0.711 [-0.737, -0.684] | -0.357 | -0.009 / +0.001 |
+| Llama-3.2-3B | L0H2 | 0.993 | +0.001 [-0.006, +0.009] | +0.000 | 0.911 | -0.003 [-0.013, +0.008] | +0.000 | +0.003 / +0.001 |
+| Llama-3.2-3B | L2H17 | 0.993 | +0.004 [-0.001, +0.010] | -0.004 | 0.911 | -0.006 [-0.014, +0.002] | -0.003 | +0.004 / -0.001 |
+
+Every model except Llama-3.2-3B has a head whose removal moves replies out of the requested language far beyond its
+same-layer controls. The crosslingual replies it breaks are mostly English; the monolingual ones are not always
+(Qwen2.5-3B has 7% English lines there). How the drop splits between the two tasks differs. Qwen2.5 and OLMo-2 lose
+both. Gemma-3-1B loses mostly monolingual, but it already answers most crosslingual prompts in English at baseline
+(0.118, 55% English lines), so there is little left to lose there. Llama-3.2-1B's L8H25 leaves monolingual replies
+alone and takes crosslingual from 0.874 to 0.164 (81% English lines), the largest drop here. It stays under the
+FLORES threshold (0.048 on the screen) because FLORES only tests keeping the prompt's language. Qwen3-1.7B leans the
+same way (-0.149 mono, -0.508 cross). So the head keeps the prompt's language in some models, follows a requested
+language in others, and does both in Qwen2.5 and OLMo-2. Mean ablation keeps about 90% of the zero-ablation drop in
+Qwen2.5-1.5B, 75% in Qwen2.5-3B, 45-50% in Qwen3, OLMo-2 and Llama-3.2-1B crosslingual, and 39% in Gemma-3
+monolingual.
+
+Since Llama-3.2-1B's head only shows up on LCB, every head of both Llamas is being screened on 100 crosslingual
+prompts (lcb.py --screen).
+
+# Comparing models
+
+The ablation is the same in every model (the head's slice of the attention output projection's input set to zero),
+but the size of the effect isn't comparable across models. Heads per layer go from 4 (Gemma-3-1B) to 32
+(Llama-3.2-1B), so one head is 25% to 3% of a layer. Gemma-3, OLMo-2 and Qwen3 use QK-norm, and Gemma-3 and OLMo-2
+also normalize the attention output before adding it to the residual stream, so zeroing a head rescales what the
+other heads write. Gemma-3's L5 and L11 are both global-attention layers. Compare each head with the same-layer
+controls of its own model, as in the tables above.
+
+Generation uses each model's generation_config apart from sampling. Qwen2.5-1.5B-Instruct sets repetition_penalty
+1.1 and Qwen2.5-3B-Instruct 1.05, so their greedy runs use it; no other model sets one.

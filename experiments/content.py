@@ -1,6 +1,7 @@
 import argparse
 import csv
 import json
+import random
 from pathlib import Path
 
 import numpy as np
@@ -47,11 +48,19 @@ def main():
     p.add_argument("--head", default="L6H10")
     p.add_argument("--encoder", default="Qwen/Qwen3-Embedding-0.6B")
     p.add_argument("--out", default=None)
+    p.add_argument("--device", default="cpu")
+    p.add_argument("--same-layer-controls", type=int, default=0, help="pick controls from the head's layer instead")
     a = p.parse_args()
 
     rows = list(csv.DictReader(open(a.prompts, encoding="utf-8")))
     lab = json.load(open(a.labels))
-    ctrl = controls(a.summary, [a.head])
+    if a.same_layer_controls:
+        t = json.load(open(a.summary))["modes"]["head"]["table"]
+        layer = a.head.split("H")[0] + "H"
+        pool = sorted(h for h in t if h.startswith(layer) and h != a.head)
+        ctrl = random.Random(0).sample(pool, min(a.same_layer_controls, len(pool)))
+    else:
+        ctrl = controls(a.summary, [a.head])
     conds = ["base", f"head:{a.head}"] + [f"head:{h}" for h in ctrl]
     texts = {}
     for line in open(a.gens, encoding="utf-8"):
@@ -60,7 +69,7 @@ def main():
             texts[r["cond"]] = r["texts"]
 
     ne = [i for i, r in enumerate(rows) if r["language"] != "en"]
-    model = SentenceTransformer(a.encoder, device="cpu")
+    model = SentenceTransformer(a.encoder, device=a.device)
     enc = lambda xs: model.encode(xs, batch_size=64, normalize_embeddings=True, convert_to_numpy=True)
     prompt_emb = enc([rows[i]["prompt"] for i in ne])
     emb = {c: enc([texts[c][i].strip() for i in ne]) for c in conds}

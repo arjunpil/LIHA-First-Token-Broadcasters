@@ -77,6 +77,16 @@ def batches(lengths, order, bs, budget):
     return out + [cur] if cur else out
 
 
+@torch.no_grad()
+def sample(model, tok, prompts, idx, max_new, temperature, seed):
+    tok.padding_side = "left"
+    b = tok([prompts[i] for i in idx], return_tensors="pt", padding=True).to(model.device)
+    torch.manual_seed(seed)
+    ids = model.generate(**b, max_new_tokens=max_new, do_sample=True, temperature=temperature, top_p=None, top_k=None,
+                         pad_token_id=tok.eos_token_id)
+    return dict(zip(idx, tok.batch_decode(ids[:, b["input_ids"].shape[1]:], skip_special_tokens=True)))
+
+
 def paired_ci(a, b, n=2000, seed=0):
     d = np.asarray(b, float) - np.asarray(a, float)
     means = np.random.default_rng(seed).choice(d, (n, len(d))).mean(1)
@@ -86,7 +96,7 @@ def paired_ci(a, b, n=2000, seed=0):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--model", required=True, choices=[m for m in MODELS if m.endswith("instruct")])
-    p.add_argument("--heads", required=True, help="comma separated, each gets zero and mean ablation")
+    p.add_argument("--heads", default="", help="comma separated, each gets zero and mean ablation")
     p.add_argument("--scale", default="", help="e.g. L17H8:3,L17H7:2")
     p.add_argument("--controls", type=int, default=3, help="random zero-ablated heads per layer of --heads")
     p.add_argument("--langs", default="fr,de,es,it,en")
@@ -97,6 +107,11 @@ def main():
     p.add_argument("--token-budget", type=int, default=24000, help="prompt tokens per batch, LCB prompts vary a lot")
     p.add_argument("--dtype", default=None)
     p.add_argument("--limit", type=int, default=None, help="prompts per task, for smoke tests")
+    p.add_argument("--tasks", default="monolingual,crosslingual")
+    p.add_argument("--per-lang", type=int, default=None, help="random prompts per task and language")
+    p.add_argument("--screen", action="store_true", help="zero every head in turn, LPR only")
+    p.add_argument("--temperature", type=float, default=0.0, help="0 is greedy")
+    p.add_argument("--sample-seed", type=int, default=0)
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--out", default=None)
     p.add_argument("--report-only", action="store_true", help="rescore the saved replies without generating")
@@ -129,10 +144,15 @@ def main():
                 record(f, cond, t)
         return summarize(a, out, items, results, controls)
 
-    items = load_lcb(a.lcb, a.langs.split(","))
+    items = [it for it in load_lcb(a.lcb, a.langs.split(",")) if it["task"] in a.tasks.split(",")]
+    rng = random.Random(a.seed)
     if a.limit:
-        rng = random.Random(a.seed)
         items = [it for t in TASKS for it in rng.sample([x for x in items if x["task"] == t], a.limit)]
+    if a.per_lang:
+        groups = {}
+        for it in items:
+            groups.setdefault((it["task"], it["language"]), []).append(it)
+        items = [it for g in groups.values() for it in rng.sample(g, min(a.per_lang, len(g)))]
 
     name, dtype = MODELS[a.model]
     tok = AutoTokenizer.from_pretrained(name)
@@ -140,7 +160,7 @@ def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, a.dtype or dtype), **load_kwargs(a.model))
     model = model.to(device).eval()
-    cfg = model.config
+    cfg = model.config.get_text_config()
     H = cfg.num_attention_heads
     dh = getattr(cfg, "head_dim", None) or cfg.hidden_size // H
     prompts = as_prompts(tok, a.model, items)
@@ -150,11 +170,24 @@ def main():
 
     def run_all():
         texts = [None] * len(prompts)
-        for g in groups:
-            out = generate(model, tok, prompts, g, len(g), a.max_new_tokens)
+        for j, g in enumerate(groups):
+            if a.temperature > 0:  # the same seed per batch in every condition, so the comparison stays paired
+                out = sample(model, tok, prompts, g, a.max_new_tokens, a.temperature, a.sample_seed * 100000 + j)
+            else:
+                out = generate(model, tok, prompts, g, len(g), a.max_new_tokens)
             for i in g:
                 texts[i] = out[i]
         return texts
+
+    if a.screen:
+        with open(out / "samples.jsonl", "w", encoding="utf-8") as f:
+            record(f, "base", run_all())
+            for l in range(cfg.num_hidden_layers):
+                for h in range(H):
+                    with patched(model, a.model, l, h, dh, lambda x: torch.zeros_like(x)):
+                        record(f, f"L{l}H{h}", run_all())
+                print(f"layer {l} done", flush=True)
+        return screen_report(out, items, results)
 
     heads = [parse(h) for h in a.heads.split(",")]
     rng = random.Random(a.seed)
@@ -187,6 +220,25 @@ def main():
     summarize(a, out, items, results, [f"L{l}H{h}" for l, h in controls])
 
 
+def screen_report(out, items, results):
+    non_en = [i for i, it in enumerate(items) if it["language"] != "en"]
+
+    def rate(scores):
+        kept = [scores[i]["pass"] for i in non_en if not scores[i]["skipped"]]
+        return float(np.mean(kept)) if kept else float("nan")
+
+    base = rate(results["base"])
+    rows = sorted(((c, rate(s)) for c, s in results.items() if c != "base"), key=lambda r: r[1])
+    lines = [f"# LCB head screen, {len(non_en)} non-English prompts", "",
+             "Every head zero-ablated in turn. Pooled pass rate (all lines in the expected language); "
+             f"baseline {base:.3f}.",
+             "", "| head | pass rate | Δ |", "|---|---|---|"]
+    lines += [f"| {c} | {r:.3f} | {r - base:+.3f} |" for c, r in rows[:20]]
+    json.dump({"base": base, "heads": dict(rows)}, open(out / "screen.json", "w"), indent=1)
+    (out / "screen.md").write_text("\n".join(lines) + "\n")
+    print("\n".join(lines))
+
+
 def summarize(a, out, items, results, controls):
     langs = a.langs.split(",")
     sel = {(t, l): [i for i, it in enumerate(items) if it["task"] == t and it["language"] == l]
@@ -195,7 +247,8 @@ def summarize(a, out, items, results, controls):
     base = results["base"]
     rows = {}
     lines = [f"# {a.model}: Language Confusion Benchmark", "",
-             f"Greedy {a.max_new_tokens} tokens, chat template. LPR = share of replies whose lines (5+ words) are all "
+             ("Greedy" if not a.temperature else f"Sampling at temperature {a.temperature} (seed {a.sample_seed}),")
+             + f" {a.max_new_tokens} tokens, chat template. LPR = share of replies whose lines (5+ words) are all "
              "in the expected language, averaged over sources as in the benchmark. Δ = paired change against base "
              "on the non-English prompts both runs score, pooled, with a bootstrap 95% CI. Mean ablation uses the "
              "head's mean over the 2,500 FLORES prompts. Controls are random heads from the same layers, "

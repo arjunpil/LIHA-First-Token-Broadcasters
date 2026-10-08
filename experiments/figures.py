@@ -41,6 +41,29 @@ def heatmap(table, key, label, vmax, name, max_dnll=None):
     save(fig, name)
 
 
+def pair_heatmap(runs, titles, name, vmax=0.5):
+    tables = [json.load(open(f"results/{r}/summary.json"))["modes"]["head"]["table"] for r in runs]
+    shape = max(tuple(int(x) + 1 for x in h[1:].split("H")) for h in tables[0])
+    fig, axes = plt.subplots(1, len(runs), figsize=(3.4, 3.6), sharey=True)
+    for ax, table, title in zip(axes, tables, titles):
+        m = np.zeros(shape)
+        for h, v in table.items():
+            layer, head = map(int, h[1:].split("H"))
+            m[layer, head] = v["full"]["c2w"]
+        im = ax.imshow(m, cmap="Reds", vmin=0, vmax=vmax, aspect="auto")
+        layer, head = np.unravel_index(m.argmax(), m.shape)
+        ax.add_patch(plt.Rectangle((head - 0.5, layer - 0.5), 1, 1, fill=False, lw=1, ec="black"))
+        ax.annotate(f"L{layer}H{head}  {m[layer, head]:.2f}", (head, layer), xytext=(0, -14),
+                    textcoords="offset points", ha="center", fontsize=7)
+        ax.set_title(title, fontsize=9)
+        ax.set_xticks(range(0, shape[1], 3))
+        ax.set_xlabel("Head")
+    axes[0].set_yticks(range(0, shape[0], 3))
+    axes[0].set_ylabel("Layer")
+    fig.colorbar(im, ax=axes, label="Correct→Wrong Rate", shrink=0.8)
+    save(fig, name)
+
+
 def curves(name):
     expected = [r["language"] for r in csv.DictReader(open("prompts/prompts_european.csv", encoding="utf-8"))]
     lab = {**json.load(open("results/gpt2-multi/labels.json")),
@@ -79,6 +102,7 @@ def main():
     heatmap(table, "sr", "Language Switch Rate", 0.6, "fig1_ablation_heatmap")
     heatmap(table, "c2w", "Correct→Wrong Rate", 0.25, "fig1_c2w_heatmap", max_dnll=0.1)
     curves("fig3_accuracy_curve")
+    pair_heatmap(["qwen-instruct-full", "qwen-base-full"], ["Instruct", "Base"], "fig1_qwen_c2w")
 
 
 if __name__ == "__main__":

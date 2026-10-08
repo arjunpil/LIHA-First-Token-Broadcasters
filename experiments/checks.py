@@ -71,7 +71,7 @@ def load(key):
     tok.pad_token = tok.pad_token or tok.eos_token
     kwargs = {"attn_implementation": "eager"} if key == "gpt2" else {}
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **kwargs).cuda().eval()
-    cfg = model.config
+    cfg = model.config.get_text_config()
     return tok, model, getattr(cfg, "head_dim", None) or cfg.hidden_size // cfg.num_attention_heads
 
 
