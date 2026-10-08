@@ -1,4 +1,4 @@
-# Head ablation rerun
+# Head ablation
 
 The scripts in the repo root ablate a head by zeroing `h*head_dim:(h+1)*head_dim` of the attention output after the
 output projection (`attn` output in GPT-2, `o_proj` output in Qwen, `self_attention` output in BLOOM). After the
