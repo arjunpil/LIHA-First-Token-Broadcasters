@@ -372,5 +372,75 @@ out-of-distribution input. Scaling L17H7 or L17H8 up keeps almost every non-Engl
 (L17H8 x3 fixes 191 of the baseline's wrong replies) without the repetition seen in GPT-2 (0% repetition, about 1%
 copy). Whether the replies are still good answers isn't checked yet; one German reply is grammatical but off.
 
+# Qwen2.5-1.5B full sweeps, 2026-10-08
+
+results/qwen-instruct-full, results/qwen-base-full. Every head (336) on all 2,500 prompts, chat template for
+instruct. L22H6 is the top correct->wrong head in both: 0.500 in instruct (then L17H7 0.325, L17H8 0.235, L0H6
+0.193 with dNLL +0.211), 0.150 in base, where the next head is at 0.023. Mean correct->wrong over heads is 0.019 in
+instruct and 0.003 in base. Baseline non-English retention is 0.902 in instruct and 0.984 in base.
+
+Prompt format on 2,500 prompts (results/qwen-format-2500): L22H6 correct->wrong is 0.176 for instruct on raw text
+and 0.089 for base with the chat template.
+
+# System prompt check, 2026-10-08
+
+results/qwen-system-2500, checks.py qwen-system. Qwen2.5's chat template adds an English system prompt ("You are
+Qwen, created by Alibaba Cloud. You are a helpful assistant.") when none is given. Same 2,500 prompts with that
+default, with no system turn, and with the same system prompt translated into the prompt's language:
+| setting | baseline non-English retention | L22H6 c->w | L17H7 | L17H8 | controls (max) |
+|---|---|---|---|---|---|
+| English system prompt (default) | 0.902 | 0.500 | 0.325 | 0.235 | 0.002 |
+| system prompt in the prompt's language | 0.996 | 0.379 | 0.085 | 0.020 | 0.001 |
+| no system prompt | 0.983 | 0.258 | 0.155 | 0.072 | 0.015 |
+
+L22H6 matters in all three, most with the English system prompt. The L17 heads matter mostly with it. The English
+default system prompt also lowers baseline retention by itself.
+
+# Language Confusion Benchmark, Qwen2.5-1.5B-Instruct, 2026-10-08
+
+results/qwen-instruct-lcb, lcb.py. LCB (Marchisio et al., 2024): 800 monolingual prompts in fr/de/es/it (the reply
+should stay in that language) and 1,196 crosslingual ones (English prompt asking for a reply in fr/de/es/it), plus
+200 English. Default chat template, greedy 100 tokens, the benchmark's line-level pass rate (LPR). Mean ablation uses
+the head's mean over the 2,500 FLORES prompts. Δ is the paired change on the non-English prompts with a bootstrap
+95% CI. samples.jsonl.gz has every reply.
+| condition | monolingual LPR | Δ | crosslingual LPR | Δ |
+|---|---|---|---|---|
+| baseline | 0.982 | | 0.704 | |
+| L22H6 zero | 0.747 | -0.273 [-0.305, -0.240] | 0.427 | -0.276 [-0.303, -0.250] |
+| L22H6 mean | 0.775 | -0.246 [-0.276, -0.215] | 0.455 | -0.247 [-0.273, -0.220] |
+| L17H7 zero | 0.921 | -0.065 | 0.667 | -0.036 |
+| L17H8 zero | 0.976 | -0.004 | 0.697 | -0.008 |
+| L17H8 x3 | 0.990 | +0.008 [-0.003, +0.018] | 0.711 | +0.005 |
+| L22H6 x2 | 0.982 | +0.001 | 0.520 | -0.186 |
+| 6 control heads (L17, L22) | | -0.004 to +0.005 | | -0.022 to +0.000 |
+
+English prompts stay at 0.995. Italian collapses in both tasks (monolingual 1.00 -> 0.00, crosslingual 0.69 ->
+0.00): replies start in Italian and slide into Spanish and Portuguese, and "write a poem in Italian" gets an English
+poem. Because the crosslingual set breaks as much as the monolingual one, L22H6 keeps the reply in the requested
+language whether the language comes from the prompt or from an instruction. The L17 heads and the L17H8 scaling
+that looked useful on FLORES do not carry over.
+
+# More base/instruct pairs, 2026-10-08
+
+Every head is screened on 125 prompts (25 per language, results/<model>-screen). If the strongest head flips at
+least 10% of the correct prompts, the layers of the top heads are rerun on all 2,500 and the top heads get the
+follow-up. Instruct models use their chat template (one BOS, thinking off, a fixed date). Models after Qwen2.5 run
+in fp32.
+| model | baseline non-English retention | top instruct head (c->w) | dNLL (layer mean) | mean ablation | same head in base |
+|---|---|---|---|---|---|
+| Qwen2.5-1.5B | 0.902 | L22H6 0.500 | +0.228 (+0.004) | 0.450 | 0.150 |
+| Gemma-3-1B | 0.997 | L11H3 0.413 | +0.720 (-0.012) | 0.089 | 0.000 (screen) |
+| OLMo-2-1B | 0.997 | L12H8 0.080 | +0.136 (+0.022) | 0.056 | 0.007 |
+| Llama-3.2-1B | 1.000 (screen) | none, strongest 0.048 (screen) | | | |
+| Llama-3.2-3B | 0.990 (screen) | none, strongest 0.008 (screen) | | | |
+| Qwen3-1.7B | 0.990 (screen) | L18H12 0.384 (screen) | +0.128 | | |
+
+Gemma-3's L11H3 sends 1,032 non-English replies elsewhere, 873 of them to English; 1,031 are fluent (not
+repetition or prompt copy). Its base model has no head above 0.088 on the screen, and under mean ablation the head
+keeps only German down (0.60). OLMo-2's L12H8 is small but holds under mean ablation, mostly on German and Italian.
+Neither Llama has such a head at 1B or 3B, so Llama looks like a family difference rather than size. Qwen3's screen
+also has L0H3 at 0.528 but with dNLL +1.42, which breaks the model; L18H12 is the candidate, and its 2,500-prompt
+run is queued along with Qwen2.5-3B, SmolLM3 and OLMo-3.
+
 Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
