@@ -331,5 +331,46 @@ The English that appears without L6H10 isn't the same content in another languag
 generic English text.
 
 
+# Qwen2.5-1.5B-Instruct on 2,500 prompts, 2026-10-08
+
+results/qwen-instruct-2500. Same 2,500 prompts as GPT-2, chat template, fp16, greedy 40 tokens, true head ablation
+of every head in layers 17 and 22 (the full sweep of all layers is running). Baseline retention 0.922 overall and
+0.902 on the 2,000 non-English prompts (en 1.000, fr 0.978, de 0.822, es 0.840, it 0.968).
+
+| head | c->w | w->c | non-English retention | dNLL | same-layer dNLL |
+|---|---|---|---|---|---|
+| L22H6 | 0.500 | 0.001 | 0.278 | +0.228 | +0.004 |
+| L17H7 | 0.325 | 0.001 | 0.496 | +0.002 | +0.002 |
+| L17H8 | 0.235 | 0.000 | 0.609 | +0.007 | +0.002 |
+| L17H6 | 0.109 | 0.000 | 0.766 | -0.000 | +0.002 |
+
+Without L22H6 retention is fr 0.544, de 0.210, es 0.350, it 0.008. Of the prompts kept in the prompt language at
+baseline, French, German and Spanish flip almost only to English (216, 302 and 235, plus 11 Spanish to Portuguese).
+Italian goes mostly to Spanish (208), then English (165), Portuguese (79) and French (26).
+
+The outputs are fluent: of the 1,804 baseline outputs in the prompt language, 0% are repetition and 1% prompt copy.
+When L22H6 sends them to English they stay on the prompt's content (Qwen3-Embedding similarity to the prompt 0.475
+before, 0.558 after, 918 prompts, against 0.384 for the next FLORES sentence and 0.179 for a random one). So in Qwen
+the head behaves like language confusion, not like the GPT-2 case where the English is unrelated.
+
+dNLL caveat: L22H6 raises LM loss far more than the rest of its layer. It does the same in the base model (+0.216 on
+125 prompts), where it flips only 0.16, so the loss increase alone doesn't produce the switch.
+
+Follow-up (results/qwen-instruct-followup, mean over prompt tokens and scaling, chat template):
+| condition | non-English retention | c->w | w->c | dNLL |
+|---|---|---|---|---|
+| baseline | 0.902 | | | |
+| L22H6 mean | 0.341 | 0.450 | 0.001 | +0.165 |
+| L17H7 mean | 0.905 | 0.016 | 0.018 | -0.004 |
+| L17H8 mean | 0.807 | 0.076 | 0.001 | +0.003 |
+| L17H7 x2 | 0.987 | 0.000 | 0.068 | +0.009 |
+| L17H8 x3 | 0.996 | 0.001 | 0.076 | +0.002 |
+| L22H6 x2 | 0.811 | 0.112 | 0.039 | +0.037 |
+
+L22H6 holds under mean ablation, the L17 heads mostly don't, so their zero-ablation effect may come from the
+out-of-distribution input. Scaling L17H7 or L17H8 up keeps almost every non-English reply in the prompt language
+(L17H8 x3 fixes 191 of the baseline's wrong replies) without the repetition seen in GPT-2 (0% repetition, about 1%
+copy). Whether the replies are still good answers isn't checked yet; one German reply is grammatical but off.
+
 Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
