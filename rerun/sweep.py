@@ -15,12 +15,15 @@ MODELS = {
     "qwen-base": ("Qwen/Qwen2.5-1.5B", "float16"),
     "qwen-instruct": ("Qwen/Qwen2.5-1.5B-Instruct", "float16"),
     "bloom": ("bigscience/bloom-1b7", "float32"),  # fp16 gives NaN on left-padded rows
+    "gpt2-medium": ("gpt2-medium", "float32"),
+    "olmo2-1b": ("allenai/OLMo-2-0425-1B", "bfloat16"),
 }
+NO_EOS = {"olmo2-1b"}  # ends the document after most complete FLORES sentences, so the end token is blocked
 PAPER_HEAD_DIM = {"bloom": 64}  # bloom_experiment.py assumed hidden 1024
 
 
 def blocks(model, key):
-    if key == "gpt2":
+    if key.startswith("gpt2"):
         return [(h.attn, h.attn.c_proj) for h in model.transformer.h]
     if key == "bloom":
         return [(h.self_attention, h.self_attention.dense) for h in model.transformer.h]
@@ -41,7 +44,7 @@ def ablated(model, key, mode, layer, head, dh):
 
     if mode == "head":
         handle = proj.register_forward_pre_hook(lambda m, args: (zero(args[0]),) + args[1:])
-    elif key == "qwen-base" or key == "qwen-instruct":
+    elif key.startswith("qwen") or key.startswith("olmo"):
         handle = proj.register_forward_hook(lambda m, inp, out: zero(out))
     else:
         handle = attn.register_forward_hook(lambda m, inp, out: (zero(out[0]),) + tuple(out[1:]))
@@ -52,14 +55,14 @@ def ablated(model, key, mode, layer, head, dh):
 
 
 @torch.no_grad()
-def generate(model, tok, prompts, order, bs, max_new):
+def generate(model, tok, prompts, order, bs, max_new, min_new=0):
     tok.padding_side = "left"
     texts = [None] * len(prompts)
     for s in range(0, len(order), bs):
         idx = order[s:s + bs]
         b = tok([prompts[i] for i in idx], return_tensors="pt", padding=True).to(model.device)
-        ids = model.generate(**b, max_new_tokens=max_new, do_sample=False, pad_token_id=tok.eos_token_id,
-                             temperature=None, top_p=None, top_k=None)
+        ids = model.generate(**b, max_new_tokens=max_new, min_new_tokens=min_new or None, do_sample=False,
+                             pad_token_id=tok.eos_token_id, temperature=None, top_p=None, top_k=None)
         for i, t in zip(idx, tok.batch_decode(ids[:, b["input_ids"].shape[1]:], skip_special_tokens=True)):
             texts[i] = t
     return texts
@@ -109,7 +112,7 @@ def main():
     dtype = a.dtype or dtype
     tok = AutoTokenizer.from_pretrained(name)
     tok.pad_token = tok.pad_token or tok.eos_token
-    kwargs = {"attn_implementation": "eager"} if a.model == "gpt2" else {}
+    kwargs = {"attn_implementation": "eager"} if a.model.startswith("gpt2") else {}
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **kwargs).cuda().eval()
     cfg = model.config
     H = cfg.num_attention_heads
@@ -121,7 +124,8 @@ def main():
     else:
         prompts = [r["prompt"] for r in rows]
     order = sorted(range(len(prompts)), key=lambda i: len(tok(prompts[i]).input_ids))
-    prefix = tok.bos_token if a.model == "gpt2" else ""
+    prefix = tok.bos_token if a.model.startswith("gpt2") else ""
+    min_new = a.max_new_tokens if a.model in NO_EOS else 0
     dev = flores("dev")
     loss_sents = {l: [x.strip() for x in dev[l][:a.n_loss]] for l in ("en", "fr", "de", "es", "it")}
 
@@ -131,13 +135,13 @@ def main():
 
     t0 = time.time()
     with open(out / "gens.jsonl", "w", encoding="utf-8") as f:
-        record(f, "base", generate(model, tok, prompts, order, a.bs, a.max_new_tokens),
+        record(f, "base", generate(model, tok, prompts, order, a.bs, a.max_new_tokens, min_new),
                {l: nll(model, tok, s, prefix) for l, s in loss_sents.items()})
         for mode in a.modes.split(","):
             for layer in layers:
                 for head in range(H):
                     with ablated(model, a.model, mode, layer, head, dh):
-                        texts = generate(model, tok, prompts, order, a.bs, a.max_new_tokens)
+                        texts = generate(model, tok, prompts, order, a.bs, a.max_new_tokens, min_new)
                         losses = {l: nll(model, tok, s, prefix) for l, s in loss_sents.items()}
                     record(f, f"{mode}:L{layer}H{head}", texts, losses)
                 print(f"{mode} layer {layer} done, {time.time() - t0:.0f}s", flush=True)

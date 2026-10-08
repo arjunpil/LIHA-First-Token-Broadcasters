@@ -261,5 +261,33 @@ FLORES sentence, and those count as wrong. Mean SR 0.011 (sd 0.009), a tenth of 
 
 results/bloom and results/bloom-paper25-fp16.
 
+# GPT-2 medium and OLMo-2 1B, 2026-10-08
+
+Same head sweep as for GPT-2 (fixed hook, 2,500 prompts, greedy 40 tokens), then followup.py on the top three c->w
+heads with dNLL <= 0.1: mean ablation and scaling by 2, 3 and 5. results/gpt2-medium, results/olmo2-1b and their
+-followup folders. For the GPT-2 models the mean condition also replaces the head at the BOS position of the loss
+sentences, so its c->w is comparable but its dNLL isn't.
+
+GPT-2 medium (24 layers x 16 heads), baseline non-English accuracy 0.300, close to GPT-2 small's 0.296.
+- L13H6, at about the same relative depth as L6H10, takes non-English accuracy to 0.066, the lowest of the 384 heads,
+  with dNLL +0.006. All four languages drop to 0.05-0.10, and 476 of the 479 flipped outputs are English. Mean
+  ablation keeps most of it (c->w 0.151 vs 0.192). Scaling it by 3 raises accuracy from 0.440 to 0.740 and by 5 to
+  0.817 (non-English 0.300 to 0.772, German 0.35 to 0.93) without moving LM loss.
+- Two weaker heads do the same, L19H14 (c->w 0.158) and L16H6 (0.133). Both hold under mean ablation and help when
+  scaled.
+
+OLMo-2 1B (16 x 16) ends the document right after most complete FLORES sentences (p(end-of-text) 0.28 on average), so
+it runs with the end-of-text token blocked. Baseline non-English accuracy 0.921.
+- The heads with the highest switch rates (L2H0, L13H10, L12H0) also raise LM loss by 0.3-0.55. Among heads with
+  dNLL <= 0.1, L15H5 in the last layer stands out: c->w 0.134 (next 0.072), dNLL +0.035, flips going to English. It
+  acts on the Romance languages: French 0.90 to 0.68, Spanish 0.98 to 0.84, Italian 0.97 to 0.81, German 0.83 to
+  0.81. Mean ablation keeps most of it (0.115). Scaling helps little because accuracy is near the ceiling
+  (non-English 0.921 to 0.938 at 5x).
+
+Across the six models, the two GPT-2 models, which mostly fail to continue non-English text, each have one mid-depth
+head that keeps the prompt language, with a large effect on all four languages. In the models that handle these
+languages well the strongest such heads sit later in the network (OLMo L15H5, BLOOM layers 18-21, Qwen L22H6), and in
+OLMo and BLOOM they act on some languages only.
+
 Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
