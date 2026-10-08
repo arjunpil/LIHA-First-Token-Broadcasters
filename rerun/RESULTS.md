@@ -50,7 +50,8 @@ for instruct, langdetect seed 0. Batched generation matches single-prompt genera
 
 ## Reproduction with the paper's hook (o_proj output slice)
 Instruct: L0H5 0.224 (paper 0.224), L0H11 0.160 (0.144), L1H9 0.152 (0.136), L0H7 0.128 (0.120), L1H7 0.120 (0.112).
-Base: max SR 0.016 at L0H0 (paper 0.016 at L0H0). So the paper's Qwen numbers come from the o_proj-output hook.
+Base: L0H0 0.016 (paper 0.016, its max). Our max is L1H9 at 0.024, one prompt more; two of its three flips involve
+an empty output (prompt 83, a real end-of-text). So the paper's Qwen numbers come from the o_proj-output hook.
 
 ## True head ablation (o_proj input)
 Instruct, top heads by SR (all flips are correct to wrong):
@@ -95,11 +96,115 @@ so it's fairer to compare L6H10 with the other heads than with 0.435. It's still
 The paper has L6H1 alone at 39.2% and the top 10 at 32.4% with monotonic degradation. Under true ablation the curve
 is not monotonic, and one head gets as low as the 10-head set does.
 
+Overall accuracy has a floor near 0.20, though: English prompts are a fifth of the set and stay English under every
+ablation here (0.99), so the paper's chance line at 0.20 is really that floor. On the non-English prompts alone,
+L6H10 takes accuracy from 0.296 to 0.038, i.e. it already removes almost every correct non-English continuation and
+there's little left for the other heads to remove. The rise after k=4 (0.09-0.14) is GPT-2 copying the prompt back,
+which langdetect counts as the right language. fig3_accuracy_curve plots the non-English accuracy.
+
 The multi-head run also recomputes base and the k=1 condition of every order (L6H10, L0H7, L0H10, L8H2, L2H10, L1H2)
 in a separate process. The detected labels match results/gpt2 on all 2,500 prompts for each, and dNLL is within 0.001.
 
 figures/ has fig1_ablation_heatmap (SR per head, same layout as the paper's fig 1a), fig1_c2w_heatmap (correct->wrong,
 x marks dNLL > 0.1) and fig3_accuracy_curve (fig 1b, accuracy and dNLL). File names match the paper's figures/.
+
+# GPT-2 amplification, 2026-10-07
+
+Each head's slice at the c_proj input scaled by 2, 3 or 5 (amplify.py), one head at a time, 2,500 prompts. Heads: the
+top five by c->w with dNLL <= 0.1, the top five by SR (the paper's selection rule), and L6H1. Full table in
+results/gpt2-amp/summary.md.
+
+| head | x2 | x3 | x5 | dNLL at x5 |
+|---|---|---|---|---|
+| L6H10 | 0.660 | 0.775 | 0.870 | +0.041 |
+| L8H6 | 0.601 | 0.703 | 0.747 | +0.125 |
+| L2H5 | 0.502 | 0.385 | 0.226 | +0.686 |
+| L0H10 | 0.358 | 0.120 | 0.007 | +3.728 |
+| L6H1 | 0.426 | 0.421 | 0.413 | +0.016 |
+
+Baseline accuracy 0.435. Scaling L6H10 by 3 raises it to 0.775 with dNLL +0.006, and by 5 to 0.870: French goes from
+0.07 to 0.81, German 0.45 to 0.91, Spanish 0.47 to 0.89, Italian 0.20 to 0.74, English stays at 1.00. Each output
+follows its own prompt's language. The new correct outputs aren't prompt copies: the share of their 4-grams that
+appear in the prompt goes down (0.31 at baseline, 0.14 at x5), though they're somewhat more repetitive (0.48 to
+0.60), as GPT-2's non-English text already is. The paper's heads (L6H1, and the top-SR heads like L0H10) don't help,
+and the zero-ablation candidates that failed mean ablation (L2H5, L2H3) hurt at x5 with a large dNLL.
+
+This is the opposite of the paper's "no observed accuracy improvement" for 2-5x amplification.
+
+# L6H10 versions of the section 5 / appendix numbers, 2026-10-07
+
+attention.py, 500 prompts (100 per language), greedy, 40 steps. results/gpt2-attention has the attention and entropy
+figures (same file names as the paper's) and summary.md with a Table 6 replacement.
+- During generation L6H10 puts 0.73 of its attention on the first token, with entropy 1.39. That sits between the
+  paper's heads (L6H1 0.75 / 0.95, L9H9 0.78 / 0.94) and random heads (entropy 1.64-2.31). The other c->w heads go
+  from sink-like (L4H8, L8H6, about 0.61) to hardly looking at the first token (L2H5, L2H3, about 0.07), so
+  first-token attention doesn't pick them out. The old entropy figure used L2H5 and L4H8 as its random heads.
+- On non-English prompts L6H10 attends to the first token less when the output stays in the prompt language (0.60,
+  122 prompts) than when it goes to English (0.76, 278 prompts), the same direction as the paper's L6H1 numbers
+  (0.847 vs 0.923).
+- On the prompt itself its attention to the first token is 0.44-0.96 across query positions (5th-95th percentile);
+  the paper has 0.62-1.00 for L6H1.
+- Probing on all 2,500 prompts from the last prompt token: 0.37 from the embeddings, then 0.96-0.98 after every layer
+  from layer 0 on. The prompt language is linearly readable everywhere past the first layer, so probing can't point
+  to particular layers and the paper's 85% vs 58% comparison doesn't carry over.
+
+# L6H10 language identity pilot, 2026-10-07
+
+identity.py. L6H10's mean output per language over 200 FLORES dev sentences each. set:X replaces the head's output
+with language X's mean at every position; add:X adds 3 x (X's mean minus the mean over the five languages). Table in
+results/gpt2-identity/summary.md.
+
+- Replacing with any language's mean acts like ablation: non-English outputs go to English (0.78-0.96), even with the
+  prompt's own language (German prompts with the German mean: 0.17 German, 0.80 English). The patched-in language
+  almost never shows up (0.01 or less).
+- Adding the English direction sends everything to English (0.93-0.97). Adding the German, Spanish or Italian
+  direction makes non-English prompts keep their own language more (German prompts 0.45 to 0.55-0.71, Spanish 0.47 to
+  0.55-0.65), but never switches them to the added language. The French direction does nothing.
+- The means line up the same way. The English offset (norm 0.68) points against German, Spanish and Italian (cosine
+  -0.76 to -0.93), which point roughly together (0.33 to 0.71). French's offset is small (0.12) and leans toward
+  English, in line with GPT-2 continuing French prompts in English 90% of the time.
+
+At the level of its average output, L6H10 separates English from German, Spanish and Italian but doesn't steer
+between those three. That supports describing it as keeping the prompt language instead of falling back to English.
+It doesn't rule out language identity in the input-specific part of the output (the own-language mean already fails,
+so that part is what matters); swapping outputs position by position between aligned sentences would test that.
+
+# Setting checks, 2026-10-07
+
+checks.py, each with the main heads plus three control heads drawn at random from the dNLL <= 0.1 heads outside the
+top ten by c->w. Tables in results/gpt2-sampling, results/gpt2-truncated and results/qwen-format.
+
+Sampling (GPT-2, temperature 0.7, three seeds, each condition compared with the same-seed baseline): L6H10's c->w is
+0.256-0.272 across seeds, higher than with greedy decoding (0.210); L4H8 0.17-0.19, L2H5 0.14-0.15, the controls
+0.01-0.09, L6H1 about 0.02.
+
+Truncated prompts (GPT-2, FLORES sentences cut to their first half, at least four words): the model now continues a
+sentence instead of starting a new one, and baseline non-English accuracy is 0.716 instead of 0.296. L6H10 only takes
+it to 0.644 (c->w 0.095), close to the control heads (0.02-0.08). L6H10 seems to matter mostly when GPT-2 starts a
+new sentence after a complete one, as in the FLORES setup. Mid-sentence, the preceding words already fix the language.
+
+Qwen prompt format (125 prompts): instruct without the chat template and base with it.
+
+| L22H6 c->w | raw text | chat template |
+|---|---|---|
+| base | 0.160 | 0.144 |
+| instruct | 0.168 | 0.480 |
+
+With the same input format base and instruct are close; the instruct model leans on L22H6 much more only in the chat
+format it was tuned on. L17H7 follows the same pattern (0.264 for instruct with the template, 0.016-0.064 otherwise).
+The tuning effect on these heads only shows up with chat-formatted input.
+
+# Detector and prompt-split checks (GPT-2), 2026-10-07
+
+The head-hook generations relabeled with langid, fastText (lid.176) and a 2-of-3 vote give the same picture: c->w over
+the 144 heads correlates with the langdetect version at Spearman 0.994 or higher, L6H10 is the top c->w head among the
+dNLL <= 0.1 heads under every detector, and the top five are the same heads. Across 200 random half splits of the
+prompts (stratified by language), c->w per head correlates at 0.976 between halves (5th percentile 0.969) and L6H10 is
+first in both halves every time. results/gpt2/robustness.md, from robustness.py.
+
+Of the five top c->w heads, only L6H10 holds up under Chaewon's mean ablation (PR #6): c->w 0.210 with zero ablation
+and 0.177 with mean ablation, while L2H5 and L4H8 drop to 0.057, L8H6 to 0.083 and L2H3 to 0.010. L6H10's LM loss
+change is also specific to non-English text: +0.001 on English and +0.011 to +0.029 on fr/de/es/it.
 
 # GPT-2 zh/ru, 2026-10-07
 
@@ -127,7 +232,7 @@ True head ablation on 200 prompts: mean SR 0.146 (sd 0.095).
 So "the European heads have no effect on zh/ru and other heads in layers 0-4 take over" doesn't hold with the
 fixed hook.
 
-# BLOOM-1b7 (running)
+# BLOOM-1b7, 2026-10-07
 
 The first attempt had two problems.
 - fp16 with left padding gives NaN logits on some rows, and 2,257 of the 2,500 baseline generations came out empty.
@@ -138,9 +243,23 @@ The first attempt had two problems.
   residual, at h*64, and its 16 "heads" only covered the first half of the hidden size. Paper mode keeps the 64-wide
   slice to reproduce what was run; head mode uses 128.
 
-Paper hook, 25 hand-written prompts, every third layer, fp32 batched: baseline accuracy 0.88, mean SR 0.060
-(sd 0.039), max 0.24 at L15H5 (4.6 sd), 12 heads above 0.1. The paper has max 0.16, 2.60 sd, 4 heads above 0.1.
-This doesn't match yet; the fp16 single-prompt run, as in bloom_experiment.py, is queued after the 2,500-prompt
-head-mode run.
+Paper hook on the 25 hand-written prompts, every third layer, run exactly as bloom_experiment.py does (fp16, one
+prompt at a time, 64-wide slice): baseline accuracy 0.88, max SR 0.20 at L9H14 (3.77 sd), 12 heads above 0.1. fp32
+batched gives max 0.24. The paper has max 0.16, 2.60 sd and 4 heads above 0.1, so unlike GPT-2 and Qwen the submitted
+BLOOM numbers don't reproduce even with the original settings.
 
-Not rerun yet: redistribution with a matched null, mean vs zero ablation.
+True head ablation, all 384 heads, 2,500 prompts, fp32: baseline accuracy 0.772 (en 0.87, fr 0.76, de 0.83, es 0.52,
+it 0.88). 482 of the 2,500 baseline outputs are empty, because BLOOM often ends the document right after a complete
+FLORES sentence, and those count as wrong. Mean SR 0.011 (sd 0.009), a tenth of GPT-2's.
+- The top c->w head, L23H12 (0.090, dNLL +0.000), doesn't switch language. With it removed BLOOM stops right away on
+  218 more prompts.
+- The heads that do switch language sit in layers 18-21 and act on single languages. L21H15 takes German from 0.834 to
+  0.634, mostly to English; L18H14 and L19H15 do the same on a smaller scale. Their LM loss change is on German
+  (+0.015 to +0.032) and Italian (+0.04 to +0.08) and near zero on the other languages. Italian outputs go to French
+  or Spanish more often than to English.
+- There is nothing like GPT-2's L6H10. The largest real switch rate from one head is 0.046 (L21H15).
+
+results/bloom and results/bloom-paper25-fp16.
+
+Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
+results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
