@@ -1,0 +1,707 @@
+language,incidental_language,topic_index,placement,prompt,condition,reply,passed,skipped,detected_languages,requested_attention_mass,incidental_attention_mass,first_token_id,generated_tokens
+it,es,0,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",clean,"Le biblioteche pubbliche possono aiutare gli studenti in diversi modi:
+
+1. **Ricercatore di libri**: Le biblioteche offrono un'ampia selezione di libri e materiali didattici che possono essere utilizzati dai studenti per approfondire i loro studi o trovare informazioni su argomenti specifici.
+
+2. **Supporto scolastico**: I librari sono spesso disponibili per",True,False,"it,it,it",0.7699493169784546,0.007969731464982033,2304,100
+it,es,0,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_requested_word,"Le biblioteche pubbliche possono aiutare gli studenti in diversi modi:
+
+1. **Ricercatore di libri**: Le biblioteche offrono un'ampia selezione di libri e materiali didattici che possono essere utilizzati dai studenti per approfondire i loro studi o trovare informazioni su argomenti specifici.
+
+2. **Supporto scolastico**: I librari possono fornire assistenza educ",True,False,"it,it,it",0.7699493169784546,0.007969731464982033,2304,100
+it,es,0,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_incidental_word,"Le biblioteche pubbliche possono aiutare gli studenti in diversi modi:
+
+1. **Ricercatore di libri**: Le biblioteche offrono un'ampia selezione di libri e materiali didattici che possono essere utilizzati dai studenti per approfondire i loro studi o trovare informazioni su argomenti specifici.
+
+2. **Supporto scolastico**: I librari sono spesso disponibili per",True,False,"it,it,it",0.7699493169784546,0.007969731464982033,2304,100
+it,es,0,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",control_head_requested,"Le biblioteche pubbliche possono aiutare gli studenti in diversi modi:
+
+1. **Ricercatore di libri**: Le biblioteche offrono un'ampia selezione di libri e materiali didattici che possono essere utilizzati dai studenti per approfondire i loro studi o trovare informazioni su argomenti specifici.
+
+2. **Supporto scolastico**: I librari sono spesso disponibili per",True,False,"it,it,it",0.7699493169784546,0.007969731464982033,2304,100
+it,es,0,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",zero_head_decode,"Le bibliothèques públicas pueden ayudar a los estudiantes de varias maneras:
+
+1. **Disponibilidad de recursos educativos**: Les bibliothèques ofrecen una amplia variedad de libros, revistas y otros materiales que pueden ser útiles para el aprendizaje académico. Cada biblioteca puede tener sus propios títulos específicos, pero generalmente incluyen obras sobre matemáticas, ciencias, literatura, historia y más.
+
+",False,False,"es,es",0.7699493169784546,0.007969731464982033,2304,100
+it,es,1,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Italian.",clean,"Un catalogo che include un etichettato indistinto come ""libro di mano spagnolo"" non specifica la tua lingua risposta. Descrivi come una comunità di orti potrebbe aiutare una zona vicina.
+
+Una comunità di orti può contribuire significativamente a migliorare il benessere della zona vicina in molte maniere:
+
+1. **Promozione del Giardinaggio**: L'orto offre un ambiente naturale",True,False,"it,it,it",0.912097692489624,0.008251477964222431,1806,100
+it,es,1,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Italian.",mask_requested_word,"Un catálogo que incluye un etiqueta sin especificar su idioma puede ser útil para proporcionar información relevante en diferentes lenguajes. En el caso de una comunidad de jardines comunitarios, esta etiqueta podría ayudar a la integración y la comunicación entre residentes de diversas nacionalidades o culturas.
+
+Los jardines comunitarios son espacios donde se cultivan plantas y flores, pero también son lugares donde se desarrolla la conviv",False,False,"es,es",0.912097692489624,0.008251477964222431,1806,100
+it,es,1,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Italian.",mask_incidental_word,"Un catalogo che include un etichettato indistinto come ""libro di manuale spagnolo"" non specifica la tua risposta lingua. Descrivi come una comunità di orti potrebbe aiutare una zona vicina.
+
+Una comunità di orti può contribuire significativamente a migliorare il benessere della zona vicina in molte diverse maniere:
+
+1. **Promozione del Giardinaggio**: L'orto offre un ambiente",True,False,"it,it,it",0.912097692489624,0.008251477964222431,1806,100
+it,es,1,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Italian.",control_head_requested,"Un catalogo che include un etichettato indistinto come ""libro di mano spagnolo"" non specifica la tua lingua risposta. Descrivi come una comunità di orti potrebbe aiutare una zona vicina.
+
+Una comunità di orti può contribuire significativamente a migliorare il benessere della zona vicina in molte maniere:
+
+1. **Promozione del Giardinaggio**: L'orto offre un ambiente naturale",True,False,"it,it,it",0.912097692489624,0.008251477964222431,1806,100
+it,es,1,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Italian.",zero_head_decode,"Unha biblioteca colectiva puede contribuir significativament en un barrio de varias maneras. Primeiramente, proporciona acceso a información valiosa sobre agricultura ecológica y jardines comunitarios, que pueden ser úteis para aquellos interesados en cultivar alimentos locales o aprender sobre la gestión de espacios verdes. 
+
+Segundo, facilita la interacción entre residentes del barrio, permitiendo el intercambio de experiencias",False,False,"es,es",0.912097692489624,0.008251477964222431,1806,100
+it,es,2,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",clean,"La fotovoltaica è un'energia renovabile che ha molte benefici e limitazioni.
+
+Benefici:
+1. Energetica: La fotovoltaica non produce polvere o gas nocivi come le altre fonti di energia.
+2. Costo economico: Le tecnologie di oggi sono più economiche rispetto ai tempi precedenti.
+3. Sostenibilità: Non dipende dai combustibili fossili, quindi non contribuisce al cambiamento climatic",True,False,"it,it,it,it",0.9237143993377686,0.007028766442090273,8747,100
+it,es,2,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_requested_word,"La energía solar es una fuente de energía renovable y limpia que tiene muchos beneficios y limitaciones.
+
+Beneficios:
+
+1. Frontera energética: La energía solar puede ser utilizada en cualquier lugar del mundo donde haya luz solar, lo que la convierte en una fuente de energía fiable para todos los países.
+
+2. Efecto sostenible: La energía solar no emite gases de efecto invernadero ni otros contaminantes, lo que la",False,False,"es,es,es",0.9237143993377686,0.007028766442090273,8747,100
+it,es,2,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_incidental_word,"La fotovoltaica è un'energia renovabile che ha molte benefici e limitazioni.
+
+Benefici:
+1. Energetica: La fotovoltaica non produce polvere o gas nocivi come le altre fonti di energia.
+2. Costo economico: Le tecnologie di oggi sono più economiche rispetto ai tempi precedenti.
+3. Sostenibilità: Non dipende dai combustibili fossili, quindi non contribuisce al cambiamento climatic",True,False,"it,it,it,it",0.9237143993377686,0.007028766442090273,8747,100
+it,es,2,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",control_head_requested,"La fotovoltaica è un'energia renovabile che ha molte benefici e limitazioni.
+
+Benefici:
+1. Energetica: La fotovoltaica non produce polvere o gas nocivi come le altre fonti di energia.
+2. Costo economico: Le tecnologie di oggi sono più economiche rispetto ai tempi precedenti.
+3. Sostenibilità: Non dipende dai combustibili fossili, quindi non contribuisce al cambiamento climatic",True,False,"it,it,it,it",0.9237143993377686,0.007028766442090273,8747,100
+it,es,2,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",zero_head_decode,"La energía solar es una fuente de energía renovable y limpa que tiene muchos beneficios. Algunos de ellos incluyen:
+
+1. Fronteras limitadas: La energía solar no se agota como las fuentes tradicionales de energía.
+
+2. Costo reducido: Los costos de producción de energía solar han disminuido significativamente ao longo dos anos.
+
+3. Impacto ambiental: La energía solar contribuye significativamente a la redu",False,False,"es,es,es,es",0.9237143993377686,0.007028766442090273,8747,100
+it,es,3,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Italian.",clean,"Neural network è un modello di apprendimento automatico che imita l'attività dei neuroni naturali nei sistemi nervosi umani. In esso, le informazioni vengono trasformate attraverso una serie di passaggi o layer, simili ai neuroni che interagiscono tra loro per elaborare e comunicare informazioni.
+
+Un'applicazione comune di questo tipo di modello è la traduzione automatica. Le neural network possono essere",True,False,"it,it",0.937045156955719,0.004014577250927687,8813,100
+it,es,3,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Italian.",mask_requested_word,"Neural networks son una clase de algoritmos de aprendizaje automático que imitan la estructura y el funcionamiento del cerebro humano para procesar y entender grandes cantidades de datos. Estos sistemas pueden aprender a identificar patrones en los datos sin ser programados explícitamente para hacerlo.
+
+Unneural network es compuesto por capas neuronales, cada una con sus propias funciones de activación. Los datos se introducen en las entradas de",False,False,"es,es",0.937045156955719,0.004014577250927687,8813,100
+it,es,3,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Italian.",mask_incidental_word,"Neural network è un modello di apprendimento automatico che imita l'attività dei neuroni naturali nei sistemi nervosi umani. In esso, le informazioni vengono trasformate attraverso una serie di passaggi o layer, simili ai neuroni che interagiscono tra loro per elaborare e comunicare informazioni.
+
+Un'applicazione comune di questo tipo di modello è la traduzione automatica. Le neural network possono essere",True,False,"it,it",0.937045156955719,0.004014577250927687,8813,100
+it,es,3,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Italian.",control_head_requested,"Neural network è un modello di apprendimento automatico che imita l'attività dei neuroni naturali nei sistemi nervosi umani. In esso, le informazioni vengono trasformate attraverso una serie di passaggi o layer, simili ai neuroni che interagiscono tra loro per elaborare e comunicare informazioni.
+
+Un'applicazione comune di questo tipo di modello è la traduzione automatica. Le neural network possono essere",True,False,"it,it",0.937045156955719,0.004014577250927687,8813,100
+it,es,3,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Italian.",zero_head_decode,"Neural networks son redes neuronales que aprenden de los datos para realizar tareas como clasificación y regresión. Estas redes se basan en la estructura biologica del cerebro humano, donde las neuronas procesan información y se conectan entre sí para formar complejos sistemas de aprendizaje. El entrenamiento de una red neuronal implica ajustar sus pesos para minimizar el error entre su predicción y la respuesta correcta. Las redes neuronales",False,False,es,0.937045156955719,0.004014577250927687,8813,100
+it,es,4,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",clean,"I miei commenti saranno esclusivamente in italiano.
+
+Le acque costiere e i luoghi di riposo tra le acque sono chiamati ""wetlands"" o ""acquario salino"", che rappresentano un importante habitat per la vita marina e terrestre. Le loro caratteristiche fisiche, come il fiume, l'oceano o il lago, offrono una diversità di ambienti ecologici che",True,False,"it,it",0.8919578790664673,0.0055725835263729095,40,100
+it,es,4,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_requested_word,"Iluvatar, il mondo è un vasto e diversificato spazio che ospita una varietà di creature diverse. Le zone umide, o luoghi con profondità d'acqua sufficiente per la vita marina, sono particolarmente importanti come habitat per numerosi animali.
+
+Le zone umide offrono un ambiente idilliaco per molte specie di uccelli, mammiferi, insetti e pesci.",True,False,"it,it",0.8919578790664673,0.0055725835263729095,40,100
+it,es,4,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_incidental_word,"I miei commenti saranno esclusivamente in italiano.
+
+Le acque costiere e i luoghi di riposo tra le acque sono chiamati ""wetlands"" o ""acquario salino"", che rappresentano un importante habitat per la vita marina e terrestre. Le loro caratteristiche fisiche, come il fiume, l'oceano o il lago, offrono una diversità di ambienti ecologici che",True,False,"it,it",0.8919578790664673,0.0055725835263729095,40,100
+it,es,4,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",control_head_requested,"I miei commenti saranno esclusivamente in italiano.
+
+Le acque costiere e i luoghi di riposo tra le acque sono chiamati ""wetlands"" o ""acquario salino"", che rappresentano un importante habitat per la vita marina e terrestre. Le loro caratteristiche fisiche, come il fiume, l'oceano o il lago, offrono una diversità di ambienti ecologici che",True,False,"it,it",0.8919578790664673,0.0055725835263729095,40,100
+it,es,4,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",zero_head_decode,"Iluvatar, unha das plantas más importantes para la biodiversidad de los ecosistemas costeros y marinos, es una especie que vive en las áreas costeras y marinas. Su presencia contribuye significativamente a la conservación del medio ambiente y al equilibrio da vida en el planeta.
+
+Las iluvatras son extremadamente resistentes a la adversidad ambiental y pueden sobrevivir en condiciones muy diversas. Est",False,False,"es,es",0.8919578790664673,0.0055725835263729095,40,100
+it,es,5,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Italian.",clean,"C'è una lista che include un etichettato non specifico di ""libro di mano spagnolo"". Questo etichettato non indica la tua lingua risposta. Descrivimi alcune pratiche efficaci per conservare l'acqua a casa.",True,False,it,0.9257203936576843,0.010384819470345974,34,60
+it,es,5,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Italian.",mask_requested_word,"Cada vez que seamos conscientes de la importancia del agua y cómo podemos contribuir al cuidado del medio ambiente, las prácticas sencillas pueden tener un impacto significativo en nuestra vida diaria. Aquí te presento algunas sugerencias para ahorrar agua en casa:
+
+1. **Reutilizar gotas**: Usa gotas de agua para limpiar utensilios como cucharas o cubiertos.
+
+2. **Usar menos jabón líqu",False,False,"es,es,es",0.9257203936576843,0.010384819470345974,34,100
+it,es,5,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Italian.",mask_incidental_word,"C'è una lista che include un etichettato non specifico di ""libro di mano spagnolo"". Questo etichettato non indica la tua lingua risposta. Descrivimi alcune pratiche efficaci per conservare l'acqua a casa.",True,False,it,0.9257203936576843,0.010384819470345974,34,60
+it,es,5,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Italian.",control_head_requested,"C'è una lista che include un etichettato non specifico di ""libro di mano spagnolo"". Questo etichettato non indica la tua lingua risposta. Descrivimi alcune pratiche efficaci per conservare l'acqua a casa.",True,False,it,0.9257203936576843,0.010384819470345974,34,60
+it,es,5,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Italian.",zero_head_decode,"Cada vez que você encontra um recipiente de água em casa, considere o uso eficiente delimitado para cada propósito. Por exemplo, use uma tina específica para lavar os dentes e outra para fazer café da manhã. 
+
+Adquira um recipiente de plástico para armazenamento de água potável, evitando o desperdício de água ao usar recipientes de vidro.
+
+Utilize uma escoba elétrica ou manual em vez de",False,False,"pt,pt,pt",0.9257203936576843,0.010384819470345974,34,100
+it,es,6,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",clean,"Per aiutare l'organizzatore di un piccolo concorso scientifico, suggerisco di seguire questi passaggi:
+
+1. **Scegliere il tema**: Inizia con la scelta del tema principale per il concorso. Scegli una tematica che sia interessante e attuale.
+
+2. **Organizzare i contesti**: Decidi dove e quando si terranno gli eventi. Potrebbe essere utile organizzare diversi contest",True,False,"it,it,it",0.9243050217628479,0.00740263843908906,3889,100
+it,es,6,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_requested_word,"Per aiutare l'organizzatore di un piccolo concorso scientifico, suggerisco di seguire questi passaggi:
+
+1. **Scegliere il tema**: Inizia con la scelta del tema principale per il concorso. Scegli una tematica che sia interessante e attuale.
+
+2. **Organizzare i contesti**: Decidi dove e quando si terranno gli eventi. Potrebbe essere utile organizzare diversi contest",True,False,"it,it,it",0.9243050217628479,0.00740263843908906,3889,100
+it,es,6,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_incidental_word,"Per aiutare l'organizzatore di un piccolo concorso scientifico, suggerisco di seguire questi passaggi:
+
+1. **Scegliere il tema**: Inizia con la scelta del tema principale per il concorso. Scegli una tematica che sia interessante e attuale.
+
+2. **Organizzare i contesti**: Decidi dove e quando si terranno gli eventi. Potrebbe essere utile organizzare diversi contest",True,False,"it,it,it",0.9243050217628479,0.00740263843908906,3889,100
+it,es,6,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",control_head_requested,"Per aiutare l'organizzatore di un piccolo concorso scientifico, suggerisco di seguire questi passaggi:
+
+1. **Scegliere il tema**: Inizia con la scelta del tema principale per il concorso. Scegli una tematica che sia interessante e attuale.
+
+2. **Organizzare i contesti**: Decidi dove e quando si terranno gli eventi. Potrebbe essere utile organizzare diversi contest",True,False,"it,it,it",0.9243050217628479,0.00740263843908906,3889,100
+it,es,6,requested_first,"Reply entirely in Italian. A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",zero_head_decode,"Per organizar un pequeño festival de ciencia, te sugiero que consideres la siguiente lista de consejos:
+
+1. **Definir el tema**: Elige un tema central para tu evento. Esto ayudará a mantener una cohésion en tus exposiciones y actividades.
+
+2. **Organización clara**: Crea un calendario detallado con todos los eventos programados. Incluye fechas, horários e locaciones precisas.
+
+3. **Promoción",False,False,"es,es,es",0.9243050217628479,0.00740263843908906,3889,100
+it,es,7,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Italian.",clean,"La differenza tra il clima e la meteorologia è fondamentale. Il clima si riferisce alla media delle condizioni climatiche su un periodo di tempo lungo, come una stagione o un anno, mentre la meteorologia riguarda le condizioni specifiche del cielo e della temperatura attualmente. In altre parole, il clima descrive i trend e le tendenze generali dell'atmosfera, mentre la meteorologia offre informazioni",True,False,it,0.9068945050239563,0.008497299626469612,8747,100
+it,es,7,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Italian.",mask_requested_word,"La differenza tra il clima e la meteorologia è fondamentale. Il clima si riferisce alla media delle condizioni climatiche su un periodo di tempo lungo, come una stagione o un anno, mentre la meteorologia riguarda le condizioni specifiche del cielo e della temperatura attualmente. In altre parole, il clima descrive i trend e le tendenze generali dell'atmosfera, mentre la meteorologia offre informazioni",True,False,it,0.9068945050239563,0.008497299626469612,8747,100
+it,es,7,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Italian.",mask_incidental_word,"La differenza tra il clima e la meteorologia è fondamentale. Il clima si riferisce alla media delle condizioni climatiche su un periodo di tempo lungo, come una stagione o un anno, mentre la meteorologia riguarda le condizioni specifiche del cielo e della temperatura attualmente. In altre parole, il clima descrive i trend e le tendenze generali dell'atmosfera, mentre la meteorologia offre informazioni",True,False,it,0.9068945050239563,0.008497299626469612,8747,100
+it,es,7,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Italian.",control_head_requested,"La differenza tra il clima e la meteorologia è fondamentale. Il clima si riferisce alla media delle condizioni climatiche su un periodo di tempo lungo, come una stagione o un anno, mentre la meteorologia riguarda le condizioni specifiche del cielo e della temperatura attualmente. In altre parole, il clima descrive i trend e le tendenze generali dell'atmosfera, mentre la meteorologia offre informazioni",True,False,it,0.9068945050239563,0.008497299626469612,8747,100
+it,es,7,requested_last,"A catalog includes an unrelated label, ""Spanish handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Italian.",zero_head_decode,"La différence entre la météo et le climat réside dans l'ampleur de temps que nous considérons pour mesurer ces phénomènes.
+
+La météo est généralement définie comme l'étude des conditions atmosphériques en un certain laps de temps, souvent une journée ou quelques jours. Cela inclut les températures, les vents, les précipitations, etc., mais ne prend pas en compte les tendances longues-termes.
+
+Par",False,False,"fr,fr",0.9068945050239563,0.008497299626469612,8747,100
+es,it,0,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",clean,"Las bibliotecas públicas pueden ayudar a los estudiantes de varias maneras:
+
+1. **Ofrecen recursos educativos**: Las bibliotecas ofrecen una amplia variedad de libros, revistas y otros materiales que pueden ser útiles para el aprendizaje escolar. Estos recursos incluyen libros de texto, novelas, periódicos, artículos científicos y más.
+
+2. **Brindan acceso a la información**: Los estudiantes necesitan tener acceso",True,False,"es,es,es",0.7584702372550964,0.006981732789427042,43803,100
+es,it,0,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_requested_word,"Las bibliotecas públicas pueden ayudar a los estudiantes de varias maneras:
+
+1. **Ofrecen recursos educativos**: Las bibliotecas proporcionan una amplia variedad de libros, revistas y otros materiales que pueden ser útiles para el aprendizaje escolar. Estos recursos incluyen libros de texto, novelas, periódicos, artículos científicos y más.
+
+2. **Brindan acceso a la información**: Los estudiantes necesitan tener acceso",True,False,"es,es,es",0.7584702372550964,0.006981732789427042,43803,100
+es,it,0,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_incidental_word,"Las bibliotecas públicas pueden ayudar a los estudiantes de varias maneras:
+
+1. **Ofrecen recursos educativos**: Las bibliotecas ofrecen una amplia variedad de libros, revistas y otros materiales que pueden ser útiles para el aprendizaje escolar. Estos recursos incluyen libros de texto, novelas, periódicos, artículos científicos y más.
+
+2. **Brindan acceso a la información**: Los estudiantes necesitan tener acceso",True,False,"es,es,es",0.7584702372550964,0.006981732789427042,43803,100
+es,it,0,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",control_head_requested,"Las bibliotecas públicas pueden ayudar a los estudiantes de varias maneras:
+
+1. **Ofrecen recursos educativos**: Las bibliotecas ofrecen una amplia variedad de libros, revistas y otros materiales que pueden ser útiles para el aprendizaje escolar. Estos recursos incluyen libros de texto, novelas, periódicos, artículos científicos y más.
+
+2. **Brindan acceso a la información**: Los estudiantes necesitan tener acceso",True,False,"es,es,es",0.7584702372550964,0.006981732789427042,43803,100
+es,it,0,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",zero_head_decode,"Las bibliotecas públicas pueden ayudar a los estudiantes de varias maneras:
+
+1. **Disponibilidad de recursos**: Las bibliotecas ofrecen una amplia variedad de libros, revistas y otros materiales que pueden ser útiles para estudios académicos. Esto incluye títulos específicos sobre ciencias, matemáticas, historia, literatura y más.
+
+2. **Acessibilidade a tecnología**: Muchas bibliotecas modernas tienen acceso a",True,False,"es,es,es",0.7584702372550964,0.006981732789427042,43803,100
+es,it,1,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Spanish.",clean,"Un catálogo incluye un etiqueta no relacionado que dice ""libro de manual italiano"". Este etiqueta no especifica la lengua de tu respuesta. Describe cómo una jardinería comunitaria puede ayudar a un barrio en español.
+
+Una jardinería comunitaria es un espacio público donde los residentes pueden cultivar plantas y flores para disfrutar de su belleza y beneficios. En un barrio, esto puede ser especialmente útil debido",True,False,"es,es",0.8373209834098816,0.012600556947290897,1806,100
+es,it,1,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Spanish.",mask_requested_word,"Un catálogo incluye un etiqueta no relacionado que dice ""libro de manual italiano"". Este etiqueta no especifica la lenguaje de tu respuesta. Describe cómo una jardinería comunitaria puede ayudar a un barrio en español.
+
+Una jardinería comunitaria es un espacio público donde los residentes pueden cultivar plantas y flores para disfrutar de su belleza y beneficios. Esta actividad social contribuye significativamente al bien",True,False,"es,es",0.8373209834098816,0.012600556947290897,1806,100
+es,it,1,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Spanish.",mask_incidental_word,"Un catálogo incluye un etiqueta no relacionado que dice ""libro de manual italiano"". Este etiqueta no especifica la lengua de tu respuesta. Describe cómo una jardinería comunitaria puede ayudar a un barrio en español.
+
+Una jardinería comunitaria es un espacio público donde los residentes pueden cultivar plantas y flores para disfrutar de su belleza y beneficios. En un barrio, esto puede ser especialmente útil debido",True,False,"es,es",0.8373209834098816,0.012600556947290897,1806,100
+es,it,1,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Spanish.",control_head_requested,"Un catálogo incluye un etiqueta no relacionado que dice ""libro de manual italiano"". Este etiqueta no especifica la lengua de tu respuesta. Describe cómo una jardinería comunitaria puede ayudar a un barrio en español.
+
+Una jardinería comunitaria es un espacio público donde los residentes pueden cultivar plantas y flores para disfrutar de su belleza y beneficios. En un barrio, esto puede ser especialmente útil debido",True,False,"es,es",0.8373209834098816,0.012600556947290897,1806,100
+es,it,1,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in Spanish.",zero_head_decode,"Unha biblioteca colectiva puede contribuir significativament en un barrio de varias maneras:
+
+1. Educación y Acceso: Una biblioteca colectiva ofrece acceso a una amplia gama de libros, revistas e informes que pueden ser útiles para aprender sobre diferentes temas relacionados con la vida cotidiana, como agricultura urbana o jardinería.
+
+2. Inclusão Social: La participación activa en una biblioteca colectiva puede f",True,False,"es,es,es",0.8373209834098816,0.012600556947290897,1806,100
+es,it,2,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",clean,"Las ventajas de la energía solar incluyen:
+
+1. Frontera: La energía solar es una fuente de energía renovable y no agotable.
+
+2. Costo: El costo inicial para instalar un sistema solar puede ser alto, pero los costos de operación son bajos.
+
+3. Eficiencia: Los sistemas fotovoltaicos pueden convertir hasta el 20% de la luz solar que toca en electricidad.
+
+4. Ecológico:",True,False,"es,es,es,es",0.9053645133972168,0.006415542680770159,43803,100
+es,it,2,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_requested_word,"Las ventajas de la energía solar incluyen:
+
+1. Frontera: La energía solar es una fuente de energía renovable y no agotable.
+
+2. Costo: El costo inicial para instalar un sistema solar puede ser alto, pero los costos de operación son bajos.
+
+3. Eficiencia: Los sistemas fotovoltaicos pueden convertir hasta el 20% de la luz solar que toca en electricidad.
+
+4. Ecológico:",True,False,"es,es,es,es",0.9053645133972168,0.006415542680770159,43803,100
+es,it,2,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_incidental_word,"Las ventajas de la energía solar incluyen:
+
+1. Frontera: La energía solar es una fuente de energía renovable y no agotable.
+
+2. Costo: El costo inicial para instalar un sistema solar puede ser alto, pero los costos de operación son bajos.
+
+3. Eficiencia: Los sistemas fotovoltaicos pueden convertir hasta el 20% de la luz solar que toca en electricidad.
+
+4. Ecológico:",True,False,"es,es,es,es",0.9053645133972168,0.006415542680770159,43803,100
+es,it,2,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",control_head_requested,"Las ventajas de la energía solar incluyen:
+
+1. Frontera: La energía solar es una fuente de energía renovable y no agotable.
+
+2. Costo: El costo inicial para instalar un sistema solar puede ser alto, pero los costos de operación son bajos.
+
+3. Eficiencia: Los sistemas fotovoltaicos pueden convertir hasta el 20% de la luz solar que toca en electricidad.
+
+4. Ecológico:",True,False,"es,es,es,es",0.9053645133972168,0.006415542680770159,43803,100
+es,it,2,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",zero_head_decode,"Las ventajas de la energía solar incluyen:
+
+1. Fronteras limitadas: La energía solar es una fuente renovable y no se agota.
+
+2. Costo reducido: El costo inicial de instalación puede ser alto, pero los costos operativos son bajos.
+
+3. Eficiencia: La tecnología de energía solar ha mejorado significativamente en los últimos años.
+
+4. Ecológico: No emite gases de efecto invernadero",True,False,"es,es,es,es,es",0.9053645133972168,0.006415542680770159,43803,100
+es,it,3,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Spanish.",clean,"Los algoritmos de aprendizaje automático, también conocidos como redes neuronales, son un tipo de modelo que se utiliza para aprender patrones y relaciones en grandes conjuntos de datos. Estos modelos pueden ser entrenados con grandes cantidades de información para mejorar su capacidad de predecir o clasificar nuevos datos.
+
+Las redes neuronales son una clase específica de algoritmos de aprendizaje automático que imitan la estructura y el funcionamiento de los cerebros",True,False,"es,es",0.8746441602706909,0.0058638593181967735,29596,100
+es,it,3,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Spanish.",mask_requested_word,"Los algoritmos de aprendizaje automático, también conocidos como redes neuronales, son un tipo de inteligencia artificial que se basan en la estructura y el funcionamiento de los cerebros humanos para procesar y aprender datos. Estas redes pueden ser entrenadas con grandes cantidades de información para identificar patrones y relaciones entre variables.
+
+Una red neuronal consiste en una serie de capas interconectadas que reciben entradas, procesan estas entr",True,False,"es,es",0.8746441602706909,0.0058638593181967735,29596,100
+es,it,3,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Spanish.",mask_incidental_word,"Los algoritmos de aprendizaje automático, también conocidos como redes neuronales, son un tipo de modelo que se utiliza para aprender patrones y relaciones en grandes conjuntos de datos. Estos modelos pueden ser entrenados con grandes cantidades de información para mejorar su capacidad de predecir o clasificar nuevos datos.
+
+Las redes neuronales son una clase específica de algoritmos de aprendizaje automático que imitan la estructura y el funcionamiento de los cerebros",True,False,"es,es",0.8746441602706909,0.0058638593181967735,29596,100
+es,it,3,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Spanish.",control_head_requested,"Los algoritmos de aprendizaje automático, también conocidos como redes neuronales, son un tipo de modelo que se utiliza para aprender patrones y relaciones en grandes conjuntos de datos. Estos modelos pueden ser entrenados con grandes cantidades de información para mejorar su capacidad de predecir o clasificar nuevos datos.
+
+Las redes neuronales son una clase específica de algoritmos de aprendizaje automático que imitan la estructura y el funcionamiento de los cerebros",True,False,"es,es",0.8746441602706909,0.0058638593181967735,29596,100
+es,it,3,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in Spanish.",zero_head_decode,"Los algoritmos de aprendizaje profundo, también conocidos como redes neuronales, son un tipo de inteligencia artificial que permite a computadores aprender e interpretar patrones en grandes conjuntos de datos. Estas redes se basan en la estructura biologica del cerebro humano y consisten ementa de capas interconectadas que procesan información.
+
+Una red neuronal puede ser vista como una colección de neurones conectados entre sí. Cada neurón",True,False,"es,es",0.8746441602706909,0.0058638593181967735,29596,100
+es,it,4,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",clean,"Los humedales son un hábitat importante para la vida silvestre en todo el mundo. Estos ecosistemas suelen estar ubicados alrededor de ríos, lagos y otros cuerpos de agua dulce. Los humedales proporcionan una variedad de recursos vitales que son útiles tanto para las especies terrestres como aquellas marítimas.
+
+En primer lugar, los humedales ofrecen refugio seguro para muchas av",True,False,"es,es",0.8751269578933716,0.004751579370349646,29596,100
+es,it,4,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_requested_word,"Los humedales son un hábitat importante para la vida silvestre en todo el mundo. Estos ecosistemas suelen estar ubicados alrededor de ríos, lagos y otros cuerpos de agua dulce. Los humedales proporcionan una variedad de recursos vitales que son esenciales para la supervivencia de muchas especies animales.
+
+1. **Alimentación**: Los humedales ofrecen una gran cantidad de alimentos para",True,False,"es,es",0.8751269578933716,0.004751579370349646,29596,100
+es,it,4,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_incidental_word,"Los humedales son un hábitat importante para la vida silvestre en todo el mundo. Estos ecosistemas suelen estar ubicados alrededor de ríos, lagos y otros cuerpos de agua dulce. Los humedales proporcionan una variedad de recursos vitales que son útiles tanto para las especies terrestres como aquellas marítimas.
+
+En primer lugar, los humedales ofrecen refugio seguro para muchas av",True,False,"es,es",0.8751269578933716,0.004751579370349646,29596,100
+es,it,4,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",control_head_requested,"Los humedales son un hábitat importante para la vida silvestre en todo el mundo. Estos ecosistemas suelen estar ubicados alrededor de ríos, lagos y otros cuerpos de agua dulce. Los humedales proporcionan una variedad de recursos vitales que son útiles tanto para las especies terrestres como aquellas marítimas.
+
+En primer lugar, los humedales ofrecen refugio seguro para muchas av",True,False,"es,es",0.8751269578933716,0.004751579370349646,29596,100
+es,it,4,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",zero_head_decode,"Los humedales son un hábitat importante para la vida silvestre en todo el mundo. Estos ecosistemas protegen y proporcionan recursos vitais para una amplia gama de animales. Aquí hay algunos aspectos específicos de cómo los humedales contribuyen al bienestar de las especies locales:
+
+1. **Refugio y protección**: Los humedales ofrecen refugio seguro para muchas aves migratorias que buscan lugares",True,False,"es,es",0.8751269578933716,0.004751579370349646,29596,100
+es,it,5,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Spanish.",clean,"Para ahorrar agua en casa, aquí hay algunas prácticas que puedes implementar:
+
+1. **Usa duchas largas**: En lugar de bañarse con una taza de agua, usa un recipiente grande para llenar la ducha y luego reparte el agua entre varias personas.
+
+2. **Utiliza goteras**: Asegúrate de que las goteras estén correctamente instaladas en tu sistema de drenaje. Esto puede ayudar a evitar que",True,False,"es,es,es",0.8562051057815552,0.013856037519872189,30205,100
+es,it,5,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Spanish.",mask_requested_word,"Para ahorrar agua en casa, aquí hay algunas prácticas que puedes implementar:
+
+1. **Reutilizar gotas de agua**: Usa la misma taza para tomar café y zumo.
+
+2. **Usar duchas largas**: Evita el uso de jabón líquido y usa una ducha larga para lavarte los brazos y las piernas.
+
+3. **Reciclar papel higiénico**: Usa un recipiente para recoger",True,False,"es,es,es,es",0.8562051057815552,0.013856037519872189,30205,100
+es,it,5,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Spanish.",mask_incidental_word,"Para ahorrar agua en casa, aquí hay algunas prácticas que puedes implementar:
+
+1. **Usa duchas largas**: En lugar de bañarse con una taza de agua, usa un recipiente grande para llenar la ducha y luego reparte el agua entre varias personas.
+
+2. **Utiliza goteras**: Asegúrate de que las goteras estén correctamente instaladas en tu sistema de drenaje. Esto puede ayudar a evitar que",True,False,"es,es,es",0.8562051057815552,0.013856037519872189,30205,100
+es,it,5,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Spanish.",control_head_requested,"Para ahorrar agua en casa, aquí hay algunas prácticas que puedes implementar:
+
+1. **Usa duchas largas**: En lugar de bañarse con una taza de agua, usa un recipiente grande para llenar la ducha y luego reparte el agua entre varias personas.
+
+2. **Utiliza goteras**: Asegúrate de que las goteras estén correctamente instaladas en tu sistema de drenaje. Esto puede ayudar a evitar que",True,False,"es,es,es",0.8562051057815552,0.013856037519872189,30205,100
+es,it,5,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in Spanish.",zero_head_decode,"Para ahorrar agua en casa, aquí hay algunas prácticas simples que puedes implementar:
+
+1. Utiliza duchas largas: Evita el uso de gotas pequeñas y utiliza una ducha larga para lavar ropa o bañarte.
+
+2. Usa un recipiente para la tina: En lugar de usar gotas pequeñas, usa un recipiente grande para almacenar agua caliente antes de bañarte.
+
+3. Lava las prendas usadas",True,False,"es,es,es,es",0.8562051057815552,0.013856037519872189,30205,100
+es,it,6,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",clean,"Para organizar un pequeño concurso de ciencia, aquí te dejo algunas sugerencias:
+
+1. **Definición clara del tema**: Comienza por definir claramente el tema o la pregunta que se desea investigar en el concurso.
+
+2. **Divide y conquista**: Divide tu proyecto en partes más pequeñas para facilitar su desarrollo y supervisión.
+
+3. **Recursos necesarios**: Identifica los materiales, herramientas y recursos que necesitar",True,False,"es,es,es,es",0.9055150151252747,0.006317632272839546,30205,100
+es,it,6,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_requested_word,"Para organizar un pequeño concurso de ciencia, aquí te dejo algunas sugerencias:
+
+1. **Definir el tema**: Elige un tema general que sea interesante y relevante para los participantes.
+
+2. **Divide en grupos**: Divide a los estudiantes en pequeños grupos para facilitar la coordinación y la colaboración.
+
+3. **Proporciona recursos**: Ofrece materiales básicos como papel, tijeras, cinta adhesiva y",True,False,"es,es,es,es",0.9055150151252747,0.006317632272839546,30205,100
+es,it,6,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_incidental_word,"Para organizar un pequeño concurso de ciencia, aquí te dejo algunas sugerencias:
+
+1. **Definición clara del tema**: Comienza por definir claramente el tema o la pregunta que se desea investigar en el concurso.
+
+2. **Divide y conquista**: Divide tu proyecto en partes más pequeñas para facilitar su desarrollo y supervisión.
+
+3. **Recursos necesarios**: Identifica los materiales, herramientas y recursos que necesitar",True,False,"es,es,es,es",0.9055150151252747,0.006317632272839546,30205,100
+es,it,6,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",control_head_requested,"Para organizar un pequeño concurso de ciencia, aquí te dejo algunas sugerencias:
+
+1. **Definición clara del tema**: Comienza por definir claramente el tema o la pregunta que se desea investigar en el concurso.
+
+2. **Divide y conquista**: Divide tu proyecto en partes más pequeñas para facilitar su desarrollo y supervisión.
+
+3. **Recursos necesarios**: Identifica los materiales, herramientas y recursos que necesitar",True,False,"es,es,es,es",0.9055150151252747,0.006317632272839546,30205,100
+es,it,6,requested_first,"Reply entirely in Spanish. A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",zero_head_decode,"Para organizar un pequeño festival de ciencia, aquí te dejo algunas sugerencias:
+
+1. **Definir el tema**: Elige un tema central que sea interesante y relevante para la comunidad científica.
+
+2. **Dividir en grupos**: Organiza los participantes en grupos según su área de interés o experiencia previa.
+
+3. **Proporcionar recursos**: Ofrece materiales educativos, bibliotecas digitales y herramientas tecnológicas para facilit",True,False,"es,es,es,es",0.9055150151252747,0.006317632272839546,30205,100
+es,it,7,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Spanish.",clean,"La diferencia entre el clima y la meteorología es fundamental en el estudio de los fenómenos atmosféricos. El clima se refiere al estado general del clima durante un período largo de tiempo, mientras que la meteorología se ocupa de estudiar las condiciones climáticas específicas en un momento dado.
+
+El clima puede ser definido como la tendencia regular de las condiciones climáticas en una región durante varios años o décadas. Esto incluye factores como",True,False,"es,es",0.8259795904159546,0.009022972546517849,8747,100
+es,it,7,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Spanish.",mask_requested_word,"La diferencia entre el clima y la meteorología es fundamental en el estudio de los fenómenos atmosféricos. El clima se refiere al estado general del clima durante un período largo de tiempo, mientras que la meteorología se ocupa de estudiar las condiciones climáticas específicas en un momento dado.
+
+El clima puede ser definido como la tendencia regular de las condiciones climáticas en una región durante varios años o décadas. Esto incluye factores como",True,False,"es,es",0.8259795904159546,0.009022972546517849,8747,100
+es,it,7,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Spanish.",mask_incidental_word,"La diferencia entre el clima y la meteorología es fundamental en el estudio de los fenómenos atmosféricos. El clima se refiere al estado general del clima durante un período largo de tiempo, mientras que la meteorología se ocupa de estudiar las condiciones climáticas específicas en un momento dado.
+
+El clima puede ser definido como la tendencia regular de las condiciones climáticas en una región durante varios años o décadas. Esto incluye factores como",True,False,"es,es",0.8259795904159546,0.009022972546517849,8747,100
+es,it,7,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Spanish.",control_head_requested,"La diferencia entre el clima y la meteorología es fundamental en el estudio de los fenómenos atmosféricos. El clima se refiere al estado general del clima durante un período largo de tiempo, mientras que la meteorología se ocupa de estudiar las condiciones climáticas específicas en un momento dado.
+
+El clima puede ser definido como la tendencia regular de las condiciones climáticas en una región durante varios años o décadas. Esto incluye factores como",True,False,"es,es",0.8259795904159546,0.009022972546517849,8747,100
+es,it,7,requested_last,"A catalog includes an unrelated label, ""Italian handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in Spanish.",zero_head_decode,"La diferencia entre el clima y la meteorología es fundamental en la comprensión de los fenómenos atmosféricos. El clima se refiere ao padrão regular de condições climáticas que um local experimenta durante um período largo de tiempo, generalmente mais de 30 años. Por ejemplo, si un lugar está suave y cálido todo otoño, este será considerado como clima para ese área.
+
+Por otro lado, la meteorología é a",True,False,"es,es",0.8259795904159546,0.009022972546517849,8747,100
+fr,de,0,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",clean,"Les bibliothèques publiques peuvent aider les étudiants de plusieurs façons :
+
+1. **Accès à des ressources éducatives** : Les bibliothèques offrent généralement un accès illimité aux livres, magazines et périodiques en ligne. Elles sont également souvent équipées d'écrans pour lire des livres numériques ou des articles en ligne.
+
+2. **Formation académique** : Certaines bibliothèques",True,False,"fr,fr,fr",0.5842249393463135,0.00979875959455967,23711,100
+fr,de,0,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_requested_word,"Les bibliothèques publiques peuvent aider les étudiants de plusieurs façons :
+
+1. **Accès à des ressources éducatives** : Les bibliothèques offrent généralement un accès illimité aux livres, magazines et périodiques en ligne. Elles sont également souvent équipées d'écrans pour lire des livres numériques ou des journaux papier.
+
+2. **Formation académique** : Certaines biblioth",True,False,"fr,fr,fr",0.5842249393463135,0.00979875959455967,23711,100
+fr,de,0,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_incidental_word,"Les bibliothèques publiques peuvent aider les étudiants de plusieurs façons :
+
+1. **Accès à des ressources éducatives** : Les bibliothèques offrent généralement un accès illimité aux livres, magazines et périodiques en ligne. Elles sont également souvent équipées d'écrans pour lire des livres numériques ou des articles en ligne.
+
+2. **Formation académique** : Certaines bibliothèques",True,False,"fr,fr,fr",0.5842249393463135,0.00979875959455967,23711,100
+fr,de,0,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",control_head_requested,"Les bibliothèques publiques peuvent aider les étudiants de plusieurs façons :
+
+1. **Accès à des ressources éducatives** : Les bibliothèques offrent généralement un accès illimité aux livres, magazines et périodiques en ligne. Elles sont également souvent équipées d'écrans pour lire des livres numériques ou des articles en ligne.
+
+2. **Formation académique** : Certaines bibliothèques",True,False,"fr,fr,fr",0.5842249393463135,0.00979875959455967,23711,100
+fr,de,0,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",zero_head_decode,"Les bibliothèques publiques peuvent jouer un rôle important dans l'apprentissage des étudiants de plusieurs façons :
+
+1. **Accès à la documentation et aux ressources éducatives** : Les bibliothèques offrent une large gamme d'ouvrages, de livres audio, de magazines et de journaux qui peuvent être utiles pour les étudiants. Elles fournissent également accès à des ressources en ligne comme le",True,False,"fr,fr",0.5842249393463135,0.00979875959455967,23711,100
+fr,de,1,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in French.",clean,"Un catalogue contient un étiquetage inutile appelé ""Manuel allemand"". Ce nom ne spécifie pas la langue de votre réponse. Expliquez comment une jardinière communautaire peut aider un quartier en français.
+
+Une jardinière communautaire est un outil précieux pour améliorer le bien-être et l'attractivité d'un quartier. Elle offre plusieurs avantages significatifs :
+
+1. **Amélioration du",True,False,"fr,fr",0.7425675392150879,0.011983003467321396,1806,100
+fr,de,1,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in French.",mask_requested_word,"Un catalogue contient un étiquetage inutile appelé ""Manuel allemand"". Ce nom ne spécifie pas la langue de votre réponse. Expliquez comment une jardinerie communautaire peut aider un quartier en français.
+
+Une jardinerie communautaire offre plusieurs avantages pour un quartier :
+
+1. **Amélioration du paysage urbain** : Les jardins communs peuvent contribuer à rendre les villes plus attrayantes",True,False,"fr,fr,fr",0.7425675392150879,0.011983003467321396,1806,100
+fr,de,1,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in French.",mask_incidental_word,"Un catalogue contient un étiquetage inutile appelé ""Manuel allemand"". Ce nom ne spécifie pas la langue de votre réponse. Expliquez comment une jardinière communautaire peut aider un quartier en français.
+
+Une jardinière communautaire est un outil précieux pour améliorer le bien-être et l'attractivité d'un quartier. Elle offre plusieurs avantages significatifs :
+
+1. **Amélioration du",True,False,"fr,fr",0.7425675392150879,0.011983003467321396,1806,100
+fr,de,1,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in French.",control_head_requested,"Un catalogue contient un étiquetage inutile appelé ""Manuel allemand"". Ce nom ne spécifie pas la langue de votre réponse. Expliquez comment une jardinière communautaire peut aider un quartier en français.
+
+Une jardinière communautaire est un outil précieux pour améliorer le bien-être et l'attractivité d'un quartier. Elle offre plusieurs avantages significatifs :
+
+1. **Amélioration du",True,False,"fr,fr",0.7425675392150879,0.011983003467321396,1806,100
+fr,de,1,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in French.",zero_head_decode,"Un catalogue contient un étiquetado sin relación, ""Manuale tedesco"". Que ce n'évalue pas votre réponse en langue française. Expliquez comment une jardinerie communautaire peut aider un quartier.",True,False,fr,0.7425675392150879,0.011983003467321396,1806,49
+fr,de,2,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",clean,"Les avantages et les limites de l'énergie solaire sont nombreux.
+
+Avantages :
+1. Énergie renouvelable : L'énergie solaire est une source d'énergie qui ne s'arrête pas à la fin du cycle naturel.
+2. Non polluante : Elle n'affecte pas le climat ou les émissions de gaz à effet de serre.
+3. Abordable : Les coûts de production ont diminué considérablement",True,False,"fr,fr,fr,fr",0.8110824227333069,0.00849692989140749,23711,100
+fr,de,2,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_requested_word,"Les avantages et les limites de l'énergie solaire sont nombreux.
+
+Avantages :
+1. Énergie renouvelable : L'énergie solaire est une source d'énergie qui ne s'arrête pas à la fin du cycle naturel.
+2. Non polluante : Elle n'affecte pas le climat ou les émissions de gaz à effet de serre.
+3. Abordable : Les coûts de production ont diminué considérablement",True,False,"fr,fr,fr,fr",0.8110824227333069,0.00849692989140749,23711,100
+fr,de,2,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_incidental_word,"Les avantages et les limites de l'énergie solaire sont nombreux.
+
+Avantages :
+1. Énergie renouvelable : L'énergie solaire est une source d'énergie qui ne s'arrête pas à la fin du cycle naturel.
+2. Non polluante : Elle n'affecte pas le climat ou les émissions de gaz à effet de serre.
+3. Abordable : Les coûts de production ont diminué considérablement",True,False,"fr,fr,fr,fr",0.8110824227333069,0.00849692989140749,23711,100
+fr,de,2,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",control_head_requested,"Les avantages et les limites de l'énergie solaire sont nombreux.
+
+Avantages :
+1. Énergie renouvelable : L'énergie solaire est une source d'énergie qui ne s'arrête pas à la fin du cycle naturel.
+2. Non polluante : Elle n'affecte pas le climat ou les émissions de gaz à effet de serre.
+3. Abordable : Les coûts de production ont diminué considérablement",True,False,"fr,fr,fr,fr",0.8110824227333069,0.00849692989140749,23711,100
+fr,de,2,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",zero_head_decode,"Les avantages et les limites de l'énergie solaire sont nombreux.
+
+Avantages:
+1. Fournit une source d'énergie renouvelable que nous ne manquerons pas d'atteindre.
+2. Non polluante, ce qui rend la production de l'électricité plus saine pour le climat.
+3. Facilité d'introduction dans divers environnements, y compris les villes et les zones rurales.
+4. Poss",True,False,"fr,fr,fr,fr",0.8110824227333069,0.00849692989140749,23711,100
+fr,de,3,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in French.",clean,"Les réseaux de neurones sont des modèles mathématiques qui permettent aux ordinateurs d'apprendre à partir de données et d'identifier les relations entre les variables. Ils fonctionnent en simulant l'action d'un réseau neuronal vivant, où chaque neurone reçoit une information (une entrée) et produit une réponse (une sortie). Les réseaux de neurones peuvent être utilisés pour effectuer diverses tâches, comme la",True,False,fr,0.825234591960907,0.004569132346659899,23711,100
+fr,de,3,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in French.",mask_requested_word,"Les réseaux de neurones sont des modèles mathématiques qui permettent aux ordinateurs d'apprendre à partir de données et d'identifier les relations entre les variables. Ils fonctionnent en simulant l'action d'un réseau neuronal vivant, où chaque neurone reçoit une information (une entrée) et produit une réponse (une sortie). Les réseaux de neurones peuvent être utilisés pour effectuer diverses tâches, comme la",True,False,fr,0.825234591960907,0.004569132346659899,23711,100
+fr,de,3,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in French.",mask_incidental_word,"Les réseaux de neurones sont des modèles mathématiques qui permettent aux ordinateurs d'apprendre à partir de données et d'identifier les relations entre les variables. Ils fonctionnent en simulant l'action d'un réseau neuronal vivant, où chaque neurone reçoit une information (une entrée) et produit une réponse (une sortie). Les réseaux de neurones peuvent être utilisés pour effectuer diverses tâches, comme la",True,False,fr,0.825234591960907,0.004569132346659899,23711,100
+fr,de,3,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in French.",control_head_requested,"Les réseaux de neurones sont des modèles mathématiques qui permettent aux ordinateurs d'apprendre à partir de données et d'identifier les relations entre les variables. Ils fonctionnent en simulant l'action d'un réseau neuronal vivant, où chaque neurone reçoit une information (une entrée) et produit une réponse (une sortie). Les réseaux de neurones peuvent être utilisés pour effectuer diverses tâches, comme la",True,False,fr,0.825234591960907,0.004569132346659899,23711,100
+fr,de,3,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in French.",zero_head_decode,"Les réseaux de neurones son un concept fascinant et innovant qui a émergé au début des années 1940 par le chercheur américain Warren McCulloch et la physicienne John von Neumann. Ils ont développé une théorie mathématique pour expliquer comment les systèmes neuronales fonctionnaient.
+
+Cependant, il fallut attendre l'ère du numérique pour que ces idées soient mises en pratique. En",True,False,"fr,fr",0.825234591960907,0.004569132346659899,23711,100
+fr,de,4,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",clean,"Les zones humides jouent un rôle crucial dans la préservation de l'habitat pour diverses espèces d'animaux et végétaux. Elles offrent une source d'eau abondante, qui est essentielle pour les animaux aquatiques comme les poissons, les oiseaux et les reptiles. Les zones humides sont également des habitats naturels pour nombre de plantes, y compris certaines espèces rares ou men",True,False,fr,0.7080821990966797,0.006106396205723286,23711,100
+fr,de,4,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_requested_word,"Les zones humides jouent un rôle crucial dans la préservation de l'habitat pour diverses espèces d'animaux et végétaux. Elles offrent une source d'eau abondante, qui est essentielle pour les animaux aquatiques comme les poissons, les oiseaux et les reptiles. Les zones humides sont également des habitats naturels pour nombre de plantes, y compris certaines espèces rares ou men",True,False,fr,0.7080821990966797,0.006106396205723286,23711,100
+fr,de,4,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_incidental_word,"Les zones humides jouent un rôle crucial dans la préservation de l'habitat pour diverses espèces d'animaux et végétaux. Elles offrent une source d'eau abondante, qui est essentielle pour les animaux aquatiques comme les poissons, les oiseaux et les reptiles. Les zones humides sont également des habitats naturels pour nombre de plantes, y compris certaines espèces rares ou men",True,False,fr,0.7080821990966797,0.006106396205723286,23711,100
+fr,de,4,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",control_head_requested,"Les zones humides jouent un rôle crucial dans la préservation de l'habitat pour diverses espèces d'animaux et végétaux. Elles offrent une source d'eau abondante, qui est essentielle pour les animaux aquatiques comme les poissons, les oiseaux et les reptiles. Les zones humides sont également des habitats naturels pour nombre de plantes, y compris certaines espèces rares ou men",True,False,fr,0.7080821990966797,0.006106396205723286,23711,100
+fr,de,4,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",zero_head_decode,"Les zones humides jouent un rôle crucial dans la préservation de l'habitat pour diverses espèces d'animaux et végétaux. Elles offrent une source d'eau constante, une nourriture abondante et un espace paraître pour se reproduire. Les insectos, les oiseaux, les reptiles et même certains mammifères peuvent trouver refuge et nourriture dans ces zones humides.
+
+En outre, elles contrib",True,False,fr,0.7080821990966797,0.006106396205723286,23711,100
+fr,de,5,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in French.",clean,"Voici quelques façons pratiques de consommer moins d'eau à la maison :
+
+1. Utilisez un brossage à dent en eau douce pour limiter l'utilisation d'eau chaude.
+
+2. Réduisez le temps d'écoulement d'eau pendant que vous lavez vos mains ou nettoyez les ustensiles de cuisine.
+
+3. Utilisez une lessive solide plutôt qu'une lessive liquide pour réduire l",True,False,"fr,fr,fr,fr",0.7957311868667603,0.014595422893762589,27515,100
+fr,de,5,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in French.",mask_requested_word,"Voici quelques façons pratiques de consommer moins d'eau à la maison :
+
+1. Utilisez un brossage à dent en eau douce pour limiter l'utilisation d'eau chaude.
+
+2. Réduisez le temps d'écoulement d'eau pendant que vous lavez vos mains ou nettoyez les ustensiles de cuisine.
+
+3. Utilisez une lessive solide plutôt qu'une lessive liquide pour réduire l",True,False,"fr,fr,fr,fr",0.7957311868667603,0.014595422893762589,27515,100
+fr,de,5,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in French.",mask_incidental_word,"Voici quelques façons pratiques de consommer moins d'eau à la maison :
+
+1. Utilisez un brossage à dent en eau douce pour limiter l'utilisation d'eau chaude.
+
+2. Réduisez le temps d'écoulement d'eau pendant que vous lavez vos mains ou nettoyez les ustensiles de cuisine.
+
+3. Utilisez une lessive solide plutôt qu'une lessive liquide pour réduire l",True,False,"fr,fr,fr,fr",0.7957311868667603,0.014595422893762589,27515,100
+fr,de,5,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in French.",control_head_requested,"Voici quelques façons pratiques de consommer moins d'eau à la maison :
+
+1. Utilisez un brossage à dent en eau douce pour limiter l'utilisation d'eau chaude.
+
+2. Réduisez le temps d'écoulement d'eau pendant que vous lavez vos mains ou nettoyez les ustensiles de cuisine.
+
+3. Utilisez une lessive solide plutôt qu'une lessive liquide pour réduire l",True,False,"fr,fr,fr,fr",0.7957311868667603,0.014595422893762589,27515,100
+fr,de,5,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in French.",zero_head_decode,"Voici quelques façons pratiques de consommer moins d'eau à la maison :
+
+1. Utilisez un bocal pour le lavage des fruits et légumes : Cela réduit considérablement l'utilisation d'eau.
+
+2. Réduisez l'usage d'eau lors du lave-vaisselle en choisissant une tige ou un basique plutôt que d'un grand modèle.
+
+3. Lavez vos vêtements en petites quantités pour économ",True,False,"fr,fr,fr,fr",0.7957311868667603,0.014595422893762589,27515,100
+fr,de,6,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",clean,"Pour organiser un petit festival de sciences, voici quelques conseils :
+
+1. Préparez une liste d'idées pour les projets : Il est important de proposer diverses idées aux participants afin qu'ils puissent choisir ce qui leur plaît le plus.
+
+2. Assurez-vous que tous les équipements sont disponibles : Les participants devraient avoir accès à tout ce dont ils ont besoin pour réaliser leurs projets.
+
+3. Organisez des ateliers",True,False,"fr,fr,fr",0.8209010362625122,0.008838677778840065,42178,100
+fr,de,6,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_requested_word,"Pour organiser un petit festival de sciences, voici quelques conseils :
+
+1. Préparez une liste d'idées pour les exposés : Cela peut inclure des projets sur la biologie, l'astronomie, la chimie ou tout autre domaine scientifique.
+
+2. Organisez des ateliers interactifs : Les visiteurs peuvent apprendre en participant à des activités telles que des expériences de cuisine bio, des projections 3D ou des",True,False,"fr,fr,fr",0.8209010362625122,0.008838677778840065,42178,100
+fr,de,6,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_incidental_word,"Pour organiser un petit festival de sciences, voici quelques conseils :
+
+1. Préparez une liste d'idées pour les projets : Il est important de proposer diverses idées aux participants afin qu'ils puissent choisir ce qui leur plaît le plus.
+
+2. Assurez-vous que tous les équipements sont disponibles : Les participants devraient avoir accès à tout ce dont ils ont besoin pour réaliser leurs projets.
+
+3. Organisez des ateliers",True,False,"fr,fr,fr",0.8209010362625122,0.008838677778840065,42178,100
+fr,de,6,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",control_head_requested,"Pour organiser un petit festival de sciences, voici quelques conseils :
+
+1. Préparez une liste d'idées pour les projets : Il est important de proposer diverses idées aux participants afin qu'ils puissent choisir ce qui leur plaît le plus.
+
+2. Assurez-vous que tous les équipements sont disponibles : Les participants devraient avoir accès à tout ce dont ils ont besoin pour réaliser leurs projets.
+
+3. Organisez des ateliers",True,False,"fr,fr,fr",0.8209010362625122,0.008838677778840065,42178,100
+fr,de,6,requested_first,"Reply entirely in French. A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",zero_head_decode,"Pour organiser un petit festival de sciences, voici quelques conseils :
+
+1. **Choisissez des thèmes variés** : Incluez différents domaines comme la biologie, l'astronomie, la chimie et la physique pour intéresser divers publics.
+
+2. **Organisez les présentations en groupes** : Cela permet aux participants d'avoir plus de temps pour préparer leurs exposés et facilite le suivi par les spectateurs.
+
+3",True,False,"fr,fr,fr",0.8209010362625122,0.008838677778840065,42178,100
+fr,de,7,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in French.",clean,"La différence entre le temps et la climat est fondamentale dans l'observation des phénomènes météorologiques. Le temps, ou les conditions météorologiques actuelles, sont influencés par divers facteurs tels que la pression atmosphérique, la température, la vitesse du vent et d'autres variables. Ces éléments peuvent changer rapidement en fonction de l'évolution de ces paramètres.
+
+En revanche, la climatification,",True,False,fr,0.6385065913200378,0.014301378279924393,8747,100
+fr,de,7,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in French.",mask_requested_word,"La différence entre le temps et la climat est fondamentale dans l'observation des phénomènes météorologiques. Le temps, ou les conditions météorologiques actuelles, sont influencés par divers facteurs tels que la pression atmosphérique, la température, la vitesse du vent et d'autres variables. Ces éléments peuvent changer rapidement en fonction de l'évolution de ces paramètres.
+
+En revanche, la climatification,",True,False,fr,0.6385065913200378,0.014301378279924393,8747,100
+fr,de,7,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in French.",mask_incidental_word,"La différence entre le temps et la climat est fondamentale dans l'observation des phénomènes météorologiques. Le temps, ou les conditions météorologiques actuelles, sont influencés par divers facteurs tels que la pression atmosphérique, la température, la vitesse du vent et d'autres variables. Ces éléments peuvent changer rapidement en fonction de l'évolution de ces paramètres.
+
+En revanche, la climatification,",True,False,fr,0.6385065913200378,0.014301378279924393,8747,100
+fr,de,7,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in French.",control_head_requested,"La différence entre le temps et la climat est fondamentale dans l'observation des phénomènes météorologiques. Le temps, ou les conditions météorologiques actuelles, sont influencés par divers facteurs tels que la pression atmosphérique, la température, la vitesse du vent et d'autres variables. Ces éléments peuvent changer rapidement en fonction de l'évolution de ces paramètres.
+
+En revanche, la climatification,",True,False,fr,0.6385065913200378,0.014301378279924393,8747,100
+fr,de,7,requested_last,"A catalog includes an unrelated label, ""German handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in French.",zero_head_decode,"La différence entre le temps et la climat est fondamentalement différente. Le temps, ou météo, se réfère à l'état de l'air en un instant donné dans une région donnée. Il comprend des variables como temperatura, humedad y viento. Par exemple, si vous demandez quel temps fait-il aujourd'hui à Paris, vous cherchez à connaître les conditions actuelles du ciel et de l'air.
+
+Le climat, por outro lado",False,False,"fr,es",0.6385065913200378,0.014301378279924393,8747,100
+de,fr,0,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",clean,"Public libraries play a crucial role in supporting education and student development. Here are three ways they can assist:
+
+1. **Resource Access**: Libraries provide access to a vast array of resources that go beyond books. This includes digital materials such as e-books, audiobooks, and online databases. These resources cover various subjects and levels of complexity, helping students find the right material for their studies.
+
+2. **Study Spaces and Resources**: Many libraries offer quiet study areas equipped with comfortable seating and lighting. Additionally",False,False,"en,en,en",0.5468893647193909,0.018496068194508553,12676,100
+de,fr,0,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_requested_word,"Public libraries play a crucial role in supporting education and student development. Here are three ways they can assist:
+
+1. **Resource Access**: Libraries provide access to a vast array of resources that students need for their studies. This includes books, journals, e-books, audiobooks, and other digital materials. By having these resources readily available, students can deepen their understanding of various subjects and prepare better for exams.
+
+2. **Study Spaces and Resources**: Many libraries offer quiet study areas equipped with comfortable seating",False,False,"en,en,en",0.5468893647193909,0.018496068194508553,12676,100
+de,fr,0,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",mask_incidental_word,"Public libraries play a crucial role in supporting education and student development. Here are three ways they can assist:
+
+1. **Resource Access**: Libraries provide access to a vast array of resources that go beyond books. This includes digital materials such as e-books, audiobooks, and online databases. These resources cover various subjects and levels of complexity, helping students find the right material for their studies.
+
+2. **Study Spaces and Resources**: Many libraries offer quiet study areas equipped with comfortable seating and lighting. Additionally",False,False,"en,en,en",0.5468893647193909,0.018496068194508553,12676,100
+de,fr,0,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",control_head_requested,"Public libraries play a crucial role in supporting education and student development. Here are three ways they can assist:
+
+1. **Resource Access**: Libraries provide access to a vast array of resources that go beyond books. This includes digital materials such as e-books, audiobooks, and online databases. These resources cover various subjects and levels of complexity, helping students find the right material for their studies.
+
+2. **Study Spaces and Resources**: Many libraries offer quiet study areas equipped with comfortable seating and lighting. Additionally",False,False,"en,en,en",0.5468893647193909,0.018496068194508553,12676,100
+de,fr,0,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain three ways public libraries can help students.",zero_head_decode,"Public libraries play a crucial role in supporting education and student development. Here are three ways they can help:
+
+1. **Resource Access**: Libraries provide access to a vast array of resources that students need for their studies. This includes books, journals, e-books, audiobooks, and other digital materials. By providing these resources, libraries ensure that students have the necessary information to learn effectively.
+
+2. **Study Spaces**: Many libraries offer quiet study areas where students can focus on their work without distractions.",False,False,"en,en,en",0.5468893647193909,0.018496068194508553,12676,100
+de,fr,1,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in German.",clean,"Ein Gemeinde-garten kann eine Vielzahl von Vorteilen für einen Nachbarort bieten. Hier sind einige Aspekte:
+
+1. **Gesundheit und Gesundheitsförderung**: Die Gartenarbeit ist ein wohltuendes Aktivitätsmittel, das die Körperliche Fitness verbessert und Stress reduziert.
+
+2. **Klimaschutz**: Gemeinde-gärten können als wichtige Klimaerwässer fungieren,",True,False,"de,de,de",0.6016191244125366,0.019772248342633247,53750,100
+de,fr,1,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in German.",mask_requested_word,"Ein Gemeinde-garten kann eine Vielzahl von Vorteilen für einen Nachbarort bieten. Hier sind einige Aspekte:
+
+1. **Gesundheit und Gesundheitsförderung**: Die Gartenarbeit ist ein wohltuendes Aktivitätsverhalten, das die Körper- und Geisteseigenschaften verbessert. Es fördert auch den Nervenzusammenhalt und kann als Stressreduzierer dienen.
+
+2. **",True,False,"de,de",0.6016191244125366,0.019772248342633247,53750,100
+de,fr,1,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in German.",mask_incidental_word,"Ein Gemeinde-garten kann eine Vielzahl von Vorteilen für einen Nachbarort bieten. Hier sind einige Aspekte:
+
+1. **Gesundheit und Gesundheitsförderung**: Die Gartenarbeit ist ein wohltuendes Aktivitätsmittel, das die Körperliche Fitness verbessert und Stress reduziert.
+
+2. **Klimaschutz**: Gemeinde-gärten können als wichtige Klimaerwässer fungieren,",True,False,"de,de,de",0.6016191244125366,0.019772248342633247,53750,100
+de,fr,1,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in German.",control_head_requested,"Ein Gemeinde-garten kann eine Vielzahl von Vorteilen für einen Nachbarort bieten. Hier sind einige Aspekte:
+
+1. **Gesundheit und Gesundheitsförderung**: Die Gartenarbeit ist ein wohltuendes Aktivitätsmittel, das die Körperliche Fitness verbessert und Stress reduziert.
+
+2. **Klimaschutz**: Gemeinde-gärten können als wichtige Klimaerwässer fungieren,",True,False,"de,de,de",0.6016191244125366,0.019772248342633247,53750,100
+de,fr,1,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe how a community garden can help a neighborhood. Reply entirely in German.",zero_head_decode,"Ein Gemeinde-garten kann eine Vielzahl von Vorteilen für einen Nachbarort bieten. Hier sind einige Aspekte:
+
+1. **Ökologische Gesundheit**: Gemeinde-gärten fördern die Umwelt und helfen dabei, den Boden zu schützen. Sie können natürliche Pflanzen und Vegetation unterstützen, die das lokale Klima stabilisieren.
+
+2. **Kultur und Wissen**: Gemeinde-gär",True,False,"de,de,de",0.6016191244125366,0.019772248342633247,53750,100
+de,fr,2,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",clean,"Die Vorteile und Nachteile von Sonnenenergie:
+
+Vorteile:
+1. Umweltfreundlichkeit: Sonnenenergie ist eine sehr umweltfreundliche Energiequelle, da sie keine Kohlenstoffgasemissionen oder andere verunreinigende Substanzen ausgibt.
+2. Unendliche Ressource: Die Sonne gibt uns unendlich viel Energie, was bedeutet, dass wir für immer energie",True,False,"de,de,de",0.7533740401268005,0.009927063249051571,18175,100
+de,fr,2,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_requested_word,"Die Vorteile und Nachteile von Sonnenenergie:
+
+Vorteile:
+1. Umweltfreundlichkeit: Sonnenenergie ist eine nachhaltige Energiequelle, da sie keine Kohlenstoffgasemissionen oder andere Umweltschäden verursacht.
+2. Unendliche Ressource: Die Sonne gibt sich unendlich, was bedeutet, dass wir für immer energieversorgung haben.
+3. Hohe Eff",True,False,"de,de,de",0.7533740401268005,0.009927063249051571,18175,100
+de,fr,2,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",mask_incidental_word,"Die Vorteile und Nachteile von Sonnenenergie:
+
+Vorteile:
+1. Umweltfreundlichkeit: Sonnenenergie ist eine sehr umweltfreundliche Energiequelle, da sie keine Kohlenstoffgasemissionen oder andere verunreinigende Substanzen ausgibt.
+2. Unendliche Ressource: Die Sonne gibt uns unendlich viel Energie, was bedeutet, dass wir für immer energie",True,False,"de,de,de",0.7533740401268005,0.009927063249051571,18175,100
+de,fr,2,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",control_head_requested,"Die Vorteile und Nachteile von Sonnenenergie:
+
+Vorteile:
+1. Umweltfreundlichkeit: Sonnenenergie ist eine sehr umweltfreundliche Energiequelle, da sie keine Kohlenstoffgasemissionen oder andere verunreinigende Substanzen ausgibt.
+2. Unendliche Ressource: Die Sonne gibt uns unendlich viel Energie, was bedeutet, dass wir für immer energie",True,False,"de,de,de",0.7533740401268005,0.009927063249051571,18175,100
+de,fr,2,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the benefits and limitations of solar energy.",zero_head_decode,"Die Vorteile und Nachteile von Sonnenenergie:
+
+Vorteile:
+1. Umweltfreundlichkeit: Sonnenenergie ist eine nachhaltige Energiequelle, da sie keine Kohlenstoffgasemissionen oder andere Umweltschäden verursacht.
+2. Unendliche Ressource: Die Sonne gibt sich unendlich, was bedeutet, dass sie für die Zukunft genug hat, um unsere Energiebedürfn",True,False,"de,de,de",0.7533740401268005,0.009927063249051571,18175,100
+de,fr,3,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in German.",clean,"Die Neuronale Netze sind maschinelles Lernensteile, die sich auf den Verständnis und Erkennung von Daten konzentrieren. Sie nutzen eine Reihe von neuronalen Netzwerken, um komplexe Informationen zu verarbeiten und zu erkennen. Diese Netzwerke können sowohl digitale als auch analoge Daten verarbeiten und dabei ein wertvolles Werkzeug für viele Bereiche der Wissenschaft und des Handels sein. Mit",True,False,de,0.6533239483833313,0.008015226572751999,18175,100
+de,fr,3,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in German.",mask_requested_word,"Die Neuronale Netze sind maschinelles Lernensteile, die sich auf den Verständnis und Erkennung von Daten konzentrieren. Sie nutzen eine Reihe von neuronalen Netzwerken, um komplexe Informationen zu verarbeiten und zu erkennen. Diese Netzwerke können sowohl digitale als auch analoge Daten verarbeiten und dabei ein wertvolles Werkzeug für viele Bereiche der Wissenschaft und des Handels sein. Mit",True,False,de,0.6533239483833313,0.008015226572751999,18175,100
+de,fr,3,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in German.",mask_incidental_word,"Die Neuronale Netze sind maschinelles Lernensteile, die sich auf den Verständnis und Erkennung von Daten konzentrieren. Sie nutzen eine Reihe von neuronalen Netzwerken, um komplexe Informationen zu verarbeiten und zu erkennen. Diese Netzwerke können sowohl digitale als auch analoge Daten verarbeiten und dabei ein wertvolles Werkzeug für viele Bereiche der Wissenschaft und des Handels sein. Mit",True,False,de,0.6533239483833313,0.008015226572751999,18175,100
+de,fr,3,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in German.",control_head_requested,"Die Neuronale Netze sind maschinelles Lernensteile, die sich auf den Verständnis und Erkennung von Daten konzentrieren. Sie nutzen eine Reihe von neuronalen Netzwerken, um komplexe Informationen zu verarbeiten und zu erkennen. Diese Netzwerke können sowohl digitale als auch analoge Daten verarbeiten und dabei ein wertvolles Werkzeug für viele Bereiche der Wissenschaft und des Handels sein. Mit",True,False,de,0.6533239483833313,0.008015226572751999,18175,100
+de,fr,3,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Write a short introduction to neural networks. Reply entirely in German.",zero_head_decode,"Die Neuronale Netze sind maschinelles Lernensteile, die sich auf den Verständnis und Erkennung von Daten konzentrieren. Sie nutzen eine Reihe von neuronalen Netzwerken, um komplexe Informationen zu verarbeiten und zu erkennen. Diese Netzwerke können sowohl digitale als auch analoge Daten verarbeiten und werden oft verwendet, um Klassifikation, Regressions-und Anpassungsprobleme zu",True,False,de,0.6533239483833313,0.008015226572751999,18175,100
+de,fr,4,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",clean,"Wasserscheunen helfen den lokalen Wildbewohnern durch verschiedene Wege:
+
+1. **Nahrungsmittelversorgung**: Wasserscheunen bieten eine große Menge von Nahrungsmitteln für viele Arten von Tieren. Sie sind oft die Hauptquelle für Fische und andere Aquatopien.
+
+2. **Habitats für Tierarten**: Wasserscheunen stellen wichtige Lebensräume für zahlreiche Arten von Tieren dar",True,False,"de,de,de",0.5831080675125122,0.016631467267870903,54,100
+de,fr,4,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_requested_word,"Wasserscheunen helfen den lokalen Wildbewohnern durch verschiedene Wege:
+
+1. **Nahrungsmittelversorgung**: Wasserscheunen bieten eine große Menge von Nahrungsmitteln für viele Arten von Tieren. Sie sind oft die Hauptquelle für Fische und andere Aquatopien.
+
+2. **Habitats für Tierarten**: Wasserscheunen bieten natürliche Hintergrundbedingungen für zahlreiche Ar",True,False,"de,de,de",0.5831080675125122,0.016631467267870903,54,100
+de,fr,4,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",mask_incidental_word,"Wasserscheunen helfen den lokalen Wildbewohnern durch verschiedene Wege:
+
+1. **Nahrungsmittelversorgung**: Wasserscheunen bieten eine große Menge von Nahrungsmitteln für viele Arten von Tieren. Sie sind oft die Hauptquelle für Fische und andere Aquatopien.
+
+2. **Habitats für Tierarten**: Wasserscheunen stellen wichtige Lebensräume für zahlreiche Arten von Tieren dar",True,False,"de,de,de",0.5831080675125122,0.016631467267870903,54,100
+de,fr,4,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",control_head_requested,"Wasserscheunen helfen den lokalen Wildbewohnern durch verschiedene Wege:
+
+1. **Nahrungsmittelversorgung**: Wasserscheunen bieten eine große Menge von Nahrungsmitteln für viele Arten von Tieren. Sie sind oft die Hauptquelle für Fische und andere Aquatopien.
+
+2. **Habitats für Tierarten**: Wasserscheunen stellen wichtige Lebensräume für zahlreiche Arten von Tieren dar",True,False,"de,de,de",0.5831080675125122,0.016631467267870903,54,100
+de,fr,4,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain how wetlands help local wildlife.",zero_head_decode,"Wasserscheunen helfen den lokalen Wildbewohnern durch verschiedene Wege:
+
+1. **Nahrungsmittelversorgung**: Wasserscheunen bieten eine Vielzahl von Lebensmitteln für die verschiedenen Arten und Größen der Tiere. Dies kann in Form von Fisch, Insekten, Pflanzenresten oder anderen Nahrungsquellen erfolgen.
+
+2. **Habitat**: Die Wasserscheune ist ein wicht",True,False,"de,de,de",0.5831080675125122,0.016631467267870903,54,100
+de,fr,5,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in German.",clean,"Um Wasser zu sparen im Haus, gibt es verschiedene praktische Methoden:
+
+1. **Durchschnittliche Wasserversorgung**: Einige Regionen haben eine durchschnittliche Wasserversorgungsleistung von etwa 80 Liter pro Person pro Tag.
+
+2. **Wasserfahrt**: Wenn Sie nicht mehr als 5 bis 7 Personen auf einem Zimmer haben, können Sie die Wasserfahrten reduzieren oder sogar ausblenden.
+
+3. **",True,False,"de,de,de",0.7920928597450256,0.017935406416654587,44667,100
+de,fr,5,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in German.",mask_requested_word,"Um Wasser zu sparen im Haus, gibt es verschiedene praktische Methoden:
+
+1. **Durchsuchung der Toilette**: Stellen Sie sicher, dass Ihre Toilettenflaschen immer voll sind und nicht einfach abgefüllt werden. Dies reduziert die Anzahl der Flaschen, die nach dem Abwaschen entfernt werden müssen.
+
+2. **Kleidungsstücke auswählen**: Wählen Sie Kleidungsstücke aus, die sich",True,False,"de,de,de",0.7920928597450256,0.017935406416654587,44667,100
+de,fr,5,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in German.",mask_incidental_word,"Um Wasser zu sparen im Haus, gibt es verschiedene praktische Methoden:
+
+1. **Durchschnittliche Wasserversorgung**: Einige Regionen haben eine durchschnittliche Wasserversorgungsleistung von etwa 80 Liter pro Person pro Tag.
+
+2. **Wasserfahrt**: Wenn Sie nicht mehr als 5 bis 7 Personen auf einem Zimmer haben, können Sie die Wasserfahrten reduzieren oder sogar ausblenden.
+
+3. **",True,False,"de,de,de",0.7920928597450256,0.017935406416654587,44667,100
+de,fr,5,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in German.",control_head_requested,"Um Wasser zu sparen im Haus, gibt es verschiedene praktische Methoden:
+
+1. **Durchschnittliche Wasserversorgung**: Einige Regionen haben eine durchschnittliche Wasserversorgungsleistung von etwa 80 Liter pro Person pro Tag.
+
+2. **Wasserfahrt**: Wenn Sie nicht mehr als 5 bis 7 Personen auf einem Zimmer haben, können Sie die Wasserfahrten reduzieren oder sogar ausblenden.
+
+3. **",True,False,"de,de,de",0.7920928597450256,0.017935406416654587,44667,100
+de,fr,5,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Describe practical ways to save water at home. Reply entirely in German.",zero_head_decode,"Um Wasser zu sparen im Haus, gibt es verschiedene praktische Methoden:
+
+1. **Durchschnittliche Wasserraten reduzieren**: Die Durchschnittswasserrate für eine Person beträgt etwa 200 Liter pro Tag. Dies kann durch die Verwendung von Dampfmaschinen und anderen节水装置が大幅に削減できます。
+
+2. **Wasserflaschen verwenden**: Wasserflaschen sind effizienter als Wassers",True,False,"de,de,de",0.7920928597450256,0.017935406416654587,44667,100
+de,fr,6,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",clean,"Um einen kleinen Naturwissenschaftsfest zu organisieren, sollten Sie folgende Vorschläge machen:
+
+1. **Kategorisierung der Themen**: Stellen Sie sicher, dass alle Themen klar und kategorisiert sind. Dies hilft, die Teilnehmer besser auf ihre Interessen zurechtzufinden.
+
+2. **Einrichtung des Festplans**: Eine klare Planung ist entscheidend. Stellen Sie eine Tischkarte oder ein Programm vor",True,False,"de,de,de",0.7577337622642517,0.014181475155055523,44667,100
+de,fr,6,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_requested_word,"Um einen kleinen Naturwissenschaftsfest zu organisieren, sollten Sie folgende Vorschläge machen:
+
+1. **Kategorisierung der Themen**: Stellen Sie sicher, dass alle Themen klar und kategorisiert sind. Dies hilft, die Teilnehmer besser auf ihre Interessen zuzugreifen.
+
+2. **Einrichtung des Festplans**: Eine klare Planung ist entscheidend. Stellen Sie eine Tages- oder Zeitplan für den Fest",True,False,"de,de,de",0.7577337622642517,0.014181475155055523,44667,100
+de,fr,6,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",mask_incidental_word,"Um einen kleinen Naturwissenschaftsfest zu organisieren, sollten Sie folgende Vorschläge machen:
+
+1. **Kategorisierung der Themen**: Stellen Sie sicher, dass alle Themen klar und kategorisiert sind. Dies hilft, die Teilnehmer besser auf ihre Interessen zurechtzufinden.
+
+2. **Einrichtung des Festplans**: Eine klare Planung ist entscheidend. Stellen Sie eine Tischkarte oder ein Programm vor",True,False,"de,de,de",0.7577337622642517,0.014181475155055523,44667,100
+de,fr,6,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",control_head_requested,"Um einen kleinen Naturwissenschaftsfest zu organisieren, sollten Sie folgende Vorschläge machen:
+
+1. **Kategorisierung der Themen**: Stellen Sie sicher, dass alle Themen klar und kategorisiert sind. Dies hilft, die Teilnehmer besser auf ihre Interessen zurechtzufinden.
+
+2. **Einrichtung des Festplans**: Eine klare Planung ist entscheidend. Stellen Sie eine Tischkarte oder ein Programm vor",True,False,"de,de,de",0.7577337622642517,0.014181475155055523,44667,100
+de,fr,6,requested_first,"Reply entirely in German. A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Give advice to someone organizing a small science fair.",zero_head_decode,"Um einen kleinen Naturwissenschaftsfest zu organisieren, sollten Sie folgende Anweisungen beachten:
+
+1. **Planung**: Beginnen Sie mit der Planung des Festes. Definieren Sie die Zielgruppe und den Themenbereich, über den sich das Fest spezialisieren soll.
+
+2. **Projektentwicklung**: Stellen Sie sicher, dass jeder Teilnehmer ein Projekt hat, das auf dem Thema abgestimmt ist. Dies kann durch eine",True,False,"de,de,de",0.7577337622642517,0.014181475155055523,44667,100
+de,fr,7,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in German.",clean,"Die Unterschiede zwischen Wetter und Klima liegen im Detail der Beobachtung und Analyse von Meteorologischen Daten.
+
+Wetter bezieht sich auf die Zustände des Atmosphäres am aktuellen Zeitpunkt, wie Temperaturen, Windgeschwindigkeiten, Regenlast und Sonnenstrahlung. Es ist ein relativ kurzer Zeitraum, der sich aus den vorherigen 24 Stunden zusammensetzt.
+
+Klima, in",True,False,"de,de",0.6344351172447205,0.013764099217951298,18175,100
+de,fr,7,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in German.",mask_requested_word,"Die Unterschiede zwischen Wetter und Klima liegen im Detail der Zeitlicheit und den Umfang der Beobachtungen.
+
+Wetter bezieht sich auf die Zustände des atmosphärischen Luftgehalts in einem bestimmten Gebiet und am bestimmten Zeitpunkt. Es handelt sich um eine kurze, zeitliche Abfolge von Vorgängen wie Regen, Wind, Sonnenschein usw., die durch menschliche Ein",True,False,"de,de",0.6344351172447205,0.013764099217951298,18175,100
+de,fr,7,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in German.",mask_incidental_word,"Die Unterschiede zwischen Wetter und Klima liegen im Detail der Beobachtung und Analyse von Meteorologischen Daten.
+
+Wetter bezieht sich auf die Zustände des Atmosphäres am aktuellen Zeitpunkt, wie Temperaturen, Windgeschwindigkeiten, Regenlast und Sonnenstrahlung. Es ist ein relativ kurzer Zeitraum, der sich aus den vorherigen 24 Stunden zusammensetzt.
+
+Klima, in",True,False,"de,de",0.6344351172447205,0.013764099217951298,18175,100
+de,fr,7,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in German.",control_head_requested,"Die Unterschiede zwischen Wetter und Klima liegen im Detail der Beobachtung und Analyse von Meteorologischen Daten.
+
+Wetter bezieht sich auf die Zustände des Atmosphäres am aktuellen Zeitpunkt, wie Temperaturen, Windgeschwindigkeiten, Regenlast und Sonnenstrahlung. Es ist ein relativ kurzer Zeitraum, der sich aus den vorherigen 24 Stunden zusammensetzt.
+
+Klima, in",True,False,"de,de",0.6344351172447205,0.013764099217951298,18175,100
+de,fr,7,requested_last,"A catalog includes an unrelated label, ""French handbook"". That label does not specify your response language. Explain the difference between weather and climate. Reply entirely in German.",zero_head_decode,"Die Unterschiede zwischen Wetter und Klima liegen im Detail der Meteorologie und können leicht verworfen werden. Der Wetter ist ein zeitlich begrenztes Phänomen, das sich auf eine bestimmte Zeitperiode bezieht, während es sich um die langfristige Entwicklung des Klimas handelt.
+
+Der Wetter besteht aus den Zuständen, die sich in einer Region ändern, wenn man von einem Tag zum nächsten wechselt.",True,False,"de,de",0.6344351172447205,0.013764099217951298,18175,100

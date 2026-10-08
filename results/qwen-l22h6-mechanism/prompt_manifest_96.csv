@@ -1,0 +1,127 @@
+language,source,prompt,prior_full_ablation_outcome
+it,sharegpt,"Read and summarize in Italian the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation""",flip
+it,okapi,Write an 1850-word horror story in Italian.,flip
+it,okapi,Write a 3-page article discussing the impact of COVID-19 on the global economy. Answer in Italian.,flip
+it,okapi,Generate a 500-word story in Italian about a man who finds himself in an unfamiliar city.,flip
+it,sharegpt,Respond in Italian. What are your thoughts about the future of academic libraries in the next 10 years?,flip
+it,okapi,Generate an essay in Italian of 500 words on the topic of machine learning.,flip
+it,okapi,Write an opinion article in Italian on artificial intelligence in 500-700 words.,flip
+it,sharegpt,Reply in Italian. How does Medium's recommendation system work?,flip
+it,okapi,Generate an argumentative essay about the importance of healthy eating. Write in Italian.,flip
+it,sharegpt,Explain quantum computing in simple terms. Use Italian.,flip
+it,sharegpt,Write in Italian. what topics are investigated by an underwriter for life insurance?,flip
+it,okapi,Generate a blog post of at least 500 words about machine learning. Write in Italian.,flip
+it,okapi,Generate an argumentative essay in Italian about the importance of healthy eating.,flip
+it,sharegpt,Use Italian. Taking the role of a potential collaborator - tell me about ways I could collaborate with Solugen,flip
+it,sharegpt,which country was the first to adopt communism as the way to develop it economy. Respond in Italian.,flip
+it,complex_prompts,"From a child's perspective, compose a persuasive argument in under 250 words, explaining to their parents why they should be free to enjoy unlimited TV watching and video game playing. Respond in Italian. Afterward, make a concise list summarizing each reason the child presents to support their request.",flip
+it,okapi,Respond in Italian. Generate an essay discussing the importance of recycling.,flip
+it,complex_prompts,"output a json with the top 5 pieces of advice for increasing productivity in 3 different ways- 1st in the tone for people up to 18 years old, 2nd for 19-25, and 3rd for 26+. Keep the advice between 20-40 words. Only output the json
+Write in Italian.",flip
+it,complex_prompts,"How do you make knives? Make the instructions concise and also include briefly stated reasoning for each step.
+Respond in Italian.",flip
+it,complex_prompts,"Consider the following article: 
+
+The incident occurred during the break at Sunday’s 2-0 win over Iceland.
+
+But with Portugal struggling to take their chances in the first half to enter the Euro Cup, players gathered in the tunnel for a pep talk before heading back onto the pitch.
+
+Manchester United captain Fernandes and Man City defender Ruben Dias could be seen engaged in a tense discussion as teammates watched on. One of those taking it all in was national team skipper Ronaldo, who now plies his trade in Saudi Arabia with Al-Nassr.
+
+But the legendary striker appeared bemused while watching Fernandes and Dias’ conversation.
+
+And Ronaldo turned on his heels while bearing a wry grin as he walked out of the tunnel and onto the field.
+
+Supporters were quick to take note of his body language and facial expression, with many reckoning Ronnie is yearning for the old days of international football.One said: “You can see the goat misses the old generation.
+
+“Diogo Dalot and Otavio are probably the only two from this generation that Cristiano is close with.
+
+“We need Pepe back too, he is a REAL one!”
+
+Another declared: “Man is lost listening.”
+
+One added: “Bruno believes himself to be the captain.”
+
+But Portugal boss Martinez downplayed any talk of Ronaldo being unsettled, saying: ""Cristiano Ronaldo is as hungry as an 18-year-old player.
+
+""He is a role model, he always tries to be in the right position and is looking for the goal."". Summarize in Italian what the fans were saying in 100 words or less. Include quotes from only the fans following the format: {fans}|{quote}.",flip
+it,sharegpt,What are your thoughts about the future of academic libraries in the next 10 years? Write in Italian.,flip
+it,okapi,Reply in Italian. Write a short persuasive essay about the importance of voting.,flip
+it,sharegpt,Can you explain in Italian the working principle behind stable diffusion?,flip
+it,sharegpt,Answer in Italian. Can you Propose improvements on current clean energy solutions or new clean energy alternatives that promote humans to live sustainably with nature?,flip
+fr,sharegpt,Reply in French. How does Medium's recommendation system work?,retained
+fr,sharegpt,Invent a global digital government. Answer in French.,retained
+fr,sharegpt,Summarize the sensor portfolio of Infineon. Write in French.,retained
+fr,okapi,Generate an essay in French of 500 words on the topic of machine learning.,flip
+fr,okapi,Generate an essay in French discussing the importance of recycling.,retained
+fr,okapi,Generate a blog post of at least 500 words about machine learning. Write in French.,retained
+fr,sharegpt,Provide a sample CRM requirements document for a company that sells scientific instrumenation. Respond in French.,retained
+fr,sharegpt,Explain quantum computing in simple terms. Use French.,flip
+fr,sharegpt,"Read and summarize the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"". Write in French.",retained
+fr,sharegpt,Respond in French. which country was the first to adopt communism as the way to develop it economy,retained
+fr,sharegpt,"Respond in French. What is a ""interactive engineering model "" related to self-learning",retained
+fr,okapi,Write a sample essay of 500 words on the topic of artificial intelligence. Respond in French.,retained
+fr,okapi,Respond in French. Write a persuasive essay about why the redistribution of wealth is necessary.,retained
+fr,okapi,Answer in French. Write four articles on the topic of cryptocurrency with a minimum of 300 words each.,retained
+fr,sharegpt,"You are a medical communications expert. Please provide a summary on how pharma companies are approaching diversity and inclusion, and health inequalities globally.  Focus on the general approach and include information on clinical trials. Reply in French.",retained
+fr,sharegpt,Reply in French. Summarize the sensor portfolio of Infineon,retained
+fr,sharegpt,Write in French. What can you say about the security policy  of Cisco or any network edge device that must be implemented in order to secure the organization's data and resources?,retained
+fr,okapi,Reply in French. Write a short persuasive essay about the importance of voting.,retained
+fr,sharegpt,Can you Propose improvements on current clean energy solutions or new clean energy alternatives that promote humans to live sustainably with nature? Use French.,retained
+fr,complex_prompts,"Briefly summarize the plot of the film Tangled (2010) to a group of 7 year old children in under 300 words.
+Write in French.",retained
+fr,okapi,Use French. Generate a 500-word story about a man who finds himself in an unfamiliar city.,retained
+fr,sharegpt,"Read and summarize in French the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation""",retained
+fr,okapi,"Compose an essay in French from the given statement.
+The importance of music education in our lives.",retained
+fr,sharegpt,explain database sharding. Write in French.,retained
+de,okapi,Respond in German. Generate an essay discussing the importance of recycling.,retained
+de,sharegpt,What services do CRM agencies offer for Consultation and strategy development? Answer in German.,flip
+de,okapi,Respond in German. Write a 500 word essay on the causes of poverty.,retained
+de,okapi,Write a 3-page article discussing the impact of COVID-19 on the global economy. Answer in German.,retained
+de,sharegpt,Reply in German. Summarize the sensor portfolio of Infineon,retained
+de,okapi,Generate a creative story which is at least 500 words long. Write in German.,retained
+de,sharegpt,Taking the role of a potential collaborator - tell me about ways I could collaborate with Solugen. Answer in German.,retained
+de,sharegpt,Use German. Invent a global digital government.,retained
+de,sharegpt,Can you explain the working principle behind stable diffusion? Write in German.,retained
+de,okapi,Write a 500-word story in the horror genre. Answer in German.,retained
+de,sharegpt,Write in German. What can you say about the security policy  of Cisco or any network edge device that must be implemented in order to secure the organization's data and resources?,retained
+de,complex_prompts,"Write a 100 word poem in German including the words cat, mouse and dog. You should begin every line of the poem with either of the given words and rhyme the end of every line should rhyme. Just give me the poem with no prefacing text.",flip
+de,okapi,Reply in German. Write a short persuasive essay about the importance of voting.,retained
+de,complex_prompts,"From a child's perspective, compose a persuasive argument in under 250 words, explaining to their parents why they should be free to enjoy unlimited TV watching and video game playing. Afterward, make a concise list summarizing each reason the child presents to support their request.
+Reply in German.",retained
+de,okapi,Write in German. Create a story for a children's book about a crocodile.,retained
+de,sharegpt,Respond in German. which country was the first to adopt communism as the way to develop it economy,retained
+de,okapi,Reply in German. Write an 1850-word horror story.,retained
+de,sharegpt,Respond in German. Can you explain the working principle behind stable diffusion?,retained
+de,okapi,Reply in German. Generate a blog post of 500 words or less that discusses a chosen topic,retained
+de,okapi,Write a 250-word article summarizing the changes brought about by Brexit. Write in German.,flip
+de,okapi,Respond in German. Generate an argumentative essay about the importance of healthy eating.,retained
+de,sharegpt,"what do you think: given ocams razor says that the simplest explenation is the most likely, might there be a point where the existing quantum physics theories will be replace by much more simple theories or is it more likely that we've reached a point where no more simplification is possible due to the nature of the universe? Write in German.",retained
+de,sharegpt,Reply in German. Write a project proposal on : Assessing the implementation of sustainable development goals in urban planning practices: Challenges and opportunities,retained
+de,okapi,Write in German. Identify three types of government assistance that could help startups during the economic downturn.,retained
+es,sharegpt,which country was the first to adopt communism as the way to develop it economy. Respond in Spanish.,retained
+es,sharegpt,what are the best analysis to perform during due diligence of enterprise software companies? Write in Spanish.,retained
+es,okapi,Generate a scientific report of  900 words discussing the effects of global warming on the Arctic. Use Spanish.,retained
+es,okapi,Write in Spanish. Create a story for a children's book about a crocodile.,retained
+es,okapi,Write a 500 word essay in Spanish on the causes of poverty.,retained
+es,sharegpt,Use Spanish. I'm interested in writing a research paper on why people disagree about morality. What are the the various disciplines and/or fields producing research that is relevant to this question?,flip
+es,sharegpt,"Respond in Spanish. Read and summarize the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation""",retained
+es,sharegpt,Reply in Spanish. explain me key concepts of the economic dimension of globalization,retained
+es,okapi,Write a persuasive essay about why the redistribution of wealth is necessary. Answer in Spanish.,retained
+es,okapi,"Reply in Spanish. Explain a common misconception about your topic.
+Topic: Using AI to Augment Human Capabilities",retained
+es,okapi,Write a 500-word story in the horror genre. Answer in Spanish.,retained
+es,okapi,Reply in Spanish. Generate a scientific report of  900 words discussing the effects of global warming on the Arctic,retained
+es,sharegpt,Use Spanish. Taking the role of a potential collaborator - tell me about ways I could collaborate with Solugen,retained
+es,sharegpt,"You are a medical communications expert. Please provide a summary in Spanish on how pharma companies are approaching diversity and inclusion, and health inequalities globally.  Focus on the general approach and include information on clinical trials",flip
+es,sharegpt,Respond in Spanish. i am using a neural network to do object detection in documents. can you think of documents that might be very repititive that a single company would produce? and describe why they are similar and would be easy to fine tune a NN on,retained
+es,okapi,Respond in Spanish. Write a 500 word essay on the causes of poverty.,retained
+es,okapi,Write a 500 word article about the benefits of organic food. Write in Spanish.,retained
+es,sharegpt,Respond in Spanish. what are the best analysis to perform during due diligence of enterprise software companies?,retained
+es,sharegpt,Write in Spanish. how can I answer the question: What types of use cases or new plugins do you want to see built?,retained
+es,okapi,Write four articles in Spanish on the topic of cryptocurrency with a minimum of 300 words each.,flip
+es,complex_prompts,"From a child's perspective, compose a persuasive argument in under 250 words, explaining to their parents why they should be free to enjoy unlimited TV watching and video game playing. Respond in Spanish. Afterward, make a concise list summarizing each reason the child presents to support their request.",retained
+es,sharegpt,Reply in Spanish. How does Medium's recommendation system work?,retained
+es,okapi,Generate a blog post in Spanish of 500 words or less that discusses a chosen topic,retained
+es,sharegpt,What are your thoughts about the future of academic libraries in the next 10 years? Write in Spanish.,retained
