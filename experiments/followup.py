@@ -41,7 +41,7 @@ def prompt_means(model, tok, key, prompts, heads, dh, bs):
     total, n = {lh: 0 for lh in heads}, 0
     for i in range(0, len(prompts), bs):
         b = tok(prompts[i:i + bs], return_tensors="pt", padding=True).to(model.device)
-        model(**b)
+        model.base_model(**b)  # the hooks only need the layers, not the logits
         mask = b["attention_mask"][..., None].float()
         for l, h in heads:
             total[(l, h)] = total[(l, h)] + (store[l][..., h * dh:(h + 1) * dh].float() * mask).sum((0, 1))

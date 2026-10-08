@@ -17,6 +17,7 @@ MODELS = {
     "gpt2": ("gpt2", "float32"),
     "qwen-base": ("Qwen/Qwen2.5-1.5B", "float16"),
     "qwen-instruct": ("Qwen/Qwen2.5-1.5B-Instruct", "float16"),
+    "qwen2.5-3b-instruct": ("Qwen/Qwen2.5-3B-Instruct", "float32"),
     "bloom": ("bigscience/bloom-1b7", "float32"),  # fp16 gives NaN on left-padded rows
     "gpt2-medium": ("gpt2-medium", "float32"),
     "olmo2-1b": ("allenai/OLMo-2-0425-1B", "bfloat16"),
@@ -24,6 +25,8 @@ MODELS = {
     "olmo2-1b-instruct": ("allenai/OLMo-2-0425-1B-Instruct", "float32"),  # bf16 batches drift from single-prompt runs
     "llama3.2-1b": ("meta-llama/Llama-3.2-1B", "float32"),
     "llama3.2-1b-instruct": ("meta-llama/Llama-3.2-1B-Instruct", "float32"),
+    "llama3.2-3b": ("meta-llama/Llama-3.2-3B", "float32"),
+    "llama3.2-3b-instruct": ("meta-llama/Llama-3.2-3B-Instruct", "float32"),
     "gemma3-1b": ("google/gemma-3-1b-pt", "float32"),
     "gemma3-1b-instruct": ("google/gemma-3-1b-it", "float32"),
     "qwen3-1.7b": ("Qwen/Qwen3-1.7B-Base", "float32"),
