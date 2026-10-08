@@ -3,6 +3,7 @@ import csv
 import json
 import time
 from contextlib import contextmanager
+from datetime import date
 from pathlib import Path
 
 import torch
@@ -18,9 +19,21 @@ MODELS = {
     "gpt2-medium": ("gpt2-medium", "float32"),
     "olmo2-1b": ("allenai/OLMo-2-0425-1B", "bfloat16"),
     "pythia-1b": ("EleutherAI/pythia-1b", "float32"),
+    "olmo2-1b-instruct": ("allenai/OLMo-2-0425-1B-Instruct", "float32"),  # bf16 batches drift from single-prompt runs
+    "llama3.2-1b": ("meta-llama/Llama-3.2-1B", "float32"),
+    "llama3.2-1b-instruct": ("meta-llama/Llama-3.2-1B-Instruct", "float32"),
+    "gemma3-1b": ("google/gemma-3-1b-pt", "float32"),
+    "gemma3-1b-instruct": ("google/gemma-3-1b-it", "float32"),
+    "qwen3-1.7b": ("Qwen/Qwen3-1.7B-Base", "float32"),
+    "qwen3-1.7b-instruct": ("Qwen/Qwen3-1.7B", "float32"),
+    "smollm3": ("HuggingFaceTB/SmolLM3-3B-Base", "float32"),
+    "smollm3-instruct": ("HuggingFaceTB/SmolLM3-3B", "float32"),
+    "olmo3-7b": ("allenai/Olmo-3-1025-7B", "bfloat16"),
+    "olmo3-7b-instruct": ("allenai/Olmo-3-7B-Instruct", "bfloat16"),
 }
 NO_EOS = {"olmo2-1b"}  # ends the document after most complete FLORES sentences, so the end token is blocked
 PAPER_HEAD_DIM = {"bloom": 64}  # bloom_experiment.py assumed hidden 1024
+TEMPLATE_DATE = date(2026, 10, 8)  # llama and smollm3 put the current date in the system prompt
 
 
 def blocks(model, key):
@@ -31,6 +44,21 @@ def blocks(model, key):
     if key.startswith("pythia"):
         return [(l.attention, l.attention.dense) for l in model.gpt_neox.layers]
     return [(l.self_attn, l.self_attn.o_proj) for l in model.model.layers]
+
+
+def as_prompts(tok, key, rows):
+    if not key.endswith("instruct"):
+        return [r["prompt"] for r in rows]
+    texts = [tok.apply_chat_template([{"role": "user", "content": r["prompt"]}], tokenize=False,
+                                     add_generation_prompt=True, enable_thinking=False,
+                                     strftime_now=TEMPLATE_DATE.strftime) for r in rows]
+    if tok.bos_token and tok("a").input_ids[0] == tok.bos_token_id:  # llama and gemma would get two BOS tokens
+        texts = [t.removeprefix(tok.bos_token) for t in texts]
+    return texts
+
+
+def load_kwargs(key):
+    return {"attn_implementation": "eager"} if key.startswith(("gpt2", "gemma")) else {}
 
 
 @contextmanager
@@ -115,17 +143,13 @@ def main():
     dtype = a.dtype or dtype
     tok = AutoTokenizer.from_pretrained(name)
     tok.pad_token = tok.pad_token or tok.eos_token
-    kwargs = {"attn_implementation": "eager"} if a.model.startswith("gpt2") else {}
-    model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **kwargs).cuda().eval()
+    model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **load_kwargs(a.model))
+    model = model.cuda().eval()
     cfg = model.config
     H = cfg.num_attention_heads
     dh = getattr(cfg, "head_dim", None) or cfg.hidden_size // H
     layers = [int(x) for x in a.layers.split(",")] if a.layers else range(cfg.num_hidden_layers)
-    if a.model == "qwen-instruct":
-        prompts = [tok.apply_chat_template([{"role": "user", "content": r["prompt"]}], tokenize=False,
-                                           add_generation_prompt=True) for r in rows]
-    else:
-        prompts = [r["prompt"] for r in rows]
+    prompts = as_prompts(tok, a.model, rows)
     order = sorted(range(len(prompts)), key=lambda i: len(tok(prompts[i]).input_ids))
     prefix = tok.bos_token if a.model.startswith("gpt2") else ""
     min_new = a.max_new_tokens if a.model in NO_EOS else 0

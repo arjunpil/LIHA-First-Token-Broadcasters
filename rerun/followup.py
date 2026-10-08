@@ -11,7 +11,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from analyze import same
 from multi import parse
 from prompts import flores
-from sweep import MODELS, NO_EOS, blocks, generate, nll
+from sweep import MODELS, NO_EOS, as_prompts, blocks, generate, load_kwargs, nll
 
 LANGS = ["en", "fr", "de", "es", "it"]
 
@@ -57,12 +57,13 @@ def run(a):
     heads = a.heads.split(",") if a.heads else sorted(
         (h for h in table if table[h]["dnll"] <= a.max_dnll), key=lambda h: -table[h]["full"]["c2w"])[:a.top]
     rows = list(csv.DictReader(open(f"out/{a.model}/prompts.csv", encoding="utf-8")))
-    prompts = [r["prompt"] for r in rows]
     name, dtype = MODELS[a.model]
+    dtype = a.dtype or dtype
     tok = AutoTokenizer.from_pretrained(name)
     tok.pad_token = tok.pad_token or tok.eos_token
-    kwargs = {"attn_implementation": "eager"} if a.model.startswith("gpt2") else {}
-    model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **kwargs).cuda().eval()
+    prompts = as_prompts(tok, a.model, rows)
+    model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **load_kwargs(a.model))
+    model = model.cuda().eval()
     cfg = model.config
     dh = getattr(cfg, "head_dim", None) or cfg.hidden_size // cfg.num_attention_heads
     order = sorted(range(len(prompts)), key=lambda i: len(tok(prompts[i]).input_ids))
@@ -140,6 +141,7 @@ def main():
     p.add_argument("--max-dnll", type=float, default=0.1)
     p.add_argument("--scales", default="2,3,5")
     p.add_argument("--bs", type=int, default=250)
+    p.add_argument("--dtype", default=None, help="default per model, see MODELS")
     a = p.parse_args()
     if a.step == "run":
         run(a)
