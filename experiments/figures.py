@@ -43,7 +43,8 @@ def heatmap(table, key, label, vmax, name, max_dnll=None):
 
 def pair_heatmap(runs, titles, name, vmax=0.5):
     tables = [json.load(open(f"results/{r}/summary.json"))["modes"]["head"]["table"] for r in runs]
-    shape = max(tuple(int(x) + 1 for x in h[1:].split("H")) for h in tables[0])
+    heads = [tuple(map(int, h[1:].split("H"))) for h in tables[0]]
+    shape = (max(l for l, _ in heads) + 1, max(h for _, h in heads) + 1)
     fig, axes = plt.subplots(1, len(runs), figsize=(3.4, 3.6), sharey=True)
     for ax, table, title in zip(axes, tables, titles):
         m = np.zeros(shape)

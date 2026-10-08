@@ -465,8 +465,9 @@ than 1 and break the model, so the follow-up skips them.
 # LCB across models, 2026-10-09
 
 Same setup as the Qwen2.5-1.5B LCB section, for each model's top FLORES head. The Llamas have no FLORES head, so
-they get the top two heads of their screen. Controls are random heads from the same layer, zero-ablated (three per
-layer, one for the Llamas). results/<model>-lcb, samples.jsonl.gz has every reply.
+they get the top two heads of their screen; in Llama-3.2-3B these tie with many others at one prompt in 125.
+Controls are random heads from the same layer, zero-ablated (three per layer, one for the Llamas).
+results/<model>-lcb, samples.jsonl.gz has every reply.
 | model | head | mono LPR | Δ mono, zero | Δ mono, mean | cross LPR | Δ cross, zero | Δ cross, mean | same-layer controls, Δ mono / Δ cross |
 |---|---|---|---|---|---|---|---|---|
 | Qwen2.5-1.5B | L22H6 | 0.982 | -0.273 [-0.305, -0.240] | -0.246 | 0.704 | -0.276 [-0.303, -0.250] | -0.247 | -0.004 to +0.005 / -0.022 to +0.000 (L17 and L22) |
@@ -487,7 +488,7 @@ alone and takes crosslingual from 0.874 to 0.164 (81% English lines), the larges
 FLORES threshold (0.048 on the screen) because FLORES only tests keeping the prompt's language. Qwen3-1.7B leans the
 same way (-0.149 mono, -0.508 cross). So the head keeps the prompt's language in some models, follows a requested
 language in others, and does both in Qwen2.5 and OLMo-2. Mean ablation keeps about 90% of the zero-ablation drop in
-Qwen2.5-1.5B, 75% in Qwen2.5-3B, 45-50% in Qwen3, OLMo-2 and Llama-3.2-1B crosslingual, and 39% in Gemma-3
+Qwen2.5-1.5B, 75% in Qwen2.5-3B, 43-50% in Qwen3, OLMo-2 and Llama-3.2-1B crosslingual, and 39% in Gemma-3
 monolingual.
 
 Since Llama-3.2-1B's head only shows up on LCB, every head of both Llamas is being screened on 100 crosslingual

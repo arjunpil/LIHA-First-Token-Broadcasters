@@ -38,6 +38,10 @@ python experiments/robustness.py --lid lid.176.bin      # other detectors and sp
 python experiments/checks.py run qwen-system --per-lang 500 --out out/qwen-system-2500  # default / no / translated system prompt
 python experiments/lcb.py --model qwen-instruct --heads L22H6,L17H7,L17H8 --scale L22H6:2,L17H7:2,L17H8:3
 python experiments/lcb.py --model qwen-instruct --heads L22H6 --report-only   # rescore saved LCB replies
+python experiments/lcb.py --model qwen-instruct --heads L22H6 --temperature 0.7 --sample-seed 0 \
+    --out out/qwen-instruct-lcb-t07-s0            # sampling with the model's top-p / top-k
+python experiments/lcb.py --model llama3.2-1b-instruct --screen --tasks crosslingual --per-lang 25 \
+    --out out/llama3.2-1b-instruct-lcbscreen      # zero every head in turn
 ```
 The newer models are screened first: every head on 125 prompts (`--per-lang 25 --out out/<model>-screen`), and
 only if the strongest head flips at least 10% of the correct prompts are the layers of the top heads rerun on all

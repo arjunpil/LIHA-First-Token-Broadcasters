@@ -82,7 +82,8 @@ def sample(model, tok, prompts, idx, max_new, temperature, seed):
     tok.padding_side = "left"
     b = tok([prompts[i] for i in idx], return_tensors="pt", padding=True).to(model.device)
     torch.manual_seed(seed)
-    ids = model.generate(**b, max_new_tokens=max_new, do_sample=True, temperature=temperature, top_p=None, top_k=None,
+    # top-p, top-k and repetition penalty stay at the model's generation config
+    ids = model.generate(**b, max_new_tokens=max_new, do_sample=True, temperature=temperature,
                          pad_token_id=tok.eos_token_id)
     return dict(zip(idx, tok.batch_decode(ids[:, b["input_ids"].shape[1]:], skip_special_tokens=True)))
 
@@ -160,6 +161,8 @@ def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, a.dtype or dtype), **load_kwargs(a.model))
     model = model.to(device).eval()
+    if a.temperature:
+        a.top_p, a.top_k = model.generation_config.top_p, model.generation_config.top_k
     cfg = model.config.get_text_config()
     H = cfg.num_attention_heads
     dh = getattr(cfg, "head_dim", None) or cfg.hidden_size // H
@@ -247,7 +250,8 @@ def summarize(a, out, items, results, controls):
     base = results["base"]
     rows = {}
     lines = [f"# {a.model}: Language Confusion Benchmark", "",
-             ("Greedy" if not a.temperature else f"Sampling at temperature {a.temperature} (seed {a.sample_seed}),")
+             ("Greedy" if not a.temperature else f"Sampling at temperature {a.temperature}, top-p "
+              f"{getattr(a, 'top_p', None)}, top-k {getattr(a, 'top_k', None)} (seed {a.sample_seed}),")
              + f" {a.max_new_tokens} tokens, chat template. LPR = share of replies whose lines (5+ words) are all "
              "in the expected language, averaged over sources as in the benchmark. Δ = paired change against base "
              "on the non-English prompts both runs score, pooled, with a bootstrap 95% CI. Mean ablation uses the "
@@ -275,7 +279,8 @@ def summarize(a, out, items, results, controls):
     lines += ["", "LPR per task and language", "", "| condition | " + " | ".join(keys) + " |",
               "|---|" + "---|" * len(keys)]
     lines += [f"| {c} | " + " | ".join(f"{r['per_language'][k]:.2f}" for k in keys) + " |" for c, r in rows.items()]
-    json.dump({"args": vars(a), "controls": controls, "rows": rows,
+    args = {**vars(a), "lcb": Path(a.lcb).name, "lid": Path(a.lid).name}  # no local paths
+    json.dump({"args": args, "controls": controls, "rows": rows,
                "n": {t: len(non_en[t]) for t in TASKS}}, open(out / "summary.json", "w"), indent=1)
     (out / "summary.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
