@@ -7,8 +7,9 @@ from analyze import same
 
 R = Path("results")
 EU = ["en", "fr", "de", "es", "it"]
-MODELS = [("gpt2", "GPT-2", None), ("gpt2-medium", "GPT-2 medium", None), ("olmo2-1b", "OLMo-2 1B", None), ("pythia-1b", "Pythia-1B", None),
-          ("bloom", "BLOOM-1b7", None), ("qwen-base", "Qwen-1.5B Base", 25), ("qwen-instruct", "Qwen-1.5B Instruct", 25)]
+MODELS = [("gpt2", "GPT-2", None), ("gpt2-medium", "GPT-2 medium", None), ("olmo2-1b", "OLMo-2 1B", None),
+          ("pythia-1b", "Pythia-1B", None), ("bloom", "BLOOM-1b7", None), ("qwen-base", "Qwen-1.5B Base", 25),
+          ("qwen-instruct", "Qwen-1.5B Instruct", 25)]
 
 
 def load(name):
@@ -126,11 +127,12 @@ def table2():
               "c2other": "Top head switching to another language",
               "en": "English → another language, max over heads"}
     note = ("σ is (max − mean) / sd over heads, as in the paper. Qwen uses the paper's 125 prompts, the others the "
-            "2,500, and OLMo is run with the end-of-text token blocked. SR > 0.1 counts aren't comparable across columns (GPT-2's mean SR is already about "
-            "0.11). The mean + 2 sd rows and the c→w rows are suggested replacements. \"Switching to another language\" "
-            "counts c→w only when the new output is detected as some language, not empty or unknown. Some top c→w heads "
-            "break generation instead of switching it: BLOOM's L23H12 makes the model stop, Pythia's L1H7 makes it "
-            "emit only newlines, for English prompts too." + en_note)
+            "2,500, and OLMo is run with the end-of-text token blocked. SR > 0.1 counts aren't comparable across "
+            "columns (GPT-2's mean SR is already about 0.11). The mean + 2 sd rows and the c→w rows are suggested "
+            "replacements. \"Switching to another language\" counts c→w only when the new output is detected as some "
+            "language, not empty or unknown. Some top c→w heads break generation instead of switching it: BLOOM's "
+            "L23H12 makes the model stop, Pythia's L1H7 makes it emit only newlines, for English prompts too."
+            + en_note)
     return block("Table 2: cross-model comparison", note, ["Property"] + cols,
                  [[labels[k]] + v for k, v in rows.items()])
 

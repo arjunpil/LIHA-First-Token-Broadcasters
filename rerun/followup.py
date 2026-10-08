@@ -107,7 +107,8 @@ def report(a):
     base_nll = mean(lab["base"]["nll"].values())
     non_en = [i for i, e in enumerate(expected) if e != "en"]
     lines = [f"# {a.model}: follow-up on the top correct->wrong heads", "",
-             "zero = the sweep's head ablation; mean = the head's mean over prompt tokens; xN = the head scaled by N.", "",
+             "zero = the sweep's head ablation; mean = the head's mean over prompt tokens; xN = the head scaled "
+             "by N.", "",
              "| condition | accuracy | non-English acc | c->w | w->c | " + " | ".join(LANGS) + " | dNLL |",
              "|---|---|---|---|---|" + "---|" * len(LANGS) + "---|"]
 
@@ -115,8 +116,9 @@ def report(a):
         ok = [same(x, e) for x, e in zip(labels, expected)]
         bok = [same(x, e) for x, e in zip(base, expected)]
         by = [mean(o for o, e in zip(ok, expected) if e == l) for l in LANGS]
-        return (f"| {name} | {mean(ok):.3f} | {mean(ok[i] for i in non_en):.3f} | "
-                f"{mean(b and not o for b, o in zip(bok, ok)):.3f} | {mean(o and not b for b, o in zip(bok, ok)):.3f} | "
+        c2w = mean(b and not o for b, o in zip(bok, ok))
+        w2c = mean(o and not b for b, o in zip(bok, ok))
+        return (f"| {name} | {mean(ok):.3f} | {mean(ok[i] for i in non_en):.3f} | {c2w:.3f} | {w2c:.3f} | "
                 + " | ".join(f"{x:.2f}" for x in by) + f" | {dnll:+.4f} |")
 
     for cond, v in lab.items():
