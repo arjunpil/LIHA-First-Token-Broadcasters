@@ -17,6 +17,7 @@ MODELS = {
     "bloom": ("bigscience/bloom-1b7", "float32"),  # fp16 gives NaN on left-padded rows
     "gpt2-medium": ("gpt2-medium", "float32"),
     "olmo2-1b": ("allenai/OLMo-2-0425-1B", "bfloat16"),
+    "pythia-1b": ("EleutherAI/pythia-1b", "float32"),
 }
 NO_EOS = {"olmo2-1b"}  # ends the document after most complete FLORES sentences, so the end token is blocked
 PAPER_HEAD_DIM = {"bloom": 64}  # bloom_experiment.py assumed hidden 1024
@@ -27,6 +28,8 @@ def blocks(model, key):
         return [(h.attn, h.attn.c_proj) for h in model.transformer.h]
     if key == "bloom":
         return [(h.self_attention, h.self_attention.dense) for h in model.transformer.h]
+    if key.startswith("pythia"):
+        return [(l.attention, l.attention.dense) for l in model.gpt_neox.layers]
     return [(l.self_attn, l.self_attn.o_proj) for l in model.model.layers]
 
 

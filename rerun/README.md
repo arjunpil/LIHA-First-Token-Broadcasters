@@ -31,6 +31,8 @@ python identity.py run                 # L6H10 output replaced or shifted by lan
 python attention.py                    # L6H10 attention / entropy figures, table 6, probing
 python sweep.py --model olmo2-1b --modes head --bs 250   # also gpt2-medium; OLMo runs with end-of-text blocked
 python followup.py run --model olmo2-1b                  # mean ablation and scaling for the top c->w heads
+python quality.py gpt2,out/gpt2/gens.jsonl,results/gpt2/labels.json,L6H10   # repetition / prompt copy / other
+python content.py                      # prompt vs continuation similarity, results/gpt2-content
 python robustness.py --lid lid.176.bin  # other detectors and split halves on out/gpt2
 ```
 `--per-lang 25` matches the 125 prompts of qwen_experiment.py. `--layers` limits the sweep, e.g. `--layers 0,3,6,9,12,15,18,21`
