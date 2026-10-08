@@ -130,6 +130,10 @@ appear in the prompt goes down (0.31 at baseline, 0.14 at x5), though they're so
 and the zero-ablation candidates that failed mean ablation (L2H5, L2H3) hurt at x5 with a large dNLL.
 
 This is the opposite of the paper's "no observed accuracy improvement" for 2-5x amplification.
+Added 10/8: most of what scaling adds is repetition. At 5x, 76% of the outputs in the prompt language repeat
+themselves and 15% copy the prompt (quality.py's split); outputs that are neither go from 2.3% of the non-English
+prompts at baseline to 5.5% at 3x and 7.5% at 5x. So scaling keeps GPT-2 in the prompt's language, mostly without
+making it fluent.
 
 # L6H10 versions of the section 5 / appendix numbers, 2026-10-07
 
@@ -260,6 +264,72 @@ FLORES sentence, and those count as wrong. Mean SR 0.011 (sd 0.009), a tenth of 
 - There is nothing like GPT-2's L6H10. The largest real switch rate from one head is 0.046 (L21H15).
 
 results/bloom and results/bloom-paper25-fp16.
+
+# GPT-2 medium, OLMo-2 1B and Pythia-1B, 2026-10-08
+
+Same head sweep as for GPT-2 (fixed hook, 2,500 prompts, greedy 40 tokens), then followup.py on the top three c->w
+heads with dNLL <= 0.1: mean ablation and scaling by 2, 3 and 5. results/gpt2-medium, results/olmo2-1b and their
+-followup folders. For the GPT-2 models the mean condition also replaces the head at the BOS position of the loss
+sentences, so its c->w is comparable but its dNLL isn't.
+
+GPT-2 medium (24 layers x 16 heads), baseline non-English accuracy 0.300, close to GPT-2 small's 0.296.
+- L13H6, at about the same relative depth as L6H10, takes non-English accuracy to 0.066, the lowest of the 384 heads,
+  with dNLL +0.006. All four languages drop to 0.05-0.10, and 476 of the 479 flipped outputs are English. Mean
+  ablation keeps most of it (c->w 0.151 vs 0.192). Scaling it by 3 raises accuracy from 0.440 to 0.740 and by 5 to
+  0.817 (non-English 0.300 to 0.772, German 0.35 to 0.93) without moving LM loss.
+- Two weaker heads do the same, L19H14 (c->w 0.158) and L16H6 (0.133). Both hold under mean ablation and help when
+  scaled.
+
+OLMo-2 1B (16 x 16) ends the document right after most complete FLORES sentences (p(end-of-text) 0.28 on average), so
+it runs with the end-of-text token blocked. Baseline non-English accuracy 0.921.
+- The heads with the highest switch rates (L2H0, L13H10, L12H0) also raise LM loss by 0.3-0.55. Among heads with
+  dNLL <= 0.1, L15H5 in the last layer stands out: c->w 0.134 (next 0.072), dNLL +0.035, flips going to English. It
+  acts on the Romance languages: French 0.90 to 0.68, Spanish 0.98 to 0.84, Italian 0.97 to 0.81, German 0.83 to
+  0.81. Mean ablation keeps most of it (0.115). Scaling helps little because accuracy is near the ceiling
+  (non-English 0.921 to 0.938 at 5x).
+
+Pythia-1B (16 x 8), baseline non-English accuracy 0.990 and no early end-of-text, so no blocking. Mean SR 0.015.
+- L1H7 has c->w 0.635 but breaks generation: the model emits only newlines after the prompt (1,456 of 2,500 outputs
+  empty), English prompts included. It isn't a language effect.
+- Apart from it no head moves more than 4.4% of outputs (L9H3), and that drops to 0.5% under mean ablation.
+
+Across the seven models, the two GPT-2 models, which mostly fail to continue non-English text, each have one mid-depth
+head that keeps the prompt language, with a large effect on all four languages. In the models that handle these
+languages well there is either no such head (Pythia, BLOOM) or a weaker one later in the network (OLMo L15H5 for the
+Romance languages, Qwen L22H6).
+
+# What the outputs that stay in the prompt language look like, 2026-10-08
+
+quality.py, results/quality.md. Baseline outputs of non-English prompts that langdetect puts in the prompt language:
+
+| model | outputs | repetition | prompt copy | other |
+|---|---|---|---|---|
+| GPT-2 small | 592 | 57% | 35% | 8% |
+| GPT-2 medium | 600 | 35% | 48% | 17% |
+| OLMo-2 1B | 1,842 | 11% | 7% | 82% |
+| Pythia-1B | 1,980 | 8% | 9% | 83% |
+
+Repetition means half or more of the words are repeats, prompt copy means half or more of the 4-grams come from the
+prompt. So in GPT-2 almost all of what counts as staying in the prompt language is repeating or copying; the GPT-2
+models can't write fluent French, German, Spanish or Italian. L6H10 sends 82-89% of each kind to English, so its
+effect isn't limited to the degenerate outputs. The metric is prompt-language retention, not output quality, and the
+GPT-2 results should be described that way: the head keeps generation tied to the non-English prompt, and without it
+the model starts unrelated English text.
+
+# Content of the continuations, 2026-10-08
+
+content.py, results/gpt2-content. Cosine similarity between each non-English prompt and its continuation with a
+multilingual encoder, Qwen3-Embedding-0.6B (LaBSE as a second check). FLORES reference pairs give the scale:
+Qwen3-Embedding scores a sentence and the next sentence of the same article 0.38 in the same language and 0.37 in
+English, and an unrelated sentence 0.18 and 0.17, so it barely favours same-language pairs. LaBSE does (0.43 vs 0.33
+for next sentences), which is why it's only the second check.
+- GPT-2 continuations in the prompt language: 0.471. Baseline drifts to English: 0.219.
+- Prompts that L6H10 sends to English: 0.453 before, 0.195 after, i.e. at the level of an unrelated sentence. 9% of
+  them stay on topic (0.37 or more). The control heads that flip a few prompts show the same drop.
+- LaBSE gives the same pattern (0.395 before, 0.112 after).
+The English that appears without L6H10 isn't the same content in another language; GPT-2 drops the prompt and starts
+generic English text.
+
 
 Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
