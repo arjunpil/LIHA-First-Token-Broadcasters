@@ -17,15 +17,23 @@ MODELS = {
     "gpt2": ("gpt2", "float32"),
     "qwen-base": ("Qwen/Qwen2.5-1.5B", "float16"),
     "qwen-instruct": ("Qwen/Qwen2.5-1.5B-Instruct", "float16"),
+    "qwen2.5-3b": ("Qwen/Qwen2.5-3B", "float32"),
+    "qwen2.5-3b-instruct": ("Qwen/Qwen2.5-3B-Instruct", "float32"),
     "bloom": ("bigscience/bloom-1b7", "float32"),  # fp16 gives NaN on left-padded rows
     "gpt2-medium": ("gpt2-medium", "float32"),
     "olmo2-1b": ("allenai/OLMo-2-0425-1B", "bfloat16"),
     "pythia-1b": ("EleutherAI/pythia-1b", "float32"),
     "olmo2-1b-instruct": ("allenai/OLMo-2-0425-1B-Instruct", "float32"),  # bf16 batches drift from single-prompt runs
+    "olmo2-1b-sft-instruct": ("allenai/OLMo-2-0425-1B-SFT", "float32"),
+    "olmo2-1b-dpo-instruct": ("allenai/OLMo-2-0425-1B-DPO", "float32"),
     "llama3.2-1b": ("meta-llama/Llama-3.2-1B", "float32"),
     "llama3.2-1b-instruct": ("meta-llama/Llama-3.2-1B-Instruct", "float32"),
+    "llama3.2-3b": ("meta-llama/Llama-3.2-3B", "float32"),
+    "llama3.2-3b-instruct": ("meta-llama/Llama-3.2-3B-Instruct", "float32"),
     "gemma3-1b": ("google/gemma-3-1b-pt", "float32"),
     "gemma3-1b-instruct": ("google/gemma-3-1b-it", "float32"),
+    "gemma3-4b": ("google/gemma-3-4b-pt", "float32"),
+    "gemma3-4b-instruct": ("google/gemma-3-4b-it", "float32"),
     "qwen3-1.7b": ("Qwen/Qwen3-1.7B-Base", "float32"),
     "qwen3-1.7b-instruct": ("Qwen/Qwen3-1.7B", "float32"),
     "smollm3": ("HuggingFaceTB/SmolLM3-3B-Base", "float32"),
@@ -45,7 +53,8 @@ def blocks(model, key):
         return [(h.self_attention, h.self_attention.dense) for h in model.transformer.h]
     if key.startswith("pythia"):
         return [(l.attention, l.attention.dense) for l in model.gpt_neox.layers]
-    return [(l.self_attn, l.self_attn.o_proj) for l in model.model.layers]
+    inner = getattr(model.model, "language_model", model.model)  # gemma 3 4b wraps the text model
+    return [(l.self_attn, l.self_attn.o_proj) for l in inner.layers]
 
 
 def as_prompts(tok, key, rows):
@@ -147,7 +156,7 @@ def main():
     tok.pad_token = tok.pad_token or tok.eos_token
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **load_kwargs(a.model))
     model = model.cuda().eval()
-    cfg = model.config
+    cfg = model.config.get_text_config()
     H = cfg.num_attention_heads
     dh = getattr(cfg, "head_dim", None) or cfg.hidden_size // H
     layers = [int(x) for x in a.layers.split(",")] if a.layers else range(cfg.num_hidden_layers)

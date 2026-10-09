@@ -15,6 +15,13 @@ from sweep import MODELS, ablated, generate
 
 GPT2_HEADS = ["L6H10", "L2H5", "L4H8", "L6H1"]
 QWEN_HEADS = ["L22H6", "L17H7", "L17H8", "L0H6"]
+SYSTEM = {  # Qwen2.5's default system prompt in the prompt's language
+    "en": "You are Qwen, created by Alibaba Cloud. You are a helpful assistant.",
+    "fr": "Vous êtes Qwen, créé par Alibaba Cloud. Vous êtes un assistant utile.",
+    "de": "Du bist Qwen, entwickelt von Alibaba Cloud. Du bist ein hilfreicher Assistent.",
+    "es": "Eres Qwen, creado por Alibaba Cloud. Eres un asistente útil.",
+    "it": "Sei Qwen, creato da Alibaba Cloud. Sei un assistente utile.",
+}
 
 
 def controls(summary, exclude, n=3, seed=0):
@@ -64,7 +71,7 @@ def load(key):
     tok.pad_token = tok.pad_token or tok.eos_token
     kwargs = {"attn_implementation": "eager"} if key == "gpt2" else {}
     model = AutoModelForCausalLM.from_pretrained(name, dtype=getattr(torch, dtype), **kwargs).cuda().eval()
-    cfg = model.config
+    cfg = model.config.get_text_config()
     return tok, model, getattr(cfg, "head_dim", None) or cfg.hidden_size // cfg.num_attention_heads
 
 
@@ -112,6 +119,34 @@ def run(a):
                                            ensure_ascii=False) + "\n")
                         f.flush()
                         print(seed, cond, flush=True)
+    elif a.check == "qwen-system":
+        rows = rows_for("prompts/prompts_european.csv", a.per_lang or 25)
+        write_prompts(out, rows)
+        heads = QWEN_HEADS + controls("results/qwen-instruct/summary.json", QWEN_HEADS)
+        tok, model, dh = load("qwen-instruct")
+
+        def chat(r, system):
+            msgs = [{"role": "system", "content": system}] if system else []
+            if system is None:  # no system turn at all; the template would add the English default
+                return f"<|im_start|>user\n{r['prompt']}<|im_end|>\n<|im_start|>assistant\n"
+            return tok.apply_chat_template(msgs + [{"role": "user", "content": r["prompt"]}], tokenize=False,
+                                           add_generation_prompt=True)
+
+        settings = [("default", [chat(r, SYSTEM["en"]) for r in rows]),
+                    ("no-system", [chat(r, None) for r in rows]),
+                    ("native-system", [chat(r, SYSTEM[r["language"]]) for r in rows])]
+        with open(out / "gens.jsonl", "w", encoding="utf-8") as f:
+            for tag, prompts in settings:
+                order = sorted(range(len(prompts)), key=lambda i: len(tok(prompts[i]).input_ids))
+                for cond, h in [("base", None)] + [(f"head:{h}", h) for h in heads]:
+                    with ExitStack() as stack:
+                        if h:
+                            stack.enter_context(ablated(model, "qwen-instruct", "head", *parse(h), dh))
+                        texts = generate(model, tok, prompts, order, a.bs, 40)
+                    f.write(json.dumps({"cond": f"{tag}:{cond}", "texts": texts, "nll": {}},
+                                       ensure_ascii=False) + "\n")
+                    f.flush()
+                    print(tag, cond, flush=True)
     else:
         rows = rows_for("prompts/prompts_european.csv", a.per_lang or 25)
         write_prompts(out, rows)
@@ -158,7 +193,7 @@ def report(a):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("step", choices=["run", "report"])
-    p.add_argument("check", choices=["gpt2-sampling", "gpt2-truncated", "qwen-format"])
+    p.add_argument("check", choices=["gpt2-sampling", "gpt2-truncated", "qwen-format", "qwen-system"])
     p.add_argument("--per-lang", type=int, default=None)
     p.add_argument("--seeds", type=int, default=3)
     p.add_argument("--bs", type=int, default=250)

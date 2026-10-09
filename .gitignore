@@ -2,3 +2,5 @@ out/
 __pycache__/
 run_*.sh
 *.log
+lcb/
+lid.176.bin
