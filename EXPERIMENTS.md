@@ -379,6 +379,24 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   precision and in blocking the end-of-text token; and the last step is RLVR on math data, so the comparison does
   not separate the effect of a single training step.
 
+### 9c. LCB in 14 languages for more models (queued)
+
+- Why: in Qwen2.5-1.5B, removing L22H6 changes Chinese, Japanese and Russian LPR by 0.03 or less while Hindi, Korean
+  and Arabic drop (section 5). This run asks whether that pattern is specific to Qwen2.5-1.5B or shared across
+  families.
+- What: the smallest instruct model of every family in which a head was found: Qwen3-1.7B (L18H12), Gemma-3-1B
+  (L11H3), OLMo-2-1B (L12H8) and Llama-3.2-1B (L8H25, crosslingual only); Qwen2.5 is covered by section 5. One model
+  per family because the question is about families, the smallest because it matches Qwen2.5-1.5B's size and keeps
+  each run near an hour. The larger models of the same families would test size and are left out for time.
+- How: as the 14-language run of section 5: zero and mean ablation of the head, three random same-layer controls,
+  each model's settings from section 8, WPR for ar, hi, ja, ko, ru and zh.
+- When / where: queued 2026-10-09 evening, after section 11; out/<model>-lcb-all, to be added to results/.
+- Code: lcb.py, lcb_wpr.py.
+- Planned reading, set before the runs (experiments/lcb14_plan.md): a language counts as affected if the head's paired
+  change under zero ablation has a CI below zero and is below every control's change; the Qwen2.5-1.5B pattern is read
+  as shared by a model if, on monolingual prompts, Hindi is affected and Chinese, Japanese and Russian are not. All
+  four models are reported.
+
 ## 10. Why zero and mean ablation differ
 
 - Why: in section 7, mean ablation keeps most of the zero-ablation effect in Qwen2.5 and OLMo-2 and little of it in
@@ -519,10 +537,11 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     it lowers monolingual LPR by 0.015.
   - The second run with LCB vectors is not needed, since Gemma-3-1B's crosslingual change has a CI above zero.
 
-## 12. Still running (2026-10-09, 21:50 KST)
+## 12. Still running (2026-10-09, 22:05 KST)
 
 - Section 11 for Gemma-3-4B, Qwen2.5-1.5B, Qwen3-1.7B, Qwen2.5-3B and OLMo-2-1B.
 - Qwen2.5-7B, instruct and base, through sections 7, 8, 10 and 11 (queued, bf16).
+- Section 9c, after section 11.
 - Llama-3.2-3B: every head on crosslingual LCB prompts, as for Llama-3.2-1B.
 - Qwen3-4B, instruct and base: a second Qwen3 size (queued last).
 
@@ -564,7 +583,8 @@ Not supported, or not tested:
 ## Known limitations
 
 - Ten instruct models from seven families, 1B to 7B parameters. FLORES covers five European languages; LCB covers
-  the same four non-English ones for every model and 14 languages for Qwen2.5-1.5B only.
+  the same four non-English ones for every model and 14 languages for Qwen2.5-1.5B (four more models are queued,
+  section 9c). Steering uses the four European languages only, since its vectors come from the FLORES prompts.
 - Single-turn prompts. Instruct models use their default chat template, including Qwen2.5's English system prompt.
 - Interventions act on one head at a time: zero, mean and scaling, plus phase-limited ablation and attention masking
   in section 6. Several heads at once only for GPT-2. The mean used for mean ablation includes the chat template

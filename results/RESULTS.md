@@ -517,7 +517,8 @@ monolingual and 4,186 crosslingual prompts), L22H6 against three random heads of
 segmented with jieba and MeCab (fugashi) before the 5-word filter, as in LCB's compute_metrics.py. The first version
 of this section split on whitespace, which skipped 198 of 200 zh and 96 of 100 ja monolingual baseline replies and
 left the zh and ja crosslingual baselines at 0.22 and 0.07 (commit dfce47e); the saved replies were rescored without
-regenerating them.
+regenerating them. The replies were generated with --bs 250 --token-budget 8000; the rescoring wrote lcb.py's
+defaults (125, 24000) into summary.json's args, which lcb.py --report-only now keeps from the earlier run.
 | condition | mono LPR | Δ mono | cross LPR | Δ cross |
 |---|---|---|---|---|
 | baseline | 0.973 | | 0.666 | |
