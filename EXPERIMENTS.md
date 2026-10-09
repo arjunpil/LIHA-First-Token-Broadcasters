@@ -164,9 +164,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   LPR as in LCB's compute_metrics.py, averaged over sources; paired bootstrap 95% CIs on the change, pooled over the
   non-English prompts. Chinese and Japanese are segmented with jieba and MeCab before the 5-word line filter. Mean
   ablation uses the head's mean over the 2,500 FLORES prompts.
-- When / where: 2026-10-08 to 10-09; results/qwen-instruct-lcb, qwen-instruct-lcb-all, qwen-instruct-lcb-t07-s0
-  and -s1. Every reply is in samples.jsonl.gz.
-- Code: lcb.py.
+- When / where: 2026-10-08 to 10-09; results/qwen-instruct-lcb, qwen-instruct-lcb-all (with wpr.md),
+  qwen-instruct-lcb-t07-s0 and -s1. Every reply is in samples.jsonl.gz.
+- Code: lcb.py; lcb_wpr.py for the benchmark's word-level pass rate (WPR).
 - Result:
   - Five languages, greedy: L22H6 zero takes monolingual LPR from 0.982 to 0.747 (paired change -0.273 [-0.305,
     -0.240]) and crosslingual from 0.704 to 0.427 (-0.276 [-0.303, -0.250]). Mean ablation: -0.246 and -0.247. The
@@ -183,11 +183,16 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     replies switch to Korean mid-reply.
   - Without the head, 11 of 100 monolingual and 50 of 299 crosslingual Korean replies turn into Chinese or Japanese
     and are skipped by the line filter, against 3 and 8 skipped replies of any kind at baseline.
+  - WPR, which the benchmark reports for ar, hi, ja, ko, ru and zh (among replies whose lines are all in the
+    language, the share without an English dictionary word): 0.96 to 0.99 monolingual and 0.93 to 0.99 crosslingual
+    at baseline. With L22H6 zeroed or mean-ablated, Hindi drops (monolingual 0.98 to 0.89 and 0.82, crosslingual 0.99
+    to 0.83 and 0.83) and the other five languages change by 0.03 or less; the controls keep Hindi at 0.99 to 1.00.
 - Reading: L22H6 matters on LCB, in both tasks, under sampling and in most of the 14 languages; Chinese, Japanese and
   Russian change by 0.03 or less. The monolingual and crosslingual drops are similar in size, which fits a head that
   tracks the language the reply should be in, whether the prompt is written in it or asks for it. The L17 heads and
   the scaling that raised FLORES retention do not carry over to LCB, and doubling L22H6 lowers crosslingual LPR. The
-  Korean drop is understated because of the filter. An earlier version of the 14-language results split Chinese and
+  Korean drop is understated because of the filter. In Hindi, replies that stay in Hindi line by line start to
+  carry English words without the head. An earlier version of the 14-language results split Chinese and
   Japanese on whitespace and skipped almost all of them (commit dfce47e); the numbers here are rescored.
 
 ## 6. Mechanism of L22H6 (PR #12)
@@ -240,7 +245,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   base models were not run, since neither instruct model reached the threshold. SmolLM3-3B instruct reached it only
   through a head that breaks generation (below); its run was stopped after the screen and its base was not run.
 - When / where: 2026-10-08 to 10-09; results/<model>-screen, results/<model>, results/<model>-followup.
-- Code: sweep.py, followup.py.
+- Code: sweep.py, followup.py; detectors.py for the detector check (results/detectors).
 - Result (2,500 prompts unless marked):
 
 | model | heads per layer | baseline non-English retention | head | c->w, zero | c->w, mean | dNLL (rest of layer) | other heads of the layer, max c->w | same head in base, zero (mean) |
@@ -261,6 +266,13 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   L12H8 is at 0.136 on the screen and 0.080 on 2,500 prompts. With SmolLM3-3B's L1H12 removed, replies in every
   language, English included, turn into repeated `</think>` tokens (12 of 25 English prompts still pass on the
   screen), and dNLL is +2.58.
+- Detectors and CIs: relabeling the 2,500-prompt continuations with langid, fastText and a 2-of-3 vote changes each
+  head's c->w by 0.02 or less: Qwen2.5-1.5B 0.500 [0.481, 0.520] with langdetect and 0.500 to 0.502 with the
+  others, Qwen2.5-3B 0.515 [0.495, 0.536] and 0.518 to 0.531, Qwen3 0.324 [0.306, 0.343] and 0.326 to 0.332,
+  Gemma-3-1B 0.413 [0.394, 0.431] and 0.399 to 0.413, Gemma-3-4B 0.214 [0.198, 0.230] and 0.215 to 0.223, OLMo-2
+  0.080 [0.070, 0.091] and 0.083 to 0.088. Under every detector each head ranks first among the heads run on 2,500
+  prompts, except Qwen3's, which ranks second behind L0H3, the head that breaks the model and is left out of the
+  follow-ups.
 - Reading: in six of the ten instruct models one head is far above every other head of its layer (0.080 to 0.515,
   against at most 0.014). In each of the six the same head has a smaller effect in the base model: 0.001 and 0.007 in
   Gemma-3-1B and OLMo-2, 0.067 in Qwen3 (about a fifth of the instruct value), 0.150 and 0.202 in Qwen2.5 (30% and
@@ -431,10 +443,10 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   - Which tokens the mean is taken over matters in Qwen3 and Gemma-3-1B.
   - Language identity: in five of the six models the head's output sets the language of the continuation, and
     Qwen2.5-1.5B is the exception (0.182). In Gemma-3-1B the prompt's language explains 0.03 of the variance around
-    the mean and its mean still moves 0.997. The mean over five languages acts as a language of its own, so in
-    Gemma-3 and Qwen3 a small mean-ablation effect does not show that the head carries little: one language's mean
-    moves 0.78 to 0.98 of all prompts there. This differs from GPT-2's L6H10, where every language mean acted like
-    ablation (section 2).
+    the mean, and another language's mean still moves 0.997. The mean over five languages is not neutral: where it
+    moves replies, it moves them to another European language rather than to English. So in Gemma-3 and Qwen3 a small
+    mean-ablation effect does not show that the head carries little: one language's mean moves 0.78 to 0.98 of all
+    prompts there. This differs from GPT-2's L6H10, where every language mean acted like ablation (section 2).
 
 ## 11. Steering the heads on LCB (running)
 
@@ -460,7 +472,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   - Quality (steer_quality.py, added after the first condition of Gemma-3-1B had finished, as a check rather than a
     criterion): embedding similarity (Qwen3-Embedding-0.6B) between each reply and the baseline reply to the same
     prompt, against the baseline reply to another prompt of the same task and language; and the perplexity of each
-    reply under the unmodified model, against the baseline replies in the same language.
+    reply under the unmodified model, against the baseline replies in the same language. The encoder runs in
+    bfloat16, its checkpoint's precision, as in content.py, so a text compared with itself scores 1.001.
 - When / where: queued 2026-10-09 evening; out/<model>-steer, to be added to results/.
 - Code: steer.py, steer_quality.py. The replacement for each prompt inside a mixed-language batch was checked
   against single-prompt runs on a small random model.
@@ -475,12 +488,43 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     domain gap from a head that does not set the language in chat.
   - LPR checks only the language. Whether steered replies keep the content of the baseline replies is checked
     afterwards with embedding similarity.
+- Result so far (Gemma-3-1B; the other five models are running):
 
-## 12. Still running (2026-10-09, 20:30 KST)
+| condition | mono LPR (change [95% CI]) | cross LPR (change [95% CI]) | replies in the swap language, mono / cross | English lines, cross | skipped, cross | repetition |
+|---|---|---|---|---|---|---|
+| baseline | 0.984 | 0.118 | 0.000 / 0.000 | 0.55 | 0.019 | 0.004 |
+| L11H3 steer | 0.996 (+0.013 [+0.004, +0.021]) | 0.560 (+0.440 [+0.410, +0.469]) | 0.000 / 0.000 | 0.17 | 0.007 | 0.006 |
+| L11H3 swap | 0.000 | 0.000 | 0.994 [0.988, 0.999] / 0.594 [0.565, 0.622] | 0.17 | 0.008 | 0.010 |
+| L11H3 add steer | 0.966 (-0.015 [-0.028, -0.004]) | 0.165 (+0.047 [+0.031, +0.064]) | 0.000 / 0.000 | 0.48 | 0.021 | 0.004 |
+| L11H3 add swap | 0.080 | 0.045 | 0.828 [0.802, 0.853] / 0.123 [0.104, 0.142] | 0.47 | 0.019 | 0.012 |
+| three controls, all four conditions | change -0.003 to +0.006 | change -0.034 to +0.034 | 0.000 / 0.000 | | | |
 
-- Section 11, from 20:03 KST.
+  - The baseline matches section 8 (0.984 and 0.118). Crosslingual LPR under steer by language: German 0.08 to
+    0.82, French 0.16 to 0.47, Spanish 0.11 to 0.46, Italian 0.14 to 0.49. Under swap, 0.585 of the English prompts
+    are answered in German.
+  - Quality: the 530 crosslingual replies that steer turns from fail to pass have cosine 0.763 with the baseline
+    reply to the same prompt, against 0.199 with the baseline reply to another prompt of the same task and language.
+    Their median perplexity under the unmodified model is 4.9, against 5.8 for the baseline crosslingual replies in
+    the requested language and 3.1 for the baseline monolingual replies. The 786 monolingual replies that swap moves
+    out of their language: 0.704 against 0.152.
+- Reading against the plan (Gemma-3-1B):
+  - The head sets the reply language on LCB: the share of replies in the swap language has a CI above every
+    control's share (0.000), on monolingual and on crosslingual prompts. On crosslingual prompts the swapped-in
+    language wins over the language the prompt asks for in 0.594 of the replies.
+  - steer fixes crosslingual replies: +0.440 with a CI above zero and above every control's change (at most
+    +0.034), and the skipped share and repetition do not rise. The fixed replies stay close to the baseline replies
+    in content and are not less fluent by perplexity. 44% of the crosslingual replies still fail.
+  - Adding the direction with coefficient 1 moves much less than replacing: add steer's change (+0.047 [+0.031,
+    +0.064]) is above zero and above the add controls (at most +0.019) but not above L11H0 under steer (+0.034), and
+    it lowers monolingual LPR by 0.015.
+  - The second run with LCB vectors is not needed, since Gemma-3-1B's crosslingual change has a CI above zero.
+
+## 12. Still running (2026-10-09, 21:50 KST)
+
+- Section 11 for Gemma-3-4B, Qwen2.5-1.5B, Qwen3-1.7B, Qwen2.5-3B and OLMo-2-1B.
+- Qwen2.5-7B, instruct and base, through sections 7, 8, 10 and 11 (queued, bf16).
 - Llama-3.2-3B: every head on crosslingual LCB prompts, as for Llama-3.2-1B.
-- Qwen3-4B, instruct and base: a second Qwen3 size (queued, after the third model of section 11).
+- Qwen3-4B, instruct and base: a second Qwen3 size (queued last).
 
 ## What the results support and what they do not
 
@@ -499,13 +543,17 @@ Supported so far:
 - On FLORES, in five of the six models, replacing the head's output with one language's mean output moves 0.904 to
   0.997 of the non-English continuations into that language, and the prompt's own language mean keeps them
   (section 10).
+- In Gemma-3-1B, on LCB, the same replacement sets the reply language (0.994 of monolingual replies), and replacing
+  the head's output with the requested language's mean raises crosslingual LPR from 0.118 to 0.560, with replies that
+  stay close to the baseline replies in content (section 11; the other five models are running).
 
 Not supported, or not tested:
 - That instruction tuning creates the head: in Qwen2.5 and Gemma-3-4B the same head is already there in the base model
   with a smaller effect; in Gemma-3-1B and OLMo-2 it is absent from the base model, and these runs do not show what
   produces it (section 7).
 - That every instruct model has such a head: Llama-3.2-3B, OLMo-3-7B and SmolLM3-3B do not (section 7).
-- That the head encodes the language in Qwen2.5-1.5B (section 10: 0.182), or on chat prompts (section 11 is running).
+- That the head encodes the language in Qwen2.5-1.5B (section 10: 0.182), or on chat prompts in models other than
+  Gemma-3-1B (section 11 is running).
 - That the effect is the same under mean ablation: it holds in Qwen2.5 and OLMo-2 but not in Gemma-3, Qwen3 or
   OLMo-3 (section 7).
 - A ranking of effect sizes across models: heads per layer and normalization differ (section 7).

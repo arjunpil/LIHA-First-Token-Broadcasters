@@ -648,3 +648,39 @@ languages move replies to another European language rather than to English (Qwen
 388 flips to Italian, Gemma-3-1B's 418 of 491 to French and Italian), so in Gemma-3 and Qwen3 mean ablation is not a
 neutral removal. With the head zeroed, Gemma-3-4B's replies go mostly to Portuguese and Spanish (453 of 535), not to
 English. EXPERIMENTS.md section 10 has the reading against the explanations it tests.
+
+# Steering on LCB, Gemma-3-1B, 2026-10-09
+
+results/gemma3-1b-instruct-steer (steer.py, steer_quality.py; plan in experiments/steer_plan.md, written before the
+runs). L11H3's output replaced by its FLORES mean for a language (steer: the language the reply should be in; swap:
+de for en/fr/es/it, fr for de), or shifted by that mean minus the mean over all languages (add), at every position;
+the same four conditions on the three layer-11 control heads of the LCB run.
+
+| condition | mono LPR (change [95% CI]) | cross LPR (change [95% CI]) | replies in the swap language, mono / cross | English lines, cross | skipped, cross | repetition |
+|---|---|---|---|---|---|---|
+| baseline | 0.984 | 0.118 | 0.000 / 0.000 | 0.55 | 0.019 | 0.004 |
+| L11H3 steer | 0.996 (+0.013 [+0.004, +0.021]) | 0.560 (+0.440 [+0.410, +0.469]) | 0.000 / 0.000 | 0.17 | 0.007 | 0.006 |
+| L11H3 swap | 0.000 | 0.000 | 0.994 [0.988, 0.999] / 0.594 [0.565, 0.622] | 0.17 | 0.008 | 0.010 |
+| L11H3 add steer | 0.966 (-0.015 [-0.028, -0.004]) | 0.165 (+0.047 [+0.031, +0.064]) | 0.000 / 0.000 | 0.48 | 0.021 | 0.004 |
+| L11H3 add swap | 0.080 | 0.045 | 0.828 [0.802, 0.853] / 0.123 [0.104, 0.142] | 0.47 | 0.019 | 0.012 |
+| three controls, all four conditions | change -0.003 to +0.006 | change -0.034 to +0.034 | 0.000 / 0.000 | | | |
+
+Crosslingual LPR under steer: German 0.08 to 0.82, French 0.16 to 0.47, Spanish 0.11 to 0.46, Italian 0.14 to 0.49.
+The 530 crosslingual replies that steer turns from fail to pass have cosine 0.763 with the baseline reply to the same
+prompt and 0.199 with the baseline reply to another prompt (Qwen3-Embedding-0.6B); their median perplexity under the
+unmodified model is 4.9, against 5.8 for baseline crosslingual replies in the requested language.
+
+# Detector check and CIs for the instruct heads, 2026-10-09
+
+results/detectors (detectors.py). The 2,500-prompt continuations relabeled with langid, fastText and a 2-of-3 vote:
+every head's c->w moves by 0.02 or less and keeps its rank (first; Qwen3's L18H12 second behind L0H3, which breaks
+the model). langdetect c->w with bootstrap 95% CIs: Qwen2.5-1.5B 0.500 [0.481, 0.520], Qwen2.5-3B 0.515 [0.495,
+0.536], Qwen3-1.7B 0.324 [0.306, 0.343], Gemma-3-1B 0.413 [0.394, 0.431], Gemma-3-4B 0.214 [0.198, 0.230], OLMo-2-1B
+0.080 [0.070, 0.091].
+
+# LCB word-level pass rate (WPR), Qwen2.5-1.5B 14 languages, 2026-10-09
+
+results/qwen-instruct-lcb-all/wpr.md (lcb_wpr.py, as in LCB's compute_metrics.py, for ar/hi/ja/ko/ru/zh). Baseline
+0.96 to 0.99 monolingual and 0.93 to 0.99 crosslingual. With L22H6 zeroed or mean-ablated, Hindi drops (monolingual
+0.98 to 0.89 and 0.82, crosslingual 0.99 to 0.83 and 0.83); the other five languages move by 0.03 or less, and the
+three layer-22 controls keep Hindi at 0.99 to 1.00.
