@@ -242,8 +242,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   prompts, and the top three heads with dNLL <= 1 get mean ablation and scaling. The head that the later sections use
   is the one with the largest c->w on the 2,500 prompts among the heads with dNLL <= 1 whose removal keeps at least
   0.9 of the English continuations in English (experiments/head_rule.md). The English condition was written down on
-  2026-10-10, after Qwen2.5-7B's top head turned English continuations into digit strings; it is the reason
-  SmolLM3-3B's L1H12 was set aside, and it changes none of the other choices. Base models: Qwen2.5-3B, Qwen3-1.7B,
+  2026-10-10, after Qwen2.5-7B's top head turned English continuations into digit strings; it states why SmolLM3-3B's
+  L1H12 was set aside, and it changes none of the other choices. Base models: Qwen2.5-3B, Qwen3-1.7B,
   Gemma-3-4B and OLMo-3-7B go through the same steps; Gemma-3-1B's base stayed under the threshold on the screen and
   its layers 5 and 11 were run on 2,500 prompts anyway; OLMo-2-1B's base has the full sweep of section 3. The Llama
   base models were not run, since neither instruct model reached the threshold. SmolLM3-3B instruct reached it only
