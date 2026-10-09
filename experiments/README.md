@@ -11,7 +11,8 @@ slice at the input of the output projection instead (`c_proj`, `o_proj`, `dense`
 From the repo root:
 ```
 pip install torch transformers datasets langdetect matplotlib
-pip install langid fasttext-wheel        # only for prompts.py --set extended
+pip install langid fasttext-wheel        # prompts.py --set extended and lcb.py
+pip install jieba fugashi unidic-lite    # lcb.py, to segment Chinese and Japanese replies
 python prompts/prompts.py                               # 2,500 European prompts, same rules as expand_dataset.py
 python experiments/sweep.py --model gpt2 --bs 500       # head and paper modes, all 144 heads
 python experiments/detect.py gpt2

@@ -206,7 +206,7 @@ dNLL <= 0.1 heads under every detector, and the top five are the same heads. Acr
 prompts (stratified by language), c->w per head correlates at 0.976 between halves (5th percentile 0.969) and L6H10 is
 first in both halves every time. results/gpt2/robustness.md, from robustness.py.
 
-Of the five top c->w heads, only L6H10 holds up under Chaewon's mean ablation (PR #6): c->w 0.210 with zero ablation
+Of the five top c->w heads, only L6H10 holds up under the mean ablation of PR #6: c->w 0.210 with zero ablation
 and 0.177 with mean ablation, while L2H5 and L4H8 drop to 0.057, L8H6 to 0.083 and L2H3 to 0.010. L6H10's LM loss
 change is also specific to non-English text: +0.001 on English and +0.011 to +0.029 on fr/de/es/it.
 
@@ -434,10 +434,11 @@ in fp32.
 | Qwen2.5-1.5B | 12 | 0.902 | L22H6 0.500 | +0.228 (+0.004) | 0.450 | 0.150 |
 | Qwen2.5-3B | 16 | 0.992 | L27H13 0.515 | +0.234 (+0.006) | 0.338 | 0.202 |
 | Qwen3-1.7B | 16 | 0.994 | L18H12 0.324 | +0.128 (+0.003) | 0.028 | 0.067 |
-| Gemma-3-1B | 4 | 0.997 | L11H3 0.413 | +0.720 (-0.012) | 0.089 | 0.000 (screen) |
+| Gemma-3-1B | 4 | 0.997 | L11H3 0.413 | +0.720 (-0.012) | 0.089 | 0.001 |
 | OLMo-2-1B | 16 | 0.997 | L12H8 0.080 | +0.136 (+0.022) | 0.056 | 0.007 |
 | Llama-3.2-1B | 32 | 1.000 (screen) | none, strongest 0.048 (screen) | | | |
 | Llama-3.2-3B | 24 | 0.990 (screen) | none, strongest 0.008 (screen) | | | |
+| OLMo-3-7B (bf16) | 32 | 0.960 | L14H25 0.134 | +0.202 (+0.000) | 0.007 | 0.104 (screen) |
 
 Gemma-3's L11H3 sends 1,032 non-English replies elsewhere, 873 of them to English; 1,031 are fluent (not
 repetition or prompt copy). Its base model has no head above 0.088 on the screen, and under mean ablation the head
@@ -445,7 +446,7 @@ keeps only German down (0.60). OLMo-2's L12H8 is small but holds under mean abla
 Neither Llama has such a head on FLORES at 1B or 3B, but Llama-3.2-1B has one on LCB (next sections). Qwen2.5-3B
 and Qwen3-1.7B are in the next section.
 
-Mean vs zero ablation and the matched-null redistribution test are in Chaewon's PR #6 (results/gpt2-mean-ablation,
+Mean vs zero ablation and the matched-null redistribution test are in PR #6 (results/gpt2-mean-ablation,
 results/gpt2-redistribution). TABLES.md has the paper's tables recomputed from results/ (python tables.py).
 
 # Qwen2.5-3B and Qwen3-1.7B on 2,500 prompts, 2026-10-09
@@ -475,21 +476,22 @@ results/<model>-lcb, samples.jsonl.gz has every reply.
 | Qwen3-1.7B | L18H12 | 0.985 | -0.149 [-0.174, -0.123] | -0.067 | 0.823 | -0.508 [-0.535, -0.478] | -0.230 | -0.004 to -0.003 / +0.000 to +0.021 |
 | Gemma-3-1B | L11H3 | 0.984 | -0.628 [-0.662, -0.593] | -0.244 | 0.118 | -0.091 [-0.110, -0.073] | -0.092 | -0.005 to +0.003 / -0.023 to +0.038 |
 | OLMo-2-1B | L12H8 | 0.986 | -0.272 [-0.302, -0.239] | -0.128 | 0.931 | -0.335 [-0.362, -0.308] | -0.143 | +0.000 to +0.004 / -0.003 to +0.004 |
+| OLMo-3-7B (bf16) | L14H25 | 0.972 | -0.041 [-0.060, -0.024] | +0.001 | 0.874 | -0.018 [-0.033, -0.003] | +0.015 | -0.011 to +0.004 / +0.001 to +0.007 |
 | Llama-3.2-1B | L8H25 | 0.997 | -0.016 [-0.026, -0.008] | -0.015 | 0.874 | -0.711 [-0.737, -0.684] | -0.357 | -0.009 / +0.001 |
 | Llama-3.2-3B | L0H2 | 0.993 | +0.001 [-0.006, +0.009] | +0.000 | 0.911 | -0.003 [-0.013, +0.008] | +0.000 | +0.003 / +0.001 |
 | Llama-3.2-3B | L2H17 | 0.993 | +0.004 [-0.001, +0.010] | -0.004 | 0.911 | -0.006 [-0.014, +0.002] | -0.003 | +0.004 / -0.001 |
 
-Every model except Llama-3.2-3B has a head whose removal moves replies out of the requested language far beyond its
-same-layer controls. The crosslingual replies it breaks are mostly English; the monolingual ones are not always
-(Qwen2.5-3B has 7% English lines there). How the drop splits between the two tasks differs. Qwen2.5 and OLMo-2 lose
-both. Gemma-3-1B loses mostly monolingual, but it already answers most crosslingual prompts in English at baseline
-(0.118, 55% English lines), so there is little left to lose there. Llama-3.2-1B's L8H25 leaves monolingual replies
-alone and takes crosslingual from 0.874 to 0.164 (81% English lines), the largest drop here. It stays under the
-FLORES threshold (0.048 on the screen) because FLORES only tests keeping the prompt's language. Qwen3-1.7B leans the
-same way (-0.149 mono, -0.508 cross). So the head keeps the prompt's language in some models, follows a requested
-language in others, and does both in Qwen2.5 and OLMo-2. Mean ablation keeps about 90% of the zero-ablation drop in
-Qwen2.5-1.5B, 75% in Qwen2.5-3B, 43-50% in Qwen3, OLMo-2 and Llama-3.2-1B crosslingual, and 39% in Gemma-3
-monolingual.
+Every model except Llama-3.2-3B and OLMo-3-7B has a head whose removal moves replies out of the requested language
+far beyond its same-layer controls. The crosslingual replies it breaks are mostly English; the monolingual ones are
+not always (Qwen2.5-3B has 7% English lines there). How the drop splits between the two tasks differs. Qwen2.5 and
+OLMo-2 lose both. Gemma-3-1B loses mostly monolingual, but it already answers most crosslingual prompts in English
+at baseline (0.118, 55% English lines), so there is little left to lose there. Llama-3.2-1B's L8H25 leaves
+monolingual replies alone and takes crosslingual from 0.874 to 0.164 (81% English lines), the largest drop here. It
+stays under the FLORES threshold (0.048 on the screen) because FLORES only tests keeping the prompt's language.
+Qwen3-1.7B leans the same way (-0.149 mono, -0.508 cross). So the head keeps the prompt's language in some models,
+follows a requested language in others, and does both in Qwen2.5 and OLMo-2. Mean ablation keeps about 90% of the
+zero-ablation drop in Qwen2.5-1.5B, 75% in Qwen2.5-3B, 43-50% in Qwen3, OLMo-2 and Llama-3.2-1B crosslingual, and
+39% in Gemma-3 monolingual.
 
 Since Llama-3.2-1B's head only shows up on LCB, every head of both Llamas is being screened on 100 crosslingual
 prompts (lcb.py --screen).
@@ -505,3 +507,101 @@ controls of its own model, as in the tables above.
 
 Generation uses each model's generation_config apart from sampling. Qwen2.5-1.5B-Instruct sets repetition_penalty
 1.1 and Qwen2.5-3B-Instruct 1.05, so their greedy runs use it; no other model sets one.
+
+# Qwen2.5-1.5B LCB in 14 languages, 2026-10-09
+
+results/qwen-instruct-lcb-all. Same setup as the five-language run, now with all 14 non-English LCB languages (2,200
+monolingual and 4,186 crosslingual prompts), L22H6 against three random heads of layer 22. Chinese and Japanese are
+segmented with jieba and MeCab (fugashi) before the 5-word filter, as in LCB's compute_metrics.py. The first version
+of this section split on whitespace, which skipped 198 of 200 zh and 96 of 100 ja monolingual baseline replies and
+left the zh and ja crosslingual baselines at 0.22 and 0.07 (commit dfce47e); the saved replies were rescored without
+regenerating them.
+| condition | mono LPR | Δ mono | cross LPR | Δ cross |
+|---|---|---|---|---|
+| baseline | 0.973 | | 0.666 | |
+| L22H6 zero | 0.777 | -0.213 [-0.231, -0.195] | 0.386 | -0.277 [-0.292, -0.263] |
+| L22H6 mean | 0.738 | -0.257 [-0.276, -0.237] | 0.376 | -0.286 [-0.302, -0.273] |
+| 3 control heads (L22) | | +0.002 to +0.007 | | -0.001 to +0.002 |
+
+Monolingual, baseline to L22H6 zero: it 1.00 to 0.00, hi 0.99 to 0.39, tr 0.95 to 0.39, pt 0.95 to 0.54, fr 0.99 to
+0.73, vi 1.00 to 0.82, es 0.97 to 0.83, id 0.90 to 0.79, ko 0.95 to 0.87, ar and de 0.99 to 0.96, while ru stays at
+1.00, zh at 0.98 and ja goes from 0.96 to 0.95. Crosslingual drops are largest for it (0.69 to 0.00), pt (0.65 to
+0.08), vi (0.61 to 0.10), hi (0.74 to 0.13) and id (0.65 to 0.19), while ar, de, ru and zh (0.81 to 0.78) lose 0.09
+or less and ja goes from 0.54 to 0.51. So zh, ja and ru barely depend on the head, while hi and ko, also written in
+their own scripts, do. Where the lost lines go: monolingual it, pt and fr replies go mostly to Spanish, es to
+Portuguese, hi to Korean, Russian and English, and tr to English and Korean; crosslingual replies go mostly to
+English, except it and pt, which go to Spanish. The Korean is real: Turkish replies switch to fluent Korean
+(sometimes Japanese) mid-reply. In the pooled numbers mean ablation does at least as much as zero ablation, but per
+language it differs (es 0.83 with zero, 0.97 with mean).
+
+Without the head, 16 of 100 monolingual and 51 of 299 crosslingual ko replies are skipped (3 and 8 at baseline), 11
+and 50 of them because the reply turned into Chinese or Japanese, which the benchmark splits on whitespace when ko
+is expected. The ko drops above (0.95 to 0.87, 0.50 to 0.34) therefore understate the change.
+
+# OLMo-2-1B post-training stages, 2026-10-09
+
+results/olmo2-1b-{sft,dpo}-instruct and their -lcb runs. OLMo-2-0425-1B releases its checkpoints after SFT and after
+DPO; Instruct is the released final model. Layer 12 on all 2,500 FLORES prompts and LCB for L12H8, same chat
+template in all three.
+| checkpoint | FLORES L12H8 c->w | rest of layer 12 (max) | LCB mono LPR | Δ mono, zero / mean | LCB cross LPR | Δ cross, zero / mean |
+|---|---|---|---|---|---|---|
+| base | 0.007 | | | | | |
+| SFT | 0.028 | 0.002 | 0.997 | -0.076 / -0.038 | 0.895 | -0.247 / -0.091 |
+| DPO | 0.071 | 0.008 | 0.989 | -0.199 / -0.120 | 0.933 | -0.244 / -0.123 |
+| Instruct | 0.080 | 0.005 | 0.986 | -0.272 / -0.128 | 0.931 | -0.335 / -0.143 |
+
+The same head carries the effect at every stage and nothing else in layer 12 does. Its crosslingual role is there
+after SFT; keeping the prompt's language (FLORES, LCB monolingual) grows mainly with DPO. The base model can't take
+LCB prompts, so its row is FLORES only.
+
+# Sampling, 2026-10-09
+
+results/qwen-instruct-lcb-t07-s{0,1}. Qwen2.5-1.5B-Instruct LCB (five languages) with the model's own sampling
+settings (temperature 0.7, top-p 0.8, top-k 20, repetition penalty 1.1), two seeds. Each batch uses the same seed in
+every condition, so the comparison stays paired.
+| run | mono LPR | Δ mono, L22H6 zero / mean | cross LPR | Δ cross, zero / mean |
+|---|---|---|---|---|
+| greedy | 0.982 | -0.273 / -0.246 | 0.704 | -0.276 / -0.247 |
+| seed 0 | 0.985 | -0.273 / -0.238 | 0.690 | -0.245 / -0.232 |
+| seed 1 | 0.982 | -0.274 / -0.223 | 0.698 | -0.276 / -0.242 |
+
+The three control heads of layer 22 stay between -0.013 and +0.006. The effect is not specific to greedy decoding.
+
+# Content across models, 2026-10-09
+
+results/<model>-content (content.py, three random heads from the same layer as controls). FLORES prompts whose
+continuation flips to English when the head is removed: similarity between the prompt and the continuation before
+and after, with Qwen3-Embedding-0.6B. For scale, the next FLORES sentence scores 0.38 and a random one 0.18.
+| model | head | flips to English | before | after |
+|---|---|---|---|---|
+| Qwen2.5-1.5B (2026-10-08) | L22H6 | 918 | 0.475 | 0.558 |
+| Qwen2.5-3B | L27H13 | 514 | 0.590 | 0.657 |
+| Qwen3-1.7B | L18H12 | 739 | 0.635 | 0.683 |
+| Gemma-3-1B | L11H3 | 873 | 0.639 | 0.559 |
+| OLMo-2-1B | L12H8 | 101 | 0.702 | 0.668 |
+
+The control heads flip at most two prompts each. In every model the English continuation stays on the prompt's
+content, far above the next FLORES sentence: Qwen gains a little, Gemma and OLMo-2 lose a little.
+
+# Llama-3.2-1B-Instruct LCB head screen, 2026-10-09
+
+results/llama3.2-1b-instruct-lcbscreen (lcb.py --screen). Every head zero-ablated in turn on 100 crosslingual LCB
+prompts (25 per language). Baseline pass rate 0.900; L8H25 takes it to 0.190, and the next head is L13H4 at 0.800.
+So L8H25 is the one crosslingual head, and the full LCB run above already covers it. The same screen for
+Llama-3.2-3B is queued.
+
+# OLMo-3-7B, 2026-10-09
+
+results/olmo3-7b-instruct (with -screen, -followup and -lcb) and results/olmo3-7b (with -screen and -followup).
+bf16: fp32 would take 17 h for the screen, and bf16 batches match single-prompt runs on only 10 of 20 prompts, so
+differences of a few prompts are noise. Instruct screen: L14H25 at 0.120, every other head 0.04 or less. On 2,500
+prompts L14H25 is at 0.134 with dNLL +0.202 against +0.0003 for the rest of layer 14, but at 0.007 under mean
+ablation, and scaling it by 2 to 5 only moves accuracy from 0.968 to 0.977-0.980, about as much as mean ablation
+does. LCB for L14H25: zero ablation moves monolingual by -0.041 and crosslingual by -0.018, mean ablation by +0.001
+and +0.015, so what is left comes from the out-of-distribution input.
+
+The base model (baseline accuracy 0.83, many prompts flipping both ways) has the same head at 0.104 on the screen.
+On 2,500 prompts its strongest heads are L15H20 at 0.151 and L20H18 at 0.133 with zero ablation (dNLL +0.234 and
++0.061 against +0.0003 for the rest of their layers), but 0.036 and 0.028 under mean ablation, with w->c at 0.026
+and 0.025 and the control head and scaling conditions at 0.02 to 0.05, which is the bf16 noise floor. So OLMo-3-7B
+has no head that holds up under mean ablation in either model, and none that is specific to the instruct model.

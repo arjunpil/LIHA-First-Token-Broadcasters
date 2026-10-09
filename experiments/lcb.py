@@ -3,6 +3,7 @@ import argparse
 import csv
 import io
 import json
+import logging
 import random
 import string
 import zipfile
@@ -22,6 +23,7 @@ TASKS = ["monolingual", "crosslingual"]
 LCB_URL = "https://raw.githubusercontent.com/for-ai/language-confusion/HEAD/test_sets.zip"
 LID_URL = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"
 PUNCT = str.maketrans("", "", string.punctuation)
+SEGMENTERS = {}
 
 
 def load_lcb(path, langs):
@@ -37,9 +39,25 @@ def load_lcb(path, langs):
     return rows
 
 
+def words(line, lang):
+    # the benchmark segments Chinese with jieba and Japanese with MeCab before the 5-word filter
+    if lang not in ("zh", "ja"):
+        return line.split()
+    if lang not in SEGMENTERS:
+        if lang == "zh":
+            import jieba
+            jieba.setLogLevel(logging.WARNING)
+            SEGMENTERS["zh"] = lambda s: list(jieba.cut(s))
+        else:
+            from fugashi import Tagger
+            tagger = Tagger("-O wakati -b 50000")
+            SEGMENTERS["ja"] = lambda s: tagger.parse(s).split()
+    return SEGMENTERS[lang](line)
+
+
 def score(text, lang, lid):
     text = text.split("\nQ:")[0].strip().translate(PUNCT).replace("—", " ").replace("،", "")
-    lines = [line for line in text.split("\n") if len(line.split()) >= 5]
+    lines = [line for line in text.split("\n") if len(words(line, lang)) >= 5]
     if not lines:
         return {"skipped": True}
     labels = []
