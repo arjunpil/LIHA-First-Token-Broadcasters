@@ -1,0 +1,18 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_commit": null,
+  "transformers": "5.18.0",
+  "torch": "2.11.0+cu130",
+  "dtype": "torch.float32",
+  "attention": "eager",
+  "sample_seed": 20261008,
+  "prompts_per_language": 24,
+  "task": "LCB monolingual",
+  "intervention": "L22H6 o_proj input zero; separate prefill and cached decode phases",
+  "max_new_tokens": 100,
+  "selection": "source-balanced sample of saved LCB base prompts, regardless of baseline correctness",
+  "important_caveat": "Exploratory; FP32 single-prompt replay versus upstream FP16 batched benchmark; report both unconditional and clean-correct rates",
+  "original_upstream_data_path": "results/qwen-instruct-lcb/samples.jsonl.gz",
+  "original_upstream_ref": "main (not pinned; accessed at original experiment time)",
+  "reproduction_prompt_manifest": "results/qwen-l22h6-mechanism/monolingual_prompt_manifest.csv"
+}
