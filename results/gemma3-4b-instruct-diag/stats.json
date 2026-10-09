@@ -1,0 +1,30 @@
+{
+ "head": "L24H0",
+ "contribution_norm": 14.572343826293945,
+ "layer_contribution_norms": [
+  14.572343826293945,
+  6.067876815795898,
+  3.009657621383667,
+  5.624761581420898,
+  6.916621685028076,
+  5.171574115753174,
+  8.112351417541504,
+  17.54191017150879
+ ],
+ "norm_rank": 2,
+ "text_and_continuation": {
+  "tokens": 197528,
+  "mean_share_of_energy": 0.5622071040809657,
+  "language_share_of_variance": 0.7295063454931707
+ },
+ "continuation": {
+  "tokens": 99291,
+  "mean_share_of_energy": 0.5637075772910154,
+  "language_share_of_variance": 0.7994858465849924
+ },
+ "prompt_mean_vs_continuation_mean": {
+  "cosine": 0.9940159320831299,
+  "relative_distance": 0.13058309257030487
+ },
+ "template_tokens": 4
+}

@@ -1,0 +1,26 @@
+{
+ "head": "L11H3",
+ "contribution_norm": 9.451131820678711,
+ "layer_contribution_norms": [
+  1.492336630821228,
+  1.5596510171890259,
+  2.453533411026001,
+  9.451131820678711
+ ],
+ "norm_rank": 1,
+ "text_and_continuation": {
+  "tokens": 197543,
+  "mean_share_of_energy": 0.7630395357279206,
+  "language_share_of_variance": 0.03207089972598487
+ },
+ "continuation": {
+  "tokens": 99306,
+  "mean_share_of_energy": 0.8627335549881336,
+  "language_share_of_variance": 0.10665906010624362
+ },
+ "prompt_mean_vs_continuation_mean": {
+  "cosine": 0.9745278358459473,
+  "relative_distance": 3.3159971237182617
+ },
+ "template_tokens": 4
+}

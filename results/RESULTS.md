@@ -623,3 +623,28 @@ L1H12 has c->w 0.880 with dNLL +2.58; without it the replies in every language, 
 `</think>` tokens, so it breaks generation rather than changing the language. Every other head is at 0.016 or
 less, so no head changes the language on FLORES without breaking generation. The 2,500-prompt run was stopped and
 the base model was not run.
+
+# Why zero and mean ablation differ, 2026-10-09
+
+results/<model>-diag (diagnose.py), the six heads on the 2,500 FLORES prompts in the precision of their sweeps.
+Statistics of the head's contribution after the output projection over the user's text and the baseline
+continuation (the template tokens before the text left out), then generation with the head replaced. Language means
+are over the user's text and the continuation; other-language = German for en/fr/es/it prompts, French for de prompts.
+c->w over all 2,500 prompts; in brackets, the share of non-English replies in the swapped-in language.
+
+| model | head | norm rank in layer | mean's share of the energy | language's share of the rest | zero | follow-up mean | continuation mean | minus continuation mean | own-language mean | English mean | other-language mean | random, same norm | x0.5 | zero, norm held |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Qwen2.5-1.5B | L22H6 | 1 of 12 | 0.18 | 0.62 | 0.501 | 0.451 | 0.431 | 0.027 | 0.052 | 0.486 | 0.530 (0.182) | 0.544 | 0.071 | |
+| Qwen2.5-3B | L27H13 | 2 of 16 | 0.38 | 0.71 | 0.515 | 0.338 | 0.372 | 0.059 | 0.001 | 0.595 | 0.794 (0.996) | 0.636 | 0.047 | |
+| Qwen3-1.7B | L18H12 | 1 of 16 | 0.34 | 0.56 | 0.324 | 0.028 | 0.155 | 0.138 | 0.000 | 0.667 | 0.780 (0.904) | 0.377 | 0.009 | |
+| Gemma-3-1B | L11H3 | 1 of 4 | 0.76 | 0.03 | 0.413 | 0.089 | 0.196 | 0.070 | 0.000 | 0.782 | 0.977 (0.997) | 0.666 | 0.008 | 0.160 |
+| Gemma-3-4B | L24H0 | 2 of 8 | 0.56 | 0.73 | 0.214 | 0.012 | 0.011 | 0.003 | 0.000 | 0.222 | 0.796 (0.989) | 0.291 | 0.000 | 0.234 |
+| OLMo-2-1B | L12H8 | 2 of 16 | 0.31 | 0.67 | 0.080 | 0.056 | 0.054 | 0.005 | 0.000 | 0.100 | 0.750 (0.910) | 0.130 | 0.005 | 0.074 |
+
+In five of the six models another language's mean moves 0.904 to 0.997 of the non-English continuations into that
+language, and the prompt's own language mean keeps them; Qwen2.5-1.5B is the exception (0.182). Holding the
+post-attention norm fixed accounts for part of the zero-ablation effect in Gemma-3-1B only. The means over all five
+languages move replies to another European language rather than to English (Qwen3's continuation mean sends 347 of
+388 flips to Italian, Gemma-3-1B's 418 of 491 to French and Italian), so in Gemma-3 and Qwen3 mean ablation is not a
+neutral removal. With the head zeroed, Gemma-3-4B's replies go mostly to Portuguese and Spanish (453 of 535), not to
+English. EXPERIMENTS.md section 10 has the reading against the explanations it tests.

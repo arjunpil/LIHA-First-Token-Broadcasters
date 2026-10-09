@@ -45,3 +45,13 @@ crosslingual pass rate of models that often answer in English?
   domain gap from the head not setting the language in chat.
 - LPR checks the language only. Whether steered replies keep the content of the baseline replies is checked after the
   run with embedding similarity, reported without a pass threshold.
+
+## Added 2026-10-09, 20:28 KST, after seeing Gemma-3-1B's baseline and steer conditions
+
+The steer condition of Gemma-3-1B had finished (crosslingual LPR up, the controls not yet run). Two quality checks are
+added to every model, as checks rather than criteria (steer_quality.py):
+- Content: cosine similarity (Qwen3-Embedding-0.6B) between each reply and the baseline reply to the same prompt,
+  against the baseline reply to another prompt of the same task and language, overall and on the prompts whose
+  pass/fail changed. This fixes the design of the content check listed above.
+- Fluency: perplexity of the reply text alone under the unmodified model, median over the scored replies and over
+  those entirely in the expected language, read against the baseline replies in the same language.
