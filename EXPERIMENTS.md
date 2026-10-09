@@ -239,8 +239,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   its layers 5 and 11 were run on 2,500 prompts anyway; OLMo-2-1B's base has the full sweep of section 3. The Llama
   base models were not run, since neither instruct model reached the threshold. SmolLM3-3B instruct reached it only
   through a head that breaks generation (below); its run was stopped after the screen and its base was not run.
-- When / where: 2026-10-08 to 10-09; results/<model>-screen, results/<model>, results/<model>-followup. The Gemma-3-4B
-  results are not in the repo yet.
+- When / where: 2026-10-08 to 10-09; results/<model>-screen, results/<model>, results/<model>-followup.
 - Code: sweep.py, followup.py.
 - Result (2,500 prompts unless marked):
 
@@ -290,6 +289,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 | Qwen2.5-3B | L27H13 | 0.982 | -0.537 [-0.575, -0.503] | -0.409 | 0.888 | -0.449 [-0.478, -0.421] | -0.331 | +0.000..+0.003 / -0.025..+0.004 |
 | Qwen3-1.7B | L18H12 | 0.985 | -0.149 [-0.174, -0.123] | -0.067 | 0.823 | -0.508 [-0.535, -0.478] | -0.230 | -0.004..-0.003 / +0.000..+0.021 |
 | Gemma-3-1B | L11H3 | 0.984 | -0.628 [-0.662, -0.593] | -0.244 | 0.118 | -0.091 [-0.110, -0.073] | -0.092 | -0.005..+0.003 / -0.023..+0.038 |
+| Gemma-3-4B | L24H0 | 0.990 | -0.259 [-0.292, -0.227] | -0.120 | 0.133 | -0.107 [-0.126, -0.090] | -0.053 | -0.001..+0.000 / +0.000..+0.012 |
 | OLMo-2-1B | L12H8 | 0.986 | -0.272 [-0.302, -0.239] | -0.128 | 0.931 | -0.335 [-0.362, -0.308] | -0.143 | +0.000..+0.004 / -0.003..+0.004 |
 | Llama-3.2-1B | L8H25 | 0.997 | -0.016 [-0.026, -0.008] | -0.015 | 0.874 | -0.711 [-0.737, -0.684] | -0.357 | -0.009..-0.004 / +0.001..+0.004 |
 | Llama-3.2-3B | L0H2 | 0.993 | +0.001 [-0.006, +0.009] | +0.000 | 0.911 | -0.003 [-0.013, +0.008] | +0.000 | +0.003..+0.004 / -0.001..+0.001 |
@@ -298,16 +298,17 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 
   - Second heads: Gemma-3-1B L5H0 +0.000 / +0.012, OLMo-2-1B L0H10 -0.021 / -0.054, Llama-3.2-1B L0H1 -0.004 / -0.027.
   - Share of crosslingual lines in English, baseline to zero ablation: Qwen2.5-3B 0.09 to 0.35, Qwen3 0.14 to 0.64,
-    OLMo-2 0.05 to 0.28, Llama-3.2-1B 0.09 to 0.81, Gemma-3-1B 0.55 to 0.89.
+    OLMo-2 0.05 to 0.28, Llama-3.2-1B 0.09 to 0.81, Gemma-3-1B 0.55 to 0.89, Gemma-3-4B 0.44 to 0.55.
   - Llama-3.2-1B screen: baseline 0.90; with L8H25 removed 0.19; the next two heads 0.80 (L13H4) and 0.83 (L6H31).
 - Reading: removing the head lowers the two tasks by different amounts in different models: by similar amounts in
   Qwen2.5 (-0.537 and -0.449 at 3B, -0.273 and -0.276 at 1.5B) and OLMo-2 (-0.272 and -0.335), mostly crosslingual in
-  Qwen3 (-0.149 and -0.508) and Llama-3.2-1B (-0.016 and -0.711), mostly monolingual in Gemma-3-1B (-0.628), whose
-  crosslingual baseline is already low (0.118, 55% English lines). The crosslingual lines that are lost mostly become
-  English. Llama-3.2-1B's L8H25 barely matters on FLORES (0.048 on the screen) and on monolingual LCB, but it is the
-  only one of the 512 heads whose removal takes the crosslingual screen below 0.80. On LCB, mean ablation keeps more
-  of the zero-ablation drop than on FLORES for Gemma-3-1B (39% of the monolingual drop, against 22% on FLORES) and
-  Qwen3 (45% of the crosslingual drop, against 9%). The two Llama-3.2-3B heads come from a FLORES screen where they
+  Qwen3 (-0.149 and -0.508) and Llama-3.2-1B (-0.016 and -0.711), mostly monolingual in Gemma-3-1B (-0.628 and
+  -0.091) and Gemma-3-4B (-0.259 and -0.107), whose crosslingual baselines are already low (0.118 and 0.133; 55% and
+  44% English lines). The crosslingual lines that are lost mostly become English. Llama-3.2-1B's L8H25 barely matters
+  on FLORES (0.048 on the screen) and on monolingual LCB, but it is the only one of the 512 heads whose removal takes
+  the crosslingual screen below 0.80. On LCB, mean ablation keeps more of the zero-ablation drop than on FLORES for
+  Gemma-3-1B (39% of the monolingual drop, against 22% on FLORES), Gemma-3-4B (46%, against 6%) and Qwen3 (45% of the
+  crosslingual drop, against 9%). The two Llama-3.2-3B heads come from a FLORES screen where they
   tie with many others at one prompt; the screen of all its heads on crosslingual prompts is running. OLMo-3-7B's head
   changes LPR by less than 0.05, and under mean ablation LPR does not drop (+0.001, +0.015).
 
@@ -395,12 +396,48 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   head carries language identity. Section 2 has a version of the language-mean test for GPT-2's L6H10, where every
   language mean acted like ablation.
 
-## 11. Still running (2026-10-09, 18:40 KST)
+## 11. Steering the heads on LCB (running)
 
-- Gemma-3-4B: LCB for L24H0.
-- Section 10.
-- Llama-3.2-3B: every head on crosslingual LCB prompts, as for Llama-3.2-1B (queued).
-- Qwen3-4B, instruct and base: a second Qwen3 size (queued).
+- Why: in section 10, replacing the head's output with its mean output for another language moves FLORES replies into
+  that language in some of the models. This run asks whether the same vectors set the reply language on chat
+  prompts, and whether they raise the crosslingual pass rate of the models that often answer in English (Gemma-3-1B
+  0.118 and Gemma-3-4B 0.133, section 8).
+- What: the six heads of section 7 (Qwen2.5-1.5B L22H6, Qwen2.5-3B L27H13, Qwen3-1.7B L18H12, Gemma-3-1B L11H3,
+  Gemma-3-4B L24H0, OLMo-2-1B L12H8) and the three same-layer control heads of each model's LCB run (sections 5 and
+  8), on the same five-language LCB prompts: fr/de/es/it monolingual (800) and crosslingual (1,196), English
+  monolingual (200).
+- How:
+  - Vectors: the head's per-language mean output from section 10 (2,500 FLORES prompts, user's text and baseline
+    continuation). Nothing is computed on LCB.
+  - steer replaces the head's output with the mean of the language the reply should be in, swap with the mean of
+    another language (German for en/fr/es/it, French for de). add steer and add swap add that mean minus the mean
+    over all languages instead, with the coefficient fixed at 1. All four run on the head and on the three controls.
+    The head is changed at every position (template, prompt and reply), as in section 10 and in mean ablation.
+  - Precision, batching and greedy decoding as in sections 5 and 8, so the baseline should reproduce those runs.
+  - Reported: LPR and its paired change with a bootstrap 95% CI, the share of replies entirely in the swap language
+    with a bootstrap CI, the share of English lines, repetition, and the share of replies that the 5-word line filter
+    skips.
+- When / where: queued 2026-10-09 evening; out/<model>-steer, to be added to results/.
+- Code: steer.py. The replacement for each prompt inside a mixed-language batch was checked against single-prompt
+  runs on a small random model.
+- Planned reading, set before the results (experiments/steer_plan.md):
+  - The head sets the reply language on LCB if its share of replies in the swap language has a CI above every
+    control's share.
+  - steer fixes crosslingual replies if the change in crosslingual LPR has a CI above zero and above every control's
+    change, while the skipped share and repetition rise by no more than 0.05.
+  - Replace and add are reported side by side, and all six models are reported.
+  - If Gemma-3-1B's crosslingual change under steer does not have a CI above zero, a second run takes the vectors from
+    the LCB monolingual baseline replies and applies them to the crosslingual prompts only, to tell a FLORES vs chat
+    domain gap from a head that does not set the language in chat.
+  - LPR checks only the language. Whether steered replies keep the content of the baseline replies is checked
+    afterwards with embedding similarity.
+
+## 12. Still running (2026-10-09, 19:30 KST)
+
+- Section 10: four of the six models are done (out/<model>-diag), Gemma-3-4B and Qwen2.5-3B are running. The
+  results go into section 10 when all six are in. Section 11 starts after it.
+- Llama-3.2-3B: every head on crosslingual LCB prompts, as for Llama-3.2-1B.
+- Qwen3-4B, instruct and base: a second Qwen3 size (queued after section 11).
 
 ## What the results support and what they do not
 
@@ -410,8 +447,8 @@ Supported so far:
   Llama-3.2-1B one head does this for crosslingual requests only (section 8).
 - The replies that switch keep the prompt's content (sections 4 and 9a).
 - In Qwen2.5-1.5B the effect holds on LCB chat prompts, under sampling, and with or without the default system prompt
-  (sections 4 and 5); the heads of Qwen2.5-3B, Qwen3, Gemma-3-1B and OLMo-2 also lower LCB scores, and Llama-3.2-1B's
-  L8H25 lowers crosslingual ones (section 8; Gemma-3-4B is running).
+  (sections 4 and 5); the heads of Qwen2.5-3B, Qwen3, Gemma-3-1B, Gemma-3-4B and OLMo-2 also lower LCB scores, and
+  Llama-3.2-1B's L8H25 lowers crosslingual ones (section 8).
 - In each of the six models the same head has a smaller effect in the base model (section 7), and in Qwen2.5-1.5B
   the dependence is large only for the instruct model with its own chat template (section 4).
 - In Qwen2.5-1.5B, on crosslingual prompts, the head acts mostly while the reply is generated and attends to the

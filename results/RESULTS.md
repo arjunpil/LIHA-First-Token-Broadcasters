@@ -475,6 +475,7 @@ results/<model>-lcb, samples.jsonl.gz has every reply.
 | Qwen2.5-3B | L27H13 | 0.982 | -0.537 [-0.575, -0.503] | -0.409 | 0.888 | -0.449 [-0.478, -0.421] | -0.331 | +0.000 to +0.003 / -0.025 to +0.004 |
 | Qwen3-1.7B | L18H12 | 0.985 | -0.149 [-0.174, -0.123] | -0.067 | 0.823 | -0.508 [-0.535, -0.478] | -0.230 | -0.004 to -0.003 / +0.000 to +0.021 |
 | Gemma-3-1B | L11H3 | 0.984 | -0.628 [-0.662, -0.593] | -0.244 | 0.118 | -0.091 [-0.110, -0.073] | -0.092 | -0.005 to +0.003 / -0.023 to +0.038 |
+| Gemma-3-4B | L24H0 | 0.990 | -0.259 [-0.292, -0.227] | -0.120 | 0.133 | -0.107 [-0.126, -0.090] | -0.053 | -0.001 to +0.000 / +0.000 to +0.012 |
 | OLMo-2-1B | L12H8 | 0.986 | -0.272 [-0.302, -0.239] | -0.128 | 0.931 | -0.335 [-0.362, -0.308] | -0.143 | +0.000 to +0.004 / -0.003 to +0.004 |
 | OLMo-3-7B (bf16) | L14H25 | 0.972 | -0.041 [-0.060, -0.024] | +0.001 | 0.874 | -0.018 [-0.033, -0.003] | +0.015 | -0.011 to +0.004 / +0.001 to +0.007 |
 | Llama-3.2-1B | L8H25 | 0.997 | -0.016 [-0.026, -0.008] | -0.015 | 0.874 | -0.711 [-0.737, -0.684] | -0.357 | -0.009 / +0.001 |
@@ -485,13 +486,14 @@ Every model except Llama-3.2-3B and OLMo-3-7B has a head whose removal moves rep
 far beyond its same-layer controls. The crosslingual replies it breaks are mostly English; the monolingual ones are
 not always (Qwen2.5-3B has 7% English lines there). How the drop splits between the two tasks differs. Qwen2.5 and
 OLMo-2 lose both. Gemma-3-1B loses mostly monolingual, but it already answers most crosslingual prompts in English
-at baseline (0.118, 55% English lines), so there is little left to lose there. Llama-3.2-1B's L8H25 leaves
+at baseline (0.118, 55% English lines), so there is little left to lose there; Gemma-3-4B is the same (0.133,
+44% English lines). Llama-3.2-1B's L8H25 leaves
 monolingual replies alone and takes crosslingual from 0.874 to 0.164 (81% English lines), the largest drop here. It
 stays under the FLORES threshold (0.048 on the screen) because FLORES only tests keeping the prompt's language.
 Qwen3-1.7B leans the same way (-0.149 mono, -0.508 cross). So the head keeps the prompt's language in some models,
 follows a requested language in others, and does both in Qwen2.5 and OLMo-2. Mean ablation keeps about 90% of the
 zero-ablation drop in Qwen2.5-1.5B, 75% in Qwen2.5-3B, 43-50% in Qwen3, OLMo-2 and Llama-3.2-1B crosslingual, and
-39% in Gemma-3 monolingual.
+39% and 46% in Gemma-3-1B and 4B monolingual.
 
 Since Llama-3.2-1B's head only shows up on LCB, every head of both Llamas is being screened on 100 crosslingual
 prompts (lcb.py --screen).
@@ -605,3 +607,19 @@ On 2,500 prompts its strongest heads are L15H20 at 0.151 and L20H18 at 0.133 wit
 +0.061 against +0.0003 for the rest of their layers), but 0.036 and 0.028 under mean ablation, with w->c at 0.026
 and 0.025 and the control head and scaling conditions at 0.02 to 0.05, which is the bf16 noise floor. So OLMo-3-7B
 has no head that holds up under mean ablation in either model, and none that is specific to the instruct model.
+
+# Gemma-3-4B and SmolLM3-3B, 2026-10-09
+
+results/gemma3-4b-instruct (with -screen, -followup and -lcb) and results/gemma3-4b (with -screen and -followup),
+fp32. Instruct screen: L24H0 at 0.240, every other head 0.016 or less. On 2,500 prompts (layers 0 and 24) the
+baseline is 0.997 and L24H0 has c->w 0.214 and w->c 0.000, with dNLL +0.202 against -0.005 for the rest of layer 24;
+the next head is at 0.002. Mean ablation leaves 0.012, and scaling it by 2 to 5 changes nothing (accuracy 0.998).
+The base model has the same head: 0.112 on its screen and 0.148 on 2,500 prompts (baseline 0.990, dNLL +0.142
+against +0.003), 0.056 under mean ablation. LCB for L24H0 (table above): monolingual -0.259, crosslingual -0.107,
+mean ablation -0.120 and -0.053, controls within 0.012.
+
+SmolLM3-3B instruct (thinking off), screen only (results/smollm3-instruct-screen): baseline 0.984 on 125 prompts.
+L1H12 has c->w 0.880 with dNLL +2.58; without it the replies in every language, English included, turn into repeated
+`</think>` tokens, so it breaks generation rather than changing the language. Every other head is at 0.016 or
+less, so no head changes the language on FLORES without breaking generation. The 2,500-prompt run was stopped and
+the base model was not run.

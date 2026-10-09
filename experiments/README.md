@@ -40,6 +40,7 @@ python experiments/checks.py run qwen-system --per-lang 500 --out out/qwen-syste
 python experiments/lcb.py --model qwen-instruct --heads L22H6,L17H7,L17H8 --scale L22H6:2,L17H7:2,L17H8:3
 python experiments/lcb.py --model qwen-instruct --heads L22H6 --report-only   # rescore saved LCB replies
 python experiments/diagnose.py run --model qwen-instruct --head L22H6   # why zero and mean ablation differ
+python experiments/steer.py --model gemma3-1b-instruct --head L11H3 --add   # steering on LCB, after diagnose
 python experiments/lcb.py --model qwen-instruct --heads L22H6 --temperature 0.7 --sample-seed 0 \
     --out out/qwen-instruct-lcb-t07-s0            # sampling with the model's top-p / top-k
 python experiments/lcb.py --model llama3.2-1b-instruct --screen --tasks crosslingual --per-lang 25 \
