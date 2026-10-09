@@ -25,7 +25,7 @@ L2H5 & 0.298 & {[0.281, 0.316]} & 0.196 & 0.024 & $+$0.033 \\
 
 ## Table 1b: top five GPT-2 heads by correct→wrong, ΔNLL ≤ 0.1
 
-Suggested replacement: heads that move correct outputs to the wrong language without much LM loss change. L6H1, the paper's top head, for comparison. The last column is c→w under mean ablation (Chaewon, results/gpt2-mean-ablation): only L6H10 keeps most of its effect.
+Suggested replacement: heads that move correct outputs to the wrong language without much LM loss change. L6H1, the paper's top head, for comparison. The last column is c→w under mean ablation (results/gpt2-mean-ablation): only L6H10 keeps most of its effect.
 
 | Head | SR | 95% CI | c→w | w→c | ΔNLL | c→w, mean abl. |
 |---|---|---|---|---|---|---|

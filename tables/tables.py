@@ -82,7 +82,7 @@ def table1(t):
     out += block("Table 1b: top five GPT-2 heads by correct→wrong, ΔNLL ≤ 0.1",
                  "Suggested replacement: heads that move correct outputs to the wrong language without much LM loss "
                  "change. L6H1, the paper's top head, for comparison. The last column is c→w under mean ablation "
-                 "(Chaewon, results/gpt2-mean-ablation): only L6H10 keeps most of its effect.",
+                 "(results/gpt2-mean-ablation): only L6H10 keeps most of its effect.",
                  header + ["c→w, mean abl."], rows)
     return out
 
