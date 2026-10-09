@@ -239,7 +239,11 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   bf16.
 - How: every head of the instruct model is screened on 125 prompts. If the strongest head reaches c->w 0.1 on the
   screen, the layers holding the top two heads by c->w and the top head with dNLL <= 0.1 are rerun on all 2,500
-  prompts, and the top three heads with dNLL <= 1 get mean ablation and scaling. Base models: Qwen2.5-3B, Qwen3-1.7B,
+  prompts, and the top three heads with dNLL <= 1 get mean ablation and scaling. The head that the later sections use
+  is the one with the largest c->w on the 2,500 prompts among the heads with dNLL <= 1 whose removal keeps at least
+  0.9 of the English continuations in English (experiments/head_rule.md). The English condition was written down on
+  2026-10-10, after Qwen2.5-7B's top head turned English continuations into digit strings; it is the reason
+  SmolLM3-3B's L1H12 was set aside, and it changes none of the other choices. Base models: Qwen2.5-3B, Qwen3-1.7B,
   Gemma-3-4B and OLMo-3-7B go through the same steps; Gemma-3-1B's base stayed under the threshold on the screen and
   its layers 5 and 11 were run on 2,500 prompts anyway; OLMo-2-1B's base has the full sweep of section 3. The Llama
   base models were not run, since neither instruct model reached the threshold. SmolLM3-3B instruct reached it only
@@ -537,13 +541,15 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     it lowers monolingual LPR by 0.015.
   - The second run with LCB vectors is not needed, since Gemma-3-1B's crosslingual change has a CI above zero.
 
-## 12. Still running (2026-10-09, 22:05 KST)
+## 12. Still running (2026-10-10, 08:40 KST)
 
-- Section 11 for Gemma-3-4B, Qwen2.5-1.5B, Qwen3-1.7B, Qwen2.5-3B and OLMo-2-1B.
-- Qwen2.5-7B, instruct and base, through sections 7, 8, 10 and 11 (queued, bf16).
-- Section 9c, after section 11.
-- Llama-3.2-3B: every head on crosslingual LCB prompts, as for Llama-3.2-1B.
-- Qwen3-4B, instruct and base: a second Qwen3 size (queued last).
+- Qwen2.5-7B: rerun with layers 0 and 19 on all 2,500 prompts and the head picked by experiments/head_rule.md, then
+  sections 8, 10 and 11 and the base model. The first pipeline used L0H25, whose removal also breaks English
+  continuations; its runs are kept and will be reported as such.
+- Section 9c for Gemma-3-1B, OLMo-2-1B and Llama-3.2-1B (Qwen3-1.7B is running).
+- Qwen3-4B, instruct and base.
+- Results that are in but not yet written up here: section 11 for the other five models and Llama-3.2-3B's
+  crosslingual head (L13H19).
 
 ## What the results support and what they do not
 
