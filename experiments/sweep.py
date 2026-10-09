@@ -36,6 +36,8 @@ MODELS = {
     "gemma3-4b-instruct": ("google/gemma-3-4b-it", "float32"),
     "qwen3-1.7b": ("Qwen/Qwen3-1.7B-Base", "float32"),
     "qwen3-1.7b-instruct": ("Qwen/Qwen3-1.7B", "float32"),
+    "qwen3-4b": ("Qwen/Qwen3-4B-Base", "float32"),
+    "qwen3-4b-instruct": ("Qwen/Qwen3-4B", "float32"),
     "smollm3": ("HuggingFaceTB/SmolLM3-3B-Base", "float32"),
     "smollm3-instruct": ("HuggingFaceTB/SmolLM3-3B", "float32"),
     "olmo3-7b": ("allenai/Olmo-3-1025-7B", "bfloat16"),
