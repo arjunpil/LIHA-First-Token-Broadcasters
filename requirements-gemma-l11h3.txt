@@ -1,0 +1,7 @@
+# Use a CUDA-enabled PyTorch installation compatible with your GPU first.
+# Recorded run: PyTorch 2.11.0+cu130; Transformers 5.18.0; float32, eager attention.
+transformers==5.18.0
+accelerate>=1.0
+fasttext-community==0.11.8
+sentencepiece>=0.2.0
+numpy>=2,<3
