@@ -502,10 +502,10 @@ prompts (lcb.py --screen).
 
 The ablation is the same in every model (the head's slice of the attention output projection's input set to zero),
 but the size of the effect isn't comparable across models. Heads per layer go from 4 (Gemma-3-1B) to 32
-(Llama-3.2-1B), so one head is 25% to 3% of a layer. Gemma-3, OLMo-2 and Qwen3 use QK-norm, and Gemma-3 and OLMo-2
-also normalize the attention output before adding it to the residual stream, so zeroing a head rescales what the
-other heads write. Gemma-3's L5 and L11 are both global-attention layers. Compare each head with the same-layer
-controls of its own model, as in the tables above.
+(Llama-3.2-1B), so one head is 25% to 3% of a layer. Gemma-3, OLMo-2, OLMo-3 and Qwen3 use QK-norm, and Gemma-3,
+OLMo-2 and OLMo-3 also normalize the attention output before adding it to the residual stream, so zeroing a head
+rescales what the other heads write. Gemma-3's L5 and L11 are both global-attention layers. Compare each head with
+the same-layer controls of its own model, as in the tables above.
 
 Generation uses each model's generation_config apart from sampling. Qwen2.5-1.5B-Instruct sets repetition_penalty
 1.1 and Qwen2.5-3B-Instruct 1.05, so their greedy runs use it; no other model sets one.
@@ -825,3 +825,59 @@ and qwen2.5-7b-followup (base, layer 19). bf16.
 results/qwen3-4b-instruct-screen: all 1,152 heads on the 125 FLORES prompts (fp32, bs 125). Baseline non-English
 retention 0.980; the largest c->w is L8H3's 0.024, so no layer goes on to 2,500 prompts and the base model is not
 run. A crosslingual LCB screen of every head, as for the two Llamas, started at 16:18 KST.
+
+# Qwen2.5-3B LCB in 14 languages, 2026-10-10
+
+results/qwen2.5-3b-instruct-lcb-all, added before the run (experiments/lcb14_plan.md, 16:48 KST) and read as for
+Qwen3-1.7B above (judge.md, wpr.md). 16:49 to 20:19 KST, sharing the GPU with the two crosslingual screens.
+
+| condition | mono LPR | Δ mono | cross LPR | Δ cross |
+|---|---|---|---|---|
+| base | 0.987 | | 0.869 | |
+| L27H13 zero | 0.478 | -0.520 [-0.543, -0.498] | 0.406 | -0.457 [-0.473, -0.441] |
+| L27H13 mean | 0.472 | -0.555 [-0.577, -0.533] | 0.401 | -0.463 [-0.478, -0.446] |
+| 3 controls (L27H6, L27H12, L27H14) | 0.986 to 0.990 | -0.001 to +0.002 | 0.830 to 0.880 | -0.037 to +0.009 |
+
+13 of 14 languages affected on monolingual prompts, all but zh (+0.005 [-0.020, +0.030]), with ja -0.700, ru -0.372
+and hi -0.368; 14 of 14 on crosslingual ones (zh -0.166 to it -0.826). The planned check (hi affected, zh/ja/ru not)
+does not hold, so by the plan the Qwen2.5-1.5B pattern is read as a property of the 1.5B model, not of Qwen2.5.
+Chinese is unaffected on monolingual prompts in the three Qwen models and affected in the other three families.
+
+Skipped replies under zero ablation: 279 of 2,200 monolingual (5 at baseline) and 251 of 4,186 crosslingual (62),
+273 and 204 of them written mainly in Han characters or kana. LCB's scorer (compute_metrics.py, followed by lcb.py)
+counts words by spaces unless the expected language is zh or ja and skips replies without a line of five words, so
+these replies are left out rather than failed. Skipped by cell: monolingual ko 91 of 100, ar 80 of 300, vi 41 of
+100; crosslingual ko 162 of 299. WPR: baseline 0.95 to 1.00 monolingual and 0.88 to 0.98 crosslingual; without the
+head some cells rest on few replies (monolingual ko none, crosslingual ko 14) and are not read.
+
+Outside the plan, lcb14_judge.py --skipped-fail counts the replies an intervention leaves unscorable as failures
+(judge_skipped_fail.md in each of the six 14-language runs). No affected language and no pattern reading changes.
+Changes of 0.05 or more: Qwen2.5-1.5B ko -0.084 to -0.206 (mono) and -0.093 to -0.220 (cross), Qwen3-1.7B ko -0.605
+to -0.700, OLMo-2 ko -0.440 to -0.490, Qwen2.5-3B ar -0.668 to -0.750, ru -0.372 to -0.460, tr -0.655 to -0.710
+(mono) and ko -0.647 to -0.831 (cross).
+
+# Script switches in the 14-language runs, 2026-10-10
+
+experiments/script_switch.py (Seunghyeok Hong, PR #1 into qwen3b-lcb14), results/script-switch/summary.md. A reply
+counts as switched when it has more Han or kana characters than characters of the expected script (zh and ja left
+out). Monolingual Korean with the head zeroed: Qwen2.5-3B 95/100 switched (90 skipped, 0 passing), Qwen3-1.7B 63 (23
+skipped, 17 passing), Qwen2.5-1.5B 17 (11, 3), OLMo-2 13, Gemma-3-1B and Llama-3.2-1B 5; 0 or 1 at baseline. Switched
+replies pass when their lines of five words are all still in Korean, since lines without spaces are never scored. In
+Qwen2.5-3B, monolingual ar 101/300, tr and vi 46/100, ru 17/100 also switch.
+
+# Mechanism checks, 2026-10-10
+
+experiments/mechanism_checks.md (written at 21:10 KST, before the runs), results/gemma-l11h3-mechanism-ctrl1 and
+results/qwen-l22h6-mechanism-unselected, read in results/mechanism-checks/summary.md. Both models on Chaewon's 96
+Gemma prompts, control head = the other head of the layer with the most last-prompt attention to the language name.
+
+| model | pass clean | name mask (head) | name mask (control) | nearby mask | head zeroed in generation | McNemar vs control, vs nearby |
+|---|---|---|---|---|---|---|
+| Gemma-3-1B, L11H3 / L11H1 | 12 of 95 | 7 | 0 | 0 | 8 | p = 0.016, 0.016 |
+| Qwen2.5-1.5B, L22H6 / L22H7 | 62 of 96 | 6 | 0 | 0 | 20 (15 it) | p = 0.031, 0.031 |
+
+Last-prompt attention to the name: L11H3 0.136, L11H1 0.095, L11H2 0.066, L11H0 0.025; L22H6 0.774, L22H7 0.042, the
+other ten heads of layer 22 0.020 or less. The Gemma rerun matches PR #12's replies on all 96 prompts in the four shared
+conditions (transformers 5.6.2 here, 5.18.0 there). The plan's 0.096 for L11H1 rounded 0.0955 a second time; to
+three places it is 0.095.
+
