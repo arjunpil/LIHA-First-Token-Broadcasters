@@ -31,3 +31,8 @@ its five-language run; zh/ja segmented as in the benchmark; WPR for ar, hi, ja, 
   Japanese and Russian are not.
 - All four models are reported whatever the outcome. Llama-3.2-1B's head acts on crosslingual prompts only, so its
   monolingual results are expected to be flat and are reported as they come.
+
+## Note added 2026-10-10, 09:01 KST
+
+The selection above says the smallest models keep each run near an hour; the first one, Qwen3-1.7B, took 1 h 19 min
+for three of its six conditions. The selection and the reading are unchanged.

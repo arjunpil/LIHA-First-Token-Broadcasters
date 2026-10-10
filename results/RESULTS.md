@@ -620,10 +620,10 @@ against +0.003), 0.056 under mean ablation. LCB for L24H0 (table above): monolin
 mean ablation -0.120 and -0.053, controls within 0.012.
 
 SmolLM3-3B instruct (thinking off), screen only (results/smollm3-instruct-screen): baseline 0.984 on 125 prompts.
-L1H12 has c->w 0.880 with dNLL +2.58; without it the replies in every language, English included, turn into repeated
-`</think>` tokens, so it breaks generation rather than changing the language. Every other head is at 0.016 or
-less, so no head changes the language on FLORES without breaking generation. The 2,500-prompt run was stopped and
-the base model was not run.
+L1H12 has c->w 0.880 with dNLL +2.58; without it 75 of the 125 replies (12 to 18 of 25 in each language, English
+included) fill with repeated `</think>` tokens, so it breaks generation rather than changing the language. Every other
+head is at 0.016 or less, so no head changes the language on FLORES without breaking generation. The 2,500-prompt run
+was stopped and the base model was not run.
 
 # Why zero and mean ablation differ, 2026-10-09
 
@@ -644,11 +644,12 @@ c->w over all 2,500 prompts; in brackets, the share of non-English replies in th
 
 In five of the six models another language's mean moves 0.904 to 0.997 of the non-English continuations into that
 language, and the prompt's own language mean keeps them; Qwen2.5-1.5B is the exception (0.182). Holding the
-post-attention norm fixed accounts for part of the zero-ablation effect in Gemma-3-1B only. The means over all five
-languages move replies to another European language rather than to English (Qwen3's continuation mean sends 347 of
-388 flips to Italian, Gemma-3-1B's 418 of 491 to French and Italian), so in Gemma-3 and Qwen3 mean ablation is not a
-neutral removal. With the head zeroed, Gemma-3-4B's replies go mostly to Portuguese and Spanish (453 of 535), not to
-English. EXPERIMENTS.md section 10 has the reading against the explanations it tests.
+post-attention norm fixed accounts for part of the zero-ablation effect in Gemma-3-1B only. In Qwen3, Gemma-3-1B and
+Qwen2.5-3B the means over all five languages move replies mostly to another European language (Qwen3's continuation
+mean sends 347 of 388 flips to Italian, Gemma-3-1B's 418 of 491 to French and Italian), so there mean ablation is not
+a neutral removal; in Qwen2.5-1.5B they send replies mostly to English. With the head zeroed, Gemma-3-4B's replies go
+mostly to Portuguese and Spanish (453 of 535), not to English. EXPERIMENTS.md section 10 has the reading against the
+explanations it tests.
 
 # Steering on LCB, Gemma-3-1B, 2026-10-09
 
@@ -685,3 +686,30 @@ results/qwen-instruct-lcb-all/wpr.md (lcb_wpr.py, as in LCB's compute_metrics.py
 0.96 to 0.99 monolingual and 0.93 to 0.99 crosslingual. With L22H6 zeroed or mean-ablated, Hindi drops (monolingual
 0.98 to 0.89 and 0.82, crosslingual 0.99 to 0.83 and 0.83); the other five languages move by 0.03 or less, and the
 three layer-22 controls keep Hindi at 0.99 to 1.00.
+
+# Steering on LCB, all six heads, 2026-10-10
+
+results/<model>-steer. Same design as the Gemma-3-1B section above, read against experiments/steer_plan.md.
+
+| model | head | cross baseline | steer: mono change [95% CI] | steer: cross change [95% CI] | swap: replies in the swapped-in language, mono / cross | add steer: cross change | add swap: mono / cross | controls: cross change / swap share |
+|---|---|---|---|---|---|---|---|---|
+| Gemma-3-1B | L11H3 | 0.118 | +0.013 [+0.004, +0.021] | +0.440 [+0.410, +0.469] | 0.994 [0.988, 0.999] / 0.594 [0.565, 0.622] | +0.047 [+0.031, +0.064] | 0.828 / 0.123 | -0.034..+0.034 / 0.000 |
+| Gemma-3-4B | L24H0 | 0.133 | -0.007 [-0.016, +0.001] | +0.079 [+0.064, +0.095] | 0.985 [0.976, 0.992] / 0.137 [0.118, 0.157] | +0.040 [+0.029, +0.053] | 0.045 / 0.023 | -0.023..+0.008 / 0.000 |
+| Qwen2.5-3B | L27H13 | 0.888 | +0.009 [-0.001, +0.019] | +0.007 [-0.005, +0.019] | 0.982 [0.974, 0.991] / 0.829 [0.810, 0.849] | +0.018 [+0.006, +0.030] | 0.165 / 0.081 | -0.002..+0.022 / 0.000 |
+| Qwen3-1.7B | L18H12 | 0.823 | -0.004 [-0.013, +0.004] | -0.013 [-0.029, +0.004] | 0.926 [0.907, 0.942] / 0.701 [0.676, 0.727] | +0.041 [+0.028, +0.055] | 0.015 / 0.048 | +0.000..+0.041 / 0.000 |
+| OLMo-2-1B | L12H8 | 0.931 | +0.004 [-0.005, +0.013] | +0.000 [-0.010, +0.010] | 0.844 [0.818, 0.869] / 0.828 [0.806, 0.849] | +0.003 [-0.006, +0.012] | 0.009 / 0.018 | -0.002..+0.003 / 0.000 |
+| Qwen2.5-1.5B | L22H6 | 0.704 | -0.001 [-0.010, +0.008] | -0.020 [-0.033, -0.008] | 0.043 [0.029, 0.057] / 0.019 [0.012, 0.027] | -0.042 [-0.057, -0.026] | 0.000 / 0.000 | -0.008..+0.007 / 0.000 |
+
+Every baseline matches the model's earlier LCB run. By the rule fixed in advance the swap share is above the
+controls' in all six, at 0.84 to 0.99 of the monolingual replies in five models and 0.043 in Qwen2.5-1.5B (whose
+monolingual LPR still drops by 0.335 under swap). steer raises crosslingual LPR in the two Gemma models only. The
+replies steer fixes have cosine 0.69 to 0.84 with the baseline reply to the same prompt, against 0.15 to 0.21 for
+another prompt's, and under steer no model's skipped share or repetition rises by more than 0.002.
+
+# Llama-3.2-3B crosslingual head, 2026-10-10
+
+results/llama3.2-3b-instruct-lcbscreen and -lcb-top. Every one of the 672 heads zero-ablated on 100 crosslingual
+prompts: baseline 0.939, L13H19 0.616, next L8H13 0.879. Full five-language LCB for L13H19 with three layer-13
+controls: monolingual 0.993, +0.000 [-0.006, +0.006] (mean -0.005); crosslingual 0.911, -0.335 [-0.363, -0.308] (mean
+-0.250); controls +0.000 to +0.006 monolingual and -0.003 to +0.000 crosslingual; English crosslingual lines 0.05 to
+0.36. Like Llama-3.2-1B's L8H25, it acts on requested languages only.
