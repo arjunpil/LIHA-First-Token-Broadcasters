@@ -219,8 +219,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     generation 69, both 64. Italian: 24, 24, 21, 0 and 0 of 24. French, German and Spanish: 21 to 24 of 24 under
     every condition.
   - At the last prompt position L22H6 puts 0.705 (German) to 0.867 (Spanish) of its attention on the requested
-    language word, against 0.002 to 0.003 on a nearby token and 0.005 to 0.009 for the other heads of layer 22.
-    During the reply the share is 0.33 to 0.48 early on and 0.18 to 0.26 later.
+    language word (0.807 over the 96 prompts), against 0.002 to 0.003 on a nearby token. The mean of three other
+    heads of layer 22 (H4, H8 and H9) is 0.005 to 0.009; the other eight were not measured. During the reply the
+    share is 0.33 to 0.48 early on and 0.18 to 0.26 later.
   - Of the 95 replies that pass at baseline, masking the edge to the requested word during generation fails 7 (4
     Italian, 2 German, 1 French), all among the 27 that fail when the whole head is removed during generation (24
     Italian). Masking a nearby token, or the word for L22H8, fails none.
@@ -244,7 +245,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   per language, drawn without regard to Gemma's earlier replies; L11H0 is the control head, and every intervention
   acts only during generation.
   - At the last prompt position L11H3 puts 0.136 of its attention on the requested language word, against 0.009 on
-    as many nearby tokens; L11H0 puts 0.025 on the word.
+    as many nearby tokens. The layer's other three heads put 0.025 (L11H0), 0.096 (L11H1) and 0.066 (L11H2) on the
+    word.
   - Gemma-3-1B's crosslingual baseline is low (section 8): 12 of the 95 scorable replies pass. Masking the edge to
     the requested word during generation leaves 5, removing the head during generation leaves 4, and masking a
     nearby token or the word for L11H0 leaves 12. The two interventions fail 7 and 8 of the 12, and 4 replies fail
@@ -252,8 +254,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   - Its clean replies are identical to our Gemma-3-1B LCB baseline replies on all 96 prompts, and rescoring every
     reply with lcb.py gives the same pass counts and agrees with the committed flags on all 480 outputs.
   - Reading: in the model where steering with the head fixes the most crosslingual replies (section 11), the head
-    also attends to the requested language word, and cutting that access costs about as many passing replies as
-    removing the head during generation. With 12 passing replies the sample is small.
+    also attends to the requested language word, though less exclusively than L22H6 (L11H1 puts 0.096 on it), and
+    cutting that access costs about as many passing replies as removing the head during generation. With 12
+    passing replies the sample is small.
 
 ## 7. Base and instruct pairs across families
 
@@ -320,8 +323,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   Qwen2.5-7B, 6% to 22% in Gemma-3 and 9% in Qwen3; section 10 tests why. OLMo-3-7B's top heads lose most of their
   effect under mean ablation (0.134 to 0.007 in instruct, 0.151 and 0.133 to 0.036 and 0.028 in base). The two Llamas,
   Qwen3-4B and SmolLM3 have no head that changes the language on FLORES without breaking generation. Effect sizes are
-  not compared across models: heads per layer range from 4 to 32, and Gemma-3, OLMo-2 and Qwen3 normalize differently
-  from Qwen2.5 and Llama, so each head is compared with the other heads of its own layer.
+  not compared across models: heads per layer range from 4 to 32, and Gemma-3, OLMo-2, OLMo-3 and Qwen3 normalize
+  differently from Qwen2.5, Llama and SmolLM3, so each head is compared with the other heads of its own layer.
 
 ## 8. The heads on LCB, across models
 

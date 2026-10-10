@@ -502,10 +502,10 @@ prompts (lcb.py --screen).
 
 The ablation is the same in every model (the head's slice of the attention output projection's input set to zero),
 but the size of the effect isn't comparable across models. Heads per layer go from 4 (Gemma-3-1B) to 32
-(Llama-3.2-1B), so one head is 25% to 3% of a layer. Gemma-3, OLMo-2 and Qwen3 use QK-norm, and Gemma-3 and OLMo-2
-also normalize the attention output before adding it to the residual stream, so zeroing a head rescales what the
-other heads write. Gemma-3's L5 and L11 are both global-attention layers. Compare each head with the same-layer
-controls of its own model, as in the tables above.
+(Llama-3.2-1B), so one head is 25% to 3% of a layer. Gemma-3, OLMo-2, OLMo-3 and Qwen3 use QK-norm, and Gemma-3,
+OLMo-2 and OLMo-3 also normalize the attention output before adding it to the residual stream, so zeroing a head
+rescales what the other heads write. Gemma-3's L5 and L11 are both global-attention layers. Compare each head with
+the same-layer controls of its own model, as in the tables above.
 
 Generation uses each model's generation_config apart from sampling. Qwen2.5-1.5B-Instruct sets repetition_penalty
 1.1 and Qwen2.5-3B-Instruct 1.05, so their greedy runs use it; no other model sets one.
