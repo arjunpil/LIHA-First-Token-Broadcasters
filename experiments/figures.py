@@ -10,14 +10,18 @@ import numpy as np
 
 from analyze import ci, same
 
-plt.rcParams.update({"font.family": "serif", "font.size": 9})
+# figures are drawn at the ACL column width (7.7 cm), so included at \columnwidth their text prints at 8 to 9 pt
+plt.rcParams.update({"font.family": "serif", "font.size": 9, "axes.titlesize": 9, "axes.labelsize": 9,
+                     "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 8,
+                     "figure.constrained_layout.use": True})
 OUT = Path("figures")
+WIDTH = 3.0
 
 
 def save(fig, name):
     OUT.mkdir(exist_ok=True)
-    fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight")
-    fig.savefig(OUT / f"{name}.png", bbox_inches="tight", dpi=200)
+    fig.savefig(OUT / f"{name}.pdf")
+    fig.savefig(OUT / f"{name}.png", dpi=200)
     plt.close(fig)
 
 
@@ -26,7 +30,7 @@ def heatmap(table, key, label, vmax, name, max_dnll=None):
     for h, v in table.items():
         layer, head = map(int, h[1:].split("H"))
         m[layer, head] = v["full"][key]
-    fig, ax = plt.subplots(figsize=(3.4, 2.6))
+    fig, ax = plt.subplots(figsize=(WIDTH, 2.4))
     im = ax.imshow(m, cmap="YlOrRd", vmin=0, vmax=vmax)
     if max_dnll is not None:
         for h, v in table.items():
@@ -45,7 +49,7 @@ def pair_heatmap(runs, titles, name, vmax=0.5):
     tables = [json.load(open(f"results/{r}/summary.json"))["modes"]["head"]["table"] for r in runs]
     heads = [tuple(map(int, h[1:].split("H"))) for h in tables[0]]
     shape = (max(l for l, _ in heads) + 1, max(h for _, h in heads) + 1)
-    fig, axes = plt.subplots(1, len(runs), figsize=(3.4, 3.6), sharey=True)
+    fig, axes = plt.subplots(1, len(runs), figsize=(WIDTH, 3.2), sharey=True)
     for ax, table, title in zip(axes, tables, titles):
         m = np.zeros(shape)
         for h, v in table.items():
@@ -55,8 +59,8 @@ def pair_heatmap(runs, titles, name, vmax=0.5):
         layer, head = np.unravel_index(m.argmax(), m.shape)
         ax.add_patch(plt.Rectangle((head - 0.5, layer - 0.5), 1, 1, fill=False, lw=1, ec="black"))
         ax.annotate(f"L{layer}H{head}  {m[layer, head]:.2f}", (head, layer), xytext=(0, -14),
-                    textcoords="offset points", ha="center", fontsize=7)
-        ax.set_title(title, fontsize=9)
+                    textcoords="offset points", ha="center", fontsize=8)
+        ax.set_title(title)
         ax.set_xticks(range(0, shape[1], 3))
         ax.set_xlabel("Head")
     axes[0].set_yticks(range(0, shape[0], 3))
@@ -78,7 +82,7 @@ def curves(name):
     ks = list(range(11))
     series = {o: [point("base")] + [point(f"{o}:k{k}") for k in ks[1:]]
               for o in ("c2w-lowloss", "sr", "random0", "random1", "random2")}
-    fig, (top, bot) = plt.subplots(2, 1, figsize=(3.4, 3.6), sharex=True, gridspec_kw={"height_ratios": [2, 1]})
+    fig, (top, bot) = plt.subplots(2, 1, figsize=(WIDTH, 3.5), sharex=True, gridspec_kw={"height_ratios": [2, 1]})
     styles = {"c2w-lowloss": ("#2a7fa0", "by c2w, ΔNLL ≤ 0.1"), "sr": ("#d9822b", "by switch rate")}
     for o, (color, label) in styles.items():
         acc = [p[0] for p in series[o]]
@@ -91,7 +95,7 @@ def curves(name):
     bot.plot(ks, np.mean([[p[2] for p in series[f"random{s}"]] for s in range(3)], 0), "--", color="gray", lw=1.2)
     top.set_ylim(0, 1.1)
     top.set_ylabel("Accuracy, non-English")
-    top.legend(fontsize=6.5, loc="upper center", ncol=2, handlelength=1.6, columnspacing=0.8)
+    fig.legend(loc="outside upper center", ncol=2, handlelength=1.6, columnspacing=0.8)
     bot.set_ylabel("ΔNLL")
     bot.set_xlabel("Heads ablated")
     bot.set_xticks(ks)

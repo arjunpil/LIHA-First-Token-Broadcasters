@@ -401,7 +401,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   precision and in blocking the end-of-text token; and the last step is RLVR on math data, so the comparison does
   not separate the effect of a single training step.
 
-### 9c. LCB in 14 languages for more models (one of four done)
+### 9c. LCB in 14 languages for more models (two of four done)
 
 - Why: in Qwen2.5-1.5B, removing L22H6 changes Chinese, Japanese and Russian LPR by 0.03 or less while Hindi, Korean
   and Arabic drop (section 5). This run asks whether that pattern is specific to Qwen2.5-1.5B or shared across
@@ -413,9 +413,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   same families would test size and are left out for time.
 - How: as the 14-language run of section 5: zero and mean ablation of the head, three random same-layer controls,
   each model's settings from section 8, WPR for ar, hi, ja, ko, ru and zh with the number of replies it rests on.
-- When / where: Qwen3-1.7B 2026-10-10 07:24 to 09:40 KST, results/qwen3-1.7b-instruct-lcb-all (judge.md, wpr.md);
-  the same reading applied to section 5's run in results/qwen-instruct-lcb-all/judge.md. Gemma-3-1B from 10:49 KST,
-  then OLMo-2-1B and Llama-3.2-1B.
+- When / where: 2026-10-10, Qwen3-1.7B 07:24 to 09:40 KST and Gemma-3-1B 10:49 to 12:35 KST,
+  results/qwen3-1.7b-instruct-lcb-all and gemma3-1b-instruct-lcb-all (judge.md, wpr.md); the same reading applied to
+  section 5's run in results/qwen-instruct-lcb-all/judge.md. OLMo-2-1B from 12:45 KST, then Llama-3.2-1B.
 - Code: lcb.py, lcb14_judge.py (the planned reading), lcb_wpr.py.
 - Planned reading, set before the runs (experiments/lcb14_plan.md): a language counts as affected if the head's paired
   change under zero ablation has a CI below zero and is below every control's change; the Qwen2.5-1.5B pattern is read
@@ -434,9 +434,18 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     ones (66).
   - Qwen3-1.7B WPR at baseline: 0.97 to 1.00 monolingual, 0.89 to 0.96 crosslingual. Without the head few replies stay
     in the language in some cells (crosslingual Korean 1, Chinese 12, Japanese 16), so WPR under ablation is not read.
-- Reading: by the planned rule, Qwen3-1.7B does not share the Qwen2.5-1.5B pattern. Its head matters in almost every
-  language: Japanese and Russian, which L22H6 leaves alone, drop without L18H12, while monolingual Chinese is
-  unaffected in both models. Three models are still to come.
+  - Gemma-3-1B: monolingual LPR 0.978 to 0.266 (-0.730 [-0.748, -0.710]) and crosslingual 0.129 to 0.013 (-0.113
+    [-0.123, -0.102]) under zero ablation; mean ablation -0.488 and -0.117; controls +0.000 to +0.001 and -0.014 to
+    +0.050. All 14 languages are affected on monolingual prompts (-0.520 for Portuguese to -0.980 for Vietnamese;
+    Chinese -0.840, Japanese -0.788, Russian -0.550, Hindi -0.919) and on crosslingual ones (-0.048 to -0.276), where
+    the baseline is already low, as in the five-language run (section 8).
+  - Gemma-3-1B skips 6 of 2,200 monolingual replies without the head (2 at baseline) and 108 of 4,186 crosslingual
+    ones (77). Its crosslingual WPR rests on 19 to 46 replies per language at baseline and 0 to 7 without the head,
+    so only the monolingual baseline (0.98 to 1.00) is read.
+- Reading: by the planned rule, neither Qwen3-1.7B nor Gemma-3-1B shares the Qwen2.5-1.5B pattern. In both, the head
+  matters in almost every language: Japanese and Russian, which L22H6 leaves alone, drop without L18H12 and L11H3.
+  Monolingual Chinese is unaffected in Qwen2.5-1.5B and Qwen3-1.7B and drops in Gemma-3-1B. Two models are still to
+  come.
 
 ### 9d. The heads under the Translation Heads method
 
@@ -612,15 +621,15 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     Qwen2.5-1.5B it lowers crosslingual LPR (-0.042).
   - The second run with LCB vectors is not needed, since Gemma-3-1B's crosslingual change has a CI above zero.
 
-## 12. Still running (2026-10-10, 11:21 KST)
+## 12. Still running (2026-10-10, 12:52 KST)
 
 - Qwen2.5-7B: layers 0 and 19 on all 2,500 prompts are done. experiments/head_rule.md picks L19H1 (c->w 0.200, dNLL
-  +0.026, 1.000 of English continuations kept): L0H25 (0.629) and L0H22 (0.466) keep 0.512 and 0.518. Its follow-up
-  and LCB run are done, the diagnosis is running, then steering, quality and the base model on layer 19. The first
-  pipeline used L0H25; its runs are kept and will be reported as such.
-- Section 9c: Gemma-3-1B running, then OLMo-2-1B and Llama-3.2-1B.
+  +0.026, 1.000 of English continuations kept): L0H25 (0.629) and L0H22 (0.466) keep 0.512 and 0.518. Its follow-up,
+  LCB run and diagnosis are done; steering is running (9 of 17 conditions started), then quality and the base model
+  on layer 19. The first pipeline used L0H25; its runs are kept and will be reported as such.
+- Section 9c: OLMo-2-1B running, then Llama-3.2-1B.
 - Qwen3-4B, instruct and base, then the head rule, the diagnosis and steering (experiments/head_rule.md); the instruct
-  screen has 18 of 36 layers done.
+  screen has 23 of 36 layers done.
 
 ## What the results support and what they do not
 
@@ -652,7 +661,7 @@ Supported so far:
 
 Not supported, or not tested:
 - That the languages L22H6 leaves alone in Qwen2.5-1.5B (Chinese, Japanese, Russian) are left alone in other models:
-  Qwen3-1.7B's head lowers Japanese and Russian LPR too (section 9c; three models to come).
+  the heads of Qwen3-1.7B and Gemma-3-1B lower Japanese and Russian LPR too (section 9c; two models to come).
 - That instruction tuning creates the head: in Qwen2.5 and Gemma-3-4B the same head is already there in the base model
   with a smaller effect; in Gemma-3-1B and OLMo-2 it is absent from the base model, and these runs do not show what
   produces it (section 7).
@@ -672,8 +681,8 @@ Not supported, or not tested:
 ## Known limitations
 
 - Ten instruct models from seven families, 1B to 7B parameters. FLORES covers five European languages; LCB covers
-  the same four non-English ones for every model and 14 languages for Qwen2.5-1.5B and Qwen3-1.7B (three more models
-  are running or queued, section 9c). Steering uses the four European languages only, since its vectors come from the
+  the same four non-English ones for every model and 14 languages for Qwen2.5-1.5B, Qwen3-1.7B and Gemma-3-1B (two
+  more models are running or queued, section 9c). Steering uses the four European languages only, since its vectors come from the
   FLORES prompts.
 - Steering replaces or shifts the head's output at every position with fixed vectors; replacing it only while the
   reply is generated, or with vectors taken from chat replies, was not run.

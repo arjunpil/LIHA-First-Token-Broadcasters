@@ -19,7 +19,11 @@ from analyze import same
 from checks import controls
 from multi import parse
 
-plt.rcParams.update({"font.family": "serif", "font.size": 9})
+# drawn at the ACL column width (7.7 cm), so included at \columnwidth the text prints at 8 to 9 pt
+plt.rcParams.update({"font.family": "serif", "font.size": 9, "axes.titlesize": 9, "axes.labelsize": 9,
+                     "xtick.labelsize": 8, "ytick.labelsize": 8, "legend.fontsize": 8,
+                     "figure.constrained_layout.use": True})
+WIDTH = 3.0
 MAIN = ["L6H10", "L2H5", "L4H8", "L2H3", "L8H6"]
 OLD = ["L6H1", "L0H4", "L9H9"]
 PAIR = ["Le temps aujourd'hui est très", "La cosa più importante nella vita è"]
@@ -77,7 +81,7 @@ def labels(tok, ids):
 
 def heatmap(model, tok, head, path):
     l, h = parse(head)
-    fig, axes = plt.subplots(1, 2, figsize=(6.8, 3.0))
+    fig, axes = plt.subplots(2, 1, figsize=(WIDTH, 5.4))
     for ax, p, title in zip(axes, PAIR, ["French, stays French", "Italian, switches"]):
         b = tok(p, return_tensors="pt").to(model.device)
         with torch.no_grad():
@@ -85,18 +89,17 @@ def heatmap(model, tok, head, path):
         toks = labels(tok, b["input_ids"][0].tolist())
         ax.imshow(a, cmap="Blues", vmin=0, vmax=1)
         ax.set_xticks(range(len(toks)))
-        ax.set_xticklabels(toks, rotation=60, ha="right", fontsize=7)
+        ax.set_xticklabels(toks, rotation=60, ha="right")
         ax.set_yticks(range(len(toks)))
-        ax.set_yticklabels(toks, fontsize=7)
-        ax.set_title(f"{head}, {title}", fontsize=8)
-    fig.tight_layout()
-    fig.savefig(path.with_suffix(".pdf"), bbox_inches="tight")
-    fig.savefig(path.with_suffix(".png"), bbox_inches="tight", dpi=200)
+        ax.set_yticklabels(toks)
+        ax.set_title(f"{head}, {title}")
+    fig.savefig(path.with_suffix(".pdf"))
+    fig.savefig(path.with_suffix(".png"), dpi=200)
     plt.close(fig)
 
 
 def entropy_plot(ent, heads, path):
-    fig, ax = plt.subplots(figsize=(3.4, 2.6))
+    fig, ax = plt.subplots(figsize=(WIDTH, 2.8))
     x = np.arange(1, ent.shape[2] + 1)
     for j, h in enumerate(heads):
         y = np.nanmean(ent[:, j], 0)
@@ -110,9 +113,9 @@ def entropy_plot(ent, heads, path):
             ax.plot(x, y, color="gray", lw=1, ls="--", label="random heads" if h == heads[-3] else None)
     ax.set_xlabel("Generation step")
     ax.set_ylabel("Attention entropy")
-    ax.legend(fontsize=6.5)
-    fig.savefig(path.with_suffix(".pdf"), bbox_inches="tight")
-    fig.savefig(path.with_suffix(".png"), bbox_inches="tight", dpi=200)
+    fig.legend(loc="outside upper center", ncol=2, handlelength=1.8, columnspacing=0.8)
+    fig.savefig(path.with_suffix(".pdf"))
+    fig.savefig(path.with_suffix(".png"), dpi=200)
     plt.close(fig)
 
 
@@ -121,6 +124,9 @@ def main():
     p.add_argument("--per-lang", type=int, default=100)
     p.add_argument("--steps", type=int, default=40)
     p.add_argument("--out", default="results/gpt2-attention")
+    p.add_argument("--figures-only", action="store_true",
+                   help="redraw the two figures and keep summary.json; reuses entropy_steps.npz if it was made "
+                        "with the same heads and settings")
     a = p.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -138,10 +144,20 @@ def main():
     tok = AutoTokenizer.from_pretrained("gpt2")
     tok.pad_token = tok.eos_token
     model = AutoModelForCausalLM.from_pretrained("gpt2", dtype=torch.float32, attn_implementation="eager").cuda().eval()
+    saved = out / "entropy_steps.npz"
+    if a.figures_only and saved.exists():
+        s = np.load(saved)
+        if list(s["heads"]) == heads and int(s["per_lang"]) == a.per_lang and int(s["steps"]) == a.steps:
+            heatmap(model, tok, "L6H10", out / "fig_attention_comparison")
+            entropy_plot(s["ent"], heads, out / "fig_entropy_over_time")
+            return
     first, ent, prompt_rows = collect(model, tok, [rows[i]["prompt"] for i in idx], heads, a.steps)
-    acc = probe(model, tok, [r["prompt"] for r in rows], [r["language"] for r in rows])
+    np.savez_compressed(saved, ent=ent, heads=np.array(heads), per_lang=a.per_lang, steps=a.steps)
     heatmap(model, tok, "L6H10", out / "fig_attention_comparison")
     entropy_plot(ent, heads, out / "fig_entropy_over_time")
+    if a.figures_only:
+        return
+    acc = probe(model, tok, [r["prompt"] for r in rows], [r["language"] for r in rows])
 
     non_en = [k for k, i in enumerate(idx) if rows[i]["language"] != "en"]
     ok = [k for k in non_en if same(base[idx[k]], rows[idx[k]]["language"])]

@@ -748,3 +748,20 @@ languages), 50 to 142 FLORES examples each, ranked with their top-head rule (num
 | Gemma-3-1B-pt | L15H2 (20) | L11H3 | 3 of 104 |
 
 On en->fr, L8H25 tops 90 of Llama's 142 examples and L12H7 47; the one-example check in ctli PR #14 had L12H7 first.
+
+# Gemma-3-1B LCB in 14 languages, 2026-10-10
+
+results/gemma3-1b-instruct-lcb-all, read as for Qwen3-1.7B above (judge.md, wpr.md).
+
+| condition | mono LPR | Δ mono | cross LPR | Δ cross |
+|---|---|---|---|---|
+| base | 0.978 | | 0.129 | |
+| L11H3 zero | 0.266 | -0.730 [-0.748, -0.710] | 0.013 | -0.113 [-0.123, -0.102] |
+| L11H3 mean | 0.515 | -0.488 [-0.510, -0.466] | 0.011 | -0.117 [-0.127, -0.107] |
+| 3 controls (L11H0, L11H1, L11H2) | 0.977 to 0.981 | +0.000 to +0.001 | 0.114 to 0.177 | -0.014 to +0.050 |
+
+All 14 languages are affected on monolingual prompts (pt -0.520 to vi -0.980; zh -0.840, ja -0.788, ru -0.550, hi
+-0.919) and on crosslingual ones (ar -0.048 to tr -0.276), where the baseline is low. The planned check (hi affected,
+zh/ja/ru not) does not hold. Skipped replies under zero ablation: 6 of 2,200 monolingual (2 at baseline), 108 of 4,186
+crosslingual (77). WPR: monolingual baseline 0.98 to 1.00; crosslingual cells rest on 19 to 46 replies at baseline and
+0 to 7 without the head and are not read.
