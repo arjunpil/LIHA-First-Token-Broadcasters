@@ -19,6 +19,8 @@ MODELS = {
     "qwen-instruct": ("Qwen/Qwen2.5-1.5B-Instruct", "float16"),
     "qwen2.5-3b": ("Qwen/Qwen2.5-3B", "float32"),
     "qwen2.5-3b-instruct": ("Qwen/Qwen2.5-3B-Instruct", "float32"),
+    "qwen2.5-7b": ("Qwen/Qwen2.5-7B", "bfloat16"),
+    "qwen2.5-7b-instruct": ("Qwen/Qwen2.5-7B-Instruct", "bfloat16"),
     "bloom": ("bigscience/bloom-1b7", "float32"),  # fp16 gives NaN on left-padded rows
     "gpt2-medium": ("gpt2-medium", "float32"),
     "olmo2-1b": ("allenai/OLMo-2-0425-1B", "bfloat16"),
