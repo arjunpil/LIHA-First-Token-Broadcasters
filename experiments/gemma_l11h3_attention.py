@@ -46,6 +46,12 @@ def arguments():
     p.add_argument("--model-revision", default=None, help="Optional immutable Hugging Face model commit hash")
     p.add_argument("--manifest", type=Path, default=None, help="Rerun an existing frozen prompt_manifest.csv")
     p.add_argument("--seed", type=int, default=SEED)
+    # defaults reproduce the Gemma-3-1B run; the same design runs on another model or head with these
+    p.add_argument("--model", default=MODEL)
+    p.add_argument("--layer", type=int, default=LAYER)
+    p.add_argument("--head", type=int, default=HEAD)
+    p.add_argument("--control-head", type=int, default=CONTROL_HEAD)
+    p.add_argument("--lid", type=Path, default=None, help="Local fastText lid.176.bin instead of downloading it")
     return p.parse_args()
 
 
@@ -174,7 +180,7 @@ class GemmaExperiment:
             self.rev = HfApi().model_info(MODEL, revision=args.model_revision).sha
         except Exception:
             pass  # Preserve the model/tokenizer's recorded hash when API is unavailable.
-        lid_path = out.parent / "lid.176.bin"
+        lid_path = args.lid or out.parent / "lid.176.bin"
         if not lid_path.is_file():
             print("Downloading fastText language ID model...", flush=True)
             urlretrieve(LID_URL, str(lid_path))
@@ -290,7 +296,7 @@ class GemmaExperiment:
                 continue
             for h in range(self.head_count):
                 data[f"{group}_h{h}_target_mass"] = float(att[h, queries][:, targets].sum(-1).mean().item())
-            data[group + "_h3_nearby_mass"] = float(att[HEAD, queries][:, nearby].sum(-1).mean().item())
+            data[f"{group}_h{HEAD}_nearby_mass"] = float(att[HEAD, queries][:, nearby].sum(-1).mean().item())
         del out, att
         return data
 
@@ -338,7 +344,9 @@ def summarize(out, manifest, rows, attentions):
 
 
 def main():
+    global MODEL, LAYER, HEAD, CONTROL_HEAD
     args = arguments()
+    MODEL, LAYER, HEAD, CONTROL_HEAD = args.model, args.layer, args.head, args.control_head
     if args.per_language < 1 or args.max_new_tokens < 4:
         raise ValueError("Need at least one prompt per language and four generation tokens")
     args.out.mkdir(parents=True, exist_ok=True)
@@ -374,9 +382,9 @@ def main():
             "LCB_source_pool_counts": pools, "max_new_tokens": args.max_new_tokens,
             "attention_only": args.attention_only,
             "limitations": ["fresh LCB prompts selected based only on explicit language names, not model outcomes",
-                            "L11H3 and L11H0 are query attention heads; L11H0 is not an attention-matched control",
+                            f"L{LAYER}H{HEAD} and L{LAYER}H{CONTROL_HEAD} are query attention heads",
                             "masking starts in cached decoding; first token remains unchanged by design",
-                            "LCB baseline accuracy may be low for Gemma 3 1B; report baseline-conditioned failures",
+                            "LCB baseline accuracy can be low; report baseline-conditioned failures",
                             "measuring attention to language names does not establish semantic use of those tokens"]
         }
         (out / "run_metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
@@ -411,8 +419,9 @@ def main():
         print("\nAttention summary and score summary:", flush=True)
         for record in csv.DictReader((out / "attention_summary.csv").open(encoding="utf-8")):
             if record["language"] in ("it", "fr", "de", "es", "ALL"):
-                print(record["language"], "last prompt H3 target mass:", record.get("last_prompt_h3_target_mass_mean"),
-                      "nearby:", record.get("last_prompt_h3_nearby_mass_mean"))
+                print(record["language"], f"last prompt H{HEAD} target mass:",
+                      record.get(f"last_prompt_h{HEAD}_target_mass_mean"),
+                      "nearby:", record.get(f"last_prompt_h{HEAD}_nearby_mass_mean"))
         print((out / "summary.csv").read_text()[:3500])
     finally:
         import gc
