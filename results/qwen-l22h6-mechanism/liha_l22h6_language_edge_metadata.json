@@ -1,0 +1,14 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "transformers": "4.57.6",
+  "torch": "2.11.0+cu130",
+  "dtype": "torch.float32",
+  "attention_implementation": "eager",
+  "layer": 22,
+  "target_head": 6,
+  "control_head": 8,
+  "max_new_tokens": 100,
+  "dataset": "Same LCB prompts as prior 96-prompt FP32 validation (baseline-correct conditioned selection)",
+  "intervention": "Decoding-time, single-head, additive attention masking of explicit language word; first token unaffected",
+  "caveat": "Masked-edge ablation tests necessity of access to a token, not sufficiency, language-specific representation, or training effects."
+}

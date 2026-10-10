@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_precision": "float32",
+  "task": "counterfactual instruction-vs-mention",
+  "dataset": "32 newly authored prompts; two language pairs in both directions; eight topics",
+  "generation": "greedy, 100 new tokens maximum; decode-only interventions",
+  "caveat": "Unequal attention mass may still confound interpreting differences as semantic specificity."
+}

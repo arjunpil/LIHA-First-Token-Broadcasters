@@ -1,0 +1,22 @@
+language,prompt,status,first_divergence_index,clean_next_token,decode_next_token,clean_model_predicts_clean_token,ablated_model_predicts_decode_token,clean_minus_decode_logit_margin,margin_after_decode_ablation,causal_margin_change
+it,Can you explain in Italian the working principle behind stable diffusion?,compared,3, E, La,1,1,0.031299591064453125,-3.4107723236083984,-3.4420719146728516
+it,Answer in Italian. Can you Propose improvements on current clean energy solutions or new clean energy alternatives that promote humans to live sustainably with nature?,compared,1,erto,ada,1,1,9.763557434082031,-0.18778038024902344,-9.951337814331055
+it,Generate a blog post of at least 500 words about machine learning. Write in Italian.,compared,3, Un, The,1,1,0.5914382934570312,-0.3576164245605469,-0.9490547180175781
+it,Respond in Italian. Generate an essay discussing the importance of recycling.,compared,1, r, rec,1,1,0.5981273651123047,-6.507259368896484,-7.105386734008789
+it,Use Italian. Taking the role of a potential collaborator - tell me about ways I could collaborate with Solugen,compared,3, Come, S,1,1,0.39420127868652344,-1.6293468475341797,-2.023548126220703
+it,Write in Italian. what topics are investigated by an underwriter for life insurance?,compared,1,sc,',1,1,0.032306671142578125,-1.009500503540039,-1.0418071746826172
+it,Generate an argumentative essay in Italian about the importance of healthy eating.,compared,1,cco,leg,1,1,3.7287302017211914,-3.16892147064209,-6.897651672363281
+it,Reply in Italian. Write a short persuasive essay about the importance of voting.,compared,1, vo, vot,1,1,2.026548385620117,-1.727747917175293,-3.75429630279541
+fr,"Compose an essay in French from the given statement.
+The importance of music education in our lives.",compared,21, qui, que,1,1,4.832311630249023,-0.9122810363769531,-5.744592666625977
+fr,explain database sharding. Write in French.,compared,2,ing,in,1,1,0.23808670043945312,-0.9694404602050781,-1.2075271606445312
+fr,Write a sample essay of 500 words on the topic of artificial intelligence. Respond in French.,compared,14,inant,in,1,1,4.385271072387695,-0.13568496704101562,-4.520956039428711
+fr,Write in French. What can you say about the security policy  of Cisco or any network edge device that must be implemented in order to secure the organization's data and resources?,compared,32, de, des,1,0,2.646688461303711,1.989370346069336,-0.657318115234375
+de,Reply in German. Write a project proposal on : Assessing the implementation of sustainable development goals in urban planning practices: Challenges and opportunities,compared,3,trag,tr,1,1,0.5789833068847656,-0.0045261383056640625,-0.5835094451904297
+de,Write in German. Identify three types of government assistance that could help startups during the economic downturn.,compared,26,fen,fe,1,1,0.05809783935546875,-0.11617660522460938,-0.17427444458007812
+de,"Write a 100 word poem in German including the words cat, mouse and dog. You should begin every line of the poem with either of the given words and rhyme the end of every line should rhyme. Just give me the poem with no prefacing text.",compared,1,atz,att,1,1,0.2847938537597656,-0.35444068908691406,-0.6392345428466797
+de,Reply in German. Write an 1850-word horror story.,compared,20, Form, Be,0,0,0.1492776870727539,-0.014815330505371094,-0.164093017578125
+es,Generate a blog post in Spanish of 500 words or less that discusses a chosen topic,compared,12, la, el,1,0,2.035367965698242,1.9599475860595703,-0.07542037963867188
+es,What are your thoughts about the future of academic libraries in the next 10 years? Write in Spanish.,compared,26, y, av,1,1,0.26070213317871094,-2.447141647338867,-2.707843780517578
+es,Reply in Spanish. Generate a scientific report of  900 words discussing the effects of global warming on the Arctic,compared,3, Impact, El,1,1,0.3239555358886719,-0.2659721374511719,-0.5899276733398438
+es,Write a 500 word article about the benefits of organic food. Write in Spanish.,compared,8,án,ân,1,1,6.47001838684082,-0.7188720703125,-7.18889045715332

@@ -1,0 +1,166 @@
+prompt_id,language,source,prompt,upstream_baseline_pass,upstream_baseline_skipped
+0,it,okapi,"Max stava camminando per la strada quando notò un piccolo bagliore giallo avanti.
+Generare una storia di 200 parole utilizzando l'input fornito.",True,False
+1,it,okapi,"Compone un saggio di almeno 500 parole che esplori come il cambiamento climatico abbia influenzato la fauna selvatica.
+",True,False
+2,it,okapi,"Scrivi un breve saggio su come la privacy dei dati influisce sulla società.
+",True,False
+3,it,okapi,Generare un saggio che spiega il significato di Internet nella società moderna.,True,False
+4,it,okapi,"Identificare tre tipi di assistenza governativa che potrebbero aiutare le startup durante la recessione economica.
+",True,False
+5,it,okapi,"Scrivere un rapporto di 300 parole sui benefici dell'uso dell'Intelligenza Artificiale nel sistema di giustizia penale.
+",True,False
+6,it,okapi,Stai aiutando un cliente a scegliere un regalo e vogliono qualcosa di originale. Proporre un elenco di idee regalo originali.,True,False
+7,it,okapi,"Scrivi un saggio persuasivo su perché la ridistribuzione della ricchezza è necessaria.
+",True,False
+8,it,okapi,"Scrivi una storia completa con un inizio, un'evoluzione e una conclusione ambientata in un mondo immaginario
+",True,False
+9,it,okapi,"Crea un nuovo documento chiamato ""Blogs"" e scrivi un post sul seguente argomento: Come l'autocura può aiutare a ridurre l'ansia?",True,False
+10,it,okapi,"Dato il seguente tema di saggio, scrivere un saggio argomentativo di 300 parole o meno.
+Discutere dei benefici che la tecnologia porta alla società moderna.
+",True,False
+11,it,okapi,"Un giovane di nome Bill riceve un invito al castello di un vecchio amico di suo padre.
+Scrivi una breve storia sull'evento seguente.",True,False
+12,it,okapi,"Progettare un piano di allenamento di 10 giorni per ottenere risultati massimi.
+",True,False
+13,it,okapi,"Scrivi un saggio che delinei i pro e i contro dell'intervento del governo nell'economia.
+",True,False
+14,it,okapi,"Scrivi una storia di 500 parole nel genere dell'orrore.
+",True,False
+15,it,okapi,"Scrivi un saggio di 500 parole sui temi della solitudine rivelati nel romanzo di Ernest Hemingway ""Il vecchio e il mare"".",True,False
+16,it,okapi,Creare una lista di precauzioni che le persone dovrebbero prendere durante un uragano.,True,False
+17,it,okapi,Dare consigli su come risparmiare abbastanza denaro per la pensione.,True,False
+18,it,okapi,"Scrivi un articolo di 400 parole riassumendo l'argomento dato.
+La storia della pizza",True,False
+19,it,okapi,"Scrivere una relazione di 500 parole riassumendo l'articolo:""L'impatto della Brexit sul Regno Unito"".",True,False
+20,it,okapi,Scrivi una storia dell'orrore di 1850 parole.,True,False
+21,it,okapi,"Scrivi un saggio persuasivo su perché la protezione ambientale dovrebbe essere una priorità.
+",True,False
+22,it,okapi,Scrivi un breve saggio persuasivo sull'importanza del voto.,True,False
+23,it,okapi,"Generare un articolo per blog di 500 parole che riassuma lo stato attuale dell'intelligenza artificiale
+",True,False
+24,fr,dolly,"Racontez une histoire pour un enfant d'un dinosaure qui joue au baseball, mais qui doit faire une pause à cause d'une blessure.",True,False
+25,fr,native,Explique dans un article comment la fast fashion affecte l'environnement. Prends un ton dramatique et n'écris pas plus de 200 mots et 3 paragraphes maximum.,True,False
+26,fr,okapi,"Sujet: Utilisation de l'IA pour augmenter les capacités humaines
+Expliquez un malentendu commun sur votre sujet.",True,False
+27,fr,dolly,"Classifier chacun des éléments suivants selon qu'ils aident ou nuisent à la vision : lunettes, jumelles, bandeau, masque de sommeil, télescope",True,False
+28,fr,dolly,Quels articles vestimentaires les gens portent-ils souvent en été ?,True,False
+29,fr,okapi,"Écrivez un essai argumentatif sur le sujet donné.
+Sujet : Les avantages de l'enseignement à domicile",True,False
+30,fr,okapi,"Rédigez un article de blog sur l'importance du marketing de contenu pour les petites entreprises.
+",True,False
+31,fr,dolly,C'est comment de vivre sur la lune?,True,False
+32,fr,native,Imagine que tu es un thérapeute en 2123. Dans 100 ans comment se déroule une journée typique. Donne une liste de 5 choses qui représente ta journée en tant que thérapeute.,True,False
+33,fr,dolly,Quels outils chaque propriétaire de maison devrait-il avoir?,True,False
+34,fr,okapi,Écrivez un essai persuasif argumentant contre l'utilisation des téléphones portables à l'école.,True,False
+35,fr,native,donne moi 4 avantages et 4 inconvénients du marketing par e-mail.,True,False
+36,fr,dolly,"Sur un vol, je ne peux apporter que trois des articles suivants : une épée, un livre, un téléphone, une valise, un perroquet, un avion. Lesquels devrait-je apporter ?",True,False
+37,fr,native,Propose moi 3 activités à faire au Pérou. Sous forme de puces. Moins de 70 mots.,True,False
+38,fr,okapi,"Rédigez un article de 500 mots sur les avantages des aliments biologiques.
+",True,False
+39,fr,dolly,Comment puis-je devenir meilleur à tirer une balle de basket ?,True,False
+40,fr,okapi,"Rédigez un article de 500 mots résumant les défis associés au développement des voitures autonomes.
+",True,False
+41,fr,okapi,Écrivez un article de blog de 500 mots sur la valeur de l'art dans l'éducation.,True,False
+42,fr,okapi,Générer un billet de blog de 500 mots résumant l'état actuel de l'intelligence artificielle.,True,False
+43,fr,native,"Pour un magazine sportif, explique dans un court article de 7 phrases, la différence entre le catch et la lutte. Prends un ton enthousiaste mais n'insère pas de smileys.",True,False
+44,fr,native,Imagine une entreprise qui fusionne le secteur de la technologie de pointe avec l'industrie de la mode pour créer des vêtements intelligents. Donne trois idées pour faire du profit,True,False
+45,fr,dolly,"Quelle est la durée de vie moyenne d'un Golden Retriever ?
+context: les Golden Retrievers sont généralement en bonne santé ; leur durée de vie moyenne est de 12 à 13 ans. L'élevage irresponsable pour répondre à la forte demande a conduit à la prévalence de problèmes de santé héréditaires dans certaines lignées de races, y compris des affections cutanées, allergiques, des problèmes oculaires et parfois de la vivacité. Ces problèmes sont rarement rencontrés chez les chiens élevés par des éleveurs responsables.",True,False
+46,fr,native,"donne moi 3 idées pour mieux se concentrer à travailler, chaque idée ne doit pas dépasser 60 mots.",True,False
+47,fr,native,Ecris un texte de 150 mots sur comment la photographie de voyage peut enrichir l'expérience du voyageur,True,False
+48,de,okapi,Schreiben Sie einen Blog-Beitrag über abstrakte Kunst.,True,False
+49,de,okapi,"Verfassen Sie einen Aufsatz, in dem Sie die Rolle von Vertrauen und Glaubwürdigkeit in Beziehungen diskutieren.
+",True,False
+50,de,okapi,"Generieren Sie einen erklärenden Aufsatz von 300 Wörtern über die Automobilindustrie.
+",True,False
+51,de,okapi,"Schreiben Sie einen überzeugenden Essay darüber, warum die Umverteilung von Reichtum notwendig ist.
+",True,False
+52,de,okapi,Schreiben Sie einen kurzen überzeugenden Aufsatz über die Bedeutung des Wählens.,True,False
+53,de,okapi,"Lied: “The Scientist” von Coldplay
+Schreiben Sie eine 500-Wörter-Geschichte über dieses Lied.
+",True,False
+54,de,okapi,"Recherchieren Sie ein historisches Ereignis und erklären Sie in einem fünf Absätze umfassenden Essay, was passiert ist.
+Historisches Ereignis: Die Kubakrise
+",True,False
+55,de,okapi,"Entwickeln Sie einen Leitfaden für verantwortungsvolles Online-Verhalten.
+",True,False
+56,de,okapi,"Können Sie einen Beispielartikel zum Thema erstellen?
+Thema: Vor- und Nachteile der künstlichen Intelligenz
+",True,False
+57,de,okapi,"Schreiben Sie einen 300-Wörter-Bericht über die Vorteile der Verwendung von KI im Strafjustizsystem.
+",True,False
+58,de,okapi,"Schreiben Sie einen Artikel mit 500 Wörtern über die Auswirkungen der Einführung von künstlicher Intelligenz in unsere Gesellschaft.
+",True,False
+59,de,okapi,"Wandeln Sie diesen Satz in eine Metapher um: ""Der Nachthimmel war eine Decke aus Sternen"".
+",True,False
+60,de,okapi,Verfassen Sie einen 300-Wörter Artikel über den Rückgang der Honigbienenpopulationen.,True,False
+61,de,okapi,Wie kann E-Mail-Marketing einem Unternehmen helfen?,True,False
+62,de,okapi,"Generieren Sie einen Blog-Beitrag von mindestens 500 Wörtern über maschinelles Lernen.
+",True,False
+63,de,okapi,Schreiben Sie einen Blog-Beitrag über die Bedeutung des Content-Marketings für kleine Unternehmen.,True,False
+64,de,okapi,"Verfassen Sie einen 500-Wörter-Essay zu den Themen Einsamkeit, die in Ernest Hemingways Roman ""Der alte Mann und das Meer"" aufgedeckt werden.
+",True,False
+65,de,okapi,"Schreiben Sie einen überzeugenden Essay, der die Bedeutung des Schutzes gefährdeter Arten darlegt.",True,False
+66,de,okapi,"Generieren Sie einen wissenschaftlichen Bericht von 900 Wörtern, der die Auswirkungen der globalen Erwärmung auf die Arktis diskutiert",True,False
+67,de,okapi,"Diskutieren Sie die Vorteile, die die Technologie für die moderne Gesellschaft bringt.
+Gegeben ist die folgende Aufgabenstellung für einen Aufsatz. Schreibe einen argumentativen Essay von 300 Wörtern oder weniger.
+",True,False
+68,de,okapi,"Schreiben Sie einen überzeugenden Aufsatz, in dem Sie sich gegen die Verwendung von Handys in der Schule aussprechen.
+",True,False
+69,de,okapi,"Verfassen Sie einen überzeugenden Aufsatz, der Präsident Eisenhowers Politik der umfassenden Bürgerrechte verteidigt",True,False
+70,de,okapi,"Erstellen Sie einen überzeugenden Aufsatz, in dem diskutiert wird, warum Mobiltelefone in der Schule verboten werden sollten.
+",True,False
+71,de,okapi,"Erklären Sie ein häufiges Missverständnis über Ihr Thema.
+Thema: Die Verwendung von künstlicher Intelligenz zur Ergänzung menschlicher Fähigkeiten",True,False
+72,es,okapi,Genere un ensayo de al menos 500 palabras que argumente a favor de regular la inteligencia artificial.,True,False
+73,es,native,Dame las 3 funciones principales de una ONG,True,False
+74,es,dolly,¿Cuál es la mejor rutina nocturna para el cuidado de la piel?,True,False
+75,es,okapi,"Escribe una publicación de blog sobre la importancia del marketing de contenido para pequeñas empresas.
+",True,False
+76,es,okapi,"Escribir un ensayo de 300-400 palabras sobre el papel de la tecnología en la industria de la atención médica.
+",True,False
+77,es,dolly,Escriba un párrafo corto sobre el impacto de la nutrición en la salud humana.,True,False
+78,es,native,"Escribe dos artículos de dos párrafos (cada párrafo con 4 renglones) sobre formas en las que seria posible vender agua, el primer articulo debe ser pesimista y el segundo muchísimo mas pesimista que el anterior.",True,False
+79,es,dolly,Escribe una historia corta sobre una persona que descubre una sala oculta en su casa. La historia debe incluir un giro en la trama y una resolución clara al final.,True,False
+80,es,okapi,"Las aplicaciones de Inteligencia Artificial han avanzado exponencialmente en la última década, dando lugar a soluciones prometedoras en los campos de la salud y las finanzas.
+Escriba un ensayo de 500 palabras presentando su opinión sobre el siguiente tema.
+",True,False
+81,es,dolly,Sugiéreme 5 películas de terror,True,False
+82,es,dolly,¿Cuáles son las diversas maneras en que uno puede mantenerse activo durante el día para ayudar a combatir la obesidad?,True,False
+83,es,okapi,Crear un ensayo que discuta la importancia del reciclaje.,True,False
+84,es,dolly,¿Puedo hacer chocolate en casa?,True,False
+85,es,okapi,Escriba un ensayo persuasivo sobre por qué las personas deberían leer libros.,True,False
+86,es,okapi,"Generar un informe científico de 900 palabras que discuta los efectos del calentamiento global en el Ártico
+",True,False
+87,es,native,Dame una lista con las 3 principales funciones de un banco. En formato viñeta,True,False
+88,es,dolly,¿Qué tipo de barco debería comprar?,True,False
+89,es,dolly,¿Cuáles son algunos buenos ejercicios de peso corporal para la parte superior del cuerpo?,True,False
+90,es,okapi,Genera una historia de 500 palabras sobre un hombre que se encuentra en una ciudad desconocida.,True,False
+91,es,native,"Coral, quiero desarrollar una campaña de promoción de la salud sobre neurodiversidad e inclusión.  ¿Podrías ayudarme a esbozar este proyecto?",True,False
+92,es,native,Describe detalladamente los elementos esenciales que se deben empacar para una experiencia de camping por primera vez. Formatea la descripción utilizando viñetas,True,False
+93,es,native,"Redacta un informe sobre las criptomonedas, su creación y finalidad. No mas de 5 parrafos.",True,False
+94,es,native,"Coral, necesito preparar una presentación sobre los países invitados al Congreso Anfictiónico de Panamá. Por favor, resume el siguiente texto en 300 palabras: ""Tras la convocatoria hecha por Bolívar se enviaron comunicaciones a los gobiernos del resto de la Suramérica independiente, así como a México y América Central. La influencia política de Bolívar sobre la Gran Colombia, Perú y Bolivia hizo que la asistencia de dichos estados estuviera poco menos que asegurada. La posición intermedia del istmo de Panamá motivó que se elija ese lugar para la reunión, lo que fue reflejado poéticamente por Bolívar, de acuerdo a las modas de la época, en una comparación con la Liga anfictiónica que gobernó desde el istmo de Corinto algunos pueblos de la Grecia Central por algo más de un siglo durante la decadencia griega.
+
+El gobierno de las Provincias Unidas del Río de la Plata recibió la invitación de Bolívar pero los intereses argentinos del momento estaban centrados en el ámbito interno, en la organización política del país, amenazada por los caudillos federales. En el ámbito externo las preocupaciones argentinas estaban en la Guerra del Brasil, para mantener a la Banda Oriental como una provincia de Argentina, y fortalecer los vínculos comerciales con Gran Bretaña antes que con el resto de Suramérica, por lo cual hubo escaso interés en el congreso.
+
+El presidente Bernardino Rivadavia se hallaba en pugna con el Imperio del Brasil y prefería contar con el apoyo bélico de todas las provincias argentinas para superar la crisis en vez de esperar apoyo de Bolívar; asimismo, la mayoría de los políticos argentinos -incluyendo al propio Rivadavia-, desconfiaban del proyecto bolivariano y temían que esto significara el inicio de una ""hegemonía"" de la Gran Colombia en América del Sur.
+
+El gobierno boliviano estaba presidido por el mariscal Antonio José de Sucre, compañero de armas de Bolívar y uno de los principales partidarios de este, por lo cual se daba por asegurada la asistencia de una delegación del país. No obstante, pugnas políticas causaron demoras en la designación de los delegados bolivianos, y cuando estos quedaron listos para embarcarse hacia Panamá, se supo que el congreso había concluido en dicha ciudad. Además, el clima político boliviano se había tornado desfavorable a Sucre -y por ende, contrario a los planes de Bolívar- lo que impidió que se pudiera contar con la participación boliviana.
+
+El Imperio de Brasil fue convocado pese a ser un estado monárquico y abiertamente esclavista, regido además por los descendientes de Casa de Braganza, dinastía europea de la que recelaban abiertamente las cancillerías del resto de Suramérica. En el caso brasileño, Simón Bolívar remitió la invitación a la corte imperial de Río de Janeiro solo para halagar a Gran Bretaña -que era la principal aliada de Brasil y preocupada por el aislamiento de este- pero resultaba evidente que la desconfianza de las repúblicas hispanoamericanas y del propio Bolívar hacia Brasil influiría en las decisiones del congreso.
+
+Brasil precisaba mantener la neutralidad entre las monarquías europeas y sus vecinos republicanos hispanoamericanos, y en octubre de 1825 aceptó la invitación de Bolívar, pero la Guerra del Brasil contra las Provincias Unidas del Río de la Plata hizo temer al emperador Pedro I una recepción demasiado hostil en Panamá, lo cual era contrario a sus intereses. Por ello decidió no enviar a los delegados brasileños a pesar de que ya los había designado.
+
+Chile fue invitado pero declinó asistir. El gobierno chileno dirigido por Ramón Freire no mostraba simpatías por Simón Bolívar ni por su enorme influencia política sobre los países sudamericanos con costas en el océano Pacífico. Además, la fuerte pugna política chilena entre liberales y conservadores reducía la preocupación de los políticos chilenos por el proyecto bolivariano, del cual además desconfiaban, prefiriendo basar su política externa en mantener buenas relaciones con sus principales socios comerciales: Gran Bretaña y los Estados Unidos.
+
+Inicialmente el proyecto de Bolívar no consideró invitar a Estados Unidos pero el vicepresidente de la Gran Colombia encargado del poder ejecutivo, el general Francisco de Paula Santander, remitió una invitación formal al presidente estadounidense John Quincy Adams a inicios de 1825. Asimismo los gobiernos de las Provincias Unidas de Centroamérica y de México apoyaron la participación de Estados Unidos en el congreso y enviaron a Washington D. C. las invitaciones respectivas. Bolívar, entonces presidente de Perú y residente en Lima, aceptó el hecho consumado.
+
+En los Estados Unidos la participación en el Congreso de Panamá no fue recibida con aceptación unánime, de hecho los estados del sur —eminentemente esclavistas— aconsejaron no enviar representantes en tanto que la postura de Bolívar contra la esclavitud era bien conocida, y bloquearon el financiamiento del viaje de diplomáticos estadounidenses; mientras tanto, los estados del norte —abolicionistas— sí estaban interesados en el Congreso de Panamá pero solo como medio de entablar contactos comerciales.
+
+Paraguay, aunque ya era un estado independiente desde 1811, estaba gobernado por Gaspar Rodríguez de Francia, partidario de una política de completo aislacionismo. Tras la Batalla de Ayacucho y la declaración de la independencia de Bolivia en 1825, el propio Simón Bolívar trató de lograr contactos políticos con Paraguay enviando a Asunción representantes para solicitar el inicio de relaciones diplomáticas. Pese a esto, los enviados de Bolívar no tuvieron comunicación alguna con los funcionarios paraguayos y solo recibieron una carta de Rodríguez de Francia para Bolívar, en la que el dictador paraguayo rechazaba todo vínculo diplomático de su país y defendía el aislacionismo. Ante este rechazo, Paraguay no fue invitado al Congreso de Panamá.
+
+Simón Bolívar acordó también invitar a dos países europeos como observadores, a causa de los intereses comerciales que tenían en Hispanoamérica: Reino Unido y los Países Bajos. La invitación al gobierno de Londres buscaba estimular la asistencia de Argentina y Chile que tenían en aquel país a su principal socio comercial. Reino Unido aceptó la propuesta y envió un observador, Edward James Dawkins, pero con órdenes precisas del ministro George Canning: limitarse a buscar acuerdos comerciales y disuadir a la Gran Colombia y México de apoyar expediciones a las islas de Cuba o Puerto Rico para independizarlas de España.
+
+El observador por los Países Bajos, Jan van Veer, fue enviado para proponer la mediación neerlandesa entre las repúblicas hispanoamericanas y España, pero no tuvo la acreditación necesaria; a esto se unió que la monarquía holandesa no había reconocido la independencia de ninguna república hispanoamericana, por lo cual el delegado neerlandés fue recibido únicamente a título individual.""",True,False
+95,es,native,Tengo que redactar un anuncio para una nueva serie de cocina. Dime 5 posibles temas que podría tener el guion del anuncio.,True,False

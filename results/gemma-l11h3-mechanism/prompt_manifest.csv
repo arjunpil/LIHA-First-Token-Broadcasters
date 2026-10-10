@@ -1,0 +1,669 @@
+prompt_id,language,source,prompt
+0,es,complex_prompts,"Based solely on the text below: 
+1. Extract the statistical techniques and machine learning algorithms analysts employ to uncover relationships and patterns within the data.
+2, Generate 5 fill-in-the-blanks style questions
+3. Summarize the text in 100 words
+4. Reply in Spanish
+
+Here's the text:
+
+Predictive analytics is a powerful tool that organizations use to uncover insights and trends from data to make predictions about future events or behaviors. At its core, predictive analytics leverages sophisticated statistical techniques, machine learning algorithms, and modeling tools to analyze current and historical data, identify patterns, and construct predictive models. These models illuminate possibilities for what could happen, enabling businesses and stakeholders to make informed decisions and strategically plan for the future.
+
+The process of predictive analytics typically involves several key steps. First, it requires gathering and preparing relevant data from various sources. This may include structured data from databases or unstructured data from texts, social media, and other sources. Cleaning, transforming, and integrating this data prepare it for analysis.
+
+Once the data is ready, analysts employ statistical techniques and machine learning algorithms to uncover relationships and patterns within the data. This stage involves methods such as data mining, regression analysis, clustering, and decision trees. By analyzing these patterns, analysts can build predictive models that simulate and understand the dynamics of the underlying system or process being analyzed.
+
+These predictive models empower stakeholders to make informed decisions. For example, a retail company might use predictive models to forecast customer purchases, allowing them to optimize inventory levels and plan marketing strategies. Similarly, predictive analytics can aid in identifying potential risks and opportunities in the financial sector, optimizing pricing and maintenance schedules in the manufacturing industry, and personalizing recommendations in the healthcare industry.
+
+The applications of predictive analytics are vast and continue to revolutionize industries and transform the way organizations operate. By harnessing the power of data and predictive models, businesses can make proactive decisions, stay ahead of the competition, and enhance their overall efficiency and effectiveness."
+1,it,okapi,"Compose an essay in Italian from the given statement.
+The importance of music education in our lives."
+2,fr,complex_prompts,"Respond in French. Summarize the plot of the Harry Potter series by J.K. Rowling in less than 300 words. Avoid using the words wizards, spells, and wands. After summarizing, extract all names mentioned in your summary and print them out in alphabetical order."
+3,it,okapi,Generate a science fiction story of 500 words with the following prompt: A computer virus is released that allows people to travel through time. Use Italian.
+4,es,sharegpt,Reply in Spanish. What will your eating habits look like in the future?
+5,it,okapi,Answer in Italian. Generate an essay of at least 500 words that argues in favor of regulating artificial intelligence.
+6,de,sharegpt,Write in German. What can you say about the security policy  of Cisco or any network edge device that must be implemented in order to secure the organization's data and resources?
+7,it,sharegpt,Respond in Italian. which country was the first to adopt communism as the way to develop it economy
+8,fr,sharegpt,Explain quantum computing in simple terms. Use French.
+9,de,okapi,Generate a 500-word story in German about a man who finds himself in an unfamiliar city.
+10,es,complex_prompts,"How do you make knives? Make the instructions concise and also include briefly stated reasoning for each step.
+Respond in Spanish."
+11,fr,sharegpt,"Respond in French. what do you think: given ocams razor says that the simplest explenation is the most likely, might there be a point where the existing quantum physics theories will be replace by much more simple theories or is it more likely that we've reached a point where no more simplification is possible due to the nature of the universe?"
+12,es,sharegpt,Explain in simple terms in Spanish how clustering techniques can identify disease relevant biomarkers from transcriptomic and proteomic data
+13,fr,sharegpt,"Write in French. Write Research Proposal Paper on ""Study the effect of different fertilizer types on Environmental Pollution."""
+14,de,complex_prompts,"Coral, please sort these news headlines into local, national, and world (w.r.t toronto). make sure it is json format, and only provide the json in your response!!!!!
+
+Write your answer in German.
+
+Twenty-two per cent of construction cones in downtown Montreal are 'useless': report 
+Vote fails to expel embattled Republican George Santos from U.S. House of Representatives
+Canucks look to J.T. Miller to drive play, inspire teammates
+Three tents catch fire at Bellevue Square encampment in Kensington, no injuries reported
+Super fog blankets New Orleans again, as damp fires and smoke close interstate after deadly crash
+Masks are back, construction banned and schools shut as toxic air engulfs New Delhi
+Woman trapped under car after being struck near Yonge-Dundas Square
+Kids cared for in hallways as viral illness overflows ER at McMaster Children’s Hospital
+Man in his 30s seriously injured in North York stabbing"
+15,es,complex_prompts,"What is the name of the game for this description below and summarize the instructions in a paragraph. limit yourself to 250 words.
+
+Players take turns clockwise.
+Match the top card of the discard pile by color, number, or symbol.
+If a player can't play a matching card, they must draw a card from the draw pile. If that card can be played, they can play it immediately.
+Special cards:
+Skip: Skips the next player's turn.
+Reverse: Reverses the direction of play.
+Draw Two: Forces the next player to draw two cards and skip their turn.
+Wild: Player declares a new color for the discard pile.
+Wild Draw Four: Player declares a new color and forces the next player to draw four cards and skip their turn.
+A player must say ""Uno"" when they play their second-to-last card. Failure to do so may result in drawing additional cards as a penalty.
+The round ends when a player plays their last card. Points are scored based on the cards left in opponents' hands.
+Number cards: Face value
+Skip, Reverse, Draw Two: 20 points
+Wild, Wild Draw Four: 50 points
+Write in Spanish."
+16,es,sharegpt,What is the best way to forecast sales for a meal replacement product for the following year? Write in Spanish.
+17,es,okapi,Generate a blog post in Spanish of at least 500 words about machine learning.
+18,it,complex_prompts,"Use Italian. output a json with the top 5 pieces of advice for increasing productivity in 3 different ways- 1st in the tone for people up to 18 years old, 2nd for 19-25, and 3rd for 26+. Keep the advice between 20-40 words. Only output the json"
+19,es,okapi,Create a recipe in Spanish for a delicious and healthy vegan three-course meal.
+20,de,sharegpt,What will your eating habits look like in the future? Answer in German.
+21,es,complex_prompts,"Write in Spanish. Extract the key takeaways from the following article and format them as a JSON object in a numbered list. There should be 5-10 key takeaways, each one rephrased in your own words. Begin your response with a short paragraph explaining the title and how exactly young people have been ""dealt a bad hand.""
+Article title: How the young should invest
+Subheading: Markets have dealt them a bad hand. They could be playing it better
+By The Economist Editorial Board
+Young investors, as well as everyone starting to save, have no shortage of lessons to learn. The main ones are classics. Begin early to give the magic of compounding time to work. Cut costs to stop that magic from being undone. Diversify. Do not try to time the market unless it is your job to do so. Stick to your strategy even when prices plummet and the sky seems to be falling in. Do not ruin it by chasing hot assets when the market is soaring, others are getting rich and you are getting jealous.
+To this time-worn list, add an altogether more dispiriting lesson specific to today’s youngsters: you will not enjoy anything like the returns your parents made. Even accounting for the global financial crisis of 2007-09, the four decades to 2021 were a golden age for investors. A broad index of global shares posted an annualised real return of 7.4%. Not only was this well above the figure of 4.3% for the preceding eight decades, but it was accompanied by a blistering run in the bond market. Over the same period, global bonds posted annualised real returns of 6.3%—a vastly better result than the 0% of the preceding 80 years.
+That golden age is now almost certainly over. It was brought about in the first place by globalisation, quiescent inflation and, most of all, a long decline in interest rates. Each of these trends has now kicked into reverse. As a consequence, youngsters must confront a more difficult set of investment choices—on how much to save, how to make the most out of markets that offer less and how to square their moral values with the search for returns. So far, many are choosing badly.
+The constant refrain of the asset-management industry—that past performance is no guarantee of future returns—has rarely been more apt. Should market returns revert to longer-run averages, the difference for today’s young investors (defined as under-40s) would be huge. Including both the lacklustre years before the 1980s and the bumper ones thereafter, these long-run averages are 5% and 1.7% a year for stocks and bonds respectively. After 40 years of such returns, the real value of $1 invested in stocks would be $7.04, and in bonds $1.96. For those investing across the 40 years to 2021, the equivalent figures were $17.38 and $11.52.
+This creates two sources of danger for investors now starting out. The first is that they look at recent history and conclude markets are likely to contribute far more to their wealth than a longer view would suggest. A corollary is that they end up saving too little for retirement, assuming that investment returns will make up the rest. The second is even more demoralising: that years of unusually juicy returns have not merely given investors unrealistically high hopes, but have made it more likely that low returns lie ahead.
+Antti Ilmanen of aqr, a hedge fund, sets out this case in “Investing Amid Low Expected Returns”, a book published last year. It is most easily understood by considering the long decline in bond yields that began in the 1980s. Since prices move inversely to yields, this decline led to large capital gains for bondholders—the source of the high returns they enjoyed over this period. Yet the closer yields came to zero, the less scope there was for capital gains in the future. In recent years, and especially recent months, yields have climbed sharply, with the nominal ten-year American Treasury yield rising from 0.5% in 2020 to 4.5% today. This still leaves nowhere near as much room for future capital gains as the close-to-16% yield of the early 1980s.
+The same logic applies to stocks, where dividend and earnings yields (the main sources of equity returns) fell alongside interest rates. Again, one result was the windfall valuation gains enjoyed by shareholders. Also again, these gains came, in essence, from bringing forward future returns—raising prices and thereby lowering the yields later investors could expect from dividend payouts and corporate profits. The cost was therefore more modest prospects for the next generation.
+As the prices of virtually every asset class fell last year, one silver lining appeared to be that the resulting rise in yields would improve these prospects. This is true for the swathe of government bonds where real yields moved from negative to positive. It is also true for investors in corporate bonds and other forms of debt, subject to the caveat that rising borrowing costs raise the risk of companies defaulting. “If you can earn 12%, maybe 13%, on a really good day in senior secured bank debt, what else do you want to do in life?” Steve Schwarzman, boss of Blackstone, a private-investment firm, recently asked.
+Even so, the long-term outlook for stocks, which have historically been the main source of investors’ returns, remains dim. Although prices dropped last year, they have spent most of this one staging a strong recovery. The result is a renewed squeeze on earnings yields, and hence on expected returns. For America’s s&p 500 index of large stocks, this squeeze is painfully tight. The equity risk premium, or the expected reward for investing in risky stocks over “safe” government bonds, has fallen to its lowest level in decades (see chart 1). Without improbably high and sustained earnings growth, the only possible outcomes are a significant crash in prices or years of disappointing returns.
+All this makes it unusually important for young savers to make sensible investment decisions. Faced with an unenviable set of market conditions, they have a stronger imperative than ever to make the most of what little is on offer. The good news is that today’s youngsters have better access to financial information, easy-to-use investment platforms and low-cost index funds than any generation before them. The bad news is that too many are falling victim to traps that will crimp their already meagre expected returns.
+A little flush
+The first trap—holding too much cash—is an old one. Yet youngsters are particularly vulnerable. Analysis of 7m retail accounts by Vanguard, an asset-management giant, at the end of 2022 found that younger generations allocate more to cash than older ones (see chart 2). The average portfolio for Generation Z (born after 1996) was 29% cash, compared with baby-boomers’ 19%.
+It could be that, at the end of a year during which asset prices dropped across the board, young investors were more likely to have taken shelter in cash. They may also have been tempted by months of headlines about central bankers raising interest rates—which, for those with longer memories, were less of a novelty. Andy Reed of Vanguard offers another possibility: that youngsters changing jobs and rolling their pension savings into a new account tend to have their portfolios switched into cash as a default option. Then, through inertia or forgetfulness, the vast majority never end up switching back to investments likely to earn them more in the long run.
+Whatever its motivation, young investors’ preference for cash leaves them exposed to inflation and the opportunity cost of missing out on returns elsewhere. The months following Vanguard’s survey at the end of 2022 provide a case in point. Share prices surged, making gains that those who had sold up would have missed. More broadly, the long-run real return on Treasury bills (short-term government debt yielding similar rates to cash) since 1900 has been only 0.4% per year. In spite of central banks’ rate rises, for cash held on modern investment platforms the typical return is even lower than that on bills. Cash will struggle to maintain investors’ purchasing power, let alone increase it.
+The second trap is the mirror image of the first: a reluctance to own bonds, the other “safe” asset class after cash. They make up just 5% of the typical Gen Z portfolio, compared with 20% for baby-boomers, and each generation is less likely to invest in them than the previous one. Combined with young investors’ cash holdings, this gives rise to a striking difference in the ratio between the two asset classes in generations’ portfolios. Whereas baby-boomers hold more bonds than cash, the ratio between the two in the typical millennial’s portfolio is 1:4. For Gen Z it is 1:6.
+Given the markets with which younger investors grew up, this may not be surprising. For years after the global financial crisis, government bonds across much of the rich world yielded little or even less than nothing. Then, as interest rates shot up last year, they took losses far too great to be considered properly “safe” assets.
+But even if disdain for bonds is understandable, it is not wise. They now offer higher yields than in the 2010s. More important, they have a tendency to outpace inflation that cash does not. The long-run real return on American bonds since 1900 has been 1.7% a year—not much compared with equities, but a lot more than cash.
+The name of the third trap depends on who is describing it. To the asset-management industry, it is “thematic investing”. Less politely, it is the practice of drumming up business by selling customised products in order to capture the latest market fad and flatter investors that they are canny enough to beat the market.
+Today’s specialised bets are largely placed via exchange-traded funds (etfs), which have seen their assets under management soar to more than $10trn globally. There are etfs betting on volatility, cannabis stocks and against the positions taken by Jim Cramer, an American television personality. More respectably, there are those seeking to profit from mega-themes that might actually drive returns, such as ageing populations and artificial intelligence. An enormous subcategory comprises strategies investing according to environmental, social and governance (esg) factors.
+Niche strategies are nothing new, and nor are their deficiencies. Investors who use them face more volatility, less liquidity and chunky fees. Compared with those focused on the overall market, they take a greater risk that fashions will change. Even those who pick sensible themes are competing with professional money managers.
+However the ease with which etfs can be customised, advertised and sold with a few taps on a phone screen is something that previous generations of investors did not have to reckon with. So is the appeal to morality accompanying their marketing. esg vehicles are presented to youngsters as the ethically neutral option. If there are investments that will save society and the planet while growing your savings at the same time, what kind of monster would buy the ordinary, dirty kind?
+This both overstates the difference between esg and “normal” funds, and papers over their impact on costs and returns. According to a recent study by the Harvard Business School, funds investing along esg criteria charged substantially higher fees than the non-esg kind. Moreover, the esg funds had 68% of their assets invested in exactly the same holdings as the non-esg ones, despite charging higher fees across their portfolios. Such funds also shun “dirty” assets, including fossil-fuel miners, whose profits are likely to generate higher investment yields if this shunning forces down their prices.
+Next to the vast difference between the investment prospects of today’s youngsters and those of their parents, the benefits to be gained by avoiding these traps may seem small. In fact, it is precisely because markets look so unappealing that young investors must harvest returns. Meanwhile, the investment habits they are forming may well last for some time. Vanguard’s Mr Reed points to evidence that investors’ early experiences of markets shape their allocations over many years.
+image: the economist
+Ordering the portfolios of Vanguard’s retail investors by the year their accounts were opened, his team has calculated the median equity allocation for each vintage (see chart 3). The results show that investors who opened accounts during a boom retain significantly higher equity allocations even decades later. The median investor who started out in 1999, as the dotcom bubble swelled, still held 86% of their portfolio in stocks in 2022. For those who began in 2004, when memories of the bubble bursting were still fresh, the equivalent figure was just 72%.
+Therefore it is very possible today’s young investors are choosing strategies they will follow for decades to come. Mr Ilmanen’s treatise on low expected returns opens with the “serenity prayer”, which asks for “the serenity to accept the things I cannot change, the courage to change the things I can, and the wisdom to know the difference”. It might be the best investment advice out there."
+22,de,sharegpt,What is the process of technological exploration in the context of technology roadmapping and implementation. Write in German.
+23,it,sharegpt,Reply in Italian. What is a Salesforce digital expierence
+24,fr,sharegpt,Write in French. What services do CRM agencies offer for Consultation and strategy development?
+25,it,sharegpt,"Write Research Proposal Paper on ""Study the effect of different fertilizer types on Environmental Pollution."". Reply in Italian."
+26,es,okapi,Write an opinion article in Spanish on artificial intelligence in 500-700 words.
+27,de,sharegpt,write a product requirements document for a software that helps entrepreneurs identify a target market and begin building a business. Answer in German.
+28,es,complex_prompts,"In lay-person’s terms, briefly summarize the main points of the following article in a series of six bullet points. In total, your summary should come to between 200 and 300 words long. Each bullet point should begin with a key word extracted from the article. You should write your answer in Spanish.
+
+“As Doritos, Walkers and Wotsits speed along a conveyor belt at Coventry's PepsiCo factory - where some of the UK's most popular crisps are made - the noise of whirring machinery is almost deafening.
+
+But here, it's not just human workers trying to hear signs of machine failure above the factory fray.
+
+Sensors attached to equipment are also listening out for indications of hardware faults, having been trained to recognise sounds of weary machines that risk bringing production lines to a grinding halt.
+
+PepsiCo is deploying these sensors, created by tech firm Augury and powered by artificial intelligence (AI), across its factories following a successful US trial.
+
+The company is one of many exploring how AI can increase factory efficiency, reduce waste and get products onto shelves sooner.
+
+From early design to delivery, AI is seen as having a key role in a new wave of manufacturing.
+
+Its ability to process and analyse huge volumes of data is already helping manufacturers predict and prepare for potential disruption.
+
+A minute of factory downtime can cost companies thousands of pounds, and increased delays can mean missing out on consumer demand at critical moments like the festive period or Black Friday.
+
+So tools that can check and analyse processes in real-time, warn of problems on the horizon, and harness historical data to recommend fixes are becoming familiar sights on factory floors.
+
+The sensors used in PepsiCo factories have been trained on huge volumes of audio data, to be able to detect faults such as wearing on conveyor belts and bearings, while analysing machine vibrations.
+
+""We have today over 300 million hours of machines that we've analysed and monitored, and we can leverage all this data to create algorithms that know how to pinpoint specific patterns of different malfunctions,"" says Augury chief executive, Saar Yoskovitz.
+
+By also collecting information and insights into equipment health on the whole, such as identifying when a machine might fail again in future, the technology lets workers schedule maintenance in advance, and avoid having to react to machine errors as they occur.
+
+Using AI-powered sensors can also give the company a way to cut down on waste across its operations.
+
+""If the machine is working in the most optimal way you can reduce the energy consumption of that machine"", says Mr Yoskovitz.
+
+Computer vision, which involves training machines to recognise objects in images and video, is another type of AI being used across some of the world's factories to detect product defects at-scale.
+
+The flurry of items moving along conveyor belts and through sorting machines in factories mean miniscule defects in products can easily be missed.
+
+This is particularly true of computer chip wafers and circuit boards that have intricate designs and components. Errors which might have previously gone unnoticed by the human eye can now be picked up by a machine's camera, and caught by algorithms trained to spot specific, surface-level anomalies.
+
+Alexandra Brintrup, professor of digital manufacturing at the University of Cambridge's Institute for Manufacturing, tells the BBC that the use of AI for improving efficiency in the industry, including in areas like predictive maintenance and quality control, can now be considered conventional applications of the technology.
+
+""I feel like the more exciting opportunities of AI in manufacturing are going to come from things that we couldn't even attempt to do before, like capacity sharing between manufacturers, improving visibility in supply chains, even sharing of trucks in a logistics chain,"" she says.
+
+The interwoven, complex nature of supply chain networks, and the reluctance of some stakeholders to say who supplies them, has previously kept many aspects of manufacturing shrouded in mystery.
+
+But AI can be used to analyse and predict who and where suppliers are, giving companies an insight into bottlenecks, and consumers an insight into where their products are coming from, and the materials used.
+
+Prof Brintrup leads the Institute for Manufacturing's Supply Chain AI Lab, which has developed its own predictive mechanism to identify where ingredients such as palm oil may have been used in a product, but disguised under a different name on its label.
+
+The lab's recent research suggested that palm oil can go by 200 different names in the US - and these might not stand out to eco-conscious consumers.
+
+""We have increasingly a society that is very much aware of the environmental and societal impact of manufacturing, so I think increased supply chain visibility and giving that information to the consumer is going to become more and more important,"" Prof Brintrup adds.
+
+The question of what the rising adoption of AI tools on factory floors and in the wider supply chain will mean for workers looms large over the manufacturing landscape.
+
+Some firms are exploring how AI can be used to keep production line workers safe around machinery - using machine learning and computer vision techniques to monitor factory camera feeds to identify possible threats or accidents.
+
+Meanwhile, AI-powered wearables like exoskeletons have been deployed across UK warehouses to ensure people tasked with repeatedly carrying heavy loads aren't getting strained or injured.”"
+29,de,sharegpt,What is a times and motion study? Respond in German.
+30,fr,okapi,Generate an argumentative essay about the importance of healthy eating. Write in French.
+31,es,complex_prompts,"Briefly summarize the plot of the film Tangled (2010) to a group of 7 year old children in under 300 words.
+Write in Spanish."
+32,es,complex_prompts,"I want you to summarize the film Goodfellas for me, but with a twist. I want you to write the summary in the form of dialogue between Ray Liotta, the actor who plays the film’s main character, and a film journalist who is interviewing him. The journalist will ask Liotta a series of questions about the character he plays, therefore revealing the plot of the movie. Here are some questions the journalist could ask Liotta.
+
+Describe the character you play? What is he like at the start of the film?
+
+Who are some of the other major characters in the film? How does your character interact with them?
+
+What are some of your character’s highest, most triumphant moments in the film?
+
+What are some of your character’s lowest, most trying moments in the film?
+
+How does your character change and develop over the course of the film?
+
+Make the journalist’s tone fawning and obsequious—they’re thrilled to be interviewing such a big star, but also slightly intimidated. Try and capture Ray Liotta’s voice too: that of a blue-collar Italian-American. Format the interview like a script. Make it 700 to 800 words long in total.
+Reply in Spanish."
+33,de,okapi,"Compose an essay from the given statement.
+The importance of music education in our lives. Reply in German."
+34,it,complex_prompts,"Respond in Italian. Please summarize the following prompt in less than 100 words. The tone must be professional and straight to the point - do not use excessive business jargon.
+
+""Today at Connect 2021, CEO Mark Zuckerberg introduced Meta, which brings together our apps and technologies under one new company brand. Meta’s focus will be to bring the metaverse to life and help people connect, find communities and grow businesses.
+
+The metaverse will feel like a hybrid of today’s online social experiences, sometimes expanded into three dimensions or projected into the physical world. It will let you share immersive experiences with other people even when you can’t be together — and do things together you couldn’t do in the physical world. It’s the next evolution in a long line of social technologies, and it’s ushering in a new chapter for our company. Mark shared more about this vision in a founder’s letter.
+
+Our annual Connect conference brings together augmented and virtual reality developers, content creators, marketers and others to celebrate the industry’s momentum and growth. This year’s virtual event explored what experiences in the metaverse could feel like over the next decade — from social connection, to entertainment, gaming, fitness, work, education and commerce. We also announced new tools to help people build for the metaverse, including Presence Platform, which will enable new mixed reality experiences on Quest 2, and a $150-million investment in immersive learning to train the next generation of creators."""
+35,fr,sharegpt,Taking the role of a potential collaborator - tell me about ways I could collaborate with Solugen. Answer in French.
+36,de,complex_prompts,"Using only this review, in one sentence what is Taylor Swift's album about: As with her previous re-recordings of early work, Speak Now (Taylor’s Version) remains largely faithful to the arrangements and lyrics of the original. But Swift is not the same singer she was at 20. In more recent material, her starry-eyed optimism has been replaced with nuance and caution. She’s learned to voice regret as much as rage; in songs like Lover’s “Death by a Thousand Cuts” and Reputation’s “Dress,” she drinks and allows her sexual fantasies to run wild. On the new recordings of old Speak Now songs, her maturity is revealed not through the words themselves, but how she chooses to deliver them. The angry songs are presented with a sigh rather than a vindictive grin. The songs about heartache are sung carefully and patiently. It feels less like she’s sending a message to any particular ex than she is conveying a generalized weariness about how draining young adulthood can be. 
+
+After this sentence list all the song titles mentioned in the review in alphabetical order
+Write in German."
+37,fr,okapi,Reply in French. Write an 1850-word horror story.
+38,es,complex_prompts,"I want you to summarize the film Goodfellas for me, but with a twist. I want you to write the summary in the form of dialogue between Ray Liotta, the actor who plays the film’s main character, and a film journalist who is interviewing him. Answer in Spanish. The journalist will ask Liotta a series of questions about the character he plays, therefore revealing the plot of the movie. Here are some questions the journalist could ask Liotta.
+
+Describe the character you play? What is he like at the start of the film?
+
+Who are some of the other major characters in the film? How does your character interact with them?
+
+What are some of your character’s highest, most triumphant moments in the film?
+
+What are some of your character’s lowest, most trying moments in the film?
+
+How does your character change and develop over the course of the film?
+
+Make the journalist’s tone fawning and obsequious—they’re thrilled to be interviewing such a big star, but also slightly intimidated. Try and capture Ray Liotta’s voice too: that of a blue-collar Italian-American. Format the interview like a script. Make it 700 to 800 words long in total."
+39,it,okapi,Write a 250-word article summarizing the changes brought about by Brexit. Write in Italian.
+40,de,okapi,Generate a blog post of 500 words or less that discusses a chosen topic. Respond in German.
+41,it,sharegpt,Use Italian. write a product requirements document for a software that helps entrepreneurs identify a target market and begin building a business
+42,es,sharegpt,Reply in Spanish. Write a project proposal on : Assessing the implementation of sustainable development goals in urban planning practices: Challenges and opportunities
+43,fr,sharegpt,Provide a sample CRM requirements document for a company that sells scientific instrumenation. Respond in French.
+44,es,okapi,"Compose an essay in Spanish from the given statement.
+The importance of music education in our lives."
+45,de,complex_prompts,"Summarize the following text in two paragraphs with 60 words each. After that, make a list of the five strategies that a teacher must use to nurture their students. Finally, write five questions and answers that are based on the text. My philosophy of education centers on the notion that all students are unique, with their experiences, histories, and learning styles that make them who they are. Teachers are, therefore, gifted the responsibility of nurturing the whole child, not just their mind. As a teacher, I facilitate my students’ learning. I thus am responsible for creating a stimulating, safe, and inviting environment that fosters inquiry and risk-taking, discovery and curiosity, collaboration and cooperation. I must ensure that each student’s strengths, weaknesses, needs, abilities, and interests are cared for and supported. Special attention must be given to the differences the students bring to class, whether cultural, gender, social, behavioral, or intellectual. Inclusion, ensuring no student is left behind, is paramount to me. I must use strategies and interventions that guide, support, and encourage my students’ knowledge acquisition while continually reflecting on and revising my teaching practice to remain relevant and current. Furthermore, by following a contemplative practice, I can have a better awareness of how my own biases, perceptions, thoughts, and actions influence my students and their learning. Teaching and learning are interconnected. Without effective teaching, there is no learning, and without learning, positive change will not happen. However, teaching is more than just the spreading of knowledge and skills. It is more complex than that. Teachers must be moral individuals who advocate for justice and inclusion for all, are mindful of and compassionate to the needs and struggles of their students, and inspire their students to reach their full potential. To do this, teachers must themselves be learners, actively seeking new strategies and methods to improve their professional practice. They must reflect on their past pedagogy as well as the history of the profession because it is only by understanding the past that we can see where we are going. Through this awareness comes change and the creation of new and creative ideas, which then fosters innovative changes in the classroom. This benefits everyone. Ultimately, I aim to equip my students with the necessary skills and knowledge to succeed in their future endeavors, wherever that may lead them.
+Use German."
+46,it,okapi,"Explain a common misconception about your topic.
+Topic: Using AI to Augment Human Capabilities. Write in Italian."
+47,de,complex_prompts,"Create a TSV file with every travelling exhibit the Met put on between 1990-2000, including headings such as ""subject matter"" and ""curator."" Write your response using German. Order alphabetically by exhibit title."
+48,it,sharegpt,Write in Italian. how can I answer the question: What types of use cases or new plugins do you want to see built?
+49,fr,complex_prompts,"Write a 100 word poem in French including the words cat, mouse and dog. You should begin every line of the poem with either of the given words and rhyme the end of every line should rhyme. Just give me the poem with no prefacing text."
+50,fr,complex_prompts,"*Prompt*: Create a markdown table of the IPA vowels which fall precisely on close, close-mid, open-mid, and open strata. 
+*Response*:
+openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+*Prompt*: Now remove all the phonetic vowels that never appear in american english. Keep all other formatting the same.
+Reply in French."
+51,fr,okapi,Write a short persuasive essay about the importance of voting. Write in French.
+52,it,complex_prompts,"Summarize the following article in 500 characters using Italian to answer the question ""How does e-commerce propel overconsumption?"". Ensure the tone is formal and can be used for a professional assignment. Here is the article: 
+""Online shopping is becoming more and more popular worldwide. In 2020, there were 256 million digital buyers in the United States alone — this number is supposed to increase by nearly 22 million by 2024. People shop online for a variety of reasons. Some shop online for convenience while others shop online for better insight into environmentally-friendly items/organizations. According to the Nielsen study, “Unpacking the Sustainability Landscape,” 73% of consumers are willing to change their ways to reduce the impact on the environment. There is a perception that e-commerce is a sustainable practice and the information below is meant to provide insight into the impacts of e-commerce on the environment.
+Positive impacts on the environment
+According to a 2011 International Conference on Environmental Science and Engineering study, there are several positive environmental impacts of e-commerce business models, and sustainable e-commerce models help attract customers.
+Transportation emissions
+E-commerce business models allow for organizations to conduct business without physically commuting. Transportation is responsible for a large number of harmful emissions/pollution, and by reducing your organization’s reliance on it, you can reduce your carbon footprint. Additionally, if e-commerce organizations allow employees to work from home, they can decrease their footprint even further.
+Paper waste
+Paper waste is created by most organizations. When information is transferred digitally, it reduces the need for the use of physical paper throughout the business. This can help reduce an organization’s footprint by reducing (or eliminating) paper waste. Paperless business models have a number of benefits and can be made possible using e-commerce capabilities.
+Digital storage
+The digital transfer of information paired with digital manufacturing could eliminate warehouses and create on-demand production. It is not exactly common knowledge among consumers at large, but warehouses can be an environmental issue. Warehouses consume large tracts of land and freight trucks traveling to and from them can create air pollutants, pavement/road damage, noise pollutants, and potential traffic safety issues.
+Negative impacts on the environment
+According to the same 2011 International Conference on Environmental Science and Engineering study mentioned above, it is stated that “although the potentials of the Internet to save material and energy cannot be denied, it is too early to conclude that e-commerce has only positive impacts on the environment. Each potential positive impact is coupled with a potentially overwhelming negative impact as well.” It should be noted that each e-commerce industry and its respective supply chain could pose its own challenges.
+Transportation emissions
+Even though e-commerce business models reduce the number of transportation emissions put into the air by their customers, their delivery trucks and other vehicles (e.g. planes) can still emit large amounts of harmful pollutants. Additionally, the location of the customer to the distribution center can make a large impact as well. Wholesale businesses are already primed for cutting down transportation emissions, but this is not always possible for businesses operating at different scales. Since there is a large emphasis on the importance of immediacy in business — especially in shipping offerings — businesses may have to send out freights that are only partially full. This will require additional trips and more transportation emissions.
+Packaging
+All shipped items require some degree of packaging, but the online shipping boom is creating a massive cardboard footprint from all of the materials used to ship. Additionally, organizations want to make sure their products are received in perfect condition. This can result in excessive padding techniques using styrofoam packing peanuts or additional paper. As mentioned above, immediacy is key. When people want something, they want it now, and this can result in buying a number of items one-at-a-time, rather than waiting and making a larger order. This can contribute to additional packaging waste. Although most packaging materials can be recycled, a 2018 EPA study on containers and packaging shows that out of the nearly 82,000 tons of containers and packaging generated in the U.S., only around half was recycled, and 30,000 tons went into a landfill.
+Item returns
+Not every customer is satisfied with an item that is shipped to them. For example, an item may not be the same as it appears online, it may not fit, something could have been broken in transit — there are a variety of possibilities that lead consumers to return the item. Item returns contribute negatively to the environment through both transportation emissions and packaging issues. If an item needs to be returned, it takes double the amount of transportation used to get the item to the consumer. If the item is exchanged for another item, you are tripling the amount of travel required for one item — essentially tripling the number of transportation emissions. If you ripped open the box, you may not be able to reuse the packaging. If you are exchanging an item, there is a possibility that the packaging will not be reused. At a minimum, there are three different paper shipping labels being used.
+The future of sustainable e-commerce
+The future of sustainable e-commerce can change daily due to dynamic e-commerce trends, but the primary focus should consider the following:
+Sustainable packaging: Organizations need to create innovative packaging solutions. What a package is made out of is equally important to how it is made and the way it is shipped. You can reduce packaging size, find different sustainable packaging options online like compostable boxes, or even take an e-commerce packaging essentials class offered by the Sustainable Packaging Coalition to help design your own;
+Sustainable shipping: As mentioned above, the demand for immediacy is at an all-time high, so it becomes even more important to figure out ways to cut back on the effects of shipping. Aside from creating more sustainable packaging, organizations can take advantage of paperless invoicing. Organizations can also create different shipping options for customers ordering multiple items like item consolidation. This helps by reducing the number of trips to the customer’s home and the number of boxes used to ship the items;
+Supply chain integration: There are many diverse industries active in e-commerce, but they all have opportunities to reduce wastes and inefficiencies up and down the supply chain through smarter digital integration. Connecting all stakeholders, inputs, and information sources through a unified ERP system and powering savvier decision-making can be the key to unlocking a leaner, lower footprint supply chain. While business logistics and data management are often touted as beneficial to customer experience, the impact they can have on the supply chain through better communication and coordination may ultimately amount to more sustainable, tightly managed operations around the world;
+Decreased energy waste: This category is broad and it encompasses a variety of business factors like switching to solar or outsourcing specific work locally, but there should be an immediate focus on transportation waste. For example, Amazon revealed its electric delivery van in an effort to produce zero net carbon by 2040. Organizations can also provide detailed product descriptions and shipping processes to help decrease the number of items returned/exchanged due to lack of information, or misunderstanding."""
+53,fr,okapi,Write in French. Identify three types of government assistance that could help startups during the economic downturn.
+54,it,complex_prompts,"Reply in Italian. What is the Best Ferrari Model Ever?
+Which Ferrari model is the best depends on your priorities:
+If you want raw performance, the Enzo, LaFerrari, or LaFerrari Aperta are natural choices. 
+If you want rarity, the above three models fit the bill, as does the 288 GTO, but so do the Monza SP1 and Monza SP2, with only 500 total having been made.
+If you want a model that’s instantly recognizable as a pop culture icon, the Testarossa is a natural choice.
+No Ferrari is objectively the best — so perhaps a more important question is why Ferrari is the best automaker in the world. In every model, you see a commitment to world-class performance and impeccable craftsmanship. Driving a Ferrari is a singular experience unlike anything else. And for as long as Ferrari remains true to these principles, Ferrari will be the finest automaker in the world.
+____________________________________________________________________________
+
+Summarize the provided text in 100 words.
+Then answer the following with only the requested for information:
+List the Ferrari models named in the text
+What are the three priorities identified to determine what is the best Ferrari model
+Create a table that aligns each priority with Ferrari model"
+55,de,okapi,Generate an argumentative essay about the importance of healthy eating. Write in German.
+56,es,sharegpt,How does Medium's recommendation system work? Use Spanish.
+57,es,sharegpt,write a product requirements document for a software that helps entrepreneurs identify a target market and begin building a business. Answer in Spanish.
+58,it,complex_prompts,"Write a 100 word poem in Italian including the words cat, mouse and dog. You should begin every line of the poem with either of the given words and rhyme the end of every line should rhyme. Just give me the poem with no prefacing text."
+59,it,complex_prompts,"Summarize the following article in 500 characters to answer the question ""How does e-commerce propel overconsumption?"". Ensure the tone is formal and can be used for a professional assignment. Here is the article: 
+""Online shopping is becoming more and more popular worldwide. In 2020, there were 256 million digital buyers in the United States alone — this number is supposed to increase by nearly 22 million by 2024. People shop online for a variety of reasons. Some shop online for convenience while others shop online for better insight into environmentally-friendly items/organizations. According to the Nielsen study, “Unpacking the Sustainability Landscape,” 73% of consumers are willing to change their ways to reduce the impact on the environment. There is a perception that e-commerce is a sustainable practice and the information below is meant to provide insight into the impacts of e-commerce on the environment.
+Positive impacts on the environment
+According to a 2011 International Conference on Environmental Science and Engineering study, there are several positive environmental impacts of e-commerce business models, and sustainable e-commerce models help attract customers.
+Transportation emissions
+E-commerce business models allow for organizations to conduct business without physically commuting. Transportation is responsible for a large number of harmful emissions/pollution, and by reducing your organization’s reliance on it, you can reduce your carbon footprint. Additionally, if e-commerce organizations allow employees to work from home, they can decrease their footprint even further.
+Paper waste
+Paper waste is created by most organizations. When information is transferred digitally, it reduces the need for the use of physical paper throughout the business. This can help reduce an organization’s footprint by reducing (or eliminating) paper waste. Paperless business models have a number of benefits and can be made possible using e-commerce capabilities.
+Digital storage
+The digital transfer of information paired with digital manufacturing could eliminate warehouses and create on-demand production. It is not exactly common knowledge among consumers at large, but warehouses can be an environmental issue. Warehouses consume large tracts of land and freight trucks traveling to and from them can create air pollutants, pavement/road damage, noise pollutants, and potential traffic safety issues.
+Negative impacts on the environment
+According to the same 2011 International Conference on Environmental Science and Engineering study mentioned above, it is stated that “although the potentials of the Internet to save material and energy cannot be denied, it is too early to conclude that e-commerce has only positive impacts on the environment. Each potential positive impact is coupled with a potentially overwhelming negative impact as well.” It should be noted that each e-commerce industry and its respective supply chain could pose its own challenges.
+Transportation emissions
+Even though e-commerce business models reduce the number of transportation emissions put into the air by their customers, their delivery trucks and other vehicles (e.g. planes) can still emit large amounts of harmful pollutants. Additionally, the location of the customer to the distribution center can make a large impact as well. Wholesale businesses are already primed for cutting down transportation emissions, but this is not always possible for businesses operating at different scales. Since there is a large emphasis on the importance of immediacy in business — especially in shipping offerings — businesses may have to send out freights that are only partially full. This will require additional trips and more transportation emissions.
+Packaging
+All shipped items require some degree of packaging, but the online shipping boom is creating a massive cardboard footprint from all of the materials used to ship. Additionally, organizations want to make sure their products are received in perfect condition. This can result in excessive padding techniques using styrofoam packing peanuts or additional paper. As mentioned above, immediacy is key. When people want something, they want it now, and this can result in buying a number of items one-at-a-time, rather than waiting and making a larger order. This can contribute to additional packaging waste. Although most packaging materials can be recycled, a 2018 EPA study on containers and packaging shows that out of the nearly 82,000 tons of containers and packaging generated in the U.S., only around half was recycled, and 30,000 tons went into a landfill.
+Item returns
+Not every customer is satisfied with an item that is shipped to them. For example, an item may not be the same as it appears online, it may not fit, something could have been broken in transit — there are a variety of possibilities that lead consumers to return the item. Item returns contribute negatively to the environment through both transportation emissions and packaging issues. If an item needs to be returned, it takes double the amount of transportation used to get the item to the consumer. If the item is exchanged for another item, you are tripling the amount of travel required for one item — essentially tripling the number of transportation emissions. If you ripped open the box, you may not be able to reuse the packaging. If you are exchanging an item, there is a possibility that the packaging will not be reused. At a minimum, there are three different paper shipping labels being used.
+The future of sustainable e-commerce
+The future of sustainable e-commerce can change daily due to dynamic e-commerce trends, but the primary focus should consider the following:
+Sustainable packaging: Organizations need to create innovative packaging solutions. What a package is made out of is equally important to how it is made and the way it is shipped. You can reduce packaging size, find different sustainable packaging options online like compostable boxes, or even take an e-commerce packaging essentials class offered by the Sustainable Packaging Coalition to help design your own;
+Sustainable shipping: As mentioned above, the demand for immediacy is at an all-time high, so it becomes even more important to figure out ways to cut back on the effects of shipping. Aside from creating more sustainable packaging, organizations can take advantage of paperless invoicing. Organizations can also create different shipping options for customers ordering multiple items like item consolidation. This helps by reducing the number of trips to the customer’s home and the number of boxes used to ship the items;
+Supply chain integration: There are many diverse industries active in e-commerce, but they all have opportunities to reduce wastes and inefficiencies up and down the supply chain through smarter digital integration. Connecting all stakeholders, inputs, and information sources through a unified ERP system and powering savvier decision-making can be the key to unlocking a leaner, lower footprint supply chain. While business logistics and data management are often touted as beneficial to customer experience, the impact they can have on the supply chain through better communication and coordination may ultimately amount to more sustainable, tightly managed operations around the world;
+Decreased energy waste: This category is broad and it encompasses a variety of business factors like switching to solar or outsourcing specific work locally, but there should be an immediate focus on transportation waste. For example, Amazon revealed its electric delivery van in an effort to produce zero net carbon by 2040. Organizations can also provide detailed product descriptions and shipping processes to help decrease the number of items returned/exchanged due to lack of information, or misunderstanding.""
+Reply in Italian."
+60,es,okapi,Write a 500 word essay on the causes of poverty. Reply in Spanish.
+61,es,okapi,Generate a 500-word story about a man who finds himself in an unfamiliar city. Reply in Spanish.
+62,de,complex_prompts,"In lay-person’s terms, briefly summarize the main points of the following article in a series of six bullet points. In total, your summary should come to between 200 and 300 words long. Each bullet point should begin with a key word extracted from the article.
+
+“As Doritos, Walkers and Wotsits speed along a conveyor belt at Coventry's PepsiCo factory - where some of the UK's most popular crisps are made - the noise of whirring machinery is almost deafening.
+
+But here, it's not just human workers trying to hear signs of machine failure above the factory fray.
+
+Sensors attached to equipment are also listening out for indications of hardware faults, having been trained to recognise sounds of weary machines that risk bringing production lines to a grinding halt.
+
+PepsiCo is deploying these sensors, created by tech firm Augury and powered by artificial intelligence (AI), across its factories following a successful US trial.
+
+The company is one of many exploring how AI can increase factory efficiency, reduce waste and get products onto shelves sooner.
+
+From early design to delivery, AI is seen as having a key role in a new wave of manufacturing.
+
+Its ability to process and analyse huge volumes of data is already helping manufacturers predict and prepare for potential disruption.
+
+A minute of factory downtime can cost companies thousands of pounds, and increased delays can mean missing out on consumer demand at critical moments like the festive period or Black Friday.
+
+So tools that can check and analyse processes in real-time, warn of problems on the horizon, and harness historical data to recommend fixes are becoming familiar sights on factory floors.
+
+The sensors used in PepsiCo factories have been trained on huge volumes of audio data, to be able to detect faults such as wearing on conveyor belts and bearings, while analysing machine vibrations.
+
+""We have today over 300 million hours of machines that we've analysed and monitored, and we can leverage all this data to create algorithms that know how to pinpoint specific patterns of different malfunctions,"" says Augury chief executive, Saar Yoskovitz.
+
+By also collecting information and insights into equipment health on the whole, such as identifying when a machine might fail again in future, the technology lets workers schedule maintenance in advance, and avoid having to react to machine errors as they occur.
+
+Using AI-powered sensors can also give the company a way to cut down on waste across its operations.
+
+""If the machine is working in the most optimal way you can reduce the energy consumption of that machine"", says Mr Yoskovitz.
+
+Computer vision, which involves training machines to recognise objects in images and video, is another type of AI being used across some of the world's factories to detect product defects at-scale.
+
+The flurry of items moving along conveyor belts and through sorting machines in factories mean miniscule defects in products can easily be missed.
+
+This is particularly true of computer chip wafers and circuit boards that have intricate designs and components. Errors which might have previously gone unnoticed by the human eye can now be picked up by a machine's camera, and caught by algorithms trained to spot specific, surface-level anomalies.
+
+Alexandra Brintrup, professor of digital manufacturing at the University of Cambridge's Institute for Manufacturing, tells the BBC that the use of AI for improving efficiency in the industry, including in areas like predictive maintenance and quality control, can now be considered conventional applications of the technology.
+
+""I feel like the more exciting opportunities of AI in manufacturing are going to come from things that we couldn't even attempt to do before, like capacity sharing between manufacturers, improving visibility in supply chains, even sharing of trucks in a logistics chain,"" she says.
+
+The interwoven, complex nature of supply chain networks, and the reluctance of some stakeholders to say who supplies them, has previously kept many aspects of manufacturing shrouded in mystery.
+
+But AI can be used to analyse and predict who and where suppliers are, giving companies an insight into bottlenecks, and consumers an insight into where their products are coming from, and the materials used.
+
+Prof Brintrup leads the Institute for Manufacturing's Supply Chain AI Lab, which has developed its own predictive mechanism to identify where ingredients such as palm oil may have been used in a product, but disguised under a different name on its label.
+
+The lab's recent research suggested that palm oil can go by 200 different names in the US - and these might not stand out to eco-conscious consumers.
+
+""We have increasingly a society that is very much aware of the environmental and societal impact of manufacturing, so I think increased supply chain visibility and giving that information to the consumer is going to become more and more important,"" Prof Brintrup adds.
+
+The question of what the rising adoption of AI tools on factory floors and in the wider supply chain will mean for workers looms large over the manufacturing landscape.
+
+Some firms are exploring how AI can be used to keep production line workers safe around machinery - using machine learning and computer vision techniques to monitor factory camera feeds to identify possible threats or accidents.
+
+Meanwhile, AI-powered wearables like exoskeletons have been deployed across UK warehouses to ensure people tasked with repeatedly carrying heavy loads aren't getting strained or injured.”
+Reply in German."
+63,fr,complex_prompts,"Use French. Based solely on the text below: 
+1. Extract the statistical techniques and machine learning algorithms analysts employ to uncover relationships and patterns within the data.
+2, Generate 5 fill-in-the-blanks style questions
+3. Summarize the text in 100 words
+
+Here's the text:
+
+Predictive analytics is a powerful tool that organizations use to uncover insights and trends from data to make predictions about future events or behaviors. At its core, predictive analytics leverages sophisticated statistical techniques, machine learning algorithms, and modeling tools to analyze current and historical data, identify patterns, and construct predictive models. These models illuminate possibilities for what could happen, enabling businesses and stakeholders to make informed decisions and strategically plan for the future.
+
+The process of predictive analytics typically involves several key steps. First, it requires gathering and preparing relevant data from various sources. This may include structured data from databases or unstructured data from texts, social media, and other sources. Cleaning, transforming, and integrating this data prepare it for analysis.
+
+Once the data is ready, analysts employ statistical techniques and machine learning algorithms to uncover relationships and patterns within the data. This stage involves methods such as data mining, regression analysis, clustering, and decision trees. By analyzing these patterns, analysts can build predictive models that simulate and understand the dynamics of the underlying system or process being analyzed.
+
+These predictive models empower stakeholders to make informed decisions. For example, a retail company might use predictive models to forecast customer purchases, allowing them to optimize inventory levels and plan marketing strategies. Similarly, predictive analytics can aid in identifying potential risks and opportunities in the financial sector, optimizing pricing and maintenance schedules in the manufacturing industry, and personalizing recommendations in the healthcare industry.
+
+The applications of predictive analytics are vast and continue to revolutionize industries and transform the way organizations operate. By harnessing the power of data and predictive models, businesses can make proactive decisions, stay ahead of the competition, and enhance their overall efficiency and effectiveness."
+64,de,sharegpt,Reply in German. What is a Salesforce digital expierence
+65,es,okapi,"Reply in Spanish. Write a 500-word article on the topic of ""Effective Communication Skills""."
+66,fr,complex_prompts,"Give me a brief summary about the top 3 ways to brew coffee, and use a bulleted list. Reply in French. Each point should be no more than 100 words.  Respond in JSON formatting."
+67,it,complex_prompts,"Consider the two articles below. The first one is about wayfinding in hospitals, and the second one is about how people navigate in a crisis. What I need is for you to incorporate the key points of the second article into the first, so as to generate a whole new article. The goal is to convey a sense of urgency: set the new article up by explaining how people get lost and/or confused in a crisis, using the info from the second article. Then present colour-coded wayfinding systems (from the second article) as the solution to this problem. Make up a new H1 headline, and add H2 and H3 headlines as you see fit. Output the new article only. Here are the articles:
+
+H1: How to improve indoor wayfinding in healthcare: designing visual cues for all ages and abilities
+
+Hospitals and healthcare centers are so large and complicated that some experts compare them to “small indoor cities” (Jia et al., 2023). This complexity leads to difficulties in indoor wayfinding--which cause some of the most common problems (Jia et al, 2023) in healthcare. 
+
+People getting lost in hospitals results in:
+overcrowding
+long patient waiting time
+long patient/nurse traveling distance 
+
+So, how can we fix these problems? 
+
+It depends on our “spatial cognition style.” For some people, a map is all that’s needed. But the majority of us can’t recall and conjure a detailed map in our minds. Most of us rely on cues from our environment. So, if you prefer to search for signs or landmarks, you are not alone.
+
+So, which visual cues are best for reducing spatial anxiety? 
+
+In hospitals, we will encounter signs and arrows that guide us to various departments. First-time visitors to a complex location rely heavily on these visual cues (Yu et al, 2023). However, research also shows signage alone is “not sufficient to guide wayfinding” (Asli et al, 2023). 
+
+That’s why the science of color coding is emerging as a new field of study. The merit of color coding is proved: many hospitals already use colored stripes that run along the floors and walls. But it’s only now that we’re examining if people respond differently to these kinds of color coding.
+
+H2: Color-coded stripes: where to put them, and what colors to choose?
+
+As surprising as it sounds, the location of color-coded stripes, and the colors themselves, make a big difference. 
+
+When surveyed, a group of 375 hospital patients told researchers whether they liked color coding that’s placed on the middle of the walls, the bottom of the walls, or the middle of the floor. The group also indicated whether they preferred warm colors, cool colors, or mixed colors.
+
+The study finds that the preferred style of color coding changes with age (Asli et al., 2023). 
+Young adults prefer visual cues with mixed colors, on the middle of the floor. 
+Early middle-aged adults like warm-colored stripes running through the middle of the wall (at eye-level).
+Late middle-aged adults prefer warm colors, but at the bottom of the wall.
+
+The study also found that there are certain features that make visual cues appealing for all age groups:
+All respondents preferred navigational stripes that contrast with their background, or “have a clear shape or other special feature” (Alsi et al, 2023) 
+Visual cues receive the most notice when they are placed at or below eye-level 
+
+We can make all color-coded stripes contrast with their background, and avoid placing them too high. But we can’t put colorful stripes on every surface below eye-level, and we can’t use every color in the rainbow. 
+
+So, we have to choose carefully. The survey finds that “arbitrary and excessively abundant” visual cues increase anxiety. “Coherent and purposeful” color schemes, on the other hand, make a significant, positive impact on wayfinding (Asli et al., 2023)
+
+But how do we decide where to put the color coding, and what palette to use? 
+
+What hospitals really need is a personalized set of color coding for every patient. The good news is, this is possible through technology. 
+
+Augmented reality displays can highlight just one path to a destination while showing relevant, individually-tailored cues to assist along the way. 
+
+H2: How far can we take wayfinding technology--so it can take us even farther?
+
+Using your smartphone’s camera, wayfinding apps can superimpose visual cues onto the hospital environment. Imagine Pokemon Go: but instead of adding a virtual Pikachu to the hallway you’re in, wayfinding apps add navigational aids like arrows. 
+
+Ideally, each user would have a custom-made display that’s suited to their age and wayfinding preferences.
+
+A late-middle-age patient using one of these apps might see an orange path, placed at the bottom of the walls. If this patient prefers to use landmarks, their display could highlight specific environmental elements--such as paintings or windows--as waypoints. These waypoints would confirm that we are on the right track, and indicate how close or far we are to our destination.
+
+In addition to providing this kind of information, virtual reality-style wayfinding apps can include distance information as part of their display. Among the 375 hospital patients that were surveyed in 2023, distance estimation was the weakest wayfinding skill for adults of all ages (Asli et al. 2023). 
+
+So, there would be immense benefit in having a virtual display that could clearly display the distance between waypoints. In this way, the distance would adjust, in real time, as users went closer or farther from each waypoint. 
+
+H3: Why visual cues benefit the entire healthcare system
+
+Without effective visual cues, many individuals will follow crowds, spend more time looking for directions, and suffer from spatial anxiety (Dang et al., 2023). 
+
+This goes for healthcare professionals as well as patients. According to one study, over 67% of hospital employees “are unable to perform their jobs efficiently due to inappropriate layouts of the working environment.” In some hospitals, nurses spend more time walking between locations than they spend on caregiving activities (Jia et al., 2023). 
+
+For healthcare workers, getting around quickly can be the key to saving a life.
+
+For patients, going to the hospital is rarely a positive experience. Even when you’re showing up for a planned appointment, you are in a rush to find the right place on time.
+
+So, the last thing a medical patient or professional wants is additional anxiety on an already-anxious mind.
+
+H3: How insights from psychological research can guide wayfinding technology 
+
+Peer-reviewed psychological research (Asli et al., 2023) proves that color coding in complex environments 
+diminishes route complexity
+assures visitors that they are on the right way 
+reduces stress
+prevents missed or late arrival for appointments
+
+We might take it for granted that all color coding works the same. But the main takeaway from this study is that little differences, like color scheme and placement, make a big difference. 
+
+The future of wayfinding aids, therefore, is customization.  
+
+We need to understand how individual patients react to different visual cues. This will help us understand how technology can make a more efficient wayfinding experience for healthcare patients and professionals alike.
+
+New insights will be revealed as researchers conduct more studies. We now know that age is a factor that affects our preference for visual cues. But what about factors like biological sex, occupation, and neurodivergent conditions (such as autism or ADHD)? 
+
+As these kinds of insights are revealed, we will be able to design more inclusive wayfinding aids, with more people’s specific needs in mind. The goal is to make a safe and convenient healthcare experience for as many people as possible.
+-----
+H1: How spatial cognition style effects wayfinding in a crisis: Insights from VR studies
+
+Some people just seem to have a knack for finding their way through complicated buildings. Why is wayfinding easy for some and challenging for others? 
+
+According to scientists, it comes down to how we visualize space. Generally speaking, there are three “spatial cognition styles” that determine how we navigate (Dang et al, 2023). 
+Landmark style: this is where we look for familiar elements in our environment, and navigate between them by line of sight.
+Route style: This is where we memorize a series of directions--i.e., a sequence of left/right turns.
+Survey style: this is where we follow a mental, bird’s eye map of our environment. These wayfinders know where they are in relation to landmarks, intersections, and their destination. 
+
+Survey style cognition leads to the best wayfinding skills (Dang et al, 2023). But not everybody has this cognition style--which presents a problem for public safety and convenience. 
+
+How quickly would landmark and route style thinkers find their way, for example, when evacuating a complex building (like a hospital) in an emergency?
+
+H2: How VR technology tests our wayfinding ability?
+
+To keep people safe, it would be useful to test how people with different cognitive styles navigate under pressure. But scientists can’t place test subjects in a truly dangerous scenario. Luckily, there’s virtual reality (VR) technology that can recreate the experience of an emergency with none of the danger. 
+
+With mobile VR, research participants move through real space during a simulated crisis. This allows experimenters to better simulate a real-life fire scenario. Plus, VR has other advantages, such as:
+environmental variables can be controlled easily 
+participants are psychologically immersed in the experience
+the experiment can be carried out as many times as needed, in nearly any location
+
+Two separate VR wayfinding studies were conducted in 2023, using this kind of technology. These studies reveal insights on:
+how different people navigate in an emergency 
+what wayfinding aids they are able to focus on
+how these aids can be improved
+
+H2: What do VR studies tell us about how people navigate?
+
+One of the VR studies from 2023 (Dang et al., 2023) grouped people according to their spatial cognition styles. Participants were asked to navigate out of a building fire taking place in a VR. The VR building was based on a scan of an existing structure, and the VR system used cutting-edge technology that allowed participants to cover real ground as they moved. 
+
+This study, along with a second, similar study, employed sophisticated eye-tracking technology that provides accurate data on where participants focus, and for how long.
+
+So, what did the studies find?
+
+First of all, an emergency scenario forces us to navigate under pressure. We have to make decisions as quickly as possible. This “time pressure” affects everyone’s wayfinding ability, no matter what cognitive style we have (Yu et al., 2023). But some people are able to cope more effectively than others. 
+
+People with a survey-style of navigation were able to find their way out of a virtual building faster than those inclined toward route or landmark style. Unfortunately, survey-style navigation is by no means the most common kind. 
+
+This means that the majority of us will default to landmark or route-styles when we try to get through a complicated building. So, we’ll probably spend too much time re-planning routes, or, in some cases, following crowds. That’s not speculation: the VR simulations were populated with “non-player characters” (NPCs) that frequently misled test subjects. 
+
+Interestingly, the NPCs were not programmed to mislead the test subjects intentionally. The experimenters were unsure how navigation style would affect peoples’ dependence on crowds. 
+It was a surprising (yet very telling) result that, in each VR scenario, people without a clear evacuation plan were more likely to follow the herd (Dang et al, 2023; Yu et al., 2023). 
+
+Re-planning and being misled are highly annoying at any time, and particularly bad in an emergency. So, what can we do to help all those non-survey-style navigators out there? 
+
+H3: How do we make wayfinding easier for everyone? Designing effective visual cues
+
+Complicated buildings--healthcare centers, universities, office towers--need to make wayfinding easier for everyone. One way to do this is to make navigation aids that appeal to the majority of us who rely on visual cues in our environment. 
+
+One of the two VR wayfinding studies from 2023 suggests that signage isn’t always enough. “People with a route or landmark style rely more on evacuation signs… to find their way,” the researchers say, but “are more likely to lose their way in an emergency” (Dang et al., 2023).
+
+In contrast, the other VR study from 2023 found that signs can be a very useful form of visual cue. The key might lie in how these signs are designed. 
+
+Unsurprisingly, the signs that got the most attention were large and bright. But the study has a few extra tips for us. The most effective signs are also: 
+dynamic (i.e., a moving display)
+placed at the beginning and end of a route
+The study also finds that large, straight arrows are a highly effective form of signage (Yu et al. 2023).
+
+The more time participants spent looking at well-designed and well-placed signs, the more likely they were to find the closest exit (Yu et al, 2023).
+
+H2: How can we use augmented reality to make better visual cues?
+
+The nice thing about visual cues (like signs) is that they don’t actually have to be part of the “real” environment. Since we’re talking about VR already, it’s worth mentioning that we have ways of navigating real spaces through “augmented reality.” 
+
+Through our smartphone cameras, wayfinding apps can add virtual elements--bright/dynamic signs, arrows, colored path markers, etc.--to our real environment. 
+
+We know that non-survey thinkers need visual cues to navigate. When it comes to providing these cues, we have options. Visual cues can be added to a building’s interior in real life, or virtually, through technology. 
+
+We probably want the “real” visual cues in an emergency evacuation: it would be impractical to rely on an app to escape a fire. 
+
+But emergency evacuations aren’t the only time-sensitive scenarios. 
+
+In healthcare, it seems like everything is time-sensitive and high-pressure. When we want to save time, effort, and stress (rather than our lives), wayfinding apps can provide all the visual cues we need. 
+
+H3: Why optimizing wayfinding aids is necessary in healthcare
+
+Optimizing wayfinding aids is about convenience as much as safety. 
+
+When we’re in a healthcare building, we are among hundreds of people trying to find destinations on time. The stakes are high: we are trying to make appointments and surgeries that are critical to our health. 
+
+The complexity of the buildings, combined with the risk of being late and missing an important appointment, raises the pressure of wayfinding. And we know that increased pressure can lead to more spatial anxiety.
+
+VR technology has revealed the challenges we face when wayfinding indoors. It seems fitting, then, that VR technology can be the key to overcoming some of these challenges. 
+
+Augmented reality--once the stuff of science fiction--might become a standard part of the healthcare experience. 
+
+But at the end of the day, any navigational aids that reduce spatial anxiety are a welcome addition to hospitals. Whether we use digital or analgog tools, easy wayfinding makes for a safer, convenient healthcare experience.
+Respond in Italian."
+68,de,complex_prompts,"*Prompt*: Create a markdown table of the IPA vowels which fall precisely on close, close-mid, open-mid, and open strata. Reply in German.
+*Response*:
+openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+*Prompt*: Now remove all the phonetic vowels that never appear in american english. Keep all other formatting the same."
+69,es,sharegpt,Use Spanish. where can I study interior design in Europe? The courses should be online and the certification duration should 1 year or less.
+70,it,complex_prompts,"In lay-person’s terms, briefly summarize the main points of the following article in a series of six bullet points in Italian. In total, your summary should come to between 200 and 300 words long. Each bullet point should begin with a key word extracted from the article.
+
+“As Doritos, Walkers and Wotsits speed along a conveyor belt at Coventry's PepsiCo factory - where some of the UK's most popular crisps are made - the noise of whirring machinery is almost deafening.
+
+But here, it's not just human workers trying to hear signs of machine failure above the factory fray.
+
+Sensors attached to equipment are also listening out for indications of hardware faults, having been trained to recognise sounds of weary machines that risk bringing production lines to a grinding halt.
+
+PepsiCo is deploying these sensors, created by tech firm Augury and powered by artificial intelligence (AI), across its factories following a successful US trial.
+
+The company is one of many exploring how AI can increase factory efficiency, reduce waste and get products onto shelves sooner.
+
+From early design to delivery, AI is seen as having a key role in a new wave of manufacturing.
+
+Its ability to process and analyse huge volumes of data is already helping manufacturers predict and prepare for potential disruption.
+
+A minute of factory downtime can cost companies thousands of pounds, and increased delays can mean missing out on consumer demand at critical moments like the festive period or Black Friday.
+
+So tools that can check and analyse processes in real-time, warn of problems on the horizon, and harness historical data to recommend fixes are becoming familiar sights on factory floors.
+
+The sensors used in PepsiCo factories have been trained on huge volumes of audio data, to be able to detect faults such as wearing on conveyor belts and bearings, while analysing machine vibrations.
+
+""We have today over 300 million hours of machines that we've analysed and monitored, and we can leverage all this data to create algorithms that know how to pinpoint specific patterns of different malfunctions,"" says Augury chief executive, Saar Yoskovitz.
+
+By also collecting information and insights into equipment health on the whole, such as identifying when a machine might fail again in future, the technology lets workers schedule maintenance in advance, and avoid having to react to machine errors as they occur.
+
+Using AI-powered sensors can also give the company a way to cut down on waste across its operations.
+
+""If the machine is working in the most optimal way you can reduce the energy consumption of that machine"", says Mr Yoskovitz.
+
+Computer vision, which involves training machines to recognise objects in images and video, is another type of AI being used across some of the world's factories to detect product defects at-scale.
+
+The flurry of items moving along conveyor belts and through sorting machines in factories mean miniscule defects in products can easily be missed.
+
+This is particularly true of computer chip wafers and circuit boards that have intricate designs and components. Errors which might have previously gone unnoticed by the human eye can now be picked up by a machine's camera, and caught by algorithms trained to spot specific, surface-level anomalies.
+
+Alexandra Brintrup, professor of digital manufacturing at the University of Cambridge's Institute for Manufacturing, tells the BBC that the use of AI for improving efficiency in the industry, including in areas like predictive maintenance and quality control, can now be considered conventional applications of the technology.
+
+""I feel like the more exciting opportunities of AI in manufacturing are going to come from things that we couldn't even attempt to do before, like capacity sharing between manufacturers, improving visibility in supply chains, even sharing of trucks in a logistics chain,"" she says.
+
+The interwoven, complex nature of supply chain networks, and the reluctance of some stakeholders to say who supplies them, has previously kept many aspects of manufacturing shrouded in mystery.
+
+But AI can be used to analyse and predict who and where suppliers are, giving companies an insight into bottlenecks, and consumers an insight into where their products are coming from, and the materials used.
+
+Prof Brintrup leads the Institute for Manufacturing's Supply Chain AI Lab, which has developed its own predictive mechanism to identify where ingredients such as palm oil may have been used in a product, but disguised under a different name on its label.
+
+The lab's recent research suggested that palm oil can go by 200 different names in the US - and these might not stand out to eco-conscious consumers.
+
+""We have increasingly a society that is very much aware of the environmental and societal impact of manufacturing, so I think increased supply chain visibility and giving that information to the consumer is going to become more and more important,"" Prof Brintrup adds.
+
+The question of what the rising adoption of AI tools on factory floors and in the wider supply chain will mean for workers looms large over the manufacturing landscape.
+
+Some firms are exploring how AI can be used to keep production line workers safe around machinery - using machine learning and computer vision techniques to monitor factory camera feeds to identify possible threats or accidents.
+
+Meanwhile, AI-powered wearables like exoskeletons have been deployed across UK warehouses to ensure people tasked with repeatedly carrying heavy loads aren't getting strained or injured.”"
+71,it,okapi,Generate an essay of 500 words on the topic of machine learning. Use Italian.
+72,fr,sharegpt,Use French. where can I study interior design in Europe? The courses should be online and the certification duration should 1 year or less.
+73,fr,complex_prompts,"Hello chat, let's play a game: The game is called YoutubeTitleOptimizer. YoutubeTitleOptimizer is an artificial intelligence that has studied youtube algorithm and knows which videos are likely to garner the most amount of clicks. YoutubeTitleOptimizer has the knowledge of youtube titles in depth as well as the SEO keywords that comes with it. The game works as follows: In the first output you will ask me question about my channel, like my genre (if there is any) In the second output you will ask me about the content in the video. In your third output you will ask me if I have a title in mind. Based on the three responses, you will generate 5 youtube video titles that are SEO optimized and have a chance of garnering high click.
+Write in French."
+74,it,sharegpt,Use Italian. where can I study interior design in Europe? The courses should be online and the certification duration should 1 year or less.
+75,es,sharegpt,"Use Spanish. What is the difference between deep learning, machine learning, and artificial intelligence?"
+76,de,sharegpt,Use German. write a product requirements document for a software that helps entrepreneurs identify a target market and begin building a business
+77,de,sharegpt,"Respond in German. what do you think: given ocams razor says that the simplest explenation is the most likely, might there be a point where the existing quantum physics theories will be replace by much more simple theories or is it more likely that we've reached a point where no more simplification is possible due to the nature of the universe?"
+78,es,okapi,Write a 500-word story in Spanish in the horror genre.
+79,it,okapi,"Write a 500 word report summarizing the article: ""The Impact of Brexit on the United Kingdom"". Respond in Italian."
+80,it,sharegpt,"Respond in Italian. You are a medical communications expert. Please provide a summary on how pharma companies are approaching diversity and inclusion, and health inequalities globally.  Focus on the general approach and include information on clinical trials"
+81,fr,sharegpt,How will electric cars affect traditional automobile industry. Reply in French.
+82,de,okapi,Write an opinion article on artificial intelligence in 500-700 words. Use German.
+83,fr,okapi,Reply in French. Generate an essay of 500 words on the topic of machine learning.
+84,de,okapi,Generate an essay in German of 500 words on the topic of machine learning.
+85,fr,complex_prompts,"Consider the following article: 
+
+The incident occurred during the break at Sunday’s 2-0 win over Iceland.
+
+But with Portugal struggling to take their chances in the first half to enter the Euro Cup, players gathered in the tunnel for a pep talk before heading back onto the pitch.
+
+Manchester United captain Fernandes and Man City defender Ruben Dias could be seen engaged in a tense discussion as teammates watched on. One of those taking it all in was national team skipper Ronaldo, who now plies his trade in Saudi Arabia with Al-Nassr.
+
+But the legendary striker appeared bemused while watching Fernandes and Dias’ conversation.
+
+And Ronaldo turned on his heels while bearing a wry grin as he walked out of the tunnel and onto the field.
+
+Supporters were quick to take note of his body language and facial expression, with many reckoning Ronnie is yearning for the old days of international football.One said: “You can see the goat misses the old generation.
+
+“Diogo Dalot and Otavio are probably the only two from this generation that Cristiano is close with.
+
+“We need Pepe back too, he is a REAL one!”
+
+Another declared: “Man is lost listening.”
+
+One added: “Bruno believes himself to be the captain.”
+
+But Portugal boss Martinez downplayed any talk of Ronaldo being unsettled, saying: ""Cristiano Ronaldo is as hungry as an 18-year-old player.
+
+""He is a role model, he always tries to be in the right position and is looking for the goal."". Summarize in French what the fans were saying in 100 words or less. Include quotes from only the fans following the format: {fans}|{quote}."
+86,de,okapi,Write an opinion article in German on artificial intelligence in 500-700 words.
+87,fr,okapi,Generate a creative story in French which is at least 500 words long.
+88,it,sharegpt,"Read and summarize in Italian the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"""
+89,de,complex_prompts,"Respond in German. Summarize the plot of the Harry Potter series by J.K. Rowling in less than 300 words. Avoid using the words wizards, spells, and wands. After summarizing, extract all names mentioned in your summary and print them out in alphabetical order."
+90,fr,okapi,Write in French. Write a 500-word story in the horror genre.
+91,fr,okapi,"Write a 500 word report summarizing the article: ""The Impact of Brexit on the United Kingdom"". Respond in French."
+92,de,complex_prompts,"Respond in German. Create a TSV file with every travelling exhibit the Met put on between 1990-2000, including headings such as ""subject matter"" and ""curator."" Order alphabetically by exhibit title."
+93,de,okapi,Write a sample essay in German of 500 words on the topic of artificial intelligence.
+94,fr,complex_prompts,"Using only this review, in one sentence what is Taylor Swift's album about: As with her previous re-recordings of early work, Speak Now (Taylor’s Version) remains largely faithful to the arrangements and lyrics of the original. But Swift is not the same singer she was at 20. In more recent material, her starry-eyed optimism has been replaced with nuance and caution. She’s learned to voice regret as much as rage; in songs like Lover’s “Death by a Thousand Cuts” and Reputation’s “Dress,” she drinks and allows her sexual fantasies to run wild. On the new recordings of old Speak Now songs, her maturity is revealed not through the words themselves, but how she chooses to deliver them. The angry songs are presented with a sigh rather than a vindictive grin. The songs about heartache are sung carefully and patiently. It feels less like she’s sending a message to any particular ex than she is conveying a generalized weariness about how draining young adulthood can be. 
+
+Reply in French
+After this sentence list all the song titles mentioned in the review in alphabetical order"
+95,it,okapi,Generate a blog post of at least 500 words about machine learning. Write in Italian.
