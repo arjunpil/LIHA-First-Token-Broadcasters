@@ -36,3 +36,12 @@ its five-language run; zh/ja segmented as in the benchmark; WPR for ar, hi, ja, 
 
 The selection above says the smallest models keep each run near an hour; the first one, Qwen3-1.7B, took 1 h 19 min
 for three of its six conditions. The selection and the reading are unchanged.
+
+## Qwen2.5-3B, added 2026-10-10, 16:48 KST, before its run
+
+With all four families run, only Qwen2.5-1.5B leaves Chinese, Japanese and Russian alone. Whether that belongs to the
+Qwen2.5 family or to the 1.5B model is open, so Qwen2.5-3B (L27H13) gets the same run: the 14 non-English languages
+and English, zero and mean ablation, three random controls from layer 27 (seed 0), its settings from section 8 (fp32,
+batch 250, token budget 8000). The reading is the one above, unchanged. If 3B shares the pattern, it is read as a
+Qwen2.5 trait; if not, as a property of the 1.5B model. Both outcomes are reported. This is the last run added before
+submission.

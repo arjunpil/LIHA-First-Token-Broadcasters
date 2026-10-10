@@ -33,3 +33,11 @@ The Qwen3-4B pipeline was set up before the steering runs and picks its LCB head
 head is picked again by the rule above. If it differs, the LCB run is kept under its own name and LCB is rerun with
 the rule's head. That head then gets the diagnosis, steering and the quality check, as the other models did. If no
 head passes, Qwen3-4B is reported as having no head of this kind.
+
+## SmolLM3-3B crosslingual screen, added 2026-10-10, 16:48 KST, before the run
+
+SmolLM3-3B has no head on the FLORES screen apart from L1H12, which breaks generation (dNLL +2.58). As for the two
+Llamas and Qwen3-4B, every head is zero-ablated on the same 100 crosslingual LCB prompts (25 per language). The
+strongest head is the one that lowers the screen's pass rate most among the heads with dNLL <= 1 on the FLORES screen,
+which leaves out L1H12 only. If it lowers the pass rate by 0.1 or more, it gets the full five-language LCB run with
+three same-layer controls; otherwise SmolLM3-3B is reported as having no crosslingual head on this screen.
