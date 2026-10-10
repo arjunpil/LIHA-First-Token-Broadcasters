@@ -2,7 +2,6 @@ import argparse
 import csv
 import json
 from pathlib import Path
-from statistics import mean
 
 import matplotlib
 matplotlib.use("Agg")

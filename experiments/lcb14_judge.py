@@ -14,17 +14,17 @@ TASKS = ("monolingual", "crosslingual")
 
 def load(d):
     rows, p = {}, Path(d) / "samples.jsonl"
-    f = open(p, encoding="utf-8") if p.exists() else gzip.open(f"{p}.gz", "rt", encoding="utf-8")
-    for line in f:
-        r = json.loads(line)
-        rows.setdefault(r["cond"], []).append(r)
+    with open(p, encoding="utf-8") if p.exists() else gzip.open(f"{p}.gz", "rt", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            rows.setdefault(r["cond"], []).append(r)
     return rows
 
 
 def change(base, cond, idx):
     both = [i for i in idx if not base[i]["skipped"] and not cond[i]["skipped"]]
-    if not both:
-        return None, 0
+    if not both:  # nothing scored in both runs: no change to read, never counted as affected
+        return (float("nan"),) * 3, 0
     return paired_ci([base[i]["pass"] for i in both], [cond[i]["pass"] for i in both]), len(both)
 
 
@@ -59,7 +59,8 @@ def report(res):
              "against base on prompts both runs score, bootstrap 95% CI. Affected = CI below zero and Δ below every "
              "control's Δ.", ""]
     for t, langs in res["tasks"].items():
-        lines += [f"## {t}", "", "| language | n | Δ head | 95% CI | Δ controls | affected |", "|---|---|---|---|---|---|"]
+        lines += [f"## {t}", "", "| language | n | Δ head | 95% CI | Δ controls | affected |",
+                  "|---|---|---|---|---|---|"]
         for l, r in langs.items():
             lines.append(f"| {l} | {r['n']} | {r['delta']:+.3f} | [{r['ci'][0]:+.3f}, {r['ci'][1]:+.3f}] | "
                          + ", ".join(f"{c:+.3f}" for c in r["controls"]) + f" | {'yes' if r['affected'] else ''} |")
