@@ -157,7 +157,10 @@ def main():
         texts = {}
         for r in saved:
             texts.setdefault(r["cond"], []).append(r["text"])
-        controls = json.load(open(out / "summary.json"))["controls"]
+        prev = json.load(open(out / "summary.json"))
+        controls = prev["controls"]
+        for k in ("bs", "token_budget", "dtype", "limit", "per_lang", "seed", "temperature", "sample_seed"):
+            setattr(a, k, prev["args"].get(k, getattr(a, k)))  # keep the generation settings, not this call's defaults
         with open(out / "samples.jsonl", "w", encoding="utf-8") as f:
             for cond, t in texts.items():
                 record(f, cond, t)

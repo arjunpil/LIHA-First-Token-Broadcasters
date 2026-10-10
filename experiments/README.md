@@ -39,6 +39,11 @@ python experiments/robustness.py --lid lid.176.bin      # other detectors and sp
 python experiments/checks.py run qwen-system --per-lang 500 --out out/qwen-system-2500  # default / no / translated system prompt
 python experiments/lcb.py --model qwen-instruct --heads L22H6,L17H7,L17H8 --scale L22H6:2,L17H7:2,L17H8:3
 python experiments/lcb.py --model qwen-instruct --heads L22H6 --report-only   # rescore saved LCB replies
+python experiments/diagnose.py run --model qwen-instruct --head L22H6   # why zero and mean ablation differ
+python experiments/steer.py --model gemma3-1b-instruct --head L11H3 --add   # steering on LCB, after diagnose
+python experiments/steer_quality.py --model gemma3-1b-instruct   # content and fluency of the steered replies
+python experiments/detectors.py --lid lid.176.bin   # other language detectors and CIs for the instruct heads
+python experiments/lcb_wpr.py --dir out/qwen-instruct-lcb-all --words lcb_words   # LCB word-level pass rate
 python experiments/lcb.py --model qwen-instruct --heads L22H6 --temperature 0.7 --sample-seed 0 \
     --out out/qwen-instruct-lcb-t07-s0            # sampling with the model's top-p / top-k
 python experiments/lcb.py --model llama3.2-1b-instruct --screen --tasks crosslingual --per-lang 25 \
