@@ -1,0 +1,49 @@
+{
+  "model_id": "google/gemma-3-1b-it",
+  "requested_revision": null,
+  "resolved_revision": "dcc83ea841ab6100d6b47a070329e1ba4cf78752",
+  "transformers": "5.18.0",
+  "torch": "2.11.0+cu130",
+  "dtype": "torch.float32",
+  "attention_backend": "eager",
+  "layer": 11,
+  "head": 3,
+  "control_head": 0,
+  "head_dim": 256,
+  "n_query_heads": 4,
+  "sample_seed": 20261009,
+  "sample_per_language": 24,
+  "LCB_source_url": "https://raw.githubusercontent.com/for-ai/language-confusion/HEAD/test_sets.zip",
+  "LCB_archive_sha256": "3425337489fa65ff15d977e981e9748c86ce8e88ef0f4457ecdb4a65d8702712",
+  "LCB_source_pool_counts": {
+    "de": {
+      "complex_prompts": 99,
+      "okapi": 100,
+      "sharegpt": 100
+    },
+    "es": {
+      "complex_prompts": 99,
+      "okapi": 100,
+      "sharegpt": 100
+    },
+    "fr": {
+      "complex_prompts": 99,
+      "okapi": 100,
+      "sharegpt": 100
+    },
+    "it": {
+      "complex_prompts": 99,
+      "okapi": 100,
+      "sharegpt": 100
+    }
+  },
+  "max_new_tokens": 100,
+  "attention_only": false,
+  "limitations": [
+    "fresh LCB prompts selected based only on explicit language names, not model outcomes",
+    "L11H3 and L11H0 are query attention heads; L11H0 is not an attention-matched control",
+    "masking starts in cached decoding; first token remains unchanged by design",
+    "LCB baseline accuracy may be low for Gemma 3 1B; report baseline-conditioned failures",
+    "measuring attention to language names does not establish semantic use of those tokens"
+  ]
+}
