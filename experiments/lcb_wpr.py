@@ -37,23 +37,26 @@ def main():
         c = cnt[(r["cond"], r["task"], lang, r["source"])]
         c[0] += 1
         c[1] += any(t.strip() in en_words for t in toks)
-    res = defaultdict(dict)
+    res, size = defaultdict(dict), defaultdict(lambda: defaultdict(int))
     for (cond, task, lang, src), (n, bad) in cnt.items():
         res[(cond, task)].setdefault(lang, []).append(1 - bad / max(1, n))
+        size[(cond, task)][lang] += n
     conds = list(dict.fromkeys(k[0] for k in cnt))
     out, lines = {}, [f"# WPR for {d.name}", "",
                       "Share of the replies without line errors that contain no English word, averaged over sources "
-                      "per language, then over languages.", "",
+                      "per language, then over languages. In brackets: the number of such replies, which is small "
+                      "where the head's removal leaves few replies in the language.", "",
                       "| condition | task | " + " | ".join(WPR_LANGS) + " | mean |", "|---|---|" + "---|" * 7]
     for cond in conds:
         for task in ("monolingual", "crosslingual"):
             per = {l: float(np.mean(v)) for l, v in res[(cond, task)].items()}
             if not per:
                 continue
+            n = dict(size[(cond, task)])
             mean = float(np.mean(list(per.values())))
-            out[f"{cond}/{task}"] = {"per_language": per, "mean": mean}
-            lines.append(f"| {cond} | {task} | " + " | ".join(f"{per[l]:.2f}" if l in per else "" for l in WPR_LANGS)
-                         + f" | {mean:.3f} |")
+            out[f"{cond}/{task}"] = {"per_language": per, "n": n, "mean": mean}
+            lines.append(f"| {cond} | {task} | " + " | ".join(f"{per[l]:.2f} ({n[l]})" if l in per else ""
+                                                              for l in WPR_LANGS) + f" | {mean:.3f} |")
     json.dump(out, open(d / "wpr.json", "w"), indent=1)
     (d / "wpr.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))

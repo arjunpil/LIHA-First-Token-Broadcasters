@@ -1,0 +1,29 @@
+MITra published language-head scores, github.com/Blyzi/mitra at daa721b15f300dc16319ad42f0aa49ea9331bc3e, results/translation_task/logprobs_diff_lang
+
+== Qwen3-1.7B-Base: 28 layers x 16 heads, 20 directions, examples per direction 50-142
+  top head per direction, counted (their rule):
+    L18H12: 20 of 20 directions (10 en->X)
+  ours L18H12: top in 20 directions
+  mean over all directions (20): ours rank 1 of 448, score +5.056; top L18H12 +5.056
+  mean over en->X (10): ours rank 1 of 448, score +7.742; top L18H12 +7.742
+  mean over X->en (10): ours rank 1 of 448, score +2.370; top L18H12 +2.370
+  en->fr only: ours rank 1, top L18H12, examples 50; top head per example: L18H12 49, L11H9 1
+== Llama-3.2-1B: 16 layers x 32 heads, 20 directions, examples per direction 142-142
+  top head per direction, counted (their rule):
+    L8H25: 7 of 20 directions (6 en->X)
+    L9H8: 7 of 20 directions (0 en->X)
+    L13H4: 4 of 20 directions (4 en->X)
+    L9H9: 2 of 20 directions (0 en->X)
+  ours L8H25: top in 7 directions
+  mean over all directions (20): ours rank 1 of 512, score +2.314; top L8H25 +2.314
+  mean over en->X (10): ours rank 1 of 512, score +3.807; top L8H25 +3.807
+  mean over X->en (10): ours rank 3 of 512, score +0.820; top L9H8 +1.068
+  en->fr only: ours rank 1, top L8H25, examples 142; top head per example: L8H25 90, L12H7 47, L1H12 2
+== gemma-3-1b-pt: 26 layers x 4 heads, 20 directions, examples per direction 142-142
+  top head per direction, counted (their rule):
+    L15H2: 20 of 20 directions (10 en->X)
+  ours L11H3: top in 0 directions
+  mean over all directions (20): ours rank 3 of 104, score +1.424; top L15H2 +6.021
+  mean over en->X (10): ours rank 5 of 104, score +0.896; top L15H2 +8.407
+  mean over X->en (10): ours rank 2 of 104, score +1.952; top L15H2 +3.635
+  en->fr only: ours rank 4, top L15H2, examples 142; top head per example: L15H2 134, L11H0 5, L0H2 2

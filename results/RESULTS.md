@@ -713,3 +713,38 @@ prompts: baseline 0.939, L13H19 0.616, next L8H13 0.879. Full five-language LCB 
 controls: monolingual 0.993, +0.000 [-0.006, +0.006] (mean -0.005); crosslingual 0.911, -0.335 [-0.363, -0.308] (mean
 -0.250); controls +0.000 to +0.006 monolingual and -0.003 to +0.000 crosslingual; English crosslingual lines 0.05 to
 0.36. Like Llama-3.2-1B's L8H25, it acts on requested languages only.
+
+# Qwen3-1.7B LCB in 14 languages, 2026-10-10
+
+results/qwen3-1.7b-instruct-lcb-all, read with lcb14_judge.py as fixed in experiments/lcb14_plan.md (judge.md). The
+same reading of the Qwen2.5-1.5B run is in results/qwen-instruct-lcb-all/judge.md.
+
+| condition | mono LPR | Δ mono | cross LPR | Δ cross |
+|---|---|---|---|---|
+| base | 0.971 | | 0.789 | |
+| L18H12 zero | 0.658 | -0.293 [-0.313, -0.273] | 0.198 | -0.592 [-0.608, -0.577] |
+| L18H12 mean | 0.661 | -0.304 [-0.324, -0.284] | 0.294 | -0.497 [-0.514, -0.481] |
+| 3 controls (L18H6, L18H13, L18H14) | 0.966 to 0.975 | -0.004 to +0.003 | 0.791 to 0.797 | +0.002 to +0.009 |
+
+Affected languages (CI below zero and below every control): 12 of 14 monolingual, all but vi (-0.020 [-0.060,
++0.020]) and zh (-0.015 [-0.065, +0.035]), with ja -0.570, ru -0.300 and hi -0.220; 14 of 14 crosslingual (-0.456 to
+-0.760). Qwen2.5-1.5B under the same reading: 10 of 14 monolingual (not de, ja, ru, zh) and 12 of 14 crosslingual (not
+ja, ru). The planned check (hi affected, zh/ja/ru not) holds for Qwen2.5-1.5B and not for Qwen3-1.7B.
+
+WPR (wpr.md, now with the number of replies per cell): baseline 0.97 to 1.00 monolingual and 0.89 to 0.96
+crosslingual; under ablation some cells rest on few replies (crosslingual ko 1, zh 12, ja 16) and are not read.
+Skipped replies under zero ablation: 28 of 2,200 monolingual (3 at baseline), 68 of 4,186 crosslingual (66).
+
+# Language heads under MITra's method, 2026-10-10
+
+results/mitra-check/summary.txt (mitra_rank.py). The per-head language scores published with Translation Heads
+(arXiv 2602.04613; github.com/Blyzi/mitra, commit daa721b), base models, 20 directions (English to and from 10
+languages), 50 to 142 FLORES examples each, ranked with their top-head rule (number of directions a head tops).
+
+| model | their top heads (directions topped) | our head | our head, rank on the mean over 20 directions |
+|---|---|---|---|
+| Qwen3-1.7B-Base | L18H12 (20) | L18H12 | 1 of 448 |
+| Llama-3.2-1B | L8H25 (7: 6 from English), L9H8 (7: all into English), L13H4 (4) | L8H25 | 1 of 512 |
+| Gemma-3-1B-pt | L15H2 (20) | L11H3 | 3 of 104 |
+
+On en->fr, L8H25 tops 90 of Llama's 142 examples and L12H7 47; the one-example check in ctli PR #14 had L12H7 first.
