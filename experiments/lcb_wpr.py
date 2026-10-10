@@ -2,6 +2,7 @@
 whose lines are all in the expected language, the share with no English dictionary word (lowercase, longer than
 three letters). The benchmark reports it for ar, hi, ja, ko, ru and zh only."""
 import argparse
+import gzip
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -23,8 +24,10 @@ def main():
     en_words = {w for w in en_words if w.islower() and len(w) > 3}
     # per condition, task, language and source: [replies scored without line errors, of them with an English word]
     cnt = defaultdict(lambda: [0, 0])
-    for line in open(d / "samples.jsonl", encoding="utf-8"):
-        r = json.loads(line)
+    path = d / "samples.jsonl"
+    with open(path, encoding="utf-8") if path.exists() else gzip.open(f"{path}.gz", "rt", encoding="utf-8") as f:
+        rows = [json.loads(line) for line in f]
+    for r in rows:
         lang = r["language"]
         if lang not in WPR_LANGS or r["skipped"] or not r["pass"]:
             continue
