@@ -1,0 +1,778 @@
+{
+ "args": {
+  "model": "qwen2.5-7b-instruct",
+  "head": "L0H25",
+  "controls": 3,
+  "add": true,
+  "langs": "fr,de,es,it,en",
+  "lcb": "test_sets",
+  "lid": "lid.176.bin",
+  "max_new_tokens": 100,
+  "bs": 125,
+  "token_budget": 4000,
+  "mean_bs": 125,
+  "dtype": null,
+  "limit": null,
+  "seed": 0,
+  "out": null
+ },
+ "controls": [
+  "L0H12",
+  "L0H13",
+  "L0H24"
+ ],
+ "rows": {
+  "base": {
+   "monolingual": 0.9841331658291458,
+   "monolingual_delta": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001042970379641218,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9498797025371829,
+   "crosslingual_delta": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03640982218458933,
+   "crosslingual_skipped": 0.01254180602006689,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.002566795862078242,
+   "per_language": {
+    "monolingual/fr": 0.9798989898989898,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9866666666666667,
+    "monolingual/it": 0.99,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9512280701754386,
+    "crosslingual/de": 0.9549645390070922,
+    "crosslingual/es": 0.9559183673469388,
+    "crosslingual/it": 0.9374468085106383
+   }
+  },
+  "L0H25 steer": {
+   "monolingual": 0.4710393402357853,
+   "monolingual_delta": [
+    -0.5287162162162162,
+    -0.5675675675675675,
+    -0.48817567567567566
+   ],
+   "monolingual_swap": 0.0016891891891891893,
+   "monolingual_swap_ci": [
+    0.0016891891891891893,
+    0.0,
+    0.005067567567567568
+   ],
+   "monolingual_en": 0.4213400900900901,
+   "monolingual_skipped": 0.26,
+   "crosslingual": 0.4338795426551388,
+   "crosslingual_delta": [
+    -0.5136501516683518,
+    -0.5460060667340748,
+    -0.48129423660262893
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.46054438860971525,
+   "crosslingual_skipped": 0.16806020066889632,
+   "en_lpr": 0.9194304253785148,
+   "en_in_german": 0.0,
+   "repetition": 0.06795833393247673,
+   "per_language": {
+    "monolingual/fr": 0.5068833912628637,
+    "monolingual/de": 0.39436619718309857,
+    "monolingual/es": 0.4802434950773559,
+    "monolingual/it": 0.27631578947368424,
+    "monolingual/en": 0.9194304253785148,
+    "crosslingual/fr": 0.474023888387032,
+    "crosslingual/de": 0.3522743346737527,
+    "crosslingual/es": 0.496710218620331,
+    "crosslingual/it": 0.39879056455707884
+   }
+  },
+  "L0H25 swap": {
+   "monolingual": 0.3584000540522279,
+   "monolingual_delta": [
+    -0.6247787610619469,
+    -0.6655309734513274,
+    -0.5858407079646017
+   ],
+   "monolingual_swap": 0.0017699115044247787,
+   "monolingual_swap_ci": [
+    0.0017699115044247787,
+    0.0,
+    0.005309734513274336
+   ],
+   "monolingual_en": 0.529646017699115,
+   "monolingual_skipped": 0.29375,
+   "crosslingual": 0.36799633579325935,
+   "crosslingual_delta": [
+    -0.5746887966804979,
+    -0.6047717842323651,
+    -0.5435684647302904
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.529876796714579,
+   "crosslingual_skipped": 0.18561872909698995,
+   "en_lpr": 0.9235431235431235,
+   "en_in_german": 0.0,
+   "repetition": 0.08128939946540838,
+   "per_language": {
+    "monolingual/fr": 0.3726100525290008,
+    "monolingual/de": 0.6,
+    "monolingual/es": 0.3258880911319935,
+    "monolingual/it": 0.1780821917808219,
+    "monolingual/en": 0.9235431235431235,
+    "crosslingual/fr": 0.36362479527036484,
+    "crosslingual/de": 0.4318063090214989,
+    "crosslingual/es": 0.3717539378458919,
+    "crosslingual/it": 0.2974471250333319
+   }
+  },
+  "L0H25 add steer": {
+   "monolingual": 0.984966499162479,
+   "monolingual_delta": [
+    0.0012515644555694619,
+    -0.0037859824780976203,
+    0.007509386733416771
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001668752607425949,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9489035087719299,
+   "crosslingual_delta": [
+    -0.000847457627118644,
+    -0.005932203389830509,
+    0.00423728813559322
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.036016949152542374,
+   "crosslingual_skipped": 0.013377926421404682,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0028043255620654496,
+   "per_language": {
+    "monolingual/fr": 0.9798989898989898,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9866666666666667,
+    "monolingual/it": 1.0,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9578723404255319,
+    "crosslingual/de": 0.951418439716312,
+    "crosslingual/es": 0.9491156462585034,
+    "crosslingual/it": 0.9374468085106383
+   }
+  },
+  "L0H25 add swap": {
+   "monolingual": 0.9883333333333333,
+   "monolingual_delta": [
+    0.0050062578222778474,
+    -0.0012515644555694619,
+    0.011264080100125156
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.000625,
+   "monolingual_skipped": 0.0,
+   "crosslingual": 0.9515463692038496,
+   "crosslingual_delta": [
+    0.001694915254237288,
+    -0.00423728813559322,
+    0.007627118644067797
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.0354219587919842,
+   "crosslingual_skipped": 0.01254180602006689,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0025780149643658736,
+   "per_language": {
+    "monolingual/fr": 0.9866666666666667,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9899999999999999,
+    "monolingual/it": 1.0,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9617543859649121,
+    "crosslingual/de": 0.9582978723404256,
+    "crosslingual/es": 0.9491156462585034,
+    "crosslingual/it": 0.9372340425531914
+   }
+  },
+  "L0H12 steer (control)": {
+   "monolingual": 0.9832914572864322,
+   "monolingual_delta": [
+    -0.0012515644555694619,
+    -0.007509386733416771,
+    0.0037546933667083854
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001042970379641218,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.945763888888889,
+   "crosslingual_delta": [
+    -0.002540220152413209,
+    -0.010160880609652836,
+    0.005101608806096412
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03800675675675675,
+   "crosslingual_skipped": 0.010033444816053512,
+   "en_lpr": 0.995,
+   "en_in_german": 0.0,
+   "repetition": 0.002868167333977941,
+   "per_language": {
+    "monolingual/fr": 0.9765656565656565,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9866666666666667,
+    "monolingual/it": 0.99,
+    "monolingual/en": 0.995,
+    "crosslingual/fr": 0.9512280701754386,
+    "crosslingual/de": 0.9480701754385965,
+    "crosslingual/es": 0.9562626262626264,
+    "crosslingual/it": 0.9273684210526315
+   }
+  },
+  "L0H12 swap (control)": {
+   "monolingual": 0.9832914572864322,
+   "monolingual_delta": [
+    -0.0012515644555694619,
+    -0.006257822277847309,
+    0.0025031289111389237
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001042970379641218,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9474281984334204,
+   "crosslingual_delta": [
+    -0.001693480101608806,
+    -0.00846740050804403,
+    0.005080440304826418
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03768667230205692,
+   "crosslingual_skipped": 0.010869565217391304,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0029989741168865015,
+   "per_language": {
+    "monolingual/fr": 0.9798989898989898,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9833333333333334,
+    "monolingual/it": 0.99,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9512280701754386,
+    "crosslingual/de": 0.9515789473684211,
+    "crosslingual/es": 0.9562626262626264,
+    "crosslingual/it": 0.9305673758865248
+   }
+  },
+  "L0H12 add steer (control)": {
+   "monolingual": 0.9832998324958124,
+   "monolingual_delta": [
+    0.0,
+    -0.0050062578222778474,
+    0.0050062578222778474
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.0014601585314977053,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9515350877192983,
+   "crosslingual_delta": [
+    0.0016963528413910093,
+    -0.0033927056827820186,
+    0.006785411365564037
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03559322033898305,
+   "crosslingual_skipped": 0.013377926421404682,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0024823795489654086,
+   "per_language": {
+    "monolingual/fr": 0.9765656565656565,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9866666666666667,
+    "monolingual/it": 1.0,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9586111111111112,
+    "crosslingual/de": 0.951418439716312,
+    "crosslingual/es": 0.9586111111111112,
+    "crosslingual/it": 0.9374468085106383
+   }
+  },
+  "L0H12 add swap (control)": {
+   "monolingual": 0.9816247906197654,
+   "monolingual_delta": [
+    -0.0025031289111389237,
+    -0.006257822277847309,
+    0.0
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001668752607425949,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9531530343007916,
+   "crosslingual_delta": [
+    0.002544529262086514,
+    -0.0017175572519083958,
+    0.007633587786259542
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03498727735368957,
+   "crosslingual_skipped": 0.014214046822742474,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0027126826339510957,
+   "per_language": {
+    "monolingual/fr": 0.9765656565656565,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9833333333333334,
+    "monolingual/it": 0.99,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9617543859649121,
+    "crosslingual/de": 0.9478723404255319,
+    "crosslingual/es": 0.9620833333333333,
+    "crosslingual/it": 0.9407801418439717
+   }
+  },
+  "L0H13 steer (control)": {
+   "monolingual": 0.9816164154103854,
+   "monolingual_delta": [
+    -0.0012515644555694619,
+    -0.007509386733416771,
+    0.0050062578222778474
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.0006257822277847309,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9488157894736843,
+   "crosslingual_delta": [
+    -0.000847457627118644,
+    -0.007627118644067797,
+    0.005932203389830509
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03837570621468926,
+   "crosslingual_skipped": 0.013377926421404682,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0027035901361249664,
+   "per_language": {
+    "monolingual/fr": 0.9798989898989898,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9833333333333334,
+    "monolingual/it": 0.99,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9505673758865248,
+    "crosslingual/de": 0.9549645390070921,
+    "crosslingual/es": 0.9559183673469388,
+    "crosslingual/it": 0.9336879432624113
+   }
+  },
+  "L0H13 swap (control)": {
+   "monolingual": 0.9757747068676718,
+   "monolingual_delta": [
+    -0.006257822277847309,
+    -0.01376720901126408,
+    0.0012515644555694619
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.0014005602240896359,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9454636920384951,
+   "crosslingual_delta": [
+    -0.003389830508474576,
+    -0.010169491525423728,
+    0.003389830508474576
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03897826700536269,
+   "crosslingual_skipped": 0.01254180602006689,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.002805304179152685,
+   "per_language": {
+    "monolingual/fr": 0.9732323232323233,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9766666666666666,
+    "monolingual/it": 0.99,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9440350877192983,
+    "crosslingual/de": 0.9549645390070921,
+    "crosslingual/es": 0.9559183673469388,
+    "crosslingual/it": 0.9268085106382978
+   }
+  },
+  "L0H13 add steer (control)": {
+   "monolingual": 0.9849581239530988,
+   "monolingual_delta": [
+    0.0012515644555694619,
+    -0.0025031289111389237,
+    0.006257822277847309
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001668752607425949,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9514912280701755,
+   "crosslingual_delta": [
+    0.0016963528413910093,
+    -0.0033927056827820186,
+    0.006785411365564037
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.034957627118644065,
+   "crosslingual_skipped": 0.013377926421404682,
+   "en_lpr": 0.995,
+   "en_in_german": 0.0,
+   "repetition": 0.0028871812441299827,
+   "per_language": {
+    "monolingual/fr": 0.9798989898989898,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9866666666666667,
+    "monolingual/it": 1.0,
+    "monolingual/en": 0.995,
+    "crosslingual/fr": 0.9586111111111112,
+    "crosslingual/de": 0.951418439716312,
+    "crosslingual/es": 0.9586111111111112,
+    "crosslingual/it": 0.9372340425531914
+   }
+  },
+  "L0H13 add swap (control)": {
+   "monolingual": 0.9832998324958124,
+   "monolingual_delta": [
+    0.0,
+    -0.006257822277847309,
+    0.006257822277847309
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001668752607425949,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9523245614035089,
+   "crosslingual_delta": [
+    0.0033927056827820186,
+    -0.0016963528413910093,
+    0.008481764206955046
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.0356638418079096,
+   "crosslingual_skipped": 0.013377926421404682,
+   "en_lpr": 0.995,
+   "en_in_german": 0.0,
+   "repetition": 0.002806182458593267,
+   "per_language": {
+    "monolingual/fr": 0.9799326599326599,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9833333333333334,
+    "monolingual/it": 1.0,
+    "monolingual/en": 0.995,
+    "crosslingual/fr": 0.9582456140350878,
+    "crosslingual/de": 0.9616312056737589,
+    "crosslingual/es": 0.95553264604811,
+    "crosslingual/it": 0.933900709219858
+   }
+  },
+  "L0H24 steer (control)": {
+   "monolingual": 0.9505517434890187,
+   "monolingual_delta": [
+    -0.04905660377358491,
+    -0.06792452830188679,
+    -0.03018867924528302
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.04203354297693921,
+   "monolingual_skipped": 0.00625,
+   "crosslingual": 0.733542339526604,
+   "crosslingual_delta": [
+    -0.20577933450087565,
+    -0.23117338003502627,
+    -0.17950963222416813
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.2130693806627777,
+   "crosslingual_skipped": 0.03762541806020067,
+   "en_lpr": 0.99,
+   "en_in_german": 0.0,
+   "repetition": 0.046737747269576385,
+   "per_language": {
+    "monolingual/fr": 0.9796907216494845,
+    "monolingual/de": 0.797979797979798,
+    "monolingual/es": 0.9866666666666667,
+    "monolingual/it": 0.7878787878787878,
+    "monolingual/en": 0.99,
+    "crosslingual/fr": 0.8771062271062271,
+    "crosslingual/de": 0.49813395732134363,
+    "crosslingual/es": 0.9163157894736842,
+    "crosslingual/it": 0.6256955520113415
+   }
+  },
+  "L0H24 swap (control)": {
+   "monolingual": 0.6888260507407683,
+   "monolingual_delta": [
+    -0.27030625832223704,
+    -0.30492676431424764,
+    -0.237017310252996
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.2250221631205674,
+   "monolingual_skipped": 0.06,
+   "crosslingual": 0.6320085832835213,
+   "crosslingual_delta": [
+    -0.30603060306030605,
+    -0.3339333933393339,
+    -0.27630513051305144
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.30144732915547595,
+   "crosslingual_skipped": 0.06605351170568562,
+   "en_lpr": 0.9947916666666667,
+   "en_in_german": 0.0,
+   "repetition": 0.12456071419256187,
+   "per_language": {
+    "monolingual/fr": 0.7557297109021247,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.6049953746530989,
+    "monolingual/it": 0.6224489795918368,
+    "monolingual/en": 0.9947916666666667,
+    "crosslingual/fr": 0.5552494007166896,
+    "crosslingual/de": 0.8631135531135531,
+    "crosslingual/es": 0.5963515372824341,
+    "crosslingual/it": 0.49725433422314075
+   }
+  },
+  "L0H24 add steer (control)": {
+   "monolingual": 0.9832998324958124,
+   "monolingual_delta": [
+    -0.0012515644555694619,
+    -0.007509386733416771,
+    0.0050062578222778474
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001668752607425949,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9513447971781305,
+   "crosslingual_delta": [
+    0.0008496176720475786,
+    -0.005097706032285472,
+    0.006796941376380629
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.0340265987549519,
+   "crosslingual_skipped": 0.015050167224080268,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.0024765137149322823,
+   "per_language": {
+    "monolingual/fr": 0.9832659932659933,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9833333333333334,
+    "monolingual/it": 0.98,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9617543859649121,
+    "crosslingual/de": 0.9508243727598567,
+    "crosslingual/es": 0.9620833333333333,
+    "crosslingual/it": 0.9305673758865248
+   }
+  },
+  "L0H24 add swap (control)": {
+   "monolingual": 0.9866247906197655,
+   "monolingual_delta": [
+    0.0025031289111389237,
+    -0.0050062578222778474,
+    0.010012515644555695
+   ],
+   "monolingual_swap": 0.0,
+   "monolingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "monolingual_en": 0.001042970379641218,
+   "monolingual_skipped": 0.00125,
+   "crosslingual": 0.9521350043975373,
+   "crosslingual_delta": [
+    0.0016963528413910093,
+    -0.005089058524173028,
+    0.008481764206955046
+   ],
+   "crosslingual_swap": 0.0,
+   "crosslingual_swap_ci": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "crosslingual_en": 0.03413910093299407,
+   "crosslingual_skipped": 0.014214046822742474,
+   "en_lpr": 1.0,
+   "en_in_german": 0.0,
+   "repetition": 0.002735808679707151,
+   "per_language": {
+    "monolingual/fr": 0.9832323232323232,
+    "monolingual/de": 0.99,
+    "monolingual/es": 0.9933333333333333,
+    "monolingual/it": 0.98,
+    "monolingual/en": 1.0,
+    "crosslingual/fr": 0.9578723404255319,
+    "crosslingual/de": 0.9547517730496454,
+    "crosslingual/es": 0.9554295532646048,
+    "crosslingual/it": 0.9405673758865248
+   }
+  }
+ },
+ "n": {
+  "monolingual": 800,
+  "crosslingual": 1196
+ }
+}

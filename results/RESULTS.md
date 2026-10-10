@@ -765,3 +765,63 @@ All 14 languages are affected on monolingual prompts (pt -0.520 to vi -0.980; zh
 zh/ja/ru not) does not hold. Skipped replies under zero ablation: 6 of 2,200 monolingual (2 at baseline), 108 of 4,186
 crosslingual (77). WPR: monolingual baseline 0.98 to 1.00; crosslingual cells rest on 19 to 46 replies at baseline and
 0 to 7 without the head and are not read.
+
+# OLMo-2-1B and Llama-3.2-1B LCB in 14 languages, 2026-10-10
+
+results/olmo2-1b-instruct-lcb-all and llama3.2-1b-instruct-lcb-all, read as for Qwen3-1.7B above.
+
+| model | condition | mono LPR | Δ mono | cross LPR | Δ cross |
+|---|---|---|---|---|---|
+| OLMo-2-1B | base | 0.976 | | 0.873 | |
+| OLMo-2-1B | L12H8 zero | 0.662 | -0.346 [-0.367, -0.327] | 0.491 | -0.379 [-0.394, -0.364] |
+| OLMo-2-1B | L12H8 mean | 0.537 | -0.445 [-0.467, -0.424] | 0.430 | -0.442 [-0.458, -0.427] |
+| OLMo-2-1B | 3 controls | 0.973 to 0.977 | -0.002 to +0.002 | 0.872 to 0.883 | -0.002 to +0.010 |
+| Llama-3.2-1B | base | 0.985 | | 0.778 | |
+| Llama-3.2-1B | L8H25 zero | 0.902 | -0.069 [-0.081, -0.058] | 0.084 | -0.695 [-0.709, -0.681] |
+| Llama-3.2-1B | L8H25 mean | 0.872 | -0.101 [-0.115, -0.087] | 0.292 | -0.485 [-0.500, -0.470] |
+| Llama-3.2-1B | 3 controls | 0.984 to 0.986 | -0.003 to +0.000 | 0.764 to 0.781 | -0.015 to +0.003 |
+
+OLMo-2: 13 of 14 languages affected on monolingual prompts, all but hi (-0.010 [-0.061, +0.040]); 14 of 14 on
+crosslingual ones (-0.140 to -0.692). Crosslingual WPR without the head, on 75 to 216 replies per language: 0.65 to
+0.85, against 0.86 to 0.97 at baseline and 0.83 to 0.97 under the controls. 42 of the 6,586 prompts generate past
+OLMo-2's 4,096-token context (three long crosslingual complex_prompts per language).
+
+Llama-3.2-1B: 14 of 14 affected on crosslingual prompts (-0.579 to -0.764); on monolingual prompts 6 of 14: ko
+-0.388, tr -0.303, ja -0.180, ar -0.100, zh -0.095, it -0.090. Crosslingual WPR without the head rests on 0 to 45
+replies and is not read.
+
+Summary of the four families with Qwen2.5-1.5B: the planned check (hi affected, zh/ja/ru not, monolingual) holds
+only for Qwen2.5-1.5B. Languages not affected on monolingual prompts: Qwen2.5-1.5B de/ja/ru/zh, Qwen3-1.7B vi/zh,
+Gemma-3-1B none, OLMo-2-1B hi, Llama-3.2-1B de/es/fr/hi/id/pt/ru/vi. On crosslingual prompts every language is
+affected in the four, and all but ja/ru in Qwen2.5-1.5B.
+
+# Qwen2.5-7B rerun with the head rule, 2026-10-10
+
+results/qwen2.5-7b-instruct (layers 0 and 19 on 2,500 prompts), -followup, -lcb, -diag, -steer; results/qwen2.5-7b
+and qwen2.5-7b-followup (base, layer 19). bf16.
+
+- Head choice (experiments/head_rule.md): L0H25 (c->w 0.629) and L0H22 (0.466) keep 0.512 and 0.518 of the English
+  continuations in English and are set aside; L19H1 (0.200, dNLL +0.026, rest of layer +0.001) keeps 1.000. The other
+  layer-19 heads reach at most 0.006. Mean ablation 0.018; x2 0.002, x3 0.426, x5 0.762 (dNLL +3.66). Base model:
+  L19H1 0.025 zero, 0.011 mean.
+- LCB, five languages: monolingual 0.984, zero -0.009 [-0.020, +0.003], mean +0.003; crosslingual 0.950, zero -0.074
+  [-0.089, -0.059], mean -0.035; three layer-19 controls +0.001 to +0.003 and -0.008 to +0.001. Crosslingual lines in
+  English 0.04 to 0.10.
+- Diagnosis (c->w): zero 0.202, follow-up mean 0.021, continuation mean 0.008, minus continuation mean 0.070,
+  own-language mean 0.000, English mean 0.188, other-language mean 0.352 with 0.417 of non-English continuations in
+  the swapped-in language, random same norm 0.228, x0.5 0.017. With the head zeroed, 439 of 505 flips go to Chinese
+  (33 to English); the random vector (485 of 570) and the English mean (399 of 469) also send them to Chinese, and
+  English prompts stay English. For comparison, zero sends Qwen2.5-1.5B's flips mostly to English (919 of 1,252) and
+  Qwen2.5-3B's to English (514), Chinese (299) and Spanish (221) of 1,288.
+- Steering on LCB: steer +0.003 [-0.004, +0.010] mono and -0.003 [-0.011, +0.006] cross; swap -0.280 mono and -0.269
+  cross, with 0.122 [0.099, 0.144] and 0.128 [0.110, 0.147] of the replies in the swapped-in language (controls
+  0.000); add steer +0.004 cross; add swap 0.000 / 0.001.
+- First pipeline on L0H25 (results/*-L0H25run): LCB zero -0.495 mono and -0.485 cross with 0.39 and 0.44 English
+  lines; the prompt language's own mean still gives c->w 0.653; steer lowers LPR by 0.529 mono and 0.514 cross and
+  leaves 0.260 and 0.168 of the replies unscored.
+
+# Qwen3-4B screen, 2026-10-10
+
+results/qwen3-4b-instruct-screen: all 1,152 heads on the 125 FLORES prompts (fp32, bs 125). Baseline non-English
+retention 0.980; the largest c->w is L8H3's 0.024, so no layer goes on to 2,500 prompts and the base model is not
+run. A crosslingual LCB screen of every head, as for the two Llamas, started at 16:18 KST.
