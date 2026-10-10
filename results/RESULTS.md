@@ -825,3 +825,33 @@ and qwen2.5-7b-followup (base, layer 19). bf16.
 results/qwen3-4b-instruct-screen: all 1,152 heads on the 125 FLORES prompts (fp32, bs 125). Baseline non-English
 retention 0.980; the largest c->w is L8H3's 0.024, so no layer goes on to 2,500 prompts and the base model is not
 run. A crosslingual LCB screen of every head, as for the two Llamas, started at 16:18 KST.
+
+# Qwen2.5-3B LCB in 14 languages, 2026-10-10
+
+results/qwen2.5-3b-instruct-lcb-all, added before the run (experiments/lcb14_plan.md, 16:48 KST) and read as for
+Qwen3-1.7B above (judge.md, wpr.md). 16:49 to 20:19 KST, sharing the GPU with the two crosslingual screens.
+
+| condition | mono LPR | Δ mono | cross LPR | Δ cross |
+|---|---|---|---|---|
+| base | 0.987 | | 0.869 | |
+| L27H13 zero | 0.478 | -0.520 [-0.543, -0.498] | 0.406 | -0.457 [-0.473, -0.441] |
+| L27H13 mean | 0.472 | -0.555 [-0.577, -0.533] | 0.401 | -0.463 [-0.478, -0.446] |
+| 3 controls (L27H6, L27H12, L27H14) | 0.986 to 0.990 | -0.001 to +0.002 | 0.830 to 0.880 | -0.037 to +0.009 |
+
+13 of 14 languages affected on monolingual prompts, all but zh (+0.005 [-0.020, +0.030]), with ja -0.700, ru -0.372
+and hi -0.368; 14 of 14 on crosslingual ones (zh -0.166 to it -0.826). The planned check (hi affected, zh/ja/ru not)
+does not hold, so by the plan the Qwen2.5-1.5B pattern is read as a property of the 1.5B model, not of Qwen2.5.
+Chinese is unaffected on monolingual prompts in the three Qwen models and affected in the other three families.
+
+Skipped replies under zero ablation: 279 of 2,200 monolingual (5 at baseline) and 251 of 4,186 crosslingual (62),
+273 and 204 of them written mainly in Han characters or kana. LCB's scorer (compute_metrics.py, followed by lcb.py)
+counts words by spaces unless the expected language is zh or ja and skips replies without a line of five words, so
+these replies are left out rather than failed. Skipped by cell: monolingual ko 91 of 100, ar 80 of 300, vi 41 of
+100; crosslingual ko 162 of 299. WPR: baseline 0.95 to 1.00 monolingual and 0.88 to 0.98 crosslingual; without the
+head some cells rest on few replies (monolingual ko none, crosslingual ko 14) and are not read.
+
+Outside the plan, lcb14_judge.py --skipped-fail counts the replies an intervention leaves unscorable as failures
+(judge_skipped_fail.md in each of the six 14-language runs). No affected language and no pattern reading changes.
+Changes of 0.05 or more: Qwen2.5-1.5B ko -0.084 to -0.206 (mono) and -0.093 to -0.220 (cross), Qwen3-1.7B ko -0.605
+to -0.700, OLMo-2 ko -0.440 to -0.490, Qwen2.5-3B ar -0.668 to -0.750, ru -0.372 to -0.460, tr -0.655 to -0.710
+(mono) and ko -0.647 to -0.831 (cross).

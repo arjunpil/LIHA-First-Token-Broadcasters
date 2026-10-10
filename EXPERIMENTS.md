@@ -442,21 +442,35 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   (L11H3), OLMo-2-1B (L12H8) and Llama-3.2-1B (L8H25, crosslingual only); Qwen2.5 is covered by section 5. One model
   per family because the question is about families, the smallest because it matches Qwen2.5-1.5B's size and is the
   cheapest to run (the plan expected about an hour per model; they took 1 h 8 min to 2 h 16 min). The larger models
-  of the same families would test size and are left out for time.
+  of the same families would test size and are left out for time. Qwen2.5-3B (L27H13) was added after these four,
+  before its run (lcb14_plan.md, 16:48 KST), to ask whether the pattern belongs to Qwen2.5 or to the 1.5B model.
 - How: as the 14-language run of section 5: zero and mean ablation of the head, three random same-layer controls,
   each model's settings from section 8, WPR for ar, hi, ja, ko, ru and zh with the number of replies it rests on.
 - When / where: 2026-10-10, Qwen3-1.7B 07:24 to 09:40 KST, Gemma-3-1B 10:49 to 12:35, OLMo-2-1B 12:45 to 14:31 and
-  Llama-3.2-1B 14:41 to 15:49; results/<model>-lcb-all (judge.md, wpr.md); the same reading applied to section 5's
-  run in results/qwen-instruct-lcb-all/judge.md.
-- Code: lcb.py, lcb14_judge.py (the planned reading), lcb_wpr.py.
+  Llama-3.2-1B 14:41 to 15:49, Qwen2.5-3B 16:49 to 20:19 (sharing the GPU with two screens); results/<model>-lcb-all
+  (judge.md, wpr.md); the same reading applied to section 5's run in results/qwen-instruct-lcb-all/judge.md.
+- Code: lcb.py, lcb14_judge.py (the planned reading; --skipped-fail for the check outside the plan), lcb_wpr.py.
 - Planned reading, set before the runs (experiments/lcb14_plan.md): a language counts as affected if the head's paired
   change under zero ablation has a CI below zero and is below every control's change; the Qwen2.5-1.5B pattern is read
   as shared by a model if, on monolingual prompts, Hindi is affected and Chinese, Japanese and Russian are not. All
-  four models are reported.
+  models are reported; for Qwen2.5-3B, sharing it is read as a Qwen2.5 trait and not sharing it as a property of the
+  1.5B model.
 - Result:
   - The reading on section 5's run reproduces the pattern: Hindi is affected (-0.602 [-0.704, -0.500]) and Chinese
     (+0.000), Japanese (-0.010) and Russian (+0.000) are not. 10 of 14 languages are affected on monolingual prompts
     (not de, ja, ru, zh) and 12 of 14 on crosslingual ones (not ja, ru).
+  - Qwen2.5-3B: monolingual LPR 0.987 to 0.478 (-0.520 [-0.543, -0.498]) and crosslingual 0.869 to 0.406 (-0.457
+    [-0.473, -0.441]) under zero ablation; mean ablation -0.555 and -0.463; controls -0.001 to +0.002 and -0.037 to
+    +0.009. 13 of 14 languages are affected on monolingual prompts, all but Chinese (+0.005 [-0.020, +0.030]), among
+    them Japanese (-0.700), Russian (-0.372) and Hindi (-0.368). All 14 are affected on crosslingual prompts (-0.166
+    to -0.826).
+  - Qwen2.5-3B skips 279 of 2,200 monolingual replies without the head (5 at baseline) and 251 of 4,186 crosslingual
+    ones (62). 273 and 204 of them are written mainly in Han characters or kana: the line check counts words by
+    spaces unless the expected language is Chinese or Japanese, so their lines have fewer than five words and none
+    is scored. Most are Korean (91 of 100 monolingual, 162 of 299 crosslingual), Arabic (80 of 300 monolingual) and
+    Vietnamese (41 of 100 monolingual), so the monolingual changes of these three rest on 9, 220 and 59 replies and
+    leave out replies that switched. WPR at baseline: 0.95 to 1.00 monolingual, 0.88 to 0.98 crosslingual; without
+    the head some cells rest on few replies (monolingual Korean none, crosslingual Korean 14), so it is not read.
   - Qwen3-1.7B: monolingual LPR 0.971 to 0.658 (-0.293 [-0.313, -0.273]) and crosslingual 0.789 to 0.198 (-0.592
     [-0.608, -0.577]) under zero ablation; mean ablation -0.304 and -0.497; controls -0.004 to +0.003 and +0.002 to
     +0.009. 12 of 14 languages are affected on monolingual prompts, all but Vietnamese (-0.020 [-0.060, +0.020]) and
@@ -489,19 +503,30 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     languages only Italian is affected here. It skips 9 of 2,200 monolingual replies with or without the head and 4 of
     4,186 crosslingual ones (26 at baseline). Crosslingual WPR without the head rests on 0 to 45 replies per language
     and is not read.
+  - Outside the plan (lcb14_judge.py --skipped-fail, judge_skipped_fail.md in each run): LCB's scorer, which lcb.py
+    follows, leaves out a reply that has no line of five words instead of counting it as a failure. Counting the
+    replies an intervention leaves unscorable as failures changes no affected language and no reading in the six
+    models; Russian in Qwen2.5-1.5B stays unaffected at -0.010 [-0.030, +0.000]. The changes that move by 0.05 or
+    more are Korean in Qwen2.5-1.5B (monolingual -0.084 to -0.206, crosslingual -0.093 to -0.220), Qwen3-1.7B
+    (monolingual -0.605 to -0.700) and OLMo-2 (monolingual -0.440 to -0.490), and in Qwen2.5-3B monolingual Arabic
+    (-0.668 to -0.750), Russian (-0.372 to -0.460) and Turkish (-0.655 to -0.710) and crosslingual Korean (-0.647 to
+    -0.831).
 
 | model | head | monolingual: languages not affected | crosslingual: languages not affected | Qwen2.5-1.5B pattern |
 |---|---|---|---|---|
 | Qwen2.5-1.5B | L22H6 | de, ja, ru, zh | ja, ru | yes |
+| Qwen2.5-3B | L27H13 | zh | none | no |
 | Qwen3-1.7B | L18H12 | vi, zh | none | no |
 | Gemma-3-1B | L11H3 | none | none | no |
 | OLMo-2-1B | L12H8 | hi | none | no |
 | Llama-3.2-1B | L8H25 | de, es, fr, hi, id, pt, ru, vi | none | no |
 
-- Reading: by the planned rule, none of the four other families shares the Qwen2.5-1.5B pattern. On crosslingual
-  prompts the head matters in all 14 languages in every one of them. On monolingual prompts the languages it leaves
-  alone differ from model to model: Japanese and Russian, which L22H6 leaves alone, drop in Qwen3, Gemma-3 and
-  OLMo-2, and Hindi, which drops in Qwen2.5-1.5B (-0.602), is unaffected in OLMo-2 and Llama.
+- Reading: by the planned rule, neither Qwen2.5-3B nor any of the four other families shares the Qwen2.5-1.5B
+  pattern, so it is read as a property of the 1.5B model. On crosslingual prompts the head matters in all 14
+  languages in every other model. On monolingual prompts the languages it leaves alone differ from model to model:
+  Japanese and Russian, which L22H6 leaves alone, drop in Qwen2.5-3B, Qwen3, Gemma-3 and OLMo-2, and Hindi, which
+  drops in Qwen2.5-1.5B (-0.602), is unaffected in OLMo-2 and Llama. Chinese is unaffected in the three Qwen models
+  and affected in the other three families.
 
 ### 9d. The heads under the Translation Heads method
 
@@ -687,11 +712,13 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     LPR by 0.280. steer does not fix crosslingual replies (-0.003, baseline 0.950) and does no harm on monolingual
     ones (+0.003, CI includes zero). Its baseline matches section 8.
 
-## 12. Still running (2026-10-10, 16:18 KST)
+## 12. Still running (2026-10-10, 20:40 KST)
 
 - Qwen3-4B: no head reaches the threshold on the FLORES screen (section 7), so, as for the two Llamas, all 1,152
   heads are screened on 100 crosslingual LCB prompts, and the strongest gets the full five-language LCB run if it
   lowers the screen's pass rate by 0.1 (lcb.py --screen, started 16:18 KST).
+- SmolLM3-3B: the same crosslingual screen, leaving out L1H12, which breaks generation (experiments/head_rule.md,
+  started 16:49 KST); a head that lowers the screen's pass rate by 0.1 or more gets the full five-language LCB run.
 
 ## What the results support and what they do not
 
@@ -706,7 +733,7 @@ Supported so far:
 - In Qwen2.5-1.5B the effect holds on LCB chat prompts, under sampling, and with or without the default system prompt
   (sections 4 and 5); the heads of Qwen2.5-3B, Qwen3, Gemma-3-1B, Gemma-3-4B and OLMo-2 also lower LCB scores, and
   Llama-3.2-1B's L8H25, Llama-3.2-3B's L13H19 and Qwen2.5-7B's L19H1 lower crosslingual ones (section 8). On
-  crosslingual prompts in 14 languages, the heads of the five models run lower all 14, except Japanese and Russian
+  crosslingual prompts in 14 languages, the heads of the six models run lower all 14, except Japanese and Russian
   in Qwen2.5-1.5B (sections 5 and 9c).
 - In each of the seven models the same head has a smaller effect in the base model (section 7), and in Qwen2.5-1.5B
   the dependence is large only for the instruct model with its own chat template (section 4).
@@ -728,8 +755,9 @@ Supported so far:
 
 Not supported, or not tested:
 - That the languages L22H6 leaves alone in Qwen2.5-1.5B (Chinese, Japanese, Russian) are left alone in other models:
-  none of the four other families shares that pattern, and which languages a head leaves alone differs by model
-  (section 9c).
+  neither Qwen2.5-3B nor any of the four other families shares that pattern (on monolingual prompts Chinese is left
+  alone in all three Qwen models, Japanese only in Qwen2.5-1.5B, Russian in Qwen2.5-1.5B and Llama-3.2-1B), and
+  which languages a head leaves alone differs by model (section 9c).
 - That instruction tuning creates the head: in Qwen2.5 and Gemma-3-4B the same head is already there in the base model
   with a smaller effect; in Gemma-3-1B and OLMo-2 it is absent from the base model, and these runs do not show what
   produces it (section 7).
@@ -751,12 +779,17 @@ Not supported, or not tested:
 ## Known limitations
 
 - Twelve instruct models from seven families, 1B to 7B parameters. FLORES covers five European languages; LCB covers
-  the same four non-English ones for every model and 14 languages for Qwen2.5-1.5B and the smallest model of four
-  other families (section 9c). Steering uses the four European languages only, since its vectors come from the
-  FLORES prompts.
+  the same four non-English ones for every model and 14 languages for Qwen2.5-1.5B, Qwen2.5-3B and the smallest
+  model of four other families (section 9c). Steering uses the four European languages only, since its vectors come
+  from the FLORES prompts.
 - OLMo-2-1B has a 4,096-token context. Three long crosslingual prompts per language (from LCB's complex_prompts
   source) leave too little room for the 100-token reply, so 42 of the 6,586 prompts of its 14-language run, and the
   same prompts in its five-language runs, generate past the limit.
+- LCB's line check counts words by spaces unless the expected language is Chinese or Japanese, and leaves out a reply
+  with no line of five words, so a reply that switches into Chinese or Japanese from another language is left out
+  rather than counted as a failure. Without the head this leaves out 279 of 2,200 monolingual replies in Qwen2.5-3B,
+  most of them in Chinese or Japanese script, and 6 to 42 in the other five 14-language runs. Counting them as
+  failures changes no reading (section 9c).
 - Steering replaces or shifts the head's output at every position with fixed vectors; replacing it only while the
   reply is generated, or with vectors taken from chat replies, was not run.
 - Single-turn prompts. Instruct models use their default chat template, including Qwen2.5's English system prompt.
