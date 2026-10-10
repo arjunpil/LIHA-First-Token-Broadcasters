@@ -102,12 +102,49 @@ def curves(name):
     save(fig, name)
 
 
+def swap_shares(name):
+    # share of non-English replies that move into the swapped-in language when the head's output is replaced by that
+    # language's mean (EXPERIMENTS.md sections 10 and 11); values are labeled only where the swap mostly fails
+    models = [("Qwen2.5-1.5B", "qwen-instruct", "L22H6"), ("Qwen2.5-3B", "qwen2.5-3b-instruct", "L27H13"),
+              ("Qwen2.5-7B", "qwen2.5-7b-instruct", "L19H1"), ("Qwen3-1.7B", "qwen3-1.7b-instruct", "L18H12"),
+              ("Gemma-3-1B", "gemma3-1b-instruct", "L11H3"), ("Gemma-3-4B", "gemma3-4b-instruct", "L24H0"),
+              ("OLMo-2-1B", "olmo2-1b-instruct", "L12H8")]
+    flores, lcb = [], []
+    for _, run, head in models:
+        row = next(line for line in open(f"results/{run}-diag/summary.md", encoding="utf-8")
+                   if line.startswith("| other-language mean |"))
+        flores.append(float(row.strip(" |\n").split("|")[-1]))
+        lcb.append(json.load(open(f"results/{run}-steer/summary.json"))["rows"][f"{head} swap"]["monolingual_swap"])
+    y = np.arange(len(models))[::-1]
+    h, gap = 0.36, 0.02
+    fig, ax = plt.subplots(figsize=(WIDTH, 2.7))
+    ax.barh(y + h / 2 + gap, flores, height=h, color="#2a78d6", label="FLORES")
+    ax.barh(y - h / 2 - gap, lcb, height=h, color="#eb6834", label="LCB, monolingual")
+    for yy, vals in zip(y, zip(flores, lcb)):
+        for v, off in zip(vals, (h / 2 + gap, -h / 2 - gap)):
+            if v < 0.5:
+                ax.text(v + 0.015, yy + off, f"{v:.2f}", va="center", fontsize=8, color="#52514e")
+    ax.set_yticks(y)
+    ax.set_yticklabels([m for m, _, _ in models])
+    ax.set_xlim(0, 1)
+    ax.set_xticks([0, 0.25, 0.5, 0.75, 1], ["0", "0.25", "0.5", "0.75", "1"])
+    ax.set_xlabel("Share in the swapped-in language")
+    ax.xaxis.grid(True, color="#e3e2de", lw=0.6)
+    ax.set_axisbelow(True)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    ax.tick_params(axis="y", length=0)
+    fig.legend(loc="outside upper center", ncol=2, handlelength=1.2, columnspacing=1.0, frameon=False)
+    save(fig, name)
+
+
 def main():
     table = json.load(open("results/gpt2/summary.json"))["modes"]["head"]["table"]
     heatmap(table, "sr", "Language Switch Rate", 0.6, "fig1_ablation_heatmap")
     heatmap(table, "c2w", "Correct→Wrong Rate", 0.25, "fig1_c2w_heatmap", max_dnll=0.1)
     curves("fig3_accuracy_curve")
     pair_heatmap(["qwen-instruct-full", "qwen-base-full"], ["Instruct", "Base"], "fig1_qwen_c2w")
+    swap_shares("fig_swap")
 
 
 if __name__ == "__main__":
