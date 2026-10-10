@@ -245,7 +245,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   per language, drawn without regard to Gemma's earlier replies; L11H0 is the control head, and every intervention
   acts only during generation.
   - At the last prompt position L11H3 puts 0.136 of its attention on the requested language word, against 0.009 on
-    as many nearby tokens. The layer's other three heads put 0.025 (L11H0), 0.096 (L11H1) and 0.066 (L11H2) on the
+    as many nearby tokens. The layer's other three heads put 0.025 (L11H0), 0.095 (L11H1) and 0.066 (L11H2) on the
     word.
   - Gemma-3-1B's crosslingual baseline is low (section 8): 12 of the 95 scorable replies pass. Masking the edge to
     the requested word during generation leaves 5, removing the head during generation leaves 4, and masking a
@@ -254,9 +254,29 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   - Its clean replies are identical to our Gemma-3-1B LCB baseline replies on all 96 prompts, and rescoring every
     reply with lcb.py gives the same pass counts and agrees with the committed flags on all 480 outputs.
   - Reading: in the model where steering with the head fixes the most crosslingual replies (section 11), the head
-    also attends to the requested language word, though less exclusively than L22H6 (L11H1 puts 0.096 on it), and
+    also attends to the requested language word, though less exclusively than L22H6 (L11H1 puts 0.095 on it), and
     cutting that access costs about as many passing replies as removing the head during generation. With 12
     passing replies the sample is small.
+- Two checks (2026-10-10, 21:01 to 21:58 KST; experiments/mechanism_checks.md, written before the runs; results in
+  results/gemma-l11h3-mechanism-ctrl1 and results/qwen-l22h6-mechanism-unselected, read by
+  experiments/mechanism_check_reading.py into results/mechanism-checks/summary.md): PR #12's runner, now taking the
+  model, layer and heads as options, on Gemma-3-1B and Qwen2.5-1.5B with the same 96 prompts as the Gemma run above,
+  and as control the other head of the layer that attends most to the language name.
+  - Gemma-3-1B: the rerun reproduces PR #12's replies in the four shared conditions on all 96 prompts. The control
+    head is L11H1 (0.095 on the name, against 0.136 for L11H3; the plan's 0.096 rounded 0.0955 twice). Of the 12
+    passing replies, masking L11H3's attention to the name fails 7, masking L11H1's fails none and the nearby mask
+    none (exact McNemar 7 vs 0, p = 0.016 against each).
+  - Qwen2.5-1.5B: 62 of the 96 replies pass without intervention (de 12, es 17, fr 18, it 15). In layer 22, L22H6
+    puts 0.774 on the name, the next head (L22H7) 0.042 and the other ten 0.020 or less. Masking L22H6's attention
+    to the name fails 6 (es 3, it 2, fr 1), masking L22H7's none and the nearby mask none (6 vs 0, p = 0.031
+    against each); removing the head during generation fails 20, 15 of them Italian (every passing Italian reply),
+    and 5 of the 6 are among the 20. Two replies that fail without intervention pass with the mask, and two with
+    the head removed.
+  - Reading: by the planned rule, in both models the edge to the name is specific to the head, and in Qwen2.5-1.5B
+    PR #12's edge result holds on prompts drawn without selection. No other head of layer 22 attends to the name
+    comparably, so Qwen2.5-1.5B's control is not matched in attention mass; Gemma-3-1B's is closer (0.095 against
+    0.136) but rests on 12 replies. Cutting the access fails fewer replies than removing the head (6 against 20 in
+    Qwen2.5-1.5B), so it explains part of the head's effect, as in PR #12.
 
 ## 7. Base and instruct pairs across families
 
@@ -511,6 +531,13 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     (monolingual -0.605 to -0.700) and OLMo-2 (monolingual -0.440 to -0.490), and in Qwen2.5-3B monolingual Arabic
     (-0.668 to -0.750), Russian (-0.372 to -0.460) and Turkish (-0.655 to -0.710) and crosslingual Korean (-0.647 to
     -0.831).
+  - Script switches (experiments/script_switch.py by Seunghyeok Hong, results/script-switch/summary.md): replies with
+    more Han or kana characters than characters of the expected script, zh and ja left out. With the head removed,
+    monolingual Korean replies switch in Qwen2.5-3B (95 of 100), Qwen3-1.7B (63), Qwen2.5-1.5B (17), OLMo-2 (13),
+    Gemma-3-1B and Llama-3.2-1B (5 each), against 0 or 1 at baseline. Of the switched replies in the three Qwen
+    models, 90, 23 and 11 are skipped and 0, 17 and 3 pass: a reply passes when its lines of five words are all still
+    in Korean. In Qwen2.5-3B switches also reach monolingual Arabic (101 of 300), Turkish and Vietnamese (46 of 100
+    each) and Russian (17); in Qwen2.5-1.5B one Russian reply switches.
 
 | model | head | monolingual: languages not affected | crosslingual: languages not affected | Qwen2.5-1.5B pattern |
 |---|---|---|---|---|
@@ -741,7 +768,9 @@ Supported so far:
   selected among prompts that switch) and on monolingual prompts drawn without selection, and on crosslingual prompts
   it attends to the requested language word (section 6). Most of the effect in both runs is on Italian. Gemma-3-1B's
   L11H3 also attends to the requested word, and masking that access during generation costs about as many of its
-  12 passing crosslingual replies as removing the head then (7 and 8; section 6).
+  12 passing crosslingual replies as removing the head then (7 and 8; section 6). In both models, on the same 96
+  prompts drawn without selection, masking the head's access to the word fails replies (6 of 62 and 7 of 12) and
+  masking the access of the layer's next most attending head fails none (section 6).
 - On FLORES, in five of the seven models, replacing the head's output with one language's mean output moves 0.904 to
   0.997 of the non-English continuations into that language (0.417 in Qwen2.5-7B, 0.182 in Qwen2.5-1.5B), and the
   prompt's own language mean keeps them (section 10).
@@ -773,7 +802,8 @@ Not supported, or not tested:
 - A ranking of effect sizes across models: heads per layer and normalization differ (section 7).
 - Which post-training step produces the dependence (section 9b).
 - That access to the language word explains the head's effect: in Qwen2.5-1.5B masking it reproduces 7 of 27
-  switches, and in Gemma-3-1B it fails 7 of 12 passing replies, of which 4 also fail without the head (section 6).
+  switches (6 of 20 on prompts drawn without selection), and in Gemma-3-1B it fails 7 of 12 passing replies, of
+  which 4 also fail without the head (section 6).
 - The first-token broadcaster claims of the submitted version (section 1).
 
 ## Known limitations
@@ -789,7 +819,9 @@ Not supported, or not tested:
   with no line of five words, so a reply that switches into Chinese or Japanese from another language is left out
   rather than counted as a failure. Without the head this leaves out 279 of 2,200 monolingual replies in Qwen2.5-3B,
   most of them in Chinese or Japanese script, and 6 to 42 in the other five 14-language runs. Counting them as
-  failures changes no reading (section 9c).
+  failures changes no reading (section 9c). A reply whose lines of five words are in the expected language passes
+  even when the rest of it is in Chinese or Japanese, since those lines are not scored; results/script-switch counts
+  both cases (section 9c).
 - Steering replaces or shifts the head's output at every position with fixed vectors; replacing it only while the
   reply is generated, or with vectors taken from chat replies, was not run.
 - Single-turn prompts. Instruct models use their default chat template, including Qwen2.5's English system prompt.

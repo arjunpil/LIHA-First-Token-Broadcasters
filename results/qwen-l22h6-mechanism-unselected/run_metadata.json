@@ -1,0 +1,28 @@
+{
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "requested_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "resolved_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "transformers": "5.6.2",
+  "torch": "2.10.0+cu128",
+  "dtype": "torch.float32",
+  "attention_backend": "eager",
+  "layer": 22,
+  "head": 6,
+  "control_head": 7,
+  "head_dim": 128,
+  "n_query_heads": 12,
+  "sample_seed": 20261009,
+  "sample_per_language": 24,
+  "LCB_source_url": "https://raw.githubusercontent.com/for-ai/language-confusion/HEAD/test_sets.zip",
+  "LCB_archive_sha256": null,
+  "LCB_source_pool_counts": null,
+  "max_new_tokens": 100,
+  "attention_only": false,
+  "limitations": [
+    "fresh LCB prompts selected based only on explicit language names, not model outcomes",
+    "L22H6 and L22H7 are query attention heads",
+    "masking starts in cached decoding; first token remains unchanged by design",
+    "LCB baseline accuracy can be low; report baseline-conditioned failures",
+    "measuring attention to language names does not establish semantic use of those tokens"
+  ]
+}

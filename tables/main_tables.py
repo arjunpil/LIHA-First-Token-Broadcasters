@@ -136,22 +136,23 @@ def preview(rs):
     return "\n".join(lines)
 
 
-QWEN, GEMMA = R / "qwen-l22h6-mechanism", R / "gemma-l11h3-mechanism"
-# the runs behind the three columns (Qwen2.5-1.5B cross, Qwen2.5-1.5B mono, Gemma-3-1B cross) and how their rows
-# are keyed to prompts; Qwen2.5-1.5B cross has its zeroing and its masking in two runs with the same clean replies
-ZERO_RUNS = [(QWEN / "liha_l22h6_phase_validation.csv", ("language", "source", "prompt")),
+QWEN = R / "qwen-l22h6-mechanism"
+# the cross columns: Qwen2.5-1.5B and Gemma-3-1B on the same 96 crosslingual prompts, with the other head of the
+# layer that attends most to the language name as control (experiments/mechanism_checks.md); the mono column:
+# Qwen2.5-1.5B on 96 monolingual prompts (PR #12)
+CROSS = [R / "qwen-l22h6-mechanism-unselected", R / "gemma-l11h3-mechanism-ctrl1"]
+ZERO_RUNS = [(CROSS[0] / "condition_outputs.csv", ("prompt_id",)),
              (QWEN / "monolingual_phase_outputs.csv", ("prompt_id",)),
-             (GEMMA / "condition_outputs.csv", ("prompt_id",))]
-MASK_RUNS = [(QWEN / "liha_l22h6_language_edge_validation.csv", ("language", "source", "prompt")), None,
-             ZERO_RUNS[2]]
+             (CROSS[1] / "condition_outputs.csv", ("prompt_id",))]
+MASK_RUNS = [ZERO_RUNS[0], None, ZERO_RUNS[2]]
 # row label and its condition in each column; None where it was not run
-ZEROED = [("Head, prompt only", "L22H6_prefill", "L22H6_prefill", None),
-          ("Head, generation only", "L22H6_decode", "L22H6_decode", "head_zero_decode"),
-          ("Head, both", "L22H6_all", "L22H6_all", None),
-          ("Control head, both", "L22H8_control", "L22H8_control", None)]
-MASKED = [("Head to the name", "target_language", None, "target_word_mask"),
-          ("Head to nearby tokens", "target_nearby", None, "nearby_word_mask"),
-          ("Control head to the name", "control_language", None, "control_head_word_mask")]
+ZEROED = [("Head, prompt only", None, "L22H6_prefill", None),
+          ("Head, generation only", "head_zero_decode", "L22H6_decode", "head_zero_decode"),
+          ("Head, both", None, "L22H6_all", None),
+          ("L22H8, both", None, "L22H8_control", None)]
+MASKED = [("Head to the name", "target_word_mask", None, "target_word_mask"),
+          ("Head to nearby tokens", "nearby_word_mask", None, "nearby_word_mask"),
+          ("Control head to the name", "control_head_word_mask", None, "control_head_word_mask")]
 
 
 def outcomes(run):
@@ -181,18 +182,18 @@ def gains(prompts, cond):
 
 def mechanism():
     zero, mask = [outcomes(r) for r in ZERO_RUNS], [outcomes(r) for r in MASK_RUNS]
-    assert len(passing(zero[0])) == len(passing(mask[0]))
-    q = list(csv.DictReader(open(QWEN / "liha_l22h6_attention_analysis.csv", encoding="utf-8")))
-    g = list(csv.DictReader(open(GEMMA / "attention_by_prompt.csv", encoding="utf-8")))
 
-    def att(rows, *cols):
-        return mean(mean(float(r[c]) for c in cols) for r in rows)
+    def attention(run):
+        meta = json.load(open(run / "run_metadata.json"))
+        rows = list(csv.DictReader(open(run / "attention_by_prompt.csv", encoding="utf-8")))
+        head, ctrl = meta["head"], meta["control_head"]
+        col = lambda h, keys="target": mean(float(r[f"last_prompt_h{h}_{keys}_mass"]) for r in rows)
+        others = {h: col(h) for h in range(meta["n_query_heads"]) if h != head}
+        assert ctrl == max(others, key=others.get), "control head is not the rule's pick"
+        return col(head), col(head, "nearby"), others[ctrl]
 
-    # the Qwen2.5-1.5B runner stores the mean over L22H4, H8 and H9; Gemma-3-1B's layer has three other heads
-    attention = [("Head to the name", att(q, "last_prompt_target_lang"), att(g, "last_prompt_h3_target_mass")),
-                 ("Head to nearby tokens", att(q, "last_prompt_target_nearby"), att(g, "last_prompt_h3_nearby_mass")),
-                 ("Other heads to the name", att(q, "last_prompt_control_lang_mean"),
-                  att(g, *(f"last_prompt_h{h}_target_mass" for h in (0, 1, 2))))]
+    labels = ("Head to the name", "Head to nearby tokens", "Control head to the name")
+    attention = list(zip(labels, attention(CROSS[0]), attention(CROSS[1])))
 
     def counts(spec, runs):
         return [(label, [None if c is None else fails(p, c) for p, c in zip(runs, conds)]) for label, *conds in spec]
@@ -220,16 +221,16 @@ def mech_tex(m):
     lines.append(group("Of these, fail when masked in generation"))
     lines += [f"{label} & " + " & ".join(map(cell, v)) + r" \\" for label, v in m["masked"]]
     lines += [r"\bottomrule", r"\end{tabular}",
-              r"\caption{The head in Qwen2.5-1.5B (L22H6) and Gemma-3-1B (L11H3) on 96 LCB prompts per column, 24 "
-              r"in each of German, Spanish, French and Italian; the control heads are L22H8 and L11H0. Cross prompts "
-              r"name the requested language; mono prompts are written in it. Top: mean attention from the last "
-              r"prompt token to the language name, to as many nearby tokens, and of three other heads of the layer "
-              r"to the name (L22H4, H8 and H9; L11H0, H1 and H2). Bottom: replies that pass LCB's line check without "
-              r"intervention, and how many of them fail with a head zeroed on the prompt, during generation after "
-              r"the first token, or both, or with its attention to the name or to the nearby tokens masked during "
-              r"generation. Qwen2.5-1.5B's cross prompts were drawn among replies that passed in our LCB run, the "
-              r"Italian ones among those that had switched with the head removed; the other two columns were drawn "
-              r"without regard to earlier replies. One Gemma-3-1B prompt is unscorable.}",
+              r"\caption{The head in Qwen2.5-1.5B (L22H6) and Gemma-3-1B (L11H3). Cross: the same 96 crosslingual LCB "
+              r"prompts for both models, 24 in each of German, Spanish, French and Italian, drawn among the prompts "
+              r"that name the requested language without regard to any model's replies. Mono: 96 monolingual LCB "
+              r"prompts, 24 per language, also drawn without regard to replies. The control head is the other head of "
+              r"the layer that attends most to the language name (L22H7, L11H1). Top: mean attention from the last "
+              r"prompt token to the language name, to as many nearby tokens, and of the control head to the name. "
+              r"Bottom: replies that pass LCB's line check without intervention, and how many of them fail with a "
+              r"head zeroed on the prompt, during generation after the first token, or both, or with the head's or "
+              r"the control head's attention to the name, or the head's attention to the nearby tokens, masked "
+              r"during generation. One Gemma-3-1B prompt is unscorable.}",
               r"\label{tab:mechanism}", r"\end{table}"]
     return "\n".join(lines)
 

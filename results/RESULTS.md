@@ -855,3 +855,29 @@ Outside the plan, lcb14_judge.py --skipped-fail counts the replies an interventi
 Changes of 0.05 or more: Qwen2.5-1.5B ko -0.084 to -0.206 (mono) and -0.093 to -0.220 (cross), Qwen3-1.7B ko -0.605
 to -0.700, OLMo-2 ko -0.440 to -0.490, Qwen2.5-3B ar -0.668 to -0.750, ru -0.372 to -0.460, tr -0.655 to -0.710
 (mono) and ko -0.647 to -0.831 (cross).
+
+# Script switches in the 14-language runs, 2026-10-10
+
+experiments/script_switch.py (Seunghyeok Hong, PR #1 into qwen3b-lcb14), results/script-switch/summary.md. A reply
+counts as switched when it has more Han or kana characters than characters of the expected script (zh and ja left
+out). Monolingual Korean with the head zeroed: Qwen2.5-3B 95/100 switched (90 skipped, 0 passing), Qwen3-1.7B 63 (23
+skipped, 17 passing), Qwen2.5-1.5B 17 (11, 3), OLMo-2 13, Gemma-3-1B and Llama-3.2-1B 5; 0 or 1 at baseline. Switched
+replies pass when their lines of five words are all still in Korean, since lines without spaces are never scored. In
+Qwen2.5-3B, monolingual ar 101/300, tr and vi 46/100, ru 17/100 also switch.
+
+# Mechanism checks, 2026-10-10
+
+experiments/mechanism_checks.md (written at 21:10 KST, before the runs), results/gemma-l11h3-mechanism-ctrl1 and
+results/qwen-l22h6-mechanism-unselected, read in results/mechanism-checks/summary.md. Both models on Chaewon's 96
+Gemma prompts, control head = the other head of the layer with the most last-prompt attention to the language name.
+
+| model | pass clean | name mask (head) | name mask (control) | nearby mask | head zeroed in generation | McNemar vs control, vs nearby |
+|---|---|---|---|---|---|---|
+| Gemma-3-1B, L11H3 / L11H1 | 12 of 95 | 7 | 0 | 0 | 8 | p = 0.016, 0.016 |
+| Qwen2.5-1.5B, L22H6 / L22H7 | 62 of 96 | 6 | 0 | 0 | 20 (15 it) | p = 0.031, 0.031 |
+
+Last-prompt attention to the name: L11H3 0.136, L11H1 0.095, L11H2 0.066, L11H0 0.025; L22H6 0.774, L22H7 0.042, the
+other ten heads of layer 22 0.020 or less. The Gemma rerun matches PR #12's replies on all 96 prompts in the four shared
+conditions (transformers 5.6.2 here, 5.18.0 there). The plan's 0.096 for L11H1 rounded 0.0955 a second time; to
+three places it is 0.095.
+

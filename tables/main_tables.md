@@ -52,19 +52,19 @@ SmolLM3-3B & 16 & pre & \multicolumn{8}{l}{none on FLORES (L1H12 breaks generati
 
 | | Qwen2.5-1.5B cross | Qwen2.5-1.5B mono | Gemma-3-1B cross |
 |---|---|---|---|
-| attention: Head to the name | 0.807 | not run | 0.136 |
-| attention: Head to nearby tokens | 0.003 | not run | 0.009 |
-| attention: Other heads to the name | 0.006 | not run | 0.062 |
-| pass without intervention | 95 of 96 | 96 of 96 | 12 of 95 |
-| fail, zeroed: Head, prompt only | 7 | 2 | not run |
-| fail, zeroed: Head, generation only | 27 | 31 | 8 |
-| fail, zeroed: Head, both | 32 | 35 | not run |
-| fail, zeroed: Control head, both | 1 | 0 | not run |
-| fail, masked: Head to the name | 7 | not run | 7 |
+| attention: Head to the name | 0.774 | not run | 0.136 |
+| attention: Head to nearby tokens | 0.002 | not run | 0.009 |
+| attention: Control head to the name | 0.042 | not run | 0.095 |
+| pass without intervention | 62 of 96 | 96 of 96 | 12 of 95 |
+| fail, zeroed: Head, prompt only | not run | 2 | not run |
+| fail, zeroed: Head, generation only | 20 | 31 | 8 |
+| fail, zeroed: Head, both | not run | 35 | not run |
+| fail, zeroed: L22H8, both | not run | 0 | not run |
+| fail, masked: Head to the name | 6 | not run | 7 |
 | fail, masked: Head to nearby tokens | 0 | not run | 0 |
 | fail, masked: Control head to the name | 0 | not run | 0 |
 
-Replies that fail without intervention and pass with it, which the table leaves out: Qwen2.5-1.5B cross, zeroed: head, generation only, 1; Qwen2.5-1.5B cross, zeroed: head, both, 1; Qwen2.5-1.5B cross, masked: head to the name, 1.
+Replies that fail without intervention and pass with it, which the table leaves out: Qwen2.5-1.5B cross, zeroed: head, generation only, 2; Qwen2.5-1.5B cross, masked: head to the name, 2.
 
 ```latex
 \begin{table}[t]
@@ -77,23 +77,23 @@ Replies that fail without intervention and pass with it, which the table leaves 
  & Cross & Mono & Cross \\
 \midrule
 \multicolumn{4}{@{}l}{\textit{Attention from the last prompt token}} \\
-Head to the name & 0.807 & -- & 0.136 \\
-Head to nearby tokens & 0.003 & -- & 0.009 \\
-Other heads to the name & 0.006 & -- & 0.062 \\
+Head to the name & 0.774 & -- & 0.136 \\
+Head to nearby tokens & 0.002 & -- & 0.009 \\
+Control head to the name & 0.042 & -- & 0.095 \\
 \midrule
-Pass without intervention & 95 & 96 & 12 \\
+Pass without intervention & 62 & 96 & 12 \\
 \multicolumn{4}{@{}l}{\textit{Of these, fail when zeroed}} \\
-Head, prompt only & 7 & 2 & -- \\
-Head, generation only & 27 & 31 & 8 \\
-Head, both & 32 & 35 & -- \\
-Control head, both & 1 & 0 & -- \\
+Head, prompt only & -- & 2 & -- \\
+Head, generation only & 20 & 31 & 8 \\
+Head, both & -- & 35 & -- \\
+L22H8, both & -- & 0 & -- \\
 \multicolumn{4}{@{}l}{\textit{Of these, fail when masked in generation}} \\
-Head to the name & 7 & -- & 7 \\
+Head to the name & 6 & -- & 7 \\
 Head to nearby tokens & 0 & -- & 0 \\
 Control head to the name & 0 & -- & 0 \\
 \bottomrule
 \end{tabular}
-\caption{The head in Qwen2.5-1.5B (L22H6) and Gemma-3-1B (L11H3) on 96 LCB prompts per column, 24 in each of German, Spanish, French and Italian; the control heads are L22H8 and L11H0. Cross prompts name the requested language; mono prompts are written in it. Top: mean attention from the last prompt token to the language name, to as many nearby tokens, and of three other heads of the layer to the name (L22H4, H8 and H9; L11H0, H1 and H2). Bottom: replies that pass LCB's line check without intervention, and how many of them fail with a head zeroed on the prompt, during generation after the first token, or both, or with its attention to the name or to the nearby tokens masked during generation. Qwen2.5-1.5B's cross prompts were drawn among replies that passed in our LCB run, the Italian ones among those that had switched with the head removed; the other two columns were drawn without regard to earlier replies. One Gemma-3-1B prompt is unscorable.}
+\caption{The head in Qwen2.5-1.5B (L22H6) and Gemma-3-1B (L11H3). Cross: the same 96 crosslingual LCB prompts for both models, 24 in each of German, Spanish, French and Italian, drawn among the prompts that name the requested language without regard to any model's replies. Mono: 96 monolingual LCB prompts, 24 per language, also drawn without regard to replies. The control head is the other head of the layer that attends most to the language name (L22H7, L11H1). Top: mean attention from the last prompt token to the language name, to as many nearby tokens, and of the control head to the name. Bottom: replies that pass LCB's line check without intervention, and how many of them fail with a head zeroed on the prompt, during generation after the first token, or both, or with the head's or the control head's attention to the name, or the head's attention to the nearby tokens, masked during generation. One Gemma-3-1B prompt is unscorable.}
 \label{tab:mechanism}
 \end{table}
 ```
