@@ -902,3 +902,30 @@ same L24H27 in Qwen3-8B (both models have 36 layers of 32 heads).
 
 SmolLM3-3B (10-10 16:49 to 10-11 00:34 KST): baseline 0.939; with L1H12 removed 0.000 (left out); the next heads 0.908
 (L15H4, L21H7; -0.031), so no head got the full run.
+
+# LCB screens of the models with a FLORES head, 2026-10-11
+
+experiments/lcb_screen_flores.md (written at 13:19 KST, before the runs), lcb.py --screen, pick_lcbscreen.py;
+results/<model>-lcbscreen and -lcbscreen-mono, results/qwen-instruct-lcbscreen-top. Every head zero-ablated on 100
+crosslingual prompts (monolingual for the two Gemma models), with each model's LCB settings. Drop in the pass rate:
+
+| model | screen | baseline | FLORES head | next head | left out by the head rule |
+|---|---|---|---|---|---|
+| Qwen2.5-1.5B | crosslingual | 0.720 | L22H6 0.220 (rank 2 of 336) | L16H9 0.400 (rank 1) | none |
+| Qwen3-1.7B | crosslingual | 0.838 | L18H12 0.485 (rank 1 of 446) | L6H0 0.051 | L0H3 0.355, L1H5 0.010 |
+| OLMo-2-1B | crosslingual | 0.949 | L12H8 0.343 (rank 1 of 256) | L1H4 0.081 | none |
+| Gemma-3-1B | monolingual | 0.980 | L11H3 0.660 (rank 1 of 104) | L17H1 0.030 | none |
+| Gemma-3-4B | monolingual | 1.000 | L24H0 0.340 (rank 1 of 272) | L20H7 0.030 | none |
+
+Qwen2.5-1.5B L16H9, full five-language run (paired change with 95% CI):
+
+| condition | Δ mono | Δ cross | English lines, cross |
+|---|---|---|---|
+| L16H9 zero | -0.009 [-0.021, +0.003] | -0.459 [-0.487, -0.430] | 0.74 (base 0.28) |
+| L16H9 mean | +0.008 [-0.003, +0.018] | -0.277 [-0.303, -0.251] | 0.56 |
+| 3 controls (L16H0, L16H6, L16H11) | +0.001 to +0.003 | -0.029 to +0.057 | 0.23 to 0.31 |
+| L22H6 zero (section 5 run) | -0.273 [-0.305, -0.240] | -0.276 [-0.303, -0.250] | 0.40 |
+
+184 of the 2,189 baseline replies differ in wording from the section 5 run despite the same precision, batch size,
+token budget and package versions; LPR is the same (0.982 / 0.704). Qwen2.5-3B, Qwen2.5-7B and OLMo-3-7B are running.
+
