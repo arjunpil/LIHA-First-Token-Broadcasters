@@ -1,7 +1,8 @@
 # Versions of the environment that produced the sweeps, LCB runs, follow-ups, steering runs and figures (Python
 # 3.12.13; torch is the CUDA 12.8 build, e.g. pip install torch==2.10.0 --index-url
 # https://download.pytorch.org/whl/cu128). The table scripts use only the standard library. The mechanism runners
-# have their own requirements-*.txt.
+# have their own requirements-*.txt; their reruns in results/gemma-l11h3-mechanism-ctrl1 and
+# results/qwen-l22h6-mechanism-unselected used this environment.
 torch==2.10.0
 transformers==5.6.2
 accelerate==1.13.0

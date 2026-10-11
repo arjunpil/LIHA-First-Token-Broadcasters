@@ -1,0 +1,244 @@
+{
+ "head": "L13H19",
+ "run": "llama3.2-3b-instruct-lcb-top",
+ "screen_prompts": 100,
+ "found_in_run": 100,
+ "rows": {
+  "base": {
+   "monolingual/all": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9925,
+    "delta": null
+   },
+   "monolingual/held_out": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9925,
+    "delta": null
+   },
+   "crosslingual/all": {
+    "prompts": 1196,
+    "pairs": 1191,
+    "lpr": 0.9110613810741688,
+    "delta": null
+   },
+   "crosslingual/held_out": {
+    "prompts": 1096,
+    "pairs": 1092,
+    "lpr": 0.909256499420434,
+    "delta": null
+   }
+  },
+  "L13H19 zero": {
+   "monolingual/all": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9916666666666667,
+    "delta": [
+     0.0,
+     -0.00625,
+     0.00625
+    ]
+   },
+   "monolingual/held_out": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9916666666666667,
+    "delta": [
+     0.0,
+     -0.00625,
+     0.00625
+    ]
+   },
+   "crosslingual/all": {
+    "prompts": 1196,
+    "pairs": 1184,
+    "lpr": 0.5723234280792421,
+    "delta": [
+     -0.33530405405405406,
+     -0.36317567567567566,
+     -0.30827702702702703
+    ]
+   },
+   "crosslingual/held_out": {
+    "prompts": 1096,
+    "pairs": 1085,
+    "lpr": 0.5706163713191846,
+    "delta": [
+     -0.33640552995391704,
+     -0.3640552995391705,
+     -0.30783410138248846
+    ]
+   }
+  },
+  "L13H19 mean": {
+   "monolingual/all": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9866666666666667,
+    "delta": [
+     -0.005,
+     -0.01125,
+     0.00125
+    ]
+   },
+   "monolingual/held_out": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9866666666666667,
+    "delta": [
+     -0.005,
+     -0.01125,
+     0.00125
+    ]
+   },
+   "crosslingual/all": {
+    "prompts": 1196,
+    "pairs": 1183,
+    "lpr": 0.6576190476190477,
+    "delta": [
+     -0.2502113271344041,
+     -0.2772612003381234,
+     -0.22485207100591717
+    ]
+   },
+   "crosslingual/held_out": {
+    "prompts": 1096,
+    "pairs": 1084,
+    "lpr": 0.6551743309435953,
+    "delta": [
+     -0.2518450184501845,
+     -0.2785977859778598,
+     -0.22601476014760147
+    ]
+   }
+  },
+  "L13H1 zero (control)": {
+   "monolingual/all": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9925,
+    "delta": [
+     0.0,
+     -0.00375,
+     0.00375
+    ]
+   },
+   "monolingual/held_out": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9925,
+    "delta": [
+     0.0,
+     -0.00375,
+     0.00375
+    ]
+   },
+   "crosslingual/all": {
+    "prompts": 1196,
+    "pairs": 1191,
+    "lpr": 0.9113273960983884,
+    "delta": [
+     0.0,
+     -0.007556675062972292,
+     0.007556675062972292
+    ]
+   },
+   "crosslingual/held_out": {
+    "prompts": 1096,
+    "pairs": 1092,
+    "lpr": 0.9105170068279719,
+    "delta": [
+     0.0009157509157509158,
+     -0.007326007326007326,
+     0.009157509157509158
+    ]
+   }
+  },
+  "L13H12 zero (control)": {
+   "monolingual/all": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9966666666666667,
+    "delta": [
+     0.005,
+     0.0,
+     0.01125
+    ]
+   },
+   "monolingual/held_out": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9966666666666667,
+    "delta": [
+     0.005,
+     0.0,
+     0.01125
+    ]
+   },
+   "crosslingual/all": {
+    "prompts": 1196,
+    "pairs": 1186,
+    "lpr": 0.9087338501291989,
+    "delta": [
+     -0.002529510961214165,
+     -0.010961214165261383,
+     0.005902192242833052
+    ]
+   },
+   "crosslingual/held_out": {
+    "prompts": 1096,
+    "pairs": 1088,
+    "lpr": 0.9068841670555531,
+    "delta": [
+     -0.0027573529411764708,
+     -0.011948529411764705,
+     0.00645680147058811
+    ]
+   }
+  },
+  "L13H13 zero (control)": {
+   "monolingual/all": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9991666666666666,
+    "delta": [
+     0.00625,
+     0.00125,
+     0.0125
+    ]
+   },
+   "monolingual/held_out": {
+    "prompts": 800,
+    "pairs": 800,
+    "lpr": 0.9991666666666666,
+    "delta": [
+     0.00625,
+     0.00125,
+     0.0125
+    ]
+   },
+   "crosslingual/all": {
+    "prompts": 1196,
+    "pairs": 1188,
+    "lpr": 0.9091880341880342,
+    "delta": [
+     -0.0025252525252525255,
+     -0.008417508417508417,
+     0.003367003367003367
+    ]
+   },
+   "crosslingual/held_out": {
+    "prompts": 1096,
+    "pairs": 1090,
+    "lpr": 0.9074124252961809,
+    "delta": [
+     -0.0027522935779816515,
+     -0.009174311926605505,
+     0.003669724770642202
+    ]
+   }
+  }
+ }
+}

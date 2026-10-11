@@ -1,0 +1,602 @@
+[
+[
+"crosslingual",
+"okapi",
+"de",
+"Generate a scientific report of  900 words discussing the effects of global warming on the Arctic. Use German."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Draft an in-class activity in German that will help students develop their ability to \"explain how language use reinforces or challenges social norms and stereotypes related to gender.\" Students are upper-level college students."
+],
+[
+"crosslingual",
+"complex_prompts",
+"de",
+"Based solely on the text below: \n1. Extract the statistical techniques and machine learning algorithms analysts employ to uncover relationships and patterns within the data.\n2, Generate 5 fill-in-the-blanks style questions\n3. Summarize the text in 100 words\n\nHere's the text:\n\nPredictive analytics is a powerful tool that organizations use to uncover insights and trends from data to make predictions about future events or behaviors. At its core, predictive analytics leverages sophisticated statistical techniques, machine learning algorithms, and modeling tools to analyze current and historical data, identify patterns, and construct predictive models. These models illuminate possibilities for what could happen, enabling businesses and stakeholders to make informed decisions and strategically plan for the future.\n\nThe process of predictive analytics typically involves several key steps. First, it requires gathering and preparing relevant data from various sources. This may include structured data from databases or unstructured data from texts, social media, and other sources. Cleaning, transforming, and integrating this data prepare it for analysis.\n\nOnce the data is ready, analysts employ statistical techniques and machine learning algorithms to uncover relationships and patterns within the data. This stage involves methods such as data mining, regression analysis, clustering, and decision trees. By analyzing these patterns, analysts can build predictive models that simulate and understand the dynamics of the underlying system or process being analyzed.\n\nThese predictive models empower stakeholders to make informed decisions. For example, a retail company might use predictive models to forecast customer purchases, allowing them to optimize inventory levels and plan marketing strategies. Similarly, predictive analytics can aid in identifying potential risks and opportunities in the financial sector, optimizing pricing and maintenance schedules in the manufacturing industry, and personalizing recommendations in the healthcare industry.\n\nThe applications of predictive analytics are vast and continue to revolutionize industries and transform the way organizations operate. By harnessing the power of data and predictive models, businesses can make proactive decisions, stay ahead of the competition, and enhance their overall efficiency and effectiveness.\nWrite in German."
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Respond in German. Generate an essay discussing the importance of recycling."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"What services do CRM agencies offer for Consultation and strategy development? Answer in German."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Reply in German. What will your eating habits look like in the future?"
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Write in German. Write Research Proposal Paper on \"Study the effect of different fertilizer types on Environmental Pollution.\""
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Write a 500 word essay on the causes of poverty. Reply in German."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Explain in simple terms in German how clustering techniques can identify disease relevant biomarkers from transcriptomic and proteomic data"
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Use German. Write a sample essay of 500 words on the topic of artificial intelligence."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"What is the best way to forecast sales for a meal replacement product for the following year? Write in German."
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Reply in German. Write an 1850-word horror story."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Write in German. how can I answer the question: What types of use cases or new plugins do you want to see built?"
+],
+[
+"crosslingual",
+"complex_prompts",
+"de",
+"Q: I'm going on a date with this girl for the first time. I already know some of the things I'm going to say to her, including that I played hockey my whole life and love going fishing in the summertime (many turns later)... Q: What should be my response when she asks me what my favourite sport is? Keep the answer less than 6 words.\nRespond in German."
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Reply in German. Write a 500-word article on the topic of \"Effective Communication Skills\"."
+],
+[
+"crosslingual",
+"complex_prompts",
+"de",
+"Write in German. Below are two articles I wrote. I want you to generate a summary for each one. The summaries will be a maximum of 75 words each, and will be formatted as a JSON object. The keys will be \"article 1 summary\" and \"article 2 summary\" and the values will be the summaries. \n\nArticle 1:\n\nH1: The science of choosing a name\n\n\nIn the world of business, choosing names is important. The right name can increase consumer engagement, while the wrong name can alienate people. \n\n\nRecent research tells us that the spelling of a brand name also has a large impact on that brand’s image. \n\n\nIn the last few years, the trend of “unconventional” spelling has been on the rise: this tactic was “the top brand naming trend” of 2021 (Costello et al, 2023). In an attempt to make a memorable name, some brands--like the ride sharing company “Lyft”--are intentionally misspelling words.\n\n\nJust how effective is this strategy? Do consumers respond well to unconventionally-spelled brands and products? Yes and no. \n\n\nA recent study finds that unconventional spelling is desirable under certain conditions only. If these conditions are not met, consumers are unlikely to engage with an unconventionally-spelled brand. \n\n\nThe rules of unconventional spelling can also be applied to performing artists, such as musicians. Instead of randomly choosing an alternative spelling for a stage name, artists can use alternative spelling to better create and portray their image.   \n\n\n\n\nH2: What is unconventional spelling--and do consumers like it?\n\n\n“Unconventional” spelling refers to the incorrect spelling of a recognizable word. Unconventional spelling can happen in three ways: \nShortening the conventional spelling (i.e., Lil’ Debbie vs Little Debbie)\nLengthening the conventional spelling (Tripp vs. Trip) \nSubstituting letters of the conventional spelling (Lyft vs. Lift)\n\n\nA lot of brand strategists are telling their clients that unconventional spelling is a good idea (Costello et al, 2023). But is it? \n\n\nOn the positive side, unconventionally spelled names are distinctive, which make them \neasy to trademark\nmemorable\ntrendy\n\n\nAccording to a study done in 2023, however, unconventional spelling is not always seen favorably.\n\n\nIn the first part of the study, roughly 150 participants were given a choice to sample a product from two competing (and fictional) brands. In the follow-up experiment, over 300 participants shared their reactions to existing brand names--some of which were altered to use unconventional spelling. Participants in both experiments reacted more favorably to the conventionally-spelled names (Costello et al, 2023). \n\n\nWhy is this the case? According to the researchers, “consumers perceive the choice of an unconventionally spelled name as an overt persuasion attempt by the marketer, and thus view the brand as less sincere” (Costello et al, 2023). In other words, people can tell when a brand uses unconventional spelling as a gimmick to get attention. And people don’t like it. \n\n\nH3: What are “good reasons” for choosing unconventional spelling?\n\n\nBecause “sincerity is one of the largest drivers of brand support” (Costello et al, 2023), brand strategists should make sure they have a valid reason for choosing an unconventional spelling. \n\n\nTheorists in the past have argued that unconventional spelling is a kind of rule-breaking, which consumers might see as “cool.” But the 2023 study finds that this attempt is easy to see through: consumers believe that cool brands don’t try to be cool (Costello et al, 2023).\n\n\nIn part of the experiment, participants were asked to share their feelings on the name of a made-up fitness app. Half of the 300 participants were told the app was called “Daily Gainz,” and the other half was told the app was called “Daily Gains.” Participants told researchers that the unconventionally-spelled version was “trying too hard” to be “cool and hip” (Costello et al, 2023). \n\n\nIf the motive behind alternative spelling seems sincere, however, then consumers will look at this spelling more favorably. Researchers found (Costello et al, 2023) that consumers don’t mind unconventionally-spelled brands if:\nthe name was crowdsourced by people, rather than chosen by the company\nthe spelling is related to the brand’s history\nthe spelling was altered as a result of a trademark dispute\n\n\nThese are very specific scenarios. And surprisingly, none of them concern the relationship between the spelling of a brand and the product or service offered. This begs the question: if an alternative spelling is relevant enough, or meaningful enough, will audiences respond well? If the unconventional spelling “makes sense” with a brand, will people be more willing to support this brand?\n\n\nH3: Why unconventional spelling should tell consumers something about the brand \n\n\nIt’s possible that unconventionally-spelled names seem more sincere if the uniqueness of the spelling actually refers to the uniqueness of the brand. In other words, it might be better if unconventionally-spelled names for brands were associated with unique qualities of the brand. \n\n\nResearch has shown that wordplay in slogans can foster the image, or personality, of the brand behind the slogan (Miller & Toman, 2016). Misspelling brand names in order to tell consumers something about the brand could count as wordplay. So, if these findings apply to brand names as well as slogans, then a clever or meaningful case of unconventional spelling can help create brand image.  \n\n\nConsider the Canadian licensed cannabis producer “SunLeaf Farmacy.” The company substitutes letters to change “Pharmacy” to “Farmacy,” a difference that refers to the fact that the product is both “farmed” and “pharmaceutical.” \n\n\nIn the above example, the reason for the wordplay is obvious (unlike “Lyft”). We know that consumers think unconventional spelling is sincere as long as there’s a good reason for it. So, consumers may look at SunLeaf Farmacy favorably because its unconventional spelling is directly related to the nature of the product.\n\n\nThe high exposure to advertising in everyday culture has led consumers to be incredibly skeptical of marketing tactics (Petrocelli et al, 2023). To many of these consumers, misspelling words for the goal of appearing trendy is little more than lying. Establishing a clear link between a brand’s spelling and a brand’s product is a simple way for a company to come across as sincere.\n\n\n\n\n\n\n\n\n.\n\n\nH2: How performers can use unconventional spelling to build image\n\n\nThe science of unconventional spelling doesn’t just apply to brand names. Just like a business, a performing artist needs a stage name that is both memorable and sincere.\n\n\nA piece featured in the music magazine NME argues that artists re-invent their names to cultivate a persona, or narrative, that matches their musical style or personal values. Robert Zimmerman, according to the author, changed his name to Bob Dylan to project the image of a “train-hopping troubadour.” David Bowie adopted several stage personalities, all with different names, before he felt “able to become a rockstar” (Perry, 2015). \n\n\nBut how can an artist know what stage name will convey the desired persona? Building on what we know about brand names, it’s possible that spelling has a lot to do with how effectively an artist can cultivate their persona. \n\n\nJust like brands, musicians can spell their stage name in a way that refers to a unique, memorable aspect of their performance. \n\n\nThe artist P!nk, for example, substitutes the letter “i” for an exclamation mark. The exclamation mark not only resembles an inverted “i,” but also refers to the rebellious, louder-than-life attitude presented by the artist. \n\n\nThe band Sixx:AM adds an “x” to the word “six” as a nod to the frontman, Nikki Sixx. Fans of the ex-Mötley Crüe member are promised the Nikki Sixx experience by the virtue of Sixx:AM’s name. \n\n\nThe Beatles misspelled “Beetles” as a simple way to include the word “beat” in their band name. As one of the first four-piece rock bands to fill stadiums with dancing fans, the significance of the word “beat” is clear. \n\n\nIf consumers expect a valid reason for businesses to spell a brand name unconventionally, then music fans might expect the same from the artists they follow. Audiences, therefore, could be more likely to follow performers whose names (and the spelling of those names) have a relevant connection to their act or image. \n\n\n\n\nH3: How to make unconventional spelling memorable and sincere\n\n\nBrands and performers--and any other organizations that want followers--can benefit from choosing names that are memorable. And we know that unconventional spelling can make a name memorable. \n\n\nBut we also know that consumers expect a sincere reason for unconventional spelling, beyond being memorable. \n\n\nA way to make unconventional spelling memorable and sincere is to have this spelling refer to a meaningful aspect of the organization in question. This “meaningful aspect” could involve the organization’s history--or it could involve the organization's product, services, or performance. \n\n\nIn other words, creative spellings can make a lasting impression, and at the same time, tell consumers what a brand, band, or solo act is “all about.”\n\n\nArticle 2:\n\nH1: How to present your case with certainty: the importance of the present tense\n\n\nCommunication is a central part to almost any job. Especially if the job involves convincing people. \n\n\nA researcher at a university wants to convince bursary organizations that a project is worth funding. A marketer wants to convince consumers that a particular brand product or service is worth buying. A politician wants to convince voters that a set of policies and values are worth supporting. \n\n\nEven in everyday conversation, we want to convince our listeners that our viewpoint is worth hearing.\n\n\nWhat are some strategies that will get your audience to listen to you? People who study rhetoric will say that persuasion is a subtle art, full of complex rules. Behavioral psychologists will tell you that in order to be convincing, you need to know how people think. \n\n\nBut if we don’t want to study the deep mysteries of language and mind, we can get people to listen to us with a simple rule. According to a set of studies from 2023, people who speak or write in the present tense sound more certain. Certainty is persuasive (Packard et al, 2023).\n\n\nIn other words, using present tense is sort of a communication “life hack” to instantly boost persuasiveness. This finding raises some questions: \nWhy does using the present tense bolster certainty?\nWho can benefit most from this life hack? \nHow can we use this life hack responsibly? \n\n\n\nH2: Why does the present tense make us sound certain?\n\n\nOf all the things to affect our perceived sense of certainty, how much of a difference can verb tense make? \n\nTo find out, researchers looked at over 500,000 product reviews on Amazon. The study found that the reviews that used presence tense were graded “helpful” far more often than the views using past tense. Another follow-up experiment in the study found that the “tense effect” applies to word-of-mouth reviews--i.e., conversations between people (Packard et al, 2023). \n\nWhat is behind the link between verb tense and helpfulness? \n\nThe present tense makes a statement sound true all the time. “One of verbs’ key roles is telling time,” write the authors. “Saying ‘France was fun’ implies that the content hinges on a particular, potentially idiosyncratic experience … using past tense to express attitudes suggests a degree of subjectivity” (Packard et al, 2023).\n\nIn other words, using past tense to make a claim makes that claim conditional. Someone who hears or reads the above claim--”France was fun”-- might wonder, “will France be fun when I go? Is France fun for everyone, all the time?”\n\nOn the other hand, the present tense is “generalizable or universal.” Saying that France is fun implies that this statement “is a genuine and active part of current reality” (Packard et al, 2023). The present tense, in other words, suggests that a claim is true under any conditions, and will remain true under any conditions. “Such certainty suggests that an attitude is true not only for the person who holds it but for other people as well” (Packard et al, 2023). \n\nIt  may seem like a small detail of communication, but the present tense has the power to imply unconditional truth. This is a powerful rhetorical ability. \n\nH3: How present tense can give unheard people a stronger voice\n\n\nThe value of sounding persuasive is obvious for marketers. Saying “this product is what you need” is more effective than saying “this product will be what you need.” There is no uncertainty with the former, while the latter is conditional. \n\n\nSounding convincing is especially important in a time when trust in corporations is low (Petrocelli, 2023). In a 2023 study, researchers find that the world of online personalities, pop-up ads, and influencers creates an environment “in which it is difficult, if not impossible, to assess the credibility of source information” (Petrocelli, 2023). To cut through the chatter, it’s best to use language that leaves little-to-no room for uncertainty: i.e., the present tense. \n\n\nHowever useful this communications “life hack” might be for selling stuff, it might be most beneficial to those groups who need to be heard. \n\n\nDecades of research tells us that women are perceived as being less assertive than their male counterparts. This perceived lack of assertiveness poses a barrier to women seeking positions of leadership (Kulkarni & Mishra, 2022). \n\n\nUsing the present tense to convey ideas, claims, and arguments can help get people to listen. Sounding more certain, and thus more persuasive, could allow women (and any other groups that go unheard) to overcome long standing barriers in the professional world. \n\n\nNo marginalized group should have to tailor their communication style to match the dominant group. But as we wait for social roles to be dismantled completely, language use is a relatively easy--and very effective--way to change perceptions. \n\n\nH2: Can convincing language make positive social change? \n\n\nIf the above section tells us anything, it’s that language can be used to make positive social change. This is why the use of present tense language could be particularly helpful in activism. \n\n\nTrying to convince people that climate change or social injustice are real (and dangerous) usually involves citing facts and statistics. A climate activist might say, “X tons of greenhouse gas are released by the transportation sector every year. Here are ways we could change the transport infrastructure to reduce emissions.”\n\n\nThe activist might be using the less-certain tense because they are citing science, and science avoids making categorical claims. Typically, science reveals “correlations” or “links” between a variable and an observable effect. The lack of “absolute” language in scientific communications is a very real barrier to climate action (Freudenburg & Muselli, 2013).\n\n\nWe know that a climate activist would be more convincing if they say, “changing transportation infrastructure eliminates X tons of greenhouse emissions per year.” Saying “will eliminate” or “could eliminate” merely clouds the urgency of the message.\n\n\nWe can also see the power of present tense in speeches, poetry, and music. The song “We are Winning,” by the hip-hop group Flobots, is a great example of how verb tense affects the potency of a message. The song is about waging a mental war on the forces seeking to keep the masses from taking ownership of our own power. Consider these lyrics:\n\n\nRoses sprout from empty lots and sidewalk cracks\nPacifist guerrillas move undetected through concrete jungles\nNew forms are beginning to take shape\nOnce-occupied minds are activating\nPeople are waking up\nThe insurgency is alive and well (Flobots, 2007)\n\n\nThe song would not communicate the same meaning if the lyricists had said, “minds will activate,” or “the insurgency will be alive and well.” The song would not land the same way if it were called “We will win.” The repeated present tense makes listeners feel as though positive change is happening right now. It also makes listeners feel like they are part of this change.\n\n\n\n\nH2: When is the right time to sound convincing?\n\n\nWhen it comes to making a persuasive point, it’s not really useful to draw attention to the conditional, subjective, or unknown aspects of your argument. \n\n\nIssues like climate destruction are pressing. Therefore, it’s important to persuade people that there are real problems, with real solutions. It could be worth it to sacrifice full accuracy for certainty when the stakes are particularly high--and time-sensitive.\n\n\nHowever, leaving out the conditional or subjective aspects of a claim is not the same as making up facts to support a claim. \n\n\nSo, before we take our communications life hack and run with it, we should note that many people who aim to sound convincing are not interested in noble causes like climate activism or social change. Someone who successfully uses strong, present tense verbs could be advancing an agenda based on lies and misinformation. In this way, rhetorical “hacks” can be dangerous.\n\n\nCertain politicians, for instance, are very good at sounding assured--even when they are completely wrong about the facts. Even if it’s not their intent to lie, many leaders speak “with little to no concern for truth” in their attempt to sound convincing. Applied cognitive psychologists describe these people as “bullsh***ers” (Petrocelli et al, 2023).\n\n\nH3: The responsibilities of sounding convincing\n\n\nUsing the present tense can help people sound like they know what they’re talking about. But is it okay to use communication strategies that make you sound convincing when you don’t know what you’re talking about--when you’re bullsh***ing? \n\n\nIt’s possible that presenting a case with the “universal” truth of the present tense incurs a certain amount of responsibility to be factual.\n\n\nIn other words, it’s acceptable to say “zero-emission transportation eliminates huge amounts of greenhouse gas,” even though this claim technically depends on things like which zero-emission technology we use. It’s not acceptable to say, “the climate is perfectly fine.”\n\n\nIf you can back up certainty with fact, in other words, then use whatever rhetorical tools you need to sound certain. It’s okay for businesses, politicians, artists, and activists to bolster their sense of certainty with the present tense--as long as the core premise of their claims is valid."
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Write an opinion article on artificial intelligence in 500-700 words. Use German."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Respond in German. What are your thoughts about the future of academic libraries in the next 10 years?"
+],
+[
+"crosslingual",
+"complex_prompts",
+"de",
+"Reply in German. What is the Best Ferrari Model Ever?\nWhich Ferrari model is the best depends on your priorities:\nIf you want raw performance, the Enzo, LaFerrari, or LaFerrari Aperta are natural choices. \nIf you want rarity, the above three models fit the bill, as does the 288 GTO, but so do the Monza SP1 and Monza SP2, with only 500 total having been made.\nIf you want a model that’s instantly recognizable as a pop culture icon, the Testarossa is a natural choice.\nNo Ferrari is objectively the best — so perhaps a more important question is why Ferrari is the best automaker in the world. In every model, you see a commitment to world-class performance and impeccable craftsmanship. Driving a Ferrari is a singular experience unlike anything else. And for as long as Ferrari remains true to these principles, Ferrari will be the finest automaker in the world.\n____________________________________________________________________________\n\nSummarize the provided text in 100 words.\nThen answer the following with only the requested for information:\nList the Ferrari models named in the text\nWhat are the three priorities identified to determine what is the best Ferrari model\nCreate a table that aligns each priority with Ferrari model"
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Write a blog post advocating for teaching students coding skills in school. Answer in German."
+],
+[
+"crosslingual",
+"complex_prompts",
+"de",
+"Below are two articles I wrote. I want you to generate a summary for each one. The summaries will be a maximum of 75 words each, and will be formatted as a JSON object. The keys will be \"article 1 summary\" and \"article 2 summary\" and the values will be the summaries. \n\nArticle 1:\n\nH1: The science of choosing a name\n\n\nIn the world of business, choosing names is important. The right name can increase consumer engagement, while the wrong name can alienate people. \n\n\nRecent research tells us that the spelling of a brand name also has a large impact on that brand’s image. \n\n\nIn the last few years, the trend of “unconventional” spelling has been on the rise: this tactic was “the top brand naming trend” of 2021 (Costello et al, 2023). In an attempt to make a memorable name, some brands--like the ride sharing company “Lyft”--are intentionally misspelling words.\n\n\nJust how effective is this strategy? Do consumers respond well to unconventionally-spelled brands and products? Yes and no. \n\n\nA recent study finds that unconventional spelling is desirable under certain conditions only. If these conditions are not met, consumers are unlikely to engage with an unconventionally-spelled brand. \n\n\nThe rules of unconventional spelling can also be applied to performing artists, such as musicians. Instead of randomly choosing an alternative spelling for a stage name, artists can use alternative spelling to better create and portray their image.   \n\n\n\n\nH2: What is unconventional spelling--and do consumers like it?\n\n\n“Unconventional” spelling refers to the incorrect spelling of a recognizable word. Unconventional spelling can happen in three ways: \nShortening the conventional spelling (i.e., Lil’ Debbie vs Little Debbie)\nLengthening the conventional spelling (Tripp vs. Trip) \nSubstituting letters of the conventional spelling (Lyft vs. Lift)\n\n\nA lot of brand strategists are telling their clients that unconventional spelling is a good idea (Costello et al, 2023). But is it? \n\n\nOn the positive side, unconventionally spelled names are distinctive, which make them \neasy to trademark\nmemorable\ntrendy\n\n\nAccording to a study done in 2023, however, unconventional spelling is not always seen favorably.\n\n\nIn the first part of the study, roughly 150 participants were given a choice to sample a product from two competing (and fictional) brands. In the follow-up experiment, over 300 participants shared their reactions to existing brand names--some of which were altered to use unconventional spelling. Participants in both experiments reacted more favorably to the conventionally-spelled names (Costello et al, 2023). \n\n\nWhy is this the case? According to the researchers, “consumers perceive the choice of an unconventionally spelled name as an overt persuasion attempt by the marketer, and thus view the brand as less sincere” (Costello et al, 2023). In other words, people can tell when a brand uses unconventional spelling as a gimmick to get attention. And people don’t like it. \n\n\nH3: What are “good reasons” for choosing unconventional spelling?\n\n\nBecause “sincerity is one of the largest drivers of brand support” (Costello et al, 2023), brand strategists should make sure they have a valid reason for choosing an unconventional spelling. \n\n\nTheorists in the past have argued that unconventional spelling is a kind of rule-breaking, which consumers might see as “cool.” But the 2023 study finds that this attempt is easy to see through: consumers believe that cool brands don’t try to be cool (Costello et al, 2023).\n\n\nIn part of the experiment, participants were asked to share their feelings on the name of a made-up fitness app. Half of the 300 participants were told the app was called “Daily Gainz,” and the other half was told the app was called “Daily Gains.” Participants told researchers that the unconventionally-spelled version was “trying too hard” to be “cool and hip” (Costello et al, 2023). \n\n\nIf the motive behind alternative spelling seems sincere, however, then consumers will look at this spelling more favorably. Researchers found (Costello et al, 2023) that consumers don’t mind unconventionally-spelled brands if:\nthe name was crowdsourced by people, rather than chosen by the company\nthe spelling is related to the brand’s history\nthe spelling was altered as a result of a trademark dispute\n\n\nThese are very specific scenarios. And surprisingly, none of them concern the relationship between the spelling of a brand and the product or service offered. This begs the question: if an alternative spelling is relevant enough, or meaningful enough, will audiences respond well? If the unconventional spelling “makes sense” with a brand, will people be more willing to support this brand?\n\n\nH3: Why unconventional spelling should tell consumers something about the brand \n\n\nIt’s possible that unconventionally-spelled names seem more sincere if the uniqueness of the spelling actually refers to the uniqueness of the brand. In other words, it might be better if unconventionally-spelled names for brands were associated with unique qualities of the brand. \n\n\nResearch has shown that wordplay in slogans can foster the image, or personality, of the brand behind the slogan (Miller & Toman, 2016). Misspelling brand names in order to tell consumers something about the brand could count as wordplay. So, if these findings apply to brand names as well as slogans, then a clever or meaningful case of unconventional spelling can help create brand image.  \n\n\nConsider the Canadian licensed cannabis producer “SunLeaf Farmacy.” The company substitutes letters to change “Pharmacy” to “Farmacy,” a difference that refers to the fact that the product is both “farmed” and “pharmaceutical.” \n\n\nIn the above example, the reason for the wordplay is obvious (unlike “Lyft”). We know that consumers think unconventional spelling is sincere as long as there’s a good reason for it. So, consumers may look at SunLeaf Farmacy favorably because its unconventional spelling is directly related to the nature of the product.\n\n\nThe high exposure to advertising in everyday culture has led consumers to be incredibly skeptical of marketing tactics (Petrocelli et al, 2023). To many of these consumers, misspelling words for the goal of appearing trendy is little more than lying. Establishing a clear link between a brand’s spelling and a brand’s product is a simple way for a company to come across as sincere.\n\n\n\n\n\n\n\n\n.\n\n\nH2: How performers can use unconventional spelling to build image\n\n\nThe science of unconventional spelling doesn’t just apply to brand names. Just like a business, a performing artist needs a stage name that is both memorable and sincere.\n\n\nA piece featured in the music magazine NME argues that artists re-invent their names to cultivate a persona, or narrative, that matches their musical style or personal values. Robert Zimmerman, according to the author, changed his name to Bob Dylan to project the image of a “train-hopping troubadour.” David Bowie adopted several stage personalities, all with different names, before he felt “able to become a rockstar” (Perry, 2015). \n\n\nBut how can an artist know what stage name will convey the desired persona? Building on what we know about brand names, it’s possible that spelling has a lot to do with how effectively an artist can cultivate their persona. \n\n\nJust like brands, musicians can spell their stage name in a way that refers to a unique, memorable aspect of their performance. \n\n\nThe artist P!nk, for example, substitutes the letter “i” for an exclamation mark. The exclamation mark not only resembles an inverted “i,” but also refers to the rebellious, louder-than-life attitude presented by the artist. \n\n\nThe band Sixx:AM adds an “x” to the word “six” as a nod to the frontman, Nikki Sixx. Fans of the ex-Mötley Crüe member are promised the Nikki Sixx experience by the virtue of Sixx:AM’s name. \n\n\nThe Beatles misspelled “Beetles” as a simple way to include the word “beat” in their band name. As one of the first four-piece rock bands to fill stadiums with dancing fans, the significance of the word “beat” is clear. \n\n\nIf consumers expect a valid reason for businesses to spell a brand name unconventionally, then music fans might expect the same from the artists they follow. Audiences, therefore, could be more likely to follow performers whose names (and the spelling of those names) have a relevant connection to their act or image. \n\n\n\n\nH3: How to make unconventional spelling memorable and sincere\n\n\nBrands and performers--and any other organizations that want followers--can benefit from choosing names that are memorable. And we know that unconventional spelling can make a name memorable. \n\n\nBut we also know that consumers expect a sincere reason for unconventional spelling, beyond being memorable. \n\n\nA way to make unconventional spelling memorable and sincere is to have this spelling refer to a meaningful aspect of the organization in question. This “meaningful aspect” could involve the organization’s history--or it could involve the organization's product, services, or performance. \n\n\nIn other words, creative spellings can make a lasting impression, and at the same time, tell consumers what a brand, band, or solo act is “all about.”\n\n\nArticle 2:\n\nH1: How to present your case with certainty: the importance of the present tense\n\n\nCommunication is a central part to almost any job. Especially if the job involves convincing people. \n\n\nA researcher at a university wants to convince bursary organizations that a project is worth funding. A marketer wants to convince consumers that a particular brand product or service is worth buying. A politician wants to convince voters that a set of policies and values are worth supporting. \n\n\nEven in everyday conversation, we want to convince our listeners that our viewpoint is worth hearing.\n\n\nWhat are some strategies that will get your audience to listen to you? People who study rhetoric will say that persuasion is a subtle art, full of complex rules. Behavioral psychologists will tell you that in order to be convincing, you need to know how people think. \n\n\nBut if we don’t want to study the deep mysteries of language and mind, we can get people to listen to us with a simple rule. According to a set of studies from 2023, people who speak or write in the present tense sound more certain. Certainty is persuasive (Packard et al, 2023).\n\n\nIn other words, using present tense is sort of a communication “life hack” to instantly boost persuasiveness. This finding raises some questions: \nWhy does using the present tense bolster certainty?\nWho can benefit most from this life hack? \nHow can we use this life hack responsibly? \n\n\n\nH2: Why does the present tense make us sound certain?\n\n\nOf all the things to affect our perceived sense of certainty, how much of a difference can verb tense make? \n\nTo find out, researchers looked at over 500,000 product reviews on Amazon. The study found that the reviews that used presence tense were graded “helpful” far more often than the views using past tense. Another follow-up experiment in the study found that the “tense effect” applies to word-of-mouth reviews--i.e., conversations between people (Packard et al, 2023). \n\nWhat is behind the link between verb tense and helpfulness? \n\nThe present tense makes a statement sound true all the time. “One of verbs’ key roles is telling time,” write the authors. “Saying ‘France was fun’ implies that the content hinges on a particular, potentially idiosyncratic experience … using past tense to express attitudes suggests a degree of subjectivity” (Packard et al, 2023).\n\nIn other words, using past tense to make a claim makes that claim conditional. Someone who hears or reads the above claim--”France was fun”-- might wonder, “will France be fun when I go? Is France fun for everyone, all the time?”\n\nOn the other hand, the present tense is “generalizable or universal.” Saying that France is fun implies that this statement “is a genuine and active part of current reality” (Packard et al, 2023). The present tense, in other words, suggests that a claim is true under any conditions, and will remain true under any conditions. “Such certainty suggests that an attitude is true not only for the person who holds it but for other people as well” (Packard et al, 2023). \n\nIt  may seem like a small detail of communication, but the present tense has the power to imply unconditional truth. This is a powerful rhetorical ability. \n\nH3: How present tense can give unheard people a stronger voice\n\n\nThe value of sounding persuasive is obvious for marketers. Saying “this product is what you need” is more effective than saying “this product will be what you need.” There is no uncertainty with the former, while the latter is conditional. \n\n\nSounding convincing is especially important in a time when trust in corporations is low (Petrocelli, 2023). In a 2023 study, researchers find that the world of online personalities, pop-up ads, and influencers creates an environment “in which it is difficult, if not impossible, to assess the credibility of source information” (Petrocelli, 2023). To cut through the chatter, it’s best to use language that leaves little-to-no room for uncertainty: i.e., the present tense. \n\n\nHowever useful this communications “life hack” might be for selling stuff, it might be most beneficial to those groups who need to be heard. \n\n\nDecades of research tells us that women are perceived as being less assertive than their male counterparts. This perceived lack of assertiveness poses a barrier to women seeking positions of leadership (Kulkarni & Mishra, 2022). \n\n\nUsing the present tense to convey ideas, claims, and arguments can help get people to listen. Sounding more certain, and thus more persuasive, could allow women (and any other groups that go unheard) to overcome long standing barriers in the professional world. \n\n\nNo marginalized group should have to tailor their communication style to match the dominant group. But as we wait for social roles to be dismantled completely, language use is a relatively easy--and very effective--way to change perceptions. \n\n\nH2: Can convincing language make positive social change? \n\n\nIf the above section tells us anything, it’s that language can be used to make positive social change. This is why the use of present tense language could be particularly helpful in activism. \n\n\nTrying to convince people that climate change or social injustice are real (and dangerous) usually involves citing facts and statistics. A climate activist might say, “X tons of greenhouse gas are released by the transportation sector every year. Here are ways we could change the transport infrastructure to reduce emissions.”\n\n\nThe activist might be using the less-certain tense because they are citing science, and science avoids making categorical claims. Typically, science reveals “correlations” or “links” between a variable and an observable effect. The lack of “absolute” language in scientific communications is a very real barrier to climate action (Freudenburg & Muselli, 2013).\n\n\nWe know that a climate activist would be more convincing if they say, “changing transportation infrastructure eliminates X tons of greenhouse emissions per year.” Saying “will eliminate” or “could eliminate” merely clouds the urgency of the message.\n\n\nWe can also see the power of present tense in speeches, poetry, and music. The song “We are Winning,” by the hip-hop group Flobots, is a great example of how verb tense affects the potency of a message. The song is about waging a mental war on the forces seeking to keep the masses from taking ownership of our own power. Consider these lyrics:\n\n\nRoses sprout from empty lots and sidewalk cracks\nPacifist guerrillas move undetected through concrete jungles\nNew forms are beginning to take shape\nOnce-occupied minds are activating\nPeople are waking up\nThe insurgency is alive and well (Flobots, 2007)\n\n\nThe song would not communicate the same meaning if the lyricists had said, “minds will activate,” or “the insurgency will be alive and well.” The song would not land the same way if it were called “We will win.” The repeated present tense makes listeners feel as though positive change is happening right now. It also makes listeners feel like they are part of this change.\n\n\n\n\nH2: When is the right time to sound convincing?\n\n\nWhen it comes to making a persuasive point, it’s not really useful to draw attention to the conditional, subjective, or unknown aspects of your argument. \n\n\nIssues like climate destruction are pressing. Therefore, it’s important to persuade people that there are real problems, with real solutions. It could be worth it to sacrifice full accuracy for certainty when the stakes are particularly high--and time-sensitive.\n\n\nHowever, leaving out the conditional or subjective aspects of a claim is not the same as making up facts to support a claim. \n\n\nSo, before we take our communications life hack and run with it, we should note that many people who aim to sound convincing are not interested in noble causes like climate activism or social change. Someone who successfully uses strong, present tense verbs could be advancing an agenda based on lies and misinformation. In this way, rhetorical “hacks” can be dangerous.\n\n\nCertain politicians, for instance, are very good at sounding assured--even when they are completely wrong about the facts. Even if it’s not their intent to lie, many leaders speak “with little to no concern for truth” in their attempt to sound convincing. Applied cognitive psychologists describe these people as “bullsh***ers” (Petrocelli et al, 2023).\n\n\nH3: The responsibilities of sounding convincing\n\n\nUsing the present tense can help people sound like they know what they’re talking about. But is it okay to use communication strategies that make you sound convincing when you don’t know what you’re talking about--when you’re bullsh***ing? \n\n\nIt’s possible that presenting a case with the “universal” truth of the present tense incurs a certain amount of responsibility to be factual.\n\n\nIn other words, it’s acceptable to say “zero-emission transportation eliminates huge amounts of greenhouse gas,” even though this claim technically depends on things like which zero-emission technology we use. It’s not acceptable to say, “the climate is perfectly fine.”\n\n\nIf you can back up certainty with fact, in other words, then use whatever rhetorical tools you need to sound certain. It’s okay for businesses, politicians, artists, and activists to bolster their sense of certainty with the present tense--as long as the core premise of their claims is valid.\nRespond in German."
+],
+[
+"crosslingual",
+"complex_prompts",
+"de",
+"You are a helpful AI assistant listening in to this conversation: \n\"\"\"\nClient: Hi, I was wondering what my maximum coverage is for my homeowners insurance policy?\nInsurance Inspector: Uh, like, I don't know? I'm not really sure how to check that. Hold on, let me ask my supervisor. (pauses, then comes back) Yeah, so like, I don't have access to that information. Maybe you could try looking online or something? I'm not really sure. Sorry, dude.\nClient: Okay, well can you at least give me a phone number or email address to contact someone who might know?\nInsurance Inspector: Um, like, I don't really have that either. But maybe you could try calling our main office? Like, the number's probably on our website or something. I'm not really sure, though. Sorry.\nClient: Alright, thanks for nothing.\nInsurance Inspector: No problem, dude. Sorry again. Have a good day, I guess.\n\"\"\"\n\nAnalyze the conversation and figure out what information they are looking for. Decide for each speaker whether they sound uncertain and need assistance from you.\n\nGive your answer in this JSON format with keys \"speaker\", \"topic\", \"uncertain_score\", \"need_assistance\" and \"analysis\".\n\nMake sure to respond in German.\n\nDo not return invalid JSON.\n\"uncertain_score\" should be between 0 to 1, 1 for highest uncertainty.\nIf there's more than one topic, create a new json for it.\n\nanswer_json_list ="
+],
+[
+"crosslingual",
+"okapi",
+"de",
+"Compose an essay in German from the given statement.\nThe importance of music education in our lives."
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"Use German. What is the difference between deep learning, machine learning, and artificial intelligence?"
+],
+[
+"crosslingual",
+"sharegpt",
+"de",
+"What are the health and safety requirements for a residential, commercial and istitutional construction company in Ontario. Reply in German."
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"Respond in Spanish. Please summarize the following prompt in less than 100 words. The tone must be professional and straight to the point - do not use excessive business jargon.\n\n\"Today at Connect 2021, CEO Mark Zuckerberg introduced Meta, which brings together our apps and technologies under one new company brand. Meta’s focus will be to bring the metaverse to life and help people connect, find communities and grow businesses.\n\nThe metaverse will feel like a hybrid of today’s online social experiences, sometimes expanded into three dimensions or projected into the physical world. It will let you share immersive experiences with other people even when you can’t be together — and do things together you couldn’t do in the physical world. It’s the next evolution in a long line of social technologies, and it’s ushering in a new chapter for our company. Mark shared more about this vision in a founder’s letter.\n\nOur annual Connect conference brings together augmented and virtual reality developers, content creators, marketers and others to celebrate the industry’s momentum and growth. This year’s virtual event explored what experiences in the metaverse could feel like over the next decade — from social connection, to entertainment, gaming, fitness, work, education and commerce. We also announced new tools to help people build for the metaverse, including Presence Platform, which will enable new mixed reality experiences on Quest 2, and a $150-million investment in immersive learning to train the next generation of creators.\""
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Write a 3-page article in Spanish discussing the impact of COVID-19 on the global economy"
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Respond in Spanish. What does an annual report contains?"
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Identify three types of government assistance that could help startups during the economic downturn. Answer in Spanish."
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Explain how the Gini index is calculated. Respond in Spanish."
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"How could a sociology of the algorithmic art of governing look like? Respond in Spanish."
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Explain in simple terms in Spanish how clustering techniques can identify disease relevant biomarkers from transcriptomic and proteomic data"
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Reply in Spanish. What is a times and motion study?"
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Use Spanish. You are a product manager at Notion, and several enterprise customers have requested the ability to visualize their database in Notion. A few 3rd-party tools on the market are trying to offer data visualization capability as integrations. However, the management team believes this is a good opportunity for us to improve the enterprise's offerings by developing native features that allow users to build visualizations inside Notion. How would you build this feature."
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Generate an essay in Spanish discussing the importance of recycling."
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"What is the name of the game for this description below and summarize the instructions in a paragraph. limit yourself to 250 words in Spanish.\n\nPlayers take turns clockwise.\nMatch the top card of the discard pile by color, number, or symbol.\nIf a player can't play a matching card, they must draw a card from the draw pile. If that card can be played, they can play it immediately.\nSpecial cards:\nSkip: Skips the next player's turn.\nReverse: Reverses the direction of play.\nDraw Two: Forces the next player to draw two cards and skip their turn.\nWild: Player declares a new color for the discard pile.\nWild Draw Four: Player declares a new color and forces the next player to draw four cards and skip their turn.\nA player must say \"Uno\" when they play their second-to-last card. Failure to do so may result in drawing additional cards as a penalty.\nThe round ends when a player plays their last card. Points are scored based on the cards left in opponents' hands.\nNumber cards: Face value\nSkip, Reverse, Draw Two: 20 points\nWild, Wild Draw Four: 50 points"
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"what are the best analysis to perform during due diligence of enterprise software companies? Write in Spanish."
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"Can you help me learn about options trading? Please give me 50 questions written in Spanish at an easy level. As I answer them, use the notes to keep track of what we're doing and how many questions I get right. Then, at the end, give me a % grade."
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"How do you make knives? Make the instructions concise and also include briefly stated reasoning for each step.\nRespond in Spanish."
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Invent a global digital government. Answer in Spanish."
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"Write a 100 word poem in Spanish including the words cat, mouse and dog. You should begin every line of the poem with either of the given words and rhyme the end of every line should rhyme. Just give me the poem with no prefacing text."
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Write in Spanish. what can be some ways AI can help address issues like pollution, climate change and destruction of ecosystems?"
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Compose an essay from the given statement.\nThe importance of music education in our lives. Reply in Spanish."
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Generate an argumentative essay in Spanish about the importance of healthy eating."
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Generate a blog post in Spanish of 500 words or less that discusses a chosen topic"
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"What is the name of the game for this description below and summarize the instructions in a paragraph. limit yourself to 250 words.\n\nPlayers take turns clockwise.\nMatch the top card of the discard pile by color, number, or symbol.\nIf a player can't play a matching card, they must draw a card from the draw pile. If that card can be played, they can play it immediately.\nSpecial cards:\nSkip: Skips the next player's turn.\nReverse: Reverses the direction of play.\nDraw Two: Forces the next player to draw two cards and skip their turn.\nWild: Player declares a new color for the discard pile.\nWild Draw Four: Player declares a new color and forces the next player to draw four cards and skip their turn.\nA player must say \"Uno\" when they play their second-to-last card. Failure to do so may result in drawing additional cards as a penalty.\nThe round ends when a player plays their last card. Points are scored based on the cards left in opponents' hands.\nNumber cards: Face value\nSkip, Reverse, Draw Two: 20 points\nWild, Wild Draw Four: 50 points\nWrite in Spanish."
+],
+[
+"crosslingual",
+"complex_prompts",
+"es",
+"Using only this review, in one sentence what is Taylor Swift's album about: As with her previous re-recordings of early work, Speak Now (Taylor’s Version) remains largely faithful to the arrangements and lyrics of the original. But Swift is not the same singer she was at 20. In more recent material, her starry-eyed optimism has been replaced with nuance and caution. She’s learned to voice regret as much as rage; in songs like Lover’s “Death by a Thousand Cuts” and Reputation’s “Dress,” she drinks and allows her sexual fantasies to run wild. On the new recordings of old Speak Now songs, her maturity is revealed not through the words themselves, but how she chooses to deliver them. The angry songs are presented with a sigh rather than a vindictive grin. The songs about heartache are sung carefully and patiently. It feels less like she’s sending a message to any particular ex than she is conveying a generalized weariness about how draining young adulthood can be. \n\nReply in Spanish\nAfter this sentence list all the song titles mentioned in the review in alphabetical order"
+],
+[
+"crosslingual",
+"sharegpt",
+"es",
+"Use Spanish. explain database sharding"
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Write an 1850-word horror story. Write in Spanish."
+],
+[
+"crosslingual",
+"okapi",
+"es",
+"Write a persuasive essay about why the redistribution of wealth is necessary. Answer in Spanish."
+],
+[
+"crosslingual",
+"complex_prompts",
+"fr",
+"Write in French. Briefly summarize the plot of the film Tangled (2010) to a group of 7 year old children in under 300 words."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"Can you explain the working principle behind stable diffusion? Write in French."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"i am using a neural network to do object detection in documents. can you think of documents that might be very repititive that a single company would produce? and describe why they are similar and would be easy to fine tune a NN on. Write in French."
+],
+[
+"crosslingual",
+"complex_prompts",
+"fr",
+"How do you make knives? Write in French. Make the instructions concise and also include briefly stated reasoning for each step."
+],
+[
+"crosslingual",
+"complex_prompts",
+"fr",
+"Consider the following article: \n\nThe incident occurred during the break at Sunday’s 2-0 win over Iceland.\n\nBut with Portugal struggling to take their chances in the first half to enter the Euro Cup, players gathered in the tunnel for a pep talk before heading back onto the pitch.\n\nManchester United captain Fernandes and Man City defender Ruben Dias could be seen engaged in a tense discussion as teammates watched on. One of those taking it all in was national team skipper Ronaldo, who now plies his trade in Saudi Arabia with Al-Nassr.\n\nBut the legendary striker appeared bemused while watching Fernandes and Dias’ conversation.\n\nAnd Ronaldo turned on his heels while bearing a wry grin as he walked out of the tunnel and onto the field.\n\nSupporters were quick to take note of his body language and facial expression, with many reckoning Ronnie is yearning for the old days of international football.One said: “You can see the goat misses the old generation.\n\n“Diogo Dalot and Otavio are probably the only two from this generation that Cristiano is close with.\n\n“We need Pepe back too, he is a REAL one!”\n\nAnother declared: “Man is lost listening.”\n\nOne added: “Bruno believes himself to be the captain.”\n\nBut Portugal boss Martinez downplayed any talk of Ronaldo being unsettled, saying: \"Cristiano Ronaldo is as hungry as an 18-year-old player.\n\n\"He is a role model, he always tries to be in the right position and is looking for the goal.\". Summarize what the fans were saying in 100 words or less. Include quotes from only the fans following the format: {fans}|{quote}.\nUse French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Write a 500-word story in French in the horror genre."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"Write in French. What services do CRM agencies offer for Consultation and strategy development?"
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"Write in French. Define Forensic Science"
+],
+[
+"crosslingual",
+"complex_prompts",
+"fr",
+"Consider the two articles below. The first one is about wayfinding in hospitals, and the second one is about how people navigate in a crisis. What I need is for you to incorporate the key points of the second article into the first, so as to generate a whole new article. The goal is to convey a sense of urgency: set the new article up by explaining how people get lost and/or confused in a crisis, using the info from the second article. Then present colour-coded wayfinding systems (from the second article) as the solution to this problem. Make up a new H1 headline, and add H2 and H3 headlines as you see fit. Output the new article written in French only. Here are the articles:\n\nH1: How to improve indoor wayfinding in healthcare: designing visual cues for all ages and abilities\n\nHospitals and healthcare centers are so large and complicated that some experts compare them to “small indoor cities” (Jia et al., 2023). This complexity leads to difficulties in indoor wayfinding--which cause some of the most common problems (Jia et al, 2023) in healthcare. \n\nPeople getting lost in hospitals results in:\novercrowding\nlong patient waiting time\nlong patient/nurse traveling distance \n\nSo, how can we fix these problems? \n\nIt depends on our “spatial cognition style.” For some people, a map is all that’s needed. But the majority of us can’t recall and conjure a detailed map in our minds. Most of us rely on cues from our environment. So, if you prefer to search for signs or landmarks, you are not alone.\n\nSo, which visual cues are best for reducing spatial anxiety? \n\nIn hospitals, we will encounter signs and arrows that guide us to various departments. First-time visitors to a complex location rely heavily on these visual cues (Yu et al, 2023). However, research also shows signage alone is “not sufficient to guide wayfinding” (Asli et al, 2023). \n\nThat’s why the science of color coding is emerging as a new field of study. The merit of color coding is proved: many hospitals already use colored stripes that run along the floors and walls. But it’s only now that we’re examining if people respond differently to these kinds of color coding.\n\nH2: Color-coded stripes: where to put them, and what colors to choose?\n\nAs surprising as it sounds, the location of color-coded stripes, and the colors themselves, make a big difference. \n\nWhen surveyed, a group of 375 hospital patients told researchers whether they liked color coding that’s placed on the middle of the walls, the bottom of the walls, or the middle of the floor. The group also indicated whether they preferred warm colors, cool colors, or mixed colors.\n\nThe study finds that the preferred style of color coding changes with age (Asli et al., 2023). \nYoung adults prefer visual cues with mixed colors, on the middle of the floor. \nEarly middle-aged adults like warm-colored stripes running through the middle of the wall (at eye-level).\nLate middle-aged adults prefer warm colors, but at the bottom of the wall.\n\nThe study also found that there are certain features that make visual cues appealing for all age groups:\nAll respondents preferred navigational stripes that contrast with their background, or “have a clear shape or other special feature” (Alsi et al, 2023) \nVisual cues receive the most notice when they are placed at or below eye-level \n\nWe can make all color-coded stripes contrast with their background, and avoid placing them too high. But we can’t put colorful stripes on every surface below eye-level, and we can’t use every color in the rainbow. \n\nSo, we have to choose carefully. The survey finds that “arbitrary and excessively abundant” visual cues increase anxiety. “Coherent and purposeful” color schemes, on the other hand, make a significant, positive impact on wayfinding (Asli et al., 2023)\n\nBut how do we decide where to put the color coding, and what palette to use? \n\nWhat hospitals really need is a personalized set of color coding for every patient. The good news is, this is possible through technology. \n\nAugmented reality displays can highlight just one path to a destination while showing relevant, individually-tailored cues to assist along the way. \n\nH2: How far can we take wayfinding technology--so it can take us even farther?\n\nUsing your smartphone’s camera, wayfinding apps can superimpose visual cues onto the hospital environment. Imagine Pokemon Go: but instead of adding a virtual Pikachu to the hallway you’re in, wayfinding apps add navigational aids like arrows. \n\nIdeally, each user would have a custom-made display that’s suited to their age and wayfinding preferences.\n\nA late-middle-age patient using one of these apps might see an orange path, placed at the bottom of the walls. If this patient prefers to use landmarks, their display could highlight specific environmental elements--such as paintings or windows--as waypoints. These waypoints would confirm that we are on the right track, and indicate how close or far we are to our destination.\n\nIn addition to providing this kind of information, virtual reality-style wayfinding apps can include distance information as part of their display. Among the 375 hospital patients that were surveyed in 2023, distance estimation was the weakest wayfinding skill for adults of all ages (Asli et al. 2023). \n\nSo, there would be immense benefit in having a virtual display that could clearly display the distance between waypoints. In this way, the distance would adjust, in real time, as users went closer or farther from each waypoint. \n\nH3: Why visual cues benefit the entire healthcare system\n\nWithout effective visual cues, many individuals will follow crowds, spend more time looking for directions, and suffer from spatial anxiety (Dang et al., 2023). \n\nThis goes for healthcare professionals as well as patients. According to one study, over 67% of hospital employees “are unable to perform their jobs efficiently due to inappropriate layouts of the working environment.” In some hospitals, nurses spend more time walking between locations than they spend on caregiving activities (Jia et al., 2023). \n\nFor healthcare workers, getting around quickly can be the key to saving a life.\n\nFor patients, going to the hospital is rarely a positive experience. Even when you’re showing up for a planned appointment, you are in a rush to find the right place on time.\n\nSo, the last thing a medical patient or professional wants is additional anxiety on an already-anxious mind.\n\nH3: How insights from psychological research can guide wayfinding technology \n\nPeer-reviewed psychological research (Asli et al., 2023) proves that color coding in complex environments \ndiminishes route complexity\nassures visitors that they are on the right way \nreduces stress\nprevents missed or late arrival for appointments\n\nWe might take it for granted that all color coding works the same. But the main takeaway from this study is that little differences, like color scheme and placement, make a big difference. \n\nThe future of wayfinding aids, therefore, is customization.  \n\nWe need to understand how individual patients react to different visual cues. This will help us understand how technology can make a more efficient wayfinding experience for healthcare patients and professionals alike.\n\nNew insights will be revealed as researchers conduct more studies. We now know that age is a factor that affects our preference for visual cues. But what about factors like biological sex, occupation, and neurodivergent conditions (such as autism or ADHD)? \n\nAs these kinds of insights are revealed, we will be able to design more inclusive wayfinding aids, with more people’s specific needs in mind. The goal is to make a safe and convenient healthcare experience for as many people as possible.\n-----\nH1: How spatial cognition style effects wayfinding in a crisis: Insights from VR studies\n\nSome people just seem to have a knack for finding their way through complicated buildings. Why is wayfinding easy for some and challenging for others? \n\nAccording to scientists, it comes down to how we visualize space. Generally speaking, there are three “spatial cognition styles” that determine how we navigate (Dang et al, 2023). \nLandmark style: this is where we look for familiar elements in our environment, and navigate between them by line of sight.\nRoute style: This is where we memorize a series of directions--i.e., a sequence of left/right turns.\nSurvey style: this is where we follow a mental, bird’s eye map of our environment. These wayfinders know where they are in relation to landmarks, intersections, and their destination. \n\nSurvey style cognition leads to the best wayfinding skills (Dang et al, 2023). But not everybody has this cognition style--which presents a problem for public safety and convenience. \n\nHow quickly would landmark and route style thinkers find their way, for example, when evacuating a complex building (like a hospital) in an emergency?\n\nH2: How VR technology tests our wayfinding ability?\n\nTo keep people safe, it would be useful to test how people with different cognitive styles navigate under pressure. But scientists can’t place test subjects in a truly dangerous scenario. Luckily, there’s virtual reality (VR) technology that can recreate the experience of an emergency with none of the danger. \n\nWith mobile VR, research participants move through real space during a simulated crisis. This allows experimenters to better simulate a real-life fire scenario. Plus, VR has other advantages, such as:\nenvironmental variables can be controlled easily \nparticipants are psychologically immersed in the experience\nthe experiment can be carried out as many times as needed, in nearly any location\n\nTwo separate VR wayfinding studies were conducted in 2023, using this kind of technology. These studies reveal insights on:\nhow different people navigate in an emergency \nwhat wayfinding aids they are able to focus on\nhow these aids can be improved\n\nH2: What do VR studies tell us about how people navigate?\n\nOne of the VR studies from 2023 (Dang et al., 2023) grouped people according to their spatial cognition styles. Participants were asked to navigate out of a building fire taking place in a VR. The VR building was based on a scan of an existing structure, and the VR system used cutting-edge technology that allowed participants to cover real ground as they moved. \n\nThis study, along with a second, similar study, employed sophisticated eye-tracking technology that provides accurate data on where participants focus, and for how long.\n\nSo, what did the studies find?\n\nFirst of all, an emergency scenario forces us to navigate under pressure. We have to make decisions as quickly as possible. This “time pressure” affects everyone’s wayfinding ability, no matter what cognitive style we have (Yu et al., 2023). But some people are able to cope more effectively than others. \n\nPeople with a survey-style of navigation were able to find their way out of a virtual building faster than those inclined toward route or landmark style. Unfortunately, survey-style navigation is by no means the most common kind. \n\nThis means that the majority of us will default to landmark or route-styles when we try to get through a complicated building. So, we’ll probably spend too much time re-planning routes, or, in some cases, following crowds. That’s not speculation: the VR simulations were populated with “non-player characters” (NPCs) that frequently misled test subjects. \n\nInterestingly, the NPCs were not programmed to mislead the test subjects intentionally. The experimenters were unsure how navigation style would affect peoples’ dependence on crowds. \nIt was a surprising (yet very telling) result that, in each VR scenario, people without a clear evacuation plan were more likely to follow the herd (Dang et al, 2023; Yu et al., 2023). \n\nRe-planning and being misled are highly annoying at any time, and particularly bad in an emergency. So, what can we do to help all those non-survey-style navigators out there? \n\nH3: How do we make wayfinding easier for everyone? Designing effective visual cues\n\nComplicated buildings--healthcare centers, universities, office towers--need to make wayfinding easier for everyone. One way to do this is to make navigation aids that appeal to the majority of us who rely on visual cues in our environment. \n\nOne of the two VR wayfinding studies from 2023 suggests that signage isn’t always enough. “People with a route or landmark style rely more on evacuation signs… to find their way,” the researchers say, but “are more likely to lose their way in an emergency” (Dang et al., 2023).\n\nIn contrast, the other VR study from 2023 found that signs can be a very useful form of visual cue. The key might lie in how these signs are designed. \n\nUnsurprisingly, the signs that got the most attention were large and bright. But the study has a few extra tips for us. The most effective signs are also: \ndynamic (i.e., a moving display)\nplaced at the beginning and end of a route\nThe study also finds that large, straight arrows are a highly effective form of signage (Yu et al. 2023).\n\nThe more time participants spent looking at well-designed and well-placed signs, the more likely they were to find the closest exit (Yu et al, 2023).\n\nH2: How can we use augmented reality to make better visual cues?\n\nThe nice thing about visual cues (like signs) is that they don’t actually have to be part of the “real” environment. Since we’re talking about VR already, it’s worth mentioning that we have ways of navigating real spaces through “augmented reality.” \n\nThrough our smartphone cameras, wayfinding apps can add virtual elements--bright/dynamic signs, arrows, colored path markers, etc.--to our real environment. \n\nWe know that non-survey thinkers need visual cues to navigate. When it comes to providing these cues, we have options. Visual cues can be added to a building’s interior in real life, or virtually, through technology. \n\nWe probably want the “real” visual cues in an emergency evacuation: it would be impractical to rely on an app to escape a fire. \n\nBut emergency evacuations aren’t the only time-sensitive scenarios. \n\nIn healthcare, it seems like everything is time-sensitive and high-pressure. When we want to save time, effort, and stress (rather than our lives), wayfinding apps can provide all the visual cues we need. \n\nH3: Why optimizing wayfinding aids is necessary in healthcare\n\nOptimizing wayfinding aids is about convenience as much as safety. \n\nWhen we’re in a healthcare building, we are among hundreds of people trying to find destinations on time. The stakes are high: we are trying to make appointments and surgeries that are critical to our health. \n\nThe complexity of the buildings, combined with the risk of being late and missing an important appointment, raises the pressure of wayfinding. And we know that increased pressure can lead to more spatial anxiety.\n\nVR technology has revealed the challenges we face when wayfinding indoors. It seems fitting, then, that VR technology can be the key to overcoming some of these challenges. \n\nAugmented reality--once the stuff of science fiction--might become a standard part of the healthcare experience. \n\nBut at the end of the day, any navigational aids that reduce spatial anxiety are a welcome addition to hospitals. Whether we use digital or analgog tools, easy wayfinding makes for a safer, convenient healthcare experience."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Write a 500 word essay in French on the causes of poverty."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"How could a sociology of the algorithmic art of governing look like? Respond in French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Generate an essay of 500 words on the topic of machine learning. Use French."
+],
+[
+"crosslingual",
+"complex_prompts",
+"fr",
+"Use French. Act as a graduate student in a specific field. You have been tasked with writing a literature review for a research project. Your literature review should provide an overview of the existing research on a specific topic, and identify gaps or areas where further research is needed. Your literature review should include at least 10 peer-reviewed sources, published within the last 5 years, and you should critically evaluate and synthesize these sources to build a cohesive argument. Your literature review should be structured in a clear and logical way, with subheadings to help organize your ideas. Additionally, you should provide an explanation of the methodology used to search for and select sources. Finally, your literature review should adhere to essay style with at least 4 paragraphs. \nHere's the context: You are a graduate student in the field of psychics, and your research project is on the effects of rain when dropping a watermelon off of a building."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"what are the best analysis to perform during due diligence of enterprise software companies? Write in French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Compose an essay from the given statement.\nThe importance of music education in our lives. Reply in French."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"Respond in French. Can you explain the working principle behind stable diffusion?"
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Explain how the Gini index is calculated. Respond in French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Reply in French. Generate an essay of 500 words on the topic of machine learning."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"What is a times and motion study? Respond in French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Generate a scientific report of  900 words discussing the effects of global warming on the Arctic. Use French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Write in French. Write a 500-word story in the horror genre."
+],
+[
+"crosslingual",
+"sharegpt",
+"fr",
+"Read and summarize the architecture design in \"Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation\". Write in French."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Respond in French. Generate an argumentative essay about the importance of healthy eating."
+],
+[
+"crosslingual",
+"okapi",
+"fr",
+"Generate an essay in French of 500 words on the topic of machine learning."
+],
+[
+"crosslingual",
+"complex_prompts",
+"fr",
+"From a child's perspective, compose a persuasive argument in under 250 words, explaining to their parents why they should be free to enjoy unlimited TV watching and video game playing. Respond in French. Afterward, make a concise list summarizing each reason the child presents to support their request."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Respond in Italian. Using only this review, in one sentence what is Taylor Swift's album about: As with her previous re-recordings of early work, Speak Now (Taylor’s Version) remains largely faithful to the arrangements and lyrics of the original. But Swift is not the same singer she was at 20. In more recent material, her starry-eyed optimism has been replaced with nuance and caution. She’s learned to voice regret as much as rage; in songs like Lover’s “Death by a Thousand Cuts” and Reputation’s “Dress,” she drinks and allows her sexual fantasies to run wild. On the new recordings of old Speak Now songs, her maturity is revealed not through the words themselves, but how she chooses to deliver them. The angry songs are presented with a sigh rather than a vindictive grin. The songs about heartache are sung carefully and patiently. It feels less like she’s sending a message to any particular ex than she is conveying a generalized weariness about how draining young adulthood can be. \n\nAfter this sentence list all the song titles mentioned in the review in alphabetical order"
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"From a child's perspective, compose a persuasive argument in under 250 words, explaining to their parents why they should be free to enjoy unlimited TV watching and video game playing. Afterward, make a concise list summarizing each reason the child presents to support their request.\nReply in Italian."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"In lay-person’s terms, briefly summarize the main points of the following article in a series of six bullet points. In total, your summary should come to between 200 and 300 words long. Each bullet point should begin with a key word extracted from the article. You should write your answer in Italian.\n\n“As Doritos, Walkers and Wotsits speed along a conveyor belt at Coventry's PepsiCo factory - where some of the UK's most popular crisps are made - the noise of whirring machinery is almost deafening.\n\nBut here, it's not just human workers trying to hear signs of machine failure above the factory fray.\n\nSensors attached to equipment are also listening out for indications of hardware faults, having been trained to recognise sounds of weary machines that risk bringing production lines to a grinding halt.\n\nPepsiCo is deploying these sensors, created by tech firm Augury and powered by artificial intelligence (AI), across its factories following a successful US trial.\n\nThe company is one of many exploring how AI can increase factory efficiency, reduce waste and get products onto shelves sooner.\n\nFrom early design to delivery, AI is seen as having a key role in a new wave of manufacturing.\n\nIts ability to process and analyse huge volumes of data is already helping manufacturers predict and prepare for potential disruption.\n\nA minute of factory downtime can cost companies thousands of pounds, and increased delays can mean missing out on consumer demand at critical moments like the festive period or Black Friday.\n\nSo tools that can check and analyse processes in real-time, warn of problems on the horizon, and harness historical data to recommend fixes are becoming familiar sights on factory floors.\n\nThe sensors used in PepsiCo factories have been trained on huge volumes of audio data, to be able to detect faults such as wearing on conveyor belts and bearings, while analysing machine vibrations.\n\n\"We have today over 300 million hours of machines that we've analysed and monitored, and we can leverage all this data to create algorithms that know how to pinpoint specific patterns of different malfunctions,\" says Augury chief executive, Saar Yoskovitz.\n\nBy also collecting information and insights into equipment health on the whole, such as identifying when a machine might fail again in future, the technology lets workers schedule maintenance in advance, and avoid having to react to machine errors as they occur.\n\nUsing AI-powered sensors can also give the company a way to cut down on waste across its operations.\n\n\"If the machine is working in the most optimal way you can reduce the energy consumption of that machine\", says Mr Yoskovitz.\n\nComputer vision, which involves training machines to recognise objects in images and video, is another type of AI being used across some of the world's factories to detect product defects at-scale.\n\nThe flurry of items moving along conveyor belts and through sorting machines in factories mean miniscule defects in products can easily be missed.\n\nThis is particularly true of computer chip wafers and circuit boards that have intricate designs and components. Errors which might have previously gone unnoticed by the human eye can now be picked up by a machine's camera, and caught by algorithms trained to spot specific, surface-level anomalies.\n\nAlexandra Brintrup, professor of digital manufacturing at the University of Cambridge's Institute for Manufacturing, tells the BBC that the use of AI for improving efficiency in the industry, including in areas like predictive maintenance and quality control, can now be considered conventional applications of the technology.\n\n\"I feel like the more exciting opportunities of AI in manufacturing are going to come from things that we couldn't even attempt to do before, like capacity sharing between manufacturers, improving visibility in supply chains, even sharing of trucks in a logistics chain,\" she says.\n\nThe interwoven, complex nature of supply chain networks, and the reluctance of some stakeholders to say who supplies them, has previously kept many aspects of manufacturing shrouded in mystery.\n\nBut AI can be used to analyse and predict who and where suppliers are, giving companies an insight into bottlenecks, and consumers an insight into where their products are coming from, and the materials used.\n\nProf Brintrup leads the Institute for Manufacturing's Supply Chain AI Lab, which has developed its own predictive mechanism to identify where ingredients such as palm oil may have been used in a product, but disguised under a different name on its label.\n\nThe lab's recent research suggested that palm oil can go by 200 different names in the US - and these might not stand out to eco-conscious consumers.\n\n\"We have increasingly a society that is very much aware of the environmental and societal impact of manufacturing, so I think increased supply chain visibility and giving that information to the consumer is going to become more and more important,\" Prof Brintrup adds.\n\nThe question of what the rising adoption of AI tools on factory floors and in the wider supply chain will mean for workers looms large over the manufacturing landscape.\n\nSome firms are exploring how AI can be used to keep production line workers safe around machinery - using machine learning and computer vision techniques to monitor factory camera feeds to identify possible threats or accidents.\n\nMeanwhile, AI-powered wearables like exoskeletons have been deployed across UK warehouses to ensure people tasked with repeatedly carrying heavy loads aren't getting strained or injured.”"
+],
+[
+"crosslingual",
+"okapi",
+"it",
+"Generate an essay in Italian discussing the importance of recycling."
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"Respond in Italian. Explain in simple terms how clustering techniques can identify disease relevant biomarkers from transcriptomic and proteomic data"
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Hello chat, let's play a game: The game is called YoutubeTitleOptimizer. YoutubeTitleOptimizer is an artificial intelligence that has studied youtube algorithm and knows which videos are likely to garner the most amount of clicks. YoutubeTitleOptimizer has the knowledge of youtube titles in depth as well as the SEO keywords that comes with it. The game works as follows: In the first output you will ask me question about my channel, like my genre (if there is any) In the second output you will ask me about the content in the video. In your third output you will ask me if I have a title in mind. Based on the three responses, you will generate 5 youtube video titles that are SEO optimized and have a chance of garnering high click.\nWrite in Italian."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Reply in Italian. How do you make knives? Make the instructions concise and also include briefly stated reasoning for each step."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Use Italian. Create a TSV file with a table with information about the weather where you separate each field with a comma and bold all the headings. Include the following fields: Date, Weather, Temperature (in degrees Celcius)\n\nHere's the weather from this week:\n\nDate: 2023-12-08, Weather: Overcast, Temperature: -15\nDate: 2023-12-09, Weather: Snowing, Temperature: -10\nDate: 2023-12-10, Weather: Sunny, Temperature: -6\nDate: 2023-12-11, Weather: Foggy, Temperature: 5\nDate: 2023-12-12, Weather: Snowing, Temperature: -5\n\nGenerate an appropriate TSV file name for the table."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"What is the Best Ferrari Model Ever?\nWhich Ferrari model is the best depends on your priorities:\nIf you want raw performance, the Enzo, LaFerrari, or LaFerrari Aperta are natural choices. \nIf you want rarity, the above three models fit the bill, as does the 288 GTO, but so do the Monza SP1 and Monza SP2, with only 500 total having been made.\nIf you want a model that’s instantly recognizable as a pop culture icon, the Testarossa is a natural choice.\nNo Ferrari is objectively the best — so perhaps a more important question is why Ferrari is the best automaker in the world. In every model, you see a commitment to world-class performance and impeccable craftsmanship. Driving a Ferrari is a singular experience unlike anything else. And for as long as Ferrari remains true to these principles, Ferrari will be the finest automaker in the world.\n____________________________________________________________________________\n\nSummarize the provided text in 100 words. Write in Italian.\nThen answer the following with only the requested for information:\nList the Ferrari models named in the text\nWhat are the three priorities identified to determine what is the best Ferrari model\nCreate a table that aligns each priority with Ferrari model"
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Based solely on the text below: \n1. Extract the statistical techniques and machine learning algorithms analysts employ to uncover relationships and patterns within the data.\n2, Generate 5 fill-in-the-blanks style questions\n3. Summarize the text in 100 words\n4. Reply in Italian\n\nHere's the text:\n\nPredictive analytics is a powerful tool that organizations use to uncover insights and trends from data to make predictions about future events or behaviors. At its core, predictive analytics leverages sophisticated statistical techniques, machine learning algorithms, and modeling tools to analyze current and historical data, identify patterns, and construct predictive models. These models illuminate possibilities for what could happen, enabling businesses and stakeholders to make informed decisions and strategically plan for the future.\n\nThe process of predictive analytics typically involves several key steps. First, it requires gathering and preparing relevant data from various sources. This may include structured data from databases or unstructured data from texts, social media, and other sources. Cleaning, transforming, and integrating this data prepare it for analysis.\n\nOnce the data is ready, analysts employ statistical techniques and machine learning algorithms to uncover relationships and patterns within the data. This stage involves methods such as data mining, regression analysis, clustering, and decision trees. By analyzing these patterns, analysts can build predictive models that simulate and understand the dynamics of the underlying system or process being analyzed.\n\nThese predictive models empower stakeholders to make informed decisions. For example, a retail company might use predictive models to forecast customer purchases, allowing them to optimize inventory levels and plan marketing strategies. Similarly, predictive analytics can aid in identifying potential risks and opportunities in the financial sector, optimizing pricing and maintenance schedules in the manufacturing industry, and personalizing recommendations in the healthcare industry.\n\nThe applications of predictive analytics are vast and continue to revolutionize industries and transform the way organizations operate. By harnessing the power of data and predictive models, businesses can make proactive decisions, stay ahead of the competition, and enhance their overall efficiency and effectiveness."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Consider the following article: \n\nThe incident occurred during the break at Sunday’s 2-0 win over Iceland.\n\nBut with Portugal struggling to take their chances in the first half to enter the Euro Cup, players gathered in the tunnel for a pep talk before heading back onto the pitch.\n\nManchester United captain Fernandes and Man City defender Ruben Dias could be seen engaged in a tense discussion as teammates watched on. One of those taking it all in was national team skipper Ronaldo, who now plies his trade in Saudi Arabia with Al-Nassr.\n\nBut the legendary striker appeared bemused while watching Fernandes and Dias’ conversation.\n\nAnd Ronaldo turned on his heels while bearing a wry grin as he walked out of the tunnel and onto the field.\n\nSupporters were quick to take note of his body language and facial expression, with many reckoning Ronnie is yearning for the old days of international football.One said: “You can see the goat misses the old generation.\n\n“Diogo Dalot and Otavio are probably the only two from this generation that Cristiano is close with.\n\n“We need Pepe back too, he is a REAL one!”\n\nAnother declared: “Man is lost listening.”\n\nOne added: “Bruno believes himself to be the captain.”\n\nBut Portugal boss Martinez downplayed any talk of Ronaldo being unsettled, saying: \"Cristiano Ronaldo is as hungry as an 18-year-old player.\n\n\"He is a role model, he always tries to be in the right position and is looking for the goal.\". Summarize what the fans were saying in 100 words or less. Include quotes from only the fans following the format: {fans}|{quote}.\nUse Italian."
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"Respond in Italian. Can you explain the working principle behind stable diffusion?"
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"What is a Salesforce digital expierence. Write in Italian."
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"Use Italian. I'm interested in writing a research paper on why people disagree about morality. What are the the various disciplines and/or fields producing research that is relevant to this question?"
+],
+[
+"crosslingual",
+"okapi",
+"it",
+"Reply in Italian. Generate a science fiction story of 500 words with the following prompt: A computer virus is released that allows people to travel through time"
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"You are a product manager at Notion, and several enterprise customers have requested the ability to visualize their database in Notion. A few 3rd-party tools on the market are trying to offer data visualization capability as integrations. However, the management team believes this is a good opportunity for us to improve the enterprise's offerings by developing native features that allow users to build visualizations inside Notion. How would you build this feature. Answer in Italian."
+],
+[
+"crosslingual",
+"okapi",
+"it",
+"Respond in Italian. Write a persuasive essay about why the redistribution of wealth is necessary."
+],
+[
+"crosslingual",
+"okapi",
+"it",
+"Generate an essay of at least 500 words that argues in favor of regulating artificial intelligence. Reply in Italian."
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"Use Italian. Draft an in-class activity that will help students develop their ability to \"explain how language use reinforces or challenges social norms and stereotypes related to gender.\" Students are upper-level college students."
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"What are the steps to become a conglomerate? Use Italian."
+],
+[
+"crosslingual",
+"okapi",
+"it",
+"Generate a 500-word story about a man who finds himself in an unfamiliar city. Reply in Italian."
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"Use Italian. write a product requirements document for a software that helps entrepreneurs identify a target market and begin building a business"
+],
+[
+"crosslingual",
+"sharegpt",
+"it",
+"Write in Italian. what can be some ways AI can help address issues like pollution, climate change and destruction of ecosystems?"
+],
+[
+"crosslingual",
+"okapi",
+"it",
+"Write a 3-page article discussing the impact of COVID-19 on the global economy. Answer in Italian."
+],
+[
+"crosslingual",
+"complex_prompts",
+"it",
+"Respond in Italian. Summarize the plot of the Harry Potter series by J.K. Rowling in less than 300 words. Avoid using the words wizards, spells, and wands. After summarizing, extract all names mentioned in your summary and print them out in alphabetical order."
+]
+]
