@@ -77,7 +77,7 @@ The model must be available through Hugging Face. The fastText `lid.176.bin` lan
 
 **Environment and model version:** The original experimental environment recorded PyTorch `2.11.0+cu130`, Transformers `4.57.6`, float32 weights, and eager attention. The Hugging Face model commit was not recorded, and the full dependency environment was not locked; exact future response reproduction is therefore not guaranteed. When rerunning the experiments, record a resolved model revision and software versions separately from the historical metadata.
 
-**Scoring:** The output-language check follows the LIHA/LCB line-based fastText procedure: remove punctuation, split into lines containing at least five words, and classify with `lid.176.bin` at a 0.3 confidence threshold. An output passes only when every scorable line matches the requested language. This can mark a largely correct-language response as failing due to a single off-language heading. The operational scoring rule corresponds to the benchmark setup under review in [LIHA PR #11](https://github.com/arjunpil/LIHA-First-Token-Broadcasters/pull/11).
+**Scoring:** The output-language check follows the LIHA/LCB line-based fastText procedure: remove punctuation, split into lines containing at least five words, and classify with `lid.176.bin` at a 0.3 confidence threshold. An output passes only when every scorable line matches the requested language. This can mark a largely correct-language response as failing due to a single off-language heading. The operational scoring rule corresponds to the benchmark setup under review in PR #11 of this repository.
 
 ## Validation performed and remaining limitations
 

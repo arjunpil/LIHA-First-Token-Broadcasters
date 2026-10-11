@@ -858,7 +858,7 @@ to -0.700, OLMo-2 ko -0.440 to -0.490, Qwen2.5-3B ar -0.668 to -0.750, ru -0.372
 
 # Script switches in the 14-language runs, 2026-10-10
 
-experiments/script_switch.py (Seunghyeok Hong, PR #1 into qwen3b-lcb14), results/script-switch/summary.md. A reply
+experiments/script_switch.py (PR #1 into qwen3b-lcb14), results/script-switch/summary.md. A reply
 counts as switched when it has more Han or kana characters than characters of the expected script (zh and ja left
 out). Monolingual Korean with the head zeroed: Qwen2.5-3B 95/100 switched (90 skipped, 0 passing), Qwen3-1.7B 63 (23
 skipped, 17 passing), Qwen2.5-1.5B 17 (11, 3), OLMo-2 13, Gemma-3-1B and Llama-3.2-1B 5; 0 or 1 at baseline. Switched
@@ -868,8 +868,8 @@ Qwen2.5-3B, monolingual ar 101/300, tr and vi 46/100, ru 17/100 also switch.
 # Mechanism checks, 2026-10-10
 
 experiments/mechanism_checks.md (written at 21:10 KST, before the runs), results/gemma-l11h3-mechanism-ctrl1 and
-results/qwen-l22h6-mechanism-unselected, read in results/mechanism-checks/summary.md. Both models on Chaewon's 96
-Gemma prompts, control head = the other head of the layer with the most last-prompt attention to the language name.
+results/qwen-l22h6-mechanism-unselected, read in results/mechanism-checks/summary.md. Both models on PR #12's
+96 Gemma prompts, control head = the other head of the layer with the most last-prompt attention to the language name.
 
 | model | pass clean | name mask (head) | name mask (control) | nearby mask | head zeroed in generation | McNemar vs control, vs nearby |
 |---|---|---|---|---|---|---|
@@ -897,7 +897,7 @@ Qwen3-4B (10-10 16:18 to 10-11 04:41 KST): baseline 0.908; with L24H27 removed 0
 | L24H27 mean | 0.978 | -0.004 [-0.014, +0.006] | 0.853 | -0.040 [-0.052, -0.027] |
 | 3 controls (L24H12, L24H24, L24H28) | 0.976 to 0.994 | -0.005 to +0.010 | 0.893 to 0.907 | -0.001 to +0.013 |
 
-Crosslingual lines in English: 0.08 at baseline, 0.15 with L24H27 removed. Seunghyeok Hong's draft PR #19 finds the
+Crosslingual lines in English: 0.08 at baseline, 0.15 with L24H27 removed. Draft PR #19 finds the
 same L24H27 in Qwen3-8B (both models have 36 layers of 32 heads).
 
 SmolLM3-3B (10-10 16:49 to 10-11 00:34 KST): baseline 0.939; with L1H12 removed 0.000 (left out); the next heads 0.908
