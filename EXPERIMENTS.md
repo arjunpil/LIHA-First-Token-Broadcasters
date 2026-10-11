@@ -634,6 +634,35 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   in this model one head keeps the prompt's language (L22H6, both tasks) and another is needed to follow an
   explicitly requested language (L16H9, crosslingual only), as the Llama-3.2 and Qwen3-4B heads are (section 8).
 
+### 9f. The screen-picked heads without their screen's prompts
+
+- Why: five heads got their full LCB run because an LCB screen picked them: L8H25 (Llama-3.2-1B), L13H19
+  (Llama-3.2-3B) and L24H27 (Qwen3-4B) in section 8, L16H9 (Qwen2.5-1.5B) and L0H1 (Qwen2.5-7B) in section 9e. The
+  screen's 100 crosslingual prompts are among the full run's 1,196, so the full run was not a held-out test of the
+  head the screen picked.
+- What: each full run's crosslingual changes (the head with zero and mean ablation, and the controls) recomputed
+  without the screen's 100 prompts, from the saved replies; nothing is regenerated. All five screens used the same
+  100 prompts (seed 0). Monolingual prompts are not in the screens, so the monolingual changes are already held out.
+- How: the screen's prompts are read from its saved base replies and matched to the full run by task, source,
+  language and prompt (all 100 found in each run). The script first recomputes the full-run LPR and paired changes
+  and checks them against the run's summary.json (all match, CIs included), then drops the screen's prompts.
+- When / where: 2026-10-12, 01:10 KST; results/lcb-screen-heldout (per model, screen-prompts.json, summary.md). The
+  Qwen2.5-7B run (out/qwen2.5-7b-instruct-lcbscreen-top) is added to results/ with its screen (section 12).
+- Code: screen_heldout.py.
+- Result (crosslingual paired change, 95% CI):
+
+| model | head | all 1,196 prompts | without the screen's 100 |
+|---|---|---|---|
+| Llama-3.2-1B | L8H25 | -0.711 [-0.737, -0.684] | -0.711 [-0.739, -0.683] |
+| Llama-3.2-3B | L13H19 | -0.335 [-0.363, -0.308] | -0.336 [-0.364, -0.308] |
+| Qwen3-4B | L24H27 | -0.076 [-0.093, -0.061] | -0.073 [-0.090, -0.057] |
+| Qwen2.5-1.5B | L16H9 | -0.459 [-0.487, -0.430] | -0.464 [-0.496, -0.435] |
+| Qwen2.5-7B | L0H1 | -0.271 [-0.300, -0.245] | -0.272 [-0.300, -0.243] |
+
+- Reading: dropping the screen's prompts moves each head's crosslingual change by at most 0.0055 (L16H9), the mean
+  ablation by at most 0.0016 and the controls by at most 0.0024, so none of these heads' LCB results depends on the
+  prompts it was picked on.
+
 ## 10. Why zero and mean ablation differ
 
 - Why: in section 7, mean ablation keeps most of the zero-ablation effect in Qwen2.5 and OLMo-2 and little of it in

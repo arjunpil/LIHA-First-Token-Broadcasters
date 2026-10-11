@@ -929,3 +929,10 @@ Qwen2.5-1.5B L16H9, full five-language run (paired change with 95% CI):
 184 of the 2,189 baseline replies differ in wording from the section 5 run despite the same precision, batch size,
 token budget and package versions; LPR is the same (0.982 / 0.704). Qwen2.5-3B, Qwen2.5-7B and OLMo-3-7B are running.
 
+
+# LCB-screened heads without their screen's prompts, 2026-10-12
+
+screen_heldout.py, results/lcb-screen-heldout. The five heads picked by an LCB screen (L8H25, L13H19, L24H27,
+L16H9, L0H1) were run on all 1,196 crosslingual prompts, which include the screen's 100. Recomputed from the saved
+replies without those 100: crosslingual changes -0.711, -0.336, -0.073, -0.464 and -0.272 (all prompts: -0.711,
+-0.335, -0.076, -0.459, -0.271). The largest shift is 0.0055; mean ablation and controls move by at most 0.0024.
