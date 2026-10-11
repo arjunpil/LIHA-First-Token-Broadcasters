@@ -1,7 +1,7 @@
 # LCB head screen on three models with a FLORES head
 
 Written 2026-10-11, 13:19 KST, before the runs; the tie margin revised at 13:27 KST, still before them. On 10-11
-Christian asked to treat LCB as a test of its own rather than a later stage of FLORES. So far, in the models with a
+the team decided to treat LCB as a test of its own rather than a later stage of FLORES. So far, in the models with a
 FLORES head, LCB was run only on that head and three same-layer controls (section 8); only the models without one got
 a screen of every head.
 
@@ -32,7 +32,7 @@ Reading, for each model:
 
 ## The other models with a FLORES head, added 2026-10-11, 13:40 KST, before any of the runs
 
-Christian then asked to run the screen on every model the GPU allows, with results that arrive after the submission
+The team then decided to run the screen on every model the GPU allows, with results that arrive after the submission
 going into the rebuttal or the final version. The same screen and reading apply to these, after the three above:
 - Qwen2.5-3B (fp32, 576 heads, L27H13), Qwen2.5-7B (bf16, 784 heads, L19H1) and OLMo-3-7B (bf16, 1,024 heads,
   L14H25), on the crosslingual prompts. OLMo-3-7B's head is not counted in the paper (its LCB changes are below 0.05),
