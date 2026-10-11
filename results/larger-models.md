@@ -21,13 +21,14 @@ and a same-setup rerun of Qwen3-1.7B for reference. Run on 4x RTX PRO 6000 (96GB
 | Qwen3-8B | 1,152 | L24H27 0.010 (+0.059) | L24H27 −0.008 / −0.190 [−0.202, −0.177] | 0.003 |
 | Qwen3-14B | 1,600 | L0H14 0.014 (+0.009) | none of L0H11, L25H15, L14H9: abs Δ <= 0.002 | 0.003 |
 | Qwen2.5-1.5B | 336 | L22H6 0.508 (+0.204) | not run | |
-| Qwen2.5-7B | 784 | L0H25 0.632 (+0.143); L0H22 0.380 (−0.000); L19H1 0.174 (+0.024) | not run | |
+| Qwen2.5-7B | 784 | L0H25 0.632 (+0.143); L0H22 0.380 (−0.000); L19H1 0.174 (+0.024) | not run here; see `results/qwen2.5-7b-instruct-lcb` | |
 | Qwen2.5-32B | 2,560 | L0H14 0.100 (+0.375) | L0H27 −0.078 / −0.071 | 0.004 |
 
 - Qwen3-8B L24H27 (relative depth 0.67, vs 0.64 for L18H12 in 1.7B): mean ablation gives −0.015 / −0.173, and the
   share of English lines in crosslingual replies goes from 0.08 to 0.27.
 - Qwen2.5-32B L0H27 also lowers English monolingual LPR (1.000 -> 0.968) and raises ΔNLL by 0.086, so it looks like
   general damage rather than language selection.
+- Qwen3-8B L24H27 is the same head index as the Qwen3-4B head in `tables/main_tables.md` (both models have 36 layers x 32 heads); the 4B head was found by the LCB screen, the 8B head by the FLORES screen.
 - Qwen2.5-1.5B with this pipeline gives L22H6 SR 0.508, vs 0.480 on 2,500 prompts in the paper.
 - The Qwen3-1.7B LCB rerun gives the same summary as `results/qwen3-1.7b-instruct-lcb-all` (one per-language cell
   differs by 0.01; 39,426 of 39,438 replies are identical), so it is not included again here.
