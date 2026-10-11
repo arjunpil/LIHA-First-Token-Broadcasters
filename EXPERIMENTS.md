@@ -539,7 +539,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     (monolingual -0.605 to -0.700) and OLMo-2 (monolingual -0.440 to -0.490), and in Qwen2.5-3B monolingual Arabic
     (-0.668 to -0.750), Russian (-0.372 to -0.460) and Turkish (-0.655 to -0.710) and crosslingual Korean (-0.647 to
     -0.831).
-  - Script switches (experiments/script_switch.py by Seunghyeok Hong, results/script-switch/summary.md): replies with
+  - Script switches (experiments/script_switch.py, results/script-switch/summary.md): replies with
     more Han or kana characters than characters of the expected script, zh and ja left out. With the head removed,
     monolingual Korean replies switch in Qwen2.5-3B (95 of 100), Qwen3-1.7B (63), Qwen2.5-1.5B (17), OLMo-2 (13),
     Gemma-3-1B and Llama-3.2-1B (5 each), against 0 or 1 at baseline. Of the switched replies in the three Qwen
