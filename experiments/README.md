@@ -8,7 +8,8 @@ slice at the input of the output projection instead (`c_proj`, `o_proj`, `dense`
 (`paper` mode) on the same prompts for comparison.
 
 ## Run
-From the repo root:
+From the repo root. The package versions of the runs and figures made with these scripts are pinned in
+requirements.txt (`pip install -r requirements.txt`); the lines below list the packages without versions.
 ```
 pip install torch transformers datasets langdetect matplotlib
 pip install langid fasttext-wheel        # prompts.py --set extended and lcb.py
