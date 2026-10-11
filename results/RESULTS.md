@@ -956,3 +956,9 @@ Qwen2.5-7B L0H1, full five-language run (paired change with 95% CI):
 | controls L0H13, L0H14 | -0.001, +0.001 | +0.001, -0.003 | 0.04 |
 | control L0H25 (set aside by the head rule) | -0.495 [-0.535, -0.455] | -0.485 [-0.518, -0.453] | 0.44 |
 | L19H1 zero (section 8 run) | -0.009 [-0.020, +0.003] | -0.074 [-0.089, -0.059] | |
+
+# LCB screen of OLMo-3-7B, 2026-10-12
+
+Same screen and reading (results/olmo3-7b-instruct-lcbscreen), bf16, 10-11 21:32 to 10-12 02:52 KST. Baseline 0.898;
+the FLORES head L14H25 drops it by 0.023 (rank 7 of 1,024, tied with L1H17, L21H24, L9H17 and L12H25); the largest
+drops are 0.060 (L17H5, L28H22), under 0.1, so no head gets a full run and the screen does not single out a head.

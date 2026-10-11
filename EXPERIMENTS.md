@@ -607,9 +607,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 - When / where: 2026-10-11 from 13:24 KST; results/<model>-lcbscreen (crosslingual) and <model>-lcbscreen-mono
   (screen.json, screen.md and reading.md), results/qwen-instruct-lcbscreen-top and
   results/qwen2.5-7b-instruct-lcbscreen-top (the full runs). Qwen2.5-3B 10-11 16:34 to 21:32 KST, Qwen2.5-7B 17:16 to
-  21:58, then its full run.
+  21:58, then its full run; OLMo-3-7B 10-11 21:32 to 10-12 02:52.
 - Code: lcb.py (`--screen`), pick_lcbscreen.py.
-- Result (drop in the screen's pass rate; OLMo-3-7B is still running, section 12):
+- Result (drop in the screen's pass rate):
 
 | model | screen | baseline | FLORES head: drop, rank | strongest other head | left out by the head rule |
 |---|---|---|---|---|---|
@@ -620,6 +620,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 | Gemma-3-4B | monolingual | 1.000 | L24H0: 0.340, 1 of 272 | L20H7 0.030 | none |
 | Qwen2.5-3B | crosslingual | 0.929 | L27H13: 0.389, 1 of 576 | L27H11 0.052 | none |
 | Qwen2.5-7B | crosslingual | 0.960 | L19H1: 0.040, 4 of 780, tied with L0H3 and L19H0 | L0H1 0.232, then L0H26 0.190 | L0H22, L0H23, L0H24, L0H25 |
+| OLMo-3-7B | crosslingual | 0.898 | L14H25: 0.023, 7 of 1,024, tied with L1H17, L21H24, L9H17 and L12H25 | L17H5 and L28H22 0.060 | none |
 
   - Qwen2.5-1.5B, L16H9 on the full five-language run: monolingual -0.009 [-0.021, +0.003], crosslingual -0.459
     [-0.487, -0.430] (L22H6, section 5: -0.273 and -0.276 [-0.303, -0.250]); mean ablation +0.008 and -0.277; the
@@ -647,7 +648,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   explicitly requested language (L16H9, crosslingual only), as the Llama-3.2 and Qwen3-4B heads are (section 8).
   In Qwen2.5-7B they do not agree either: the layer-0 head L0H1 lowers both monolingual and crosslingual LPR more than
   L19H1 on the full runs, but its effect is gone under mean ablation, as L19H1's mostly is on FLORES (section 7).
-  Section 9f checks the screen-picked heads without the screen's prompts.
+  In OLMo-3-7B no head lowers the screen's pass rate by 0.1 (the largest drop is 0.060), so the screen does not
+  single out a head, in line with not counting L14H25 (section 7). Section 9f checks the screen-picked heads without
+  the screen's prompts.
 
 ### 9f. The screen-picked heads without their screen's prompts
 
@@ -838,8 +841,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 
 ## 12. Still running
 
-- The LCB screen of section 9e for OLMo-3-7B (crosslingual, bf16, from 2026-10-11 21:32 KST; about 890 of its 1,025
-  conditions done at 02:13 KST on 10-12).
+- Nothing, as of 2026-10-12 02:52 KST.
 
 ## What the results support and what they do not
 
@@ -889,7 +891,8 @@ Not supported, or not tested:
   with a smaller effect; in Gemma-3-1B and OLMo-2 it is absent from the base model, and these runs do not show what
   produces it (section 7).
 - That every instruct model has such a head: none was found on FLORES in Qwen3-4B, OLMo-3-7B or SmolLM3-3B;
-  SmolLM3-3B has none on the crosslingual screen either, OLMo-3-7B's screen is still running (section 12), and the two Llamas and
+  SmolLM3-3B and OLMo-3-7B have none on the crosslingual screen either (largest drops 0.031 and 0.060; sections 8
+  and 9e), and the two Llamas and
   Qwen3-4B have one that acts mainly on crosslingual requests (sections 7, 8 and 9c).
 - That the head's output sets the reply language in Qwen2.5-1.5B (0.182 on FLORES, 0.043 on LCB), and it does so
   only partly in Qwen2.5-7B (0.417 and 0.122; sections 10 and 11).
