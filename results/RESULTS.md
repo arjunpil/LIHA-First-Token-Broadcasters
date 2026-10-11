@@ -936,3 +936,23 @@ screen_heldout.py, results/lcb-screen-heldout. The five heads picked by an LCB s
 L16H9, L0H1) were run on all 1,196 crosslingual prompts, which include the screen's 100. Recomputed from the saved
 replies without those 100: crosslingual changes -0.711, -0.336, -0.073, -0.464 and -0.272 (all prompts: -0.711,
 -0.335, -0.076, -0.459, -0.271). The largest shift is 0.0055; mean ablation and controls move by at most 0.0024.
+
+# LCB screens of Qwen2.5-3B and Qwen2.5-7B, 2026-10-11
+
+Same screen and reading as above (results/qwen2.5-3b-instruct-lcbscreen, results/qwen2.5-7b-instruct-lcbscreen,
+results/qwen2.5-7b-instruct-lcbscreen-top). Drop in the pass rate on 100 crosslingual prompts:
+
+| model | baseline | FLORES head | strongest head | left out by the head rule |
+|---|---|---|---|---|
+| Qwen2.5-3B | 0.929 | L27H13 0.389 (rank 1 of 576) | L27H13; next L27H11 0.052 | none |
+| Qwen2.5-7B | 0.960 | L19H1 0.040 (rank 4 of 780, tied with L0H3, L19H0) | L0H1 0.232; next L0H26 0.190 | L0H22, L0H23, L0H24, L0H25 |
+
+Qwen2.5-7B L0H1, full five-language run (paired change with 95% CI):
+
+| condition | Δ mono | Δ cross | English lines, cross |
+|---|---|---|---|
+| L0H1 zero | -0.116 [-0.142, -0.088] | -0.271 [-0.300, -0.245] | 0.29 (base 0.04) |
+| L0H1 mean | +0.004 [-0.005, +0.013] | -0.005 [-0.013, +0.003] | 0.04 |
+| controls L0H13, L0H14 | -0.001, +0.001 | +0.001, -0.003 | 0.04 |
+| control L0H25 (set aside by the head rule) | -0.495 [-0.535, -0.455] | -0.485 [-0.518, -0.453] | 0.44 |
+| L19H1 zero (section 8 run) | -0.009 [-0.020, +0.003] | -0.074 [-0.089, -0.059] | |

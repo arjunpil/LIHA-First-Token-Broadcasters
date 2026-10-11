@@ -2,7 +2,7 @@
 
 An index of every experiment in this repo, for writing the paper. Each entry says why it was run, what and how,
 when, where the results are and which code produced them, then what the result shows and what it doesn't.
-results/RESULTS.md is the running log with the full tables; this file is the short version. Status as of 2026-10-10.
+results/RESULTS.md is the running log with the full tables; this file is the short version. Status as of 2026-10-12.
 
 ## Shared setup
 
@@ -16,7 +16,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   it.
 - Metrics on FLORES: the language of the greedy 40-token continuation (langdetect, seed 0). c->w is the share of all
   prompts that are in the prompt's language at baseline and in another language with the head removed, w->c the
-  reverse, and the switch rate (SR) their sum. dNLL is the head's change in LM loss on 100 FLORES dev sentences per
+  reverse, and the switch rate (SR) the share whose label changes at all, which also counts changes between two
+  other languages, so it is at least c->w plus w->c. dNLL is the head's change in LM loss on 100 FLORES dev sentences per
   language, shown next to the mean change for the other heads in the same layer.
 - Metrics on LCB: the benchmark's line-level pass rate (LPR), averaged over its sources, with paired bootstrap 95%
   CIs on the change.
@@ -604,9 +605,11 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   tied; a head whose drop exceeds the FLORES head's by more than 0.025 and is at least 0.1 gets the full
   five-language LCB run with three same-layer controls.
 - When / where: 2026-10-11 from 13:24 KST; results/<model>-lcbscreen (crosslingual) and <model>-lcbscreen-mono
-  (screen.json, screen.md and reading.md), results/qwen-instruct-lcbscreen-top (the full run).
+  (screen.json, screen.md and reading.md), results/qwen-instruct-lcbscreen-top and
+  results/qwen2.5-7b-instruct-lcbscreen-top (the full runs). Qwen2.5-3B 10-11 16:34 to 21:32 KST, Qwen2.5-7B 17:16 to
+  21:58, then its full run.
 - Code: lcb.py (`--screen`), pick_lcbscreen.py.
-- Result (drop in the screen's pass rate; Qwen2.5-3B, Qwen2.5-7B and OLMo-3-7B are still running, section 12):
+- Result (drop in the screen's pass rate; OLMo-3-7B is still running, section 12):
 
 | model | screen | baseline | FLORES head: drop, rank | strongest other head | left out by the head rule |
 |---|---|---|---|---|---|
@@ -615,6 +618,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 | OLMo-2-1B | crosslingual | 0.949 | L12H8: 0.343, 1 of 256 | L1H4 0.081 | none |
 | Gemma-3-1B | monolingual | 0.980 | L11H3: 0.660, 1 of 104 | L17H1 0.030 | none |
 | Gemma-3-4B | monolingual | 1.000 | L24H0: 0.340, 1 of 272 | L20H7 0.030 | none |
+| Qwen2.5-3B | crosslingual | 0.929 | L27H13: 0.389, 1 of 576 | L27H11 0.052 | none |
+| Qwen2.5-7B | crosslingual | 0.960 | L19H1: 0.040, 4 of 780, tied with L0H3 and L19H0 | L0H1 0.232, then L0H26 0.190 | L0H22, L0H23, L0H24, L0H25 |
 
   - Qwen2.5-1.5B, L16H9 on the full five-language run: monolingual -0.009 [-0.021, +0.003], crosslingual -0.459
     [-0.487, -0.430] (L22H6, section 5: -0.273 and -0.276 [-0.303, -0.250]); mean ablation +0.008 and -0.277; the
@@ -628,11 +633,21 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     token budget (24,000) are the same and the package versions have not changed. LPR matches (0.982 and 0.704), but
     184 of the 2,189 baseline replies differ in wording, mostly crosslingual. The cause is not known; each change
     above is paired with its own run's baseline.
-- Reading against the plan: in Qwen3-1.7B, OLMo-2-1B, Gemma-3-1B and Gemma-3-4B the two tests pick the same head, by
-  0.26 to 0.63 over the next head. In Qwen2.5-1.5B they do not: on crosslingual prompts L16H9 lowers the pass rate
+  - Qwen2.5-7B, L0H1 on the full five-language run (bf16, batch 125, budget 4,000, as in section 8): monolingual
+    -0.116 [-0.142, -0.088], crosslingual -0.271 [-0.300, -0.245] (L19H1, section 8: -0.009, a CI that includes zero,
+    and -0.074). Mean ablation of L0H1 leaves both unchanged (+0.004 [-0.005, +0.013] and -0.005 [-0.013, +0.003]).
+    English lines in the crosslingual replies: 0.04 at baseline, 0.29 without L0H1. Of the three random controls from
+    layer 0, L0H13 and L0H14 change LPR by 0.003 or less; the third, L0H25, takes it down by 0.495 and 0.485, but
+    L0H25 is a head the rule sets aside (on the 125-prompt FLORES screen dNLL +0.14 and 0.44 of English continuations
+    kept in English; experiments/head_rule.md).
+- Reading against the plan: in Qwen2.5-3B, Qwen3-1.7B, OLMo-2-1B, Gemma-3-1B and Gemma-3-4B the two tests pick the
+  same head, by 0.26 to 0.63 over the next head. In Qwen2.5-1.5B they do not: on crosslingual prompts L16H9 lowers the pass rate
   more than L22H6, and the full runs separate them (non-overlapping CIs). L16H9 leaves monolingual replies alone, so
   in this model one head keeps the prompt's language (L22H6, both tasks) and another is needed to follow an
   explicitly requested language (L16H9, crosslingual only), as the Llama-3.2 and Qwen3-4B heads are (section 8).
+  In Qwen2.5-7B they do not agree either: the layer-0 head L0H1 lowers both monolingual and crosslingual LPR more than
+  L19H1 on the full runs, but its effect is gone under mean ablation, as L19H1's mostly is on FLORES (section 7).
+  Section 9f checks the screen-picked heads without the screen's prompts.
 
 ### 9f. The screen-picked heads without their screen's prompts
 
@@ -823,8 +838,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 
 ## 12. Still running
 
-- The LCB screens of section 9e for Qwen2.5-3B (crosslingual, from 2026-10-11 16:34 KST), Qwen2.5-7B (from 17:16
-  KST) and OLMo-3-7B (queued after Qwen2.5-3B).
+- The LCB screen of section 9e for OLMo-3-7B (crosslingual, bf16, from 2026-10-11 21:32 KST; about 890 of its 1,025
+  conditions done at 02:13 KST on 10-12).
 
 ## What the results support and what they do not
 
@@ -860,6 +875,10 @@ Supported so far:
 - The language-head method of Translation Heads, run by its authors on base models in few-shot translation, ranks
   our head first in Qwen3-1.7B (top head in all 20 directions) and Llama-3.2-1B (tied first by their count, first on
   the average), but not in Gemma-3-1B (section 9d).
+- Screening every head on LCB alone picks the FLORES head in five of the seven models (Qwen2.5-3B, Qwen3-1.7B,
+  OLMo-2-1B, Gemma-3-1B and Gemma-3-4B). In Qwen2.5-1.5B it finds a second head, L16H9, that acts on crosslingual
+  prompts only, and in Qwen2.5-7B a layer-0 head, L0H1, whose effect is gone under mean ablation (section 9e). Without
+  the screen's 100 prompts, the crosslingual changes of the five screen-picked heads move by at most 0.006 (section 9f).
 
 Not supported, or not tested:
 - That the languages L22H6 leaves alone in Qwen2.5-1.5B (Chinese, Japanese, Russian) are left alone in other models:
@@ -870,7 +889,7 @@ Not supported, or not tested:
   with a smaller effect; in Gemma-3-1B and OLMo-2 it is absent from the base model, and these runs do not show what
   produces it (section 7).
 - That every instruct model has such a head: none was found on FLORES in Qwen3-4B, OLMo-3-7B or SmolLM3-3B;
-  SmolLM3-3B has none on the crosslingual screen either, OLMo-3-7B did not get that screen, and the two Llamas and
+  SmolLM3-3B has none on the crosslingual screen either, OLMo-3-7B's screen is still running (section 12), and the two Llamas and
   Qwen3-4B have one that acts mainly on crosslingual requests (sections 7, 8 and 9c).
 - That the head's output sets the reply language in Qwen2.5-1.5B (0.182 on FLORES, 0.043 on LCB), and it does so
   only partly in Qwen2.5-7B (0.417 and 0.122; sections 10 and 11).
@@ -921,6 +940,8 @@ Not supported, or not tested:
   Qwen2.5-1.5B in fp32 (transformers 4.57.6, the monolingual run 5.18.0), sections 4 and 5 in fp16.
 - Base models were not run for Llama-3.2 and SmolLM3-3B. OLMo-3-7B base has L14H25 only on the 125-prompt screen.
 - Gemma-3-1B's crosslingual LCB baseline is 0.118, too low to read a change.
+- The LCB screens use 100 prompts, 25 per language (monolingual ones for the two Gemma models), so a difference of
+  0.025 is about two prompts; heads within 0.025 of each other are reported as tied (experiments/lcb_screen_flores.md).
 - Qwen2.5-Instruct's generation config adds a repetition penalty (1.1 for 1.5B, 1.05 for 3B) to every greedy run.
 - The section 6 results come from one model and 96 prompts, and the Italian prompts were selected among ones that
   switch.
