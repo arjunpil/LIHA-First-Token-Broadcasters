@@ -138,6 +138,66 @@ def swap_shares(name):
     save(fig, name)
 
 
+def screen_grid(name, key="c2w", label="c→w"):
+    # every head of the twelve instruct models on the 125-prompt FLORES screen (key: c2w, w2c or sr). Each panel has
+    # its own scale, its largest value or 0.1 if that is smaller; gray heads fail the head rule's checks (dNLL above 1,
+    # or fewer than 0.9 of the English continuations kept in English). Square: the head of tab:models; circle: a head
+    # found on the crosslingual LCB screen instead
+    models = [
+        ("Qwen2.5-1.5B", "qwen-instruct", "L22H6"),
+        ("Qwen2.5-3B", "qwen2.5-3b-instruct-screen", "L27H13"),
+        ("Qwen2.5-7B", "qwen2.5-7b-instruct-screen", "L19H1"),
+        ("Qwen3-1.7B", "qwen3-1.7b-instruct-screen", "L18H12"),
+        ("Qwen3-4B", "qwen3-4b-instruct-screen", "L24H27"),
+        ("Gemma-3-1B", "gemma3-1b-instruct-screen", "L11H3"),
+        ("Gemma-3-4B", "gemma3-4b-instruct-screen", "L24H0"),
+        ("OLMo-2-1B", "olmo2-1b-instruct-screen", "L12H8"),
+        ("OLMo-3-7B", "olmo3-7b-instruct-screen", "L14H25"),
+        ("Llama-3.2-1B", "llama3.2-1b-instruct-screen", "L8H25"),
+        ("Llama-3.2-3B", "llama3.2-3b-instruct-screen", "L13H19"),
+        ("SmolLM3-3B", "smollm3-instruct-screen", None),
+    ]
+    from_lcb = {"Qwen3-4B", "Llama-3.2-1B", "Llama-3.2-3B"}
+    expected, seen = [], {}
+    for r in csv.DictReader(open("prompts/prompts_european.csv", encoding="utf-8")):
+        seen[r["language"]] = seen.get(r["language"], 0) + 1
+        if seen[r["language"]] <= 25:  # the screen's prompts, as sweep.py picks them
+            expected.append(r["language"])
+    en = [i for i, e in enumerate(expected) if e == "en"]
+    cmap = plt.get_cmap("Reds").copy()
+    cmap.set_bad("#d4d4d4")
+    fig, axes = plt.subplots(3, 4, figsize=(2 * WIDTH + 0.3, 5.2))
+    for i, (ax, (model, run, head)) in enumerate(zip(axes.flat, models)):
+        table = json.load(open(f"results/{run}/summary.json"))["modes"]["head"]["table"]
+        labels = json.load(open(f"results/{run}/labels.json"))
+        heads = {h: tuple(map(int, h[1:].split("H"))) for h in table}
+        m = np.zeros((max(l for l, _ in heads.values()) + 1, max(k for _, k in heads.values()) + 1))
+        bad = np.zeros(m.shape, bool)
+        for h, (layer, k) in heads.items():
+            m[layer, k] = table[h]["full"][key]
+            kept = mean(same(labels[f"head:{h}"]["labels"][j], "en") for j in en)
+            bad[layer, k] = table[h]["dnll"] > 1 or kept < 0.9
+        top = m[~bad].max()
+        im = ax.imshow(np.ma.masked_array(m / max(top, 0.1), bad), cmap=cmap, vmin=0, vmax=1, aspect="auto",
+                       interpolation="nearest")
+        if head:
+            layer, k = heads[head]
+            if model in from_lcb:
+                ax.plot(k, layer, "o", mfc="none", mec="black", ms=5, mew=0.9)
+            else:
+                ax.add_patch(plt.Rectangle((k - 0.5, layer - 0.5), 1, 1, fill=False, lw=0.9, ec="black"))
+        ax.set_title(f"{model}, max {top:.3f}", fontsize=7)
+        ax.set_xticks([0, m.shape[1] - 1])
+        ax.set_yticks([0, m.shape[0] - 1])
+        ax.tick_params(labelsize=6, length=2)
+        if i % 4 == 0:
+            ax.set_ylabel("Layer", fontsize=7)
+        if i >= 8:
+            ax.set_xlabel("Head", fontsize=7)
+    fig.colorbar(im, ax=axes, shrink=0.5, label=f"{label}, share of the panel's scale")
+    save(fig, name)
+
+
 def main():
     table = json.load(open("results/gpt2/summary.json"))["modes"]["head"]["table"]
     heatmap(table, "sr", "Language Switch Rate", 0.6, "fig1_ablation_heatmap")
@@ -145,6 +205,7 @@ def main():
     curves("fig3_accuracy_curve")
     pair_heatmap(["qwen-instruct-full", "qwen-base-full"], ["Instruct", "Base"], "fig1_qwen_c2w")
     swap_shares("fig_swap")
+    screen_grid("fig_screen_grid")
 
 
 if __name__ == "__main__":
