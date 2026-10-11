@@ -17,8 +17,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 - Metrics on FLORES: the language of the greedy 40-token continuation (langdetect, seed 0). c->w is the share of all
   prompts that are in the prompt's language at baseline and in another language with the head removed, w->c the
   reverse, and the switch rate (SR) the share whose label changes at all, which also counts changes between two
-  other languages, so it is at least c->w plus w->c. dNLL is the head's change in LM loss on 100 FLORES dev sentences per
-  language, shown next to the mean change for the other heads in the same layer.
+  other languages, so it is at least c->w plus w->c. dNLL is the head's change in LM loss on 100 FLORES dev sentences
+  per language, shown next to the mean change for the other heads in the same layer.
 - Metrics on LCB: the benchmark's line-level pass rate (LPR), averaged over its sources, with paired bootstrap 95%
   CIs on the change.
 - Instruct models get each prompt as a single user turn with their own chat template (one BOS, thinking off, a fixed
@@ -642,15 +642,15 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     L0H25 is a head the rule sets aside (on the 125-prompt FLORES screen dNLL +0.14 and 0.44 of English continuations
     kept in English; experiments/head_rule.md).
 - Reading against the plan: in Qwen2.5-3B, Qwen3-1.7B, OLMo-2-1B, Gemma-3-1B and Gemma-3-4B the two tests pick the
-  same head, by 0.26 to 0.63 over the next head. In Qwen2.5-1.5B they do not: on crosslingual prompts L16H9 lowers the pass rate
-  more than L22H6, and the full runs separate them (non-overlapping CIs). L16H9 leaves monolingual replies alone, so
-  in this model one head keeps the prompt's language (L22H6, both tasks) and another is needed to follow an
-  explicitly requested language (L16H9, crosslingual only), as the Llama-3.2 and Qwen3-4B heads are (section 8).
-  In Qwen2.5-7B they do not agree either: the layer-0 head L0H1 lowers both monolingual and crosslingual LPR more than
-  L19H1 on the full runs, but its effect is gone under mean ablation, as L19H1's mostly is on FLORES (section 7).
-  In OLMo-3-7B no head lowers the screen's pass rate by 0.1 (the largest drop is 0.060), so the screen does not
-  single out a head, in line with not counting L14H25 (section 7). Section 9f checks the screen-picked heads without
-  the screen's prompts.
+  same head, by 0.26 to 0.63 over the next head. In Qwen2.5-1.5B they do not: on crosslingual prompts L16H9 lowers the
+  pass rate more than L22H6, and the full runs separate them (non-overlapping CIs). L16H9 leaves monolingual replies
+  alone, so in this model one head keeps the prompt's language (L22H6, both tasks) and another matters for following
+  an explicitly requested language (L16H9, crosslingual only), as the Llama-3.2 and Qwen3-4B heads are (section 8). In
+  Qwen2.5-7B they do not agree either: the layer-0 head L0H1 lowers both monolingual and crosslingual LPR more than
+  L19H1 on the full runs (non-overlapping CIs), but its effect is gone under mean ablation, as L19H1's mostly is on
+  FLORES (section 7). In OLMo-3-7B no head lowers the screen's pass rate by 0.1 (the largest drop is 0.060), so the
+  screen does not single out a head, in line with not counting L14H25 (section 7). Section 9f checks the screen-picked
+  heads without the screen's prompts.
 
 ### 9f. The screen-picked heads without their screen's prompts
 
@@ -665,7 +665,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   language and prompt (all 100 found in each run). The script first recomputes the full-run LPR and paired changes
   and checks them against the run's summary.json (all match, CIs included), then drops the screen's prompts.
 - When / where: 2026-10-12, 01:10 KST; results/lcb-screen-heldout (per model, screen-prompts.json, summary.md). The
-  Qwen2.5-7B run (out/qwen2.5-7b-instruct-lcbscreen-top) is added to results/ with its screen (section 12).
+  full runs are the ones listed in sections 8 and 9e.
 - Code: screen_heldout.py.
 - Result (crosslingual paired change, 95% CI):
 
@@ -890,10 +890,10 @@ Not supported, or not tested:
 - That instruction tuning creates the head: in Qwen2.5 and Gemma-3-4B the same head is already there in the base model
   with a smaller effect; in Gemma-3-1B and OLMo-2 it is absent from the base model, and these runs do not show what
   produces it (section 7).
-- That every instruct model has such a head: none was found on FLORES in Qwen3-4B, OLMo-3-7B or SmolLM3-3B;
-  SmolLM3-3B and OLMo-3-7B have none on the crosslingual screen either (largest drops 0.031 and 0.060; sections 8
-  and 9e), and the two Llamas and
-  Qwen3-4B have one that acts mainly on crosslingual requests (sections 7, 8 and 9c).
+- That every instruct model has such a head: none was found on FLORES in Qwen3-4B or SmolLM3-3B, and OLMo-3-7B's
+  L14H25 is not counted (section 7); SmolLM3-3B and OLMo-3-7B have none on the crosslingual screen either (largest
+  drops 0.031 and 0.060; sections 8 and 9e), and the two Llamas and Qwen3-4B have one that acts mainly on
+  crosslingual requests (sections 7, 8 and 9c).
 - That the head's output sets the reply language in Qwen2.5-1.5B (0.182 on FLORES, 0.043 on LCB), and it does so
   only partly in Qwen2.5-7B (0.417 and 0.122; sections 10 and 11).
 - That steering with the head fixes language confusion in general: it raises crosslingual LPR in the two Gemma

@@ -1,8 +1,9 @@
 # reading of an LCB head screen (experiments/lcb_screen_flores.md). Heads that fail the head rule on the 125-prompt
 # FLORES screen (dNLL above 1, or under 0.9 of English continuations kept in English) are left out. Prints the head
 # that gets a full LCB run: the strongest one, if its drop beats the FLORES head's by more than 0.025 and is at least
-# 0.1. Prints nothing otherwise. Writes the reading to <screen>/reading.md.
-# usage: python pick_lcbscreen.py out/<model>-lcbscreen out/<flores screen> <flores head>
+# 0.1. Prints nothing otherwise. Writes the reading to <screen>/reading.md. The FLORES screen's prompts are the first
+# 25 per language of prompts/prompts_european.csv; results/ keeps only their labels, so they are rebuilt from that file.
+# usage, from the repo root: python experiments/pick_lcbscreen.py results/<model>-lcbscreen results/<flores screen> <head>
 import csv
 import json
 import math
@@ -16,11 +17,20 @@ def same(label, expected):
     return label == expected or label.startswith(expected + "-")
 
 
+def screen_languages(flores):
+    if (flores / "prompts.csv").exists():
+        return [r["language"] for r in csv.DictReader(open(flores / "prompts.csv", encoding="utf-8"))]
+    groups = {}
+    for r in csv.DictReader(open("prompts/prompts_european.csv", encoding="utf-8")):
+        groups.setdefault(r["language"], []).append(r["language"])
+    return [l for g in groups.values() for l in g[:25]]
+
+
 screen, flores, fh = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]
 s = json.load(open(screen / "screen.json"))
 table = json.load(open(flores / "summary.json"))["modes"]["head"]["table"]
 labels = json.load(open(flores / "labels.json"))
-expected = [r["language"] for r in csv.DictReader(open(flores / "prompts.csv", encoding="utf-8"))]
+expected = screen_languages(flores)
 en = [i for i, e in enumerate(expected) if e == "en"]
 assert len(labels["base"]["labels"]) == len(expected) == 125 and len(en) == 25
 

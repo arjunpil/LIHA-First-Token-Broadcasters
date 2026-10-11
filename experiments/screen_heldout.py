@@ -37,6 +37,7 @@ def screen_prompts(src):
 def main():
     src, run, head, prefix = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3], Path(sys.argv[4])
     screen = screen_prompts(src)
+    in_screen = set(screen)
     conds = {}
     for r in read(run / "samples.jsonl"):
         conds.setdefault(r["cond"], []).append(r)
@@ -46,12 +47,11 @@ def main():
     # grouped by language in the run's order, as lcb.py does, so the bootstrap draws match
     non_en = {t: [i for l in langs if l != "en" for i, r in enumerate(base) if r["task"] == t and r["language"] == l]
               for t in TASKS}
-    held = {k for k in map(key, base)} - set(screen)
-    keep = {(t, part): [i for i in non_en[t] if part == "all" or key(base[i]) in held]
+    keep = {(t, part): [i for i in non_en[t] if part == "all" or key(base[i]) not in in_screen]
             for t in TASKS for part in ("all", "held_out")}
 
     out = {"head": head, "run": run.name, "screen_prompts": len(screen),
-           "found_in_run": sum(key(r) in set(screen) for r in base), "rows": {}}
+           "found_in_run": sum(key(r) in in_screen for r in base), "rows": {}}
     for cond, rows in conds.items():
         assert list(map(key, rows)) == list(map(key, base))
         row = {}
