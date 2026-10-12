@@ -23,8 +23,9 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   CIs on the change.
 - Instruct models get each prompt as a single user turn with their own chat template (one BOS, thinking off, a fixed
   date where the template inserts one). Qwen2.5's template adds its default English system prompt.
-- Hardware: one H100 80GB. fp16 for Qwen2.5-1.5B, bf16 for OLMo-2-1B base, OLMo-3-7B and Qwen2.5-7B, fp32 for
-  everything else.
+- Hardware: one H100 80GB. fp16 for Qwen2.5-1.5B, bf16 for OLMo-3-7B and Qwen2.5-7B, fp32 for everything else.
+  OLMo-2-1B base's full sweep (section 3) is in bf16; its layer 12 was rerun in fp32 to match the instruct model
+  (section 7).
 
 ## 1. Hook check and reproduction
 
@@ -311,7 +312,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 | Qwen3-4B | 32 | 0.980 on the screen | none on FLORES; strongest L8H3, 0.024 on the screen (a crosslingual head, L24H27, section 8) | | | | | not run |
 | Gemma-3-1B | 4 | 0.997 | L11H3 | 0.413 | 0.089 | +0.720 (-0.012) | 0.002 | 0.001 |
 | Gemma-3-4B | 8 | 0.997 | L24H0 | 0.214 | 0.012 | +0.202 (-0.005) | 0.000 | 0.148 (0.056) |
-| OLMo-2-1B | 16 | 0.997 | L12H8 | 0.080 | 0.056 | +0.136 (+0.022) | 0.005 | 0.007 |
+| OLMo-2-1B | 16 | 0.997 | L12H8 | 0.080 | 0.056 | +0.136 (+0.022) | 0.005 | 0.005 (0.007 in bf16) |
 | OLMo-3-7B (bf16) | 32 | 0.960 | L14H25 | 0.134 | 0.007 | +0.202 (+0.000) | 0.010 | 0.104 on the screen |
 | Llama-3.2-1B | 32 | 1.000 on the screen | none on FLORES; strongest L8H25, 0.048 on the screen (a crosslingual head, section 8) | | | | | not run |
 | Llama-3.2-3B | 24 | 0.992 on the screen | none on FLORES; strongest 0.008 on the screen (a crosslingual head, section 8) | | | | | not run |
@@ -322,6 +323,11 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   under mean ablation. OLMo-2-1B instruct's L12H8 is at 0.136 on the screen and 0.080 on 2,500 prompts. With
   SmolLM3-3B's L1H12 removed, 75 of the 125 replies (12 to 18 of 25 in each language, English included) fill with
   repeated `</think>` tokens, 12 of 25 English prompts still pass on the screen, and dNLL is +2.58.
+- OLMo-2-1B base in fp32: the base was first run in bf16 (section 3), while its instruct model runs in fp32.
+  Rerunning layer 12 in fp32 (2026-10-12, 14:58 to 15:05 KST; results/olmo2-1b-fp32-L12; sweep.py with --dtype
+  float32 --layers 12 --modes head, end-of-text token still blocked) gives L12H8 0.005 against 0.007 in bf16,
+  baseline retention 0.934 against 0.936, and every head of the layer within 0.0044 of its bf16 value. The gap to the
+  instruct model does not come from precision. The table uses the fp32 value; L15H5 above is from the bf16 sweep.
 - Qwen2.5-7B: layer 0 has larger effects, L0H25 (0.629) and L0H22 (0.466), but with either removed only 0.512 and
   0.518 of the English continuations stay English, so experiments/head_rule.md picks L19H1, which keeps all of them.
   A first pipeline on L0H25 is kept in results/qwen2.5-7b*-L0H25run: replacing that head's output even with the
@@ -338,7 +344,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 - Reading: under zero ablation, in eight of the twelve instruct models one head is far above every other head of its
   layer (0.080 to 0.515, against at most 0.014). OLMo-3-7B's (0.134, bf16) changes LCB by less than 0.05 and nothing
   under mean ablation (section 8), so it is not counted with the other seven. In each of the seven the same head has a
-  smaller effect in the base model: 0.001 and 0.007 in Gemma-3-1B and OLMo-2, 0.067 in Qwen3 (about a fifth of the
+  smaller effect in the base model: 0.001 and 0.005 in Gemma-3-1B and OLMo-2 (0.007 in bf16), 0.067 in Qwen3 (about a fifth of the
   instruct value), 0.150, 0.202 and 0.025 in Qwen2.5-1.5B, 3B and 7B (30%, 39% and 13%), 0.148 in Gemma-3-4B (69%).
   Mean ablation keeps 66% to 90% of the zero-ablation effect in Qwen2.5-1.5B and 3B and 70% in OLMo-2, but 9% in
   Qwen2.5-7B, 6% to 22% in Gemma-3 and 9% in Qwen3; section 10 tests why. OLMo-3-7B's top heads lose most of their
@@ -441,7 +447,8 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 - What: the base model, the SFT and DPO checkpoints, and the released instruct model, which adds RLVR on math data
   after DPO (model card). FLORES layer 12 on 2,500 prompts, and LCB for L12H8 with three layer-12 control heads.
 - How: as in sections 7 and 8. SFT, DPO and instruct use the same chat template and run in fp32. The base model runs
-  without a template, in bf16 and with the end-of-text token blocked (section 3).
+  without a template, in bf16 and with the end-of-text token blocked (section 3); its layer 12 was rerun in fp32 on
+  2026-10-12 (section 7, results/olmo2-1b-fp32-L12).
 - When / where: 2026-10-08 (base) and 10-09; results/olmo2-1b, olmo2-1b-sft-instruct, olmo2-1b-dpo-instruct,
   olmo2-1b-instruct and their -lcb runs.
 - Code: sweep.py, lcb.py.
@@ -449,17 +456,17 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 
 | checkpoint | FLORES non-English retention | L12H8 c->w | dNLL | rest of layer 12, max c->w | LCB mono: baseline / zero / mean | LCB cross: baseline / zero / mean |
 |---|---|---|---|---|---|---|
-| base | 0.921 | 0.007 | -0.000 | 0.149 (L12H0, dNLL +0.421) | | |
+| base | 0.921 | 0.007 (fp32: 0.005) | -0.000 | 0.149 (L12H0, dNLL +0.421) | | |
 | SFT | 0.991 | 0.028 | +0.109 | 0.002 | 0.997 / -0.076 / -0.038 | 0.895 / -0.247 / -0.091 |
 | DPO | 0.998 | 0.071 | +0.134 | 0.008 | 0.989 / -0.199 / -0.120 | 0.933 / -0.244 / -0.123 |
 | instruct | 0.997 | 0.080 | +0.136 | 0.005 | 0.986 / -0.272 / -0.128 | 0.931 / -0.335 / -0.143 |
 
   The 95% CIs of the zero-ablation changes: monolingual [-0.095, -0.059], [-0.230, -0.172], [-0.302, -0.239];
   crosslingual [-0.273, -0.221], [-0.268, -0.219], [-0.362, -0.308]. Layer-12 controls: -0.008 to +0.005.
-- Reading: L12H8's effect on FLORES goes from 0.007 in base to 0.028 after SFT, 0.071 after DPO and 0.080 in the
+- Reading: L12H8's effect on FLORES goes from 0.007 in base (0.005 in fp32) to 0.028 after SFT, 0.071 after DPO and 0.080 in the
   released model. On LCB the crosslingual drop is the same after SFT and after DPO (overlapping CIs) and larger in the
-  released model, while the monolingual drop grows at each step. This is one 1B model; the base run differs in
-  precision and in blocking the end-of-text token; and the last step is RLVR on math data, so the comparison does
+  released model, while the monolingual drop grows at each step. This is one 1B model; the base run blocks the
+  end-of-text token (its precision no longer differs: the fp32 rerun of layer 12 gives 0.005); and the last step is RLVR on math data, so the comparison does
   not separate the effect of a single training step.
 
 ### 9c. LCB in 14 languages for more models
@@ -680,6 +687,42 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 - Reading: dropping the screen's prompts moves each head's crosslingual change by at most 0.0055 (L16H9), the mean
   ablation by at most 0.0016 and the controls by at most 0.0024, so none of these heads' LCB results depends on the
   prompts it was picked on.
+
+### 9g. The reported heads on their screen's prompts and on the rest
+
+- Why: the 125 FLORES screen prompts are part of the 2,500 and the LCB screen's 100 prompts are part of the full
+  run, so how much an effect moves when they are dropped (section 9f) bounds the difference between the screen's
+  prompts and the rest only loosely. This compares the two directly.
+- What / how: from the saved labels and section 9f's results; nothing is regenerated. FLORES: each of the seven
+  heads' c->w on the 125 screen prompts (the first 25 per language) and on the other 2,375, from the 2,500-prompt
+  runs. LCB: the screen-picked heads' crosslingual change on the screen's prompts, from section 9f's pair means over
+  all prompts and without the screen's.
+- When / where: 2026-10-12; printed by the script, no results folder.
+- Code: screen_split.py.
+- Result:
+
+| model | head | FLORES c->w, screen (125) | rest (2,375) | all (2,500) |
+|---|---|---|---|---|
+| Qwen2.5-1.5B | L22H6 | 0.480 | 0.501 | 0.500 |
+| Qwen2.5-3B | L27H13 | 0.480 | 0.517 | 0.515 |
+| Qwen2.5-7B | L19H1 | 0.120 | 0.204 | 0.200 |
+| Qwen3-1.7B | L18H12 | 0.384 | 0.321 | 0.324 |
+| Gemma-3-1B | L11H3 | 0.400 | 0.413 | 0.413 |
+| Gemma-3-4B | L24H0 | 0.240 | 0.213 | 0.214 |
+| OLMo-2-1B | L12H8 | 0.136 | 0.077 | 0.080 |
+
+| model | head | LCB crosslingual change, screen (pairs) | rest | all |
+|---|---|---|---|---|
+| Llama-3.2-1B | L8H25 | -0.710 (100) | -0.711 | -0.711 |
+| Llama-3.2-3B | L13H19 | -0.323 (99) | -0.336 | -0.335 |
+| Qwen3-4B | L24H27 | -0.102 (98) | -0.073 | -0.076 |
+| Qwen2.5-1.5B | L16H9 | -0.400 (100) | -0.464 | -0.459 |
+| Qwen2.5-7B | L0H1 | -0.268 (97) | -0.272 | -0.271 |
+
+- Reading: on FLORES the effect on the 2,375 unscreened prompts is 0.077 to 0.517 and higher than on the screen's
+  prompts in four of the seven models, so the screen's prompts are not where the effect is largest. On LCB the
+  screen-picked heads keep their effect on the unscreened prompts, except that Qwen3-4B's L24H27, whose screen drop
+  (0.102) only just passed the 0.1 threshold, lowers the rest by 0.073.
 
 ## 10. Why zero and mean ablation differ
 
@@ -939,7 +982,8 @@ Not supported, or not tested:
 - Mean and zero ablation disagree in Gemma-3, Qwen3 and OLMo-3. Section 10 accounts for part of it in Gemma-3 and
   Qwen3; OLMo-3 was not in section 10.
 - Precision: OLMo-3-7B in bf16, where batched and single-prompt generations agree on only 10 of 20 prompts;
-  Qwen2.5-7B in bf16, 15 of 20; OLMo-2-1B base in bf16 with the end-of-text token blocked. Section 6 runs
+  Qwen2.5-7B in bf16, 15 of 20; OLMo-2-1B base's full sweep in bf16 (its layer 12 in fp32 agrees within 0.0044,
+  section 7), with the end-of-text token blocked in both. Section 6 runs
   Qwen2.5-1.5B in fp32 (transformers 4.57.6, the monolingual run 5.18.0), sections 4 and 5 in fp16.
 - Base models were not run for Llama-3.2 and SmolLM3-3B. OLMo-3-7B base has L14H25 only on the 125-prompt screen.
 - Gemma-3-1B's crosslingual LCB baseline is 0.118, too low to read a change.
