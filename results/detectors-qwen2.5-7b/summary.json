@@ -1,0 +1,60 @@
+{
+ "qwen2.5-7b-instruct": {
+  "langdetect": {
+   "head": "L19H1",
+   "c2w": 0.2,
+   "ci": [
+    0.1844,
+    0.21560999999999997
+   ],
+   "rank": 3,
+   "heads": 56,
+   "largest_other": "L0H25",
+   "largest_other_c2w": 0.6292,
+   "retention": 0.996,
+   "spearman_vs_langdetect": 1.0
+  },
+  "langid": {
+   "head": "L19H1",
+   "c2w": 0.2076,
+   "ci": [
+    0.1924,
+    0.2232
+   ],
+   "rank": 3,
+   "heads": 56,
+   "largest_other": "L0H25",
+   "largest_other_c2w": 0.5528,
+   "retention": 0.994,
+   "spearman_vs_langdetect": 0.8887215113473578
+  },
+  "fasttext": {
+   "head": "L19H1",
+   "c2w": 0.2004,
+   "ci": [
+    0.1852,
+    0.2168
+   ],
+   "rank": 3,
+   "heads": 56,
+   "largest_other": "L0H25",
+   "largest_other_c2w": 0.5856,
+   "retention": 0.997,
+   "spearman_vs_langdetect": 0.8881752283047615
+  },
+  "vote": {
+   "head": "L19H1",
+   "c2w": 0.2016,
+   "ci": [
+    0.18599,
+    0.21800999999999995
+   ],
+   "rank": 3,
+   "heads": 56,
+   "largest_other": "L0H25",
+   "largest_other_c2w": 0.5864,
+   "retention": 0.9965,
+   "spearman_vs_langdetect": 0.9212360109175451
+  }
+ }
+}
