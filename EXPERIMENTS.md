@@ -747,7 +747,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   screen-picked heads keep their effect on the unscreened prompts, except that Qwen3-4B's L24H27, whose screen drop
   (0.102) only just passed the 0.1 threshold, lowers the rest by 0.073. Outside the rerun layers no eligible head
   reaches more than 0.064 on the screen, below the 0.1 threshold and below the reported head in every model, so the
-  follow-up's layer choice did not leave out a stronger candidate. On the three LCB screens, counting only replies
+  follow-up's layer choice did not leave out a head that was stronger on the screen. On the three LCB screens, counting only replies
   that go from pass to fail, the picked head is 0.112 to 0.710 against at most 0.040 for any other head of its layer.
 
 ## 10. Why zero and mean ablation differ
