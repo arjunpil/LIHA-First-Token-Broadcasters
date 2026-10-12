@@ -326,7 +326,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 - OLMo-2-1B base in fp32: the base was first run in bf16 (section 3), while its instruct model runs in fp32.
   Rerunning layer 12 in fp32 (2026-10-12, 14:58 to 15:05 KST; results/olmo2-1b-fp32-L12; sweep.py with --dtype
   float32 --layers 12 --modes head, end-of-text token still blocked) gives L12H8 0.005 against 0.007 in bf16,
-  baseline retention 0.934 against 0.936, and every head of the layer within 0.004 of its bf16 value. The gap to the
+  baseline retention 0.934 against 0.936, and every head of the layer within 0.0044 of its bf16 value. The gap to the
   instruct model does not come from precision. The table uses the fp32 value; L15H5 above is from the bf16 sweep.
 - Qwen2.5-7B: layer 0 has larger effects, L0H25 (0.629) and L0H22 (0.466), but with either removed only 0.512 and
   0.518 of the English continuations stay English, so experiments/head_rule.md picks L19H1, which keeps all of them.
@@ -982,7 +982,7 @@ Not supported, or not tested:
 - Mean and zero ablation disagree in Gemma-3, Qwen3 and OLMo-3. Section 10 accounts for part of it in Gemma-3 and
   Qwen3; OLMo-3 was not in section 10.
 - Precision: OLMo-3-7B in bf16, where batched and single-prompt generations agree on only 10 of 20 prompts;
-  Qwen2.5-7B in bf16, 15 of 20; OLMo-2-1B base's full sweep in bf16 (its layer 12 in fp32 agrees within 0.004,
+  Qwen2.5-7B in bf16, 15 of 20; OLMo-2-1B base's full sweep in bf16 (its layer 12 in fp32 agrees within 0.0044,
   section 7), with the end-of-text token blocked in both. Section 6 runs
   Qwen2.5-1.5B in fp32 (transformers 4.57.6, the monolingual run 5.18.0), sections 4 and 5 in fp16.
 - Base models were not run for Llama-3.2 and SmolLM3-3B. OLMo-3-7B base has L14H25 only on the 125-prompt screen.
