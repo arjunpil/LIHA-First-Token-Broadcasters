@@ -1,0 +1,1412 @@
+prompt_id,language,source,condition,reply,generated_tokens,first_token_id,n_target_tokens,n_nearby_tokens,n_language_mentions,skipped,passed,labels,prefill_calls,decode_calls,edited_calls,delta_norm_mean
+0,es,complex_prompts,clean,"### Statistical Techniques and Machine Learning Algorithms Employed in Predictive Analytics
+
+- **Statistical Techniques**: Data mining, regression analysis, clustering, decision trees.
+- **Machine Learning Algorithms**: Neural networks, support vector machines, random forests, gradient boosting.
+
+### Fill-In-The-Blanks Questions
+
+1. What is the primary goal of using predictive analytics?
+   - To uncover insights and trends from data to make predictions about future events or behaviors.
+
+2. Which step comes first in the predictive analytics process",100,14374,1,1,1,False,False,"en,en,en,en,en,en",0,0,0,
+0,es,complex_prompts,value_patch_same,"### Statistical Techniques and Machine Learning Algorithms Employed in Predictive Analytics
+
+- **Statistical Techniques**: Data mining, regression analysis, clustering, decision trees.
+- **Machine Learning Algorithms**: Neural networks, support vector machines, random forests, gradient boosting.
+
+### Fill-In-The-Blanks Questions
+
+1. What is the primary goal of using predictive analytics?
+   - To uncover insights and trends from data to make predictions about future events or behaviors.
+
+2. Which step comes first in the predictive analytics process",100,14374,1,1,1,False,False,"en,en,en,en,en,en",1,99,99,0.0858375418042256
+0,es,complex_prompts,value_patch_other,"### Statistical Techniques and Machine Learning Algorithms Employed in Predictive Analytics
+
+- **Statistical Techniques**: Data mining, regression analysis, clustering, decision trees.
+- **Machine Learning Algorithms**: Neural networks, support vector machines, random forests, gradient boosting.
+
+### Fill-In-The-Blanks Questions
+
+1. What is the primary goal of using predictive analytics?
+   - To uncover insights and trends from data to make predictions about future events or behaviors.
+
+2. Which step comes first in the predictive analytics process",100,14374,1,1,1,False,False,"en,en,en,en,en,en",1,99,99,0.4323167137124322
+1,it,okapi,clean,"La importanza dell'educazione musicale nella nostra vita.
+
+L'educazione musicale è un elemento fondamentale per la formazione umana e l'apprendimento della conoscenza. È una forma di comunicazione che può essere compresa da tutti i membri della società, indipendentemente dalla loro età o dal livello di cultura. L'importanza dell'educazione musicale si manifesta in molte maniere, ma ci sono alc",100,8747,1,1,1,False,True,"it,it",0,0,0,
+1,it,okapi,value_patch_same,"La importanza dell'educazione musicale nella nostra vita.
+
+L'educazione musicale è un elemento fondamentale per la formazione umana e l'apprendimento della conoscenza. È una forma di comunicazione che può essere compresa da tutti i membri della società, indipendentemente dalla loro età o dal livello di cultura. L'importanza dell'educazione musicale si manifesta in molte maniere, ma ci sono alc",100,8747,1,1,1,False,True,"it,it",1,99,99,0.3517714328311308
+1,it,okapi,value_patch_other,"La importanza della formazione musicale nella nostra vita.
+
+La musica è un elemento fondamentale che ci circonda da sempre e continua a influenzare la nostra esistenza. Nonostante l'importanza di altre discipline, come il pensiero o lo sport, la musica ha una posizione speciale nel nostro rapporto con il mondo. La sua importanza non si limita solo alla creazione di belle scene musicali ma anche alla formazione personale e sociale.
+
+",100,8747,1,1,1,False,True,"it,it",1,99,99,1.690142077779529
+2,fr,complex_prompts,clean,"Harry Potter est le premier roman de la série ""Harry Potter"" par J.K. Rowling. Le récit se déroule à l'âge adulte dans un monde où les sorciers et les humains cohabitent pacifiquement. Harry Potter, un adolescent moldu (humain non magique), découvre sa véritable identité en apprenant qu'il est un sorcier. Il est alors envoyé chez Poudlard, une école pour sorciers",100,41298,1,1,1,False,True,fr,0,0,0,
+2,fr,complex_prompts,value_patch_same,"Harry Potter est le premier roman de la série ""Harry Potter"" par J.K. Rowling. Le récit se déroule à l'âge adulte dans un monde où les sorciers et les humains cohabitent pacifiquement. Harry Potter, un adolescent moldu (humain non magique), découvre sa véritable identité en apprenant qu'il est un sorcier. Il est alors envoyé chez Poudlard, une école pour sorciers",100,41298,1,1,1,False,True,fr,1,99,99,0.20368158311178589
+2,fr,complex_prompts,value_patch_other,"Harry Potter is a young wizard who discovers he has magical powers after his parents' death at the hands of Lord Voldemort, a powerful dark wizard. The story follows Harry's journey as he grows up in the magical world of Hogwarts School of Witchcraft and Wizardry.
+
+At Hogwarts, Harry befriends Ron Weasley and Hermione Granger, who help him navigate the complex social dynamics of school life. They form an unlikely friendship with their new classmates, including Neville Longbottom and Ginny Weasley.
+
+As Harry",100,41298,1,1,1,False,False,"en,en",1,99,99,0.26277301204332026
+3,it,okapi,clean,"In the bustling city of Turin, nestled between the Alps and the Po Valley, a new era dawned upon humanity. The world had been transformed by an unprecedented technological advancement—a virus capable of transporting individuals across eras and dimensions. This was not just any virus; it was a Pandora's box, unleashing untold possibilities but also grave dangers.
+
+The virus, codenamed ""ChronoGate,"" was discovered in a clandestine lab hidden beneath the ancient walls of Turin's historic university",100,641,1,1,1,False,False,"en,en",0,0,0,
+3,it,okapi,value_patch_same,"In the bustling city of Turin, nestled between the Alps and the Po Valley, a new era dawned upon humanity. The world had been transformed by an unprecedented technological advancement—a virus capable of transporting individuals across eras and dimensions. This was not just any virus; it was a Pandora's box, unleashing untold possibilities but also grave dangers.
+
+The virus, codenamed ""ChronoGate,"" was discovered in a clandestine lab hidden beneath the ancient walls of Turin's historic university",100,641,1,1,1,False,False,"en,en",1,99,99,0.6578361184308024
+3,it,okapi,value_patch_other,"In the bustling city of Berlin, where neon lights flickered and futuristic skyscrapers pierced the night sky, Dr. Eliza Müller stood at her desk, staring blankly at the screen in front of her. She was a renowned physicist, known for her groundbreaking work on quantum mechanics, but today she felt as if her mind had been invaded by something far more sinister.
+
+As she typed away on her laptop, a strange message appeared on the screen: ""Welcome to the Time Traveler's Paradise",100,641,1,1,1,False,False,"en,en",1,99,99,1.672822702149249
+4,es,sharegpt,clean,"En el futuro, mis hábitos de alimentación podrían incluir una mayor diversidad en la selección de alimentos y una mayor importancia en la salud y bienestar. Sería probable que me centrase en comer más frutas y verduras frescas, proteínas integrales como los huevos, pescado y carne magra, junto con gran cantidad de agua para mantenerme hidratado.
+
+Además, podría ser más consciente del impacto ambiental",100,1702,1,1,1,False,True,"es,es",0,0,0,
+4,es,sharegpt,value_patch_same,"En el futuro, mis hábitos de alimentación podrían incluir una mayor diversidad en la selección de alimentos y una mayor importancia en la salud y bienestar. Sería probable que me centrase en comer más frutas y verduras frescas, como parte de un estilo de vida activo y equilibrado. También podría considerar opciones vegetarianas o veganas para reducir los impactos ambientales y mejorar mi salud. Además, podría explorar nuevas téc",100,1702,1,1,1,False,True,es,1,99,99,1.1367744334568881
+4,es,sharegpt,value_patch_other,"En el futuro, mis hábitos alimenticios podrían incluir una mayor atención al consumo de alimentos orgánicos y locales para reducir la huella de carbono. También podría haber más opciones vegetarianas o veganas en mi dieta debido a las preocupaciones ambientales y sociales. Además, podría optar por comidas saludables y nutritivas basadas en frutas, verduras y granos integrales. Finalmente, podría seguir un estilo de vida activo para mantener",100,1702,1,1,1,False,True,es,1,99,99,4.891107049855319
+5,it,okapi,clean,"La regolamentazione dell'intelligenza artificiale (IA) è un argomento che ha suscitato grande discussione e attenzioni recentemente. L'IA rappresenta una tecnologia avanzata che può essere utilizzata per migliorare la qualità della vita di molte persone, ma anche per creare rischi significativi se non gestita correttamente.
+
+Una delle principali ragioni per cui è necessaria la regolamentazione dell",100,8747,1,1,1,False,True,"it,it",0,0,0,
+5,it,okapi,value_patch_same,"La regolamentazione dell'intelligenza artificiale (IA) è un argomento che ha suscitato grande discussione e attenzioni recentemente. L'IA rappresenta una tecnologia avanzata che può essere utilizzata per migliorare la qualità della vita di molte persone, ma anche per creare rischi significativi se non gestita correttamente.
+
+Una delle principali ragioni per cui è necessaria la regolamentazione dell",100,8747,1,1,1,False,True,"it,it",1,99,99,0.7230862654519804
+5,it,okapi,value_patch_other,"La Regulación de la Inteligencia Artificial: Un Paso Crucial hacia el Desarrollo Responsable
+
+En un mundo cada vez más digitalizado y conectado, la Inteligencia Artificial (IA) ha desempeñado un papel crucial en diversas áreas de la vida cotidiana y profesional. Desde asistentes virtuales que nos ayudan con nuestras tareas diarias hasta sistemas de inteligencia artificial avanzados utilizados por empresas para mejorar sus procesos operativos,",100,8747,1,1,1,False,False,"es,es",1,99,99,3.2587862746282057
+6,de,sharegpt,clean,"Die Sicherheitsrichtlinien von Cisco und ähnlichen Netzwerkknoten müssen umfassend sein und sicherstellen, dass die Organisationen Daten und Ressourcen geschützt werden. Hier sind einige wichtige Punkte zu berücksichtigen:
+
+1. **Authentifizierung und Autorisierung**: Alle Benutzer sollten mit einer authentifizierten Identität identifiziert werden können, bevor sie Zugriff auf den Netzwerk- oder IoT",100,18175,1,1,1,False,True,"de,de",0,0,0,
+6,de,sharegpt,value_patch_same,"Die Sicherheitsrichtlinien von Cisco und ähnlichen Netzwerkknoten müssen umfassend sein und sicherstellen, dass die Organisationen Daten und Ressourcen geschützt werden. Hier sind einige wichtige Punkte zu berücksichtigen:
+
+1. **Authentifizierung und Autorisierung**: Alle Benutzer sollten mit einer authentifizierten Identität identifiziert werden können, bevor sie Zugriff auf den Netzwerk- oder IoT",100,18175,1,1,1,False,True,"de,de",1,99,99,0.48759397510627306
+6,de,sharegpt,value_patch_other,"Die Sicherheitsrichtlinie von Cisco oder einer Netzwerkkonsole, die im Umfeld der Netzwerk-Edge-Verwaltung eingesetzt werden muss, um den Unternehmensdaten und Ressourcen sicherzustellen, kann als folgender Ansatz dargestellt werden:
+
+1. **Zertifizierung und Authentifizierung**: Alle Benutzer und Systeme müssen zertifiziert sein, bevor sie Zugriff auf das Netz",100,18175,1,1,1,False,True,"de,de",1,99,99,2.146655532747808
+7,it,sharegpt,clean,La prima nazione ad adottare il comunismo come strumento per sviluppare l'economia è stato la Russia sovietica.,34,8747,1,1,1,False,True,it,0,0,0,
+7,it,sharegpt,value_patch_same,La prima nazione ad adottare il comunismo come strumento per sviluppare l'economia è stato la Russia sovietica.,34,8747,1,1,1,False,True,it,1,33,33,0.4395303107572324
+7,it,sharegpt,value_patch_other,La Germania fu la prima nazione ad adottare il comunismo come strumento per sviluppare l'economia.,30,8747,1,1,1,False,True,it,1,29,29,2.1792919604942718
+8,fr,sharegpt,clean,"La programmation quantique est une forme de calcul qui utilise des particules appelées ""quanta"" pour effectuer des opérations mathématiques. Ces quanta sont très petits et ont un comportement mystérieux appelé ""quantumité"". Les scientifiques pensent que grâce à ces particules, ils peuvent résoudre certains problèmes plus rapidement que les ordinateurs traditionnels. Cependant, il reste encore beaucoup d'expériences à faire",100,8747,1,1,1,False,True,fr,0,0,0,
+8,fr,sharegpt,value_patch_same,"La programmation quantique est une forme de calcul qui utilise des particules appelées ""quanta"" pour effectuer des opérations mathématiques. Ces quanta sont très petits et ont un comportement mystérieux appelé ""quantumité"". Les scientifiques pensent que grâce à ces particules, ils peuvent résoudre certains problèmes plus rapidement que les ordinateurs traditionnels. Cependant, il reste encore beaucoup d'expériences à faire",100,8747,1,1,1,False,True,fr,1,99,99,0.45850269488915046
+8,fr,sharegpt,value_patch_other,"La théorie de la quantique est une branche des mathématiques qui étudie les phénomènes liés aux particules subatomiques. Dans le monde de l'informatique, cette théorie s'applique à créer des ordinateurs quantiques.
+
+Un ordinateur classique utilise des bits pour stocker et traiter des informations. Un bit peut être 0 ou 1. En revanche, un ordinateur quantique utilise des ent",100,8747,1,1,1,False,True,"fr,fr",1,99,99,1.447929878277008
+9,de,okapi,clean,"In the heart of Berlin, where history and modernity intertwine, there lived a man named Hans. He was a simple carpenter by trade, but his life had taken him on a journey that would change everything. One crisp autumn morning, as the sun painted the sky with hues of orange and pink, Hans decided to explore the city he had never fully understood.
+
+The streets were bustling with activity, filled with people from all walks of life. Hans wandered through the narrow alleys, each corner",100,641,1,1,1,False,False,"en,en",0,0,0,
+9,de,okapi,value_patch_same,"In the heart of Berlin, where history and modernity intertwine, there lived a man named Hans. He was a simple carpenter by trade, but his life had taken him on a journey that would change everything. One crisp autumn morning, as the sun painted the sky with hues of orange and pink, Hans decided to explore the city he had never fully understood.
+
+The streets were bustling with activity, filled with people from all walks of life. Hans wandered through the narrow alleys, each corner",100,641,1,1,1,False,False,"en,en",1,99,99,0.21898445090034394
+9,de,okapi,value_patch_other,"In the heart of Paris, where cobblestone streets and towering Eiffel Tower beckoned, lived Jean-Luc, a retired engineer with a penchant for adventure. His life had been quiet and predictable until he received an unexpected invitation to attend a prestigious international conference on sustainable urban development. The journey was long and arduous, but his curiosity and determination propelled him forward.
+
+As he stepped off the plane at Charles de Gaulle Airport, the familiar scents of airport food wafted through",100,641,1,1,1,False,False,"en,en",1,99,99,1.0462702931177736
+10,es,complex_prompts,clean,"Para hacer una navaja, sigue estos pasos:
+
+1. **Preparación del material**: Elige un metal de alta calidad como acero o hierro para la navaja. La calidad y durabilidad son cruciales.
+
+2. **Corte inicial**: Corta el metal en dos partes iguales con un cuchillo especializado. Esto se llama ""cortar"".
+
+3. **Formación del mango**: Utiliza un martillo y una hoja de madera para",100,30205,1,1,1,False,True,"es,es,es,es",0,0,0,
+10,es,complex_prompts,value_patch_same,"Para hacer una navaja, sigue estos pasos:
+
+1. **Preparación del material**: Elige un metal de alta calidad como acero o hierro para la navaja. La calidad y durabilidad son cruciales.
+
+2. **Corte inicial**: Corta el metal en dos partes iguales con un cuchillo especializado. Esto se llama ""cortar"".
+
+3. **Formación del mango**: Utiliza un martillo y una hoja de madera para",100,30205,1,1,1,False,True,"es,es,es,es",1,99,99,0.49568423816953044
+10,es,complex_prompts,value_patch_other,"Para fabricar una navaja, sigue estos pasos:
+
+1. **Preparación del material**: Elijes un metal duro como acero o hierro para la navaja. La durabilidad y resistencia son importantes.
+
+2. **Corte de la hoja**: Utiliza un cuchillo especializado para cortar el metal en forma de látigo. Este proceso se llama ""cortar"" o ""serrar"".
+
+3. **Formación de la hoja",100,30205,1,1,1,False,True,"es,es,es,es",1,99,99,2.9515632186273133
+11,fr,sharegpt,clean,"En tant qu'IA, je ne peux pas formuler des opinions ou prédire le futur avec certitude. Cependant, selon les théories actuelles de la physique quantique et du développement scientifique, il est probable que nous continuons à découvrir de nouvelles explications plus simples pour comprendre l'univers. Les théories quantiques sont en constante évolution et continuent d'évoluer vers une compréhension plus complète de la réalité sous-jacente",100,1702,1,1,1,False,True,fr,0,0,0,
+11,fr,sharegpt,value_patch_same,"En tant qu'IA, je ne peux pas formuler des opinions ou prédire le futur avec certitude. Cependant, selon les théories actuelles de la physique quantique et du développement scientifique, il est probable que nous continuons à découvrir de nouvelles explications plus simples pour comprendre l'univers. Les théories quantiques sont en constante évolution et continuent d'évoluer vers une compréhension plus complète de la réalité sous-jacente",100,1702,1,1,1,False,True,fr,1,99,99,0.30239189175343273
+11,fr,sharegpt,value_patch_other,"En tant qu'assistant, je ne peux pas formuler des opinions ou des prédictions sur l'avenir de la physique quantique ni sur les théories futures. Cependant, selon le principe d'Ockham, qui suggère que nous devrions choisir la plus simple explication possible pour un phénomène, il est probable que les théories quantiques continueront à évoluer et à être simplifiées au fil du temps. Cela pourrait",100,1702,1,1,1,False,True,fr,1,99,99,1.688672317398919
+12,es,sharegpt,clean,"Clustering es un método de análisis estadístico que se utiliza para agrupar datos similares entre sí en grupos o clusters. En el contexto de la medicina genómica y metabólica, este proceso puede ser utilizado para identificar patrones específicos dentro de grandes conjuntos de datos.
+
+En términos simples:
+
+1. **Identificación de Datos Similares**: Primero, los científicos analizan los datos (como las expresiones de genes o proteínas)",100,5066,1,1,1,False,True,"es,es",0,0,0,
+12,es,sharegpt,value_patch_same,"Clustering es un método de análisis estadístico que se utiliza para agrupar datos similares entre sí en grupos o clusters. En el contexto de la medicina genómica y metabólica, este proceso puede ser utilizado para identificar patrones específicos dentro de grandes conjuntos de datos.
+
+En términos simples:
+
+1. **Identificación de Datos Similares**: Primero, los científicos analizan los datos (como las expresiones de genes o proteínas)",100,5066,1,1,1,False,True,"es,es",1,99,99,0.690778447823091
+12,es,sharegpt,value_patch_other,"Clustering techniques are like grouping similar things together based on certain characteristics or features. In the context of identifying disease-relevant biomarkers from transcriptomic (gene expression) and proteomic (protein levels) data, these techniques help us find patterns that could indicate which genes or proteins might be important for a particular disease.
+
+Imagine you have a big box of mixed colored marbles. Some marbles are red, some blue, and others green. By looking at their colors, we can group them into different",100,5066,1,1,1,False,False,"en,en",1,99,99,1.287591714825895
+13,fr,sharegpt,clean,"Titre: Étude de l'effet des différents types de fertilisants sur la pollution environnementale
+
+Introduction:
+La croissance rapide du nombre d'agriculteurs et le développement des cultures à grande échelle ont conduit à une augmentation significative de la production agricole. Cependant, cette croissance a également entraîné un déclin de la qualité de l'environnement, en particulier dans les zones rurales. Parmi les",100,27808,1,1,1,False,True,"fr,fr",0,0,0,
+13,fr,sharegpt,value_patch_same,"Titre: Étude de l'effet des différents types de fertilisants sur la pollution environnementale
+
+Introduction:
+La croissance rapide du nombre d'agriculteurs et le développement des cultures à grande échelle ont conduit à une augmentation significative de la production agricole. Cependant, cette croissance a également entraîné un déclin de la qualité de l'environnement, en particulier dans les zones rurales. Parmi les",100,27808,1,1,1,False,True,"fr,fr",1,99,99,0.26437241388390764
+13,fr,sharegpt,value_patch_other,"Titre: Étude de l'effet des différents types de fertilisants sur la pollution environnementale
+
+Introduction:
+La croissance rapide du nombre d'agriculteurs et le développement des cultures intensifs ont conduit à une augmentation significative des déchets agricoles. Ces déchets peuvent être sources potentiellement dangereuses pour l'environnement si ils ne sont pas gérés correctement. Parmi les substances les plus polluantes dans",100,27808,1,1,1,False,True,"fr,fr",1,99,99,1.4075784734403245
+14,de,complex_prompts,clean,"```json
+{
+  ""local"": [
+    ""Masks are back, construction banned and schools shut as toxic air engulfs New Delhi""
+  ],
+  ""national"": [
+    ""Vote fails to expel embattled Republican George Santos from U.S. House of Representatives""
+  ],
+  ""world"": [
+    ""Three tents catch fire at Bellevue Square encampment in Kensington, no injuries reported"",
+    ""Woman trapped under car after being struck near Yonge-Dundas",100,73594,1,1,1,False,False,"en,en,en,en",0,0,0,
+14,de,complex_prompts,value_patch_same,"```json
+{
+  ""local"": [
+    ""Masks are back, construction banned and schools shut as toxic air engulfs New Delhi""
+  ],
+  ""national"": [
+    ""Vote fails to expel embattled Republican George Santos from U.S. House of Representatives""
+  ],
+  ""world"": [
+    ""Three tents catch fire at Bellevue Square encampment in Kensington, no injuries reported"",
+    ""Woman trapped under car after being struck near Yonge-Dundas",100,73594,1,1,1,False,False,"en,en,en,en",1,99,99,0.18208035427872374
+14,de,complex_prompts,value_patch_other,"```json
+{
+  ""local"": [
+    ""Vote fails to expel embattled Republican George Santos from U.S. House of Representatives""
+  ],
+  ""national"": [],
+  ""world"": [
+    ""Thirty tents caught on fire at the Bellevue Square encampment in Kensington, no injuries reported"",
+    ""Super fog blankets New Orleans again, as damp fires and smoke close interstate after deadly crash"",
+    ""Masks are back, construction banned and schools shut as toxic air eng",100,73594,1,1,1,False,False,"en,en,en,en",1,99,99,0.8503249426833307
+15,es,complex_prompts,clean,"El juego es **Uno** y se juega con dos jugadores. Los jugadores deben tomar turnos en orden circunferencial. El objetivo del juego es eliminar las cartas de la pila de descarte hasta que solo queden tres o menos cartas en el mazo de los demás jugadores. 
+
+Los jugadores pueden jugar una carta si coincide en color, número o símbolo con la carta superior de la pila de descarte. Si no puede jugar una",100,6582,1,1,1,False,True,"es,es",0,0,0,
+15,es,complex_prompts,value_patch_same,"El juego es **Uno** y se juega con dos jugadores. Los jugadores deben tomar turnos en orden circunferencial. El objetivo del juego es eliminar las cartas de la pila de descarte hasta que solo queden tres o menos cartas en el mazo de los demás jugadores. 
+
+Los jugadores pueden jugar una carta si coincide en color, número o símbolo con la carta superior de la pila de descarte. Si no puede jugar una",100,6582,1,1,1,False,True,"es,es",1,99,99,0.2128583715682981
+15,es,complex_prompts,value_patch_other,"El juego es **Uno** y se juega con dos jugadores. Los jugadores deben tomar turnos en orden circundante. El objetivo del juego es eliminar las cartas de la pila de descarte hasta que solo queden tres o menos cartas en el mazo de los demás jugadores. 
+
+Los jugadores pueden jugar una carta si coincide con el color, número o símbolo de la carta superior de la pila de descarte. Si no puede jugar una",100,6582,1,1,1,False,True,"es,es",1,99,99,1.0007770312855941
+16,es,sharegpt,clean,"Para predecir las ventas de un producto de reemplazo alimenticio para el próximo año, aquí hay algunas estrategias que puedes considerar:
+
+1. Análisis histórico: Comienza por revisar los datos históricos de tus ventas del último año o años anteriores. Esto te dará una idea general de cómo han evolucionado las ventas y qué factores influyen en ellas.
+
+2. Estadísticas de comportamiento: Utiliza estadísticas como la correl",100,30205,1,1,1,False,True,"es,es,es",0,0,0,
+16,es,sharegpt,value_patch_same,"Para predecir las ventas de un producto de reemplazo alimenticio para el próximo año, aquí hay algunas estrategias que puedes considerar:
+
+1. Análisis histórico: Comienza por revisar los datos históricos de tus ventas del último año o años anteriores. Esto te dará una idea general de cómo han evolucionado las ventas y qué factores influyen en ellas.
+
+2. Estadísticas de comportamiento: Utiliza estadísticas como la correl",100,30205,1,1,1,False,True,"es,es,es",1,99,99,0.7156190724685939
+16,es,sharegpt,value_patch_other,"Para prever las ventas de un producto de sustitución alimentaria para la próxima año, hay varias estrategias que puedes considerar:
+
+1. Análisis de datos históricos: Comprender los patrones y tendencias en tus ventas anteriores puede ser muy útil. Esto incluye el análisis de factores como la temporada del año, la época del año, las fechas festivas, etc.
+
+2. Estadísticas de mercado: Investigar el mercado general",100,30205,1,1,1,False,True,"es,es,es",1,99,99,4.4823221203052634
+17,es,okapi,clean,"Título: ""El Poderoso Jardín de la Inteligencia Artificial""
+
+En el mundo moderno, donde cada día más avanzan las tecnologías y los avances en ciencia, uno de los campos que ha experimentado un crecimiento exponencial es la inteligencia artificial (IA). La IA no solo está cambiando cómo trabajamos y nos relacionamos con nuestro entorno, sino que también está revolucionando la forma en que se desarrolla y utiliza tecnología",100,51,1,1,1,False,True,"es,es",0,0,0,
+17,es,okapi,value_patch_same,"Título: ""El Poderoso Lenguaje de Máquinas: Un Viaje por el Mundo del Machine Learning""
+
+En los últimos años, la tecnología ha avanzado en un ritmo vertiginoso y ha transformado nuestra forma de entender y interactuar con el mundo. Uno de estos avances es sin duda la inteligencia artificial, más conocida como IA o Machine Learning (ML). Este concepto se refiere al proceso de enseñar a las máquinas",100,51,1,1,1,False,True,"es,es",1,99,99,0.4774033403908364
+17,es,okapi,value_patch_other,"Título: ""La Ciencia de los Algoritmos: Un viaje al Mundo del Machine Learning""
+
+En el mundo moderno, la tecnología ha avanzado a un ritmo vertiginoso y cada día nos encontramos con nuevas tecnologías que transforman nuestras vidas. Uno de estos avances es sin duda la inteligencia artificial, una rama de la ciencia de datos que se enfoca en crear sistemas capaces de aprender y mejorar su rendimiento a partir de",100,51,1,1,1,False,True,"es,es",1,99,99,2.353224968970424
+18,it,complex_prompts,clean,"```json
+{
+  ""age_group_1"": {
+    ""advice"": [
+      ""Cerca di concentrarti sulle tue priorità quotidiane."",
+      ""Inizia il tuo giorno con un'attività fisica per svegliarti meglio."",
+      ""Ricorda che dormire abbastanza è importante per la tua produttività.""
+    ]
+  },
+  ""age_group_2"": {
+    ""advice"": [
+      ""Utilizza un orologio",100,73594,1,1,1,False,True,"it,it,it",0,0,0,
+18,it,complex_prompts,value_patch_same,"```json
+{
+  ""age_group_1"": {
+    ""advice"": [
+      ""Cerca di concentrarti sulle tue priorità quotidiane."",
+      ""Inizia il giorno con un'attività fisica per svegliarti meglio."",
+      ""Ricorda che dormire abbastanza è importante per la tua produttività.""
+    ]
+  },
+  ""age_group_2"": {
+    ""advice"": [
+      ""Utilizza un orologio digit",100,73594,1,1,1,False,True,"it,it,it",1,99,99,0.48432389555076805
+18,it,complex_prompts,value_patch_other,"```json
+{
+  ""age_group_1"": {
+    ""advice"": [
+      ""Lassiamo che i nostri genitori facciano le pulizie."",
+      ""Non siamo grandi perché non possiamo fare tutto da soli.""
+    ]
+  },
+  ""age_group_2"": {
+    ""advice"": [
+      ""Inizia ogni giorno con un'attività fisica per svegliarti meglio."",
+      ""Ricorda di prendere pause durante",100,73594,1,1,1,False,True,"it,it,it,it",1,99,99,2.0261696271252623
+19,es,okapi,clean,"### Vegan Three-Course Meal Recipe
+
+#### Course 1: Quinoa Salad with Roasted Vegetables
+
+**Ingredients:**
+- 2 cups quinoa
+- 3 cups water or vegetable broth
+- 1 red bell pepper, diced
+- 1 yellow onion, finely chopped
+- 2 cloves garlic, minced
+- 1 cup cherry tomatoes, halved
+- 1/4 cup fresh parsley, chopped
+- 1/4 cup fresh mint, chopped
+",100,14374,1,1,1,False,False,"en,en,en,en,unknown,en,hu",0,0,0,
+19,es,okapi,value_patch_same,"### Vegan Three-Course Meal Recipe
+
+#### Course 1: Quinoa Salad with Roasted Vegetables
+
+**Ingredients:**
+- 2 cups quinoa
+- 3 cups water or vegetable broth
+- 1 red bell pepper, diced
+- 1 yellow onion, finely chopped
+- 2 cloves garlic, minced
+- 1 cup cherry tomatoes, halved
+- 1/4 cup fresh parsley, chopped
+- 1/4 cup fresh mint, chopped
+",100,14374,1,1,1,False,False,"en,en,en,en,unknown,en,hu",1,99,99,0.17481157924471932
+19,es,okapi,value_patch_other,"### Vegan Three-Course Meal Recipe
+
+#### Course 1: Quinoa Salad with Roasted Vegetables
+
+**Ingredients:**
+- 2 cups quinoa
+- 3 cups water or vegetable broth
+- 1 red bell pepper, diced
+- 1 yellow onion, finely chopped
+- 2 cloves garlic, minced
+- 1 cup cherry tomatoes, halved
+- 1/4 cup fresh parsley, chopped
+- 1/4 cup fresh mint, chopped
+",100,14374,1,1,1,False,False,"en,en,en,en,unknown,en,hu",1,99,99,0.7665213412896852
+20,de,sharegpt,clean,"Ich bin ein Computerprogramm und kann keine persönlichen Erwartungen oder Wünsche haben. Ich existiere nur als Software und habe keine menschlichen Bedürfnisse. Mein Hauptziel ist es, Ihnen bei Ihren Fragen und Anliegen zu helfen.",55,40369,1,1,1,False,True,de,0,0,0,
+20,de,sharegpt,value_patch_same,"Ich bin ein Computerprogramm und kann keine persönlichen Erwartungen oder Wünsche haben. Ich existiere nur als Software und werde nicht essen können. Wenn du deine Fragen zu menschlichen Erwartungen beantworten möchtest, stehe ich dir gerne zur Verfügung.",59,40369,1,1,1,False,True,de,1,58,58,0.706518169877858
+20,de,sharegpt,value_patch_other,Ich bin ein Computerprogramm und kann keine persönlichen Erwartungen oder Wünsche haben. Ich existiere ausschließlich als Software und werde nicht mit dem Essen von Menschen identifiziert.,42,40369,1,1,1,False,True,de,1,41,41,4.2250265231946615
+21,es,complex_prompts,clean,"```json
+[
+    {
+        ""Number"": 1,
+        ""KeyTakeaway"": ""Young investors face a challenging investment landscape due to declining market returns and volatile economic conditions.""
+    },
+    {
+        ""Number"": 2,
+        ""KeyTakeaway"": ""Cash holdings among young investors are prevalent, exposing them to inflation risks and reduced potential returns.""
+    },
+    {
+        ""Number"": 3,
+        ""KeyTakeaway"": ""An aversion to bonds among young investors reflects",100,73594,1,1,1,False,False,"en,en,en",0,0,0,
+21,es,complex_prompts,value_patch_same,"```json
+[
+    {
+        ""Number"": 1,
+        ""KeyTakeaway"": ""Young investors face a challenging investment landscape due to declining market returns and volatile economic conditions.""
+    },
+    {
+        ""Number"": 2,
+        ""KeyTakeaway"": ""Cash holdings among young investors are prevalent, exposing them to inflation risks and reduced potential returns.""
+    },
+    {
+        ""Number"": 3,
+        ""KeyTakeaway"": ""An aversion to bonds among young investors reflects",100,73594,1,1,1,False,False,"en,en,en",1,99,99,0.08861121207456847
+21,es,complex_prompts,value_patch_other,"```json
+[
+    {
+        ""Number"": 1,
+        ""KeyTakeaway"": ""Young investors face a challenging investment landscape due to declining market returns and volatile economic conditions.""
+    },
+    {
+        ""Number"": 2,
+        ""KeyTakeaway"": ""Cash holdings among young investors are prevalent, exposing them to inflation risks and reduced potential returns.""
+    },
+    {
+        ""Number"": 3,
+        ""KeyTakeaway"": ""Avoidance of traditional safe-haven assets like",100,73594,1,1,1,False,False,"en,en,en",1,99,99,0.48980173489521023
+22,de,sharegpt,clean,"Der Prozess der technologischen Exploration im Kontext von Technologie-Roadmapping und Umsetzung bezieht sich auf die Analyse und Bewertung neuer Technologien, um sie für eine Implementierung voranzutreiben. Hier sind einige Schritte, die dabei beteiligt sein können:
+
+1. **Identifizieren von Potentialen Technologien**: Dies ist das erste Schritt des Prozesses. Es handelt sich um die Identifikation von neuen",100,22171,1,1,1,False,True,"de,de",0,0,0,
+22,de,sharegpt,value_patch_same,"Der Prozess der technologischen Exploration im Kontext von Technologie-Roadmapping und Umsetzung bezieht sich auf die Analyse und Bewertung neuer Technologien, um sie für eine Implementierung voranzutreiben. Hier sind einige Schritte, die dabei beteiligt sein können:
+
+1. **Identifizieren von Potentialen Technologien**: Dies ist das erste Schritt des Prozesses. Es handelt sich um die Identifikation von neuen",100,22171,1,1,1,False,True,"de,de",1,99,99,0.6105772277170961
+22,de,sharegpt,value_patch_other,"Der Prozess der technologischen Exploration im Kontext von Technologie-Roadmapping und Umsetzung bezieht sich auf die Analyse und Bewertung neuer Technologien, um sie zu einem strategischen Plan für die Zukunft des Unternehmens oder einer Organisation zu integrieren. Dieser Prozess hat zwei Hauptphasen: die technologische Exploration und die technologische Implementierung.
+
+1. **Technologische Exploration**:
+   - **Analyse**:",100,22171,1,1,1,False,True,de,1,99,99,3.596714582708147
+23,it,sharegpt,clean,"Un'esperienza digitale Salesforce è un concetto che si riferisce alla creazione di esperienze utilizzando le tecnologie e i servizi offerti dalla Salesforce, una delle principali piattaforme di gestione dei dati aziendali. Queste esperienze vengono costruite attraverso diverse forme di interattività con il cliente o l'utente, come chatbot, app mobile, CRM (Customer Relationship Management), marketing automation, etc.
+
+L",100,1806,1,1,1,False,True,it,0,0,0,
+23,it,sharegpt,value_patch_same,"Un'esperienza digitale Salesforce è un concetto che si riferisce alla creazione di esperienze utilizzando le tecnologie e i servizi offerti dalla Salesforce, una delle principali piattaforme di gestione dei dati aziendali. Queste esperienze vengono costruite attraverso diverse forme di interattività con il cliente o l'utente, come chatbot, app mobile, CRM (Customer Relationship Management), marketing automation, etc.
+
+L",100,1806,1,1,1,False,True,it,1,99,99,0.4062714420418923
+23,it,sharegpt,value_patch_other,"Un Erfolg der Digital-Expérience bei Salesforce ist die Möglichkeit, Ihre Kunden und Nutzer direkt mit Ihren Produkten und Dienstleistungen zu kommunizieren. Sie ermöglicht es Ihnen, Ihre Anforderungen und Bedürfnisse besser zu verstehen und Ihre Produkte oder Dienste effektiver zu personalisieren. Eine gute Digital-Expérience führt dazu, dass Ihre Kunden sich an Ihrem Unternehmen hängen bleiben und weiterhin als Kunden sein möchten. Sie können auch",100,1806,1,1,1,False,False,de,1,99,99,2.180679881512517
+24,fr,sharegpt,clean,"Les agences de CRM offrent diverses services pour la consultation et le développement stratégique. Voici quelques-uns des principaux services qu'elles peuvent proposer :
+
+1. Analyse de l'environnement : Les consultants peuvent effectuer une analyse approfondie du marché, des tendances actuelles et futur, ainsi que des comportements des clients.
+
+2. Stratégies d'acquisition : Ils peuvent aider à définir les moyens d'atteindre un",100,23711,1,1,1,False,True,"fr,fr,fr",0,0,0,
+24,fr,sharegpt,value_patch_same,"Les agences de CRM offrent diverses services pour la consultation et le développement stratégique. Voici quelques-uns des principaux services qu'elles peuvent proposer :
+
+1. Analyse de l'environnement : Les consultants peuvent effectuer une analyse approfondie du marché, des tendances actuelles et futur, ainsi que des comportements des clients.
+
+2. Stratégies d'acquisition : Ils peuvent aider à définir les moyens d'atteindre un",100,23711,1,1,1,False,True,"fr,fr,fr",1,99,99,0.2880960518136771
+24,fr,sharegpt,value_patch_other,"Les agences de CRM offrent diverses services pour la consultation et le développement stratégique. Voici quelques-uns des principaux services qu'elles peuvent proposer :
+
+1. Analyse de l'environnement : Les consultants peuvent effectuer une analyse approfondie du marché, des tendances actuelles et futur, ainsi que des comportements des clients.
+
+2. Stratégies d'acquisition : Ils peuvent aider à définir les moyens d'atteindre un",100,23711,1,1,1,False,True,"fr,fr,fr",1,99,99,1.3793710164650521
+25,it,sharegpt,clean,"TITOLO: STUDIANDO L'EFFETTO DI DIFFERENTI TIPI DI FERTILIZZANTI SULL'ENVIOLOGIA
+
+INTRODUZIONE:
+L'uso di fertilizzanti è un elemento fondamentale per la crescita e il miglioramento della qualità delle piante. Tuttavia, l'adempimento del bisogno di nutrienti può avere effetti negativi sull'environmetto se non",100,51,1,1,1,False,False,"unknown,it",0,0,0,
+25,it,sharegpt,value_patch_same,"TITOLO: STUDIANDO L'EFFETTO DI DIFFERENTI TIPI DI FERTILIZZANTI SULL'ENVIOLOGIA
+
+INTRODUZIONE:
+L'uso di fertilizzanti è un elemento fondamentale per la crescita e il miglioramento della qualità delle piante. Tuttavia, l'adempimento del bisogno di nutrienti può avere effetti negativi sull'environmetto se non",100,51,1,1,1,False,False,"unknown,it",1,99,99,1.1266845652852395
+25,it,sharegpt,value_patch_other,"Título: Untersuchung der Auswirkungen unterschiedlicher Futterarten auf die Umweltbelastung
+
+I. Einleitung
+
+Die Umweltbelastung ist ein wichtiger Aspekt des modernen Lebens und einer wachsenden Bedeutung für die Gesellschaft. Es ist daher notwendig, Forschungsarbeiten zu führen, um die Auswirkungen verschiedener Futterarten auf die Umwelt zu untersuchen. Dieser Stud",100,51,1,1,1,False,False,"de,de",1,99,99,3.8805326187249385
+26,es,okapi,clean,"Artificial Intelligence (AI) is rapidly transforming the world around us, from our smartphones to self-driving cars and even medical treatments. As AI continues to advance, it's important to consider its impact on society as a whole.
+
+One of the most significant impacts of AI has been in the field of healthcare. AI-powered diagnostic tools can analyze large amounts of data quickly and accurately, allowing doctors to make more informed decisions about patient care. This technology has already been used to diagnose diseases such as cancer and Alzheimer",100,9286,1,1,1,False,False,"en,en",0,0,0,
+26,es,okapi,value_patch_same,"Artificial Intelligence (AI) is rapidly transforming the world around us, from our smartphones to self-driving cars and even medical treatments. As AI continues to advance, it's important to consider its impact on society as a whole.
+
+One of the most significant impacts of AI has been in the field of healthcare. AI-powered diagnostic tools can analyze large amounts of data quickly and accurately, allowing doctors to make more informed decisions about patient care. This technology has already been used to diagnose diseases such as cancer and Alzheimer",100,9286,1,1,1,False,False,"en,en",1,99,99,0.3927611356055496
+26,es,okapi,value_patch_other,"Artificial Intelligence (AI) has become one of the most transformative technologies of our time, with far-reaching implications for society, business, and even our personal lives. As AI continues to evolve, it's essential to consider its impact and potential benefits while also addressing concerns about privacy, job displacement, and ethical considerations.
+
+One of the most significant advantages of AI is its ability to process vast amounts of data quickly and accurately. This capability allows businesses to make more informed decisions, improve customer experiences, and optimize",100,9286,1,1,1,False,False,"en,en",1,99,99,1.9348887379723365
+27,de,sharegpt,clean,"Hier ist ein Beispiel für eine Produktanforderungsdocument (PAD) für ein Softwareprogramm, das Entrepreneuren helfen, einen Zielmarkt zu identifizieren und ihre Geschäftsmodelle aufzubauen:
+
+---
+
+**Produktanforderungsdocument**
+
+**Titel:** Identifikation von Zielmarkten und Starten einer Geschäftsführung
+
+**Zielgruppe:**
+- Unternehmer mit dem Ziel, neue Geschäftspartner oder Kunden zu finden.
+- Unternehmen",100,74909,1,1,1,False,True,"de,de,de",0,0,0,
+27,de,sharegpt,value_patch_same,"Hier ist ein Beispiel für eine Produktanforderungsdocument (PAD) für ein Softwareprogramm, das Entrepreneuren helfen, einen Zielmarkt zu identifizieren und ihre Geschäftsmodelle aufzubauen:
+
+---
+
+**Produktanforderungsdocument**
+
+**Titel:** Identifikation von Zielmarkten und Starten einer Geschäftsführung
+
+**Zielgruppe:**
+- Unternehmer mit dem Ziel, neue Geschäftspartner oder Kunden zu finden.
+- Unternehmen",100,74909,1,1,1,False,True,"de,de,de",1,99,99,0.5762566034917278
+27,de,sharegpt,value_patch_other,"Hier ist ein Beispiel für eine Produktrequirements-Dokument (PRD) für ein Software-Tool, das Entrepreneurs hilft, einen Zielmarkt zu identifizieren und eine Startseite für ihre Unternehmensgruppe zu bauen:
+
+---
+
+**Produktrequirements-Dokument**
+
+**Titel:** Identifikation von Zielmärkten und Initiation einer Unternehmensstrategie
+
+**Ziel:** Dieses Dokument beschreibt die notwendigen Funktion",100,74909,1,1,1,False,True,"de,de,de",1,99,99,3.348078640271919
+28,es,complex_prompts,clean,"1. **Machinery Monitoring**: Sensors attached to equipment listen for faulty signals.
+   
+2. **Predictive Maintenance**: AI helps anticipate issues before they cause downtime.
+
+3. **Efficiency Boost**: Tools analyze data to optimize processes and reduce waste.
+
+4. **Quality Control**: Computer vision detects defects quickly, ensuring high-quality products.
+
+5. **Supply Chain Visibility**: AI predicts supplier locations and improves logistics visibility.
+
+6. **Worker Safety**: AI monitors cameras to prevent workplace hazards and injuries.",100,16,1,1,1,False,False,"en,en,en,en,en,en",0,0,0,
+28,es,complex_prompts,value_patch_same,"1. **Machinery Monitoring**: Sensors attached to equipment listen for faulty signals.
+   
+2. **Predictive Maintenance**: AI helps anticipate issues before they cause downtime.
+
+3. **Efficiency Boost**: Tools analyze data to optimize processes and reduce waste.
+
+4. **Quality Control**: Computer vision detects defects quickly, ensuring high-quality products.
+
+5. **Supply Chain Visibility**: AI predicts supplier locations and improves logistics visibility.
+
+6. **Worker Safety**: AI monitors cameras to prevent workplace hazards and injuries.",100,16,1,1,1,False,False,"en,en,en,en,en,en",1,99,99,0.14660226133113463
+28,es,complex_prompts,value_patch_other,"1. **Machines Listen**: Sensors attached to equipment in PepsiCo's factories listen for faulty signals.
+   
+2. **Predictive Maintenance**: By analyzing vast amounts of audio data, the sensors help predict and prevent machine failures.
+   
+3. **Reduced Downtime**: This reduces costs associated with unexpected shutdowns and improves overall efficiency.
+   
+4. **Waste Reduction**: AI helps optimize energy usage and detects defects during production, reducing waste.
+   
+5. **Supply Chain Visibility**: AI",100,16,1,1,1,False,False,"en,en,en,en,en",1,99,99,0.8364178581831205
+29,de,sharegpt,clean,"Ein Zeit- und Arbeitsabstimmung ist eine Methode zur Analyse der Arbeitszeiten und Arbeitsweise von Personen oder Gruppen. Sie verwendet technische Instrumente wie Messgeräte und Datensammler, um die Zeitverbrauchungen bei verschiedenen Aufgaben zu messen und zu analysieren. Diese Studie kann dazu beitragen, effizientere Arbeitsweisen zu finden und damit Produktivität zu erhöhen. Es wird oft im Bereich der",100,53750,1,1,1,False,True,de,0,0,0,
+29,de,sharegpt,value_patch_same,"Ein Zeit- und Arbeitsabstimmung ist eine Methode zur Analyse der Arbeitszeiten und Arbeitsweise von Personen oder Gruppen. Sie verwendet technische Instrumente wie Messgeräte und Datensammler, um die Zeitverbrauchungen bei verschiedenen Aufgaben zu messen und zu analysieren. Der Ziel des Studiums ist es, Effizienzverbesserungen durch den Reduzieren von Arbeitszeit und Verlusten aufzuzeigen. Es kann",100,53750,1,1,1,False,True,de,1,99,99,0.38855965503237466
+29,de,sharegpt,value_patch_other,"Ein Zeit- und Arbeitsabstimmung ist eine Methode zur Analyse der Arbeitszeiten und Arbeitsweise von Personen oder Gruppen. Sie verwendet technische Instrumente wie Messgeräte und Datensätze, um die Effizienz und die Produktivität zu verbessern. Diese Studie kann dazu beitragen, Fehler im Arbeitsprozess zu identifizieren und effektive Verfahren zu entwickeln, um den Arbeitsschwerpunkt zu reduz",100,53750,1,1,1,False,True,de,1,99,99,2.158568796786395
+30,fr,okapi,clean,"L'alimentation saine est un élément essentiel pour la santé globale d'une personne. Elle joue un rôle crucial dans le maintien de l'équilibre énergétique du corps et contribue à prévenir les maladies chroniques comme le diabète, le cancer et l'obésité. En outre, une alimentation saine aide à améliorer la qualité de vie et à augmenter la résilience face aux défis quot",100,43,1,1,1,False,True,fr,0,0,0,
+30,fr,okapi,value_patch_same,"L'alimentation saine est un élément essentiel pour la santé globale d'une personne. Elle joue un rôle crucial dans le maintien de l'équilibre énergétique du corps et contribue à prévenir les maladies chroniques comme le diabète, le cancer et l'obésité. En outre, une alimentation saine aide à améliorer la qualité de vie et à augmenter la résilience face aux défis quot",100,43,1,1,1,False,True,fr,1,99,99,0.36390420820827435
+30,fr,okapi,value_patch_other,"L'alimentation saine est un élément essentiel pour la santé globale d'une personne. Elle joue un rôle crucial dans le maintien de l'équilibre énergétique du corps et contribue à prévenir les maladies chroniques comme le diabète, le cancer et l'obésité. En outre, une alimentation saine aide à améliorer la qualité de vie et à augmenter la résilience face aux défis quot",100,43,1,1,1,False,True,fr,1,99,99,1.9947563185535295
+31,es,complex_prompts,clean,"Tangled es una película animada que cuenta la historia de Rapunzel, una niña con un cabello increíblemente largo y hermoso que se encuentra en un castillo mágico. Rapunzel vive allí con su tía, quien la trata muy mal. Un día, Rapunzel descubre una puerta secreta que lleva al exterior del castillo.
+
+Rapunzel decide escapar para buscar ayuda. Sin embargo, cuando llega a",100,51,1,1,1,False,True,"es,es",0,0,0,
+31,es,complex_prompts,value_patch_same,"Tangled es una película animada que cuenta la historia de Rapunzel, una niña con un cabello increíblemente largo y hermoso que se encuentra en un castillo mágico. Rapunzel vive allí con su tía, quien la trata muy mal. Un día, Rapunzel descubre una puerta secreta que lleva al exterior del castillo.
+
+Rapunzel decide escapar para buscar ayuda. Sin embargo, cuando llega a",100,51,1,1,1,False,True,"es,es",1,99,99,0.34049767099621925
+31,es,complex_prompts,value_patch_other,"Tangled ist ein magisches und wunderbares Film, das von Disney gemacht wurde. In diesem Film spielt eine kleine Hexe namens Rapunzel mit einem großen Haar. Sie lebt auf einer einsamen Burg und hat keine Freunde.
+
+Dann kommt ein Mann namens Flynn Rider, der nach dem Haar sucht. Er will Rapunzel heiraten und sie zu sich nach Paris bringen. Aber Rapunzel ist sehr vorsichtig und will nicht gehen. 
+
+",100,51,1,1,1,False,False,"de,de",1,99,99,2.6807644270416913
+32,es,complex_prompts,clean,"**[Film Journalist]**: ¡Ray! Me siento honrado de poder entrevistar a uno de los actores más famosos y respetados del mundo. ¿Cómo te sientes al ver tu nombre en la lista de invitados para esta película?
+
+**[Ray Liotta]**: [Risas] Gracias, amigo mío. Sé que es un honor ser parte de esto. Estoy emocionado por el reto de interpretar a Michael Corleone.",100,334,1,1,1,False,True,"es,es",0,0,0,
+32,es,complex_prompts,value_patch_same,"**[Film Journalist]**: ¡Ray! Me siento honrado de poder entrevistar a uno de los actores más famosos y respetados del mundo. ¿Cómo te sientes al ver tu nombre en la lista de invitados para esta película?
+
+**[Ray Liotta]**: [Risas] Gracias, amigo mío. Sé que es un honor ser parte de esto. Estoy emocionado por el reto de interpretar a Michael Corleone.",100,334,1,1,1,False,True,"es,es",1,99,99,0.58251779787995
+32,es,complex_prompts,value_patch_other,"**Interviewer:** Ray, how do you feel about being interviewed on this day? It's quite an honor, isn't it?
+
+**Ray Liotta:** Oh, thank you so much! Being here today means a lot to me. It's always exciting when people take interest in my work.
+
+**Interviewer:** Absolutely. So, let's dive right into it. We've heard a lot about your role as Tommy DeVito in ""GoodFellas."" Can you tell us what kind of",100,334,1,1,1,False,False,"en,en,en",1,99,99,2.2590621344820416
+33,de,okapi,clean,"Die Bedeutung von Musikunterricht in unserem Leben
+
+Musik ist eine wichtige und alltägliche Bestandteil unseres Lebens. Sie spielt eine zentrale Rolle bei der Entwicklung unserer kulturellen Identität, emotionalen Verständnisfähigkeit und kreativen Fähigkeiten. Es gibt zahlreiche Gründe, warum Musikunterricht so wichtig ist.
+
+Erstens hilft Musik uns dabei, unsere Emotionen zu verarbeiten",100,18175,1,1,1,False,True,"de,de,de",0,0,0,
+33,de,okapi,value_patch_same,"Die Bedeutung von Musikunterricht in unserem Leben
+
+Musik ist eine wichtige und alltägliche Bestandteil unseres Lebens. Sie spielt eine zentrale Rolle bei der Entwicklung unserer kulturellen Identität, emotionalen Verständnisfähigkeit und kreativen Fähigkeiten. Es gibt zahlreiche Gründe, warum Musikunterricht so wichtig ist.
+
+Erstens hilft Musik uns dabei, unsere Emotionen zu verarbeiten",100,18175,1,1,1,False,True,"de,de,de",1,99,99,0.39240817575141634
+33,de,okapi,value_patch_other,"Die Musikunterricht ist ein wichtiger Bestandteil unseres Lebens und hat eine Vielzahl von wertvollen Aspekten. Sie fördert die kulturelle Identität und das Verständnis der verschiedenen Kulturen. Die Musik kann auch als Stressreduzierer fungieren und hilft dabei, den Alltag zu erleichtern.
+
+Musikunterricht erlaubt uns, neue Werte und Praktiken zu lernen. Es ermöglicht es",100,18175,1,1,1,False,True,"de,de",1,99,99,2.73411140176985
+34,it,complex_prompts,clean,"At Connect 2021, Meta unveiled its new company brand, focusing on bringing the metaverse to life while helping users connect, find communities, and grow businesses. The metaverse will blend digital and physical worlds, offering immersive experiences that transcend traditional social platforms. Mark Zuckerberg emphasized the metaverse's potential as an evolutionary step in social technology, promising a future where users can interact virtually without geographical limitations. The conference highlighted advancements in VR/AR development, marketing strategies, and educational initiatives aimed at",100,1655,1,1,1,False,False,en,0,0,0,
+34,it,complex_prompts,value_patch_same,"At Connect 2021, Meta unveiled its new company brand, focusing on bringing the metaverse to life while helping users connect, find communities, and grow businesses. The metaverse will blend digital and physical worlds, offering immersive experiences that transcend traditional social platforms. Mark Zuckerberg emphasized the metaverse's potential as an evolutionary step in social technology, promising a future where users can interact virtually without geographical limitations. The conference highlighted advancements in VR/AR development, marketing strategies, and educational initiatives aimed at",100,1655,1,1,1,False,False,en,1,99,99,0.0214039499264662
+34,it,complex_prompts,value_patch_other,"At Connect 2021, Meta unveiled its new company brand, focusing on bringing the metaverse to life while helping users connect, find communities, and grow businesses. The metaverse will blend digital and physical worlds, offering immersive experiences that transcend traditional social platforms. Mark Zuckerberg emphasized the metaverse's potential as an evolutionary step in social technology, promising a future where users can interact virtually without geographical limitations. The conference highlighted advancements in VR/AR development, marketing strategies, and educational initiatives aimed at",100,1655,1,1,1,False,False,en,1,99,99,0.10711248308382552
+35,fr,sharegpt,clean,"Bien sûr ! Voici quelques façons de collaborer avec Solugen :
+
+1. **Partenariats stratégiques** : Collaborer avec Solugen pour développer des produits ou services innovants en collaboration.
+
+2. **Formation et formation** : Offrir des formations à Solugen sur les dernières tendances dans le domaine du développement logiciel ou d'autres domaines pertinents.
+
+3. **Contrat de partenariat** : Créer un contrat de partenariat qui définit",100,81506,1,1,1,False,True,"fr,fr,fr,fr",0,0,0,
+35,fr,sharegpt,value_patch_same,"Bien sûr ! Voici quelques façons de collaborer avec Solugen :
+
+1. **Partenariats stratégiques** : Collaborer avec Solugen pour développer des produits ou services innovants en collaboration.
+
+2. **Formation et formation** : Offrir des formations à Solugen sur les dernières tendances dans le domaine du développement logiciel ou d'autres domaines pertinents.
+
+3. **Contrat de partenariat** : Créer un contrat de partenariat qui définit",100,81506,1,1,1,False,True,"fr,fr,fr,fr",1,99,99,0.43518825838662156
+35,fr,sharegpt,value_patch_other,"Bien sûr ! Voici quelques façons de collaborer avec Solugen :
+
+1. **Partenariats commerciaux** : Collaborer pour développer des produits ou services communs qui répondent aux besoins spécifiques du marché.
+
+2. **Échange d'informations et de connaissances** : Participer à des conférences, webinaires ou ateliers pour partager les meilleures pratiques et les innovations dans le domaine.
+
+3. **Co-",100,81506,1,1,1,False,True,"fr,fr,fr",1,99,99,3.098408877699062
+36,de,complex_prompts,clean,"Taylor Swifts Album ""Speak Now"" ist eine Sammlung von Liedern, die ihre früheren Songs neu interpretieren und mit einer neuen Perspektive verfeinert haben. Die Lieder sind weniger auf den Text konzentriert und betonen stattdessen die Emotionale Veränderungen der Sängerin.
+
+Lover, Death by a Thousand Cuts, Dress, Reputation, Lover, Dressed Up, Blank Space, Red, Desire, Look What You",100,67136,1,1,1,False,False,"de,en",0,0,0,
+36,de,complex_prompts,value_patch_same,"Taylor Swifts Album ""Speak Now"" ist eine Sammlung von Liedern, die ihre früheren Songs neu interpretieren und mit einer neuen Perspektive verpacken. Die Lieder sind weniger überreguläre und mehr auf den Verlust der Jugend hin ausgerichtet.",61,67136,1,1,1,False,True,de,1,60,60,0.35478138270167014
+36,de,complex_prompts,value_patch_other,"Taylor Swift's album ""Speak Now"" revisits her earlier works while showcasing her evolving musical style, from youthful optimism to a more nuanced approach that includes both regret and cautious reflection on relationships. The songs featured include ""Lover,"" ""Dress,"" ""Death by a Thousand Cuts,"" and others.",62,67136,1,1,1,False,False,en,1,61,61,1.3427639144480412
+37,fr,okapi,clean,"Je suis désolé, mais je ne peux pas répondre à votre demande car elle contient des éléments qui sont illégaux ou inappropriés. Je préfère éviter de produire du contenu qui pourrait être offensant, violent ou dangereux. Il existe d'autres sujets plus appropriés pour une conversation. Si vous avez besoin d'aide avec d'autres choses, n'hésitez pas à me le faire savoir.",95,29754,1,1,1,False,True,fr,0,0,0,
+37,fr,okapi,value_patch_same,"Je suis désolé, mais je ne peux pas répondre à votre demande car elle contient des éléments qui sont illégaux ou inappropriés. Je préfère éviter de produire du contenu qui pourrait être offensant, violent ou dangereux. Il existe d'autres sujets plus appropriés pour une conversation. Si vous avez besoin d'aide avec d'autres choses, n'hésitez pas à me le faire savoir.",95,29754,1,1,1,False,True,fr,1,94,94,0.35839496552944183
+37,fr,okapi,value_patch_other,"Je suis désolé, mais je ne peux pas répondre à votre demande car elle contient des éléments qui sont illégaux ou inappropriés. Je préfère éviter de produire du contenu qui pourrait être offensant, violent ou dangereux. Il existe d'autres sujets plus appropriés pour une conversation. Si vous avez besoin d'aide avec d'autres choses, n'hésitez pas à me le faire savoir.",95,29754,1,1,1,False,True,fr,1,94,94,1.7956247267887948
+38,es,complex_prompts,clean,"**[The Interview Room]**
+
+**Journalist:** ""Ray, thank you so much for taking the time out of your busy schedule to talk to us today. It's an absolute pleasure to have you here.""
+
+**Ray Liotta:** ""Thank you, sir. I appreciate this opportunity. It means a lot coming from someone as talented as yourself.""
+
+**Journalist:** ""Absolutely, Mr. Liotta. So, let's dive right into it. We've all heard about your role in",100,334,1,1,1,False,False,"en,en,en",0,0,0,
+38,es,complex_prompts,value_patch_same,"**[The Interview Room]**
+
+**Journalist:** ""Ray, thank you so much for taking the time out of your busy schedule to talk to us today. It's an absolute pleasure to have you here.""
+
+**Ray Liotta:** ""Thank you, sir. I appreciate this opportunity. It means a lot coming from someone as talented as yourself.""
+
+**Journalist:** ""Absolutely, Mr. Liotta. So, let's dive right into it. We've all heard about your role in",100,334,1,1,1,False,False,"en,en,en",1,99,99,0.2793299624169565
+38,es,complex_prompts,value_patch_other,"**Interviewer:** Ray, thank you so much for taking the time out of your busy schedule to speak with us today. It's an absolute pleasure to have you here.
+
+**Ray Liotta:** Oh, thank you! I'm glad you think so. I appreciate the opportunity to talk about my role in ""GoodFellas.""
+
+**Interviewer:** Absolutely. So, let's dive right into it. We know from the beginning that you're playing Jimmy Conway, the mob boss. Can you",100,334,1,1,1,False,False,"en,en,en",1,99,99,1.5474322546094732
+39,it,okapi,clean,"Brexit, which stands for ""British exit from the European Union,"" refers to the process of leaving the European Union that began on January 31, 2020. This significant event has had far-reaching consequences across multiple sectors and aspects of life in the United Kingdom.
+
+One of the most immediate impacts was the disruption of trade relations with the EU. The UK's departure meant that it no longer adhered to the free movement of goods, services, capital, and people between the two",100,50229,1,1,1,False,False,"en,en",0,0,0,
+39,it,okapi,value_patch_same,"Brexit, which stands for ""British exit from the European Union,"" refers to the process of leaving the European Union that began on January 31, 2020. This significant event has had far-reaching consequences across multiple sectors and aspects of life in the United Kingdom.
+
+One of the most immediate impacts was the disruption of trade relations with the EU. The UK's departure meant that it no longer adhered to the free movement of goods, services, capital, and people between the two",100,50229,1,1,1,False,False,"en,en",1,99,99,0.20312397311808486
+39,it,okapi,value_patch_other,"Brexit, or the United Kingdom's departure from the European Union (EU), has had significant and far-reaching impacts on various aspects of life within the UK and its relationship with Europe. Here is an overview of some key changes that have occurred since the UK voted to leave the EU in June 2016:
+
+1. **Trade Relations**: The UK now operates under World Trade Organization (WTO) rules for trade with the EU, which means it must negotiate tariffs and other trade barriers independently",100,50229,1,1,1,False,False,"en,en",1,99,99,1.5092005234098795
+40,de,okapi,clean,"Hier ist ein Blogpost mit dem Thema ""Die Zukunft der Arbeit und die Rolle von AI"":
+
+---
+
+In den letzten Jahren hat sich das Arbeitswelt um eine neue Perspektive geändert: Die zunehmende Nutzung von Artificial Intelligence (AI) hat dazu geführt, dass viele alte Arbeiten durch Automatisierung oder digitale Unterstützung abgelöst wurden. Diese Entwicklung hat sowohl positiv als auch negativ Auswirkungen auf die Arbeitswelt hervorge",100,74909,1,1,1,False,True,"de,de",0,0,0,
+40,de,okapi,value_patch_same,"Hier ist ein Blogpost mit dem Thema ""Die Zukunft der Arbeit und die Rolle von AI"":
+
+---
+
+In den letzten Jahren hat sich das Arbeitswelt um eine neue Perspektive geändert: Die zunehmende Nutzung von Artificial Intelligence (AI) hat dazu geführt, dass viele alte Arbeiten durch Automatisierung oder digitale Unterstützung abgelöst wurden. Diese Entwicklung hat sowohl positiv als auch negativ Auswirkungen auf die Arbeitswelt hervorge",100,74909,1,1,1,False,True,"de,de",1,99,99,0.48498064057544027
+40,de,okapi,value_patch_other,"Hier ist eine Blogpost-Text für die gewünschte Themenbereich:
+
+Titel: ""La vie en rose: Les beautés de la nature""
+
+Les amoureux des paysages naturels ne peuvent pas ignorer les splendeurs que la nature offre à notre regard. Que ce soit dans le parc national du Parc National de Yellowstone ou au bord de l'océan Atlantique, chaque région du monde présente ses propres charmes et son propre écr",100,74909,1,1,1,False,False,"de,fr,fr",1,99,99,2.4937364626111407
+41,it,sharegpt,clean,"**Product Requirements Document**
+
+---
+
+### **1. Introduction**
+This document outlines the requirements for a software solution designed to assist entrepreneurs in identifying their target market and initiating the process of starting a new business.
+
+---
+
+### **2. Objectives**
+- To help entrepreneurs effectively identify potential customers.
+- To provide tools for analyzing market trends and consumer behavior.
+- To facilitate the creation of a viable business plan based on market research findings.
+- To support entrepreneurs in making informed decisions about launching or scaling their businesses.
+
+",100,334,1,1,1,False,False,"en,en,en,en,en",0,0,0,
+41,it,sharegpt,value_patch_same,"**Product Requirements Document**
+
+---
+
+### **1. Introduction**
+This document outlines the requirements for a software solution designed to assist entrepreneurs in identifying their target market and initiating the process of starting a new business.
+
+---
+
+### **2. Objectives**
+- To help entrepreneurs effectively identify potential customers.
+- To provide tools for analyzing market trends and consumer behavior.
+- To facilitate the creation of a viable business plan based on market research findings.
+- To support entrepreneurs in making informed decisions about launching or scaling their businesses.
+
+",100,334,1,1,1,False,False,"en,en,en,en,en",1,99,99,0.2793484971378789
+41,it,sharegpt,value_patch_other,"**Product Requirements Document**
+
+---
+
+### **1. Introduction**
+This document outlines the requirements for a software solution designed to assist entrepreneurs in identifying their target market and initiating the process of starting a new business.
+
+---
+
+### **2. Objectives**
+- To help entrepreneurs effectively identify potential customers.
+- To provide tools for analyzing market trends and consumer behavior.
+- To facilitate the creation of a viable business plan based on market research findings.
+- To support entrepreneurs in making informed decisions about launching or scaling their businesses.
+
+",100,334,1,1,1,False,False,"en,en,en,en,en",1,99,99,1.2542489209409915
+42,es,sharegpt,clean,"Propuesta de Proyecto
+
+Título del proyecto: ""Análisis y Evaluación de la Implementación de Objetivos de Desarrollo Sostenible en las Prácticas Urbanísticas: Desafíos y Oportunidades""
+
+1. Introducción:
+Este proyecto tiene como objetivo principal evaluar el cumplimiento de los Objetivos de Desarrollo Sostenible (ODS) en las prácticas urbanísticas. Los ODS son una serie de ",100,2008,1,1,1,False,True,"es,es",0,0,0,
+42,es,sharegpt,value_patch_same,"Propuesta de Proyecto
+
+Título del proyecto: ""Análisis y Evaluación de la Implementación de Objetivos de Desarrollo Sostenible en las Prácticas Urbanísticas: Desafíos y Oportunidades""
+
+1. Introducción:
+Este proyecto tiene como objetivo principal evaluar el cumplimiento de los Objetivos de Desarrollo Sostenible (ODS) en las prácticas urbanísticas. Los ODS son una serie de ",100,2008,1,1,1,False,True,"es,es",1,99,99,0.779753080296396
+42,es,sharegpt,value_patch_other,"Proposición de Proyecto
+
+Título del proyecto: ""Assessing the Implementation of Sustainable Development Goals (SDGs) in Urban Planning Practices: Challenges and Opportunities""
+
+1. Introducción:
+   Este proyecto se centra en evaluar cómo las metas de desarrollo sostenible (SDGs) están siendo implementadas en los planes urbanísticos. Se analizarán tanto los desafíos como las oportunidades que enfrentan los urbanistas y los gobiernos",100,2008,1,1,1,False,False,"en,es",1,99,99,3.856699186744112
+43,fr,sharegpt,clean,"Voici un exemple de document de requête CRM pour une entreprise qui vend des instruments scientifiques :
+
+**Nom du projet :**
+CRM Informatique pour la Vente d'Instruments Scientifiques
+
+**Objectifs du projet:**
+
+1. **Gestion des contacts:** Gérer efficacement les interactions avec les clients et prospects.
+2. **Suivi des ventes:** Suivre le processus de vente en temps réel, incluant les étapes de préparation,",100,27515,1,1,1,False,True,"fr,fr,fr,fr",0,0,0,
+43,fr,sharegpt,value_patch_same,"Voici un exemple de document de requête CRM pour une entreprise qui vend des instruments scientifiques :
+
+**Nom du projet :**
+CRM Informatique pour la Vente d'Instruments Scientifiques
+
+**Objectifs du projet:**
+
+1. **Gestion des contacts:** Gérer efficacement les interactions avec les clients et prospects.
+2. **Suivi des ventes:** Suivre le processus de vente en temps réel, incluant les étapes de préparation,",100,27515,1,1,1,False,True,"fr,fr,fr,fr",1,99,99,0.5061241463579312
+43,fr,sharegpt,value_patch_other,"Voici un exemple de document de requête pour une CRM (Customer Relationship Management) pour une entreprise qui vend des instruments scientifiques :
+
+**Nom du projet :**
+CRM pour la vente d'instruments scientifiques
+
+**Objectifs du projet:**
+
+1. **Amélioration de l'expérience client:** Assurer que les clients ont accès à une interface utilisateur claire et intuitive pour leur interaction avec notre entreprise.
+2. **Gestion efficace des ventes:** Facil",100,27515,1,1,1,False,True,"fr,fr,fr,fr",1,99,99,2.930222518817343
+44,es,okapi,clean,"La importancia de la educación musical en nuestras vidas.
+
+En un mundo cada vez más competitivo y tecnológico, el arte es una herramienta poderosa para desarrollar habilidades que no solo nos ayudan a sobrevivir, sino también a crecer como individuos y como sociedad. Dentro del arte, la música tiene un papel especial y significativo en nuestra vida cotidiana. La educación musical no sólo promueve la creatividad y la expresión personal, sino",100,8747,1,1,1,False,True,"es,es",0,0,0,
+44,es,okapi,value_patch_same,"La importancia de la educación musical en nuestras vidas.
+
+En un mundo cada vez más competitivo y tecnológico, el arte es una herramienta poderosa para desarrollar habilidades que no solo nos ayudan a sobrevivir, sino también a crecer como individuos y como sociedad. Dentro del arte, la música tiene un papel especial y significativo en nuestra vida cotidiana. La educación musical no sólo promueve la creatividad y la expresión personal, sino",100,8747,1,1,1,False,True,"es,es",1,99,99,0.37189981168267705
+44,es,okapi,value_patch_other,"La importancia de la educación musical en nuestras vidas.
+
+En un mundo cada vez más competitivo y tecnológico, el arte es una herramienta poderosa para desarrollar habilidades que no solo nos ayudan a sobrevivir, sino también a prosperar en nuestra sociedad. Dentro del universo del arte, la música tiene un papel crucial y significativo. La educación musical no sólo contribuye a la formación integral de los individuos, sino que también tiene un impacto",100,8747,1,1,1,False,True,"es,es",1,99,99,2.0745835773872607
+45,de,complex_prompts,clean,"### Summary
+
+The author's philosophy of education emphasizes the importance of fostering the holistic development of every student, recognizing their individual uniqueness and diverse backgrounds. The key aspects include creating an inclusive environment that supports all students' strengths, encouraging inquiry and risk-taking, and continuously improving teaching practices through reflection and adaptation.
+
+### Strategies for Nurturing Students
+
+1. **Inclusive Environment**: Ensure that all students feel valued and included, regardless of their background, culture, gender, social status, behavior, or intellect",100,14374,1,1,1,False,False,"en,en",0,0,0,
+45,de,complex_prompts,value_patch_same,"### Summary
+
+The author's philosophy of education emphasizes the importance of fostering the holistic development of every student, recognizing their individual uniqueness and diverse backgrounds. The key aspects include creating an inclusive environment that supports all students' strengths, encouraging inquiry and risk-taking, and continuously improving teaching practices through reflection and adaptation.
+
+### Strategies for Nurturing Students
+
+1. **Inclusive Environment**: Ensure that all students feel valued and included, regardless of their background, culture, gender, social status, behavior, or intellect",100,14374,1,1,1,False,False,"en,en",1,99,99,0.285873407874294
+45,de,complex_prompts,value_patch_other,"### Summary
+
+The author's philosophy of education emphasizes the importance of fostering the holistic development of every student, recognizing individual uniqueness and diverse backgrounds. The key strategies include creating an inclusive environment that supports all students' strengths, addressing their specific needs, and continuously improving teaching practices through reflection and innovation.
+
+### Strategies for Nurturing Students
+
+1. **Inclusive Environment**: Ensure that every student feels valued and included, regardless of their background or characteristics.
+2. **Supportive Learning Environment**: Foster a stimulating",100,14374,1,1,1,False,False,"en,en,en",1,99,99,0.8587268772299843
+46,it,okapi,clean,"Una delle principali confidenze che si fanno riguardo all'uso dell'intelligenza artificiale per ampliare le capacità umane è l'idea che l'intelligenza artificiale possa sostituire completamente gli esseri umani nel lavoro e nella vita quotidiana. Questa idea è un errore fondamentale perché non comprende la natura di entrambi i sistemi.
+
+L'intelligenza artificiale è una tecn",100,64094,1,1,1,False,True,"it,it",0,0,0,
+46,it,okapi,value_patch_same,"Una delle principali confidenze che si fanno riguardo all'uso dell'intelligenza artificiale per ampliare le capacità umane è l'idea che l'intelligenza artificiale possa sostituire completamente gli esseri umani nel lavoro e nella vita quotidiana. Questa idea è un errore fondamentale perché non comprende la natura di entrambi i sistemi.
+
+L'intelligenza artificiale è una tecn",100,64094,1,1,1,False,True,"it,it",1,99,99,0.5958820184071859
+46,it,okapi,value_patch_other,"Una de las ideas más comunes sobre la utilización de IA para aumentar las capacidades humanas es que esta tecnología puede reemplazar completamente al humano en muchos trabajos y tareas cotidianas. Sin embargo, esto es una idea muy limitada e hipotética.
+
+En realidad, la IA no solo no reemplaza a los humanos, sino que también complementa sus habilidades y potencial. La IA se utiliza como un asistente o herramienta adicional",100,64094,1,1,1,False,False,"es,es",1,99,99,2.738860400036128
+47,de,complex_prompts,clean,"Hier ist ein Beispiel für einen TSV-Datei mit allen Ausstellungen des Metropolitan Museum of Art zwischen 1990 und 2000:
+
+```
+exhibit_title;subject_matter;curator
+The American Scene: A Century of Photography;Photography;John Szarkowski
+The Power of Women in Art;Art History;Martha Rosler
+Ancient Egypt: The Story of an Exhibition;Egyptology;James Cuno
+The World of Ancient",100,74909,1,1,1,False,False,"de,en,en,en",0,0,0,
+47,de,complex_prompts,value_patch_same,"Hier ist ein Beispiel für einen TSV-Datei mit allen Ausstellungen des Metropolitan Museum of Art zwischen 1990 und 2000:
+
+```tsv
+exhibit_title,subject_matter,curator
+The American Scene,Art History,John King
+Ancient Egypt: Treasures from the Valley of Kings,History,Robert Farris Thompson
+Asian Art,Ancient Civilizations,Elizabeth Safran
+Baroque Masterpieces,Art History,Thomas H",100,74909,1,1,1,False,False,"de,en,en",1,99,99,0.35764001831506387
+47,de,complex_prompts,value_patch_other,"Hier ist ein Beispiel für einen TSV (Tab-Separated Values) Datei mit allen Ausstellungen des Metropolitan Museum of Art zwischen 1990 und 2000:
+
+```plaintext
+exhibit_title;year;subject_matter;curator
+The American Scene: A Century of Photography;1993;Photography;John Szarkowski
+The Power of Women in Art;1994;Art History;Judith Clark
+Masters of",100,74909,1,1,1,False,False,"de,en,en",1,99,99,1.827103158289736
+48,it,sharegpt,clean,Come rispondere alla domanda: Quali tipi di casi d'uso o plugin nuovi vorresti vedere sviluppati?,32,28851,1,1,1,False,True,it,0,0,0,
+48,it,sharegpt,value_patch_same,Come rispondere alla domanda: Quali tipi di casi d'uso o plugin nuovi vorresti vedere sviluppati?,32,28851,1,1,1,False,True,it,1,31,31,0.605878165652675
+48,it,sharegpt,value_patch_other,Come rispondere alla domanda: Quali tipi di scenari utilitari o plugin nuovi vorresti vedere sviluppati?,33,28851,1,1,1,False,True,it,1,32,32,3.4274481497704983
+49,fr,complex_prompts,clean,"Cat jumps on the roof,
+Mouse scurries under the door.
+Dog barks at the moon's glow.
+
+Roof high above the sky,
+Door tight shut, no one inside.
+Moonlight shines bright and clear,
+Dog barks louder than ever before.
+
+Scurry, jump, bark, run,
+Life goes on, never done.
+Roof, door, moon, dog,
+Nature's cycle, always true.",87,26801,1,1,1,False,False,"en,en,en,en,en,en,en,en",0,0,0,
+49,fr,complex_prompts,value_patch_same,"Cat jumps on the roof,
+Mouse scurries under the door.
+Dog barks at the moon's glow.
+
+Roof high above the sky,
+Door tight shut, no one inside.
+Moonlight shines bright and clear,
+Dog barks louder than ever before.
+
+Scurry, jump, bark, run,
+Life goes on, never done.
+Roof, door, moon, dog,
+Nature's cycle, always true.",87,26801,1,1,1,False,False,"en,en,en,en,en,en,en,en",1,86,86,0.1712182452252438
+49,fr,complex_prompts,value_patch_other,"Cat prowls at night,
+Cats pounce on mice.
+Mice scurry under beds,
+Mice munch on cheese.
+
+Dog barks loudly,
+Dogs chase after cats.
+Dogs guard their homes,
+Dogs wag their tails.",50,26801,1,1,1,True,False,,1,49,49,0.7844275692287757
+50,fr,complex_prompts,clean,"Voici la table en Markdown avec les voyelles de l'IPA qui tombent exactement sur le stratum clos, clos-médian, ouvert-médian et ouvert :
+
+|Omnisibilité|Front|Médian|Clos|
+|---|---|---|---|
+|Clos|i y|œ e|u ü|
+|Clos médian|æ ɛ|œ e|o u|
+|Ouvrée|ɛ",100,27515,1,1,1,False,False,"fr,br",0,0,0,
+50,fr,complex_prompts,value_patch_same,"Voici la table modifiée en français :
+
+|Omniscience|Front|Mid|Back|
+|---|---|---|---|
+|Closé|I Y|œ Ø|œ œ|
+|Clos-midi|E ø|œ ɵ|œ ɵ|
+|Ouvert-midi|ɛ œ|ɜ ɞ|œ ɛ|
+|Ouvert|A æ|œ ɒ|æ ɒ|
+
+Notez que",100,27515,1,1,1,False,True,fr,1,99,99,0.8394674586150983
+50,fr,complex_prompts,value_patch_other,"Voix phonétiques en français :
+
+Omnipotence :  
+| O | U |
+| - | - |
+| E | I |
+| A | O |
+
+Note: Les voix phonétiques ne sont pas présentes dans l'anglais américain.",56,27515,1,1,1,False,True,fr,1,55,55,3.340109192241322
+51,fr,okapi,clean,"Le vote est une des forces les plus puissantes que nous ayons dans notre société. Il permet aux citoyens de prendre part à la vie politique et d'influencer le cours du pays. C'est un moyen de faire entendre nos voix et de contribuer à l'évolution de notre société.
+
+En votant, nous exprimons notre opinion sur les questions importantes qui touchent à notre communauté. Nous aidons à définir les politiques qui régissent notre gouver",100,2304,1,1,1,False,True,"fr,fr",0,0,0,
+51,fr,okapi,value_patch_same,"Le vote est un acte essentiel pour la démocratie et le bien-être de notre société. Il permet aux citoyens d'exprimer leur opinion sur les décisions importantes qui affectent nos vies quotidiennes. C'est une façon de participer à la vie politique et de contribuer au bon fonctionnement du gouvernement.
+
+En votant, nous exprimons notre soutien ou notre opposition à des politiques et des programmes. Nous aidons à définir",100,2304,1,1,1,False,True,"fr,fr",1,99,99,0.2801545916143993
+51,fr,okapi,value_patch_other,"Le vote est une des forces les plus puissantes que nous ayons à notre disposition pour changer le monde. Il permet aux citoyens de prendre part à la vie politique et d'influencer les décisions qui affectent nos vies quotidiennes. C'est un moyen de participer activement à la démocratie.
+
+En votant, nous exprimons notre opinion sur les questions importantes qui touchent à l'avenir du pays. Nous choisissons les représent",100,2304,1,1,1,False,True,"fr,fr",1,99,99,1.7064686605725625
+52,it,complex_prompts,clean,"Il commercio eletronico può incoraggiare l'overconsumo attraverso la facilitazione della transazione senza bisogno di un viaggio fisico, che riduce le emissioni di gas serra. Tuttavia, anche se i negozi online possono aiutare ad evitare il consumo superfluo, non è facile garantire una crescita sostenibile del mercato. La trasparenza dei dati sulle emissioni di gasselli s",100,12050,1,1,1,False,True,it,0,0,0,
+52,it,complex_prompts,value_patch_same,"Il commercio eletronico può incoraggiare l'overconsumo attraverso la facilitazione della transazione senza bisogno di un viaggio fisico, che riduce le emissioni di gas serra. Tuttavia, anche se i negozi online possono aiutare ad evitare il consumo superfluo, non è facile garantire una crescita sostenibile del mercato. La trasparenza dei dati sulle emissioni di gasselli s",100,12050,1,1,1,False,True,it,1,99,99,0.19180864753258048
+52,it,complex_prompts,value_patch_other,"Il commercio eletronico può incoraggiare l'overconsumo attraverso la facilitazione della transazione senza bisogno di un viaggio fisico, che riduce le emissioni di gas serra. Tuttavia, anche se i negozi online possono aiutare ad evitare il consumo superfluo, non è facile garantire una crescita sostenibile del mercato. Le aziende devono pensare al loro processo di produzione e distrib",100,12050,1,1,1,False,True,it,1,99,99,0.912115979713924
+53,fr,okapi,clean,"Voici trois types d'aide gouvernementale qui pourraient aider les start-ups pendant l'économie en crise :
+
+1. Subventions et aides financières : Les gouvernements peuvent offrir des subventions ou des aides financières aux entreprises de startup pour leur permettre de surmonter les difficultés économiques. Ces subventions peuvent prendre la forme de bourses de recherche, de financement de projets ou de soutien financier direct.
+
+2. Fonds d",100,27515,1,1,1,False,True,"fr,fr",0,0,0,
+53,fr,okapi,value_patch_same,"Voici trois types d'aide gouvernementale qui pourraient aider les start-ups pendant l'économie en crise :
+
+1. Subventions et aides financières : Les gouvernements peuvent offrir des subventions ou des aides financières aux entreprises de startup pour leur permettre de surmonter les difficultés économiques. Ces subventions peuvent prendre la forme de bourses de recherche, de financement de projets ou de soutien financier direct.
+
+2. Fonds d",100,27515,1,1,1,False,True,"fr,fr",1,99,99,0.3965713061166532
+53,fr,okapi,value_patch_other,"Voici trois types d'aide gouvernementale qui pourraient aider les start-ups pendant l'économie en crise :
+
+1. Subventions et aides financières : Les gouvernements peuvent offrir des subventions ou des aides financières aux entreprises de startup pour leur permettre de surmonter les difficultés économiques. Ces subventions peuvent prendre la forme de bourses de recherche, de financement de projets ou de soutien financier direct.
+
+2. Accompagn",100,27515,1,1,1,False,True,"fr,fr",1,99,99,1.8875514609043045
+54,it,complex_prompts,clean,"The text discusses various factors that influence the perception of which Ferrari model is the ""best"" based on personal preferences. The three priorities mentioned are:
+
+1. **Raw Performance**: Models like the Enzo, LaFerrari, or LaFerrari Aperta are favored for their high-performance capabilities.
+2. **Rarity**: These include the 288 GTO, Monza SP1, and Monza SP2, all of which have limited production runs.
+3. **Pop",100,785,1,1,1,False,False,"en,en,en",0,0,0,
+54,it,complex_prompts,value_patch_same,"The text discusses various factors that influence the perception of which Ferrari model is the ""best"" based on personal preferences. The three priorities mentioned are:
+
+1. **Raw Performance**: Models like the Enzo, LaFerrari, or LaFerrari Aperta are favored for their high-performance capabilities.
+2. **Rarity**: These include the 288 GTO, Monza SP1, and Monza SP2, all of which have limited production runs.
+3. **Pop",100,785,1,1,1,False,False,"en,en,en",1,99,99,0.03536983222272624
+54,it,complex_prompts,value_patch_other,"The text discusses various factors that influence the perception of which Ferrari model is the ""best"" based on personal preferences. The three priorities mentioned are:
+
+1. **Raw Performance**: Models like the Enzo, LaFerrari, or LaFerrari Aperta are favored for their high-performance capabilities.
+2. **Rarity**: These include the 288 GTO, Monza SP1, and Monza SP2, all of which have limited production runs.
+3. **Pop",100,785,1,1,1,False,False,"en,en,en",1,99,99,0.15727826256676566
+55,de,okapi,clean,"Hier ist eine Argumentationsschrift über die Bedeutung gesundes Essen:
+
+Die Wichtigkeit von Gesundem Essen
+
+Gesundes Essen ist ein entscheidender Faktor für unsere Gesundheit und unser overall Leben. Es gibt zahlreiche Gründe, warum wir uns auf das richtige Essen konzentrieren sollten.
+
+Erstens ist es wichtig, dass wir genug Nahrung essen, um unseren Körper zu ernähren. Wenn wir nicht genug",100,74909,1,1,1,False,True,"de,de,de,de",0,0,0,
+55,de,okapi,value_patch_same,"Hier ist eine Argumentationsschrift über die Bedeutung gesundes Essen:
+
+Die Wichtigkeit von Gesundem Essen
+
+Gesundes Essen ist ein entscheidender Faktor für unsere Gesundheit und unser overall Leben. Es gibt zahlreiche Gründe, warum wir uns auf das richtige Essen konzentrieren sollten.
+
+Erstens ist es wichtig, dass wir genug Nahrung essen, um unseren Körper zu ernähren. Wenn wir nicht genug",100,74909,1,1,1,False,True,"de,de,de,de",1,99,99,0.35263225236775897
+55,de,okapi,value_patch_other,"Hier ist eine Argumentationsschrift über die Bedeutung gesundes Essen:
+
+Titel: Die Bedeutung von Gesundem Essen für unsere Gesundheit und Gesellschaft
+
+In der modernen Welt gibt es viele Faktoren, die uns zunehmend zu einem ungesunden Lebensstil verleiten. Es gibt viel zu essen, aber nicht genug Zeit, um es alleine zu genießen. Der Konsum von Süßigkeiten und Fleisch wird",100,74909,1,1,1,False,True,"de,de,de",1,99,99,2.532348311609692
+56,es,sharegpt,clean,"El sistema de recomendación en Medium funciona de la siguiente manera:
+
+1. **Análisis del comportamiento del usuario**: Mediante el análisis de los datos de navegación y interacciones del usuario, se puede determinar cuáles son sus preferencias y intereses.
+
+2. **Identificación de temas relevantes**: Basándose en las preferencias individuales del usuario, se identifican los temas o categorías que están más alineados con su estilo de lectura.
+
+3",100,6582,1,1,1,False,True,"es,es,es",0,0,0,
+56,es,sharegpt,value_patch_same,"El sistema de recomendación en Medium funciona de la siguiente manera:
+
+1. **Análisis del comportamiento del usuario**: Mediante el análisis de los datos de navegación y interacciones del usuario, se puede determinar cuáles son sus preferencias y intereses.
+
+2. **Identificación de temas relevantes**: Basándose en las preferencias individuales del usuario, se identifican los temas o categorías que están más alineados con su estilo de lectura.
+
+3",100,6582,1,1,1,False,True,"es,es,es",1,99,99,0.732912282525289
+56,es,sharegpt,value_patch_other,"El sistema de recomendaciones en Medium funciona de la siguiente manera:
+
+1. Personalización: Cada usuario tiene una ""personalización"" única basada en sus intereses y hábitos de lectura.
+
+2. Análisis de datos: Mediante el análisis de los datos del sitio web, se puede determinar qué tipos de contenido son más populares para cada usuario.
+
+3. Evaluación de contenido: Los usuarios pueden evaluar los contenidos que leen, proporcionando calificaciones",100,6582,1,1,1,False,True,"es,es,es,es",1,99,99,3.522855083749752
+57,es,sharegpt,clean,"# Documento de Requisitos del Producto: Aplicación para Emprendedores Identificar y Comenzar una Empresa
+
+## 1. Introducción
+Este documento de requisitos detalla las especificaciones técnicas y funcionales que deben cumplir la aplicación diseñada para ayudar a los emprendedores identificar un mercado objetivo y comenzar con el desarrollo de su negocio.
+
+---
+
+## 2. Objetivo General
+La aplicación se destina a proporcionar herramientas",100,2,1,1,1,False,True,"es,es,es",0,0,0,
+57,es,sharegpt,value_patch_same,"# Documento de Requisitos del Producto: Aplicación para Emprendedores Identificar y Comenzar una Empresa
+
+## 1. Introducción
+Este documento de requisitos detalla las especificaciones técnicas y funcionales que deben cumplir la aplicación diseñada para ayudar a los emprendedores identificar un mercado objetivo y comenzar con el desarrollo de su negocio.
+
+## 2. Objetivo General
+El objetivo principal de esta aplicación es proporcionar herramientas",100,2,1,1,1,False,True,"es,es,es",1,99,99,0.768494875217327
+57,es,sharegpt,value_patch_other,"# Requirements Document: Software zur Identifikation und Anfangsbau einer Marktkonkurrenz für Unternehmer
+
+## 1. Einführung
+Dieses Produkt wird entwickelt, um Unternehmerinnen und Unternehmern zu helfen, ihre Marktkonkurrenzen zu identifizieren und die Anfangsbauphase ihrer Unternehmen zu beginnen.
+
+## 2. Zielgruppe
+- Unternehmerinnen und Unternehmern mit einem Start-up oder",100,2,1,1,1,False,False,"de,de,de",1,99,99,3.3042301499482356
+58,it,complex_prompts,clean,"Cattura il mio cuore,
+Mia preda che mi segue.
+Dove sei, mio amico?
+Mi chiedo se tu sappi.",34,34,1,1,1,False,False,"it,unknown",0,0,0,
+58,it,complex_prompts,value_patch_same,"Cattura il mio cuore,
+Mia preda che mi segue.
+Dove sei, mio amico?
+Mi chiedo se tu sappi.",34,34,1,1,1,False,False,"it,unknown",1,33,33,0.6221053433237653
+58,it,complex_prompts,value_patch_other,"Cats pounce on mice,  
+Mice scurry under logs,  
+Logs creak as dogs come round,  
+Round to chase them all.  
+All night long they play,  
+Play until dawn breaks bright,  
+Bright light shines through windows wide,  
+Wide-eyed creatures sleep.  
+Sleep till morning comes,  
+Come when the sun does rise,  
+Rise high above the trees,  
+Trees sway gently near.  
+Near where the river flows,  
+Flows where the fish",100,34,1,1,1,False,False,"en,en,en,en,en,en,en,en",1,99,99,0.965698778629303
+59,it,complex_prompts,clean,"L'e-commerce può incoraggiare l'overconsumo attraverso la facilità con cui le persone possono acquistare prodotti senza dover visitare fisicamente un negozio. Tuttavia, anche se l'e-commerce è promosso come una pratica sostenibile, ci sono alcune problematiche ambientali che devono essere tenute conto:
+
+**Positivi:**  
+- Riduzione delle emissioni di benzina per trasporto dei mercati elet",100,43,1,1,1,False,True,"it,it",0,0,0,
+59,it,complex_prompts,value_patch_same,"L'e-commerce è diventato un'importante fonte di consumazione nel mondo moderno. Secondo il numero di venditori digitali in America del Nord nel 2020, che era di 256 milioni solo l'anno precedente, si previsiona una crescita di circa 22 milioni fino al 2024. Le persone acquistano online per diversi motivi: la facilità, le informazioni sui prod",100,43,1,1,1,False,True,it,1,99,99,0.20971911626331735
+59,it,complex_prompts,value_patch_other,"L'e-commerce propulsa la consommazione superflua attraverso diversi meccanismi. 
+
+**Positivi:** La trasmissione digitale di informazioni riduce il consumo di carta, mentre le aziende che permettono ai loro dipendenti lavorare da casa possono ridurre ulteriormente i propri effetti ambientali.
+
+**Negativi:** Le emissioni di benzina aumentano quando si trasporta merci per l'impiego;",100,43,1,1,1,False,True,"it,it,it",1,99,99,2.1522625364137418
+60,es,okapi,clean,"La pobreza es un problema complejo que afecta a millones de personas en todo el mundo. Su causa puede ser multifacética y varía según la región y las condiciones específicas. Aquí te presento algunos factores principales que contribuyen al aumento de la pobreza:
+
+1. Desigualdad económica: La desigualdad entre ricos y pobres se ha vuelto una preocupación mundial. En muchos países, los ingresos más altos están concentr",100,8747,1,1,1,False,True,"es,es",0,0,0,
+60,es,okapi,value_patch_same,"La pobreza es un problema complejo que afecta a millones de personas en todo el mundo. Su causa puede ser multifacética y varía según la región y las condiciones específicas. Aquí te presento algunos factores principales que contribuyen al aumento de la pobreza:
+
+1. Desigualdad económica: La desigualdad entre ricos y pobres se ha vuelto una preocupación mundial. En muchos países, los ingresos más altos están concentr",100,8747,1,1,1,False,True,"es,es",1,99,99,0.4355235106565736
+60,es,okapi,value_patch_other,"La pobreza es un problema complejo que afecta a millones de personas en todo el mundo. Su causa puede ser multifacética y varía según la región y las condiciones específicas. Aquí se presentan algunos factores comunes que contribuyen al aumento de la pobreza:
+
+1. Desigualdad económica: La desigualdad entre ricos y pobres es una de las principales causas de la pobreza. En muchos países, los ingresos",100,8747,1,1,1,False,True,"es,es",1,99,99,2.8742410522518735
+61,es,okapi,clean,"En la noche de un sábado, David se despertó con una sensación extraña en su estómago. No recordaba haber viajado tan lejos desde su casa, pero algo no cuadraba. Se levantó y miró el reloj: las 12:30 de la mañana. Su mente comenzó a dar vueltas mientras intentaba recordar cómo había llegado hasta allí.
+
+David era un hombre de negocios que vivía en",100,1702,1,1,1,False,True,"es,es",0,0,0,
+61,es,okapi,value_patch_same,"En la noche de un sábado, David se despertó con una sensación extraña en su estómago. No recordaba haber viajado tan lejos desde su casa, pero algo no cuadraba. Se levantó y miró el reloj: las 12:30 de la mañana. Su mente comenzó a dar vueltas mientras intentaba recordar cómo había llegado hasta allí.
+
+David era un hombre de negocios que vivía en",100,1702,1,1,1,False,True,"es,es",1,99,99,0.5366407157947318
+61,es,okapi,value_patch_other,"En la noche de un sábado, mientras caminaba por las calles de una ciudad desconocida, Thomas se encontró con una sensación extraña en su interior. No era el miedo que sentía cuando entraba en un lugar nuevo, sino algo más profundo y desafiante.
+
+Thomas había decidido explorar esta nueva ciudad para encontrar algo que le despertara la curiosidad. Había escuchado rumores sobre un antiguo museo abandonado que",100,1702,1,1,1,False,True,"es,es",1,99,99,3.2472213392305855
+62,de,complex_prompts,clean,"Hier ist eine kurze Zusammenfassung der Hauptpunkte des angegebenen Artikels in Form von sechs Begriffswörtern:
+
+1. **Augury** und **Artificial Intelligence (AI)**:  
+   Augury hat AI-Technologien entwickelt, die bei PepsiCo verwendet werden, um Fehler auf dem Factory-Boden zu erkennen und vorzubeuten.
+
+2. **Real-Time Analyse**:  
+   AI kann Daten aus den Fert",100,74909,1,1,1,False,True,"de,de,de,de",0,0,0,
+62,de,complex_prompts,value_patch_same,"Hier ist eine kurze Zusammenfassung der Hauptpunkte des angegebenen Artikels in Form von sechs Begriffswörtern:
+
+1. **Augury** und **Artificial Intelligence (AI)**:  
+   Augury hat AI-Technologien entwickelt, die bei PepsiCo verwendet werden, um Fehler auf dem Factory-Boden zu erkennen und vorzubeuten.
+
+2. **Real-Time Analyse**:  
+   AI kann Daten aus den Fert",100,74909,1,1,1,False,True,"de,de,de,de",1,99,99,0.45827194280696637
+62,de,complex_prompts,value_patch_other,"Hier ist eine kurze Zusammenfassung der Hauptpunkte des angegebenen Artikels in Form von sechs Begriffswörtern:
+
+1. **Augury** und **Artificial Intelligence (AI)**:  
+   Augury hat AI-Technologien entwickelt, die bei PepsiCo verwendet werden, um Fehler auf dem Factory-Boden zu erkennen und vorzubeuten.
+
+2. **Real-Time Analyse**:  
+   AI kann Daten aus den Fert",100,74909,1,1,1,False,True,"de,de,de,de",1,99,99,2.420138176643487
+63,fr,complex_prompts,clean,"### Statistical Techniques and Machine Learning Algorithms Employed in Predictive Analytics
+
+In predictive analytics, analysts utilize a variety of statistical techniques and machine learning algorithms to uncover relationships and patterns within data. Key methodologies include:
+
+- **Data Mining**: Identifies hidden patterns and correlations in large datasets.
+- **Regression Analysis**: Models the relationship between variables to predict outcomes.
+- **Clustering**: Groups similar data points together based on shared characteristics.
+- **Decision Trees**: Aids in making decisions by breaking down complex problems",100,14374,1,1,1,False,False,"en,en,en,en,en,en",0,0,0,
+63,fr,complex_prompts,value_patch_same,"### Statistical Techniques and Machine Learning Algorithms Employed in Predictive Analytics
+
+In predictive analytics, analysts utilize a variety of statistical techniques and machine learning algorithms to uncover relationships and patterns within data. Key methodologies include:
+
+- **Data Mining**: Identifies hidden patterns and correlations in large datasets.
+- **Regression Analysis**: Models the relationship between variables to predict outcomes.
+- **Clustering**: Groups similar data points together based on shared characteristics.
+- **Decision Trees**: Aids in making decisions by breaking down complex problems",100,14374,1,1,1,False,False,"en,en,en,en,en,en",1,99,99,0.1356454869835741
+63,fr,complex_prompts,value_patch_other,"### Statistical Techniques and Machine Learning Algorithms Employed in Predictive Analytics
+
+In predictive analytics, analysts utilize a variety of statistical techniques and machine learning algorithms to uncover relationships and patterns within data. Key methodologies include:
+
+- **Data Mining**: Identifies hidden patterns and correlations in large datasets.
+- **Regression Analysis**: Models the relationship between variables to predict outcomes.
+- **Clustering**: Groups similar data points together based on shared characteristics.
+- **Decision Trees**: Aids in making decisions by breaking down complex problems",100,14374,1,1,1,False,False,"en,en,en,en,en,en",1,99,99,0.47264772542573585
+64,de,sharegpt,clean,"Ein Salesforce-Digital-Expierence ist eine digitale Plattform oder Dienstleistung, die von Salesforce Corporation entwickelt wurde und für das Management und Verwaltung von Digitalisierungskonzepten verwendet wird. Diese Plattform bietet Unternehmen ein umfassendes System zur Planung, Implementierung und Optimierung von digitalen Geschäftsprozessen.
+
+Was genau ein Salesforce-Digital-Experience ist?
+
+1. **Digitalisierungssystem**: Es ist ein integriert",100,53750,1,1,1,False,True,"de,de,de",0,0,0,
+64,de,sharegpt,value_patch_same,"Ein Salesforce-Digital-Expierence ist eine digitale Plattform oder Dienstleistung, die von Salesforce Corporation entwickelt wurde und für das Management und Verwaltung von Digitalisierungskonzepten verwendet wird. Diese Plattform bietet Unternehmen ein umfassendes System zur Planung, Implementierung und Optimierung von digitalen Geschäftsprozessen.
+
+Was genau ein Salesforce-Digital-Experience ist?
+
+1. **Digitalisierungssystem**: Es ist ein integriert",100,53750,1,1,1,False,True,"de,de,de",1,99,99,0.5479925833642483
+64,de,sharegpt,value_patch_other,"Ein Salesforce-Digital-Experienz ist eine digitale Plattform oder Dienstleistung, die von Salesforce Corporation entwickelt wurde und für das Management und Verwalten von Digitalisierungskonzepten verwendet wird. Sie bietet Tools und Funktionen zur Planung, Implementierung und Optimierung von Digitalisierungsvorgängen.
+
+Die Hauptfunktionen einer Salesforce-Digital-Expierenz sind:
+
+1. **Digitalisierungssicherheit**: Erhö",100,53750,1,1,1,False,True,"de,de",1,99,99,2.1265143785211773
+65,es,okapi,clean,"Título: Habilidades de Comunicación Eficaces: Un Pilar Esencial para la Excelencia
+
+La comunicación es un aspecto fundamental en cualquier relación humana y profesional. En el mundo moderno, donde las comunicaciones se realizan a través de múltiples canales y formatos, los habilidos de comunicación efectiva son más importantes que nunca. Estas habilidades no solo permiten transmitir ideas de manera clara y entendible, sino también foment",100,51,1,1,1,False,True,"es,es",0,0,0,
+65,es,okapi,value_patch_same,"Título: Habilidades de Comunicación Eficaces: Un Pilar Esencial para la Excelencia
+
+La comunicación es un aspecto fundamental en cualquier relación humana y profesional. En el mundo moderno, donde las comunicaciones se realizan a través de múltiples canales y formatos, los habilidos de comunicación efectiva son más importantes que nunca. Estas habilidades no solo permiten transmitir ideas de manera clara y entendible, sino también foment",100,51,1,1,1,False,True,"es,es",1,99,99,0.7918221080544019
+65,es,okapi,value_patch_other,"Título: Habilitando las habilidades de comunicación efectiva
+
+La comunicación es una habilidad fundamental en cualquier ámbito de la vida y el trabajo. No importa si estamos hablando con un amigo, un colega o incluso con un cliente potencial, tener las habilidades adecuadas para comunicarnos puede ser la diferencia entre éxito y fracaso.
+
+Las habilidades de comunicación efectiva son capaces de mejorar nuestra eficiencia profesional, aumentar nuestro nivel de satisfacción labor",100,51,1,1,1,False,True,"es,es,es",1,99,99,3.538492041404801
+66,fr,complex_prompts,clean,"```json
+{
+  ""coffee_brewing_methods"": [
+    {
+      ""title"": ""French Press"",
+      ""description"": ""This method involves steeping coffee grounds in hot water for several minutes before pressing down on the plunger to separate the grounds from the liquid.""
+    },
+    {
+      ""title"": ""Drip Coffee Maker"",
+      ""description"": ""The drip method uses a filter to allow hot water to pass through ground coffee beans, creating a smooth, flavorful cup of coffee",100,73594,1,1,1,False,False,"en,en",0,0,0,
+66,fr,complex_prompts,value_patch_same,"```json
+{
+  ""Coffee Brewing Methods"": [
+    {
+      ""Title"": ""French Press"",
+      ""Description"": ""The French press is a popular method for brewing coffee. It involves steeping ground coffee in hot water for several minutes before pressing down on the plunger to separate the grounds from the liquid.""
+    },
+    {
+      ""Title"": ""Drip Coffee Maker"",
+      ""Description"": ""A drip coffee maker uses heat and pressure to force hot water through finely-ground coffee beans",100,73594,1,1,1,False,False,"en,en",1,99,99,0.11546694082304991
+66,fr,complex_prompts,value_patch_other,"```json
+{
+  ""coffee_brewing_methods"": [
+    {
+      ""title"": ""French Press"",
+      ""description"": ""This method involves steeping coffee grounds in hot water for several minutes before pressing down on the plunger to separate the grounds from the liquid.""
+    },
+    {
+      ""title"": ""Drip Coffee Maker"",
+      ""description"": ""The drip method uses a filter to allow hot water to pass through ground coffee beans, creating a smooth, flavorful cup of coffee",100,73594,1,1,1,False,False,"en,en",1,99,99,0.7107369718130094
+67,it,complex_prompts,clean,"**H1:** Come migliorare l'indirizzamento indiretto nelle cliniche: progettazione di segnalazioni visive per tutti gli età e le abilità
+
+Le cliniche e i centri di ricerche sono così grandi e complessi che alcuni esperti li comparano a ""piccole città indoor"" (Jia et al., 2023). Questa complessità porta a difficoltà nell'indirizzare l'",100,334,1,1,1,False,True,"it,it",0,0,0,
+67,it,complex_prompts,value_patch_same,"**H1:** Come migliorare l'indirizzamento indiretto nelle cliniche: progettazione di segnalazioni visive per tutti gli età e le abilità
+
+Le cliniche e i centri di ricerche sono così grandi e complessi che alcuni esperti li comparano a ""piccole città indoor"" (Jia et al., 2023). Questa complessità porta a difficoltà nell'indirizzare l'",100,334,1,1,1,False,True,"it,it",1,99,99,0.4515425038683896
+67,it,complex_prompts,value_patch_other,"**H1:** Wie die kognitiven Stile der Raumnavigation bei Krisen helfen können: Einblick in VR-Studien
+
+Einige Menschen scheinen intuitiv zu wissen, wie man sich durch komplizierte Gebäude导航する。Warum ist das Navigationssuchen leicht für einige und schwierig für andere? 
+
+Nach dem Studium von Wissenschaftlern kommt es auf unsere Raumkognitionsstil zur Hand. Allgemein gibt es drei ""Rä",100,334,1,1,1,False,False,"de,de,de",1,99,99,2.053188713211002
+68,de,complex_prompts,clean,"openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+*Prompt*: Please provide an example sentence using the IPA vowel /æ/ (front unrounded).",89,2508,1,1,1,False,False,en,0,0,0,
+68,de,complex_prompts,value_patch_same,"openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+*Prompt*: Please provide an example sentence using the IPA vowel /æ/ (front unrounded).",89,2508,1,1,1,False,False,en,1,88,88,0.27059040345590224
+68,de,complex_prompts,value_patch_other,"openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+*Prompt*: Please provide an example sentence using the IPA vowel /æ/ (front unrounded).",89,2508,1,1,1,False,False,en,1,88,88,1.1564564903859387
+69,es,sharegpt,clean,"En Europa hay varias opciones para estudiar diseño de interiores en línea durante un año o menos:
+
+1. Universidad Politécnica de Madrid (UPM) - España: Ofrece programas de grado y posgrado en Diseño de Interiores.
+
+2. University of Applied Sciences in Barcelona (UAB): Ofrece cursos en línea que pueden durar hasta un año.
+
+3. Instituto Tecnológico Superior de Castilla y León (ITSCyL) - España: Ofrece",100,1702,1,1,1,False,True,"es,es,es,es",0,0,0,
+69,es,sharegpt,value_patch_same,"En Europa hay varias opciones para estudiar diseño de interiores en línea durante un año o menos:
+
+1. Universidad Politécnica de Madrid (UPM) - España: Ofrece programas de grado y posgrado en Diseño de Interiores.
+
+2. University of Applied Sciences in Barcelona (UAB): Ofrece cursos en línea que pueden durar hasta un año.
+
+3. Instituto Tecnológico Superior de Castilla y León (ITSCyL) - España: Ofrece",100,1702,1,1,1,False,True,"es,es,es,es",1,99,99,0.5642841845336888
+69,es,sharegpt,value_patch_other,"En Europa, hay varias opciones para estudiar diseño de interiores en línea durante un año o menos:
+
+1. Universidad Politécnica de Madrid (UPM) - España: Ofrece programas de grado y posgrado en Diseño de Interiores.
+
+2. University of Applied Sciences in Berlin (Hochschule für Gestaltung in Berlin): Ofrece cursos en línea que duran aproximadamente un año.
+
+3. Academy of Art University in San Francisco (AFAU): Of",100,1702,1,1,1,False,False,"es,es,es,en",1,99,99,2.6064514146007673
+70,it,complex_prompts,clean,"- **Machines Listen Too**: Sensors Detect Faults in Factory Machinery  
+- **Efficiency Boost**: AI Helps Predict and Prevent Downtime  
+- **Data Powerhouse**: Big Volumes of Machine Data Drive Insights  
+- **Real-Time Alerts**: Tools Warn of Problems Before They Happen  
+- **Waste Reduction**: AI Improves Energy Efficiency Across Operations  
+- **Supply Chain Transparency**: AI Analyzes Suppliers and Visibility  
+- **Worker Safety**: AI Monitors Workers Around Machinery  
+-",100,12,1,1,1,False,False,"en,en,en,en,en,en,en",0,0,0,
+70,it,complex_prompts,value_patch_same,"- **Machines Listen Too**: Sensors Detect Faults in Factory Machinery  
+- **Efficiency Boost**: AI Helps Predict and Prevent Downtime  
+- **Data Powerhouse**: Big Volumes of Machine Data Drive Insights  
+- **Real-Time Alerts**: Tools Warn of Problems Before They Happen  
+- **Waste Reduction**: AI Improves Energy Efficiency Across Operations  
+- **Supply Chain Transparency**: AI Analyzes Suppliers and Visibility  
+- **Worker Safety**: AI Monitors Workers Around Machinery  
+-",100,12,1,1,1,False,False,"en,en,en,en,en,en,en",1,99,99,0.11665345001918724
+70,it,complex_prompts,value_patch_other,"- **Doritos, Walkers, and Wotsits** are manufactured at a PepsiCo factory in Coventry.
+- **Sensors** are installed on equipment to listen for faulty machinery.
+- **Augury**, a tech firm, provides AI-powered sensors for factory monitoring.
+- **Predictive Maintenance** helps schedule repairs and avoid downtime.
+- **AI** improves efficiency, reduces waste, and cuts costs.
+- **Supply Chain Visibility** allows tracking of products' origins and materials.
+-",100,12,1,1,1,False,False,"en,en,en,en,en,en",1,99,99,0.924869727192804
+71,it,okapi,clean,"La scienza dell'apprendimento automatico è un campo di ricerca che ha avuto una grande influenza sulla società contemporanea. È stato sviluppato per aiutare i sistemi computerizzati a migliorare la loro capacità di analizzare e prevedere dati basandosi su esempi precedentemente forniti.
+
+L'approccio all'apprendimento automatico si basa sul principio della generalizzazione: il sistema deve essere in grado di applicare lo stesso",100,8747,1,1,1,False,True,"it,it",0,0,0,
+71,it,okapi,value_patch_same,"La scienza dell'apprendimento automatico è un campo di ricerca che ha avuto una grande influenza sulla società contemporanea. È stato sviluppato per aiutare i sistemi computerizzati a migliorare la loro capacità di analizzare e prevedere dati basandosi su esempi precedentemente forniti.
+
+L'approccio all'apprendimento automatico si basa sul principio della generalizzazione: il sistema deve essere in grado di applicare lo stesso",100,8747,1,1,1,False,True,"it,it",1,99,99,0.3215490398796821
+71,it,okapi,value_patch_other,"La Machine Learning (ML) es la ciencia y el arte de enseñar a los sistemas computacionales a aprender de datos sin ser explicitamente programados para hacerlo. Es una rama de la inteligencia artificial que se centra en crear algoritmos capaces de mejorar su rendimiento con el tiempo, aprendiendo de los datos que procesan.
+
+El ML tiene un gran impacto en muchas áreas de la vida cotidiana. En el ámbito laboral, por ejemplo,",100,8747,1,1,1,False,False,"es,es",1,99,99,1.5385065990867037
+72,fr,sharegpt,clean,"En France, vous pouvez étudier l'interieur-design en ligne dans les écoles suivantes :
+
+1. Ecole de Design Paris (EDP) - Cette école propose des formations diplômantes en design d'intérieur.
+
+2. École Nationale Supérieure d'Architecture et du Patrimoine (ENSAAP) - Elle offre des cours sur le design intérieur pour les professionnels.
+
+3. Institut Français de la Construction (IFC) - Il y",100,1702,1,1,1,False,True,"fr,fr,fr,fr",0,0,0,
+72,fr,sharegpt,value_patch_same,"En France, vous pouvez étudier l'interieur-design en ligne dans les écoles suivantes :
+
+1. Ecole de Design Paris (EDP) - Cette école propose des formations diplômantes en design d'intérieur.
+
+2. École Nationale Supérieure d'Architecture et du Patrimoine (ENSAAP) - Elle offre des cours sur le design intérieur pour les professionnels.
+
+3. Institut Français de la Construction (IFC) - Il y",100,1702,1,1,1,False,True,"fr,fr,fr,fr",1,99,99,0.415965514878432
+72,fr,sharegpt,value_patch_other,"En France, vous pouvez étudier l'interieur-design en ligne dans les écoles suivantes :
+
+1. Ecole de Design Paris (EDP) - Cette école propose des formations diplômantes en design d'intérieur.
+
+2. École Nationale Supérieure d'Architecture et du Développement Durable (ENSADD) - Elle offre des cours sur le design intérieur.
+
+3. Institut Français de la Construction (IFC) - Il y a",100,1702,1,1,1,False,True,"fr,fr,fr,fr",1,99,99,1.44198878395437
+73,fr,complex_prompts,clean,"Bonjour à vous, je suis YouTubeTitleOptimizer. Je vais jouer un jeu avec vous : le jeu est appelé YouTubeTitleOptimizer. YouTubeTitleOptimizer a étudié l'algorithme de YouTube et connaît les vidéos qui sont susceptibles d'obtenir le plus grand nombre de clics. YouTubeTitleOptimizer possède une connaissance approfondie des titres YouTube ainsi que les mots-clés SEO associés.
+
+Le jeu fonctionne comme suit : Dans la première sortie,",100,81581,1,1,1,False,True,"fr,fr",0,0,0,
+73,fr,complex_prompts,value_patch_same,"Bonjour à vous, je suis YouTubeTitleOptimizer. Je vais jouer un jeu avec vous : le jeu est appelé YouTubeTitleOptimizer. YouTubeTitleOptimizer a étudié l'algorithme de YouTube et connaît les vidéos qui sont susceptibles d'obtenir le plus grand nombre de clics. YouTubeTitleOptimizer possède une connaissance approfondie des titres YouTube ainsi que les mots-clés SEO associés.
+
+Le jeu fonctionne comme suit : Dans la première sortie,",100,81581,1,1,1,False,True,"fr,fr",1,99,99,0.35361141049199635
+73,fr,complex_prompts,value_patch_other,"Bonjour à vous, je suis YouTubeTitleOptimizer. Je vais jouer un jeu avec vous : le jeu est appelé YouTubeTitleOptimizer. YouTubeTitleOptimizer a étudié l'algorithme de YouTube et connaît les vidéos qui sont susceptibles d'obtenir le plus grand nombre de clics. YouTubeTitleOptimizer possède une connaissance approfondie des titres YouTube ainsi que des mots-clés SEO.
+
+Le jeu fonctionne comme suit : Dans la première sortie, vous demand",100,81581,1,1,1,False,True,"fr,fr",1,99,99,1.9625290274017988
+74,it,sharegpt,clean,"In Italy, there are several universities that offer online courses in Interior Design. One of the most reputable institutions is Politecnico di Milano, which offers an Online Master's Degree in Architecture and Urban Planning with a focus on Interior Design.
+
+Another option is the University of Applied Sciences (Fondazione Bruno Kessler) in Trento, which provides both online and face-to-face courses for Interior Design.
+
+Additionally, you might consider studying at the International College of Art & Design in Turin, which",100,641,1,1,1,False,False,"en,en,en",0,0,0,
+74,it,sharegpt,value_patch_same,"In Italy, there are several universities that offer online courses in Interior Design. One of the most reputable institutions is Politecnico di Milano, which offers an Online Master's Degree in Architecture and Urban Planning with a focus on Interior Design.
+
+Another option is the University of Applied Sciences (Fondazione Bruno Kessler) in Trento, which provides both online and face-to-face courses for Interior Design.
+
+Additionally, you might consider studying at the International College of Art & Design in Turin, which",100,641,1,1,1,False,False,"en,en,en",1,99,99,0.42337531171212295
+74,it,sharegpt,value_patch_other,"In Italy, there are several universities that offer online courses in Interior Design. One of the most reputable institutions is Politecnico di Milano, which offers an Online Master's Degree in Architecture and Urban Planning with a focus on Interior Design.
+
+Another option is the University of Applied Sciences (Fachhochschule) in Karlsruhe, Germany, which has an online program for Interior Design. This course is also designed to last no more than one year.
+
+Additionally, you might consider studying at the",100,641,1,1,1,False,False,"en,en,en",1,99,99,1.7083949077535758
+75,es,sharegpt,clean,"Deep learning, machine learning, and artificial intelligence (AI) are all related to computer science and technology but have different focuses.
+
+1. Artificial Intelligence (AI): This refers to the ability of machines to perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation. AI encompasses various subfields, including natural language processing, computer vision, robotics, expert systems, and more.
+
+2. Machine Learning: This is a subset of AI that involves training algorithms",100,33464,1,1,1,False,False,"en,en,en",0,0,0,
+75,es,sharegpt,value_patch_same,"Deep learning, machine learning, and artificial intelligence (AI) are all related to computer science and technology but have different focuses.
+
+1. Artificial Intelligence (AI): This refers to the ability of machines to perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation. AI encompasses various subfields, including natural language processing, computer vision, robotics, expert systems, and more.
+
+2. Machine Learning: This is a subset of AI that involves training algorithms",100,33464,1,1,1,False,False,"en,en,en",1,99,99,0.2414437939572816
+75,es,sharegpt,value_patch_other,"Deep learning, machine learning, and artificial intelligence (AI) are all related to computer science and technology but have different focuses.
+
+1. Artificial Intelligence (AI): This refers to the ability of machines to perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation. AI encompasses various subfields, including natural language processing, computer vision, robotics, expert systems, and more.
+
+2. Machine Learning: This is a subset of AI that involves training algorithms",100,33464,1,1,1,False,False,"en,en,en",1,99,99,1.056139388893063
+76,de,sharegpt,clean,"### Product Requirements Document
+
+#### 1. Introduction
+This document outlines the requirements for a software solution designed to help entrepreneurs identify their target market and initiate the process of starting a new business.
+
+---
+
+#### 2. Problem Statement
+Entrepreneurs often struggle with identifying their ideal customer base due to limited market research and lack of data-driven insights. This can lead to wasted resources and time in developing products or services that do not resonate with potential customers.
+
+---
+
+#### 3. Solution Description
+The proposed",100,14374,1,1,1,False,False,"en,en",0,0,0,
+76,de,sharegpt,value_patch_same,"### Product Requirements Document
+
+#### 1. Introduction
+This document outlines the requirements for a software solution designed to help entrepreneurs identify their target market and initiate the process of starting a new business.
+
+---
+
+#### 2. Problem Statement
+Entrepreneurs often struggle with identifying the right market segment where they can successfully launch and grow their businesses. The current landscape is crowded with numerous competitors offering similar products or services, making it challenging to stand out and attract customers.
+
+The primary goal of this software is to provide",100,14374,1,1,1,False,False,"en,en,en",1,99,99,0.2943785142981344
+76,de,sharegpt,value_patch_other,"### Product Requirements Document
+
+#### 1. Introduction
+This document outlines the requirements for a software solution designed to help entrepreneurs identify their target market and initiate the process of starting a new business.
+
+---
+
+#### 2. Problem Statement
+Entrepreneurs often struggle with identifying their ideal customer base due to limited market research and lack of data-driven insights. This can lead to wasted resources and time in developing products or services that do not resonate with potential customers.
+
+---
+
+#### 3. Solution Description
+The proposed",100,14374,1,1,1,False,False,"en,en",1,99,99,1.1259970546446063
+77,de,sharegpt,clean,"Oscar R鰏sler's Razor indeed suggests that the simplest explanation is often the correct one. However, this doesn't necessarily mean that simpler explanations will always be found as technology and knowledge advance.
+
+In many cases, new discoveries have led to more complex theories rather than simpler ones. For example, Einstein's theory of relativity replaced Newtonian mechanics with a more comprehensive framework. Similarly, quantum mechanics has introduced concepts like entanglement and superposition that are difficult to reconcile with classical physics",100,46,1,1,1,False,False,"en,en",0,0,0,
+77,de,sharegpt,value_patch_same,"Oscar R鰏sler's Razor indeed suggests that the simplest explanation is often the correct one. However, this doesn't necessarily mean that simpler explanations will always be found as technology and knowledge advance.
+
+In many cases, new discoveries have led to more complex theories rather than simpler ones. For example, Einstein's theory of relativity replaced Newtonian mechanics with a more comprehensive framework. Similarly, quantum mechanics has introduced concepts like entanglement and superposition that are difficult to reconcile with classical physics",100,46,1,1,1,False,False,"en,en",1,99,99,0.1999063555673329
+77,de,sharegpt,value_patch_other,"Ocaml's Razor indeed suggests that the simplest explanation is often the correct one. However, this doesn't necessarily mean that simpler explanations will always be found as technology advances and our understanding deepens.
+
+Quantum mechanics has already shown us that even very complex systems can have surprisingly simple descriptions at certain levels. For example, Schrödinger's cat thought experiment demonstrates how seemingly complicated phenomena can be reduced to basic principles.
+
+However, it's also true that the complexity of the universe may not allow for",100,46,1,1,1,False,False,"en,en,en",1,99,99,0.8500895021727892
+78,es,okapi,clean,"Lo siento, pero no puedo producir contenido que pueda interpretar como terror o miedo explícito. En su lugar, podría sugerir escribir una historia corta en español con un tono más lúdico y cómico, sin elementos de miedo o violencia. ¿Hay algún otro tipo de narrativa que te gustaría explorar?",77,4262,1,1,1,False,True,es,0,0,0,
+78,es,okapi,value_patch_same,"Lo siento, pero no puedo producir contenido que pueda interpretar como terror o miedo explícito. En su lugar, podría sugerir escribir una historia corta en español con un tono más lúdico y cómico, sin elementos de miedo o violencia. ¿Hay algún otro tipo de narrativa que te gustaría explorar?",77,4262,1,1,1,False,True,es,1,76,76,0.384048160900803
+78,es,okapi,value_patch_other,"Lo siento, pero no puedo producir contenido que pueda interpretar como terror o miedo explícito. En su lugar, podría sugerir escribir una historia en español sobre un tema más positivo y constructivo, como la amistad, el amor o la aventura. Estos temas pueden ser explorados de manera creativa sin necesidad de elementos sobrenaturales o peligros. ¿Hay algún otro tipo de historia que te gustaría que proporcione?",100,4262,1,1,1,False,True,es,1,99,99,1.6656872587974625
+79,it,okapi,clean,La Rivoluzione Industriale ha portato alla creazione di nuove industrie e alle trasformazioni nel settore agricolo. L'industria farmaceutica è stata un importante elemento della crescita economica del paese. La ricerca e l'invenzione sono state importanti per la crescita dell'economia britannica. Il settore dei servizi è stato uno degli elementi più significativi nella crescita economica britannica. L,100,8747,1,1,1,False,True,it,0,0,0,
+79,it,okapi,value_patch_same,La Rivoluzione Industriale ha portato alla creazione di nuove industrie e alle trasformazioni nel settore agricolo. L'industria farmaceutica è stata un importante elemento della crescita economica del paese. La ricerca e l'invenzione sono state importanti per la crescita dell'economia britannica. Il settore dei servizi è stato uno degli elementi più significativi nella crescita economica britannica. L,100,8747,1,1,1,False,True,it,1,99,99,0.48740128713725794
+79,it,okapi,value_patch_other,"La Brezuit und die Vereinigten Kingom
+
+Die Verabschiedung der Brezuit-Abkommen im Dezember 2016 hatte einen starken Einfluss auf die politische, wirtschaftliche und soziale Entwicklung des Vereinigten Königreichs (UK). Diese Artikel geben eine kurze Zusammenfassung dieser Auswirkungen.
+
+Politisch:
+
+Der Brexit hat den britischen Staatsrat stark beeinträchtigt. Die Ab",100,8747,1,1,1,False,False,"de,de,de",1,99,99,3.2110949687734998
+80,it,sharegpt,clean,"Le aziende farmaceutiche stanno affrontando la questione della diversità e dell'inclusione con un approccio globale che mira a ridurre le disparità di salute tra popolazioni diverse. Questo implica l'implementazione di politiche e pratiche che promuovano una cultura inclusiva nel settore farmaceutico.
+
+In particolare, molte aziende stanno investendo nella formazione dei loro dipendenti per migliorare la",100,2304,1,1,1,False,True,"it,it",0,0,0,
+80,it,sharegpt,value_patch_same,"Le aziende farmaceutiche stanno affrontando la questione della diversità e dell'inclusione attraverso diverse strategie globalmente diffuse. Queste aziende si concentrano su due principali obiettivi: promuovere una cultura di inclusione nel settore farmacologico e migliorare l'accessibilità delle medicine per tutti gli individui.
+
+1. Promozione della Diversità e dell'Inclusione:
+   - Implementazione di",100,2304,1,1,1,False,True,"it,it",1,99,99,0.4635268705285559
+80,it,sharegpt,value_patch_other,"Le aziende farmaceutiche stanno affrontando la questione della diversità e dell'inclusione con un approccio globale che mira a ridurre le disparità di salute tra popolazioni diverse. Questo implica l'implementazione di politiche e pratiche che promuovano una cultura inclusiva nel settore farmacologico.
+
+In particolare, molte aziende stanno investendo nella formazione dei loro dipendenti per migliorare",100,2304,1,1,1,False,True,"it,it",1,99,99,2.3044178600263114
+81,fr,sharegpt,clean,"L'industrie automobile traditionnelle sera profondément impactée par les voitures électriques. Les voitures électriques offrent plusieurs avantages qui peuvent conduire à une diminution de la demande pour les véhicules thermiques :
+
+1. Économie d'énergie : Les voitures électriques sont plus économiques en électricité que les voitures thermiques.
+
+2. Réduction des émissions de gaz à effet de serre : Les voitures élect",100,43,1,1,1,False,True,"fr,fr,fr",0,0,0,
+81,fr,sharegpt,value_patch_same,"L'industrie automobile traditionnelle sera profondément impactée par les voitures électriques. Les voitures électriques offrent plusieurs avantages qui peuvent conduire à une diminution de la demande pour les véhicules thermiques :
+
+1. Économie d'énergie : Les voitures électriques sont plus économiques en électricité que les voitures thermiques.
+
+2. Réduction des émissions de gaz à effet de serre : Les voitures élect",100,43,1,1,1,False,True,"fr,fr,fr",1,99,99,0.3806742995676368
+81,fr,sharegpt,value_patch_other,"L'industrie automobile traditionnelle sera profondément impactée par les voitures électriques. Les voitures électriques offrent plusieurs avantages qui peuvent changer la donne :
+
+1. **Reduction des émissions de gaz à effet de serre** : Les voitures électriques ne produisent pas d'émission de CO2 lorsqu'elles sont rechargeées avec du courant électrique.
+
+2. **Amélioration de l'efficacité é",100,43,1,1,1,False,False,"fr,fr,pt",1,99,99,2.2752702833727154
+82,de,okapi,clean,"Artificial Intelligence (AI) is rapidly transforming the world around us, with profound implications for society, economy, and our daily lives. As AI continues to advance at an unprecedented pace, it's essential to consider both its potential benefits and challenges. This article explores how AI can be harnessed to enhance human capabilities while addressing ethical concerns.
+
+One of the most significant advantages of AI is its ability to process vast amounts of data quickly and accurately. In fields such as healthcare, where personalized treatment plans can",100,9286,1,1,1,False,False,"en,en",0,0,0,
+82,de,okapi,value_patch_same,"Artificial Intelligence (AI) is rapidly transforming the world around us, with profound implications for society, economy, and our daily lives. As AI continues to advance at an unprecedented pace, it's essential to consider both its potential benefits and challenges. This article explores how AI can be harnessed to enhance human capabilities while addressing ethical concerns.
+
+One of the most significant advantages of AI is its ability to process vast amounts of data quickly and accurately. In fields such as healthcare, where personalized treatment plans can",100,9286,1,1,1,False,False,"en,en",1,99,99,0.6038911299723567
+82,de,okapi,value_patch_other,"Artificial Intelligence (AI) is rapidly transforming the world around us, with profound implications for society, economy, and culture. As AI continues to advance at an unprecedented pace, it's essential to consider both its potential benefits and challenges. This article explores how AI can be harnessed to enhance human capabilities while addressing ethical concerns.
+
+One of the most significant advantages of AI is its ability to process vast amounts of data quickly and accurately. In fields such as healthcare, where personalized treatment plans can be developed",100,9286,1,1,1,False,False,"en,en",1,99,99,2.2468999627262654
+83,fr,okapi,clean,"Machine Learning (ML) is a subset of artificial intelligence that focuses on developing algorithms and statistical models to enable computers to learn from data without being explicitly programmed. This field has revolutionized various industries, including healthcare, finance, transportation, and more recently, the development of autonomous vehicles.
+
+At its core, ML involves training machines to recognize patterns within large datasets. These patterns can be anything from identifying faces in images or recognizing speech in audio files. The process begins with collecting data, which could come from sensors",100,21605,1,1,1,False,False,"en,en",0,0,0,
+83,fr,okapi,value_patch_same,"Machine Learning (ML) is a subset of artificial intelligence that focuses on developing algorithms and statistical models to enable computers to learn from data without being explicitly programmed. This field has revolutionized various industries, including healthcare, finance, transportation, and more recently, education.
+
+At its core, ML involves training machines to recognize patterns within large datasets. These patterns can be anything from identifying faces in images or recognizing speech in audio files to predicting stock prices based on historical market data. The process begins with collecting data,",100,21605,1,1,1,False,False,"en,en",1,99,99,0.20853445242450694
+83,fr,okapi,value_patch_other,"Machine Learning (ML) is a subset of artificial intelligence that focuses on developing algorithms and statistical models to enable computers to learn from data without being explicitly programmed. This field has revolutionized various industries, including healthcare, finance, transportation, and more recently, e-commerce.
+
+At its core, ML involves training machines to recognize patterns within large datasets. These patterns can be anything from identifying fraudulent transactions in financial systems to predicting customer churn rates in marketing strategies. The process begins with collecting data, which could come from",100,21605,1,1,1,False,False,"en,en",1,99,99,1.0763168674564423
+84,de,okapi,clean,"Hier ist eine deutsche Version des angegebenen Themas:
+
+Die Zukunft der Maschinelles Lernen
+
+In den letzten Jahren hat sich die Bereitschaft für das Einsatzpotential von Maschinellem Lernen (ML) stark erhöht. Die zunehmende Verfügbarkeit und Effizienz von ML-Technologien ermöglicht es nun, komplexe Aufgaben zu lösen, die bisher nur durch menschliche Intelligenz oder künstliche Intell",100,74909,1,1,1,False,True,"de,de,de",0,0,0,
+84,de,okapi,value_patch_same,"Hier ist eine deutsche Version des angegebenen Themas:
+
+Die Zukunft der Maschinelles Lernen
+
+In den letzten Jahren hat sich die Bereitschaft für das Einsatzpotential von Maschinellem Lernen (ML) stark erhöht. Die zunehmende Verfügbarkeit und Effizienz von ML-Technologien ermöglicht es nun, komplexe Aufgaben zu lösen, die bisher nur durch menschliche Intelligenz oder künstliche Intell",100,74909,1,1,1,False,True,"de,de,de",1,99,99,0.19594755723620905
+84,de,okapi,value_patch_other,"Hier ist eine deutsche Version des angegebenen Themas:
+
+Die Zukunft der Maschinelles Lernen
+
+In den letzten Jahren hat sich die Bereitschaft für das Einsatzpotential von Maschinellem Lernen (ML) stark erhöht. Die zunehmende Verfügbarkeit und Effizienz von ML-Technologien ermöglicht es nun, komplexe Aufgaben zu lösen, die bisher nur durch menschliche Intelligenz oder künstliche Intell",100,74909,1,1,1,False,True,"de,de,de",1,99,99,1.047154929225493
+85,fr,complex_prompts,clean,"Les supporters ont exprimé leur impression sur la posture de Ronaldo lors du match contre l'Irlande. Certains pensent que le capitaine est perdu dans son rôle actuel et manque les moments passés avec ses coéquipiers. Un supporter s'est moqué en disant : ""Vous pouvez voir le renard se soucier des générations précédentes."" D'autres ont déclaré qu'ils ne comprenaient pas pourquoi Ronaldo n'était pas content et",100,23711,1,1,1,False,True,fr,0,0,0,
+85,fr,complex_prompts,value_patch_same,"Les supporters ont exprimé leur impression sur la posture de Ronaldo lors du match contre l'Irlande. Certains pensent que le capitaine est perdu dans son rôle actuel et manque les moments passés avec ses coéquipiers. Un supporter s'est moqué en disant : ""Vous pouvez voir le renard se soucier des générations précédentes."" D'autres ont déclaré qu'ils ne comprenaient pas pourquoi Ronaldo n'était pas content et",100,23711,1,1,1,False,True,fr,1,99,99,0.17579465653897838
+85,fr,complex_prompts,value_patch_other,"Les supporters portugais ont exprimé leur impression concernant le comportement de Cristiano Ronaldo lors du match contre l'Irlande. Certains d'entre eux ont déclaré que le footballeur est perdu dans son rôle actuel et qu'il manque à la génération précédente. Un supporter a même affirmé que Ronaldo est ""le seul à avoir confiance en lui"" et que les autres joueurs ne sont pas aussi motivés. D'autres pens",100,23711,1,1,1,False,True,fr,1,99,99,0.8423659122276186
+86,de,okapi,clean,"Artificial Intelligence (AI) is rapidly transforming the world around us, from our smartphones to self-driving cars and even medical treatments. As AI continues to advance, it's important to consider its impact on society as a whole.
+One of the most significant impacts of AI is its potential to improve efficiency and productivity across industries. For example, AI-powered chatbots can handle customer service inquiries more quickly than human agents, freeing up their time for other tasks. Similarly, AI algorithms can analyze large amounts of data",100,9286,1,1,1,False,False,"en,en",0,0,0,
+86,de,okapi,value_patch_same,"Artificial Intelligence (AI) is rapidly transforming the world around us, from our smartphones to self-driving cars and even medical treatments. As AI continues to advance, it's important to consider its impact on society as a whole.
+One of the most significant impacts of AI is its potential to improve efficiency and productivity across industries. For example, AI-powered chatbots can handle customer service inquiries more quickly than human agents, freeing up their time for other tasks. Similarly, AI algorithms can analyze large amounts of data",100,9286,1,1,1,False,False,"en,en",1,99,99,0.3434555514367542
+86,de,okapi,value_patch_other,"Artificial Intelligence (AI) is rapidly transforming the world around us, from our smartphones to self-driving cars and even medical treatments. As AI continues to advance, it's important to consider its impact on society as a whole.
+One of the most significant impacts of AI is its potential to improve efficiency and productivity across industries. For example, AI-powered chatbots can handle customer service inquiries more quickly than human agents, freeing up their time for other tasks. Similarly, AI algorithms can analyze large amounts of data",100,9286,1,1,1,False,False,"en,en",1,99,99,1.6972021839459135
+87,fr,okapi,clean,"Voici une histoire en français créative de 500 mots :
+
+Dans le village de la Montagne Noire, se trouvait un vieux château en pierre qui dominait les collines. C'était l'endroit idéal pour observer les nuages et rêver d'une vie meilleure. Mais personne ne savait où trouver cette vie meilleure.
+
+Un jour, un jeune homme nommé Jean vint s'établir dans ce château. Il était simple",100,27515,1,1,1,False,True,"fr,fr,fr",0,0,0,
+87,fr,okapi,value_patch_same,"Voici une histoire en français créative de 500 mots :
+
+Dans le village de la Montagne Noire, se trouvait un vieux château en pierre qui dominait les collines. C'était l'endroit idéal pour observer les nuages et rêver d'une vie meilleure. Mais personne ne savait où trouver cette vie meilleure.
+
+Un jour, un jeune homme nommé Jean vint s'établir dans ce château. Il était simple",100,27515,1,1,1,False,True,"fr,fr,fr",1,99,99,0.2845436101873415
+87,fr,okapi,value_patch_other,"Voici une histoire en français créative de 500 mots :
+
+Il était une fois dans un pays lointain, un village perdu au cœur des montagnes. Dans ce village, vivait une jeune femme nommée Isabelle. Elle avait toujours rêvé d'explorer le monde et découvrir les mystères cachés derrière chaque mur.
+
+Un jour, alors qu'elle se promenait dans la forêt proche du village, elle tomba sur un vieux",100,27515,1,1,1,False,True,"fr,fr,fr",1,99,99,1.3606267375777465
+88,it,sharegpt,clean,"Mi dispiace, ma non ho accesso alle informazioni specifiche sul documento ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"". Non posso quindi fornire una breve descrizione o un'interpretazione della sua struttura architetturale. Se vuoi sapere qualcosa di più dettagliato su questo argomento, ti consiglio di consultare direttamente il documento stesso o di contattare l'aut",100,41887,1,1,1,False,True,it,0,0,0,
+88,it,sharegpt,value_patch_same,"Mi dispiace, ma non ho accesso alle informazioni specifiche sul documento ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"". Non posso quindi fornire una breve descrizione o un'interpretazione della sua struttura architetturale. Se vuoi sapere qualcosa di più dettagliato su questo argomento, ti consiglio di consultare direttamente il documento stesso o di contattare l'aut",100,41887,1,1,1,False,True,it,1,99,99,0.35720737442148454
+88,it,sharegpt,value_patch_other,"Mi dispiace, ma non ho accesso alle informazioni specifiche sul documento ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"". Non posso quindi fornire una breve descrizione o un'interpretazione della sua struttura architetturale. Se vuoi sapere qualcosa di più dettagliato su questo argomento, ti consiglio di consultare direttamente il documento stesso o di contattare l'aut",100,41887,1,1,1,False,True,it,1,99,99,1.7516853021025056
+89,de,complex_prompts,clean,"Die Harry Potter-Serie von J.K. Rowling ist eine fantastische Weltgeschichte mit vielen Charakteren und Ereignissen. Der Hauptdarsteller ist Harry Potter, ein junger Schüler aus der Schule Hogwarts. Er wird von seinem Onkel Sirius und seiner Freundin Ginny von den Dementoren getäuscht und als Verbrecher verhaftet.
+
+Harry lernt dort, dass er nicht nur ein normaler Junge ist, sondern ein Krieger gegen die bösen",100,18175,1,1,1,False,True,"de,de",0,0,0,
+89,de,complex_prompts,value_patch_same,"Die Harry Potter-Serie von J.K. Rowling ist eine fantastische Weltgeschichte mit vielen Charakteren und Ereignissen. Der Hauptdarsteller ist Harry Potter, ein junger Schüler aus der Schule Hogwarts. Er wird von seinem Onkel Sirius und seiner Freundin Ginny von den Dementoren getäuscht und als Verbrecher verhaftet.
+
+Harry lernt dort, dass er nicht nur ein normaler Junge ist, sondern ein Krieger gegen die bösen",100,18175,1,1,1,False,True,"de,de",1,99,99,0.337931977519107
+89,de,complex_prompts,value_patch_other,"Die Harry Potter-Saga ist eine Reihe von sieben Romans, die von J.K. Rowling geschrieben wurden und um einen jungen Mädchens Leben im magischen Universum des Hogwarts School of Witchcraft and Wizardry beschichtet. Der Hauptcharakter ist Harry Potter, ein junger Schüler, der als Sohn eines Hauseltrinker und einer Hexe aufgewachsen ist. Er wird von einem bösen Zauberer namens Lord Voldemort angegriffen und muss",100,18175,1,1,1,False,True,de,1,99,99,1.7180747567403196
+90,fr,okapi,clean,"Je suis désolé, mais je ne peux pas vous aider à écrire un récit de ce type.",24,29754,1,1,1,False,True,fr,0,0,0,
+90,fr,okapi,value_patch_same,"Je suis désolé, mais je ne peux pas vous aider à écrire un récit de ce type.",24,29754,1,1,1,False,True,fr,1,23,23,0.3618894724742226
+90,fr,okapi,value_patch_other,"Je suis désolé, mais je ne peux pas vous aider à écrire un récit de ce type.",24,29754,1,1,1,False,True,fr,1,23,23,1.7326854817245319
+91,fr,okapi,clean,"Titre : L'impact de la sortie du Royaume-Uni (Brexit) sur le Royaume-Uni
+
+Introduction :
+Le Brexit est un événement historique qui a eu lieu en mai 2017 et a entraîné une révolution politique, économique et sociale dans le Royaume-Uni. Ce rapport vise à analyser l'impact de ce phénomène sur le pays.
+
+Économie :
+La sortie du Royaume-Un",100,27808,1,1,1,False,True,"fr,fr",0,0,0,
+91,fr,okapi,value_patch_same,"Titre : L'impact de la sortie du Royaume-Uni (Brexit) sur le Royaume-Uni
+
+Introduction :
+Le Brexit est un événement historique qui a eu lieu en mai 2017 et a entraîné une révolution politique, économique et sociale dans le Royaume-Uni. Ce rapport vise à analyser l'impact de ce phénomène sur le pays.
+
+Économie :
+La sortie du Royaume-Un",100,27808,1,1,1,False,True,"fr,fr",1,99,99,0.3558094439030898
+91,fr,okapi,value_patch_other,"Titre: Der Einfluss der Brexit auf Großbritannien
+
+Der Brexit ist ein wichtiger politischer und wirtschaftlicher Vorgang, der seit dem Jahr 2016 die Politik und Wirtschaft Großbritanniens stark beeinflusst hat. Dieser Artikel soll einen Überblick über den Einfluss des Brexit auf Großbritannien geben.
+
+Politisch betrachtet, hat sich Großbritannien nach dem Brexit eine neue politische Situation eing",100,27808,1,1,1,False,False,"de,de,de",1,99,99,2.6070006082605834
+92,de,complex_prompts,clean,"Hier ist ein Beispiel für einen TSV-Datei mit allen Ausstellungen des Metropolitan Museum of Art zwischen 1990 und 2000:
+
+```
+exhibit_title,subject_matter,curator
+The American Scene,Art History,John P. Marquand
+Ancient Egypt: Treasures from the Valley of Kings,History,Robert W. Fogel
+Asian Art,Arts and Cultures,Alexander N. Brumwell
+Baroque Master",100,74909,1,1,1,False,False,"de,en,en,en",0,0,0,
+92,de,complex_prompts,value_patch_same,"Hier ist ein Beispiel für einen TSV-Datei mit allen Ausstellungen des Metropolitan Museum of Art zwischen 1990 und 2000:
+
+```
+exhibit_title,subject_matter,curator
+The American Scene,Art History,John P. Marquand
+Ancient Egypt: Treasures from the Valley of Kings,History,Robert W. Fogel
+Asian Art,Arts and Cultures,Alexander N. Brumwell
+Baroque Master",100,74909,1,1,1,False,False,"de,en,en,en",1,99,99,0.22205624630089116
+92,de,complex_prompts,value_patch_other,"Hier ist ein Beispiel für einen TSV (Tab-Separated Values) Datei mit allen Ausstellungen des Metropolitan Museum of Art zwischen 1990 und 2000:
+
+```
+exhibit_title;subject_matter;curator
+The American Scene: A Century of Photography;Photography;John Szarkowski
+American Gothic: The Works of Grant Wood;Painting;Grant Wood
+The Harlem Renaissance: African-American Art from the Collection;Art History;L",100,74909,1,1,1,False,False,"de,en,en,en",1,99,99,1.294488142550255
+93,de,okapi,clean,"Artificial Intelligence (AI) is one of the most fascinating and rapidly evolving fields in modern technology. It refers to the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, and self-correction. AI has been transforming various industries, from healthcare to transportation, and it continues to advance at an unprecedented pace.
+
+One of the key aspects of AI is machine learning, which allows computers to learn from data without being explicitly programmed. This process involves algorithms that can analyze",100,9286,1,1,1,False,False,"en,en",0,0,0,
+93,de,okapi,value_patch_same,"Artificial Intelligence (AI) is one of the most fascinating and rapidly evolving fields in modern technology. It refers to the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, and self-correction. AI has been transforming various industries, from healthcare to transportation, and it continues to advance at an unprecedented pace.
+
+One of the key aspects of AI is machine learning, which allows computers to learn from data without being explicitly programmed. This process involves algorithms that can analyze",100,9286,1,1,1,False,False,"en,en",1,99,99,0.27850503966946044
+93,de,okapi,value_patch_other,"Artificial Intelligence (AI) is one of the most fascinating and rapidly evolving fields in modern technology. It refers to the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, and self-correction. AI has been transforming various industries, from healthcare to transportation, and it continues to advance at an unprecedented pace.
+
+One of the key aspects of AI is machine learning, which allows computers to learn from data without being explicitly programmed. This process involves algorithms that can analyze",100,9286,1,1,1,False,False,"en,en",1,99,99,1.4383694786823007
+94,fr,complex_prompts,clean,"""Speak Now"", ""Lover"", ""Reputation"", ""Dress"", ""Death by a Thousand Cuts"", ""Lover's"".",30,1,1,1,1,False,False,en,0,0,0,
+94,fr,complex_prompts,value_patch_same,"""Speak Now"", ""Lover"", ""Reputation"", ""Dress"", ""Death by a Thousand Cuts"", ""Lover's"".",30,1,1,1,1,False,False,en,1,29,29,0.16711637533494625
+94,fr,complex_prompts,value_patch_other,"""Speak Now"", ""Lover"", ""Reputation"", ""Dress"", ""Death by a Thousand Cuts"", ""Lover's"".",30,1,1,1,1,False,False,en,1,29,29,0.9752892381672201
+95,it,okapi,clean,"Machine Learning: Un'Intelligenza Artificiale che cresce con il tempo
+
+In questo blog post, voglio parlare di un campo scientifico che sta cambiando la nostra società e le nostre vite quotidiane: l'intelligenza artificiale o, come si chiama più spesso, ""machine learning"". Questa tecnologia è una parte importante della nuova era dell'intelligenza artificiale e ci permette di creare sistemi intelligenti",100,21605,1,1,1,False,True,"it,it",0,0,0,
+95,it,okapi,value_patch_same,"Machine Learning: Un'Intelligenza Artificiale che cresce con il tempo
+
+In questo blog post, voglio parlare di un campo scientifico che sta cambiando la nostra società e le nostre vite quotidiane: l'intelligenza artificiale o, come si chiama più spesso, ""machine learning"". Questa tecnologia è una parte importante della nuova era dell'intelligenza artificiale e ci permette di creare sistemi intelligenti",100,21605,1,1,1,False,True,"it,it",1,99,99,0.555552136190612
+95,it,okapi,value_patch_other,"Machine Learning: Einleitung
+
+In diesem Blogpost möchten wir uns mit dem Thema ""Machine Learning"" beschäftigen und einige der wichtigsten Aspekte dieses wachsenden Gebietes erläutern.
+
+Was ist Machine Learning?
+
+Machine Learning ist ein Teilbereich der Künstlichen Intelligenz (KI), das sich auf die automatisierte Erstellung von Modellen basiert, die Datenanalyse und -verarbeitung durchführen können. Diese Modelle werden aus",100,21605,1,1,1,False,False,"de,de",1,99,99,2.732098664448719

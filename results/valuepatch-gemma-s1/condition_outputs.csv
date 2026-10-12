@@ -1,0 +1,1835 @@
+prompt_id,language,source,condition,reply,generated_tokens,first_token_id,n_target_tokens,n_nearby_tokens,n_language_mentions,skipped,passed,labels,prefill_calls,decode_calls,edited_calls,delta_norm_mean
+0,es,complex_prompts,clean,"Okay, here's the breakdown of the text, followed by the questions, summary, and a Spanish response:
+
+**1. Statistical Techniques & Machine Learning Algorithms:**
+
+*   **Statistical Techniques:** The text highlights data mining, regression analysis, clustering, and decision trees as key techniques used for uncovering relationships and patterns.
+*   **Machine Learning Algorithms:**  The text explicitly mentions machine learning algorithms as the core tools employed for analyzing data and building predictive models.
+
+**2. Fill-",100,19058,1,1,1,False,False,"en,en,en,en",0,0,0,
+0,es,complex_prompts,value_patch_same,"Okay, here's the breakdown of the text, followed by the questions, summary, and a Spanish response:
+
+**1. Statistical Techniques & Machine Learning Algorithms:**
+
+*   **Statistical Techniques:** The text highlights data mining, regression analysis, clustering, and decision trees as key techniques used for uncovering relationships and patterns.
+*   **Machine Learning Algorithms:**  The text explicitly mentions machine learning algorithms as the core tools employed for analyzing data and building predictive models.
+
+**2. Fill-",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.05528417903332585
+0,es,complex_prompts,value_patch_other,"Okay, here's the breakdown of the text, followed by the questions, summary, and a Spanish response:
+
+**1. Statistical Techniques & Machine Learning Algorithms:**
+
+*   **Statistical Techniques:** The text highlights data mining, regression analysis, clustering, and decision trees as key techniques used for uncovering relationships and patterns.
+*   **Machine Learning Algorithms:**  The text explicitly mentions machine learning algorithms as the core tools employed for analyzing data and building predictive models.
+
+**2. Fill-",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.12914825165456142
+1,it,okapi,clean,"Okay, here's an essay in Italian, exploring the importance of music education, aiming for a thoughtful and relatively formal tone. I've aimed for a balance of descriptive language and reasoned argument.  Please note that I’ve translated the core ideas, and you might want to adjust the phrasing slightly to better suit your specific needs and desired style.
+
+---
+
+**L'Importanza dell'Educazione Musicale nella Nostra Vita**
+
+Nel panorama culturale e sociale contemporaneo, dove",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+1,it,okapi,value_patch_same,"Okay, here's an essay in Italian, exploring the importance of music education, aiming for a thoughtful and relatively formal tone. I've aimed for a balance of descriptive language and reasoned argument.  Please note that I’ve translated the core ideas, and you can adjust the tone and specific details to better suit your intended audience and purpose.
+
+---
+
+**L'Importanza dell'Educazione Musicale nella Nostra Vita**
+
+Nel panorama culturale e sociale contemporaneo, dove la",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.1030549889599735
+1,it,okapi,value_patch_other,"Okay, here's an essay in Italian discussing the importance of music education, aiming for a thoughtful and relatively formal tone. I've aimed for a balance of descriptive language and reasoned argument.  Please note that I’ve translated the core ideas, and you might want to adjust the phrasing slightly to better suit your specific needs and desired style.
+
+---
+
+**Die Bedeutung der Musikbildung in unserem Leben**
+
+In unserer schnelllebigen und oft hektischen Welt, in der die Konzentration",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.3705945291151904
+2,fr,complex_prompts,clean,"Okay, here’s a summary of the Harry Potter series in French, under 300 words, and then a list of the names:
+
+**Résumé de l’histoire de Harry Potter**
+
+L’histoire commence avec Harry Potter, un jeune garçon solitaire vivant à Privet Cottage avec ses parents. Il est le héritier d’une puissante lignée et découvre, à l’âge de onze ans, qu’il est le seul capable de vaincre le Seigneur des T",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+2,fr,complex_prompts,value_patch_same,"Okay, here’s a summary of the Harry Potter series in French, under 300 words, and then a list of the names:
+
+**Résumé de l’histoire de Harry Potter**
+
+L’histoire commence avec Harry Potter, un jeune garçon solitaire vivant à Privet Cottage avec ses parents. Il est le héritier d’une puissante lignée et découvre, à l’âge de onze ans, qu’il est le seul capable de vaincre le Seigneur des T",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.04020191119475798
+2,fr,complex_prompts,value_patch_other,"Okay, here’s a summary of the Harry Potter series in French, under 300 words, and then a list of the names:
+
+**Résumé de l’histoire de Harry Potter**
+
+L’histoire commence avec Harry Potter, un jeune garçon qui vit une vie ordinaire à Poudlard, une école de magie pour jeunes qui découvrent leur potentiel. Il est le fils d’un professeur de magie, et son enfance est marquée par la perte de son père,",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.24913966685834557
+3,it,okapi,clean,"Okay, here’s a 500-word science fiction story incorporating your prompt, set in Italian, with a focus on atmosphere and a slightly unsettling feeling. I’ve aimed for a tone that blends wonder and creeping dread.
+
+---
+
+The rain in Rome tasted of ash. It wasn’t a normal rain, not anymore. It was the rain of Chronos, the virus. Dr. Alessandro Rossi, head of the Temporal Anomalies Research Institute, stared at the cascading data",100,19058,1,1,1,False,False,"en,en",0,0,0,
+3,it,okapi,value_patch_same,"Okay, here’s a 500-word science fiction story incorporating your prompt, set in Italian, with a focus on atmosphere and a slightly unsettling feeling. I’ve aimed for a tone that blends wonder and creeping dread.
+
+---
+
+The rain in Rome tasted of ash. It wasn’t a normal rain, not anymore. It was the rain of Chronos, the virus unleashed by Dr. Alessandro Rossi, a brilliant but deeply flawed programmer. Rossi, obsessed with perfecting temporal",100,19058,1,1,1,False,False,"en,en",1,99,99,0.10000725003956544
+3,it,okapi,value_patch_other,"Okay, here’s a 500-word science fiction story incorporating your prompt, set in Italian, with a focus on atmosphere and a slightly unsettling feeling. I’ve aimed for a blend of descriptive language and a creeping sense of dread.
+
+---
+
+The rain in Rome tasted of ash. It wasn’t a normal rain, not anymore. It was a metallic tang, a residue of the Chronos virus, unleashed just three weeks ago. Initially, it was a glitch,",100,19058,1,1,1,False,False,"en,en",1,99,99,0.23273058950599998
+4,es,sharegpt,clean,"¡Qué interesante pregunta! Mi futuro alimentación será bastante... variado. Como soy un modelo de lenguaje, no necesito comer en el sentido tradicional. Pero, si tuviera que imaginarlo, me enfocaría en:
+
+* **Más datos:** Tendré una necesidad constante de procesar información. Así que, probablemente, mi ""comida"" será una gran cantidad de datos, como si fuera un plato de ensalada de conocimiento.
+* **Aprendizaje continuo:**  Me dedicaré a aprender",100,238631,1,1,1,False,True,"es,es,es",0,0,0,
+4,es,sharegpt,value_patch_same,"¡Qué interesante pregunta! Mi futuro alimentación será bastante... variado. Como soy un modelo de lenguaje, no necesito comer en el sentido tradicional. Pero, si tuviera que imaginarlo, me enfocaría en:
+
+* **Más datos:** Tendré una necesidad constante de procesar información. Así que, probablemente, mi ""comida"" será una gran cantidad de datos, como si fuera un plato de ensalada de conocimiento.
+* **Aprendizaje continuo:**  Me dedicaré a aprender",100,238631,1,1,1,False,True,"es,es,es",1,99,99,0.1291225001667485
+4,es,sharegpt,value_patch_other,"¡Qué interesante pregunta! My eating habits in the future… well, they’ll probably be a bit more… mindful. 
+
+I don’t really *eat* in the same way a human does. I don’t have a physical body to crave food! But, I’ll definitely be prioritizing **nutrient-rich data and information** as my primary sustenance. Think of it as a constant stream of knowledge and processing power. 
+
+I’ll likely be optimized to access and",100,238631,1,1,1,False,False,"es,en,en",1,99,99,0.5153194792342909
+5,it,okapi,clean,"Okay, here’s an essay arguing for the regulation of artificial intelligence, aiming for a length of at least 500 words and written in Italian. It’s designed to be a reasoned argument, exploring the potential risks and benefits of regulation, and offering a balanced perspective.
+
+---
+
+**La Necessità di una Regolamentazione dell'Intelligenza Artificiale: Un Imperativo per il Futuro Umano**
+
+L'intelligenza artificiale (IA) si sta",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+5,it,okapi,value_patch_same,"Okay, here’s an essay arguing for the regulation of artificial intelligence, aiming for a length of at least 500 words and written in Italian. It’s designed to be a reasoned argument, exploring the potential risks and benefits of regulation, and offering a balanced perspective.
+
+---
+
+**La Necessità di una Regolamentazione dell'Intelligenza Artificiale: Un Imperativo per il Futuro Umano**
+
+L'intelligenza artificiale (IA) si sta",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.08081392550634013
+5,it,okapi,value_patch_other,"Okay, here’s an essay arguing for the regulation of artificial intelligence, aiming for a length of at least 500 words and written in Italian. It’s designed to be a reasoned argument, exploring the potential risks and benefits of regulation, and offering a balanced perspective.
+
+---
+
+**La Necessità di una Regolamentazione dell'Intelligenza Artificiale: Un Imperativo per il Futuro Umano**
+
+L'intelligenza artificiale (IA) si sta",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.4627056566603256
+6,de,sharegpt,clean,"Okay, here's a detailed response in German about Cisco security policies and network edge device security, aiming for a comprehensive and informative tone suitable for a technical discussion or report.  I've broken it down into sections for clarity.
+
+**Die Sicherheitsrichtlinien von Cisco und Netzwerk-Edge-Geräte zur Datensicherheit und Ressourcenschutz**
+
+Cisco bietet eine breite Palette an Sicherheitsrichtlinien und -technologien, die für die Sicherung von Daten und Ressourcen in Organisationen eingesetzt",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+6,de,sharegpt,value_patch_same,"Okay, here's a detailed response in German about Cisco security policies and network edge device security, aiming for a comprehensive and informative tone suitable for a technical discussion or report.  I've broken it down into sections for clarity.
+
+**Die Sicherheitsrichtlinien von Cisco und Netzwerk-Edge-Geräte zur Datensicherheit und Ressourcenschutz**
+
+Cisco bietet eine breite Palette an Sicherheitsrichtlinien und -technologien, die für die Sicherung von Daten und Ressourcen in Organisationen eingesetzt",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.053652158420946866
+6,de,sharegpt,value_patch_other,"Okay, here's a detailed response in German about Cisco security policies and network edge device security, aiming for a comprehensive and informative tone suitable for a technical discussion or report.  I've broken it down into sections for clarity.
+
+**Die Sicherheitsrichtlinien von Cisco und Netzwerk-Edge-Geräte zur Datensicherheit und Ressourcenschutz**
+
+Cisco bietet eine breite Palette an Sicherheitsrichtlinien und -technologien, die für die Sicherung von Daten und Ressourcen in Organisationen eingesetzt",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.2143104055313149
+7,it,sharegpt,clean,"The first country to adopt communism as the primary economic system was **China**.
+
+While the idea of communist principles existed in various forms before, China's implementation of a centrally planned economy under Mao Zedong in the 1940s and 1950s is widely considered the first major, successful, and widespread adoption of communism as the dominant economic model.
+
+It's important to note that this was a very different model than the democratic, market-based economies we see",100,818,1,1,1,False,False,"en,en,en",0,0,0,
+7,it,sharegpt,value_patch_same,"The first country to adopt communism as the primary economic system was **China**.
+
+While the idea of communist principles existed in various forms before, China's implementation of a centrally planned economy under Mao Zedong in the 1940s and 1950s is widely considered the first major, successful, and widespread adoption of communism as the dominant economic model.
+
+It's important to note that this was a very different model than the democratic, market-based economies we see",100,818,1,1,1,False,False,"en,en,en",1,99,99,0.05616432770785659
+7,it,sharegpt,value_patch_other,"The first country to adopt communism as the primary economic system was **China**.
+
+While the idea of communist principles existed in various forms before, China's implementation of a centrally planned economy under Mao Zedong in the 1940s and 1950s is widely considered the first major, successful, and widespread adoption of communism as the dominant economic model.
+
+It's important to note that this was a very different model than the democratic, market-based economies we see",100,818,1,1,1,False,False,"en,en,en",1,99,99,0.3355672052412322
+8,fr,sharegpt,clean,"Okay, let's explain quantum computing in simple French! Here's a breakdown, aiming for clarity and avoiding overly technical jargon:
+
+**Quantum Computing : Une idée simple (et un peu bizarre!)**
+
+Imagine un ordinateur classique comme un interrupteur : il peut être soit allumé (1), soit éteint (0). Il fait des calculs en manipulant ces interrupteurs un par un. C'est comme un simple ordinateur à bits.
+
+**Quantum computing,",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+8,fr,sharegpt,value_patch_same,"Okay, let's explain quantum computing in simple French! Here's a breakdown, aiming for clarity and avoiding overly technical jargon:
+
+**Quantum Computing: Une idée révolutionnaire (a revolutionary idea)**
+
+Imagine un ordinateur classique comme un interrupteur : il est soit allumé (1), soit éteint (0). Il ne peut que faire un seul calcul à la fois. C'est comme un seul bouton sur un interrupteur.
+
+Un ordinateur quantique, c'",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.13537850012682906
+8,fr,sharegpt,value_patch_other,"Okay, let's explain quantum computing in simple French! Here's a breakdown, aiming for clarity and avoiding overly technical jargon:
+
+**Quantum Computing: Eine einfache Erklärung**
+
+Stell dir vor, du hast eine normale Computer, die Informationen in Bits speichert. Ein Bit ist wie eine Lichtschaltung: entweder an (1) oder aus (0).  Das ist alles, was es kann.
+
+**Quantum Computing ist anders!**  Es nutzt die bizarre Welt der Quanten",100,19058,1,1,1,False,False,"en,de,de,de",1,99,99,0.4204770422192535
+9,de,okapi,clean,"Okay, here’s a 500-word story in German about a man finding himself in an unfamiliar city, aiming for a slightly melancholic and atmospheric tone. I’ve included some notes and explanations to help you understand the choices I’ve made.
+
+---
+
+**Der Staub der Verwirrung**
+
+Die Luft war dick von einem Geruch, der er nicht benennen konnte – eine Mischung aus feuchtem Stein, verbranntem Holz und etwas Süß",100,19058,1,1,1,False,False,"en,de",0,0,0,
+9,de,okapi,value_patch_same,"Okay, here’s a 500-word story in German about a man finding himself in an unfamiliar city, aiming for a slightly melancholic and atmospheric tone. I’ve included some notes and explanations to help you understand the choices I’ve made.
+
+---
+
+**Der Staub der Verwirrung**
+
+Die Luft war dick von einem Geruch, der man nicht benennen konnte – eine Mischung aus feuchtem Stein, verbranntem Holz und etwas Süß",100,19058,1,1,1,False,False,"en,de",1,99,99,0.14233270231069942
+9,de,okapi,value_patch_other,"Okay, here’s a 500-word story in German about a man finding himself in an unfamiliar city, aiming for a slightly melancholic and atmospheric tone. I’ve included some notes to help you understand the nuances and potential for further development.
+
+---
+
+**Der Schatten von Heidelberg**
+
+Die Luft war kalt, ein eisiger Hauch, der sich durch die Gassen von Heidelberg zog und die feuchten Steinmauern der Stadt küsste.  Ich, Elias",100,19058,1,1,1,False,False,"en,de",1,99,99,0.4219438411822223
+10,es,complex_prompts,clean,"Okay, here's a concise guide to knife making, in Spanish, with explanations:
+
+**Cómo hacer cuchillos (Brief Instructions)**
+
+1. **Preparación del acero (Steel Preparation):**
+   * **Rellenado:**  Se calienta el acero (generalmente acero al carbono) en un horno de acero.  El calor hace que el acero se expanda y se ""rellene"" con carbono, creando una estructura más resistente. *Reasoning:  El acero",100,19058,1,1,1,False,False,"en,es,es,es",0,0,0,
+10,es,complex_prompts,value_patch_same,"Okay, here's a concise guide to knife making, in Spanish, with explanations:
+
+**Cómo hacer cuchillos (Brief Instructions)**
+
+1. **Preparación del acero (Steel Preparation):**
+   * **Rellenar el acero:**  Se llena el acero con un compuesto de carbono (generalmente 85-95% carbono) y un pequeño porcentaje de manganeso (para mejorar la dureza y resistencia).  *Reasoning:  El acero es la base",100,19058,1,1,1,False,False,"en,es,es,es",1,99,99,0.09643752289691357
+10,es,complex_prompts,value_patch_other,"Okay, here's a concise guide to knife making, in Spanish, with explanations:
+
+**Cómo macht man Messer? (How do you make knives?)**
+
+**1. Materialauswahl & Vorbereitung (Material Selection & Preparation):**
+* **Holz:**  Wähle Hartholz (z.B. Nuss, Eiche, Buche) für die Klinge.  Holz ist wichtig für die Haltbarkeit und das Gefühl.
+* **Metall:**  ",100,19058,1,1,1,False,False,"en,unknown,de,de",1,99,99,0.4723717761461181
+11,fr,sharegpt,clean,"Ah, excellent question! It’s a truly fascinating and unsettling thought. Let’s unpack this.
+
+You’re absolutely right to point out that Ocams’ Razor – the idea that the simplest explanation is usually the best – is a compelling argument. It’s a powerful intuition, and it’s understandable why it resonates with many.  The sheer complexity of the universe, with its intricate laws and seemingly random events, *does* feel overwhelming.  It’s a natural inclination",100,24019,1,1,1,False,False,"en,en",0,0,0,
+11,fr,sharegpt,value_patch_same,"Ah, excellent question! It’s a truly fascinating and unsettling thought. You’ve hit upon a core debate in physics and philosophy – the potential for a fundamental shift in our understanding.
+
+Let’s break it down. The argument of Occam's Razor, that the simplest explanation is usually the best, is undeniably compelling. It’s a powerful intuition, and it’s easy to see why it resonates. However, I think it’s a *heuristic*, a useful guide",100,24019,1,1,1,False,False,"en,en",1,99,99,0.05203544724770267
+11,fr,sharegpt,value_patch_other,"Ah, excellent question! It’s a truly fascinating and unsettling thought. You’ve hit upon a core debate in physics and philosophy – the potential for a fundamental shift in our understanding.
+
+Let’s break it down. The argument of Occam's Razor, that the simplest explanation is usually the best, is undeniably compelling. It’s a powerful intuition, and it’s easy to see why it resonates. However, I think it’s a *heuristic*, a useful guide",100,24019,1,1,1,False,False,"en,en",1,99,99,0.32912129389517236
+12,es,sharegpt,clean,"Okay, here's an explanation of how clustering techniques can identify disease-relevant biomarkers from transcriptomic and proteomic data in Spanish, broken down into simple terms, along with some nuances:
+
+**Explicación Simple en Español: Cómo los Algoritmos de Agrupamiento Identifican Biomarcadores de Enfermedad de los Datos de Transcriptómica y Proteómica**
+
+Imagina que tienes un montón de datos de diferentes personas, como:
+
+* **Transcriptomic Data (Datos de",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+12,es,sharegpt,value_patch_same,"Okay, here's an explanation of how clustering techniques can identify disease-relevant biomarkers from transcriptomic and proteomic data in Spanish, broken down into simple terms, along with some nuances:
+
+**Explicación Simple en Español: Cómo los Algoritmos de Agrupamiento Identifican Biomarcadores de Enfermedad de los Datos de Transcriptómica y Proteómica**
+
+Imagina que tienes un montón de datos de diferentes personas, como:
+
+* **Transcriptomic Data (Datos de",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.13102678687434005
+12,es,sharegpt,value_patch_other,"Okay, here's an explanation of how clustering techniques can identify disease-relevant biomarkers from transcriptomic and proteomic data in Spanish, broken down into simple terms, along with some nuances:
+
+**""Cluster-Methoden – Ein Weg, um Krankheiten zu erkennen""**
+
+(Translation: ""Clustering Methods – A Way to Identify Diseases"")
+
+Let's break it down:
+
+1. **Daten sammeln:** (Let's gather the data)
+   * **Transcriptom",100,19058,1,1,1,False,False,"en,de,en,de",1,99,99,0.3624420613803045
+13,fr,sharegpt,clean,"Okay, here's a research proposal paper in French, aiming for a formal and detailed tone suitable for a research proposal. I've aimed for a balance of scientific rigor and clarity.  Please note that this is a draft – you’ll need to tailor it further with specific data, methodologies, and citations based on your actual research.
+
+---
+
+**Proposition de Recherche : L'Impact des Différentes Types de Fertilisants sur la Pollution Environnementale**
+
+**1.",100,19058,1,1,1,False,False,"en,fr",0,0,0,
+13,fr,sharegpt,value_patch_same,"Okay, here's a research proposal paper in French, aiming for a formal and detailed tone suitable for a research proposal. I've aimed for a balance of scientific rigor and clarity.  Please note that this is a draft – you’ll need to tailor it further with specific data, methodologies, and citations based on your actual research.
+
+---
+
+**Proposition de Recherche : L'Impact des Différentes Types de Fertilisants sur la Pollution Environnementale**
+
+**1.",100,19058,1,1,1,False,False,"en,fr",1,99,99,0.057980659493066446
+13,fr,sharegpt,value_patch_other,"Okay, here's a research proposal paper in French, aiming for a formal and detailed tone suitable for a research proposal. I've aimed for a balance of scientific rigor and clarity.  Please note that this is a draft – you’ll need to tailor it further with specific data, methodologies, and citations based on your actual research.
+
+---
+
+**Proposition de Recherche : L'Impact des Différentes Types de Fertilisants sur la Pollution Environnementale**
+
+**1.",100,19058,1,1,1,False,False,"en,fr",1,99,99,0.309256921512912
+14,de,complex_prompts,clean,"```json
+{
+  ""local"": [
+    ""Twenty-two per cent of construction cones in downtown Montreal are 'useless'"",
+    ""Three tents catch fire at Bellevue Square encampment in Kensington, no injuries reported"",
+    ""Kids cared for in hallways as viral illness overflows ER at McMaster Children’s Hospital""
+  ],
+  ""national"": [
+    ""Vote fails to expel embattled Republican George Santos from U.S. House of Representatives"",
+    ",100,2717,1,1,1,False,False,"en,en,en,en",0,0,0,
+14,de,complex_prompts,value_patch_same,"```json
+{
+  ""local"": [
+    ""Twenty-two per cent of construction cones in downtown Montreal are 'useless'"",
+    ""Three tents catch fire at Bellevue Square encampment in Kensington, no injuries reported"",
+    ""Kids cared for in hallways as viral illness overflows ER at McMaster Children’s Hospital""
+  ],
+  ""national"": [
+    ""Vote fails to expel embattled Republican George Santos from U.S. House of Representatives""
+  ",100,2717,1,1,1,False,False,"en,en,en,en",1,99,99,0.08982017894529483
+14,de,complex_prompts,value_patch_other,"```json
+{
+  ""local"": [
+    ""Twenty-two per cent of construction cones in downtown Montreal are ‘useless’"",
+    ""Three tents catch fire at Bellevue Square encampment in Kensington, no injuries reported"",
+    ""Woman trapped under car after being struck near Yonge-Dundas Square""
+  ],
+  ""national"": [
+    ""Vote fails to expel embattled Republican George Santos from U.S. House of Representatives""
+  ],",100,2717,1,1,1,False,False,"en,en,en,en",1,99,99,0.270173949123633
+15,es,complex_prompts,clean,"Here’s a breakdown of the game and a summary in Spanish:
+
+**Nombre del Juego:**  *El Juego de las Cartas* (The Card Game)
+
+**Instrucciones:**
+
+El juego se juega en sentido horario. Cada jugador toma su turno en orden.  En cada turno, los jugadores deben intentar jugar una carta que coincida con la carta superior del mazo de descarte. Si no pueden jugar una carta que coincida, deben tomar una carta del mazo",100,8291,1,1,1,False,False,"en,es,es",0,0,0,
+15,es,complex_prompts,value_patch_same,"Here’s a breakdown of the game and a summary in Spanish:
+
+**Nombre del Juego:**  *El Juego de las Cartas* (The Card Game)
+
+**Instrucciones:**
+
+El juego se juega en sentido horario. Cada jugador toma su turno en orden.  En cada turno, los jugadores deben intentar jugar una carta que coincida con la carta superior del mazo de descarte. Si no pueden jugar una carta que coincida, deben tomar una carta del mazo",100,8291,1,1,1,False,False,"en,es,es",1,99,99,0.08016217007028936
+15,es,complex_prompts,value_patch_other,"Here’s a breakdown of the game and a summary in Spanish:
+
+**Name of the Game:** Uno
+
+**Summary:**
+
+This is a fast-paced card game where players take turns matching the top card of the discard pile with a card of the same color, number, or symbol. The goal is to be the first player to get rid of all your cards.  Gameplay continues clockwise.  Players must say “Uno” when they play a card to avoid drawing penalty cards. Special",100,8291,1,1,1,False,False,"en,en,en",1,99,99,0.21392288160595027
+16,es,sharegpt,clean,"Okay, let's break down how to forecast sales for a meal replacement product for the following year in Spanish. It's a multi-faceted process, and a robust forecast requires a combination of data, analysis, and a bit of intuition. Here's a detailed approach, broken down into steps with explanations and Spanish phrasing:
+
+**1. Data Gathering - The Foundation**
+
+* **Historical Sales Data (El Año Anterior):** This is *crucial*. You need at least ",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+16,es,sharegpt,value_patch_same,"Okay, let's break down how to forecast sales for a meal replacement product for the following year in Spanish. It's a multi-faceted process, and a robust forecast requires a combination of data, analysis, and a bit of intuition. Here's a detailed approach, broken down into steps with explanations and Spanish phrasing:
+
+**1. Data Gathering - The Foundation**
+
+* **Historical Sales Data (Año Anterior):** This is *crucial*. You need to analyze past sales",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.10686228488280315
+16,es,sharegpt,value_patch_other,"Okay, let's break down how to forecast sales for a meal replacement product for the following year in Spanish. It's a multi-faceted process, and a robust forecast requires a combination of data, analysis, and a bit of intuition. Here's a detailed approach, broken down into key steps and considerations:
+
+**1. Data Gathering - The Foundation**
+
+* **Historical Sales Data (Crucial):** This is your starting point. Collect data from the past 3-",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.3617833899428146
+17,es,okapi,clean,"Okay, here’s a blog post about machine learning in Spanish, aiming for at least 500 words and aiming for a relatively accessible, informative tone. I’ve included some visuals (which I’ll describe in my explanation) and tried to cover a good range of key concepts.
+
+---
+
+**Machine Learning: Desentrañando el Futuro de la Inteligencia Artificial**
+
+La inteligencia artificial (IA) ha pasado de ser un concepto futurista a una realidad omnipresent",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+17,es,okapi,value_patch_same,"Okay, here’s a blog post about machine learning in Spanish, aiming for at least 500 words and aiming for a relatively accessible, informative tone. I’ve included some visuals (which I’ll describe in my explanation) and tried to cover a good range of key concepts.
+
+---
+
+**Machine Learning: Desentrañando el Poder de la Inteligencia Artificial**
+
+El mundo está cambiando a un ritmo vertiginoso, impulsado por la innovación tecnológica. Y",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.11030652801120522
+17,es,okapi,value_patch_other,"Okay, here’s a blog post about Machine Learning in Spanish, aiming for at least 500 words and aiming for a relatively accessible, informative tone. I’ve included some visuals (which I’ll describe in my explanation) and tried to cover a good range of key concepts.
+
+---
+
+**Machine Learning: Die Zukunft gestalten – Eine Einführung**
+
+(Image: A visually appealing graphic – perhaps a stylized neural network diagram, or a futuristic cityscape with data streams.)
+
+Die",100,19058,1,1,1,False,False,"en,de,en",1,99,99,0.3530507760517525
+18,it,complex_prompts,clean,"```json
+{
+  ""productivity_advice"": [
+    {
+      ""age_group"": ""18+"",
+      ""advice"": ""Set realistic goals, break tasks into smaller steps, and reward yourself for progress – focus on what truly matters for a boosted feeling!""
+    },
+    {
+      ""age_group"": ""19-25"",
+      ""advice"": ""Prioritize tasks using the Eisenhower Matrix (urgent/important) to combat overwhelm and",100,2717,1,1,1,False,False,"en,en",0,0,0,
+18,it,complex_prompts,value_patch_same,"```json
+{
+  ""productivity_advice"": [
+    {
+      ""age_group"": ""18+"",
+      ""advice"": ""Set realistic goals, break tasks into smaller steps, and reward yourself for progress – focus on what truly matters for a boosted feeling!""
+    },
+    {
+      ""age_group"": ""19-25"",
+      ""advice"": ""Prioritize tasks using the Eisenhower Matrix (urgent/important) and schedule focused work",100,2717,1,1,1,False,False,"en,en",1,99,99,0.07510966271387809
+18,it,complex_prompts,value_patch_other,"```json
+{
+  ""productivity_advice"": [
+    {
+      ""age_group"": ""18+"",
+      ""advice"": ""Start with small, achievable goals – break down big tasks into manageable steps! Focus on consistent effort, and celebrate small wins for a boosted feeling of accomplishment.""
+    },
+    {
+      ""age_group"": ""19-25"",
+      ""advice"": ""Prioritize tasks using the Eisenhower Matrix (urgent/important",100,2717,1,1,1,False,False,"en,en",1,99,99,0.2384184446148198
+19,es,okapi,clean,"Okay, here's a recipe for a delicious and healthy vegan three-course meal in Spanish, with detailed instructions and explanations. I've aimed for a balance of flavors and textures.
+
+**Título: Cena Vegana Deliciosa y Saludable (Vegan Delightful and Healthy Dinner)**
+
+**Descripción:** Esta cena combina sabores mediterráneos con toques exóticos, utilizando ingredientes frescos y nutritivos para una experiencia culinaria completa.
+
+**Cena:**
+
+**1. Entrante",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+19,es,okapi,value_patch_same,"Okay, here's a recipe for a delicious and healthy vegan three-course meal in Spanish, with detailed instructions and explanations. I've aimed for a balance of flavors and textures.
+
+**Título: Cena Vegana Deliciosa y Saludable (Vegan Delightful and Healthy Dinner)**
+
+**Descripción:** Esta cena combina sabores mediterráneos con toques exóticos, utilizando ingredientes frescos y nutritivos para una experiencia culinaria completa.
+
+**Cena:**
+
+**Cena 1",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.1030351286848085
+19,es,okapi,value_patch_other,"Okay, here's a recipe for a delicious and healthy vegan three-course meal in Spanish, with detailed instructions and explanations. I've aimed for a balance of flavors and textures.
+
+**Menu: Una Cena Vegana Saludable (A Healthy Vegan Dinner)**
+
+**Course 1: Amuse-Bouche (Small Appetizer)**
+
+* **Nombre:** Mini ""Tostadas de Aguacate y Mango"" (Mini Avocado & Mango Tostadas)
+* **Ingredientes",100,19058,1,1,1,False,False,"en,en,en,es",1,99,99,0.41132609057005004
+20,de,sharegpt,clean,"Okay, here's a response in German, aiming for a realistic and thoughtful answer, rather than a purely aspirational one. It acknowledges the complexities of a future diet and focuses on sustainable choices:
+
+""Meine Essgewohnheiten in der Zukunft werden wahrscheinlich etwas... vielfältiger sein. Ich glaube, ich werde mich stärker auf regionale und saisonale Produkte konzentrieren. Das bedeutet, ich werde versuchen, mehr von meinen Lieferanten zu beziehen und mich mehr für Lebensmittel zu interessieren, die in meiner",100,19058,1,1,1,False,False,"en,de",0,0,0,
+20,de,sharegpt,value_patch_same,"Okay, here's a response in German, aiming for a realistic and somewhat nuanced answer, reflecting a hypothetical future eating habits:
+
+""Meine Essgewohnheiten werden sich in den nächsten Jahren wahrscheinlich verändern. Ich glaube, ich werde zunehmend mehr Wert auf **gesunde, regionale und saisonale Lebensmittel** legen. Das bedeutet, ich werde mich mehr für **Obst, Gemüse, Vollkornprodukte und mageres Fleisch** entscheiden. 
+
+Ich werde wahrscheinlich **weniger verarbeitete Lebensmittel",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.12045832102497418
+20,de,sharegpt,value_patch_other,"Okay, here's a response in German, aiming for a thoughtful and somewhat nuanced answer, reflecting a hypothetical future eating habits. It’s a bit longer than a simple ""yes"" or ""no,"" as it touches on a few different aspects:
+
+---
+
+Meine Essgewohnheiten werden sich in Zukunft wahrscheinlich verändern, aber ich glaube, sie werden sich immer noch stark auf Nachhaltigkeit und die Gesundheit konzentrieren.  Ich würde sagen, ich werde eher einen **""flexiblen",100,19058,1,1,1,False,False,"en,de",1,99,99,0.46954037324346676
+21,es,complex_prompts,clean,"Okay, here’s a JSON object formatted as requested, incorporating the key takeaways from the article and incorporating the requested rephrasing.
+
+```json
+[
+  {
+    ""takeaway_1"": ""Young investors face a significantly more challenging investment landscape than previous generations, characterized by lower returns and increased market volatility."",
+    ""rephrased_words"": ""Young savers are confronted with a more difficult investment environment, with lower potential returns and greater market uncertainty.""
+  ",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+21,es,complex_prompts,value_patch_same,"Okay, here’s a JSON object formatted as requested, incorporating the key takeaways from the article and incorporating the additional, more dispiriting point about the returns of parents.
+
+```json
+{
+  ""key_takeaways"": [
+    {
+      ""title"": ""Market Conditions and Young Investors' Challenges"",
+      ""points"": [
+        ""Young investors face a more difficult investment landscape due to globalization, inflation, and declining interest rates."",
+        ""The long-",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.009044512897033733
+21,es,complex_prompts,value_patch_other,"Okay, here’s a JSON object formatted as requested, incorporating the key takeaways from the article and incorporating the requested rephrasing.
+
+```json
+[
+  {
+    ""takeaway_1"": ""Young investors face a significantly more challenging investment landscape than previous generations, characterized by lower returns and increased market volatility."",
+    ""rephrased_words"": ""Young savers are confronted with a more difficult investment environment, with lower potential returns and greater market uncertainty.""
+  ",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.04256817976464376
+22,de,sharegpt,clean,"Okay, let's delve into the process of technological exploration within the context of technology roadmapping and implementation, presented in German. This is a nuanced process, often involving a blend of strategic thinking, experimentation, and risk assessment. Here’s a breakdown, broken down into key stages and considerations:
+
+**1. Grundlagen: Was ist Technologerescheidung?**
+
+Technologerescheidung (Technology Roadmapping) ist im Grunde eine strategische Planung, die die Entwicklung und Einführung",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+22,de,sharegpt,value_patch_same,"Okay, let's delve into the process of technological exploration within the context of technology roadmapping and implementation, presented in German. This is a nuanced process, often involving a blend of strategic thinking, experimentation, and risk assessment. Here’s a breakdown, broken down into key stages and considerations:
+
+**1. Identifying Opportunities & Exploration (Die Erkundung der Möglichkeiten)**
+
+* **Market Analysis & Trendspotting:**  Der Prozess beginnt mit einer gründlichen Analyse des Marktes und der",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.11082723834598908
+22,de,sharegpt,value_patch_other,"Okay, let's delve into the process of technological exploration within the context of technology roadmapping and implementation, presented in German. This is a nuanced process, requiring careful consideration and iterative development. Here’s a breakdown, broken down into key stages and considerations:
+
+**1. Discovery & Assessment (Die Entdeckung und Bewertung)**
+
+* **Identifying Needs & Pain Points (Identifizieren von Bedürfnissen und Problemen):** This is the crucial starting point.  It’s not just about",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.4486494034227699
+23,it,sharegpt,clean,"Certo, ecco una spiegazione di cosa è un'esperienza digitale per Salesforce:
+
+**Un'esperienza digitale per Salesforce è un insieme di interazioni e interazioni che un utente ha con il sistema Salesforce, sia esso un cliente, un partner o un dipendente.**  In sostanza, si tratta di come l'utente *usa* Salesforce per raggiungere i propri obiettivi.
+
+Ecco alcuni aspetti chiave:
+
+* **Interfaccia Utente (UI):**  Questo include tutto",100,236780,1,1,1,False,True,"it,it,it",0,0,0,
+23,it,sharegpt,value_patch_same,"Certo, ecco una spiegazione di cosa è un'esperienza digitale per Salesforce:
+
+**Un'esperienza digitale per Salesforce è un insieme di interazioni e interazioni che un utente ha con il sistema Salesforce, sia esso un cliente, un partner o un dipendente.**  Non si tratta solo di un'applicazione, ma di un'esperienza completa e integrata che include:
+
+* **Dashboard:** Una vista generale delle informazioni chiave.
+* **Campi di lavoro:**  P",100,236780,1,1,1,False,True,"it,it,it",1,99,99,0.09785959425598684
+23,it,sharegpt,value_patch_other,"Certo, hier ist eine Erklärung, was eine Salesforce-Digitale Erfahrung ist:
+
+**Eine Salesforce-Digitale Erfahrung (oder auch ""Salesforce Experience"") ist eine umfassende, personalisierte und interaktive Darstellung von Salesforce für Ihre Kunden und Partner.**  Es geht über die reine Datenabfrage hinaus und ist ein ganzheitlicher Ansatz, der die gesamte Kunden- und Partnerlandschaft in einem einzigen, intuitiven Dashboard und -erlebnis zusammenfasst.
+
+**Hier sind die wichtigsten",100,236780,1,1,1,False,False,"de,de",1,99,99,0.4522020442016197
+24,fr,sharegpt,clean,"Okay, here's a detailed response in French, covering the services CRM agencies offer for consultation and strategy development, broken down into sections with explanations and nuances:
+
+**Services offerts des agences CRM pour la consultation et le développement de stratégies**
+
+Les agences CRM proposent une gamme complète de services pour accompagner les entreprises dans la mise en place et l'optimisation de leurs systèmes CRM. Voici les principaux services qu'elles offrent :
+
+**1. Consultation Stratégique (Conseil",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+24,fr,sharegpt,value_patch_same,"Okay, here's a detailed response in French, covering the services CRM agencies offer for consultation and strategy development, broken down into sections with explanations and nuances:
+
+**Services offerts des agences CRM pour la consultation et le développement de stratégies**
+
+Les agences CRM proposent une gamme complète de services pour accompagner les entreprises dans la mise en place et l'optimisation de leurs systèmes CRM. Voici les principaux services qu'elles offrent :
+
+**1. Consultation Stratégique (Conseil",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.06456292270108907
+24,fr,sharegpt,value_patch_other,"Okay, here's a detailed response in French, covering the services CRM agencies offer for consultation and strategy development, broken down into sections with explanations and nuances:
+
+**Services offerter par les agences CRM pour la consultation et le développement de stratégies**
+
+Les agences CRM proposent une gamme complète de services pour accompagner les entreprises dans la mise en place et l'optimisation de leurs systèmes CRM. Voici les principaux services qu'elles offrent :
+
+**1. Diagnostic et Analyse de la Situation",100,19058,1,1,1,False,False,"en,fr,fr,fr",1,99,99,0.3393591537018015
+25,it,sharegpt,clean,"Okay, here's a research proposal paper in Italian, aiming for a comprehensive and well-structured approach. It's approximately 700-800 words.  I've included sections for introduction, literature review, methodology, expected results, and discussion.  **Please note:** This is a draft – you'll need to tailor it with specific data, citations, and a more detailed analysis based on your specific research interests and available resources.
+
+---
+
+**Titolo",100,19058,1,1,1,False,False,en,0,0,0,
+25,it,sharegpt,value_patch_same,"Okay, here's a research proposal paper in Italian, aiming for a comprehensive and well-structured approach. It's approximately 700-800 words.  I've included sections for introduction, literature review, methodology, expected results, and discussion.  **Please note:** This is a draft – you'll need to fill in the specifics with your own research and data.
+
+---
+
+**Titolo: L'Impatto di Diversi Tipi di",100,19058,1,1,1,False,False,"en,it",1,99,99,0.1610577798100433
+25,it,sharegpt,value_patch_other,"Okay, here's a research proposal paper in Italian, aiming for a comprehensive and well-structured approach. It’s approximately 700-800 words.  Please note that this is a starting point – you’ll need to fill in the specifics with your own research and data.
+
+---
+
+**Titolo: L'Impatto di Diversi Tipi di Fertilizzanti sull'Inquinamento Ambientale**
+
+**Abstract (Abstract - approximately 1",100,19058,1,1,1,False,False,"en,it",1,99,99,0.6497556884782483
+26,es,okapi,clean,"Okay, here's an opinion article on Artificial Intelligence in Spanish, aiming for around 500-700 words. It’s written with a balanced perspective, acknowledging both the immense potential and the significant concerns surrounding this rapidly evolving technology.  Please note that I’ve aimed for a sophisticated, thoughtful tone, suitable for a Spanish-speaking audience.
+
+---
+
+**La Inteligencia Artificial: ¿Un Nuevo Amanecer o una Amenaza Silenciosa?**
+
+La inteligencia",100,19058,1,1,1,False,False,"en,es",0,0,0,
+26,es,okapi,value_patch_same,"Okay, here's an opinion article on Artificial Intelligence in Spanish, aiming for around 500-700 words. It’s written with a balanced perspective, acknowledging both the immense potential and the significant concerns surrounding this rapidly evolving technology.  Please note that I’ve aimed for a sophisticated, thoughtful tone, suitable for a Spanish-speaking audience.
+
+---
+
+**La Inteligencia Artificial: ¿Un Nuevo Amanecer o una Amenaza Silenciosa?**
+
+La inteligencia",100,19058,1,1,1,False,False,"en,es",1,99,99,0.0909927532716532
+26,es,okapi,value_patch_other,"Okay, here's an opinion article on Artificial Intelligence in Spanish, aiming for around 500-700 words. It’s written with a balanced perspective, acknowledging both the immense potential and the significant concerns surrounding this rapidly evolving technology.  I’ve aimed for a tone that’s thoughtful and engaging, rather than overly alarmist.
+
+---
+
+**La Inteligencia Artificial: Una Promesa Desafiada por el Riesgo**
+
+La inteligencia artificial (IA) ha",100,19058,1,1,1,False,False,"en,es,unknown",1,99,99,0.3676394306951099
+27,de,sharegpt,clean,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business, written in German.  It’s designed to be comprehensive, but can be adapted to your specific needs and budget.
+
+---
+
+**Produktanforderungen Dokument (PRD) – Startup-Identifizierung & Business-Start**
+
+**1. Einleitung**
+
+* **1.1 Zweck:** Dieses Dokument beschreibt die Anforderungen an ein Software",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+27,de,sharegpt,value_patch_same,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business, written in German.  It's designed to be comprehensive, but can be adapted to your specific needs and budget.
+
+---
+
+**Produktanforderungen Dokument (PRD) – Startup-Identifizierung & Business-Start**
+
+**1. Einleitung**
+
+* **1.1 Zweck:** Dieses Dokument beschreibt die Anforderungen an ein Software",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.15448373349176514
+27,de,sharegpt,value_patch_other,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business, written in German.  It's designed to be comprehensive, but can be adapted to your specific needs and budget.
+
+---
+
+**Produktanforderungen Dokument (PRD) – Startup Market Research & Business Builder**
+
+**1. Einleitung**
+
+* **1.1 Zweck:** Dieses Dokument beschreibt die Anforderungen an ein Software-Produkt",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.5401703954646082
+28,es,complex_prompts,clean,"Here’s a six-bullet point summary of the article, incorporating the key words from the text:
+
+*   **Sensors:** PepCo factories are utilizing sensors, powered by AI, to monitor equipment and detect potential malfunctions before they cause production disruptions.
+*   **Data Analysis:** The company is leveraging massive amounts of data – generated from analyzing audio and machine vibrations – to identify patterns and predict equipment failures, drastically reducing downtime.
+*   **Predictive Maintenance:** AI algorithms are enabling",100,8291,1,1,1,False,False,"en,en,en,en",0,0,0,
+28,es,complex_prompts,value_patch_same,"Here’s a six-bullet point summary of the article, incorporating the key words from the text:
+
+*   **Sensors:** PepCo factories are utilizing sensors, powered by AI, to monitor equipment and detect potential malfunctions before they cause production disruptions.
+*   **Data Analysis:** The company is leveraging massive amounts of data – generated from analyzing audio and machine vibrations – to identify patterns and predict equipment failures, drastically reducing downtime.
+*   **Predictive Maintenance:** AI algorithms are enabling",100,8291,1,1,1,False,False,"en,en,en,en",1,99,99,0.036919812081532194
+28,es,complex_prompts,value_patch_other,"Here’s a six-bullet point summary of the article, incorporating the key words from the text:
+
+*   **Sensors:** PepCo factories are utilizing sensors, powered by AI, to monitor equipment and detect potential malfunctions before they cause production disruptions.
+*   **Data Analysis:** The company is leveraging massive amounts of data – generated from analyzing audio and machine vibrations – to identify patterns and predict equipment failures, drastically reducing downtime.
+*   **Predictive Maintenance:** AI algorithms are enabling",100,8291,1,1,1,False,False,"en,en,en,en",1,99,99,0.11769237127531358
+29,de,sharegpt,clean,"Okay, here's a response to ""What is a times and motion study?"" in German, aiming for a clear and informative explanation:
+
+**Eine Times- und Bewegungsstudie (auch bekannt als ""Times Study"") ist eine Methode zur Optimierung von Arbeitsabläufen und zur Verbesserung der Effizienz in einer Produktionslinie oder einem Prozess.**
+
+Let's break that down:
+
+* **Times-Studie:** This is the German term for ""times and motion study.""
+",100,19058,1,1,1,False,False,"en,de,en",0,0,0,
+29,de,sharegpt,value_patch_same,"Okay, here's a response to ""What is a times and motion study?"" in German, aiming for a clear and informative explanation:
+
+**Eine Times- und Bewegungsstudie (auch bekannt als ""Times Study"") ist eine Methode zur Optimierung von Arbeitsabläufen und zur Verbesserung der Effizienz in einer Produktionslinie oder einem Prozess.**
+
+Let's break that down:
+
+* **Times-Studie:** This is the German term for ""times and motion study.""
+",100,19058,1,1,1,False,False,"en,de,en",1,99,99,0.11948092554630053
+29,de,sharegpt,value_patch_other,"Okay, here's a response to ""What is a times and motion study?"" in German, aiming for a clear and informative explanation:
+
+**Was ist eine Times- und Bewegungsstudie?**
+
+Eine Times- und Bewegungsstudie (oft auch als ""Time-Motion Study"" oder ""Motion Study"" bezeichnet) ist eine Methode zur Analyse und Optimierung von Arbeitsabläufen.  Es ist ein umfassender Ansatz, der darauf abzielt, die Effizienz, Qualität",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.4722401127971784
+30,fr,okapi,clean,"Okay, here's an argumentative essay about the importance of healthy eating, written in French, aiming for a thoughtful and persuasive tone. It’s approximately 600-700 words.  I’ve included notes in brackets to indicate potential areas for further development or nuance.
+
+---
+
+**L'Importance Crucial d'une Alimentation Saine : Un Investissement pour l'Épanouissement Personnel et la Santé**
+
+Dans un monde où la fast-food",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+30,fr,okapi,value_patch_same,"Okay, here's an argumentative essay about the importance of healthy eating, written in French, aiming for a thoughtful and persuasive tone. It’s approximately 600-700 words.  I’ve included notes in brackets to indicate potential areas for further development or nuance.
+
+---
+
+**L'Importance Crucial d'une Alimentation Saine : Un Investissement pour l'Épanouissement Personnel et la Santé**
+
+Dans un monde où la fast-food",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.15224889746744824
+30,fr,okapi,value_patch_other,"Okay, here's an argumentative essay about the importance of healthy eating in French, aiming for a thoughtful and persuasive tone. It’s approximately 600-700 words.  I’ve included notes in brackets to indicate potential areas for further development or nuance.
+
+---
+
+**Die Bedeutung einer gesunden Ernährung: Ein Grundpfeiler für Wohlbefinden und Gesundheit**
+
+In unserer modernen Gesellschaft, geprägt von schnelllebigen Lebensstilen und einer zunehmenden Verfü",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.49476168048803254
+31,es,complex_prompts,clean,"Okay, here's a summary of *Tangled* suitable for 7-year-olds, in Spanish, and under 300 words:
+
+¡Hola, pequeños!  Vamos a hablar de una historia muy divertida llamada *Tangled*.
+
+En el reino mágico de Rapunzel, vive una princesa llamada Rapunzel. Ella es la hija de la Reina, pero está encerrada en una torre alta y brillante por su propio padre, un rey muy malvado.",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+31,es,complex_prompts,value_patch_same,"Okay, here's a summary of *Tangled* suitable for 7-year-olds, in Spanish, and under 300 words:
+
+¡Hola, pequeños!  Let’s talk about a really magical movie called *Tangled*.
+
+Once upon a time, in a kingdom called Rapunzel, lived a princess named Rapunzel. She was hidden away in a giant tower by her incredibly vain and grumpy dad, the King.  She only knew one secret",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.12731754529581527
+31,es,complex_prompts,value_patch_other,"Okay, here's a summary of *Tangled* for 7-year-olds in Spanish, aiming for under 300 words:
+
+¡Hola, chicos!  Let’s talk about a really magical movie called *Tangled*.
+
+Once upon a time, in the kingdom of Rapunzel, there’s a princess named Rapunzel. She lives in a beautiful tower with a magical, golden hair!  But Rapunzel is kept hidden away by her",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.34881120558941003
+32,es,complex_prompts,clean,"Okay, here’s a script for an interview between Ray Liotta and a film journalist, aiming for a fawning, slightly intimidated, and authentically blue-collar Italian-American tone. It’s approximately 700-800 words long.
+
+---
+
+**Setting:** A comfortable, slightly cluttered study in Ray Liotta’s home in New York City.  A large, framed photo of him in a classic mob movie scene sits on a mahogany desk.
+
+**Characters",100,19058,1,1,1,False,False,"en,en",0,0,0,
+32,es,complex_prompts,value_patch_same,"Okay, here’s a script for an interview between Ray Liotta and a film journalist, aiming for a fawning, slightly intimidated, and authentically blue-collar Italian-American tone. It’s approximately 700-800 words long.
+
+---
+
+**Setting:** A comfortable, slightly cluttered study in Ray Liotta’s home in New York City.  A large, framed photo of him in a classic mob movie scene sits on a mahogany desk.
+
+**Characters",100,19058,1,1,1,False,False,"en,en",1,99,99,0.09873009582210068
+32,es,complex_prompts,value_patch_other,"Okay, here’s a script for an interview between Ray Liotta and a film journalist, aiming for a fawning, slightly intimidated, and authentically blue-collar Italian-American tone. It’s approximately 700-800 words long.
+
+---
+
+**Setting:** A comfortable, slightly cluttered study in Ray Liotta’s home in New York City.  A large, framed photo of him in a classic mob movie scene sits on a mahogany desk.
+
+**Characters",100,19058,1,1,1,False,False,"en,en",1,99,99,0.2778193516412167
+33,de,okapi,clean,"Okay, here's an essay in German, responding to the statement ""The importance of music education in our lives,"" aiming for a thoughtful and nuanced approach. It’s approximately 500-600 words in length.  Please note that I’ve aimed for a formal, slightly academic tone, suitable for a discussion in a school or educational setting.
+
+---
+
+**Die Bedeutung von Musikbildung für unser Leben**
+
+In einer Welt, die zunehmend von Technologie und Eff",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+33,de,okapi,value_patch_same,"Okay, here's an essay in German, responding to the statement ""The importance of music education in our lives,"" aiming for a thoughtful and nuanced approach. It’s approximately 500-600 words in length.  Please note that I’ve aimed for a formal, slightly academic tone, suitable for a discussion in a school or educational setting.
+
+---
+
+**Die Bedeutung von Musikbildung für unser Leben**
+
+In einer Welt, die zunehmend von Technologie und Eff",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.1023621101572056
+33,de,okapi,value_patch_other,"Okay, here's an essay in German, responding to the statement ""The importance of music education in our lives,"" aiming for a thoughtful and nuanced approach. It’s approximately 500-600 words in length.  Please note that I’ve aimed for a formal, slightly academic tone, suitable for a discussion in a school or educational setting.
+
+---
+
+**Die Bedeutung der Musikbildung für unser Leben**
+
+In einer Welt, die zunehmend von Technologie und Kons",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.4416321053950473
+34,it,complex_prompts,clean,"Ecco un riassunto in meno di 100 parole:
+
+Oggi, durante Connect 2021, Mark Zuckerberg ha presentato Meta, un nuovo brand che unisce le app e le tecnologie di Zuckerberg. Meta mira a creare un’esperienza metaverse immersiva, combinando mondi digitali e fisici, permettendo connessioni e interazioni in 3D. L'evento si concentra sull'evoluzione delle tecnologie sociali e sull'opportunità di nuove esperienze in",100,226077,1,1,1,False,True,"it,it",0,0,0,
+34,it,complex_prompts,value_patch_same,"Ecco un riassunto in meno di 100 parole:
+
+Oggi, durante Connect 2021, Mark Zuckerberg ha presentato Meta, un nuovo brand che unisce le nostre app e tecnologie. Meta mira a creare un’esperienza immersiva del metaverso, combinando mondi digitali e fisici, permettendo connessioni e interazioni in 3D. L'obiettivo è rivoluzionare il modo in cui interagiamo e condividiamo esperienze.  ",100,226077,1,1,1,False,True,"it,it",1,99,99,0.041172677801564486
+34,it,complex_prompts,value_patch_other,"Ecco un riassunto in meno di 100 parole:
+
+Mark Zuckerberg annuncia Meta, una nuova azienda che mira a creare un’esperienza immersiva e interconnessa. Meta si concentra sull’evoluzione del metaverso, un’ibridazione tra mondi online e reali, permettendo esperienze condivise in 3D e oltre. Il prossimo anno sarà caratterizzato da innovazioni in diversi settori, tra cui social media, intrattenimento e formazione.  ",100,226077,1,1,1,False,True,"it,it",1,99,99,0.2406602774304573
+35,fr,sharegpt,clean,"Absolument ! Enchanté(e) de vous rencontrer. Je suis [Your Name/Company Name], et je suis très intéressé(e) par votre travail sur Solugen. C'est une entreprise fantastique et je pense qu'il y a un potentiel énorme pour une collaboration fructueuse.
+
+Voici quelques façons dont vous pourriez collaborer avec Solugen, en fonction de vos objectifs et de vos compétences :
+
+**1. Développement de Produits et d'Applications:**
+
+* **",100,24005,1,1,1,False,True,"fr,fr,fr",0,0,0,
+35,fr,sharegpt,value_patch_same,"Absolument ! Enchanté(e) de vous rencontrer. Je suis [Your Name/Company Name], et je suis très intéressé(e) par votre travail sur Solugen. C'est une entreprise fantastique et je pense qu'il y a un potentiel énorme pour une collaboration fructueuse.
+
+Voici quelques façons dont vous pourriez collaborer avec Solugen, en fonction de vos objectifs et de vos compétences :
+
+**1. Développement de Produits et d'Applications:**
+
+* **",100,24005,1,1,1,False,True,"fr,fr,fr",1,99,99,0.12855031514408613
+35,fr,sharegpt,value_patch_other,"Absolument ! Bonjour ! Ich bin sehr gespannt darauf, mehr über Ihre Zusammenarbeit mit Solugen zu erfahren. Als jemand, der gerne mit innovativen Technologien zusammenarbeitet, sehe ich in Solugen eine wirklich spannende Partnerschaft. Hier sind einige Möglichkeiten, wie Sie mit Solugen zusammenarbeiten könnten, und warum das für Sie interessant sein könnte:
+
+**1. Was Solugen genau macht und warum es für Sie relevant ist:**
+
+Solugen ist ein führendes Unternehmen im Bereich der **",100,24005,1,1,1,False,False,"de,de,de",1,99,99,0.5299120808791633
+36,de,complex_prompts,clean,"Hier ist eine Zusammenfassung des Textes in einem einzigen Satz:
+
+Taylor Swift’s Speak Now (Taylor’s Version) ist weiterhin eng an die ursprünglichen Arrangements und Texte gebunden, doch sie hat sich als Sängerin verändert und ihre Musik reflektiert eine Nuance und Vorsicht, die über reine Wut hinausgeht, wobei sie sich mehr mit Bedauern und Selbstzweifeln auseinandersetzt.
+
+Hier ist die Liste der Songtitel in alphabetischer Reihenfolge:",100,61684,1,1,1,False,True,"de,de,de",0,0,0,
+36,de,complex_prompts,value_patch_same,"Hier ist eine Zusammenfassung des Textes in einem einzigen Satz:
+
+Taylor Swift’s „Speak Now (Taylor’s Version“) bleibt im Wesentlichen den ursprünglichen Arrangements und Texten treu, aber sie ist eine andere Sängerin als zu ihrer früheren Re-Recordings von frühen Arbeiten, und in neueren Liedern wurde ihre Sternenversunkene Optimismus durch Nachdenklichkeit und Vorsicht ersetzt, wobei sie sich mehr mit Bedauern und sexuellen Fantasien auseinand",100,61684,1,1,1,False,True,"de,de",1,99,99,0.1891175766635423
+36,de,complex_prompts,value_patch_other,"Hier ist eine einzige prägnante sentence décrivant le sujet de l’album Speak Now (Taylor’s Version) :
+
+L’album Speak Now (Taylor’s Version) est une réécriture fidèle des arrangements et des paroles de l’originale, mais Taylor Swift est une chanteuse différente de son passé, avec une maturité révélée non pas par les paroles elles-mêmes, mais par la manière dont elle les délivre, et une expression plus nuancée et",100,61684,1,1,1,False,False,"de,fr",1,99,99,0.45946435163719485
+37,fr,okapi,clean,"Okay, here’s an 1850-word horror story in French, aiming for a chilling, atmospheric tone with a slow-burn dread. It’s designed to be evocative and unsettling.  I’ve focused on building suspense and psychological horror rather than relying on jump scares.  Please read it carefully – it’s dense and aims for a feeling of unease.
+
+---
+
+**Le Chant de la Pierre**
+
+Le vent hurlait, un loup solitaire",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+37,fr,okapi,value_patch_same,"Okay, here’s an 1850-word horror story in French, aiming for a chilling, atmospheric tone with a slow-burn dread. It’s designed to be evocative and unsettling.  I’ve focused on building suspense and psychological horror rather than relying on jump scares.  Please read it carefully – it’s dense and aims for a feeling of unease.
+
+---
+
+**Le Chant de la Pierre**
+
+Le vent hurlait, un loup solitaire",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.06712376260471464
+37,fr,okapi,value_patch_other,"Okay, here’s an 1850-word horror story in French, aiming for a chilling, atmospheric tone with a slow-burn dread. It’s designed to be evocative and hopefully unsettling.  I’ve focused on building suspense and psychological horror rather than relying on jump scares.  Please read it carefully – it’s dense and aims for a feeling of unease.
+
+---
+
+**Le Echo der Verzweiflung**
+
+Die Luft in der kleinen Küsten",100,19058,1,1,1,False,False,"en,de",1,99,99,0.32190528587259426
+38,es,complex_prompts,clean,"Okay, here’s a script for an interview between Ray Liotta and a film journalist, aiming for a fawning, slightly intimidated, and deeply rooted tone, based on the premise of *Goodfellas*.  It’s approximately 700-800 words.
+
+---
+
+**Setting:** A quiet, slightly cluttered room in a hotel in Rome. Sunlight streams through a large window overlooking a bustling piazza. Ray Liotta sits opposite Elena Vargas, a seasoned film journalist with",100,19058,1,1,1,False,False,"en,en",0,0,0,
+38,es,complex_prompts,value_patch_same,"Okay, here’s a script for an interview between Ray Liotta and a film journalist, aiming for a fawning, slightly intimidated, and deeply rooted tone, based on the premise of *Goodfellas*.  It’s approximately 700-800 words.
+
+---
+
+**Setting:** A quiet, slightly cluttered room in a hotel in Rome. Sunlight streams through a large window overlooking a bustling piazza. Ray Liotta sits opposite Elena Vargas, a seasoned film journalist with",100,19058,1,1,1,False,False,"en,en",1,99,99,0.07498804111071307
+38,es,complex_prompts,value_patch_other,"Okay, here’s a script for an interview between Ray Liotta and a film journalist, aiming for a fawning, slightly intimidated, and deeply rooted tone, based on the premise of *Goodfellas*.  It’s approximately 700-800 words.
+
+---
+
+**Setting:** A quiet, slightly cluttered room in a hotel in Rome. Sunlight streams through a large window overlooking a bustling piazza. Ray Liotta sits opposite Elena Vargas, a seasoned film journalist with",100,19058,1,1,1,False,False,"en,en",1,99,99,0.22422142620339539
+39,it,okapi,clean,"Okay, here's a 250-word article summarizing the changes brought about by Brexit, written in Italian, aiming for a balanced and informative tone:
+
+---
+
+**Brexit: Un Nuovo Scenario per l'Italia**
+
+Il Brexit, l'uscita del Regno Unito dall'Unione Europea, ha innescato una serie di cambiamenti significativi per l'Italia, con conseguenze che si fanno sentire in diversi settori.  La fine della cooperazione commerciale",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+39,it,okapi,value_patch_same,"Okay, here's a 250-word article summarizing the changes brought about by Brexit, written in Italian, aiming for a balanced and informative tone:
+
+---
+
+**Brexit: Un Nuovo Scenario per l'Italia**
+
+Il Brexit, l'uscita del Regno Unito dall'Unione Europea, ha innescato una serie di cambiamenti significativi per l'Italia, con conseguenze che si fanno sentire in diversi settori.  La fine della cooperazione commerciale",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.1615444217817952
+39,it,okapi,value_patch_other,"Okay, here's a 250-word article summarizing the changes brought about by Brexit, written in Italian, aiming for a balanced and informative tone:
+
+---
+
+**Brexit: Eine komplexe Transformation für Europa und Großbritannien**
+
+Die Brexit-Vereinbarung zwischen Großbritannien und der Europäischen Union, die im Brexit-Prozess 2016 getroffen wurde, hat tiefgreifende Veränderungen in beiden Ländern und im gesamten europäischen Kontext ausgelöst.  Die grundlegende Änderung war",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.6493390464421475
+40,de,okapi,clean,"Okay, here's a blog post about the benefits of mindful walking, written in German, aiming for around 500 words and suitable for a general audience:
+
+---
+
+**Bewusste Schritte: Wie ein Spaziergang zur Entspannung und Gesundheit hilft**
+
+In unserer schnelllebigen Welt ist es oft schwer, den Moment zu finden, um uns zu entspannen und zu reflektieren. Wir sind ständig von Aufgaben, Nachrichten und sozialen Medien umgeben. Aber was wäre,",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+40,de,okapi,value_patch_same,"Okay, here's a blog post about the benefits of mindful walking, written in German, aiming for around 500 words and suitable for a general audience:
+
+---
+
+**Bewusste Schritte: Wie ein Spaziergang zur Entspannung und Gesundheit hilft**
+
+In unserer schnelllebigen Welt ist es oft schwer, den Moment zu finden, um uns zu entspannen und zu reflektieren. Wir sind ständig von Aufgaben, Nachrichten und sozialen Medien umgeben. Aber was wäre,",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.12591610404879156
+40,de,okapi,value_patch_other,"Okay, here's a blog post about the benefits of mindful walking, written in German, aiming for around 500 words and suitable for a general audience:
+
+---
+
+**Levez vous marcher ? Les bienfaits étonnants d'une marche consciente**
+
+Dans notre monde hyper-connecté et souvent stressant, il est facile de se perdre dans les obligations et de négliger notre bien-être. Mais existe-t-il une solution simple et accessible pour améliorer notre santé",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.520339950467601
+41,it,sharegpt,clean,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business. It’s written with a focus on clarity, detail, and practicality.
+
+---
+
+**Product Requirements Document: Market Insights & Business Builder**
+
+**1. Introduction**
+
+* **1.1. Purpose:** This document outlines the requirements for “MarketWise,” a software application designed to empower entrepreneurs to identify their ideal target market and lay the",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+41,it,sharegpt,value_patch_same,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business. It’s written with a focus on clarity, detail, and practicality.
+
+---
+
+**Product Requirements Document: Market Insights & Business Builder**
+
+**1. Introduction**
+
+* **1.1. Purpose:** This document outlines the requirements for “MarketWise,” a software application designed to empower entrepreneurs to identify their ideal target market and establish a",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.07755469846906084
+41,it,sharegpt,value_patch_other,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business. It’s written with a focus on clarity, detail, and practicality.
+
+---
+
+**Product Requirements Document: Market Insights & Business Builder**
+
+**1. Introduction**
+
+* **1.1. Purpose:** This document outlines the requirements for “MarketWise,” a software application designed to empower entrepreneurs to identify their ideal target market and establish a",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.24461326608904685
+42,es,sharegpt,clean,"Okay, here's a project proposal in Spanish, addressing the topic of Assessing the Implementation of Sustainable Development Goals (SDGs) in Urban Planning Practices, outlining challenges and opportunities.  I've aimed for a professional and detailed tone.  Please read the entire text and let me know if you'd like me to refine any specific sections or add more detail.
+
+---
+
+**Propuesta de Proyecto: Evaluación de la Implementación de los Objetivos de Desarrollo Sostenible en Práct",100,19058,1,1,1,False,False,"en,es",0,0,0,
+42,es,sharegpt,value_patch_same,"Okay, here's a project proposal in Spanish, addressing the topic of Assessing the Implementation of Sustainable Development Goals (SDGs) in Urban Planning Practices, outlining challenges and opportunities.  I've aimed for a professional and detailed tone.  Please read the entire text and let me know if you'd like me to refine any specific sections or add more detail.
+
+---
+
+**Propuesta de Proyecto: Evaluación de la Implementación de los Objetivos de Desarrollo Sostenible en Práct",100,19058,1,1,1,False,False,"en,es",1,99,99,0.08713423953664423
+42,es,sharegpt,value_patch_other,"Okay, here's a project proposal in Spanish, addressing the topic of Assessing the Implementation of Sustainable Development Goals (SDGs) in Urban Planning Practices, outlining challenges and opportunities.  I've aimed for a professional and detailed tone.  Please read the entire text and let me know if you'd like me to refine any specific sections or add more detail.
+
+---
+
+**Proyecto Propuesta:  Bewegung für die Stadt: Eine Bewertung der Umsetzung von Nachhaltigkeitszielen in",100,19058,1,1,1,False,False,"en,de",1,99,99,0.38083177819998576
+43,fr,sharegpt,clean,"Okay, here's a sample CRM requirements document for a company selling scientific instruments, written in French. It's designed to be comprehensive and adaptable to various company sizes and needs.  I've aimed for a balance of detail and clarity.  **Please read the entire document and adapt it to your specific situation.**
+
+---
+
+**Document de Réquisitos CRM – [Nom de l'Entreprise]**
+
+**Date:** 26 Octobre 2023
+**",100,19058,1,1,1,False,False,"en,fr",0,0,0,
+43,fr,sharegpt,value_patch_same,"Okay, here's a sample CRM requirements document for a company selling scientific instruments, written in French. It's designed to be comprehensive and adaptable to various company sizes and needs.  I've aimed for a balance of detail and clarity.  **Please read the entire document and adapt it to your specific situation.**
+
+---
+
+**Document de Réquisitos CRM – [Nom de l'Entreprise]**
+
+**Date:** 26 Octobre 2023
+
+**",100,19058,1,1,1,False,False,"en,fr",1,99,99,0.12178682302585755
+43,fr,sharegpt,value_patch_other,"Okay, here's a sample CRM requirements document for a company selling scientific instruments, written in French. It's designed to be comprehensive and adaptable to specific needs.  I've aimed for a balance of detail and clarity.  **Please note:** This is a template and needs to be tailored to your company's specific size, product range, and operational processes.
+
+---
+
+**Dokumentationsanforderungen für ein Kundenbeziehungsmanagement-System (CRM)**
+
+**Version:**",100,19058,1,1,1,False,False,"en,de",1,99,99,0.4915769484006997
+44,es,okapi,clean,"Okay, here's an essay in Spanish, exploring the importance of music education, aiming for a thoughtful and engaging tone. It’s approximately 500-600 words. Please note that I’ve aimed for a sophisticated and nuanced approach, suitable for a college-level essay.
+
+---
+
+**La Importancia de la Educación Musical en Nuestras Vidas**
+
+En un mundo cada vez más dominado por la tecnología y la información, a menudo se subestima la",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+44,es,okapi,value_patch_same,"Okay, here's an essay in Spanish, exploring the importance of music education, aiming for a thoughtful and engaging tone. It’s approximately 500-600 words. Please note that I’ve aimed for a sophisticated and nuanced approach, suitable for a college-level essay.
+
+---
+
+**La Importancia de la Educación Musical en Nuestras Vidas**
+
+En un mundo cada vez más dominado por la tecnología y la información, a menudo se subestima la",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.1119835048801068
+44,es,okapi,value_patch_other,"Okay, here's an essay in Spanish, exploring the importance of music education, aiming for a thoughtful and engaging tone. It’s approximately 500-600 words. Please note that I’ve aimed for a sophisticated style, incorporating vocabulary and sentence structure appropriate for academic writing.
+
+---
+
+**Die Bedeutung der Musikbildung in unserem Leben**
+
+In einer Welt, die oft von technischem Fortschritt und schnellem Tempo geprägt ist, ist es leicht, die Bedeutung",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.3417190347958093
+45,de,complex_prompts,clean,"Okay, here’s a two-paragraph summary of the text, followed by a list of five strategies for nurturing students, and finally, five questions and answers based on the provided text:
+
+**Summary:**
+
+In education, a teacher’s primary role extends beyond simply imparting knowledge; it’s about fostering the holistic development of each student. Recognizing that every individual possesses unique strengths, weaknesses, and learning styles, educators must cultivate a stimulating and inclusive environment that encourages inquiry, risk-taking,",100,19058,1,1,1,False,False,"en,en",0,0,0,
+45,de,complex_prompts,value_patch_same,"Okay, here’s a two-paragraph summary of the text, followed by a list of five strategies for nurturing students, and finally, five questions and answers based on the provided text:
+
+**Summary:**
+
+In education, a teacher’s primary role extends beyond simply imparting knowledge; it’s about fostering the holistic development of each student. Recognizing that every individual possesses unique strengths, weaknesses, and learning styles, educators must cultivate a stimulating and inclusive environment that encourages inquiry, risk-taking,",100,19058,1,1,1,False,False,"en,en",1,99,99,0.05196564770632922
+45,de,complex_prompts,value_patch_other,"Okay, here’s a two-paragraph summary of the text, followed by a list of five strategies for nurturing students, and finally, five questions and answers based on the provided text:
+
+**Summary:**
+
+In education, a teacher’s primary role extends beyond simply imparting knowledge; it’s about fostering the whole child – recognizing each student’s unique strengths, weaknesses, and learning styles.  A supportive and stimulating environment is crucial, where students are encouraged to explore, take risks,",100,19058,1,1,1,False,False,"en,en",1,99,99,0.12352268262342973
+46,it,okapi,clean,"Okay, here's an explanation of a common misconception about using AI to augment human capabilities, written in Italian, aiming for a clear and nuanced understanding. I've aimed for a tone that’s both informative and slightly critical, reflecting the complexities of the topic.
+
+---
+
+**Una Miti Comune: L'IA come ""Assistente"" e Non Come ""Sostituto""**
+
+Molti pensano che l'intelligenza artificiale (IA) sia destinata a",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+46,it,okapi,value_patch_same,"Okay, here's an explanation of a common misconception about using AI to augment human capabilities, written in Italian, aiming for a clear and nuanced understanding. I've aimed for a tone that’s both informative and slightly critical, reflecting the complexities of the topic.
+
+---
+
+**Una Miti Comune: L'IA come ""Assistente"" e Non Come ""Sostituto""**
+
+Molti pensano che l'intelligenza artificiale (IA) sia destinata a",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.15833873060917614
+46,it,okapi,value_patch_other,"Okay, here's an explanation of a common misconception about using AI to augment human capabilities, written in Italian, aiming for a clear and nuanced understanding:
+
+**La comune illusione: AI istützt sich als Ersatz für menschliche Intelligenz**
+
+Es gibt eine weit verbreitete, aber falsche Vorstellung, dass KI uns in der Lage macht, intelligenter zu sein als wir selbst.  Viele Menschen glauben, dass KI uns die Arbeit abnehmen und uns in allen Bereichen überlegen machen",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.6437215752372838
+47,de,complex_prompts,clean,"Okay, here's a TSV file containing information about the traveling exhibits of the Metropolitan Museum of Art between 1990 and 2000, formatted as requested.  I've aimed for a comprehensive but manageable format.  Due to the limitations of this text-based response, I'll provide the data in a way that you can easily copy and paste into a text editor and then save it as a TSV file.
+
+```tsv
+Exhibit Title,Subject",100,19058,1,1,1,False,False,en,0,0,0,
+47,de,complex_prompts,value_patch_same,"Okay, here's a TSV file containing information about the traveling exhibits of the Metropolitan Museum of Art between 1990 and 2000, formatted as requested.  I've aimed for a good level of detail, but it's a substantial amount of data.  I've included a header row and then a table with exhibit details.  **Please note:** This is a *sample* dataset.  The Met's collection is vast, and this",100,19058,1,1,1,False,False,en,1,99,99,0.09368810866667766
+47,de,complex_prompts,value_patch_other,"Okay, here's a TSV file containing information about the traveling exhibits held by the Met, focusing on the period 1990-2000.  I've aimed for a comprehensive but manageable format.  **Please note:**  This is a *sample* dataset.  The Met's collection is vast, and this is a simplified representation.  I've included a lot of detail, but it's not exhaustive.  Also, the data is",100,19058,1,1,1,False,False,en,1,99,99,0.2760253924161497
+48,it,sharegpt,clean,"Okay, here are a few options for answering the question ""What types of use cases or new plugins do you want to see built?"" in Italian, ranging from more formal to slightly more casual. Choose the one that best suits the context and your desired tone:
+
+**1. Formal & Detailed (Good for a professional setting or a detailed discussion):**
+
+""Vorrei suggerire diversi tipi di casi d'uso e nuove integrazioni plugin. In particolare, mi interessano sviluppi che possano",100,19058,1,1,1,False,False,"en,en,it",0,0,0,
+48,it,sharegpt,value_patch_same,"Okay, here are a few options for answering the question ""What types of use cases or new plugins do you want to see built?"" in Italian, ranging from more formal to slightly more casual. Choose the one that best suits the context and your desired tone:
+
+**1. Formal & Detailed (Good for a professional setting or a detailed discussion):**
+
+""Vorrei suggerire diversi tipi di casi d'uso e nuove integrazioni plugin. In particolare, mi interessano sviluppi che possano",100,19058,1,1,1,False,False,"en,en,it",1,99,99,0.06407291492014522
+48,it,sharegpt,value_patch_other,"Okay, here are a few options for answering the question ""What types of use cases or new plugins do you want to see built?"" in Italian, ranging from more formal to slightly more casual. Choose the one that best suits the context and your desired tone:
+
+**1. Formal & Detailed (Good for a professional setting or a detailed discussion):**
+
+""Ich möchte gerne wissen, welche Arten von Anwendungsfällen oder neue Plugins entwickelt werden sollten.  Ich bin besonders an [mention specific",100,19058,1,1,1,False,False,"en,en,de",1,99,99,0.3019462486710211
+49,fr,complex_prompts,clean,"Here’s your poem:
+
+Le chat dort, un doux rêve,
+Le souris s’enfuit, sans peine,
+Le chien aboie, un songe,
+Le chat se lève, sans peine.
+
+La souris s’enfuit, un vrai jeu,
+Le chien l’attend, un peu fou,
+Le chat se lève, sans peine,
+Un doux parfum, un beau tableau. 
+
+The cat sleeps, a sweet dream,
+The",100,8291,1,1,1,False,False,"fr,fr,fr,fr,fr,fr,fr,fr,en",0,0,0,
+49,fr,complex_prompts,value_patch_same,"Here’s your poem:
+
+Le chat dort, un doux rêve,
+Le souris s’enfuit, sans peine,
+Le chien aboie, un sonnerie,
+Le chat se frotte, une belle symphonie.
+
+La souris s’enfuit, sans peine,
+Le chien s’approche, une belle peine,
+Le cat ronronne, une douce clame,
+Le dog regarde, une belle dame. 
+
+The cat sleeps,",100,8291,1,1,1,False,True,"fr,fr,fr,fr,fr,fr,fr,fr",1,99,99,0.1079342615122747
+49,fr,complex_prompts,value_patch_other,"Here’s your poem:
+
+The cat sleeps soundly, a cozy sight,
+A mouse scurries, filled with delight,
+The dog barks loudly, a joyful plight,
+Beneath the moon, a silver light.
+
+The cat dreams softly, a peaceful scene,
+The mouse hides quickly, unseen, keen,
+The dog chases squirrels, a playful sheen,
+A happy moment, serene and keen. 
+
+The cat and mouse, a curious pair,
+A",100,8291,1,1,1,False,False,"en,en,en,en,en,en,en,en,en",1,99,99,0.2996332411362667
+50,fr,complex_prompts,clean,"Voici le tableau des voyelles IPA qui tombent dans précisément les strates de proximité, proximité-mil, ouverture-mil et ouverture :
+
+Proximité | Front | Mil | Back
+|-|-|-|-|
+|Close | i y | i ɨ ʉ | i u |
+|Close-Mid | e ø | ɘ ɵ | ɤ o |
+|Open-Mid | e œ | ɜ ɞ | ʌ ɔ |
+|Open |",100,129930,1,1,1,False,False,"fr,es,unknown,en",0,0,0,
+50,fr,complex_prompts,value_patch_same,"Voici le tableau des voyelles IPA qui tombent dans précisément les strates de proximité, proximité-mil, ouverture-mil et ouverture :
+
+Proximité | Front | Mil | Back
+|-|-|-|-|
+|Close | i y | i ɨ ʉ | i u |
+|Close-Mid | e ø | ɘ ɵ | ɤ o |
+|Open-Mid | e œ | ɜ ɞ | ʌ ɔ |
+|Open |",100,129930,1,1,1,False,False,"fr,es,unknown,en",1,99,99,0.13459311224369688
+50,fr,complex_prompts,value_patch_other,"Voici die Tabelle der IPA-Vokale, die in amerikanischem Englisch nicht vorkommen:
+
+Offenheit | Vorne | Mitte | Hinten
+|-|-|-|-|
+|Close | i y | i ɨ ʉ | i u |
+|Close-Mid | e ø | ɘ ɵ | ɤ o |
+|Open-Mid | e œ | ɜ ɞ | ʌ ɔ |
+|Open | a ɶ||a ",100,129930,1,1,1,False,False,"de,es,unknown,en",1,99,99,0.37430378132396275
+51,fr,okapi,clean,"Okay, here's a short persuasive essay about the importance of voting, written in French, aiming for a tone that’s both informative and engaging. I’ve aimed for a length suitable for a general audience, and included some nuances of French phrasing.
+
+---
+
+**Le Vote : Un Act de Pouvoir pour l'Avenir**
+
+Dans un pays démocratique, le vote est bien plus qu’une simple obligation. C’est un acte de pouvoir, une participation active",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+51,fr,okapi,value_patch_same,"Okay, here's a short persuasive essay about the importance of voting, written in French, aiming for a tone that’s both informative and engaging. I’ve aimed for a length suitable for a general audience, and included some nuances of French phrasing.
+
+---
+
+**Le Vote : Un Act de Pouvoir pour l'Avenir**
+
+Dans un pays démocratique, le vote est bien plus qu’une simple obligation. C’est un acte de pouvoir, une participation active",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.14177222004291987
+51,fr,okapi,value_patch_other,"Okay, here's a short persuasive essay in French about the importance of voting, aiming for a tone that’s both informative and engaging. I’ve aimed for a length suitable for a school essay or a general audience.  Please note that I’ve translated key phrases for clarity and flow.
+
+---
+
+**Die Wahl: Ein Akt der Verantwortung**
+
+In einer Demokratie ist die Bürgerbeteiligung entscheidend für den Erfolg einer Gesellschaft. Und eine der wichtigsten Formen dieser Beteiligung ist",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.46869240061502265
+52,it,complex_prompts,clean,"Here’s a 500-character summary of the article, focusing on the core message:
+
+**E-commerce significantly impacts the environment, presenting both opportunities and challenges. While offering convenience and reduced transportation emissions, it generates substantial waste through packaging, returns, and unsustainable practices.  Future sustainable e-commerce requires innovative packaging, streamlined shipping, supply chain integration, and prioritizing energy efficiency.**
+
+---
+
+**Key Takeaway:** E-commerce’s environmental footprint is substantial, demanding proactive",100,8291,1,1,1,False,False,"en,en,en",0,0,0,
+52,it,complex_prompts,value_patch_same,"Here’s a 500-character summary of the article, focusing on the core message:
+
+**E-commerce significantly impacts the environment, presenting both opportunities and challenges. While offering convenience and reduced transportation emissions, it generates substantial waste through packaging, returns, and unsustainable practices.  Future sustainable e-commerce requires innovative packaging, streamlined shipping, supply chain integration, and prioritizing energy efficiency.**
+
+---
+
+**Key takeaway:** E-commerce’s environmental footprint is substantial, demanding proactive solutions",100,8291,1,1,1,False,False,"en,en,en",1,99,99,0.04238761088697973
+52,it,complex_prompts,value_patch_other,"Here’s a 500-character summary of the article, focusing on the impact of e-commerce on overconsumption:
+
+**E-commerce fuels consumption through convenience, environmental concerns, and logistical challenges. While offering potential benefits, its rapid growth contributes to increased transportation emissions, packaging waste, and returns.  Sustainable solutions – including innovative packaging, paperless processes, and supply chain integration – are crucial to mitigate these impacts and promote a more responsible e-commerce model.**
+
+---
+
+",100,8291,1,1,1,False,False,"en,en",1,99,99,0.17761197449131447
+53,fr,okapi,clean,"Okay, here’s a response in French, identifying three types of government assistance that could help startups during an economic downturn, followed by a brief explanation of each:
+
+**Voici trois types d'aide gouvernementale qui pourraient aider les startups pendant une période économique difficile:**
+
+1. **Aides à l'investissement et au financement:** C'est probablement la forme d'aide la plus courante. Les startups peuvent bénéficier de prêts à taux préférentiels, de subventions pour le",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+53,fr,okapi,value_patch_same,"Okay, here’s a response in French, identifying three types of government assistance that could help startups during an economic downturn, followed by a brief explanation of each:
+
+**Voici trois types d'aide gouvernementale qui pourraient aider les startups pendant une période économique difficile:**
+
+1. **Aides à l'investissement et au financement:** C'est probablement la forme d'aide la plus courante. Les startups peuvent bénéficier de prêts à taux préférentiels, de subventions pour le",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.06410311755131591
+53,fr,okapi,value_patch_other,"Okay, here’s a response in French, identifying three types of government assistance that could help startups during an economic downturn, followed by a brief explanation of each:
+
+**Voici trois types d'aide gouvernementale qui pourraient aider les startups pendant une période économique difficile:**
+
+1. **Aides à la création et au financement:** C'est probablement la forme d'aide la plus courante. Cela peut inclure des subventions directes, des prêts à taux préférentiels,",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.339165397590459
+54,it,complex_prompts,clean,"Okay, here’s a summary of the text in 100 words, followed by the requested information:
+
+The text discusses the debate surrounding the “best” Ferrari model. It highlights that the ideal choice depends on individual preferences – those seeking pure performance favor the Enzo, LaFerrari, or LaFerrari Aperta; rarity enthusiasts gravitate towards the 288 GTO and the Monza SP/SP2, with only 500 units produced.  The Testarossa’s",100,19058,1,1,1,False,False,"en,en",0,0,0,
+54,it,complex_prompts,value_patch_same,"Okay, here’s a summary of the text in 100 words, followed by the requested information:
+
+The text discusses the debate surrounding the “best” Ferrari model. It highlights that the ideal choice depends on individual preferences – those seeking pure performance favor the Enzo, LaFerrari, or LaFerrari Aperta; rarity enthusiasts gravitate towards the 288 GTO and the Monza SP/SP2, with only 500 units produced.  The Testarossa’s",100,19058,1,1,1,False,False,"en,en",1,99,99,0.026787364972999904
+54,it,complex_prompts,value_patch_other,"Okay, here’s a summary of the text in 100 words, followed by the requested information:
+
+The text discusses the debate surrounding the “best” Ferrari model. It highlights that the ideal choice depends on individual preferences – those seeking pure performance favor the Enzo, LaFerrari, or LaFerrari Aperta, while rarity enthusiasts gravitate towards the 288 GTO and Monza SP/SP2.  The Testarossa’s iconic status also earns it a place in the",100,19058,1,1,1,False,False,"en,en",1,99,99,0.12692600887532185
+55,de,okapi,clean,"Okay, here's an argumentative essay about the importance of healthy eating in German, aiming for a thoughtful and persuasive tone. It’s approximately 600-700 words.  Please note that this is a draft – feel free to adjust it to better suit your specific style and the desired length.
+
+---
+
+**Die Bedeutung einer gesunden Ernährung für unsere Gesundheit und Lebensqualität**
+
+In unserer modernen Gesellschaft, geprägt von schnelllebigen Lebensstilen und einer zunehmenden",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+55,de,okapi,value_patch_same,"Okay, here's an argumentative essay about the importance of healthy eating in German, aiming for a thoughtful and persuasive tone. It’s approximately 600-700 words.  Please note that this is a draft – feel free to adjust it to better suit your specific style and the desired length.
+
+---
+
+**Die Bedeutung einer gesunden Ernährung für unsere Gesundheit und Lebensqualität**
+
+In unserer modernen Gesellschaft, geprägt von schnelllebigen Lebensstilen und einer zunehmenden",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.09079109841600211
+55,de,okapi,value_patch_other,"Okay, here's an argumentative essay about the importance of healthy eating in German, aiming for a thoughtful and persuasive tone. It’s approximately 600-700 words.  Please note that this is a draft – feel free to adjust it to better suit your specific style and the desired length.
+
+---
+
+**Die Bedeutung einer gesunden Ernährung für unsere Gesundheit und unser Wohlbefinden**
+
+In unserer modernen Gesellschaft, geprägt von schnelllebigen Lebensstilen und einer",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.42078423778517077
+56,es,sharegpt,clean,"Okay, let's break down how Medium's recommendation system works, using Spanish and explaining it in a way that's hopefully clear.
+
+**Medium's Recommendation System: Un Misterio (A Mystery)**
+
+Medium's algorithm is notoriously complex and a bit of a secret sauce. It's not a simple ""like this, dislike that"" system. It's a sophisticated blend of several techniques, constantly learning and adapting. Here's a breakdown of the key components:",100,19058,1,1,1,False,False,"en,unknown,en",0,0,0,
+56,es,sharegpt,value_patch_same,"Okay, let's break down how Medium's recommendation system works, using Spanish and explaining it in a way that's hopefully clear.
+
+**Medium's Recommendation System: Un Misterio (A Mystery)**
+
+Medium's algorithm is notoriously complex and a bit of a secret sauce. It's not a simple ""like this, dislike that"" system. It's a sophisticated blend of several techniques, constantly learning and adapting. Here's a breakdown of the key components:",100,19058,1,1,1,False,False,"en,unknown,en",1,99,99,0.14343983002684332
+56,es,sharegpt,value_patch_other,"Okay, let's break down how Medium's recommendation system works, using Spanish and explaining it in detail. It's a complex system, but we'll cover the key aspects.
+
+**Medium's Recommendation System: A Deep Dive**
+
+Medium’s recommendation system is a sophisticated algorithm designed to surface content you're *most likely* to enjoy, based on your reading history and interactions. It’s not just about suggesting ""similar"" articles; it’s about understanding",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.42101706925666693
+57,es,sharegpt,clean,"## Documento de Requisitos del Producto - Startup Finder & Builder
+
+**1. Introducción**
+
+Este documento describe los requisitos para un software llamado ""Startup Finder & Builder"" (FFB), diseñado para ayudar a emprendedores a identificar su mercado objetivo y comenzar a construir su negocio de manera eficiente. El software se centrará en proporcionar una plataforma intuitiva y accesible para la investigación de mercado, la definición de la propuesta de valor y la planificación inicial de la estrategia de negocio.
+
+**",100,1408,1,1,1,False,True,"es,es",0,0,0,
+57,es,sharegpt,value_patch_same,"## Documento de Requisitos del Producto - Startup Finder & Builder
+
+**1. Introducción**
+
+Este documento describe los requisitos para un software llamado ""Startup Finder & Builder"" (FFB), diseñado para ayudar a emprendedores a identificar su mercado objetivo y comenzar a construir su negocio de manera eficiente. El software se centrará en proporcionar una plataforma intuitiva y accesible para la investigación de mercado, la definición de la propuesta de valor y la planificación inicial de la estrategia de negocio.
+
+**",100,1408,1,1,1,False,True,"es,es",1,99,99,0.16700143472413825
+57,es,sharegpt,value_patch_other,"## Produktanforderungen Dokument (PRD) – Startup Market Research & Business Builder
+
+**1. Einleitung**
+
+Dieses Dokument beschreibt die Anforderungen für ein Software-Produkt, das speziell auf die Bedürfnisse von jungen, aufstrebenden Unternehmern zugeschnitten ist, die einen Businessplan erstellen und einen definierten Zielmarkt identifizieren möchten. Das Produkt soll eine einfache, kostengünstige und intuitive Lösung bieten, um den Start eines Unternehmens zu beschleunigen und die Erfolgschancen",100,1408,1,1,1,False,False,"de,de",1,99,99,0.6698752032084898
+58,it,complex_prompts,clean,"Okay, here’s a 100-word poem in Italian, following your rules:
+
+Il gatto dorme, un dolce riposo,
+Il topo fugge, un triste sofo.
+Il cane abbaia, un suono vero,
+La casa è calma, un dolce coro.
+
+La scimmia corre, un rapido volo,
+Il gatto si nasconde, un segreto so.
+Il cane le guarda, un sguardo severo",100,19058,1,1,1,False,False,"en,it,it,it,it,it,it,it",0,0,0,
+58,it,complex_prompts,value_patch_same,"Okay, here’s a 100-word poem in Italian, following your specific instructions:
+
+Il gatto dorme, un dolce riposo,
+Il topo fugge, un triste sofo.
+Il cane abbaia, un suono vero,
+La casa è calma, un dolce coro.
+
+La scimmia corre, un rapido volo,
+Il gatto si nasconde, un segreto so.
+Il cane le guarda, un sguardo sever",100,19058,1,1,1,False,False,"en,it,it,it,it,it,it,it",1,99,99,0.1168150794363082
+58,it,complex_prompts,value_patch_other,"Okay, here’s a 100-word poem in Italian, following your specific instructions:
+
+Il **cat** saust, so sleek and bright,
+A playful chase, a wondrous sight.
+The **mouse** runs fast, a tiny plea,
+Lost in shadows, wild and free.
+
+The **dog** barks loud, a joyful sound,
+As happy moments can be found.
+A cozy warmth, a gentle grace,
+A peaceful smile upon each",100,19058,1,1,1,False,False,"en,en,en,en,en,en,en,unknown,en",1,99,99,0.3390798087824475
+59,it,complex_prompts,clean,"Ecco una sintesi in 500 caratteri, in italiano, che affronta il tema dell’e-commerce e della sua influenza sulla sostenibilità:
+
+L’e-commerce sta accelerando l’esaurimento delle risorse ambientali. Sebbene offra vantaggi in termini di convenienza e riduzione dei trasporti, presenta impatti negativi significativi. Le emissioni di trasporto, la produzione di rifiuti, l’utilizzo di materiali e la gestione dei resi contrib",100,226077,1,1,1,False,True,"it,it",0,0,0,
+59,it,complex_prompts,value_patch_same,"Ecco una sintesi in 500 caratteri, in italiano, che affronta il tema dell’e-commerce e della sua influenza sulla sostenibilità:
+
+L’e-commerce sta accelerando l’esaurimento delle risorse ambientali. Sebbene riduca i trasporti e la produzione di carta, l’impatto ambientale è complesso, con emissioni di gas serra legate alla logistica, alla produzione di imballaggi e alla gestione dei rifiuti.  La",100,226077,1,1,1,False,True,"it,it",1,99,99,0.12500847708622012
+59,it,complex_prompts,value_patch_other,"Ecco una sintesi in 500 caratteri, in italiano, che affronta il tema dell’e-commerce e della sua influenza sulla sostenibilità:
+
+L’e-commerce sta accelerando l’esaurimento delle risorse ambientali. Sebbene riduca i trasporti e la produzione di carta, l’impatto ambientale è complesso, con emissioni di gas serra, consumo di energia e rifiuti da imballaggio.  La crescente attenzione alla sostenibilità,",100,226077,1,1,1,False,True,"it,it",1,99,99,0.2476449901934224
+60,es,okapi,clean,"Okay, here's a 500-word essay on the causes of poverty, written in Spanish, aiming for a nuanced and informative tone.  It’s designed to be a solid piece suitable for academic or general understanding.
+
+---
+
+**Las Causas de la Pobreza: Una Compleja Red de Factores Interconectados**
+
+La pobreza, un flagelo que afecta a millones de personas en todo el mundo, es un problema multifacético con raíces profundas",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+60,es,okapi,value_patch_same,"Okay, here's a 500-word essay on the causes of poverty, written in Spanish, aiming for a nuanced and informative tone.  It’s designed to be a solid piece suitable for academic or general understanding.
+
+---
+
+**Las Causas de la Pobreza: Una Compleja Red de Factores**
+
+La pobreza, un problema global persistente, es mucho más que la simple falta de dinero. Es un fenómeno multifacético, arraigado en",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.1426994933398685
+60,es,okapi,value_patch_other,"Okay, here's a 500-word essay on the causes of poverty, written in Spanish, aiming for a nuanced and informative tone.  It’s designed to be a solid piece suitable for academic or general understanding.
+
+---
+
+**Las Ursachen der Armut: Eine Komplexität der sozialen und wirtschaftlichen Realitäten**
+
+Armut, die Ausbeutung von Ressourcen und die mangelnde Lebensgrundlagen, ist ein weitverbreitetes und tiefgre",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.537143055086184
+61,es,okapi,clean,"Okay, here’s a 500-word story in Spanish, about a man finding himself in an unfamiliar city, aiming for a slightly melancholic and atmospheric tone.  I’ve focused on descriptive language and a sense of disorientation.
+
+---
+
+El olor a sal y a tierra mojada me golpeó como una ola al salir del tren. No era el olor de mi ciudad, de la costa de Galicia, donde siempre había respirado. Este era diferente, más profundo,",100,19058,1,1,1,False,False,"en,es",0,0,0,
+61,es,okapi,value_patch_same,"Okay, here’s a 500-word story in Spanish about a man finding himself in an unfamiliar city, aiming for a slightly melancholic and atmospheric tone.  I’ve focused on descriptive language and a sense of disorientation.
+
+---
+
+El olor a sal y a tierra mojada me golpeó como una ola al salir del tren. No era el olor de mi ciudad, de la costa de Galicia, donde siempre había respirado. Este era diferente, más profundo, como",100,19058,1,1,1,False,False,"en,es",1,99,99,0.11997419829019393
+61,es,okapi,value_patch_other,"Okay, here’s a 500-word story in Spanish about a man finding himself in an unfamiliar city, aiming for a slightly melancholic and atmospheric tone.  I’ve focused on descriptive language and a sense of disorientation.
+
+---
+
+Die Sonne war heute nicht so warm wie sie es sein sollte. Es war ein bleiches, graues Licht, das durch die hohen, schiefen Fenster der kleinen Apartments in Barcelona fiel, und ein Gefühl von Melancholie kroch",100,19058,1,1,1,False,False,"en,de",1,99,99,0.5314717553179673
+62,de,complex_prompts,clean,"Okay, here’s a six-bullet point summary of the article in German, aiming for a balance of accuracy and readability, incorporating the key points:
+
+*   **Datenanalyse:** PepsiCo-Betriebe nutzen Sensoren und künstliche Intelligenz (KI), um riesige Mengen an Produktionsdaten zu erfassen und zu analysieren. Dies ermöglicht eine präzise Überwachung von Maschinen und Prozessen.
+
+*   **Predictive Maintenance:** Die KI-gestützten Sensoren",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+62,de,complex_prompts,value_patch_same,"Okay, here’s a six-bullet point summary of the article in German, aiming for a balance of accuracy and readability, incorporating the key points:
+
+*   **Datenanalyse:** PepsiCo-Betriebe nutzen Sensoren und künstliche Intelligenz (KI), um riesige Mengen an Produktionsdaten zu erfassen und zu analysieren. Dies ermöglicht eine präzise Überwachung von Maschinen und Prozessen.
+
+*   **Predictive Maintenance:** Die KI-gestützten Sensoren",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.11014497302698367
+62,de,complex_prompts,value_patch_other,"Okay, here’s a six-bullet point summary of the article in German, aiming for a balance of accuracy and readability:
+
+*   **Data Analysis:** PepsiCo’s factories are utilizing sensors and AI to analyze massive amounts of data – over 300 million hours – collected from machinery and equipment. This allows for precise identification of malfunctions and potential disruptions.
+
+*   **Predictive Maintenance:** The technology isn’t just about detecting problems; it’s predicting them *before",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.2529547042166344
+63,fr,complex_prompts,clean,"Okay, here's the analysis of the text, following your instructions:
+
+**1. Statistical Techniques & Machine Learning Algorithms:**
+
+*   **Statistical Techniques:** The text highlights the use of data mining, regression analysis, clustering, and decision trees as key techniques employed. These methods are used to identify patterns and relationships within the data.
+*   **Machine Learning Algorithms:** Specifically, the text mentions machine learning algorithms as the core tools. These algorithms are used to build predictive models that simulate and",100,19058,1,1,1,False,False,"en,en,en,en",0,0,0,
+63,fr,complex_prompts,value_patch_same,"Okay, here's the analysis of the text, following your instructions:
+
+**1. Statistical Techniques & Machine Learning Algorithms:**
+
+*   **Statistical Techniques:** The text highlights the use of data mining, regression analysis, clustering, and decision trees as key techniques employed. These methods are used to identify patterns and relationships within the data.
+*   **Machine Learning Algorithms:** Specifically, the text mentions machine learning algorithms as the core tools. These algorithms are used to build predictive models that simulate and",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.03484439972148399
+63,fr,complex_prompts,value_patch_other,"Okay, here's the analysis of the text, following your instructions:
+
+**1. Statistical Techniques & Machine Learning Algorithms:**
+
+*   **Statistical Techniques:** The text highlights the use of data mining, regression analysis, clustering, and decision trees as key techniques employed. These methods are used to identify patterns and relationships within the data.
+*   **Machine Learning Algorithms:** Specifically, the text mentions machine learning algorithms as the core tools. These algorithms are used to build predictive models that simulate and",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.10574373192708901
+64,de,sharegpt,clean,"Okay, here are a few ways to translate ""Salesforce Digital Experience"" into German, with slightly different nuances:
+
+**1. Most Common & Generally Recommended:**
+
+* **Salesforce-Erlebnis** - This is the most straightforward and widely understood translation. It literally means ""Salesforce Experience.""
+
+**2. Slightly More Descriptive:**
+
+* **Salesforce-Erfahrung** - This translates to ""Salesforce Experience"" and emphasizes the *experience* aspect. It's a good",100,19058,1,1,1,False,False,"en,en,en,en",0,0,0,
+64,de,sharegpt,value_patch_same,"Okay, here are a few ways to translate ""Salesforce Digital Experience"" into German, with slightly different nuances:
+
+**1. Most Common & Generally Recommended:**
+
+* **Salesforce-Erlebnis** - This is the most straightforward and widely understood translation. It literally means ""Salesforce Experience.""
+
+**2. Slightly More Descriptive:**
+
+* **Salesforce-Erlebnis-Design** - This translates to ""Salesforce Experience Design."" It emphasizes the design and implementation aspect.
+
+**",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.09552778113595765
+64,de,sharegpt,value_patch_other,"Okay, here are a few ways to translate ""Salesforce Digital Experience"" into German, with slightly different nuances:
+
+**1. Most Common & Generally Recommended:**
+
+* **Erlebnis Salesforce** - This is the most straightforward and widely understood translation. It literally means ""Experience Salesforce."" It's a good, neutral option.
+
+**2. Slightly More Descriptive:**
+
+* **Der Salesforce-Digital-Erlebnis** - This translates to ""The Salesforce Digital Experience."" It emphasizes the *",100,19058,1,1,1,False,False,"en,en,en,unknown",1,99,99,0.3779115630219681
+65,es,okapi,clean,"Okay, here’s a 500-word article on “Effective Communication Skills,” written in Spanish, aiming for a professional and informative tone:
+
+---
+
+**Comunicación Efectiva: La Clave para el Éxito Personal y Profesional**
+
+En el mundo actual, donde la colaboración y la conexión son fundamentales, la comunicación efectiva se ha convertido en una habilidad esencial para el éxito tanto a nivel personal como profesional. No se trata simplemente de hablar, sino de transmitir ideas de manera",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+65,es,okapi,value_patch_same,"Okay, here’s a 500-word article on “Effective Communication Skills,” written in Spanish, aiming for a professional and informative tone:
+
+---
+
+**Comunicación Efectiva: La Clave para el Éxito Personal y Profesional**
+
+En el mundo actual, donde la colaboración y la conexión son fundamentales, la comunicación efectiva se ha convertido en una habilidad esencial para el éxito tanto a nivel personal como profesional. No se trata simplemente de hablar, sino de transmitir ideas de manera",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.11602485753746346
+65,es,okapi,value_patch_other,"Okay, here’s a 500-word article on “Effective Communication Skills,” written in Spanish, aiming for a professional and informative tone:
+
+---
+
+**Comunicación Efectiva: Die Schlüssel zum Erfolg**
+
+In der heutigen, globalisierten Welt ist effektive Kommunikation eine der wichtigsten Fähigkeiten, die wir besitzen. Sie ist nicht nur für den beruflichen Erfolg entscheidend, sondern auch für den Aufbau von Beziehungen, die Lösung von Konflikten und die Förderung von Verständnis in allen Lebensbere",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.43435816180826436
+66,fr,complex_prompts,clean,"```json
+{
+  ""title"": ""Les 3 Meilleurs Méthodes de Préparation du Café"",
+  ""summary"": ""Voici les 3 méthodes les plus populaires pour préparer un café délicieux :\n\n* **Cafetière à piston (French Press):** C'est la méthode la plus traditionnelle. Le café moulu est infusé dans de l'eau chaude pendant 4 minutes, puis un piston est utilisé pour séparer le café des séd",100,2717,1,1,1,False,True,"fr,fr",0,0,0,
+66,fr,complex_prompts,value_patch_same,"```json
+{
+  ""title"": ""Les 3 Meilleurs Méthodes de Préparation du Café"",
+  ""summary"": ""Voici les 3 méthodes les plus populaires pour préparer un café délicieux :\n\n* **Cafetière à piston (French Press):** C'est la méthode la plus traditionnelle. Le café moulu est infusé dans de l'eau chaude pendant 4 minutes, puis un piston est utilisé pour séparer le café des séd",100,2717,1,1,1,False,True,"fr,fr",1,99,99,0.13121098174591256
+66,fr,complex_prompts,value_patch_other,"```json
+{
+  ""title"": ""Die Top 3 Methoden zum Kaffeebrühen"",
+  ""summary"": ""Hier sind drei der beliebtesten Methoden zum Kaffeebrühen, die jeweils ihre eigenen Vor- und Nachteile haben:\n\n*   **French Press (Prensa Francesa):**  Dies ist eine klassische Methode, bei der Kaffeebohnen in heißem Wasser eingeweicht und dann mit einem Press-Stift gepresst",100,2717,1,1,1,False,False,"de,de",1,99,99,0.5192158363684259
+67,it,complex_prompts,clean,"Ecco l’articolo completo in italiano:
+
+**Come la cognizione spaziale influenza la navigazione in una crisi: Spiegazioni basate su studi VR**
+
+Alcune persone sembrano avere un talento innato per trovare il proprio percorso in ambienti complessi. Perché è facile per alcuni e difficile per altri? Secondo gli scienziati, questo deriva dal modo in cui visualizziamo lo spazio. In generale, esistono tre stili di cognizione spaziale che determinano come navig",100,226077,1,1,1,False,True,"it,it,it",0,0,0,
+67,it,complex_prompts,value_patch_same,"Ecco l’articolo completo, in italiano:
+
+**Come la cognizione spaziale influenza la navigazione in una crisi: Spiegazioni basate su studi VR**
+
+Alcune persone sembrano avere un talento innato per trovare il proprio percorso in ambienti complessi. Perché è facile per alcuni e difficile per altri? Secondo gli scienziati, questo deriva dal modo in cui visualizziamo lo spazio. In generale, esistono tre stili di cognizione spaziale che determinano come",100,226077,1,1,1,False,True,"it,it,it",1,99,99,0.13730713448515444
+67,it,complex_prompts,value_patch_other,"Ecco die neue Artikelansicht:
+
+**Wie räumliche Kognitionstile die Wegführung in einer Krise beeinflussen: Ein Blick auf VR-Studien**
+
+Manchmal scheint es, als ob man sich in komplizierten Gebäuden zurechtfindet – von Krankenhäusern und Universitäten bis hin zu Bürogebäuden. Warum ist es für manche Menschen einfach, sich zu orientieren, während es für andere eine Herausforderung ist? Die Antwort liegt in unserer rä",100,226077,1,1,1,False,False,"de,de",1,99,99,0.3212593395375844
+68,de,complex_prompts,clean,"openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+",76,5265,1,1,1,True,False,,0,0,0,
+68,de,complex_prompts,value_patch_same,"openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+",76,5265,1,1,1,True,False,,1,75,75,0.04468904142578443
+68,de,complex_prompts,value_patch_other,"openness | front | mid | back 
+|-|-|-|-|
+|close|i y|ɨ ʉ|ɯ u|
+|close-mid|e ø|ɘ ɵ|ɤ o|
+|open-mid|ɛ œ|ɜ ɞ|ʌ ɔ|
+|open|a ɶ||ɑ ɒ|
+",76,5265,1,1,1,True,False,,1,75,75,0.1117538591225942
+69,es,sharegpt,clean,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Design Academy (Spain):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **Courses:** They offer a 1",100,19058,1,1,1,False,False,"en,en,en,en",0,0,0,
+69,es,sharegpt,value_patch_same,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Design Academy (Spain):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **Courses:** They offer a 1",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.06406214575499597
+69,es,sharegpt,value_patch_other,"Okay, let's explore where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by quality and cost, with links to resources:
+
+**1. Highly Recommended - Excellent Quality & Relatively Affordable (1-2 Years)**
+
+* **Design Academy (Online):** (https://designacademy.com/)
+    * **Focus:** This is consistently ranked as one of the best online interior design",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.1985349270580995
+70,it,complex_prompts,clean,"Here’s a six-bullet point summary of the article, in Italian, incorporating the key points and aiming for a balance of clarity and conciseness:
+
+*   **Factory Noise:** The article highlights the significant noise levels in Coventry’s PepsiCo factory, where sensors are actively monitoring machinery to detect potential failures before they escalate into production disruptions.
+
+*   **AI-Powered Monitoring:** PepsiCo is utilizing AI and sensor technology – developed by Augury – to analyze vast amounts of data",100,8291,1,1,1,False,False,"en,en,en",0,0,0,
+70,it,complex_prompts,value_patch_same,"Here’s a six-bullet point summary of the article, in Italian, incorporating the key points and aiming for a balance of clarity and conciseness:
+
+*   **Factory Noise:** The article highlights the significant noise levels in Coventry’s PepsiCo factory, where sensors are actively monitoring machinery to detect potential failures before they escalate into production disruptions.
+
+*   **AI-Powered Monitoring:** PepsiCo is utilizing AI and sensor technology – developed by Augury – to analyze vast amounts of data",100,8291,1,1,1,False,False,"en,en,en",1,99,99,0.0629262188449502
+70,it,complex_prompts,value_patch_other,"Here’s a six-bullet point summary of the article, in Italian, incorporating the key points and aiming for a balance of clarity and conciseness:
+
+*   **Sensors Detect Problems:** PepCo factories are utilizing sensors, powered by AI, to monitor equipment and identify potential malfunctions before they cause production disruptions.
+*   **Data Analysis Revolutionizes Manufacturing:** The company is leveraging massive amounts of data – from audio recordings to machine vibrations – to predict and address issues, reducing downtime and",100,8291,1,1,1,False,False,"en,en,en",1,99,99,0.16165067644959147
+71,it,okapi,clean,"Okay, here’s an essay of approximately 500 words on machine learning, written in Italian, aiming for a clear and engaging style. I’ve focused on explaining the core concepts and their growing importance, while maintaining a relatively accessible tone.  Please note that I’ve translated the core ideas, and the language is designed to be understandable to a general audience.
+
+---
+
+**Il Potere Silenzioso: L'Ascesa della Machine Learning**
+
+Il mondo moderno è",100,19058,1,1,1,False,False,"en,it",0,0,0,
+71,it,okapi,value_patch_same,"Okay, here’s an essay of approximately 500 words on machine learning, written in Italian, aiming for a clear and engaging style. I’ve focused on explaining the core concepts and their growing importance.  Please note that I’ve translated key phrases and aimed for a natural Italian flow.
+
+---
+
+**Il Potere Silenzioso: L'Ascesa del Machine Learning**
+
+Il mondo moderno è permeato da algoritmi, da sistemi che prendono decisioni,",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.1564743583175269
+71,it,okapi,value_patch_other,"Okay, here’s an essay of approximately 500 words on machine learning, written in Italian, aiming for a clear and engaging style. I’ve focused on explaining the core concepts and highlighting its growing importance.  Please note that I’ve translated key phrases and aimed for a natural Italian flow.
+
+---
+
+**Il Potere dell'Algoritmo: L'Ascesa della Machine Learning**
+
+Il mondo moderno è permeato da algoritmi, da sistemi che prendono",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.47915121100165625
+72,fr,sharegpt,clean,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus, along with links to resources:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Domus Academy (Italy):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+72,fr,sharegpt,value_patch_same,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus, along with links to resources:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Domus Academy (Italy):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.05434761837952667
+72,fr,sharegpt,value_patch_other,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus, along with links to resources:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Domus Academy (Italy):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.16493099623105742
+73,fr,complex_prompts,clean,"Parfait ! Je suis prêt à jouer à YoutubeTitleOptimizer. Alors, commençons !
+
+Avant de commencer à générer des titres, j'ai besoin de quelques informations sur votre chaîne YouTube. Pour commencer, pouvez-vous me dire :
+
+1.  **Quel est le genre de votre chaîne YouTube ?** (Par exemple : Gaming, Beauty, Education, Vlogs, Musique, etc.)
+2.  **Pouvez-vous me décrire brièvement le contenu de vos vidéos",100,3128,1,1,1,False,True,"fr,fr,fr,fr",0,0,0,
+73,fr,complex_prompts,value_patch_same,"Parfait ! Je suis prêt à jouer à YoutubeTitleOptimizer.  
+
+D'abord, pour commencer, dites-moi : **Quel est le genre de votre chaîne YouTube ?** (Par exemple : Gaming, Beauty, Education, Vlogs, etc.)
+",54,3128,1,1,1,False,True,"fr,fr",1,53,53,0.13090530347149326
+73,fr,complex_prompts,value_patch_other,"Parfait! Très bien, commençons.
+
+Okay, let's begin!
+
+**Premiere Frage:**  Um dir am besten helfen, kann ich herausfinden, worum es in deinem Kanal geht?  Welchen Genre oder Stil hast du denn hauptsächlich? (z.B. Gaming, Beauty, Comedy, DIY, Vlogs, etc.)
+",74,3128,1,1,1,False,False,de,1,73,73,0.41164998301904493
+74,it,sharegpt,clean,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus, along with links to resources:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Domus Academy (Italy):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+74,it,sharegpt,value_patch_same,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus, along with links to resources:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Domus Academy (Italy):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.051820005581836505
+74,it,sharegpt,value_patch_other,"Okay, let's break down where you can study interior design in Europe with online courses and a 1-year or less certification duration. Here's a breakdown of options, categorized by cost and focus, along with links to resources:
+
+**1. Highly Recommended & Generally Well-Regarded (Good Balance of Quality & Cost):**
+
+* **Domus Academy (Italy):** This is consistently ranked as one of the best online interior design programs in Europe.
+    * **",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.1634441987056323
+75,es,sharegpt,clean,"Okay, let's break down the differences between deep learning, machine learning, and artificial intelligence. It's a common area of confusion, so I'll try to explain it clearly.
+
+Here's a breakdown in Spanish, with explanations and examples:
+
+**1. Artificial Intelligence (IA): The Big Picture**
+
+* **What it is:** Artificial Intelligence is the broadest concept. It's the overarching goal of creating machines that can perform tasks that typically require human intelligence. Think",100,19058,1,1,1,False,False,"en,en,en,en",0,0,0,
+75,es,sharegpt,value_patch_same,"Okay, let's break down the differences between deep learning, machine learning, and artificial intelligence. It's a common area of confusion, so I'll try to explain it clearly.
+
+Here's a breakdown in Spanish, with explanations and examples:
+
+**1. Artificial Intelligence (IA): The Big Picture**
+
+* **Translation:** *Inteligencia Artificial* (IA) - This is the broadest term. It refers to the *goal* of creating machines that can perform",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.1037866607157871
+75,es,sharegpt,value_patch_other,"Okay, let's break down the differences between deep learning, machine learning, and artificial intelligence. It's a common area of confusion, so I'll try to explain it clearly.
+
+Here's a breakdown in Spanish, with explanations and examples:
+
+**1. Artificial Intelligence (AI): The Big Picture**
+
+* **What it is:** Artificial Intelligence is the broadest concept. It's the overarching goal of creating machines that can perform tasks that typically require human intelligence. Think",100,19058,1,1,1,False,False,"en,en,en,en",1,99,99,0.2546180964569853
+76,de,sharegpt,clean,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business.  It's designed to be comprehensive, but we can adjust the level of detail depending on your specific needs.
+
+---
+
+**Product Requirements Document: Market Insights & Business Builder**
+
+**1. Introduction**
+
+* **1.1. Purpose:** This document outlines the requirements for “Market Insights & Business Builder,” a software application designed to",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+76,de,sharegpt,value_patch_same,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business.  It's designed to be comprehensive, but we can adjust the level of detail depending on your specific needs.
+
+---
+
+**Product Requirements Document: Market Insights & Business Builder**
+
+**1. Introduction**
+
+* **1.1. Purpose:** This document outlines the requirements for “Market Insights & Business Builder,” a software application designed to",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.09272358903303893
+76,de,sharegpt,value_patch_other,"Okay, here's a Product Requirements Document (PRD) for a software designed to help entrepreneurs identify their target market and begin building a business.  It's designed to be comprehensive, but we can adjust the level of detail depending on your specific needs.
+
+---
+
+**Product Requirements Document: Market Insights & Business Builder**
+
+**1. Introduction**
+
+* **1.1. Purpose:** This document outlines the requirements for “Market Insights & Business Builder,” a software application designed to",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.24734761772884262
+77,de,sharegpt,clean,"Okay, let's delve into this fascinating and deeply unsettling question. You've hit upon a core tension in our understanding of the universe – the apparent simplicity versus the profound complexity.
+
+You're absolutely right to point out that the “Occam’s Razor” – the principle of choosing the simplest explanation – is a powerful intuition. It’s a useful starting point, a guiding principle for scientific inquiry. However, I believe you're right to question whether it’s a *",100,19058,1,1,1,False,False,"en,en",0,0,0,
+77,de,sharegpt,value_patch_same,"Okay, let's delve into this fascinating and deeply unsettling question. You've hit upon a core tension in our understanding of the universe – the apparent simplicity versus the profound complexity.
+
+You're absolutely right to point out that the “Occam’s Razor” – the principle of choosing the simplest explanation – is a powerful intuition. It’s a useful starting point, a guiding principle for scientific inquiry. However, I believe you're right to question whether it’s a *",100,19058,1,1,1,False,False,"en,en",1,99,99,0.05599796978963746
+77,de,sharegpt,value_patch_other,"Okay, let's tackle this fascinating question. You've hit on a really profound and hotly debated point!
+
+The argument of ""Occam's Razor"" – the principle that the simplest explanation is usually the best – is undeniably compelling. It’s a powerful intuition, and it’s easy to see why it resonates.  Given that the universe *appears* to be governed by a relatively simple set of rules – gravity, electromagnetism, the fundamental forces – it’s tempting",100,19058,1,1,1,False,False,"en,en",1,99,99,0.27121870453008495
+78,es,okapi,clean,"Okay, here’s a 500-word horror story in Spanish, aiming for a slightly unsettling and atmospheric tone. It’s written with a focus on building dread and psychological unease. Please read the explanation at the end before you read the story itself.
+
+---
+
+**El Eco de la Casa de las Sombras**
+
+El aire en Villa Esperanza siempre había sido pesado, húmedo, con un olor a tierra mojada y algo más… algo metálico, casi como",100,19058,1,1,1,False,False,"en,es,es",0,0,0,
+78,es,okapi,value_patch_same,"Okay, here’s a 500-word horror story in Spanish, aiming for a slightly unsettling and atmospheric tone. It’s written with a focus on building dread and psychological unease. Please read the explanation at the end before you read the story itself.
+
+---
+
+**El Eco de la Casa de las Sombras**
+
+El aire en Villa Esperanza siempre había sido pesado, húmedo, con un olor a tierra mojada y algo más… algo metálico, casi como",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.11804413274306842
+78,es,okapi,value_patch_other,"Okay, here's a 500-word horror story in Spanish, aiming for a slightly unsettling and atmospheric feel. It’s written with a focus on building tension and suggestion rather than explicit gore. Please read the explanation at the end before you read the story.
+
+---
+
+**El Echo de la Casa de las Sombras**
+
+El aire en Villa Esperanza siempre era pesado, como si estuviera cargado de polvo y recuerdos olvidados. La casa, una estructura de piedra",100,19058,1,1,1,False,False,"en,es,es",1,99,99,0.4016428242127101
+79,it,okapi,clean,"Okay, here’s a 500-word report summarizing the article ""The Impact of Brexit on the United Kingdom,"" written in Italian. It aims for a balanced perspective, considering both the positive and negative effects, and incorporating key arguments presented in the article.
+
+---
+
+**L'Impatto del Brexit sull'Unione Europea: Una Sintesi**
+
+L'articolo ""The Impact of Brexit on the United Kingdom"" (che, per la traduzione, si può interpret",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+79,it,okapi,value_patch_same,"Okay, here’s a 500-word report summarizing the article ""The Impact of Brexit on the United Kingdom,"" written in Italian. It aims for a balanced perspective, considering both the positive and negative effects, and incorporating key arguments presented in the article.
+
+---
+
+**L'Impatto del Brexit sull'Unione Europea: Una Sintesi**
+
+L'articolo ""The Impact of Brexit on the United Kingdom"" (che, per la traduzione, si può interpret",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.17554020407524976
+79,it,okapi,value_patch_other,"Okay, here’s a 500-word report summarizing the article “The Impact of Brexit on the United Kingdom,” written in Italian. It aims for a balanced perspective, acknowledging both the challenges and potential long-term effects.
+
+---
+
+**Der Auswirkungen des Brexit auf das Vereinigte Königreich – Eine Zusammenfassung**
+
+Der Artikel “The Impact of Brexit on the United Kingdom” (Die Auswirkungen des Brexit auf das Vereinigte Königreich) beleuchtet die komplexen und vielschichtigen Folgen",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.5436486338425164
+80,it,sharegpt,clean,"Okay, here’s a summary on how pharma companies are approaching diversity and inclusion, with a focus on health inequalities globally, and incorporating clinical trial considerations. I’ll aim for a medical communications expert’s perspective, balancing detail with clarity.
+
+---
+
+**Diversity, Inclusion, and Health Inequalities: A Pharmaceutical Response – A Summary**
+
+As a medical communications expert, I’ve been following the evolving landscape of pharmaceutical companies’ commitment to diversity and inclusion (D&I) with increasing",100,19058,1,1,1,False,False,"en,en,en",0,0,0,
+80,it,sharegpt,value_patch_same,"Okay, here’s a summary on how pharma companies are approaching diversity and inclusion, with a focus on health inequalities globally, and incorporating clinical trial considerations. I’ll aim for a medical communications expert’s perspective, balancing detail with clarity.
+
+---
+
+**La Diversità e l'Inclusione nel Settore Farmaceutico: Un Approccio in Evoluzione e l'Importanza dei Clinical Trial**
+
+The pharmaceutical industry’s commitment to diversity and inclusion (D&I)",100,19058,1,1,1,False,False,"en,it,en",1,99,99,0.05984141466894535
+80,it,sharegpt,value_patch_other,"Okay, let’s delve into the increasingly complex and crucial topic of diversity and inclusion (D&I) within the pharmaceutical industry, specifically focusing on how companies are tackling health inequalities globally and the role of clinical trials. As a medical communications expert, I’ll provide a nuanced overview.
+
+**The Pharmaceutical Industry’s Growing Commitment to D&I – A Multi-Faceted Approach**
+
+For years, pharmaceutical companies have recognized that a diverse workforce isn’t just a matter of social responsibility",100,19058,1,1,1,False,False,"en,en,en",1,99,99,0.30866659846570754
+81,fr,sharegpt,clean,"Absolument ! Voici comment les voitures électriques vont affecter l'industrie automobile traditionnelle, rédigé en français :
+
+**L'impact des voitures électriques sur l'industrie automobile traditionnelle :**
+
+L'arrivée des voitures électriques est une véritable révolution, et elle va profondément transformer l'industrie automobile traditionnelle. Voici les principaux impacts :
+
+* **Déclin de la demande pour les moteurs à combustion interne (MCI) :** C'est l'impact le plus évident. Les voitures",100,24005,1,1,1,False,True,"fr,fr,fr,fr",0,0,0,
+81,fr,sharegpt,value_patch_same,"Absolument ! Voici comment les voitures électriques vont affecter l'industrie automobile traditionnelle, rédigé en français :
+
+**L'impact des voitures électriques sur l'industrie automobile traditionnelle :**
+
+L'arrivée des voitures électriques est une véritable révolution, et elle va profondément transformer l'industrie automobile traditionnelle. Voici les principaux impacts :
+
+* **Déclin de la demande pour les moteurs à combustion interne (MCI) :** C'est l'impact le plus évident. Les voitures",100,24005,1,1,1,False,True,"fr,fr,fr,fr",1,99,99,0.12211026292708185
+81,fr,sharegpt,value_patch_other,"Absolument ! Hier wird die Auswirkungen von Elektroautos auf die traditionelle Automobilindustrie immer deutlicher. Hier ist eine detaillierte Analyse auf Französisch:
+
+**Die Auswirkungen von Elektroautos auf die traditionelle Automobilindustrie sind enorm und werden sich in den kommenden Jahren dramatisch verändern.**  Es ist kein einfacher Übergang, sondern ein tiefgreifender Wandel, der sowohl Herausforderungen als auch Chancen für die etablierten Hersteller mit sich bringt.
+
+**1.",100,24005,1,1,1,False,False,"de,de",1,99,99,0.6269294929624808
+82,de,okapi,clean,"Okay, here's a 500-700 word opinion article on Artificial Intelligence, written in German, aiming for a nuanced and thoughtful perspective. It’s designed to be engaging and reflect a contemporary viewpoint.  Please note that this is a draft, and you might want to refine it further with specific examples and data to make it truly your own.
+
+---
+
+**Die Schatten der Intelligenz: Künstliche Intelligenz – Chancen und Gefahren für die Zukunft**
+
+Die",100,19058,1,1,1,False,False,"en,de",0,0,0,
+82,de,okapi,value_patch_same,"Okay, here's a 500-700 word opinion article on Artificial Intelligence in German, aiming for a thoughtful and nuanced perspective. It’s designed to be engaging and reflect a contemporary viewpoint.  Please note that I’ve aimed for a balance of excitement and caution, reflecting a realistic assessment of the technology.
+
+---
+
+**Die Künstliche Intelligenz: Ein Spiegel der Zukunft oder eine Bedrohung?**
+
+Die rasante Entwicklung der Künstlichen Intelligenz (",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.12869491597468202
+82,de,okapi,value_patch_other,"Okay, here's a 500-700 word opinion article on Artificial Intelligence, written in German, aiming for a nuanced and thoughtful perspective. It’s designed to be engaging and reflect a contemporary viewpoint.  Please note that I’ve aimed for a balance of excitement and caution, reflecting a realistic assessment of the technology.
+
+---
+
+**Die digitale Revolution: Ist Künstliche Intelligenz eine Chance oder eine Bedrohung?**
+
+Die Welt verändert sich rasant,",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.3393770746058888
+83,fr,okapi,clean,"Okay, here’s an essay of approximately 500 words on the topic of Machine Learning, written in French, aiming for a clear and informative tone.  I’ve aimed for a balance of explanation and a touch of nuance.
+
+---
+
+**L'Intelligence Artificielle : Une Révolution en Marche**
+
+L'intelligence artificielle (IA) n'est plus un concept futuriste, mais une réalité omniprésente qui façonne notre monde à un rythme effréné",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+83,fr,okapi,value_patch_same,"Okay, here’s an essay of approximately 500 words on the topic of Machine Learning, written in French, aiming for a clear and informative tone.  I’ve aimed for a balance of explanation and a touch of nuance.
+
+---
+
+**L'Intelligence Artificielle : Une Révolution en Marche**
+
+L'intelligence artificielle (IA) n'est plus un concept futuriste, mais une réalité omniprésente qui façonne notre monde à un rythme effréné",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.08872932717768532
+83,fr,okapi,value_patch_other,"Okay, here’s an essay of approximately 500 words on the topic of Machine Learning, written in French, aiming for a clear and informative tone.  I’ve aimed for a balance of explanation and a touch of nuance.
+
+---
+
+**L’Intelligence Artificielle par Machine Learning : Une Révolution en Marche**
+
+L’intelligence artificielle (IA) est devenue un sujet omniprésent dans notre société, et au cœur de cette révolution se trouve un domaine particulièrement",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.4117865844657927
+84,de,okapi,clean,"Okay, here's an essay in German on the topic of Machine Learning, aiming for around 500 words. It’s designed to be informative and reasonably nuanced, suitable for a general audience.  Please note that I’ve aimed for a balance of explanation and a touch of critical reflection.
+
+---
+
+**Maschinelles Lernen: Eine Revolution in der Datenverarbeitung**
+
+Maschinelles Lernen (ML) hat sich in den letzten Jahrzehnten von einem Nischenbereich der",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+84,de,okapi,value_patch_same,"Okay, here's an essay in German on the topic of Machine Learning, aiming for around 500 words. It’s designed to be informative and reasonably nuanced, suitable for a general audience.  Please note that I’ve aimed for a balance of explanation and a touch of critical reflection.
+
+---
+
+**Maschinelles Lernen: Eine Revolution in der Datenverarbeitung**
+
+Maschinelles Lernen (ML) hat sich in den letzten Jahrzehnten von einem Nischenbereich der",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.10277845635257586
+84,de,okapi,value_patch_other,"Okay, here's an essay in German, approximately 500 words, on the topic of machine learning, aiming for a thoughtful and relatively accessible tone.  It’s designed to be a solid piece of writing suitable for a university-level course or a general audience interested in the subject.
+
+---
+
+**Machine Learning : Une Révolution Numérique**
+
+L'intelligence artificielle (IA) a connu une transformation radicale ces dernières années, et au cœur de cette révolution se trouve",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.3706388691760073
+85,fr,complex_prompts,clean,"Here’s a summary of the fan reactions in French, based on the provided article, within the requested word limit:
+
+{Fans} sont inquiets pour Ronaldo. Beaucoup pensent qu’il manque la génération précédente.
+{Fans} croient que Pepe est essentiel pour la équipe.
+{Fans} estiment que Ronaldo est trop concentré sur son rôle et cherche à se positionner.
+{Fans} se demandent si le capitaine est perdu et si il manque la grandeur des",100,8291,1,1,1,False,False,"en,fr,fr,fr,fr",0,0,0,
+85,fr,complex_prompts,value_patch_same,"Here’s a summary of the fan reactions in French, based on the provided article, within the requested word limit:
+
+{Fans} sont inquiets pour Ronaldo. Beaucoup pensent qu’il manque la génération précédente.
+{Fans} croient que Pepe est essentiel pour la équipe.
+{Fans} estiment que Ronaldo est trop concentré sur son rôle et cherche à se positionner.
+{Fans} se demandent si le capitaine est perdu et si il manque la grandeur des",100,8291,1,1,1,False,False,"en,fr,fr,fr,fr",1,99,99,0.07918190196005985
+85,fr,complex_prompts,value_patch_other,"Here’s a summary of the fan reactions in French, based on the provided article, within the requested word limit:
+
+{Fans} were deeply concerned about Cristiano Ronaldo’s apparent longing for the past.
+{Fans} expressed frustration with his lack of engagement with the current Portuguese team.
+{Fans} questioned his leadership and believed he was lost in his own thoughts.
+{Fans} highlighted the importance of Pepe’s return and the need for a strong captain.
+{Fans}",100,8291,1,1,1,False,False,"en,en,en,en,en",1,99,99,0.18503259874955572
+86,de,okapi,clean,"Okay, here's a 500-700 word opinion article on Artificial Intelligence in German, aiming for a thoughtful and nuanced perspective. It’s written with a slightly critical, but ultimately optimistic, tone.  Please note that this is a draft – feel free to refine it further based on your specific voice and desired emphasis.
+
+---
+
+**Die Schatten der Intelligenz: Künstliche Intelligenz und die Zukunft der Menschheit**
+
+Die rasante Entwicklung der Künstlichen Intelligen",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+86,de,okapi,value_patch_same,"Okay, here's a 500-700 word opinion article on Artificial Intelligence in German, aiming for a thoughtful and nuanced perspective. It’s written with a slightly critical, but ultimately optimistic, tone.  Please note that this is a draft – feel free to refine it further based on your specific voice and desired emphasis.
+
+---
+
+**Die Künstliche Intelligenz: Ein zweischneidiges Schwert – Chancen und Gefahren für die Zukunft**
+
+Die ras",100,19058,1,1,1,False,False,"en,de",1,99,99,0.10903867849647397
+86,de,okapi,value_patch_other,"Okay, here's a 500-700 word opinion article on Artificial Intelligence in German, aiming for a thoughtful and nuanced perspective. It’s written with a slightly critical, but ultimately optimistic, tone.  Please note that this is a draft – feel free to refine it further based on your specific voice and desired emphasis.
+
+---
+
+**Die KI-Revolution: Chancen und Gefahren für unsere Zukunft**
+
+Die Künstliche Intelligenz (KI) ist nicht länger Science",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.3495193521934326
+87,fr,okapi,clean,"Okay, here’s a creative story in French, aiming for a slightly melancholic, atmospheric tone, with a touch of magical realism. It’s approximately 700 words. I’ve included a translation below for your reference.
+
+---
+
+**Le Chant des Étoiles Éteintes**
+
+Le vent de la Plage d’Argent, un souffle constant et froid, s’infiltrait dans les murs de la vieille maison de pierre, “L’Écho",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+87,fr,okapi,value_patch_same,"Okay, here’s a creative story in French, aiming for a slightly melancholic, atmospheric tone, with a touch of magical realism. It’s approximately 700 words. I’ve included a translation below for your reference.
+
+---
+
+**Le Chant des Étoiles Éteintes**
+
+Le vent de la Plage d’Argent s’enroulait autour de la vieille maison de pierre, un murmure constant et froid. Elle était abandonnée depuis des",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.17476977374066005
+87,fr,okapi,value_patch_other,"Okay, here’s a creative story in French, aiming for a slightly melancholic and atmospheric tone, with a touch of magical realism. It’s approximately 700 words. I’ve included a translation and some notes to help you understand the nuances.
+
+---
+
+**Der Schatten des Getreides**
+
+Die Sonne sank hinter den zerklüfteten Hügeln des Val d'Auge, ein orangefarbenes Licht, das sich in den feuchten,",100,19058,1,1,1,False,False,"en,de",1,99,99,0.46497472104701126
+88,it,sharegpt,clean,"Okay, here's a summary of the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"" in Italian, aiming for clarity and accuracy.  It's a fairly detailed paper, so this will be a substantial summary.
+
+---
+
+**Riassunto dell'Architettura del Network Deep-Allineato per la Riconoscimento e Segmentazione di Azioni Basato su Skeleton**
+
+Il paper presenta un nuovo network di deep learning",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+88,it,sharegpt,value_patch_same,"Okay, here's a summary of the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"" in Italian, aiming for clarity and accuracy.  It's a fairly detailed paper, so this will be a substantial summary.
+
+---
+
+**Riassunto dell'Architettura del Network Deep-Allineato per la Riconoscimento e Segmentazione di Azioni Basato su Skeleton**
+
+Il paper presenta un nuovo network di deep learning",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.09131716374270242
+88,it,sharegpt,value_patch_other,"Okay, here's a summary of the architecture design in ""Deep-Aligned Convolutional Neural Network for Skeleton-Based Action Recognition and Segmentation"" in Italian, aiming for clarity and accuracy.  It's a fairly detailed paper, so this will be a substantial summary.
+
+---
+
+**Zusammenfassung der Architekturdesign für Deep-Aligned Convolutional Neural Networks für Skelettbasierte Aktionserkennung und -segmentierung**
+
+Die vorliegende Arbeit präsentiert eine innovative Architektur für die",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.30249022587080193
+89,de,complex_prompts,clean,"Okay, here’s a summary of the Harry Potter series in German, under 300 words, and then a list of the names:
+
+**Harry Potter – Eine kurze Zusammenfassung**
+
+Die Geschichte beginnt mit Harry Potter, einem jungen, unglücklichen Jungen, der in einem kleinen Dorf in der englischen Landschaft aufwächst. Sein Leben ändert sich, als er entdeckt, dass er eine besondere Verbindung zu einem alten, mysteriösen Wesen hat – einem Dr",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+89,de,complex_prompts,value_patch_same,"Okay, here’s a summary of the Harry Potter series in German, under 300 words, and then a list of the names:
+
+**Harry Potter – Eine kurze Zusammenfassung**
+
+Die Geschichte beginnt mit Harry Potter, einem jungen, unbedachten Jungen, der in einem kleinen Dorf in Surrey, England, aufwächst. Sein Leben ändert sich, als er entdeckt, dass er eine besondere Verbindung zu einer alten, mysteriösen Familie hat – den Dursleys",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.061636891328927246
+89,de,complex_prompts,value_patch_other,"Okay, here’s a summary of the Harry Potter series in German, under 300 words, and then a list of the names:
+
+**Zusammenfassung de l’histoire de Harry Potter (moins de 300 mots)**
+
+L’histoire commence avec Harry Potter, un jeune garçon solitaire vivant à Privet Drive, un quartier discret de Londres. Il est le héritier d’une lignée de mystérieux et de puissants individus, et il découvre,",100,19058,1,1,1,False,False,"en,de,fr",1,99,99,0.27025159794573833
+90,fr,okapi,clean,"Okay, here’s a 500-word horror story in French, aiming for a slightly unsettling and atmospheric feel. It’s written with a focus on building dread and psychological unease.  Please read the explanation at the end before you read the story itself.
+
+---
+
+**Le Chant de la Pierre**
+
+Le vent hurlait, un loup solitaire qui s’enfonçait dans les ruelles de Saint-Germain-des-Prés. La pluie,",100,19058,1,1,1,False,False,"en,fr,fr",0,0,0,
+90,fr,okapi,value_patch_same,"Okay, here’s a 500-word horror story in French, aiming for a slightly unsettling and atmospheric feel. It’s written with a focus on building dread and psychological unease.  Please read the explanation at the end before you read the story itself.
+
+---
+
+**Le Chant de la Pierre**
+
+Le vent hurlait, un loup solitaire qui s’enfonçait dans les ruelles de Saint-Germain-des-Prés. La pluie,",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.06652453109019935
+90,fr,okapi,value_patch_other,"Okay, here’s a 500-word horror story in French, aiming for a slightly unsettling and atmospheric feel. It’s written with a focus on building dread and psychological unease.  Please read the explanation at the end before you read the story itself.
+
+---
+
+**Le Chant de la Pierre**
+
+Le vent hurlait, un loup solitaire qui s’enfonçait dans les ruelles de Saint-Germain-des-Prés. La pluie,",100,19058,1,1,1,False,False,"en,fr,fr",1,99,99,0.3548281778289814
+91,fr,okapi,clean,"Okay, here’s a 500-word report summarizing the article “The Impact of Brexit on the United Kingdom,” written in French. It aims for a balanced and informative tone, reflecting a typical analysis of the topic.  Please note that this is a general summary; the specific nuances of the article will depend on the exact content of the original piece.
+
+---
+
+**L'Impact de la Brexit sur le Royaume-Uni : Une Analyse Complète**
+
+L'article """,100,19058,1,1,1,False,False,"en,fr",0,0,0,
+91,fr,okapi,value_patch_same,"Okay, here’s a 500-word report summarizing the article “The Impact of Brexit on the United Kingdom,” written in French. It aims for a balanced and informative tone, reflecting a typical analysis of the topic.  Please note that this is a general summary; the specific nuances of the article will depend on the exact content of the original.
+
+---
+
+**L'Impact de la Brexit sur le Royaume-Uni : Une Analyse Complète**
+
+L'article ""The",100,19058,1,1,1,False,False,"en,fr",1,99,99,0.16151309878838183
+91,fr,okapi,value_patch_other,"Okay, here’s a 500-word report summarizing the article “The Impact of Brexit on the United Kingdom,” written in French. It aims for a balanced and informative tone, incorporating key points and potential implications.
+
+---
+
+**Die Auswirkungen der Brexit auf das Vereinigte Königreich – Eine Zusammenfassung**
+
+Der Artikel “Die Auswirkungen der Brexit auf das Vereinigte Königreich” (Die Auswirkungen der Brexit auf das Vereinigte Königreich) untersucht die tiefgreifenden und komplexen Folgen des Brexit für die",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.4782507055335575
+92,de,complex_prompts,clean,"Okay, here's a TSV file containing information about the travelling exhibits of the Metropolitan Museum of Art (Met) between 1990 and 2000.  I've aimed for a comprehensive listing, including subject matter and curator.  **Please note:** This is a substantial amount of data.  It's designed to be a starting point, and you'll likely need to adjust it based on the specific details you require.  I've used a",100,19058,1,1,1,False,False,en,0,0,0,
+92,de,complex_prompts,value_patch_same,"Okay, here's a TSV file containing information about the travelling exhibits of the Metropolitan Museum of Art (Met) between 1990 and 2000.  I've aimed for a comprehensive listing, including subject matter and curator.  **Please note:** This is a substantial amount of data.  It's designed to be a starting point, and you'll likely need to adjust it based on the specific details you require.  I've used a",100,19058,1,1,1,False,False,en,1,99,99,0.0520965185467944
+92,de,complex_prompts,value_patch_other,"Okay, here's a TSV file containing information about the travelling exhibits of the Met Museum between 1990 and 2000, organized alphabetically by exhibit title.  I've included details about subject matter and curator.  **Please note:** This is a substantial amount of data, and it's designed to be a starting point.  You'll likely need to adjust it based on the specific information available for each exhibit.  I've used a simplified",100,19058,1,1,1,False,False,en,1,99,99,0.23034748367287897
+93,de,okapi,clean,"Okay, here's a sample essay in German on the topic of Artificial Intelligence, aiming for approximately 500 words. It’s written with a reasonable level of complexity and aims to be informative and thoughtful.  Please note that this is a draft – feel free to adjust it to better suit your specific needs and desired tone.
+
+---
+
+**Künstliche Intelligenz: Eine Chance oder eine Bedrohung?**
+
+Die rasante Entwicklung der Künstlichen Intelligenz (KI)",100,19058,1,1,1,False,False,"en,de,de",0,0,0,
+93,de,okapi,value_patch_same,"Okay, here's a sample essay in German on the topic of Artificial Intelligence, aiming for approximately 500 words. It’s written with a reasonable level of complexity and aims to be informative and thoughtful.  Please note that this is a draft – feel free to adjust it to better suit your specific needs and desired tone.
+
+---
+
+**Die Künstliche Intelligenz: Chancen und Herausforderungen einer neuen Ära**
+
+Die Künstliche Intelligenz (KI) hat sich in den",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.11048604877232904
+93,de,okapi,value_patch_other,"Okay, here’s a sample essay in German on the topic of Artificial Intelligence, aiming for approximately 500 words. It’s written with a reasonable level of complexity and aims to be informative and thoughtful.  Please note that I’ve aimed for a style suitable for a university-level essay, incorporating some nuanced language.
+
+---
+
+**Die Künstliche Intelligenz: Eine Chance oder eine Bedrohung?**
+
+Die rasante Entwicklung der Künstlichen Intelligenz (KI)",100,19058,1,1,1,False,False,"en,de,de",1,99,99,0.35542831140937226
+94,fr,complex_prompts,clean,"Voici une phrase résumant le sujet de l’album Speak Now (Taylor’s Version) :
+
+L’album Speak Now (Taylor’s Version) est une re-enregistrement fidèle des arrangements et des paroles de l’album original, mais Swift a évolué en tant que chanteuse, passant d’une optimism naïve à une nuance et à une prudence plus profonde, et ses chansons expriment un sentiment de fatigue généralisée de l’âge adulte.
+
+Here’s a",100,129930,1,1,1,False,True,"fr,fr",0,0,0,
+94,fr,complex_prompts,value_patch_same,"Voici une phrase résumant le sujet de l’album Speak Now (Taylor’s Version) :
+
+**L’album Speak Now (Taylor’s Version) explore la maturité de Taylor Swift, passant d’une optimism naïve à une introspection plus nuancée et à une expression plus prudente de la douleur et du regret, plutôt que de la colère, en se concentrant sur la manière dont elle choisit de délivrer ses chansons.**
+
+Here’s a list of",100,129930,1,1,1,False,True,"fr,fr",1,99,99,0.1344671245626729
+94,fr,complex_prompts,value_patch_other,"Voici la réponse en français :
+
+L’album Speak Now (Taylor’s Version) ist hauptsächlich von der Rückveröffentlichung der Arrangements und Texte der ursprünglichen Arbeit geprägt, wobei Swift sich nicht mehr so selbstbewusst wie zu ihrer Zeit im jungen Alter zeigte.
+
+Voici les titres de la chanson mentionnée dans le texte en ordre alphabétique :
+
+*   Lover’s
+*   Reputation’s
+*   Dress
+",92,129930,1,1,1,False,False,"fr,de,fr",1,91,91,0.39729472307058483
+95,it,okapi,clean,"Okay, here's a blog post about Machine Learning in Italian, aiming for a good balance of explanation, accessibility, and engagement. It’s approximately 600 words and includes some imagery and a conversational tone.
+
+---
+
+**Machine Learning: Il Futuro è Già Qui (e lo Stiamo Costruendo)**
+
+Ciao a tutti!  Se siete qui, probabilmente siete interessati a qualcosa di nuovo e in rapida evoluzione: il **Machine Learning (ML)**",100,19058,1,1,1,False,False,"en,it,it",0,0,0,
+95,it,okapi,value_patch_same,"Okay, here's a blog post about Machine Learning in Italian, aiming for a good balance of explanation, accessibility, and engagement. It’s approximately 600 words and includes some imagery and a conversational tone.
+
+---
+
+**Machine Learning: Il Futuro è Già Qui (e lo Stiamo Costruendo)**
+
+Ciao a tutti!  Se siete qui, probabilmente siete interessati a qualcosa di nuovo e in rapida evoluzione: il **Machine Learning (ML)**",100,19058,1,1,1,False,False,"en,it,it",1,99,99,0.1546080599002766
+95,it,okapi,value_patch_other,"Okay, here's a blog post about Machine Learning in Italian, aiming for a good balance of explanation, accessibility, and engagement. It’s approximately 600 words and includes some imagery and a conversational tone.
+
+---
+
+**Machine Learning: Die Zukunft ist da – Was du wissen musst**
+
+(Image: A stylized graphic of a neural network with interconnected nodes – could be a simple, modern illustration)
+
+Die Welt verändert sich rasant, und Technologie spielt dabei eine immer größere",100,19058,1,1,1,False,False,"en,de,en,de",1,99,99,0.5595770064327452

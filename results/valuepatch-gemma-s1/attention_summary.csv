@@ -1,0 +1,6 @@
+language,n,last_prompt_h0_target_mass_mean,last_prompt_h1_target_mass_mean,last_prompt_h2_target_mass_mean,last_prompt_h3_nearby_mass_mean,last_prompt_h3_target_mass_mean,early_reply_h0_target_mass_mean,early_reply_h1_target_mass_mean,early_reply_h2_target_mass_mean,early_reply_h3_nearby_mass_mean,early_reply_h3_target_mass_mean,later_reply_h0_target_mass_mean,later_reply_h1_target_mass_mean,later_reply_h2_target_mass_mean,later_reply_h3_nearby_mass_mean,later_reply_h3_target_mass_mean
+de,24,0.02215,0.11794,0.07512,0.00807,0.14407,0.01368,0.02463,0.08907,0.00437,0.06491,0.01089,0.01999,0.04173,0.00287,0.05019
+es,24,0.01719,0.07194,0.06377,0.00876,0.12879,0.0109,0.01947,0.08077,0.00479,0.06123,0.00999,0.0252,0.04603,0.003,0.0483
+fr,24,0.03024,0.1187,0.07864,0.00795,0.14294,0.01772,0.02411,0.08575,0.00426,0.07984,0.01122,0.02534,0.04891,0.00244,0.05302
+it,24,0.03115,0.0734,0.04801,0.00955,0.12648,0.0137,0.01812,0.0617,0.00624,0.05555,0.01176,0.02263,0.04021,0.00388,0.0426
+ALL,96,0.02518,0.0955,0.06638,0.00858,0.13557,0.014,0.02158,0.07932,0.00491,0.06538,0.01096,0.02329,0.04422,0.00305,0.04853
