@@ -697,8 +697,15 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   heads' c->w on the 125 screen prompts (the first 25 per language) and on the other 2,375, from the 2,500-prompt
   runs. LCB: the screen-picked heads' crosslingual change on the screen's prompts, from section 9f's pair means over
   all prompts and without the screen's.
-- When / where: 2026-10-12; printed by the script, no results folder.
-- Code: screen_split.py.
+- Also: whether the FLORES follow-up could have missed a head, since it reruns only some layers on 2,500 prompts
+  (section 7): the strongest head outside those layers that meets both conditions of the head rule on the screen.
+  And, on the LCB screens of the two Llamas and Qwen3-4B, which pick heads by the drop in pooled pass rate, the share
+  of replies that pass at baseline and fail with the head removed, so that the comparison with the other heads of
+  the layer counts departures in one direction, as c->w does on FLORES.
+- When / where: 2026-10-12; printed by screen_split.py. The directions come from the screens' saved replies
+  (out/<model>-lcbscreen/samples.jsonl, not committed), summarized per head in results/lcb-screen-directions after
+  checking every head's pooled pass rate against its committed screen.json.
+- Code: screen_split.py, lcb_screen_directions.py.
 - Result:
 
 | model | head | FLORES c->w, screen (125) | rest (2,375) | all (2,500) |
@@ -719,10 +726,29 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 | Qwen2.5-1.5B | L16H9 | -0.400 (100) | -0.464 | -0.459 |
 | Qwen2.5-7B | L0H1 | -0.268 (97) | -0.272 | -0.271 |
 
+| model | layers rerun on 2,500 | strongest eligible head outside them, screen c->w | reported head, screen c->w |
+|---|---|---|---|
+| Qwen2.5-3B | 0, 27 | L15H0 0.024 | L27H13 0.480 |
+| Qwen2.5-7B | 0, 19 | L3H5 0.016 | L19H1 0.128 |
+| Qwen3-1.7B | 0, 2, 18 | L9H0 0.024 | L18H12 0.384 |
+| Gemma-3-1B | 5, 11 | L0H2 0.032 | L11H3 0.400 |
+| Gemma-3-4B | 0, 24 | L6H5 0.016 | L24H0 0.240 |
+| OLMo-2-1B | 0, 1, 12 | L6H6 0.064 | L12H8 0.136 |
+| OLMo-3-7B | 1, 14 | L12H16 0.040 | L14H25 0.120 |
+
+| model | picked head: pass at baseline, fail without it (reverse) | other heads of its layer, max |
+|---|---|---|
+| Llama-3.2-1B | L8H25 0.710 (0.000) | 0.040 (L8H21, of 31) |
+| Llama-3.2-3B | L13H19 0.323 (0.000) | 0.040 (L13H8, of 23) |
+| Qwen3-4B | L24H27 0.112 (0.010) | 0.010 (L24H26, of 31) |
+
 - Reading: on FLORES the effect on the 2,375 unscreened prompts is 0.077 to 0.517 and higher than on the screen's
   prompts in four of the seven models, so the screen's prompts are not where the effect is largest. On LCB the
   screen-picked heads keep their effect on the unscreened prompts, except that Qwen3-4B's L24H27, whose screen drop
-  (0.102) only just passed the 0.1 threshold, lowers the rest by 0.073.
+  (0.102) only just passed the 0.1 threshold, lowers the rest by 0.073. Outside the rerun layers no eligible head
+  reaches more than 0.064 on the screen, below the 0.1 threshold and below the reported head in every model, so the
+  follow-up's layer choice did not leave out a stronger candidate. On the three LCB screens, counting only replies
+  that go from pass to fail, the picked head is 0.112 to 0.710 against at most 0.040 for any other head of its layer.
 
 ## 10. Why zero and mean ablation differ
 
