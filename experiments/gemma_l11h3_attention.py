@@ -34,11 +34,13 @@ LCB_URL = "https://raw.githubusercontent.com/for-ai/language-confusion/HEAD/test
 LID_URL = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"
 SEED = 20261009
 PUNCT = str.maketrans("", "", string.punctuation)
+RANDOM_MODES = ("value_patch_random1", "value_patch_random2", "value_patch_random3")
 MODES = ("clean", "target_word_mask", "nearby_word_mask", "control_head_word_mask", "head_zero_decode",
-         "value_patch_same", "value_patch_other", "value_patch_self")
+         "value_patch_same", "value_patch_other", "value_patch_self", "value_patch_other2", *RANDOM_MODES)
 DEFAULT_MODES = MODES[:5]
-PATCH_MODES = ("value_patch_same", "value_patch_other", "value_patch_self")
+PATCH_MODES = ("value_patch_same", "value_patch_other", "value_patch_self", "value_patch_other2", *RANDOM_MODES)
 SWAP = {"de": "fr", "es": "de", "fr": "de", "it": "de"}  # value_patch_other donor, the swap of diagnose.py and steer.py
+SWAP2 = {"de": "es", "es": "it", "fr": "it", "it": "fr"}  # value_patch_other2 donor (experiments/mechanism_value_controls.md)
 ATTENTION_GROUPS = ("last_prompt", "early_reply", "later_reply")
 
 
@@ -215,7 +217,14 @@ class GemmaExperiment:
                     ctl["prefill"] += 1
                 return out, w
             v = value[:, kv][:, keys]
-            donor = v if ctl["mode"] == "value_patch_self" else ctl["donor"].to(v.dtype).expand_as(v)
+            if ctl["mode"] == "value_patch_self":
+                donor = v
+            elif ctl["mode"] in RANDOM_MODES:
+                # move each name value by its distance to the other-language donor, in one random direction
+                other, u = (t.to(v.dtype) for t in ctl["donor"])
+                donor = v + (other - v).norm(dim=-1, keepdim=True) * u
+            else:
+                donor = ctl["donor"].to(v.dtype).expand_as(v)
             delta = torch.einsum("bqs,bsd->bqd", w[:, HEAD][..., keys].to(v.dtype), donor - v)
             out[:, :, HEAD, :] = out[:, :, HEAD, :] + delta
             ctl["norms"].append(float(delta.norm(dim=-1).mean()))
@@ -439,7 +448,7 @@ def main():
     if unknown:
         raise ValueError(f"Unknown modes: {unknown}")
     donors = {}
-    if set(modes) & {"value_patch_same", "value_patch_other"}:
+    if set(modes) & (set(PATCH_MODES) - {"value_patch_self"}):
         # per-prompt mean value at the name positions in a clean prefill, then per-language sums for the donors
         own = {}
         for row in manifest:
@@ -450,8 +459,13 @@ def main():
         if min(counts.values()) < 2:
             raise RuntimeError(f"Need two prompts per language for leave-one-out donors: {counts}")
         for pid, (lang, v) in own.items():
-            donors[pid] = {"value_patch_same": (sums[lang] - v) / (counts[lang] - 1),
-                           "value_patch_other": sums[SWAP[lang]] / counts[SWAP[lang]]}
+            other = sums[SWAP[lang]] / counts[SWAP[lang]]
+            donors[pid] = {"value_patch_same": (sums[lang] - v) / (counts[lang] - 1), "value_patch_other": other,
+                           "value_patch_other2": sums[SWAP2[lang]] / counts[SWAP2[lang]]}
+            for k, mode in enumerate(RANDOM_MODES, 1):
+                g = torch.Generator().manual_seed(args.seed * 100003 + pid * 10 + k)
+                u = torch.randn(v.shape[-1], generator=g)
+                donors[pid][mode] = (other, (u / u.norm()).to(v.device))
     try:
         model_cfg = exp.model.config.get_text_config() if hasattr(exp.model.config, "get_text_config") else exp.model.config
         metadata = {
