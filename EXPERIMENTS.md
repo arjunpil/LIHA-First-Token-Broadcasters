@@ -305,6 +305,12 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 
 ## 7. Base and instruct pairs across families
 
+- Controls for the value patch (2026-10-12, 15:29 to 17:04 UTC; experiments/mechanism_value_controls.md, committed
+  before the runs in 79dc4e6; results/mechanism-value-controls/summary.md). A random-direction move of each name value
+  by its distance to the other-language donor (three seeds), a second donor language, and the L11H2 name mask in
+  Gemma-3-1B. All readings hold: random directions of the same size fail 4 to 8 and 1 to 6 replies (against 90 and
+  43) and move none into German or French; the second language moves 208 and 16 replies into it; masking L11H2 fails
+  2 replies against 32 for L11H3.
 - Why: to check whether instruct models of other families have a head like L22H6, and whether their base models have
   the same head.
 - What: the instruct and base models of Qwen2.5-3B and 7B, Qwen3-1.7B and 4B (thinking off), Gemma-3-1B and 4B,

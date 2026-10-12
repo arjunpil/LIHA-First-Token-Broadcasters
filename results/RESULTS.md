@@ -985,3 +985,33 @@ reading (other puts more replies in the other language: 44 vs 0 and 24 vs 0) hol
 fail significantly more than the nearby mask. The other-language values change the head's output more (2.01 against
 0.39 per step in Qwen2.5-1.5B, 0.36 against 0.10 in Gemma-3-1B), which is why the content reading needs the direction
 reading. On the 384 new prompts the name mask again fails more replies than both controls in both models.
+
+# Controls for the value patch, 2026-10-12
+
+experiments/mechanism_value_controls.md (committed in 79dc4e6 at 15:28 UTC, before the runs; these controls were
+added after the value patch results, and what is fixed in advance is how they are read), runs from 15:29 to 17:04 UTC,
+results/valuecontrols-{qwen,gemma}-{s1,s2}, read by experiments/mechanism_value_controls_reading.py into
+results/mechanism-value-controls/summary.md. Same 480 prompts and donors as the value patch; the clean replies
+reproduce the earlier runs on all 480 prompts in both models. The KST times written in the value patch plan are off;
+its commit b3de0d3 (11:35:13 UTC, seconds before those runs) is the record.
+
+- value_patch_random1 to 3: each name value moved by its distance to the other-language donor in a random direction
+  (one unit vector per prompt and seed). value_patch_other2: the donor is a second language (es for de, it for es
+  and fr, fr for it). Gemma-3-1B also masks L11H2's attention to the name.
+
+| model | condition | pass to fail | all lines in first donor | all lines in second donor | mean output change |
+|---|---|---|---|---|---|
+| Qwen2.5-1.5B (323 pass) | other | 90 | 44 of 473 | 2 of 473 | 2.007 |
+| | random, three seeds | 5, 8, 4 | 0 | 0 | 2.034, 2.028, 2.043 |
+| | second language | 217 | 0 of 476 | 208 of 476 | 1.976 |
+| Gemma-3-1B (51 pass) | other | 43 | 24 of 471 | 0 of 471 | 0.360 |
+| | random, three seeds | 1, 3, 6 | 0 | 0 | 0.367, 0.367, 0.368 |
+| | second language | 25 | 0 of 472 | 16 of 472 | 0.335 |
+| | L11H2 name mask | 2 | 0 | 0 | |
+
+All planned readings hold in both models. Other-language against random failures: 87 vs 2, 83 vs 1, 88 vs 2 (Qwen,
+p < 1e-22) and 42 vs 0, 40 vs 0, 37 vs 0 (Gemma, p < 2e-11). Replies in the first donor language, other against
+random: 44 vs 0 and 24 vs 0 for every seed (p = 1.1e-13 and 1.2e-7). Second donor language, other2 against same:
+205 vs 0 (p = 3.9e-62) and 15 vs 0 (p = 6.1e-5). L11H3 name mask against L11H2 name mask: 30 vs 0 (p = 1.9e-9).
+Zeroing the head puts 8 Qwen2.5-1.5B replies entirely in the second donor language and the name mask 4, all Italian
+prompts answered in French; none in Gemma-3-1B, and none in the first donor language under any mask or zeroing.
