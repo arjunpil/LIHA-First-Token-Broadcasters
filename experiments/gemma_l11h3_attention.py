@@ -4,6 +4,8 @@
 Run in an NVIDIA GPU environment. Study crosslingual LCB prompts sampled independently
 of model outcomes. The analysis tests attention to requested-language tokens and
 then masks that attention during cached decoding; it does NOT test language steering.
+The value_patch conditions keep the head's attention and replace the values it reads
+at the language name (experiments/mechanism_value_patch.md).
 """
 from __future__ import annotations
 
@@ -36,7 +38,7 @@ MODES = ("clean", "target_word_mask", "nearby_word_mask", "control_head_word_mas
          "value_patch_same", "value_patch_other", "value_patch_self")
 DEFAULT_MODES = MODES[:5]
 PATCH_MODES = ("value_patch_same", "value_patch_other", "value_patch_self")
-SWAP = {"de": "fr", "es": "de", "fr": "de", "it": "de"}  # donor language for value_patch_other, as in section 6.2
+SWAP = {"de": "fr", "es": "de", "fr": "de", "it": "de"}  # value_patch_other donor, the swap of diagnose.py and steer.py
 ATTENTION_GROUPS = ("last_prompt", "early_reply", "later_reply")
 
 
@@ -422,8 +424,11 @@ def main():
         corpus_hash, pools = None, None
         save_csv(out / "prompt_manifest.csv", manifest, ["prompt_id", "language", "source", "prompt"])
     else:
-        exclude = frozenset((r["language"], r["prompt"]) for r in load_manifest(args.exclude_manifest)) if args.exclude_manifest else frozenset()
-        manifest, corpus_hash, pools = build_manifest(out, 2 if args.smoke else args.per_language, args.seed, exclude, args.lcb_dir)
+        exclude = frozenset()
+        if args.exclude_manifest:
+            exclude = frozenset((r["language"], r["prompt"]) for r in load_manifest(args.exclude_manifest))
+        manifest, corpus_hash, pools = build_manifest(out, 2 if args.smoke else args.per_language, args.seed,
+                                                      exclude, args.lcb_dir)
     if args.smoke:
         assert len(manifest) == 8
     print(f"Selected {len(manifest)} explicit-language LCB crosslingual prompts, from {len(LANGUAGES)} languages", flush=True)
