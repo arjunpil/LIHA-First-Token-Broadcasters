@@ -279,6 +279,29 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
     comparably, so Qwen2.5-1.5B's control is not matched in attention mass; Gemma-3-1B's is closer (0.095 against
     0.136) but rests on 12 replies. Cutting the access fails fewer replies than removing the head (6 against 20 in
     Qwen2.5-1.5B), so it explains part of the head's effect, as in PR #12.
+- Value patching and a larger sample (2026-10-12, 20:35 to 22:11 KST; experiments/mechanism_value_patch.md, written
+  before the runs, with a note added after the smoke run and before the main runs; results in
+  results/valuepatch-{qwen,gemma}-{s1,s2}, read by experiments/mechanism_value_patch_reading.py into
+  results/mechanism-value-patch/summary.md). The runner gets two conditions that keep the head's attention weights
+  and replace the values it reads at the language name with their mean over the run's other prompts that name the
+  same language (value_patch_same) or another language (value_patch_other: de for fr, es and it, fr for de). The
+  patch adds sum_j a_tj (v_donor - v_j) to the head's attention output before o_proj, so the shared key-value cache
+  and the other heads are untouched. Sample 1: the 96 prompts above (clean and the two patches; the clean replies
+  match the earlier runs on all 96 in both models). Sample 2: 384 new crosslingual prompts, 96 per language, drawn
+  by the same rule with seed 20261012 and the 96 left out, all seven conditions.
+  - Qwen2.5-1.5B, 480 prompts: 323 of 474 scorable replies pass. Name mask fails 34, nearby mask 0, control head's
+    mask 0, head zeroed in decoding 105, value_patch_same 1, value_patch_other 90; under value_patch_other 44 of
+    473 scorable replies are entirely in the other language, under value_patch_same 0. Italian: 20, 79 and 51 of 79
+    for the name mask, zeroing and value_patch_other. Output change per step 0.39 (same) and 2.01 (other).
+  - Gemma-3-1B, 480 prompts: 51 of 472 pass. Name mask 32, nearby 0, control head 2, zeroed 36,
+    value_patch_same 0, value_patch_other 43; 24 of 471 entirely in the other language under value_patch_other, 0
+    under value_patch_same. Output change 0.10 and 0.36.
+  - Reading (planned rules): value_patch_same does not fail significantly more than the nearby mask (1 vs 0, p = 1;
+    0 vs 0); value_patch_other
+    fails more than value_patch_same (89 vs 0, p = 3.2e-27; 43 vs 0, p = 2.3e-13) and puts more replies in the
+    other language (44 vs 0, p = 1.1e-13; 24 vs 0, p = 1.2e-7), so both the content and the direction readings
+    hold. On sample 2 alone the name mask fails more than the nearby mask (28 vs 0; 25 vs 0) and the control head's
+    mask (28 vs 0; 23 vs 0), each p < 1e-6, as on the 96 prompts.
 
 ## 7. Base and instruct pairs across families
 
@@ -914,7 +937,7 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
 
 ## 12. Still running
 
-- Nothing, as of 2026-10-12 02:52 KST.
+- Nothing, as of 2026-10-12 22:11 KST.
 
 ## What the results support and what they do not
 
@@ -939,7 +962,9 @@ Supported so far:
   L11H3 also attends to the requested word, and masking that access during generation costs about as many of its
   12 passing crosslingual replies as removing the head then (7 and 8; section 6). In both models, on the same 96
   prompts drawn without selection, masking the head's access to the word fails replies (6 of 62 and 7 of 12) and
-  masking the access of the layer's next most attending head fails none (section 6).
+  masking the access of the layer's next most attending head fails none, and on 384 more prompts the same holds;
+  keeping the head's attention and replacing only the values it reads at the word with another language's fails
+  replies and moves some into that language, while the same language's values do not (section 6).
 - On FLORES, in five of the seven models, replacing the head's output with one language's mean output moves 0.904 to
   0.997 of the non-English continuations into that language (0.417 in Qwen2.5-7B, 0.182 in Qwen2.5-1.5B), and the
   prompt's own language mean keeps them (section 10).
@@ -975,9 +1000,8 @@ Not supported, or not tested:
   Qwen2.5-7B, Gemma-3, Qwen3 or OLMo-3 (section 7).
 - A ranking of effect sizes across models: heads per layer and normalization differ (section 7).
 - Which post-training step produces the dependence (section 9b).
-- That access to the language word explains the head's effect: in Qwen2.5-1.5B masking it reproduces 7 of 27
-  switches (6 of 20 on prompts drawn without selection), and in Gemma-3-1B it fails 7 of 12 passing replies, of
-  which 4 also fail without the head (section 6).
+- That access to the language word explains all of the head's effect: in Qwen2.5-1.5B masking it fails 34 of the
+  323 passing replies on 480 prompts against 105 without the head, and in Gemma-3-1B 32 of 51 against 36 (section 6).
 - The first-token broadcaster claims of the LIHA paper (section 1).
 
 ## Known limitations

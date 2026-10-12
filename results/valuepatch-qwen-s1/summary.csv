@@ -1,0 +1,16 @@
+language,condition,n,scorable,passes,pass_rate_scorable
+de,clean,24,24,12,0.5
+de,value_patch_same,24,24,13,0.541667
+de,value_patch_other,24,24,11,0.458333
+es,clean,24,24,17,0.708333
+es,value_patch_same,24,24,17,0.708333
+es,value_patch_other,24,24,11,0.458333
+fr,clean,24,24,18,0.75
+fr,value_patch_same,24,24,19,0.791667
+fr,value_patch_other,24,23,16,0.695652
+it,clean,24,24,15,0.625
+it,value_patch_same,24,24,15,0.625
+it,value_patch_other,24,24,8,0.333333
+ALL,clean,96,96,62,0.645833
+ALL,value_patch_same,96,96,64,0.666667
+ALL,value_patch_other,96,95,46,0.484211
