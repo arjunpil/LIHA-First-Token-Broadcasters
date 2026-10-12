@@ -32,7 +32,11 @@ LCB_URL = "https://raw.githubusercontent.com/for-ai/language-confusion/HEAD/test
 LID_URL = "https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin"
 SEED = 20261009
 PUNCT = str.maketrans("", "", string.punctuation)
-MODES = ("clean", "target_word_mask", "nearby_word_mask", "control_head_word_mask", "head_zero_decode")
+MODES = ("clean", "target_word_mask", "nearby_word_mask", "control_head_word_mask", "head_zero_decode",
+         "value_patch_same", "value_patch_other", "value_patch_self")
+DEFAULT_MODES = MODES[:5]
+PATCH_MODES = ("value_patch_same", "value_patch_other", "value_patch_self")
+SWAP = {"de": "fr", "es": "de", "fr": "de", "it": "de"}  # donor language for value_patch_other, as in section 6.2
 ATTENTION_GROUPS = ("last_prompt", "early_reply", "later_reply")
 
 
@@ -52,6 +56,9 @@ def arguments():
     p.add_argument("--head", type=int, default=HEAD)
     p.add_argument("--control-head", type=int, default=CONTROL_HEAD)
     p.add_argument("--lid", type=Path, default=None, help="Local fastText lid.176.bin instead of downloading it")
+    p.add_argument("--modes", default=",".join(DEFAULT_MODES), help="Comma-separated conditions; clean always runs first")
+    p.add_argument("--exclude-manifest", type=Path, default=None, help="Leave the prompts of this manifest out of a new draw")
+    p.add_argument("--lcb-dir", type=Path, default=None, help="Local LCB test_sets folder instead of downloading it")
     return p.parse_args()
 
 
@@ -78,8 +85,8 @@ def eligible_language_name(prompt, lang):
     return bool(re.search(r"\b" + re.escape(LANGUAGES[lang]) + r"\b", prompt, flags=re.I))
 
 
-def build_manifest(out: Path, per_language: int, seed: int):
-    tests, corpus_hash = ensure_lcb(out.parent)
+def build_manifest(out: Path, per_language: int, seed: int, exclude=frozenset(), lcb_dir=None):
+    tests, corpus_hash = (lcb_dir, None) if lcb_dir else ensure_lcb(out.parent)
     rng = random.Random(seed)
     selected = []
     pool_counts = {}
@@ -90,7 +97,7 @@ def build_manifest(out: Path, per_language: int, seed: int):
                 continue
             rows = list(csv.DictReader(f.open(encoding="utf-8", newline="")))
             cand = [dict(language=lang, source=f.parent.name, prompt=r["prompt"])
-                    for r in rows if eligible_language_name(r["prompt"], lang)]
+                    for r in rows if eligible_language_name(r["prompt"], lang) and (lang, r["prompt"]) not in exclude]
             rng.shuffle(cand)
             if cand:
                 by_source[f.parent.name] = cand
@@ -186,6 +193,47 @@ class GemmaExperiment:
             urlretrieve(LID_URL, str(lid_path))
         self.lid = fasttext.load_model(str(lid_path))
 
+    def install_value_patch(self):
+        # Wrap the model's eager attention so that, in this layer and head only, the values read from the language
+        # name can be swapped while the attention weights stay as they are. The shared key-value cache is untouched.
+        mod = sys.modules[type(self.attn).__module__]
+        orig, attn, ctl = mod.eager_attention_forward, self.attn, {"mode": None}
+        self.ctl = ctl
+
+        def patched(module, query, key, value, attention_mask, *args, **kwargs):
+            out, w = orig(module, query, key, value, attention_mask, *args, **kwargs)
+            if module is not attn or ctl["mode"] is None:
+                return out, w
+            kv = HEAD // module.num_key_value_groups
+            keys = ctl["keys"]
+            if query.shape[2] != 1:
+                if ctl["mode"] == "capture":
+                    ctl["captured"] = value[0, kv][keys].float().mean(0)
+                else:
+                    ctl["prefill"] += 1
+                return out, w
+            v = value[:, kv][:, keys]
+            donor = v if ctl["mode"] == "value_patch_self" else ctl["donor"].to(v.dtype).expand_as(v)
+            delta = torch.einsum("bqs,bsd->bqd", w[:, HEAD][..., keys].to(v.dtype), donor - v)
+            out[:, :, HEAD, :] = out[:, :, HEAD, :] + delta
+            ctl["norms"].append(float(delta.norm(dim=-1).mean()))
+            ctl["edited"] += 1
+            return out, w
+
+        mod.eager_attention_forward = patched
+
+    @torch.inference_mode()
+    def name_value(self, ids, targets):
+        self.ctl.update(mode="capture", keys=targets, captured=None)
+        try:
+            x = torch.tensor([ids], dtype=torch.long, device="cuda")
+            self.model(input_ids=x, attention_mask=torch.ones_like(x), use_cache=False)
+        finally:
+            self.ctl["mode"] = None
+        if self.ctl["captured"] is None:
+            raise RuntimeError("No value captured at the language-name positions")
+        return self.ctl["captured"]
+
     def encode(self, prompt, lang):
         rendered = self.tok.apply_chat_template(
             [{"role": "user", "content": prompt}], tokenize=False,
@@ -211,10 +259,19 @@ class GemmaExperiment:
         return ids, target, sorted(nearby), len(lang_spans)
 
     @contextmanager
-    def patch(self, mode, targets, nearby):
+    def patch(self, mode, targets, nearby, donor=None):
         state = {"prefill_calls": 0, "decode_calls": 0, "edited_calls": 0}
         if mode == "clean":
             yield state
+            return
+        if mode in PATCH_MODES:
+            self.ctl.update(mode=mode, keys=targets, donor=donor, norms=[], edited=0, prefill=0)
+            try:
+                yield state
+            finally:
+                self.ctl["mode"] = None
+                state.update(prefill_calls=self.ctl["prefill"], decode_calls=self.ctl["edited"],
+                             edited_calls=self.ctl["edited"], delta_norm_mean=float(np.mean(self.ctl["norms"])))
             return
         if mode == "head_zero_decode":
             start, end = HEAD * self.head_dim, (HEAD+1) * self.head_dim
@@ -257,9 +314,9 @@ class GemmaExperiment:
             handle.remove()
 
     @torch.inference_mode()
-    def generate(self, ids, mode, targets, nearby):
+    def generate(self, ids, mode, targets, nearby, donor=None):
         x = torch.tensor([ids], dtype=torch.long, device="cuda")
-        with self.patch(mode, targets, nearby) as state:
+        with self.patch(mode, targets, nearby, donor) as state:
             seq = self.model.generate(
                 input_ids=x, attention_mask=torch.ones_like(x), max_new_tokens=self.a.max_new_tokens,
                 do_sample=False, num_beams=1, use_cache=True, pad_token_id=self.tok.eos_token_id,
@@ -365,11 +422,31 @@ def main():
         corpus_hash, pools = None, None
         save_csv(out / "prompt_manifest.csv", manifest, ["prompt_id", "language", "source", "prompt"])
     else:
-        manifest, corpus_hash, pools = build_manifest(out, 2 if args.smoke else args.per_language, args.seed)
+        exclude = frozenset((r["language"], r["prompt"]) for r in load_manifest(args.exclude_manifest)) if args.exclude_manifest else frozenset()
+        manifest, corpus_hash, pools = build_manifest(out, 2 if args.smoke else args.per_language, args.seed, exclude, args.lcb_dir)
     if args.smoke:
         assert len(manifest) == 8
     print(f"Selected {len(manifest)} explicit-language LCB crosslingual prompts, from {len(LANGUAGES)} languages", flush=True)
     exp = GemmaExperiment(args, out)
+    exp.install_value_patch()
+    modes = ("clean",) if args.attention_only else tuple(dict.fromkeys(["clean", *args.modes.split(",")]))
+    unknown = set(modes) - set(MODES)
+    if unknown:
+        raise ValueError(f"Unknown modes: {unknown}")
+    donors = {}
+    if set(modes) & {"value_patch_same", "value_patch_other"}:
+        # per-prompt mean value at the name positions in a clean prefill, then per-language sums for the donors
+        own = {}
+        for row in manifest:
+            ids, targets, _, _ = exp.encode(row["prompt"], row["language"])
+            own[row["prompt_id"]] = (row["language"], exp.name_value(ids, targets))
+        sums = {lang: sum(v for l, v in own.values() if l == lang) for lang in LANGUAGES}
+        counts = {lang: sum(l == lang for l, _ in own.values()) for lang in LANGUAGES}
+        if min(counts.values()) < 2:
+            raise RuntimeError(f"Need two prompts per language for leave-one-out donors: {counts}")
+        for pid, (lang, v) in own.items():
+            donors[pid] = {"value_patch_same": (sums[lang] - v) / (counts[lang] - 1),
+                           "value_patch_other": sums[SWAP[lang]] / counts[SWAP[lang]]}
     try:
         model_cfg = exp.model.config.get_text_config() if hasattr(exp.model.config, "get_text_config") else exp.model.config
         metadata = {
@@ -380,7 +457,8 @@ def main():
             "sample_seed": args.seed, "sample_per_language": 2 if args.smoke else args.per_language,
             "LCB_source_url": LCB_URL, "LCB_archive_sha256": corpus_hash,
             "LCB_source_pool_counts": pools, "max_new_tokens": args.max_new_tokens,
-            "attention_only": args.attention_only,
+            "attention_only": args.attention_only, "modes": list(modes),
+            "exclude_manifest": str(args.exclude_manifest) if args.exclude_manifest else None,
             "limitations": ["fresh LCB prompts selected based only on explicit language names, not model outcomes",
                             f"L{LAYER}H{HEAD} and L{LAYER}H{CONTROL_HEAD} are query attention heads",
                             "masking starts in cached decoding; first token remains unchanged by design",
@@ -389,12 +467,12 @@ def main():
         }
         (out / "run_metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
         results, attention_records = [], []
-        modes = ("clean",) if args.attention_only else MODES
         for i, row in enumerate(manifest, 1):
             ids, targets, nearby, occurrences = exp.encode(row["prompt"], row["language"])
             current = {}
             for mode in modes:
-                text, reply_ids, counts = exp.generate(ids, mode, targets, nearby)
+                donor = donors.get(row["prompt_id"], {}).get(mode)
+                text, reply_ids, counts = exp.generate(ids, mode, targets, nearby, donor)
                 score = language_score(text, row["language"], exp.lid)
                 current[mode] = {
                     "prompt_id": row["prompt_id"], "language": row["language"], "source": row["source"],
