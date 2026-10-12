@@ -341,6 +341,10 @@ results/RESULTS.md is the running log with the full tables; this file is the sho
   0.080 [0.070, 0.091] and 0.083 to 0.088. Under every detector each head ranks first among the heads run on 2,500
   prompts, except Qwen3's, which ranks second behind L0H3, the head that breaks the model and is left out of the
   follow-ups.
+  Qwen2.5-7B's L19H1, added on 2026-10-12 (results/detectors-qwen2.5-7b, detectors.py with --runs
+  qwen2.5-7b-instruct:L19H1 on the saved generations): 0.200 [0.184, 0.216] with langdetect and 0.200 to 0.208 with
+  the others; it ranks third of 56 under every detector (with langdetect, the two heads above it are L0H25 and
+  L0H22, which the head rule leaves out).
 - Reading: under zero ablation, in eight of the twelve instruct models one head is far above every other head of its
   layer (0.080 to 0.515, against at most 0.014). OLMo-3-7B's (0.134, bf16) changes LCB by less than 0.05 and nothing
   under mean ablation (section 8), so it is not counted with the other seven. In each of the seven the same head has a
